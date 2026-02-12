@@ -1363,6 +1363,16 @@ message CMsgSteamLearnMatchHeroV6 {
 	repeated uint32 enemy_hero_and_facet = 7 [(steamlearn_count) = 5];
 }
 
+message CMsgSteamLearnMatchHeroV7 {
+	optional int32 hero_id = 1;
+	optional uint32 facet = 2;
+	optional uint32 hero_and_facet = 3;
+	optional uint32 lane = 4;
+	optional uint32 position = 5;
+	repeated uint32 allied_hero = 8 [(steamlearn_count) = 4];
+	repeated uint32 enemy_hero = 9 [(steamlearn_count) = 5];
+}
+
 message CMsgSteamLearnPlayerTimedStats {
 	message StatBucket {
 		optional float game_time = 1;
