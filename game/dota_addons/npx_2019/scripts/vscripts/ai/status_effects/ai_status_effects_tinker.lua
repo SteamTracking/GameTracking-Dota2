@@ -28,7 +28,7 @@ function CStatusEffectsTinkerBot:StartAI()
 	if self.nBotState ~= TINKER_BOT_STATE_IDLE then
 		return
 	end
-		printf("StartAI")
+	printf("StartAI")
 	self.nBotState =  TINKER_BOT_STATE_CAST_SPELLS
 end
 
@@ -68,6 +68,7 @@ function CStatusEffectsTinkerBot:BotThink()
 		if self.hAttackTarget == nil then
 			return
 		else 
+			print( "Attacking " .. self.hAttackTarget:GetUnitName() )
 			ExecuteOrderFromTable( {
 			UnitIndex = self.me:entindex(),
 			OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
@@ -95,32 +96,43 @@ function CStatusEffectsTinkerBot:BotThink()
 			return
 		end
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/msg_fx/msg_evade.vpcf", PATTACH_CUSTOMORIGIN, nil )
-	ParticleManager:SetParticleControl( nFXIndex, 0, self.me:GetAbsOrigin() + Vector(0, -64,96))
-	ParticleManager:SetParticleControl( nFXIndex, 1, Vector(396, 0, 0 ))
-	ParticleManager:SetParticleControl( nFXIndex, 2, Vector(1, 3, 0 ))
-	ParticleManager:SetParticleControl( nFXIndex, 3, Vector(250, 250, 220 ))
-	ParticleManager:ReleaseParticleIndex( nFXIndex )
+		local nFXIndex = ParticleManager:CreateParticle( "particles/msg_fx/msg_evade.vpcf", PATTACH_CUSTOMORIGIN, nil )
+		ParticleManager:SetParticleControl( nFXIndex, 0, self.me:GetAbsOrigin() + Vector(0, -64,96))
+		ParticleManager:SetParticleControl( nFXIndex, 1, Vector(396, 0, 0 ))
+		ParticleManager:SetParticleControl( nFXIndex, 2, Vector(1, 3, 0 ))
+		ParticleManager:SetParticleControl( nFXIndex, 3, Vector(250, 250, 220 ))
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 
-		if self.hAbilityLaser and self.hAbilityLaser:IsFullyCastable() then
-				ExecuteOrderFromTable( {
+		local timeLeft = 0
+		local hBlind = self.hAttackTarget:FindModifierByName( "modifier_tinker_laser_blind" )
+		if hBlind ~= nil then
+			timeLeft = hBlind:GetRemainingTime()
+		end
+
+		self.hAbilityLaser:EndCooldown()	
+		self.hAbilityRearm:EndCooldown()	
+
+		if self.hAbilityLaser and self.hAbilityLaser:IsFullyCastable() and timeLeft < 0.5 then
+			print( "Lasering " .. self.hAttackTarget:GetUnitName() )
+			ExecuteOrderFromTable( {
 					UnitIndex = self.me:entindex(),
 					OrderType = DOTA_UNIT_ORDER_CAST_TARGET,
 					AbilityIndex = self.hAbilityLaser:entindex(),
 					TargetIndex = self.hAttackTarget:entindex(),
 				} )
 			return 1
-		elseif self.hAbilityRearm and self.hAbilityRearm:IsFullyCastable() then
+		elseif self.hAbilityRearm and self.hAbilityRearm:IsFullyCastable()  and timeLeft > 3 then
+			print( " Rearming" )
 			ExecuteOrderFromTable( {
 				UnitIndex = self.me:entindex(),
 				OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET,
 				AbilityIndex = self.hAbilityRearm:entindex(),
 				Queue = true
 			} )
-			self.hAbilityRearm:RefundManaCost()
 			return 1
 		else 
+			print( "Cannot laser or rearm... attacking")
 			self.nBotState = TINKER_BOT_STATE_ATTACK
 			return
 		end
@@ -129,13 +141,14 @@ function CStatusEffectsTinkerBot:BotThink()
 		if self.hAttackTarget == nil then
 			return
 		else 
-
+			print( "Attacking " .. self.hAttackTarget:GetUnitName() )
 			ExecuteOrderFromTable( {
 			UnitIndex = self.me:entindex(),
 			OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
 			TargetIndex = self.hAttackTarget:entindex(),
 			Queue = false,
 			} )
+			self.nBotState = TINKER_BOT_STATE_CAST_SPELLS
 			return
 		end
 	end

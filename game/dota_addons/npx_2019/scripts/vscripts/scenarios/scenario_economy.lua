@@ -218,6 +218,7 @@ function CDOTANPXScenario_Economy:SetupTask_CompleteEchoSabre()
 		TaskParams =
 		{
 			ItemName = "item_echo_sabre",
+			DoneItemName = "item_ogre_axe"
 		}
 	}, self ), 2 )
 
@@ -236,7 +237,7 @@ function CDOTANPXScenario_Economy:SetupTask_CompleteEchoSabre()
 			WhiteList = { "item_ogre_axe", },
 		},
 
-	}, self ), 2 )
+	}, self ), 0.5 )
 
 	buyOgreAxe.StartTask = function( task )
 		CDotaNPXTask_BuyItem.StartTask( task )
@@ -259,7 +260,7 @@ function CDOTANPXScenario_Economy:SetupTask_CompleteEchoSabre()
 			WhiteList = { "item_broadsword", },
 		},
 
-	}, self ), 2 )
+	}, self ), 0.5 )
 
 
 	buyBroadsword.StartTask = function( task )
@@ -289,7 +290,8 @@ function CDOTANPXScenario_Economy:SetupTask_CompleteEchoSabre()
 
 	buyTPTask.StartTask = function( task )
 		CDotaNPXTask_BuyItem.StartTask( task )
-		task:GetScenario():ShowUIHint( "StickySlot" )
+		-- This triggers a javascript error in panorama
+		-- task:GetScenario():ShowUIHint( "StickySlot" )
 	end
 
 	buyTPTask.CompleteTask = function( task )
@@ -512,7 +514,7 @@ function CDOTANPXScenario_Economy:SetupTask_EarnLevelsAndExperience()
 		TaskName = "learn_a_talent",
 		TaskParams = 
 		{
-			AbilityName = "special_bonus_attack_speed_20",
+			AbilityName = "special_bonus_unique_sven_5",
 			WhiteList = true,
 		},
 	}, self ), 2 )
@@ -662,55 +664,6 @@ function CDOTANPXScenario_Economy:SetupTask_NeutralCreepsAndItems()
 			task:GetScenario():ShowWizardTip( "scenario_economy_wizard_tip_imp_claw", 12.0 )
 		end )
 		
-	end
-
-	local pickupGroveBowTask = rootNeutralCreepsTask:AddTask( CDotaNPXTask_PickUpItem( {
-		TaskName = "pick_up_grove_bow",
-		TaskParams = 
-		{
-			ItemName = "item_grove_bow",
-		},
-
-	}, self ), 3 )
-
-	pickupGroveBowTask.CheckTaskStart = function( task )
-		return task:GetScenario():GetTask( "clear_the_jungle" ):GetTaskProgress() >= 5
-	end
-
-	pickupGroveBowTask.StartTask = function( task )
-		CDotaNPXTask_PickUpItem.StartTask( task )
-		self.vItemPos = self.hPlayerHero:GetAbsOrigin() + self.hPlayerHero:GetForwardVector() * 75
-		DropNeutralItemAtPositionForHero( "item_grove_bow", self.vItemPos, self.hPlayerHero, 2, true )
-		task:GetScenario():ScheduleFunctionAtGameTime( GameRules:GetGameTime() + 3.0, function()
-			task:GetScenario():ShowWizardTip( "scenario_economy_wizard_tip_grove_bow", 12.0 )
-		end )
-	end
-
-	pickupGroveBowTask.CompleteTask = function( task )
-		CDotaNPXTask_PickUpItem.CompleteTask( task, true )
-		task:GetScenario():ShowUIHint( "inventory_slot_6", "scenario_economy_ui_tip_right_click_neutral_item", 12.0, nil )
-		task:GetScenario():ScheduleFunctionAtGameTime( GameRules:GetGameTime() + 3.0, function()
-			task:GetScenario():ShowWizardTip( "scenario_economy_wizard_tip_backpack", 12.0 )
-		end )
-	end
-
-	local sendItemToNeutralStashTask = rootNeutralCreepsTask:AddTask( CDotaNPXTask_SendItemToNeutralStash( { 
-		TaskName = "send_grove_bow_to_stash",
-		TaskParams =
-		{
-			ItemNames = { "item_grove_bow", },
-			ItemName = "item_grove_bow",
-		},
-
-	}, self ), 3 )
-
-	sendItemToNeutralStashTask.CheckTaskStart = function( task ) 
-		return task:GetScenario():IsTaskComplete( "pick_up_grove_bow" ) 
-	end
-
-	sendItemToNeutralStashTask.CompleteTask = function( task )
-		CDotaNPXTask_SendItemToNeutralStash.CompleteTask( task )
-		task:GetScenario():HideUIHint()
 	end
 
 	return rootNeutralCreepsTask

@@ -24,7 +24,7 @@ function CLockdownScenarioQueenOfPainBot:constructor( me )
 	ScriptAssert( self.hEscapeLoc ~= nil, "self.hEscapeLoc is nil!" )
 
 	self.me:AddNewModifier( self.me, nil, "modifier_disable_healing", { duration = -1 } )
-	--self.me:SetHealth( self.me:GetMaxHealth() * 0.35 )
+	self.me:SetHealth( self.me:GetMaxHealth() * 0.4 )
 
 	-- Why isn't the scenario doing all this?
 	for i = 1, 3 do
@@ -127,7 +127,7 @@ function CLockdownScenarioQueenOfPainBot:BotThink()
 		if #Heroes > 0 then
 			self:ChangeBotState( QUEENOFPAIN_BOT_STATE_BLINK )
 
-			return 0.75
+			return 2
 		end
 
 		return 0.5

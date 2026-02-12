@@ -16,6 +16,7 @@
 // MNetworkVarNames = "bool m_bScriptDisableRespawns"
 // MNetworkVarNames = "PlayerID_t m_iPlayerID"
 // MNetworkVarNames = "HeroFacetKey_t m_iHeroFacetKey"
+// MNetworkVarNames = "PlayerID_t m_iEconSpecifyingPlayerID"
 // MNetworkVarNames = "CHandle< CDOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel"
 // MNetworkVarNames = "bool m_bDisableWearables"
 // MNetworkVarNames = "bool m_bReincarnating"
@@ -81,7 +82,8 @@ class CDOTA_BaseNPC_Hero : public CDOTA_BaseNPC_Additive
 	PlayerID_t m_iPlayerID;
 	// MNetworkEnable
 	HeroFacetKey_t m_iHeroFacetKey;
-	PlayerID_t m_iIllusionOriginalPlayerID;
+	// MNetworkEnable
+	PlayerID_t m_iEconSpecifyingPlayerID;
 	HeroID_t m_iHeroID;
 	// MNetworkEnable
 	CHandle< CDOTA_BaseNPC_Hero > m_hReplicatingOtherHeroModel;

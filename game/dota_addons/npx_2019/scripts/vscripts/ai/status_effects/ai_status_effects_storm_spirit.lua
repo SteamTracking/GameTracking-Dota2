@@ -1,7 +1,8 @@
 
-local STORM_SPIRITBOT_STATE_IDLE						= 0
+local STORM_SPIRITBOT_STATE_IDLE					= 0
 local STORM_SPIRITBOT_STATE_CAST_SPELLS				= 1
-local STORM_SPIRITBOT_STATE_TP							= 2 
+local STORM_SPIRITBOT_STATE_TP						= 2 
+local STORM_SPIRITBOT_STATE_INACTIVE				= 3
 
 -----------------------------------------------------------------------------------------------------
 
@@ -65,6 +66,7 @@ function CStatusEffectsStormSpiritBot:FindBestTarget()
 end
 
 function CStatusEffectsStormSpiritBot:BotThink()
+	print( "Current storm spirit bot state: " .. self.nBotState)
 
 	if not self.me:IsAlive() then
 		return
@@ -136,13 +138,16 @@ function CStatusEffectsStormSpiritBot:BotThink()
 				} )
 			]]
 			if self.hAbilityRemnant ~= nil and self.hAbilityRemnant:IsFullyCastable() == true then
+				print( "Casting Static Remnant at " .. self.hAttackTarget:GetUnitName() )
 				ExecuteOrderFromTable( {
 					UnitIndex = self.me:entindex(),
-					OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET,
+					OrderType = DOTA_ABILITY_BEHAVIOR_NO_TARGET,
 					AbilityIndex = self.hAbilityRemnant:entindex(),
+					TargetIndex = self.hAttackTarget:entindex(),
 					Queue = false
 				} )
 			else
+				print("Attacking " .. self.hAttackTarget:GetUnitName() )
 				ExecuteOrderFromTable( {
 					UnitIndex = self.me:entindex(),
 					OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
@@ -153,7 +158,7 @@ function CStatusEffectsStormSpiritBot:BotThink()
 			end
 		else
 			if self.hAbilityBallLightning ~= nil  and self.hAbilityBallLightning:IsFullyCastable() == true then
-				
+				print("Casting ball lightning " .. self.hAttackTarget:GetUnitName() )
 				ExecuteOrderFromTable( {
 					UnitIndex = self.me:entindex(),
 					OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
@@ -184,7 +189,7 @@ end
 
 function Spawn( entityKeyValues )
 	if IsServer() then
-		thisEntity:SetContextThink( "StatusEffectsStormSpiritBot", StatusEffectsStormSpiritBot, 0.5 )
+		thisEntity:SetContextThink( "StatusEffectsStormSpiritBot", StatusEffectsStormSpiritBot, 0.1 )
 
 		thisEntity.Bot = CStatusEffectsStormSpiritBot( thisEntity )
 	end

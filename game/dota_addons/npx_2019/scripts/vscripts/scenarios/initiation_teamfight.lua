@@ -108,6 +108,7 @@ function CDotaNPXScenario_InitiationTeamfight:SetupScenario()
 	end
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_InitiationTeamfight, "OnTriggerStartTouch" ), self )
+	return true
 end
 
 --------------------------------------------------------------------------------
@@ -371,7 +372,7 @@ function CDotaNPXScenario_InitiationTeamfight:OnTaskCompleted( event )
 				{
 					BotName = "Wraith King",
 					EntityScript = "ai/initiation_teamfight/wraith_king_p2.lua",
-					StartingHeroLevel = 5,
+					StartingHeroLevel = 3,
 					StartingItems = 
 					{
 						"item_power_treads",
@@ -402,7 +403,7 @@ function CDotaNPXScenario_InitiationTeamfight:OnTaskCompleted( event )
 				{
 					BotName = "Sniper",
 					EntityScript = "ai/initiation_teamfight/sniper_p2.lua",
-					StartingHeroLevel = 6,
+					StartingHeroLevel = 3,
 					StartingItems =
 					{
 						"item_power_treads",
@@ -434,7 +435,7 @@ function CDotaNPXScenario_InitiationTeamfight:OnTaskCompleted( event )
 				{
 					BotName = "Enigma",
 					EntityScript = "ai/initiation_teamfight/enigma_p2.lua",
-					StartingHeroLevel = 7,
+					StartingHeroLevel = 3,
 					StartingItems = 
 					{
 						"item_arcane_boots",
@@ -619,8 +620,7 @@ function CDotaNPXScenario_InitiationTeamfight:OnSetupComplete()
 			local hCheckpoints = Entities:FindAllByName( "checkpoint_1" )
 			if hCheckpoints[ 1 ] ~= nil then
 				FindClearSpaceForUnit( self:GetPlayerHero(), hCheckpoints[ 1 ]:GetAbsOrigin(), true )
-				SendToConsole( "+dota_camera_center_on_hero" )
-				SendToConsole( "-dota_camera_center_on_hero" )
+				self:CenterCameraOnHero()
 			end
 		end
 	end

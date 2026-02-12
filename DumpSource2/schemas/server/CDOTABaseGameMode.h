@@ -296,4 +296,5 @@ class CDOTABaseGameMode : public CBaseEntity
 	float32 m_flBountyRuneSpawnInterval;
 	float32 m_flXPRuneSpawnInterval;
 	float32 m_flThinkInterval;
+	int32 m_nForcedHeroCapOnReset;
 };

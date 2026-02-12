@@ -136,7 +136,7 @@ function CDotaNPXScenario_Courier:SetupTasks()
 		TaskParams =
 		{
 			GoalLocation = self.hSecretShopLocation:GetAbsOrigin(),
-			GoalDistance = 256,
+			GoalDistance = 400,
 		},
 		CheckTaskStart = 
 		function() 
@@ -210,7 +210,7 @@ function CDotaNPXScenario_Courier:OnHeroFinishSpawn( hHero, hPlayer )
 	self.hCourier = hPlayer:SpawnCourierAtPosition( self.hCourierSpawn:GetAbsOrigin() )
 	self:ShowWizardTip( "scenario_courier_wizard_tip_buying", 15.0 )
 	self.hCourier:UpgradeCourier( 10 )
-	self:CenterHero()
+	self:CenterCameraOnHero()
 
 	local hTPScroll = hHero:FindItemInInventory( "item_tpscroll" )
 	if hTPScroll then
@@ -231,6 +231,23 @@ function CDotaNPXScenario_Courier:OnTaskStarted( event )
 		self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 3, function ()
 			self:ShowUIHint( "ShopButton", "scenario_courier_ui_tip_click_to_open_shop", 0.0, nil)
 		end )
+
+		-- turn off auto deliver for the courier
+		local courier = Entities:FindByName(nil, "npc_dota_courier")
+		if (courier ~= nil) then
+			local autoAbility = courier:FindAbilityByName("courier_autodeliver")
+			if (autoAbility == nil) then
+				print("Courier: Couldn't find auto ability'")
+			else
+				if (autoAbility:GetToggleState() == true) then 
+					print("Toggling auto deliver.")
+					autoAbility:ToggleAbility()
+				end
+			end
+		else
+			print ("Courier: could not find courier")
+		end
+
 		--self:HintWorldText( self.hHeroHint:GetAbsOrigin(), "open_shop", 89, -1 )
 	elseif event.task_name == "deliver_ogre_club_with_courier" then
 		-- Show UI Hint for Deliver Items Button here
@@ -241,7 +258,7 @@ function CDotaNPXScenario_Courier:OnTaskStarted( event )
 	elseif event.task_name == "buy_staff_of_wizardry" then
 		self:GrantGold( self.nGoldForStaff )
 		self:ShowUIHint( "ShopButton", "scenario_courier_ui_tip_click_to_open_shop", 0.0, nil)
-		self:CenterHero()
+		self:CenterCameraOnHero()
 		self:ShowWizardTip( "scenario_courier_wizard_tip_speed_burst", 15.0 )
 		--self:HintWorldText( self.hHeroHint:GetAbsOrigin(), "staff_of_wizardry", 89, -1 )
 	elseif event.task_name == "retrieve_staff_of_wizardry" then
@@ -266,6 +283,7 @@ function CDotaNPXScenario_Courier:OnTaskStarted( event )
 	elseif event.task_name == "deliver_aghs_with_courier" then
 		-- Show UI Hint for Transfer Items Button here
 		self:ShowUIHint( "Ability4 AbilityButton", "scenario_courier_ui_tip_click_to_transfer_items", 0.0, nil )
+		self:CenterCourier()
 		--self:HintWorldText( self.hSecretShopHint:GetAbsOrigin(), "transfer", 89, -1 )
 	end
 end
@@ -281,7 +299,7 @@ end
 
 function CDotaNPXScenario_Courier:OnTaskCompleted( event )
 	if event.task_name == "deliver_aghs_with_courier" then
-		self:CenterHero()
+		self:CenterCameraOnHero()
 		self.bCheckForCompletion = true
 	end
 end
@@ -322,7 +340,6 @@ function CDotaNPXScenario_Courier:CenterCourier()
 	local PlayerID = self.hHero:GetPlayerID()
 	if self.bCourierHasBeenUsed == false then
 		PlayerResource:SetCameraTarget( PlayerID , nil )
-		SendToConsole( "dota_camera_lerp_position " .. vPos.x .. " " .. vPos.y .. " " .. 2 )
 		self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 2, function()
 			self.bCourierHasBeenUsed = true
 			PlayerResource:SetCameraTarget( PlayerID , self.hCourier )
@@ -335,25 +352,16 @@ end
 --------------------------------------------------------------------
 
 function CDotaNPXScenario_Courier:CenterSecretShop()
+	self:CenterCameraOnEntity( self.hSecretShopLocation )
 	local vPos = self.hSecretShopLocation:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vPos.x .. " " .. vPos.y .. " " .. 2 )
 	AddFOWViewer( DOTA_TEAM_GOODGUYS, self.hSecretShopHint:GetAbsOrigin(), 1000, 60, false )
-end
-
---------------------------------------------------------------------
-
-function CDotaNPXScenario_Courier:CenterHero()
-	local PlayerID = self.hHero:GetPlayerID()
-	PlayerResource:SetCameraTarget( PlayerID , self.hHero )
-	SendToConsole( "+dota_camera_center_on_hero" )
-	SendToConsole( "-dota_camera_center_on_hero" )
 end
 
 --------------------------------------------------------------------
 
 function CDotaNPXScenario_Courier:LerpToHero()
 	local vPos = self.hHero:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vPos.x .. " " .. vPos.y .. " " .. 2 )
+	self:CenterCameraOnHero()
 end
 
 --------------------------------------------------------------------

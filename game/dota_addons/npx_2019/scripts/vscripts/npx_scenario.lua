@@ -64,6 +64,10 @@ function CDotaNPXScenario:SetupScenario()
 		GameRules:GetGameModeEntity():SetCustomGameForceHero( self.hScenario.ForceHero )
 	end
 
+	if not self.hScenario.DoNotForcedHeroCapOnReset then
+		GameRules:GetGameModeEntity():SetForcedHeroCapOnReset( 1 )
+	end
+
 	self:PrecacheResources()
 
 	if not self:SetupNPCs() then
@@ -275,6 +279,9 @@ function CDotaNPXScenario:OnHeroFinishSpawn( hHero, hPlayer )
 
 		self.bPlayerHeroReady = true
 		self.hPlayerHero = hHero
+
+		-- Is this the right thing to do for all scenarios?
+		self:CenterCameraOnHero();
 
 		self:LoadCombatAnalyzerQueries() 
 		
@@ -903,12 +910,25 @@ end
 
 function CDotaNPXScenario:EndIntroduceScenario()
 	self.bIntroductionComplete = true
-	SendToConsole( "+dota_camera_center_on_hero" )
-	SendToConsole( "-dota_camera_center_on_hero" )
+	self:CenterCameraOnHero()
 
 	CustomGameEventManager:Send_ServerToAllClients( "end_introduce_scenario", event )
 end
 
+----------------------------------------------------------------------------
+
+function CDotaNPXScenario:CenterCameraOnHero()
+	self:CenterCameraOnEntity( PlayerResource:GetSelectedHeroEntity( 0 ) )
+end
+
+----------------------------------------------------------------------------
+
+function CDotaNPXScenario:CenterCameraOnEntity( target )
+	PlayerResource:SetCameraTarget( self.hPlayerHero:GetPlayerID(), target )
+	self:ScheduleFunctionAtGameTime( GameRules:GetGameTime() + 0.1, function() 
+		PlayerResource:SetCameraTarget( self.hPlayerHero:GetPlayerID() , nil )
+	end )
+end
 ----------------------------------------------------------------------------
 
 return CDotaNPXScenario

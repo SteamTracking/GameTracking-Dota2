@@ -14,6 +14,35 @@ function CDotaNPXTask_CourierRetrieveItem:RegisterTaskEvent()
 end
 
 --------------------------------------------------------------------------------
+
+function CDotaNPXTask_CourierRetrieveItem:RemoveItemFromRequiredList( itemName )
+	for k,ItemName in pairs ( self.ItemNames ) do
+		if ItemName == itemName then
+			table.remove( self.ItemNames, k )
+		end
+	end
+
+	if #self.ItemNames == 0 then
+		self:CompleteTask()
+	end
+end
+
+--------------------------------------------------------------------------------
+
+function CDotaNPXTask_CourierRetrieveItem:StartTask()
+	CDotaNPXTask.StartTask(self)
+
+	if self.hScenario.hCourier ~= nil then
+		for k,itemName in pairs( self.ItemNames ) do
+			if self.hScenario.hCourier:FindItemInInventory( itemName ) ~= nil then
+				print( itemName .. " is in the inventory.")
+				self:RemoveItemFromRequiredList( itemName )
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------------------
 -- dota_inventory_item_added
 -- > item_slot - short
 -- > inventory_player_id - short
@@ -32,18 +61,9 @@ function CDotaNPXTask_CourierRetrieveItem:OnInventoryItemAdded( event )
 			return
 		end
 		print( "item named " .. event.itemname )
-		for k,ItemName in pairs ( self.ItemNames ) do
-			if ItemName == szItemName then
-				table.remove( self.ItemNames, k )
-			end
-		end
-
-		if #self.ItemNames == 0 then
-			self:CompleteTask()
-		end
+		self:RemoveItemFromRequiredList( szItemName )
 	end
 end
-
 
 ----------------------------------------------------------------------------
 

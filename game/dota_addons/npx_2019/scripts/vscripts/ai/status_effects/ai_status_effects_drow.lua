@@ -99,7 +99,7 @@ function CStatusEffectsDrowBot:BotThink()
 			OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
 			TargetIndex = self.hAttackTarget:entindex()
 			} )
-			return
+			return 1
 	  	end
 	end
 

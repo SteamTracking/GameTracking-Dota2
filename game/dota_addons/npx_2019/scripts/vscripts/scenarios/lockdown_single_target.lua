@@ -30,7 +30,6 @@ function CDotaNPXScenario_LockdownSingleTarget:InitScenarioKeys()
 			"item_boots",
 			"item_point_booster",
 		},
-
 		ScenarioTimeLimit = 0,
 	}
 
@@ -80,6 +79,7 @@ function CDotaNPXScenario_LockdownSingleTarget:SetupScenario()
 	end
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_LockdownSingleTarget, "OnTriggerStartTouch" ), self )
+	return true
 end
 
 --------------------------------------------------------------------------------
@@ -221,7 +221,6 @@ function CDotaNPXScenario_LockdownSingleTarget:OnSetupComplete()
 		self:CheckpointSkipCompleteTask( "protect_lina_parallel", true )
 		self:CheckpointSkipCompleteTask( "protect_lina", true )
 		self:CheckpointSkipCompleteTask( "moving_past_lina_trigger", true )
-		self:CheckpointSkipCompleteTask( "move_to_drow_ranger", true )
 
 		if self:GetPlayerHero() ~= nil then
 			LearnHeroAbilities( self:GetPlayerHero(), {} )
@@ -231,9 +230,8 @@ function CDotaNPXScenario_LockdownSingleTarget:OnSetupComplete()
 
 			local hCheckpoints = Entities:FindAllByName( "checkpoint_1" )
 			if hCheckpoints[ 1 ] ~= nil then
-				FindClearSpaceForUnit( self:GetPlayerHero(), hCheckpoints[ 1 ]:GetAbsOrigin(), true )
-				SendToConsole( "+dota_camera_center_on_hero" )
-				SendToConsole( "-dota_camera_center_on_hero" )
+				FindClearSpaceForUnit( self.hPlayerHero, hCheckpoints[ 1 ]:GetAbsOrigin(), true )
+				self:CenterCameraOnHero()
 			end
 		end
 	end
