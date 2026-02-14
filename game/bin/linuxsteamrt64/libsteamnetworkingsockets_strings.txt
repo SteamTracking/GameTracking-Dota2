@@ -534,6 +534,7 @@ $d`D-laM
 /data/src/steamnetworkingsockets/clientlib/steam/csteamnetworkingsockets_steampartner.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_connections.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_connections.h
+/data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_ice_client.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel.h
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_p2p.cpp
@@ -541,7 +542,6 @@ $d`D-laM
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_p2p_ice.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_snp.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_snp.h
-/data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_stun.cpp
 /data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_udp.cpp
 /data/src/steamnetworkingsockets/sdr/steamdatagram_network_config.cpp
 /data/src/steamnetworkingsockets/sdr/steamdatagram_network_config.h
@@ -572,6 +572,7 @@ $d`D-laM
 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz./
 08bX
 0Z@q
+0\7!6w#
 0\n(legacy_authorized_client_identity_binary
 0\n,k_ESteamDatagramMsg_GameserverSessionRequest
 0\r0#0)070;0U0Y0[0g0q0y0}0
@@ -772,7 +773,6 @@ $d`D-laM
 99Ov
 99rKJJ
 9<n\nM
-9H@T
 9IGv
 9\n\noneof_decl
 9eZI
@@ -3156,9 +3156,7 @@ Fatal Assertion Failed: EVP_EncryptFinal_ex( ctx, pOut, &nBytesWritten ) == 1
 Fatal Assertion Failed: EVP_EncryptInit_ex( ctx, nullptr, nullptr, nullptr, (const uint8*)pIV ) == 1
 Fatal Assertion Failed: EVP_EncryptUpdate( ctx, nullptr, &nBytesWritten, (const uint8*)pAdditionalAuthenticationData, (int)cbAuthenticationData ) == 1
 Fatal Assertion Failed: EVP_EncryptUpdate( ctx, pOut, &nBytesWritten, (const uint8*)pPlaintextData, (int)cbPlaintextData ) == 1
-Fatal Assertion Failed: EVP_PKEY_derive(ctx, bufSharedSecret, &skeylen ) == 1
 Fatal Assertion Failed: EVP_PKEY_derive_init(ctx) == 1
-Fatal Assertion Failed: EVP_PKEY_derive_set_peer(ctx, peerkey) == 1
 Fatal Assertion Failed: GetRawData( privateKey ) == 32
 Fatal Assertion Failed: GetRawData( publicKey ) == 32
 Fatal Assertion Failed: SetRawDataAndWipeInput( tmp, cbData )
@@ -7997,7 +7995,7 @@ legacy_your_public_port
 length is greater than %ld\n
 length too long
 level_add_node
-lib Oct  2 2025 23:55:42
+lib Feb 10 2026 01:04:29
 lib(%lu)
 librt.so.1
 libstdc++.so.6
