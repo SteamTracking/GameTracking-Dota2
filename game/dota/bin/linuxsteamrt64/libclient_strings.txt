@@ -29771,6 +29771,7 @@ $playerteam
 ===========\nShot List\n==========\n
 =O?AqP
 =Q9M
+=VEm
 =cdE
 =trF6,#
 >#>)>/>3>A>W>c>e>w>
@@ -35166,6 +35167,7 @@ ClQ(|
 Clabel::OnMouseMove
 Claim Battle Report Rewards
 Claim action result: %s\n
+ClaimAsPointsPanel
 ClaimAvailable
 ClaimButton
 ClaimDieParticle
@@ -37873,6 +37875,7 @@ DOTAFrontPageMonsterHunterRetryRequest
 DOTAFrontPageSeasonalRewardsQuarteroEaster
 DOTAFrontPageSeasonalRewardsQuarteroFaceMouseOut
 DOTAFrontPageSeasonalRewardsQuarteroFaceMouseOver
+DOTAFrontPageSeasonalRewardsQuarteroShowRewardTier
 DOTAFrontPageSeasonalRewardsSetLevel
 DOTAFrontPageSeasonalRewardsSetNextUnclaimedLevelWithVNContent
 DOTAFrontpage10thAnniversaryEvent
@@ -38749,6 +38752,7 @@ DOTAItemImage
 DOTAItemNextModel
 DOTAItemPickerCancelled
 DOTAItemPickerChoice
+DOTAItemPickerItemClaimPointsAlternative
 DOTAItemPickerItemDefSelected
 DOTAItemPickerItemSelected
 DOTAItemReceivedAcceptClicked
@@ -53957,6 +53961,7 @@ NoPeers
 NoPlayer
 NoPlus
 NoPointsScored
+NoPortraitBlur
 NoPreLoad
 NoPrediction
 NoPreviousResult
@@ -55915,11 +55920,13 @@ PodsVisible
 Point entity.
 PointChangeLabel
 PointProgressBar
+PointsClaimButton
 PointsLeaderList
 PointsLeaderListContainer
 PointsParticlesOverlay
 PointsPerLevelLabel
 PointsProgressBar
+PointsValue
 Pole vector (raw dir: {%.2f, %.2f, %.2f})
 Policy Qualifier CPS
 Policy Qualifier User Notice
@@ -57935,6 +57942,7 @@ RewardSet
 RewardSetDetailedPreview
 RewardSetPreview
 RewardSquare
+RewardTier
 RewardToken
 RewardTokensContainer
 RewardTooltip
@@ -57949,6 +57957,7 @@ RewardWitness
 Reward_%d
 Reward_%i
 Reward_%s
+Reward_CenterHero
 Reward_fantasy
 Reward_fantasy_and_bingo
 Reward_legacychatwheel
@@ -59632,6 +59641,7 @@ ShakeWindow
 Shapes key is not valid in ward placement file\n
 Shard
 ShardAbility
+ShardClaimEnabled
 ShardExclusive
 ShardPurchaseTime
 ShardPurchaseWinrate
@@ -62113,9 +62123,11 @@ Tier%dComplete
 Tier%dHeroes
 Tier%dInProgress
 Tier1
+Tier1Button
 Tier1Complete
 Tier1InProgress
 Tier2
+Tier2Button
 Tier2Complete
 Tier2InProgress
 Tier3
@@ -70181,6 +70193,7 @@ dota_prop_customtexture
 dota_protector_spawned
 dota_pvp
 dota_pvp_tiled
+dota_quartero_show_page: invalid event ID specified! Use either EVENT_ID_XXXX form or the actual number\n
 dota_quest_started
 dota_quick_buy_changed
 dota_random_wheel_speed
@@ -71177,6 +71190,7 @@ exposurecompensation
 exposuresmoothingrange
 exposurespeeddown
 exposurespeedup
+expression_untiL_speak
 expressions
 expressions/%s.vfe
 exptext
@@ -82479,6 +82493,7 @@ no_team_2
 no_team_2_text
 no_title
 no_tutorial
+noblurotherportrait
 nocompendiumborder
 nodamageforces
 node1id
@@ -84309,6 +84324,12 @@ particles/ui/events/seasonal_reward_line/fall/hud_seasonal_reward_line_level_oct
 particles/ui/events/seasonal_reward_line/fall/hud_seasonal_reward_line_octagon_idle_over.vpcf
 particles/ui/events/seasonal_reward_line/fall/hud_seasonal_reward_line_octagon_idle_under.vpcf
 particles/ui/events/seasonal_reward_line/fall/ui_godrays_soft_glow.vpcf
+particles/ui/events/seasonal_reward_line/spring/hud_seasonal_reward_line_level_octagon_levelup.vpcf
+particles/ui/events/seasonal_reward_line/spring/hud_seasonal_reward_line_level_octagon_levelup_background.vpcf
+particles/ui/events/seasonal_reward_line/spring/ui_godrays_soft_glow.vpcf
+particles/ui/events/seasonal_reward_line/summer/hud_seasonal_reward_line_level_octagon_levelup.vpcf
+particles/ui/events/seasonal_reward_line/summer/hud_seasonal_reward_line_level_octagon_levelup_background.vpcf
+particles/ui/events/seasonal_reward_line/summer/ui_godrays_soft_glow.vpcf
 particles/ui/events/seasonal_reward_line/winter/hud_seasonal_reward_line_level_octagon_levelup.vpcf
 particles/ui/events/seasonal_reward_line/winter/hud_seasonal_reward_line_level_octagon_levelup_background.vpcf
 particles/ui/events/seasonal_reward_line/winter/hud_seasonal_reward_line_octagon_idle_over.vpcf
@@ -85573,6 +85594,7 @@ pointer<%s>
 pointer<%s> differ (net %s - pred %s)
 pointer<%s> types differ (net %s - pred %s)
 points
+points_alternative
 points_amount
 points_assist
 points_available
@@ -86046,6 +86068,8 @@ pulse_point_template_entities_suggestion
 pulse_runtime_lib
 pulse_subtype_choices
 pulse_system.dll
+punctuationdelaylong
+punctuationdelayshort
 punish_points
 purchase
 purchase_access_event
@@ -86125,6 +86149,8 @@ quartero.levelup
 quartero.node.armory_link
 quartero.node.claim
 quartero.node.replay_dialog
+quartero.tier_button.pressed
+quartero_antique
 quas_level
 quaslevel
 quaternion (%g %g %g %g)
@@ -90513,6 +90539,7 @@ summoned_units
 summons-display-mode
 super special zaug dragon offset not defined for frame %d\n
 super_rare_count
+super_special_quartero_antique
 super_sprint
 super_tickets_owned
 super_tickets_required
@@ -91037,7 +91064,9 @@ tier%d
 tier%d_item%d
 tier%d_item_count
 tier%d_score
+tier1RewardSet
 tier2
+tier2RewardSet
 tier_%d_basic_packs
 tier_%d_numitems
 tier_%d_team_packs
