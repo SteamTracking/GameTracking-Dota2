@@ -16,7 +16,7 @@ class CEntityIdentity
 	uint32 m_fDataObjectTypes;
 	// MNotSaved
 	ChangeAccessorFieldPathIndex_t m_PathIndex;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAttributeDictSaveDataOps"
 	CEntityAttributeTable* m_pAttributes;
 	// MNotSaved
 	CEntityIdentity* m_pPrev;

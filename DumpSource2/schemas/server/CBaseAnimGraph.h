@@ -8,13 +8,13 @@
 // MNetworkVarNames = "bool m_bRagdollClientSide"
 class CBaseAnimGraph : public CBaseModelEntity
 {
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAnimGraphControllerManagerSaveRestoreOps"
 	CAnimGraphControllerManager m_graphControllerManager;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
 	CAnimGraphControllerBase* m_pMainGraphController;
 	// MNetworkEnable
 	bool m_bInitiallyPopulateInterpHistory;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetChoreoServicesSaveRestoreOps"
 	IChoreoServices* m_pChoreoServices;
 	// MNetworkEnable
 	bool m_bAnimGraphUpdateEnabled;

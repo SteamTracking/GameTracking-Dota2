@@ -14,7 +14,7 @@ class CNetworkedSequenceOperation
 	// MNetworkMaxValue = 1.000000
 	// MNetworkEncodeFlags = 8
 	// MNetworkPriority = 32
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkUserGroup = "m_flCycle"
 	float32 m_flPrevCycle;
 	// MNetworkEnable
@@ -23,7 +23,7 @@ class CNetworkedSequenceOperation
 	// MNetworkMaxValue = 1.000000
 	// MNetworkEncodeFlags = 8
 	// MNetworkPriority = 32
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkUserGroup = "m_flCycle"
 	float32 m_flCycle;
 	// MNetworkEnable

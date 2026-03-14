@@ -99,6 +99,6 @@ class C_BaseModelEntity : public C_BaseEntity
 	bool m_bUseClientOverrideTint;
 	// MNetworkEnable
 	// MNetworkChangeCallback = "OnDisabledHitgroupsChanged"
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetHitgroupDisableListSaveRestoreOps"
 	uint32[1] m_bvDisabledHitGroups;
 };

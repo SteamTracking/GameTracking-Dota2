@@ -8,9 +8,9 @@
 // MNetworkVarNames = "bool m_bRagdollClientSide"
 class CBaseAnimGraph : public C_BaseModelEntity
 {
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAnimGraphControllerManagerSaveRestoreOps"
 	CAnimGraphControllerManager m_graphControllerManager;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
 	CAnimGraphControllerBase* m_pMainGraphController;
 	// MNetworkEnable
 	bool m_bInitiallyPopulateInterpHistory;

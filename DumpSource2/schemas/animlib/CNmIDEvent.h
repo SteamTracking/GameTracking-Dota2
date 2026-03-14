@@ -10,7 +10,7 @@
 //	},
 //	"m_syncID": "",
 //	"m_bClientOnly": false,
-//	"m_ID": "",
+//	"m_ID": <HIDDEN FOR DIFF>,
 //	"m_secondaryID": ""
 //}
 class CNmIDEvent : public CNmEvent

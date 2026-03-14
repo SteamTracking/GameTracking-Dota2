@@ -1,16 +1,4 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CBlockSelectionMetricEvaluator",
-//	"m_means":
-//	[
-//		0.000006
-//	],
-//	"m_standardDeviations":
-//	[
-//		0.000006
-//	],
-//	"m_flWeight": 0.000000,
-//	"m_nDimensionStartIndex": -1
-//}
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
 class CBlockSelectionMetricEvaluator : public CMotionMetricEvaluator
 {
 };

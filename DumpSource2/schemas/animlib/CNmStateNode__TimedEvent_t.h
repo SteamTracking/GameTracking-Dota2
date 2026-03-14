@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_ID": "",
+//	"m_ID": <HIDDEN FOR DIFF>,
 //	"m_flTimeValueSeconds": 0.000000,
 //	"m_comparisionOperator": "LessThanEqual"
 //}

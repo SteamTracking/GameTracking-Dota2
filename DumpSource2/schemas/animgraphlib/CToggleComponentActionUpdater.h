@@ -2,7 +2,7 @@
 //	"_class": "CToggleComponentActionUpdater",
 //	"m_componentID":
 //	{
-//		"m_id": 4294967295
+//		"m_id": <HIDDEN FOR DIFF>,
 //	},
 //	"m_bSetEnabled": true
 //}

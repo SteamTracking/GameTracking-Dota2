@@ -7,7 +7,7 @@ class CNavLinkAnimgraphVar
 	// MPropertyFriendlyName = "Animgraph Navlink Type"
 	// MPropertyDescription = "The value of the 'e_navlink_type' or 'e_navlink_type_shared' parameter that should be set on the NPC's animgraph as it starts a 'navlink' movement handshake."
 	// MPropertyAttributeEditor = "AnimGraphParamEnumValue()"
-	// MPropertyEditContextOverrideValue (UNKNOWN FOR PARSER)
+	// MPropertyEditContextOverrideValue = "ToolEditContext_ID_AnimGraphEnumName"
 	CGlobalSymbol m_sAnimGraphNavlinkType;
 	// MPropertyFriendlyName = "Alignment Degrees"
 	// MPropertyDescription = "Amount of angular slack the animation has when aligning to the navlink. 0 indicates that it must be strictly aligned."

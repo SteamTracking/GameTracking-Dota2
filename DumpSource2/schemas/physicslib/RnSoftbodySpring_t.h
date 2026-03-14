@@ -1,11 +1,4 @@
-// MGetKV3ClassDefaults = {
-//	"m_nParticle":
-//	[
-//		0,
-//		0
-//	],
-//	"m_flLength": 0.000000
-//}
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
 class RnSoftbodySpring_t
 {
 	uint16[2] m_nParticle;

@@ -86,6 +86,6 @@ class CBaseModelEntity : public CBaseEntity
 	CNetworkViewOffsetVector m_vecViewOffset;
 	// MNetworkEnable
 	// MNetworkChangeCallback = "OnDisabledHitgroupsChanged"
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetHitgroupDisableListSaveRestoreOps"
 	uint32[1] m_bvDisabledHitGroups;
 };

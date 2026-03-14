@@ -8,7 +8,7 @@
 //	"m_eParamType": "ANIMPARAM_UNKNOWN",
 //	"m_hScript":
 //	{
-//		"m_id": 4294967295
+//		"m_id": <HIDDEN FOR DIFF>,
 //	}
 //}
 class CExpressionActionUpdater : public CAnimActionUpdater

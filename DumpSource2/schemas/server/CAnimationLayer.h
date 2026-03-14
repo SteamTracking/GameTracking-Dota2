@@ -30,7 +30,7 @@ class CAnimationLayer
 	GameTime_t m_flKillStartTime;
 	float32 m_flKillRate;
 	GameTime_t m_flLayerSuppressChangeTime;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "ActivityDataOps"
 	int32 m_nActivity;
 	int32 m_nPriority;
 	float32 m_flLastEventCycle;

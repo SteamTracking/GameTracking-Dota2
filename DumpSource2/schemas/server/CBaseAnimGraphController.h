@@ -16,7 +16,7 @@
 // MNetworkVarNames = "ResourceId_t m_vecExternalClipIds"
 class CBaseAnimGraphController : public CSkeletonAnimationController
 {
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetAnimGraphSaveRestoreOps"
 	CSmartPtr< IAnimationGraphInstance > m_pAnimGraphInstance;
 	ExternalAnimGraphHandle_t m_nNextExternalGraphHandle;
 	CUtlVector< CGlobalSymbol > m_vecSecondarySkeletonNames;

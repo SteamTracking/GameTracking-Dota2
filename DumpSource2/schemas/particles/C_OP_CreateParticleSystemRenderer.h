@@ -14,7 +14,7 @@
 //		"m_flRandomMin": 0.000000,
 //		"m_flRandomMax": 1.000000,
 //		"m_bHasRandomSignFlip": false,
-//		"m_nRandomSeed": -1,
+//		"m_nRandomSeed": <HIDDEN FOR DIFF>,
 //		"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //		"m_strSnapshotSubset": "",
 //		"m_flLOD0": 0.000000,
@@ -178,7 +178,7 @@
 //			"m_flRandomMin": 0.000000,
 //			"m_flRandomMax": 1.000000,
 //			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": -1,
+//			"m_nRandomSeed": <HIDDEN FOR DIFF>,
 //			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //			"m_strSnapshotSubset": "",
 //			"m_flLOD0": 0.000000,
@@ -253,7 +253,7 @@
 //			"m_flRandomMin": 0.000000,
 //			"m_flRandomMax": 1.000000,
 //			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": -1,
+//			"m_nRandomSeed": <HIDDEN FOR DIFF>,
 //			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //			"m_strSnapshotSubset": "",
 //			"m_flLOD0": 0.000000,
@@ -328,7 +328,7 @@
 //			"m_flRandomMin": 0.000000,
 //			"m_flRandomMax": 1.000000,
 //			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": -1,
+//			"m_nRandomSeed": <HIDDEN FOR DIFF>,
 //			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //			"m_strSnapshotSubset": "",
 //			"m_flLOD0": 0.000000,
@@ -403,7 +403,7 @@
 //			"m_flRandomMin": 0.000000,
 //			"m_flRandomMax": 1.000000,
 //			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": -1,
+//			"m_nRandomSeed": <HIDDEN FOR DIFF>,
 //			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //			"m_strSnapshotSubset": "",
 //			"m_flLOD0": 0.000000,
@@ -508,7 +508,7 @@ class C_OP_CreateParticleSystemRenderer : public CParticleFunctionRenderer
 	CUtlLeanVector< CPAssignment_t > m_vecCPs;
 	// MPropertyDescription = "Effect Config"
 	// MPropertyAttributeEditor = "ParticleConfigName()"
-	// MPropertyEditContextOverrideKey (UNKNOWN FOR PARSER)
+	// MPropertyEditContextOverrideKey = "ToolEditContext_ID_VPCF"
 	// MPropertyFriendlyName = "Particle Config"
 	CUtlString m_szParticleConfig;
 	// MPropertyFriendlyName = "Aggregation Position"

@@ -76,61 +76,61 @@ class CAnimGraphNetworkedVariables
 	C_NetworkUtlVectorBase< CGlobalSymbol > m_PredNetGlobalSymbolVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOBoolVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetBoolVariables"
 	C_NetworkUtlVectorBase< uint32 > m_OwnerOnlyPredNetBoolVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOByteVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetByteVariables"
 	C_NetworkUtlVectorBase< uint8 > m_OwnerOnlyPredNetByteVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOUInt16VarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetUInt16Variables"
 	C_NetworkUtlVectorBase< uint16 > m_OwnerOnlyPredNetUInt16Variables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOIntVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetIntVariables"
 	C_NetworkUtlVectorBase< int32 > m_OwnerOnlyPredNetIntVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOUInt32VarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetUInt32Variables"
 	C_NetworkUtlVectorBase< uint32 > m_OwnerOnlyPredNetUInt32Variables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOUInt64VarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetUInt64Variables"
 	C_NetworkUtlVectorBase< uint64 > m_OwnerOnlyPredNetUInt64Variables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOFloatVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetFloatVariables"
 	C_NetworkUtlVectorBase< float32 > m_OwnerOnlyPredNetFloatVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOVectorVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetVectorVariables"
 	C_NetworkUtlVectorBase< Vector > m_OwnerOnlyPredNetVectorVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOQuaternionVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetQuaternionVariables"
 	C_NetworkUtlVectorBase< Quaternion > m_OwnerOnlyPredNetQuaternionVariables;
 	// MNetworkEnable
 	// MNetworkUserGroup = "animationgraph"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	// MNetworkChangeCallback = "OnNetOOGlobalSymbolVarChanged"
 	// MNetworkAlias = "m_OwnerOnlyPredNetGlobalSymbolVariables"
 	C_NetworkUtlVectorBase< CGlobalSymbol > m_OwnerOnlyPredNetGlobalSymbolVariables;

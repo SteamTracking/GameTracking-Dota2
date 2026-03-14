@@ -1,5 +1,5 @@
 class CEntityIOOutput
 {
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetVariantSaveDataOps"
 	CVariantBase< CVariantDefaultAllocator > m_Value;
 };

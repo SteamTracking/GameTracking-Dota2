@@ -53,7 +53,7 @@ class CBaseEntity : public CEntityInstance
 	// MNetworkPriority = 48
 	CBodyComponent* m_CBodyComponent;
 	CNetworkTransmitComponent m_NetworkTransmitComponent;
-	// MSaveOpsForField (UNKNOWN FOR PARSER)
+	// MSaveOpsForField = "GetThinkContextSaveDataOps"
 	CUtlVector< thinkfunc_t > m_aThinkFunctions;
 	// MNotSaved
 	int32 m_iCurrentThinkContext;
@@ -100,7 +100,7 @@ class CBaseEntity : public CEntityInstance
 	CUtlSymbolLarge m_iszDamageFilterName;
 	float32 m_flMoveDoneTime;
 	// MNetworkEnable
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	CUtlStringToken m_nSubclassID;
 	// MNetworkEnable
 	// MNetworkPriority = 0
@@ -110,7 +110,7 @@ class CBaseEntity : public CEntityInstance
 	// MNetworkEnable
 	// MNetworkPriority = 1
 	// MNetworkSerializer = "simulationTimeSerializer"
-	// MNetworkSendProxyRecipientsFilter (UNKNOWN FOR PARSER)
+	// MNetworkSendProxyRecipientsFilter = "(NULL)"
 	float32 m_flSimulationTime;
 	// MNetworkEnable
 	GameTime_t m_flCreateTime;
