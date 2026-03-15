@@ -1,7 +1,6 @@
 %d: size %d
 (unsigned)value == value
 ----- Group
-.00cfg
 .?AUbase_node@circular_doubly_linked_list_with_sentinel@r1@detail@tbb@@
 .?AUresume_task@suspend_point_type@r1@detail@tbb@@
 .?AUtask_info@r1@detail@tbb@@
@@ -17,29 +16,22 @@
 .?AV?$wait_node@Umarket_context@r1@detail@tbb@@@r1@detail@tbb@@
 .?AV?$wait_node@_K@r1@detail@tbb@@
 .?AVallowed_parallelism_control@r1@detail@tbb@@
-.?AVbad_alloc@std@@
-.?AVbad_array_new_length@std@@
 .?AVbad_last_alloc@r1@detail@tbb@@
 .?AVclient@rml@@
 .?AVcontrol_storage@r1@detail@tbb@@
 .?AVdelegate_base@d1@detail@tbb@@
 .?AVdelegated_task@r1@detail@tbb@@
-.?AVexception@std@@
 .?AVinvalid_argument@std@@
-.?AVlength_error@std@@
 .?AVlifetime_control@r1@detail@tbb@@
-.?AVlogic_error@std@@
 .?AVmarket@r1@detail@tbb@@
 .?AVmissing_wait@r1@detail@tbb@@
 .?AVno_assign@d0@detail@tbb@@
 .?AVno_copy@d0@detail@tbb@@
 .?AVnuma_binding_observer@r1@detail@tbb@@
-.?AVout_of_range@std@@
 .?AVpermit_manager@r1@detail@tbb@@
 .?AVpm_client@r1@detail@tbb@@
 .?AVprivate_server@rml@r1@detail@tbb@@
 .?AVresume_node@r1@detail@tbb@@
-.?AVruntime_error@std@@
 .?AVserver@rml@@
 .?AVstack_size_control@r1@detail@tbb@@
 .?AVstage_task@r1@detail@tbb@@
@@ -56,52 +48,9 @@
 .?AVthread_request_observer@r1@detail@tbb@@
 .?AVthread_request_serializer@r1@detail@tbb@@
 .?AVthread_request_serializer_proxy@r1@detail@tbb@@
-.?AVtype_info@@
 .?AVunsafe_wait@r1@detail@tbb@@
 .?AVuser_abort@r1@detail@tbb@@
 .?AVversioned_object@rml@@
-.CRT$XCA
-.CRT$XCU
-.CRT$XCZ
-.CRT$XIA
-.CRT$XIC
-.CRT$XIZ
-.CRT$XLA
-.CRT$XLZ
-.CRT$XPA
-.CRT$XPZ
-.CRT$XTA
-.CRT$XTZ
-.bss
-.data
-.data$r
-.edata
-.idata$2
-.idata$3
-.idata$4
-.idata$5
-.idata$6
-.pdata
-.rdata
-.rdata$T
-.rdata$r
-.rdata$zzzdbg
-.rsrc$01
-.rsrc$02
-.rtc$IAA
-.rtc$IZZ
-.rtc$TAA
-.rtc$TZZ
-.text$di
-.text$mn
-.text$mn$00
-.text$x
-.text$yd
-.tls
-.tls$
-.tls$ZZZ
-.xdata
-.xdata$x
 2021.12.0
 ?_Execute_once@std@@YAHAEAUonce_flag@1@P6AHPEAX1PEAPEAX@Z1@Z
 ?_Throw_C_error@std@@YAXH@Z
@@ -211,7 +160,6 @@ ALLOCATOR
 Assertion %s failed (located in the %s function, line in file: %d)\n
 Attempt to exceed implementation defined length limits
 C:\temp\onetbb-ci\msvc_19.16_cxx14_64_md_relwithdebinfo\tbb12.pdb
-CloseHandle
 ConvertThreadToFiberEx
 CreateEventExA
 CreateEventExW
@@ -219,69 +167,27 @@ CreateEventW
 CreateFiber
 CreateSemaphoreExA
 CreateSemaphoreExW
-DeleteCriticalSection
 DeleteFiber
 Detailed description: %s\n
-EnterCriticalSection
 Failed to destroy filter TLS
-FreeLibrary
-GCTL
 GetActiveProcessorCount
 GetActiveProcessorGroupCount
-GetCurrentProcess
-GetCurrentProcessId
-GetCurrentThread
-GetCurrentThreadId
-GetCurrentThreadStackLimits
-GetEnvironmentVariableA
-GetLastError
 GetModuleFileName
-GetModuleFileNameA
 GetModuleHandleEx
-GetModuleHandleExA
-GetModuleHandleW
 GetNativeSystemInfo
-GetProcAddress
-GetProcessAffinityMask
-GetStartupInfoW
-GetSystemInfo
-GetSystemTimeAsFileTime
 GetThreadGroupAffinity
 INTEL_ITTNOTIFY_GROUPS
 INTEL_LIBITTNOTIFY64
 ITT-API-Version 3.24.2 (20230630)
 Illegal tagged_msg cast
 Index out of requested size range
-InitializeConditionVariable
-InitializeCriticalSection
-InitializeCriticalSectionAndSpinCount
-InitializeSListHead
 Invalid hash load factor
-IsDebuggerPresent
-IsProcessorFeaturePresent
 IsThreadAFiber
-KERNEL32.dll
 KMP_FOR_TCHECK
 KMP_FOR_TPROFILE
-Kernel32.dll
-LeaveCriticalSection
-LoadLibraryA
 MSVCP140.dll
 Processor groups
-QueryPerformanceCounter
 RML might limit the number of workers to %u while %u is requested.\n
-RSDS
-ReleaseSemaphore
-ResetEvent
-ResumeThread
-RtlCaptureContext
-RtlLookupFunctionEntry
-RtlVirtualUnwind
-SetErrorMode
-SetEvent
-SetThreadGroupAffinity
-SetUnhandledExceptionFilter
-SleepConditionVariableCS
 Stack size is limited to unsigned int range
 Step must be positive
 SwitchToFiber
@@ -294,22 +200,15 @@ TBB_runtime_interface_version
 TBB_runtime_version
 TLS not allocated for filter
 TOOLS SUPPORT
-TerminateProcess
 The constraints::core_type value is not known to the library. Use tbb::info::core_types() to get the list of possible values.
 The constraints::numa_id value is not known to the library. Use tbb::info::numa_nodes() to get the list of possible values.
-TlsAlloc
-TlsFree
-TlsGetValue
-TlsSetValue
-UnhandledExceptionFilter
-Unknown exception
+UNAVAILABLE
 Unsafe to wait further
 User-initiated abort has terminated this operation
 VCRUNTIME140.dll
-WaitForSingleObjectEx
-WakeAllConditionVariable
 Wrong max_threads_per_core constraints field value.
 \n@(#) $Revision$\n
+_CxxThrowException
 _Mtx_destroy_in_situ
 _Mtx_init_in_situ
 _Mtx_lock
@@ -527,9 +426,11 @@ _initialize_narrow_environment
 _initialize_onexit_table
 _initterm
 _initterm_e
+_purecall
 _register_onexit_function
 _seh_filter_dll
 _wcsdup
+abort
 api-ms-win-crt-environment-l1-1-0.dll
 api-ms-win-crt-heap-l1-1-0.dll
 api-ms-win-crt-runtime-l1-1-0.dll
@@ -538,9 +439,7 @@ api-ms-win-crt-string-l1-1-0.dll
 arena pointer should not be null
 arrays
 async_node
-bad allocation
 bad allocation in previous or concurrent attempt
-bad array new length
 broadcast_node
 buffer_node
 c.core_type == system_topology::automatic || (is_topology_initialized && std::find(core_types_begin, core_types_end, c.core_type) != core_types_end)
@@ -556,10 +455,13 @@ create
 deque<T> too long
 destroy
 failed to destroy task scheduler TLS: %s
+fflush
 finalize_impl
+fputs
 fsync
 function_node
 gc.my_param < d1::global_control::parameter_max
+getenv
 global_control
 global_control_active_value
 global_control_active_value_unsafe
@@ -587,9 +489,13 @@ lhs->my_param < d1::global_control::parameter_max
 libittnotify.dll
 limiter_node
 lstrcmpA
+malloc
 map/set<T> too long
 mark
 max_allowed_parallelism cannot be 0.
+memcpy
+memmove
+memset
 module
 multifunction_node
 my_value>0
@@ -598,7 +504,6 @@ num_resource_strings
 object_name
 oneTBB: %s\t%s\n
 oneTBB: SPECIFICATION VERSION\t1.0\noneTBB: VERSION\t\t2021.12.0\noneTBB: INTERFACE VERSION\t12120\noneTBB: TBB_USE_DEBUG\t0\noneTBB: TBB_USE_ASSERT\t0\n
-operator ()
 output_port
 output_port_0
 output_port_1
@@ -623,9 +528,13 @@ scalable_malloc
 sequencer_node
 split_node
 stitch
+strerror
 strncat
 strncpy
 strncpy_s
+strnlen
+strrchr
+strspn
 structure
 sync
 tbb12.dll
@@ -663,6 +572,5 @@ thread_data pointer should not be null
 thread_monitor::launch: _beginthreadex failed\n
 trying to finalize with null handle
 user_event
-vector<T> too long
 wait() was not called on the structured_task_group
 write_once_node

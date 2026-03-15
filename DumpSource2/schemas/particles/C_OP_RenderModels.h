@@ -2358,7 +2358,7 @@ class C_OP_RenderModels : public CParticleFunctionRenderer
 	// MPropertyFriendlyName = "allow approximate transforms (cpu optimizaiton)"
 	bool m_bAllowApproximateTransforms;
 	// MPropertyFriendlyName = "render attribute"
-	char[4096] m_szRenderAttribute;
+	char[260] m_szRenderAttribute;
 	// MPropertyStartGroup = "+Renderer Modifiers"
 	// MPropertyFriendlyName = "Radius Scale"
 	// MPropertySortPriority = 700

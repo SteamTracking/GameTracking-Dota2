@@ -1483,6 +1483,9 @@ cojob_lock_hold_warning_threshold_ms 10000 (developmentonly gamedll clientdll re
 cojob_max_no_yield_time_us 3000 (developmentonly gamedll clientdll replicated defensive)
 	Will spew if a job takes longer than the specified number of microseconds
 
+colviz_flags 0 (gamedll hidden replicated cheat)
+	ColViz flags.
+
 comic_viewer_popup_show_internal_page false (clientdll cheat)
 	Show the internal page number in the comic viewer popup
 
@@ -1660,6 +1663,9 @@ custom_game_overview_suppress_friend_data false (developmentonly clientdll defen
 customgamesetup_test_parties false (developmentonly gamedll cheat)
 	<no description>
 
+d3d_max_feature_level "<Not set>" (developmentonly defensive)
+	Report the maximum D3D feature level available.
+
 debug_async_data_panel_override_state -1 (developmentonly clientdll)
 	Force ALL async data panels to be in a specific state. -1:disabled, 0:failure, 1:loading, 2:success
 
@@ -1821,6 +1827,9 @@ dota_ability_frogrock_show_overhead_hud false (clientdll archive per_user)
 
 dota_ability_legacy_mode_quick_cast false (clientdll archive per_user)
 	Enables quickcast for legacy keys.
+
+dota_ability_projection_data_file "scripts/ability_projection.txt" (clientdll archive)
+	<no description>
 
 dota_ability_quick_cast true (clientdll archive per_user)
 	<no description>
@@ -2933,6 +2942,9 @@ dota_cheap_water false (developmentonly clientdll defensive)
 	<no description>
 
 dota_cheers_enable_scene_reload false (clientdll archive)
+	<no description>
+
+dota_cl_projection_enabled true (developmentonly clientdll defensive)
 	<no description>
 
 dota_claim_item_action_async_rewards_timeout_duration 20 (developmentonly clientdll defensive)
@@ -6664,7 +6676,121 @@ dota_profile_teammate_stats_sort_priorities_old "" (clientdll archive)
 dota_projectile_debug false (developmentonly gamedll cheat)
 	<no description>
 
+dota_projection_continue_offscreen_abilities true (clientdll archive)
+	<no description>
+
+dota_projection_embargo_enabled true (clientdll archive)
+	<no description>
+
+dota_projection_embargo_time 0.25 (clientdll archive)
+	<no description>
+
 dota_projection_enabled_ti6 true (gamedll archive)
+	<no description>
+
+dota_projection_failsafe_timeout 10 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_hero_pick_abilities false (clientdll archive)
+	<no description>
+
+dota_projection_hero_pick_max_time 3 (clientdll archive)
+	<no description>
+
+dota_projection_max_medium_layer 2 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_max_top_layer 1 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_multikill true (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_multikill_time 3 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_away_team_highlight_base 123 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_day 100 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_day_flipped 101 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_dire_win 106 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_dire_win_flipped 107 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_night 102 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_night_flipped 103 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_pick 112 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_radiant_win 104 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_base_layer_radiant_win_flipped 105 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_first_blood_stage_left 110 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_first_blood_stage_right 111 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_first_blood_time 3 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_game_paused 20 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_godlike 84 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_godlike_time 3 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_home_team_highlight_base 118 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_pick_highlight_stage_left 108 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_pick_highlight_stage_right 109 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_picks_transition 113 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_picks_transition_flipped 114 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_rampage 117 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_strategy_time 21 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_triple_kill 115 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_note_ultra_kill 116 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_picks_transition_time 3 (developmentonly clientdll defensive)
+	<no description>
+
+dota_projection_team_win_notes true (clientdll archive)
+	<no description>
+
+dota_projection_video_channel 0 (developmentonly clientdll defensive)
 	<no description>
 
 dota_puck_curve_orb_control_point_mod_value 10 (gamedll clientdll replicated cheat)
@@ -8743,9 +8869,6 @@ engine_show_frame_pacing false (release)
 engine_show_frame_ticks false (developmentonly defensive)
 	<no description>
 
-engine_sleep_busy_waits false (developmentonly)
-	<no description>
-
 engine_sse42 true (developmentonly defensive)
 	turn on sse4.2 optimizations in the engine
 
@@ -9996,6 +10119,9 @@ mesh_calculate_curvature_smooth_weight 1 (gamedll clientdll replicated cheat)
 
 mic_listen_while_nonfocused false (developmentonly clientdll defensive)
 	Enables the ability for the mic to remain open if the window loses focus such as when a caster tabs out to adjust settings
+
+midi_auto_connect_port -1 (clientdll archive)
+	On init, attempt to connect to the device on this port
 
 mobile_fps_increase_during_charging false (archive)
 	MOBILE_FPS_CONTROL: If true we increase framerate limit while charging
@@ -11335,6 +11461,9 @@ particle_cluster_nodraw false (developmentonly gamedll clientdll replicated defe
 particle_cluster_use_collision_hulls true (developmentonly gamedll clientdll replicated defensive)
 	<no description>
 
+particle_debug_creation_filter "" (developmentonly clientdll hidden replicated defensive)
+	<no description>
+
 particle_test_attach_attachment 0 (gamedll cheat)
 	Attachment index for attachment mode
 
@@ -11641,9 +11770,6 @@ r_add_views_in_pre_output false (developmentonly defensive)
 r_allow_all_objects_to_refract false (clientdll cheat)
 	<no description>
 
-r_allow_low_gpu_memory_mode true (release)
-	Allow Low GPU Memory mode (i.e. when building maps).
-
 r_allow_onesweep_gpusort true (developmentonly defensive)
 	<no description>
 
@@ -11666,9 +11792,6 @@ r_aspectratio 0 (developmentonly defensive)
 	<no description>
 
 r_async_shader_compile_notify_frequency 10 (developmentonly)
-	<no description>
-
-r_cache_pool_allocations true (developmentonly)
 	<no description>
 
 r_character_decal_monitor_draw_frustum false (developmentonly)
@@ -11935,6 +12058,12 @@ r_dota_wind_min_high_freq_strength 25 (developmentonly clientdll defensive)
 r_draw3dskybox true (developmentonly clientdll defensive)
 	<no description>
 
+r_draw_first_tri_only false (cheat)
+	<no description>
+
+r_draw_instances true (cheat)
+	<no description>
+
 r_draw_overlays true (developmentonly defensive)
 	<no description>
 
@@ -11973,6 +12102,12 @@ r_drawviewmodel true (clientdll cheat)
 
 r_drawworld true (cheat)
 	Render the world.
+
+r_dx11_debug_clean false (release)
+	Aggressively unbind bound resources to cleanup DX11 debug warnings.
+
+r_dx11_software_cmd_lists true (developmentonly defensive)
+	Enable Software Command lists for DX11 (Avoid using deferred contexts)
 
 r_enable_rigid_animation false (developmentonly clientdll)
 	<no description>
@@ -12051,6 +12186,9 @@ r_flashlightvisualizetrace false (clientdll cheat)
 
 r_flush_on_pooled_ib_resize true (release)
 	<no description>
+
+r_force_no_present false (cheat)
+	Force the render device to not present frames.
 
 r_force_render_frame_count 5 (developmentonly)
 	The number of frames to render when a
@@ -12163,6 +12301,9 @@ r_indirectlighting true (cheat)
 r_late_particle_job_sync false (developmentonly clientdll defensive)
 	<no description>
 
+r_legacy_vsync false (developmentonly hidden defensive)
+	Use legacy vsync mode -- for testing for a couple user machines.
+
 r_light_flickering_enabled true (developmentonly gamedll clientdll replicated defensive)
 	<no description>
 
@@ -12214,12 +12355,6 @@ r_mapextents 1444 (clientdll cheat)
 r_max_texture_pool_size 0 (developmentonly defensive)
 	Upper limit on texture pool size.
 
-r_memory_aliasing true (developmentonly)
-	Allow disabling memory aliasing in the device memory pool.  This is just intended for testing/ruling out aliasing issues.
-
-r_mipgen_compute_shader true (developmentonly defensive)
-	Use compute shader for mipgen.
-
 r_mixed_shadows_fade_in_time 0.5 (developmentonly gamedll clientdll replicated defensive)
 	<no description>
 
@@ -12250,14 +12385,23 @@ r_particle_max_detail_level 0 (reference)
 r_particle_timescale 0 (reference)
 	<no description>
 
+r_pipeline_stats_command_flush false (developmentonly defensive)
+	Experimental: Set to 1 to enable full GPU pipeline flushing after each command list.
+
+r_pipeline_stats_flush_before_sleeping false (developmentonly defensive)
+	Experimental: Set to 1 to enable GPU pipeline flushes right before the render thread sleeps to wait for more work.
+
+r_pipeline_stats_present_flush false (developmentonly defensive)
+	Experimental: Set to 1 to enable full GPU pipeline flushing after each present.
+
+r_pipeline_stats_use_flush_api true (developmentonly defensive)
+	Experimental: Set to 1 to use the ID3D11DeviceContext11::Flush() to flush the GPU pipeline instead of queries.
+
 r_pixelvisibility_partial true (cheat)
 	<no description>
 
 r_pixelvisibility_spew false (cheat)
 	<no description>
-
-r_prefer_loop_unrolling true (developmentonly defensive)
-	Prefer shader loop unrolling.
 
 r_propsmaxdist 1200 (developmentonly clientdll defensive)
 	Maximum visible distance
@@ -12300,9 +12444,6 @@ r_shadows true (cheat)
 
 r_shadowtile_waveops false (reference)
 	<no description>
-
-r_show_gpu_memory_visualizer false (developmentonly cheat menubar_item)
-	SceneSystem/Vulkan GPU Memory Visualizer
 
 r_showdebugoverlays false (cheat)
 	Set to render debug overlays
@@ -12356,6 +12497,9 @@ r_ssao_strength 1.2 (developmentonly defensive)
 	<no description>
 
 r_strip_invisible_during_sceneobject_update false (developmentonly clientdll defensive)
+	<no description>
+
+r_suppress_redundant_state_changes true (developmentonly defensive)
 	<no description>
 
 r_test_econ_item_isolate_view false (developmentonly clientdll defensive)
@@ -12439,47 +12583,23 @@ r_threaded_particles false (reference)
 r_threaded_scene_object_update true (developmentonly clientdll defensive)
 	<no description>
 
+r_timestamp_query_multiplier 1 (developmentonly defensive)
+	Set the TIMESTAMP query cycle multiplier, for drivers that lie
+
 r_translucent true (cheat)
 	Enable rendering of translucent geometry
 
 r_update_particles_on_render_only_frames false (developmentonly clientdll defensive)
 	<no description>
 
+r_use_memory_budget_model false (developmentonly defensive)
+	Use a model of GPU memory use to determine budget rather than querying the OS.
+
 r_validate_texture_streaming false (developmentonly defensive)
 	Dumps state of texture streaming at the next frame boundary.
 
 r_vconsole_foregroundforcerender true (developmentonly defensive)
 	When VConsole is in the foreground, force all engine & tools to render
-
-r_vma_defrag_algorithm 1 (developmentonly)
-	Defrag algorithm 0=Fast 1=Balanced 2=full 3=Extensive
-
-r_vma_defrag_enabled true (developmentonly)
-	<no description>
-
-r_vma_defrag_max_allocation_count_per_pass 256 (developmentonly)
-	During a VMA defrag, number of moves per pass.
-
-r_vma_defrag_max_allocation_size_per_pass 32 (developmentonly)
-	During a VMA defrag, number of MB in moves per pass.
-
-r_vma_defrag_moves_per_frame 20 (developmentonly)
-	During a VMA defrag, number of moves to process for a pass in a single frame update.
-
-r_vma_defrag_threshold_mb 256 (release)
-	<no description>
-
-r_vulkan_force_sync1 false (developmentonly)
-	<no description>
-
-r_vulkan_sw_cmd_lists true (release)
-	Enable Software Command lists for Vulkan
-
-r_vulkan_validation_filter_in "" (developmentonly)
-	Comma delimited list of stristr filters for including validation messages.  Only messages matching filter will be included.
-
-r_vulkan_validation_filter_out "" (developmentonly)
-	Comma delimited list of stristr filters for excluding validation messages.  Any messages matching filter will be excluded.
 
 r_wait_on_present false (developmentonly defensive)
 	<no description>
@@ -12598,6 +12718,9 @@ report_cliententitysim false (clientdll cheat)
 report_clientthinklist false (clientdll cheat)
 	List all clientside entities thinking and time - will report and turn itself off.
 
+report_connection_failure_percentage 0 (developmentonly defensive)
+	<no description>
+
 reset_voice_on_input_stallout false (userinfo)
 	If true, resets the input device when there was a long enough hitch between callbacks.
 
@@ -12651,12 +12774,6 @@ rr_followup_maxdist 1800 (gamedll cheat)
 
 rr_thenany_score_slop 0 (gamedll archive cheat)
 	When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered.
-
-rtx_allow_blas_compact true (developmentonly defensive)
-	<no description>
-
-rtx_allow_blas_create true (developmentonly defensive)
-	<no description>
 
 rtx_dynamic_blas true (developmentonly defensive)
 	Allow dynamic BLAS creation for geometry going through the compute shader skinning path.
@@ -13909,9 +14026,6 @@ sv_dota_custom_game_cache_lock_file_timeout 30 (developmentonly gamedll defensiv
 sv_dota_custom_game_cache_shared_folder "custom_game_cache" (developmentonly gamedll defensive)
 	Shared cache for downloaded custom game data.  (Dedicated server only)
 
-sv_dota_custom_game_cache_work_folder "" (developmentonly gamedll defensive)
-	Directory for instance-specific temp data.  If this is empty (the default), it will be set to a temp location path such as /tmp
-
 sv_dota_server_send_modifiers_using_buf_reliable true (developmentonly gamedll defensive)
 	<no description>
 
@@ -15026,24 +15140,6 @@ vprof_scope_entity_thinks false (developmentonly gamedll clientdll replicated de
 	<no description>
 
 vprof_think_limit false (developmentonly gamedll defensive)
-	<no description>
-
-vulkan_batch_size 500 (developmentonly defensive)
-	<no description>
-
-vulkan_batch_submits true (developmentonly defensive)
-	<no description>
-
-vulkan_dedicated_allocation_threshold 512 (developmentonly defensive)
-	Size (in KBs) above which textures should be allocated in dedicated memory (NV-only).
-
-vulkan_link_time_optimize_libraries true (release)
-	<no description>
-
-vulkan_pipeline_compile_spew false (developmentonly defensive)
-	<no description>
-
-vulkan_pipeline_compile_throttle_ms 0 (developmentonly defensive)
 	<no description>
 
 waiting_joined 0 (developmentonly clientdll)

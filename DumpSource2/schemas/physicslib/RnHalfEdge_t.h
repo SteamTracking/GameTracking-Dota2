@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_nNext": 0,
+//	"m_nNext": 5,
 //	"m_nTwin": 0,
 //	"m_nOrigin": 0,
 //	"m_nFace": 0

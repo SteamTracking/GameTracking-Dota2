@@ -1,0 +1,1154 @@
+                     Cost
+      -XX: Shader program -vs -ps -gs -cs -psrs -rtx -ms\n
+      -show_used_combos: Verbosely spew a line for each program and the list of combos enabled\n
+    %2d = "%s"\n
+   %s 0..0\n
+   * Dynamic Shader Compile\n
+   DynamicComboRule( 
+   Found %d materials
+   Found %d textures ( %d references ) %s MB (mem) %s MB (disk) | Mem = %s MB (streamable) %s MB (RTs) %s MB (non-mip'd non-RTs)\n\n
+   Found %d unique vfx files, %s unique shader handles\n\n
+   Found 0 materials
+   Material not loaded!\n
+   Mode "%s"
+   NOTE: Use mat_print_materials instead, and then click on the hyperlink for a given material. That will call this concommand with the correctly formatted argument.\n
+   StaticComboRule( 
+   Usage:
+   mat_print_shader_info: Error! Shader "%s" not loaded!\n
+  %2d: FontHandle:0x%8.8llx, %s, %s, font:%s, tall:%f.0%s\n
+ %7sK
+ %f %f %f %f
+ ( %d references )
+ (Fallback Shader)
+ (NumShaderHandles 
+ All %d static combos set to zero
+ All zero
+ No dynamic combos for this shader
+ No static combos for this shader
+ [Error Resource]
+ [Fallback Resource]
+ [No Valid Layers]
+ [Not Loaded]
+ [error.vfx]
+ mat_print_material_info <mod\path\file.vmat>\n
+ mat_print_shader_info <file.vfx> [options]\n
+ using substring "%s"
+#line
+%10s
+%15.15s 
+%6d %-50s
+%6s %-50s %5s %5s %5s %5s %5s %5s %10s\n
+%6s %-50s %5s %5s %5s %5s %5s %5s %5s %10s\n
+%s --------------------------------\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match VMatrix value set in another mode.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match Vector value set in another mode.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match Vector2D value set in another mode.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match Vector4D value set in another mode.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match value set in another mode %d != %d.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match value set in another mode %f != %f.\n
+%s Shader: %s attribute '%s' set in mode '%s' does not match value set in another mode %s != %s.\n
+%s(): Deprecated and unimplemented. Fix client code to use new postprocessing resources.\n
+%s: Input vector has incorrect length\n
+%s: Warning: No compile targets specified! Shader will not be compiled!\n
+%s: maximum capacity of %llu exceeded by request %llu (currently %llu)\n
+%s[line %d:%d] 
+%s__font_page_%d
+%s_intermediate_%d.vtex
+%vsB,
+'exists'
+'return'
+(On the line reading %s):\n
+*** CVfx::StartupSanityCheck(7005): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** Error adding variable to array!\n
+*** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
+*** Error! Multiple dynamic combos are putting the same constant (%s) in different descriptor sets. This won't work correctly.\n
+*** Error! Multiple dynamic combos are putting the same constant (%s) in different locations. This shouldn't happen (offset %d != %d).\n
+*** Error! Multiple dynamic combos are putting the same sampler state (%s) in different bindless sampler indices. This won't work correctly.\n
+*** Error! Multiple dynamic combos are putting the same texure (%s) in different descriptor set slots. This won't work correctly.\n
+*** Problem remapping texture reference!\n
+*** UNKNOWN ***
+*** VfxInit(220): Don't call VfxInit() more than once!
+*** VfxInit(228): g_pFullFileSystem must be set up before calling VfxInit!\n
+*** VfxReadAndPrepForCrc(1253): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1263): Error masking unused parts for "%s"!\n\n
+, GetFont used
+, LoadFont used
+--------------------------------------------------
+-psrs
+-rtx
+-show_none
+-show_used_combos
+.?AUAsyncProcessResult@CBaseIntrospectedToKV3TypeManager@@
+.?AUAsyncStaticComboResult_t@CMaterial2@@
+.?AV<lambda_1>@?1??SetRenderStateForRenderablePassWithCommandBuffers@CMaterialLayer@@QEBAXPEBVCRenderAttributes@@0PEAVIRenderContext@@PEAURenderInputLayout_t__@@AEBUMaterialRenderablePass_t@@PEBURsStencilStateOverride_t@@PEBURsDepthBiasStateOverride_t@@HI@Z@
+.?AV<lambda_1>@?BD@??IssueAsyncLoadRequests@CMaterial2@@AEAAXAEAV?$CUtlLeanVector@UMaterialStaticComboLoadRequest_t@@HVCMemAllocAllocator@@@@V?$CWeakHandle@UInfoForResourceTypeIMaterial2@@@@W4ShaderLoadMode_t@@@Z@
+.?AV<lambda_2>@?BD@??IssueAsyncLoadRequests@CMaterial2@@AEAAXAEAV?$CUtlLeanVector@UMaterialStaticComboLoadRequest_t@@HVCMemAllocAllocator@@@@V?$CWeakHandle@UInfoForResourceTypeIMaterial2@@@@W4ShaderLoadMode_t@@@Z@
+.?AV<lambda_2>@?CK@??SetRenderStateForRenderablePassWithCommandBuffers@CMaterialLayer@@QEBAXPEBVCRenderAttributes@@0PEAVIRenderContext@@PEAURenderInputLayout_t__@@AEBUMaterialRenderablePass_t@@PEBURsStencilStateOverride_t@@PEBURsDepthBiasStateOverride_t@@HI@Z@
+.?AV?$CBaseAppSystem@VIFontManager@@@@
+.?AV?$CBaseAppSystem@VIMaterialSystem2@@@@
+.?AV?$CBaseAppSystem@VIMaterialSystem2Utils@@@@
+.?AV?$CBaseAppSystem@VIPostProcessingSystem@@@@
+.?AV?$CBaseAppSystem@VITextLayout@@@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??CompileComboAndGetVariables_DynamicShaderCompile@@YA_NAEAV?$CUtlVector@UDynamicShaderCompileTask_t@@HV?$CUtlVectorMemory_Growable@UDynamicShaderCompileTask_t@@H$0A@@@@@P6AXH_NH@Z@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1??CompileAllShadersForStaticCombo@@YA_N_KAEAVCVfxStaticComboData@@AEAVCVfx@@W4VfxProgram_t@@PEAVIVfx@@@Z@@@YAXHHPEBD$$QEAV1?1??CompileAllShadersForStaticCombo@@YA_N_KAEAVCVfxStaticComboData@@AEAVCVfx@@W4VfxProgram_t@@PEAVIVfx@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CTier0AppSystem@VIFontManager@@$0A@@@
+.?AV?$CTier0AppSystem@VIMaterialSystem2@@$0A@@@
+.?AV?$CTier0AppSystem@VIMaterialSystem2Utils@@$0A@@@
+.?AV?$CTier0AppSystem@VIPostProcessingSystem@@$0A@@@
+.?AV?$CTier0AppSystem@VITextLayout@@$0A@@@
+.?AV?$CTier1AppSystem@VIFontManager@@$0A@@@
+.?AV?$CTier1AppSystem@VIMaterialSystem2@@$0A@@@
+.?AV?$CTier1AppSystem@VIMaterialSystem2Utils@@$0A@@@
+.?AV?$CTier1AppSystem@VIPostProcessingSystem@@$0A@@@
+.?AV?$CTier1AppSystem@VITextLayout@@$0A@@@
+.?AV?$CTier2AppSystem@VIFontManager@@$0A@@@
+.?AV?$CTier2AppSystem@VIMaterialSystem2@@$0A@@@
+.?AV?$CTier2AppSystem@VIMaterialSystem2Utils@@$0A@@@
+.?AV?$CTier2AppSystem@VIPostProcessingSystem@@$0A@@@
+.?AV?$CTier2AppSystem@VITextLayout@@$0A@@@
+.?AV?$CTypesafeIntrospectedToKV3TypeManager@$0HEGBGNHG@UMaterialResourceData_t@@@@
+.?AV?$CTypesafeIntrospectedToKV3TypeManager@$0HEHDGPHAHG@UPostProcessingResource_t@@@@
+.?AV?$IOpCodeHandler@H@@
+.?AV?$IOpEvaluator@H@@
+.?AV?$ITSHashConstructor@PEAVCVfx@@@@
+.?AV?$_Func_base@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_base@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@PEAVIAsyncResourceDataRequest@@@std@@
+.?AV?$_Func_base@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??SetRenderStateForRenderablePassWithCommandBuffers@CMaterialLayer@@QEBAXPEBVCRenderAttributes@@0PEAVIRenderContext@@PEAURenderInputLayout_t__@@AEBUMaterialRenderablePass_t@@PEBURsStencilStateOverride_t@@PEBURsDepthBiasStateOverride_t@@HI@Z@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?BD@??IssueAsyncLoadRequests@CMaterial2@@AEAAXAEAV?$CUtlLeanVector@UMaterialStaticComboLoadRequest_t@@HVCMemAllocAllocator@@@@V?$CWeakHandle@UInfoForResourceTypeIMaterial2@@@@W4ShaderLoadMode_t@@@Z@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@PEAVIAsyncResourceDataRequest@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?BD@??IssueAsyncLoadRequests@CMaterial2@@AEAAXAEAV?$CUtlLeanVector@UMaterialStaticComboLoadRequest_t@@HVCMemAllocAllocator@@@@V?$CWeakHandle@UInfoForResourceTypeIMaterial2@@@@W4ShaderLoadMode_t@@@Z@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?CK@??SetRenderStateForRenderablePassWithCommandBuffers@CMaterialLayer@@QEBAXPEBVCRenderAttributes@@0PEAVIRenderContext@@PEAURenderInputLayout_t__@@AEBUMaterialRenderablePass_t@@PEBURsStencilStateOverride_t@@PEBURsDepthBiasStateOverride_t@@HI@Z@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAXUmonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Ref_count_obj2@UDecompressedComboData_t@CVfxStaticComboData@@@std@@
+.?AVCAllocatorUtils@?1??AllocateAndLoad@?$CTypesafeIntrospectedToKV3TypeManager@$0HEGBGNHG@UMaterialResourceData_t@@@@UEAAPEAXAEAVCKV3TransferLoadContext@@PEBUResourceBindingBase_t@@PEAVIRD_RegisterResourceDataUtils@@@Z@
+.?AVCAllocatorUtils@?1??AllocateAndLoad@?$CTypesafeIntrospectedToKV3TypeManager@$0HEHDGPHAHG@UPostProcessingResource_t@@@@UEAAPEAXAEAVCKV3TransferLoadContext@@PEBUResourceBindingBase_t@@PEAVIRD_RegisterResourceDataUtils@@@Z@
+.?AVCBaseIntrospectedToKV3TypeManager@@
+.?AVCBaseQueuedRenderable@@
+.?AVCCompileTargetExprOpCodeHandler@@
+.?AVCCompileTargetExprStackMachineBuilder@@
+.?AVCDeallocatorUtils@?1??DeallocateDestroyCleanup@?$CTypesafeIntrospectedToKV3TypeManager@$0HEGBGNHG@UMaterialResourceData_t@@@@UEAAXPEAXPEAVIResourceDeallocatorUtils@@@Z@
+.?AVCDeallocatorUtils@?1??DeallocateDestroyCleanup@?$CTypesafeIntrospectedToKV3TypeManager@$0HEHDGPHAHG@UPostProcessingResource_t@@@@UEAAXPEAXPEAVIResourceDeallocatorUtils@@@Z@
+.?AVCDynamicShaderCompileByteCode@@
+.?AVCFontBase@@
+.?AVCFontManager@@
+.?AVCIntOpEvaluator@@
+.?AVCKV3ResourceBlockHelper@@
+.?AVCKV3Transfer_ResourceLoadInterface@@
+.?AVCLineBatchLayoutInfo@@
+.?AVCLineLayoutInfo@@
+.?AVCMaterial2@@
+.?AVCMaterialMode@@
+.?AVCMaterialSystem2@@
+.?AVCMaterialSystem2Utils@@
+.?AVCMaterialTypeManager@@
+.?AVCMeshLayoutInfo@@
+.?AVCNullShaderCreateCallbacks@@
+.?AVCPlatformFont@@
+.?AVCPostProcessingState@@
+.?AVCPostProcessingSystem@@
+.?AVCPostProcessingTypeManager@@
+.?AVCPrimitivesLayoutInfo@@
+.?AVCQueuedResetMaterialCacheRenderable@@
+.?AVCQueuedSetMaterialOrTextureRenderable@@
+.?AVCQueuedTextRenderable@@
+.?AVCSchemaRegistration_materialsystem2@@
+.?AVCShaderCreateCallbacks@@
+.?AVCTextLayout@@
+.?AVCTextureDictionary@@
+.?AVCUtlStackMachineBuilder@@
+.?AVCVfxConstructor@@
+.?AVCVfxShaderBuffer@@
+.?AVIAsyncProcessedDataResult@@
+.?AVIFontManager@@
+.?AVIKV3ResourceAllocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HEGBGNHG@UMaterialResourceData_t@@@@
+.?AVIKV3ResourceAllocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HEHDGPHAHG@UPostProcessingResource_t@@@@
+.?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HEGBGNHG@UMaterialResourceData_t@@@@
+.?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HEHDGPHAHG@UPostProcessingResource_t@@@@
+.?AVIMaterial2@@
+.?AVIMaterialMode@@
+.?AVIMaterialSystem2@@
+.?AVIMaterialSystem2Utils@@
+.?AVIPostProcessingState@@
+.?AVIPostProcessingSystem@@
+.?AVIQueuedRenderable@@
+.?AVIRenderShaderByteCode@@
+.?AVIResourceTypeManager@@
+.?AVIRuntimeShaderCreateCallbacks@@
+.?AVITextLayout@@
+.?AVITextureDictionary@@
+.eBp
+.ini
+.vcs
+.vfont
+.vfx
+.vpk:
+.vtex
+// %s - %s\n
+// Dynamic Shader Compile Enabled\n
+// Reloading all shaders -----------------------------------------------------\n
+//---------------------------------------------------------------------------//\n
+//-----------------------------------\n
+0123456789)"
+1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | BOOLLITERAL | ID | INTEGERLITERAL | HEXINTEGERLITERAL | FLOATLITERAL | COMMENT | WS );
+2\rE2t
+2\vp4
+333?+
+33s?+
+5\fu54l
+7\rE7h
+7\tV_iswcntrl
+<<unknown_mod>>\
+<Unknown font>
+<anon>/
+<anon>:
+=\t ();,\n\r<>
+A%mB,
+ANDROID_VULKAN
+ANDROID_VULKAN_4_0
+ANDROID_VULKAN_4_1
+ANDROID_VULKAN_5_0
+A\fEA4
+AddFontMemResourceEx
+AddRenderStateValueLoadToCommandBuffer(1761): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(1802): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(1888): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(1896): Invalid variable source type for render state variable %s in material "%s"!\n
+AddRenderStateVariableToCommandBuffer(1961): Unsupported render state type in material "%s"!\n
+AddRenderStateVariableToCommandBuffer(2109): Unsupported render state in material "%s"!\n
+AddSamplerStateVariableToCommandBuffer(2182): Unsupported sampler state type for "%s" in material "%s"!\n
+AddSamplerStateVariableToCommandBuffer(2204): Unsupported sampler state type for "%s" in material "%s"!\n
+All Bad! Talk to Brian and Alex. g_pRenderHardwareConfig is NULL which means we won't load this material correctly: %s\n
+All static combo permutations currently loaded:\n
+All static combos set to zero
+AllocateAndLoad failed for '%s' (%s)\n
+AllocateAndLoad failed for '%s'\n
+Allow
+Allow%d
+Allow%d( 
+Android SM 4.0 (VULKAN)
+Android SM 4.1 (VULKAN)
+Android SM 5.0 (VULKAN)
+Arial
+Attribute-based texture %s not bound for material "%s"! Missing render attribute "%s".  Context %s\n
+Attribute-based texture %s not bound for material "%s"! Missing render attribute "%s"\n
+Attribute-based texture %s not bound for material "%s"!\n
+BDAGlobals
+BLENDINDICES
+BLENDWEIGHT
+BOOLLITERAL
+Bad KV3 data for resource '%s': %s\n
+BindIdentityInstanceIDBufferAndSetRenderState: GetMode == NULL? Can't Render\n
+BindTextureToFile: Invalid texture id %d\n
+BindTextureToFile: Invalid texture id for file %s\n
+BindTextureToTextureHandle: Invalid texture id %d\n
+C:\buildworker\source2_dota_rel_2019_win64\build\_build_\materialsystem2\_vpc_materialsystem2\default\win64\_msvc_\Retail\materialsystem2.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\fontmanager\fonttexturecache.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\material2.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\material_type_manager.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\materialsystem2.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\postprocessingsystem.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\utils\materialsystem2utils.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\compiletargetexpr.g
+C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfxexpr.g
+CAlignedByteArray not properly aligned\n
+CFontTextureCache: Cache Page out of bounds %d (curr count %d)\n
+CFontTextureCache::IsCharCached
+CMatSystemTexture::SetMaterial
+CMatSystemTexture::SetSubTextureRGBA(256): 
+CMaterial2::ComputeMaterialBatchableFlags
+CMaterial2::GetMode(660): Material "%s" is requesting a bad mode "%s"!\n
+CMaterial2::GetVertexShaderInputSignature(783): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from!\n
+CMaterial2::GetVertexShaderInputSignature(815): Error! Material "%s" doesn't have a CVsInputSignatureVector!\n
+CMaterial2::GetVertexShaderInputSignature(833): Error! Material "%s" has invalid signature index %d!\n
+CMaterial2::LoadShadersAndSetupModes(1641): Error creating shader %s for material %s!\n
+CMaterialLayer::ComputeWorkItemsToSetupStaticCombosForMode(3153): Failed call to FindOrLoadStaticComboData()!\n
+CMaterialSystem2::DynamicShaderCompile_UnloadAllMaterials(1081): ERROR!!! Shaders not freed before shader reload! (See spew above)\n\n
+CMaterialSystem2::FrameUpdate
+CMaterialSystem2::GetErrorMaterial(526): GetErrorMaterial() called when m_pMaterialTypeManager == NULL!\n
+CMaterialSystem2::Init(151): ERROR! Empty shader mode string found! Use "Default" instead!\n
+CMaterialSystem2::Init(167): ERROR! Shader mode "%s" has unsupported type "%s" specified gameinfo.gi!\n
+CMaterialSystem2::Shutdown(507): ERROR!!! Materials not released by other systems on shutdown! (See spew above)\n
+CMaterialSystem2::Shutdown(512): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above)\n
+CMaterialSystem2Utils
+CMaterialSystem2Utils::AllocateGPUCompressionTextures() - not supported by render device, fallback to CPU compression.\n
+CMaterialSystem2Utils::CompressTextureGPU() - not supported by render device, fallback to CPU compression.\n
+CMaterialSystem2Utils::GenerateMipMaps: Can't get resources for compute shader, falling back to normal mipgen.\n
+CMaterialSystem2Utils::RenderConvexGeometry
+CMaterialSystem2Utils::RenderQuads
+CMaterialTypeManager::GetErrorResource(52): GetErrorMaterial() called before error material exists!\n
+COMMENT
+COMMON
+CPostProcessingState::GetCurrentColorCorrection
+CPostProcessingState::ResetColorCorrectionLookupWeights
+CPostProcessingState::SetColorCorrectionLookupWeight
+CPostProcessingState::SetColorCorrectionResetable
+CPostProcessingSystem::ComputeOverrideColorCorrection
+CPostProcessingSystem::GetNoopColorCorrection
+CStrongHandle
+CTextureDictionary::BindTextureToFile
+CTextureDictionary::GetTextureSize()
+CTextureDictionary::GetTextureSize() blocking load\n
+CTextureDictionary::GetTextureSize() texture "%s" has no handles to load. And therefore no size\n
+CTextureDictionary::LoadDeferredIdNOW()
+CTextureDictionary::LoadDeferredIdNOW() blocking load of "%s"\n
+CTextureDictionary::ProcessDeferredResourceLoading()
+CUtlBinaryBlock
+CUtlBlockVector<class CVfxStaticComboData,int,class CMemAllocAllocator>::GrowCount
+CUtlBlockVector<struct CFontTextureCache::Page_t,int,class CMemAllocAllocator>::GrowCount
+CUtlBlockVector<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlBlockVector<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,unsigned short,class CMemAllocAllocator>::GrowCount
+CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CMatSystemTexture,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CPlatformFont::abc_cache_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<unsigned __int64,bool,class CDefLess<unsigned __int64>,unsigned int>::Node_t,unsigned int>,unsigned int,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct CFontTextureCache::Page_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct CFontTextureCache::Page_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<short,6,int,class CMemAllocAllocator>,short,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<unsigned char,12,short,class CMemAllocAllocator>,unsigned char,short>::AddMultipleToTail
+CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::AddPage
+CUtlMemoryBlockAllocator<struct CFontTextureCache::Page_t,class CMemAllocAllocator>::AddPage
+CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,class CMemAllocAllocator>::AddPage
+CUtlNTree overflow!\n
+CUtlRBTree<struct CFontTextureCache::CacheEntry_t,class CLessFunc<&private: static bool __cdecl CFontTextureCache::CacheEntryLessFunc(struct CFontTextureCache::CacheEntry_t const &,struct CFontTextureCache::CacheEntry_t const &)>,unsigned short,class CUtlBlockVector<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,unsigned short,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CPlatformFont::abc_cache_t,class CLessFunc<&private: static bool __cdecl CPlatformFont::ExtendedABCWidthsCacheLessFunc(struct CPlatformFont::abc_cache_t const &,struct CPlatformFont::abc_cache_t const &)>,unsigned short,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CPlatformFont::abc_cache_t,unsigned short>,unsigned short,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CUtlOrderedMapBase<class CFontManager::CFontAttributes,class CFontManager::CFontInfo,class CDefLess<class CFontManager::CFontAttributes>,int>::Node_t,class CUtlOrderedMapBase<class CFontManager::CFontAttributes,class CFontManager::CFontInfo,class CDefLess<class CFontManager::CFontAttributes>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CFontManager::CFontAttributes,class CFontManager::CFontInfo,class CDefLess<class CFontManager::CFontAttributes>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,class CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CUtlOrderedMapBase<unsigned __int64,bool,class CDefLess<unsigned __int64>,unsigned int>::Node_t,class CUtlOrderedMapBase<unsigned __int64,bool,class CDefLess<unsigned __int64>,unsigned int>::CKeyLess,unsigned int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<unsigned __int64,bool,class CDefLess<unsigned __int64>,unsigned int>::Node_t,unsigned int>,unsigned int,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CUtlOrderedMapBase<unsigned int,struct `public: void __cdecl CVfxStaticComboData::ComputeVariablesUsedInStaticCombo(class CVfxProgramData const *)'::`2'::BindInfo_t,class CDefLess<unsigned int>,int>::Node_t,class CUtlOrderedMapBase<unsigned int,struct `public: void __cdecl CVfxStaticComboData::ComputeVariablesUsedInStaticCombo(class CVfxProgramData const *)'::`2'::BindInfo_t,class CDefLess<unsigned int>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<unsigned int,struct `public: void __cdecl CVfxStaticComboData::ComputeVariablesUsedInStaticCombo(class CVfxProgramData const *)'::`2'::BindInfo_t,class CDefLess<unsigned int>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct CUtlOrderedMapBase<unsigned short,class CFontManager::CFontDataFile,class CDefLess<unsigned short>,int>::Node_t,class CUtlOrderedMapBase<unsigned short,class CFontManager::CFontDataFile,class CDefLess<unsigned short>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<unsigned short,class CFontManager::CFontDataFile,class CDefLess<unsigned short>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer\n
+CVfx::CreateFromVcs(7715): Error opening file %s\n
+CVfx::CreateFromVcs(7748): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(7761): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(7790): VCS %s Unserialize hit EOF\n
+CVfx::ParseResourceFileHeader
+CVfxConstructor::Construct(2441): DxSupportLevel %d not supported!\n
+CVfxProgramData::CalcStaticComboIdFromValues
+CVfxProgramData::FindOrCreateStaticComboDataInCache(4373): Error! Ref count !=0 for static combo data cache entry!\n
+CVfxStaticComboData::Decompress
+Cannot allocate abstract class
+ChildOf
+ChildOf( 
+Class does not allow allocation from its schema binding
+ColorLUT
+Combo
+Command Format: mat_set_shader_quality <value> (valid values are 0 or 1)\n
+Compile Target Expression
+Compile Targets
+CompileComboAndGetVariables_DynamicShaderCompile(), C:\buildworker\source2_dota_rel_2019_win64\build\src\materialsystem2\material2.cpp:2792
+CompileShadersForFeatureCombo
+CompileTargets
+Compiled 
+Compiled %i shaders (%i cached) in %.1fs\n
+Compiling %i shaders:
+Compute Shader
+Constant %s is marked dynamic in the .vmat file.\n
+Constant %s.\n
+Couldn't create windows font '%s'\n
+Courier
+Courier New
+Custom font '%s' is already registered, ignoring new registration '%s' range %d - %d\n
+Custom font file '%s' should be assocated with a font name, will be ignored on Linux and Mac\n
+DXBC
+D\tV_log2f
+D_DISPATCH_MODE
+D_FADE_COLOR
+DefaultFontAliasGroup
+DefaultTextureBuffer
+DefaultUAV.vtex
+DefaultUAVBuffer
+Dev Shader
+DevShader
+DoNotCastShadows
+Dynamic )\n
+Dynamic combos:\n
+Dynamic shader compile disabled when launched from Steam.\n
+Dynamic shader compile failed "%s" (%s)!\n
+DynamicCombo
+DynamicComboFromFeature
+DynamicComboRule
+DynamicGlobalsBDA
+ERROR!
+ERROR! Renderable pass data is being used across frame boundaries! Renderable pass has frame count %u. Current frame count is %u.\n
+ESC_SEQ
+Engine2/RenderingPipeline
+Error decompressing static combo data (%i)\n
+Error decompressing static combo data (meta)\n
+Error decompressing static combo data\n
+Error finding static combo data in VCS file!\n
+Error loading %s for -batcherrors - %s\n
+Error parsing supported compile targets from vfx file "%s"\n
+Error reading default value from variable description\n
+Error resolving symbol "%s"\n
+Error! Cannot find GAME\%s file in current search paths! If this is a new shader, you must run vfxcompile.exe at least once, and then reload shaders.\n
+Expecting %s
+Expression Parser - 
+ExtTextOutW
+ExternalDescSet
+FATAL ERROR: attempting to render with error material.  The following material(s) failed to load: \n
+FEATURES
+FIXME!
+FLOATLITERAL
+FLOATSUFFIX
+Failed to Allocate a Dynamic Index Buffer of size %u\n
+Failed to Allocate a Dynamic Vertex Buffer of size %u\n
+Failed to allocate an instance of a class
+Failed to call CBaseIntrospectedToKV3TypeManager::Init
+Failed to load font file '%s'\n
+Failed to parse custom font file '%s'\n
+Failed to register custom font file '%s'\n
+Failed to set shader quality.\n
+Feature
+FeatureAlias
+FeatureRule
+Features
+FrameUpdate
+G(knN
+GLSL.std.450
+Ga=UU
+Geometry Shader
+GetCharABCWidthsW
+GetDefaultValueFromVariableDescription(410): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetDefaultValueFromVariableDescription(415): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetGlyphOutlineA
+GetRenderStateValue(1047): Invalid data type for render state variable %s in material "%s"!\n
+GetRenderStateValue(1100): Invalid data type for render state variable %s in material "%s"!\n
+GetRenderStateValue(1107): Error evaluating expression for render state variable %s in material "%s"!\n
+GetRenderStateValue(1113): Invalid variable source type for render state variable %s in material "%s"!\n
+GetTextMetricsA
+GetValueFromDynamicMaterialParam(552): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromDynamicMaterialParam(557): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetValueFromMaterialParam(470): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromMaterialParam(475): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetValueFromMaterialParamAsVector4D(1461): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromMaterialParamAsVector4D(1466): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+Glyph Miss: FontHandle_t:0x%8.8llx (%s), %s\n
+GraphicsMisc
+HEADER
+HEXINTEGERLITERAL
+HEX_DIGIT
+IKV3TransferInterface_ResourceSave
+INTEGERLITERAL
+IOS_VULKAN
+IOS_VULKAN_4_0
+IOS_VULKAN_4_1
+IOS_VULKAN_5_0
+ISGN
+IS_DIRECTX
+IS_MOBILE
+IS_PC
+IS_SM_
+IS_VULKAN
+ImageSize
+Incorrect vpk path delimiter for shader %s\n
+InvTextureDim
+InvViewportSize
+Lexer encountered %i errors parsing compile targets expression "%s"\n
+LightSim_DiffuseAlbedoTexture
+LoadKV3ObjectInPlace error: %s\n
+MD5 match on %s, loading from vcs\n
+MD5 mismatch on %s, will load from vfx instead.\n
+MODES
+MainPs
+MainVs
+Malgun Gothic
+Marlett
+MatPrintShaderInfo(3484): Error reading index!\n
+MatPrintShaders(3200): pVfx == NULL!\n
+MatPrintShaders(3249): pVfx == NULL!\n
+MatUtilsRenderMesh
+MatUtilsRenderOutlinedRect
+MatUtilsRenderPrimitives
+Material %s (shader %s) nonbatchable in mode "%s" because of dynamic CB for %s. These constants are responsible:\n
+Material %s is required to be batchable in mode "%s". See -batcherrors file.\n
+Material CPU memory: %.2f KB\n
+Material Creation
+Material Shader Setup
+MaterialID
+MaterialSystem
+MaterialSystem2/ErrorMaterialIsFatalError
+MaterialSystem2/ToolsShadingComplexity/TargetRenderMode
+MaterialSystem2DefaultDebugFont: %d
+MaterialSystem2DefaultDebugFontOutline: %d
+MaterialUtilsInit
+MatrixAxisAngle
+MatrixAxisToAxis
+MatrixColorCorrect
+MatrixColorCorrect2
+MatrixColorTint
+MatrixColorTint2
+MatrixColorTint3
+MatrixIdentity
+MatrixMultiply
+MatrixScale
+MatrixTranslate
+Mesh Shader
+Microsoft (R) HLSL Shader Compiler 9.29.952.3111
+MipLevel
+Modes
+More than 8 active color correction lookup textures!\n
+MotionVectorsMaxDistance
+MoveToEx
+Must run with -shaderstats to use mat_shading_complexity!\n
+NOTE: Each static combo creates multiple shader programs based on the dynamic combos available.\n\n
+NULL shader pointer!\n
+NeedsLightProbe
+No DATA block for resource '%s'\n
+No DATA block for resource\n
+No valid vcs file found for shader %s\n
+NoZPrepass
+Not safe to 'new' this class due to alignment requirements
+OCTAL_ESC
+OSGN
+OutputBC7Texture
+OutputBC7Texture_1x1
+OutputBC7Texture_2x2
+OutputDXT5Texture
+OutputDXT5Texture_1x1
+OutputDXT5Texture_2x2
+OutputDXT5Texture_4x4
+PC SM 4.0 (D3D10)
+PC SM 4.0 (VULKAN)
+PC SM 4.1 (D3D10.1)
+PC SM 4.1 (VULKAN)
+PC SM 5.0 (D3D11)
+PC SM 5.0 (VULKAN)
+PC SM 6.0 (VULKAN)
+PC_SM_4_0
+PC_SM_4_0_VULKAN
+PC_SM_4_1
+PC_SM_4_1_VULKAN
+PC_SM_5_0
+PC_SM_5_0_VULKAN
+PC_SM_6_0_VULKAN
+PLAT_
+POSITION
+PROGRAM
+PS_RENDER_STATE
+PS_RS
+PS_RTX
+Parser encountered %i errors parsing compile targets expression "%s"\n
+PerViewConstantBufferVR_t
+PerViewConstantBuffer_t
+Pixel Shader
+Pixel Shader Render State
+Polygon too large (%d points / max %d, %d indices / max %d), ignoring
+PostProcessing
+PostProcessingSystemManifest
+Program MD5 is out of date with features! %s\n
+Programmer Error! Static combo not loaded!\n
+Q\tV_powd
+RD11<
+RDEFH
+RESOURCE_TYPE_MATERIAL
+RayTrace
+Raytracing Shader
+Remap01ScaleOffset
+RemapVal
+RemapValClamped
+RenderModes
+RenderUtils
+RepresentativeTexture
+Requires
+Requires%d
+Requires%d( 
+SHEX
+SHEX4
+SHEXt[
+SPV_KHR_storage_buffer_storage_class
+STAT
+SUPPORTS_CS
+SUPPORTS_GS
+SV_ClipDistance
+SV_Position
+SV_Target
+S_BINDLESS_RUNTIME
+S_EXECUTION_REORDERING
+S_MOBILE
+S_MOLTEN_VK
+S_REVERSE_DEPTH_BUFFER
+S_SHADER_QUALITY
+S_SUBGROUP_WAVE_OPS
+S_SUPPORTS_CLIP_DISTANCE
+S_SUPPORTS_DX_11_1
+S_TOOLS_ENABLED
+S_VR
+SetRenderStateValueFromVariable(1172): Unsupported render state type in material "%s"!\n
+SetSamplerStateValueFromVariable(1190): Sampler index %d out of bounds for "%s" in material "%s"!\n
+SetSamplerStateValueFromVariable(1263): Unsupported sampler state type for "%s" in material "%s"!\n
+SetSubTextureRGBA: Invalid texture id %i\n
+SetTextAlign
+SetTextureRGBA: Invalid texture id %i\n
+SetVariable(1346): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s"!\n
+SetVariable(1363): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer!\n
+SetVariableValue(1002): Unknown variable type for %s in material "%s"!\n
+Shader %s attribute "%s" has inconsistent value or type across multiple shaders of a feature combo! [
+Shader %s doesn't support compile target %s\n
+Shader Quality set to %d\n
+Shader Quality: %d\n
+Shader expected %d bytes of push constants but only got %d (%s)!\n
+Shader expression for constant %s is dynamic.\n
+Shader uses push constants but they weren't supplied through attributes (%s)!\n
+ShaderIDColor
+ShaderIDColors
+ShadingComplexity
+Spawning %d compile jobs\n
+SrcTex_1x1
+SrcTex_2x2
+SrgbGammaToLinear
+SrgbLinearToGamma
+Static combo loading spun for %.5fms\n
+Static combos:\n
+StaticCombo
+StaticComboRule
+SupportsMappingDimensions
+TANGENT
+TEXCOORD
+Texture %s doesn't exist in %s!\n
+Texture dictionary loading texture "%s" directly\n
+TextureAverageColor
+TextureDim
+TextureDimLog2
+TextureSheetData
+TextureSize
+Times New Roman
+Tonemapping_DefaultFilmicLinear
+Tonemapping_LocalOperator
+Tool
+ToolsVis
+Total Combos After Rules:  %15s ( %s Static, 
+Total Combos Before Rules: %15s ( %s Static, %s Dynamic )\n
+Trebuchet MS
+Tried to load resource reference '%s' from a value without a resource reference specific type.
+TypeManager
+UNICODE_ESC
+Unable to create dynamic index buffer with %d indices\n
+Unable to create dynamic vertex buffer with %d points\n
+Unable to parse vpk paths from shader %s\n
+Unknown DX level\n
+Uv scale variable %s referenced by texture %s doesn't evaluate to a constant value at material load time (%s).\n
+VCS3 %s Load Failure: Could not find DATA block\n
+VFX_COMBO_ALIAS
+VFX_COMBO_DYNAMIC
+VFX_COMBO_STATIC
+VFX_COMBO_UNKNOWN
+VFX_DLL_001
+VFX_PROGRAM_MAX
+VFX_RULE_ALLOW_NUM
+VFX_RULE_CHILD_OF
+VFX_RULE_REQUIRES
+VFX_RULE_TYPE_DYNAMIC
+VFX_RULE_TYPE_FEATURE
+VFX_RULE_TYPE_MAX
+VFX_RULE_TYPE_STATIC
+VFX_RULE_TYPE_UNKNOWN
+VFX_RULE_UNKNOWN
+VMatError
+VS_MS_RTX
+VS_RTX
+VULKAN
+Verdana
+Version
+Vertex Shader
+VertexColorUVPos_t
+VertexUVPosColorNormalAndTangent_t
+Vfx file "%s" has both compute shader and other shaders. Compute shaders must be the only shader type in a vfx file.\n
+VfxComboType_t
+VfxInit
+VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
+VfxLoadShaderSource(77): Cannot read file "%s"\n
+VfxLoadShaderSource(85): Cannot find include file %s\n
+VfxParseCompileTargetExpr(106): : Failed to create lexer from "%s"\n
+VfxParseCompileTargetExpr(114): : Failed to create token stream from "%s"\n
+VfxParseCompileTargetExpr(122): : Failed to create parser from "%s"\n
+VfxParseCompileTargetExpr(98): : Failed to create input stream from "%s"\n
+VfxRuleType_t
+VfxRule_t
+Viewport
+WARNING: Failed to convert introspected block for file: %s\n
+WARNING: Invalid resource version (%d): %s\n
+[ mat_print_material_info ] Error! Cannot find material '%s'!\n
+[Dynamic shader compile] Reloading %d material(s)\n
+[Dynamic shader compile] Warning: %d material(s) are not reloaded because they have outstanding file I/O requests\n
+\error.vmat
+\n   --- ---------------------- ----------------------- ---- --------------- --------------------------------\n
+\n   NOTE: Currently showing on disk format without accounting for picmip level or streaming state!\n
+\n   Options:\n
+\n   Ref        On Disk               In Memory         MSAA     Format      File
+\n%6s %-50s %5s %5s %5s %5s %5s %5s %5s %10s\n
+\n%s File\n
+\n*** %s "%s" in %s does not follow the 0..N format!\n\n
+\n*** %s "%s" in %s has max(%d) > 254!\n\n
+\n*** %s "%s" in %s has min(%d) < 0!\n\n
+\n*** %s "%s" in %s has min(%d) > max(%d)!\n\n
+\n*** A dynamic combo in %s doesn't start with "D_"! Aborting shader compile!\n\n
+\n*** A feature alias in %s doesn't start with "F_"! Aborting shader compile!\n\n
+\n*** A feature in %s doesn't start with "F_"! Aborting shader compile!\n\n
+\n*** A static combo in %s doesn't start with "S_"! Aborting shader compile!\n\n
+\n*** CMaterial2::LoadShadersAndSetupModes(1573): Error! Trying to load material "%s" without any params!\n
+\n*** CVfx::ParseCombosAndRulesFromFileHelper(6493): Error opening file "%s"!\n\n
+\n*** CVfx::ParseDescriptionFromFile(6389): Error opening file "%s"!\n\n
+\n*** CVfx::ParseDevBoolFromFile(6316): Error opening file "%s"!\n\n
+\n*** CVfx::ParseFeaturesFromFile(6003): Error opening file "%s"!\n\n
+\n*** CVfx::ParseIncludeFiles(5962): Error opening include file in features list"%s"!\n\n
+\n*** CVfx::ParseModesFromFile(5812): Error opening file "%s"!\n\n
+\n*** CVfx::ParseVersionFromFile(6350): Error opening file "%s"!\n\n
+\n*** Combo "%s" in %s doesn't match a known combo source!\n\n
+\n*** Combo "%s" in %s either does not follow the 0..N format, is not a valid dynamic combo name, or doesn't match an existing feature or mode argument!\n\n
+\n*** Combo "%s" in %s has arg %s that doesn't match an existing feature!\n\n
+\n*** Combo "%s" in %s has incorrect range %d..%d. Expecting %d..%d!\n\n
+\n*** Combo "%s" in %s requires a 3rd argument: Sys( ... )\n\n
+\n*** Combo "%s" in %s, expected integer value after !=/==, got %s\n\n
+\n*** Dynamic combo "%s" in %s cannot refer to a feature! Only static combos can refer to features.\n\n
+\n*** Error in "%s" - description block can only contain strings!\n\n
+\n*** Error in "%s" - expecting '"'\n\n
+\n*** Error masking unused parts for "%s"!\n\n
+\n*** Error masking unused parts! Unknown text found. This is usually caused by a '{' or '}' not tabbed properly or an invalid declaration at the global scope. (line %d):\n%s\n\n
+\n*** Error parsing ==N for rule in %s! First arg to RequiresN cannot be ==0!\n\n
+\n*** Error parsing ==N for rule in %s! Not allowed on ChildOf. Use RequiresN instead.\n\n
+\n*** Error parsing ==N for rule in %s!\n\n
+\n*** Error parsing =N for mode %s in %s!\n\n
+\n*** Error parsing AllowN rule in %s! N must be >= 0!\n\n
+\n*** Error parsing AllowN rule in %s!\n\n
+\n*** Error parsing RequiresN rule in %s! N must be >= 1!\n\n
+\n*** Error parsing RequiresN rule in %s!\n\n
+\n*** Error parsing arg for rule in %s! Found unexpected character '%c'. The only allowed arg modifier is '=='.\n\n
+\n*** Error parsing mode "%s"! Modes can either fallback to a different shader or set static combo values, but not both!\n\n
+\n*** Error parsing mode "%s"! Modes require arguments in the form Name( arg )!\n\n
+\n*** Error parsing modes for %s! You need at least 1 mode. Use "Default();" if you don't need specific mode support.\n\n
+\n*** Error! AllowN (nargs=%d) rule in %s must have at least one arg type match the rule type!\n\n
+\n*** Error! AllowN rule in %s has out-of-order args! Args must be ordered: Features, Static Combos, Dynamic Combos!\n\n
+\n*** Error! AllowN rule in %s must have all args after N be 0..x!\n\n
+\n*** Error! ChildOf and Requires rule in %s must have first arg be 0..x!\n\n
+\n*** Error! ChildOf and Requires rule in %s must have first arg type match rule type!\n\n
+\n*** Error! ChildOf is only allowed in FeatureRules! %s\n\n
+\n*** Error! Could not find feature with name "%s" in %s!\n\n
+\n*** Error! Could not find static combo with name "%s" in %s!\n\n
+\n*** Error! Could not find static or dynamic combo with name "%s" in %s!\n\n
+\n*** Error! Rule error string must be quoted in %s!\n\n
+\n*** Error! Too many args found in rule in %s!\n\n
+\n*** Error! Too many or too few arguments to a rule in %s!\n\n
+\n*** Feature "%s" in %s does not follow the 0..N format!\n\n
+\n*** Feature "%s" in %s has a string index out of order!\n\n
+\n*** Feature "%s" in %s has min(%d) == max(%d)! Features must have a valid range!\n\n
+\n*** Feature "%s" in %s is missing an option string!\n\n
+\n*** Feature "%s" in %s is missing an option!\n\n
+\n*** Feature "%s" in %s is missing string options! Ex: 0..2( "a", "b", "c" )\n\n
+\n*** Feature "%s" in %s requires string to be N="String" where N = combo value for arg %d!\n\n
+\n*** Feature alias %s trying to alias another alias in %s!\n\n
+\n*** Feature alias %s trying to alias unknown feature "%s" in %s!\n\n
+\n*** Found combo "%s" multiple times in %s declared differently!\n\n
+\n*** Found feature "%s" multiple times in %s!\n\n
+\n*** Mode "%s" in %s is missing an option!\n\n
+\n*** Mode "%s" in %s references static combo %s that doesn't exist in any program!\n\n
+\n*** Unable to parse Version in HEADER section of %s!\n\n
+\n*** Unknown rule "%s" in %s!\n\n
+\n*** Unknown text found in FEATURES section in %s: "%s"\n\n
+\n*** VfxGetCompileTargetsFromVfxFile(1410): Error opening file "%s"!\n\n
+\n*** VfxGetUsedShaderProgramsFromVfxFile(1487): Error opening file "%s"!\n\n
+\n//-----------------------------------\n
+\nCMaterial2::LoadShadersAndSetupModes(1568): Error! Material "%s" is already loaded!\n
+\nCMaterial2::LoadShadersAndSetupModes(1602): Cannot find shader entry in material "%s"! Using error.vfx!\n
+\nCMaterial2::LoadShadersAndSetupModes(1645): Error creating shader %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1684): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader!\n
+\nCMaterial2::LoadShadersAndSetupModes(1696): Error creating fallback shader %s for %s for material %s!\n
+\nCMaterial2::LoadShadersAndSetupModes(1700): Error creating fallback shader %s for %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1727): Error creating shader %s for material %s!\n
+\nCMaterial2::LoadShadersAndSetupModes(1732): Error creating shader %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1742): Error creating static combos for shader %s and error.vfx instead!\n
+\nCMaterialLayer::CreateCommandBuffer(4390): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s\n
+\nCMaterialMode::ComputeRenderablePassesForContextInternal(3566): All bad! The error material failed in dynamic shader compile!\n
+\nCompileComboAndGetVariables_DynamicShaderCompile(2849): Dynamic shader compile failed for %s in material "%s"!\n
+\nInitDynamicShaderCompileDLL(119): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable!\n
+\nMS,\nVS_MS_RTX
+\nPS_RENDER_STATE
+\nRTX
+\nSkipped %d%% of all combos\n
+\nUsage: mat_assert_on_shader_use [shader_substring]\n       (no arguments disables the assert)\n\nExample: mat_assert_on_shader_use error.vfx - Assert when the error shader is used\n         mat_assert_on_shader_use sky       - Assert when sky.vfx or sky_cheap.vfx is used\n\n
+\nVCS file format is invalid for %s\n
+\nVCS file version is %d instead of %d for %s\n
+\n\t%02i%% (%i/%i)
+\n\t\tDynamic:
+\src\shaders\
+\tV_towupper32
+\t\tStatic:
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
+\t_V_strcspn
+\v\tV_exp2f
+^^^ Attribute-based texture warning is now disabled after outputting 50 warnings.\n
+^^^ Constant buffer warning is now disabled after outputting 50 warnings.\n
+__Attribute__
+__Expression__
+__FROM_ATTRIBUTE_OR_FEATURE__
+__FROM_ATTRIBUTE__
+__FeatureToBool__
+__FeatureToFloat__
+__FeatureToInt__
+__RenderStateLiteral__
+__SET_BY_FEATURE_EQ__
+__SET_BY_FEATURE_NE__
+__SET_BY_FEATURE__
+__SetByArtistAndExpression__
+__SetByArtist__
+______<INVALID>______
+_copy%u
+_feature
+_psrs
+_rtx
+appendstructuredbuffer
+blendStateDesc
+bool2
+bool3
+bool4
+buffer
+byteaddressbuffer
+c$xe
+cbuffer
+clamp
+colorcorrection_%p.vtex
+compiletargetexprLexerNew
+compiletargetexprLexerNewSSD
+compiletargetexprParserNew
+compiletargetexprParserNewSSD
+consumestructuredbuffer
+cs_5_0
+cs_6_0
+degrees
+depthStencilStateDesc
+dev/materialsystem2utils/pixel.vtex
+dev/vgui/materials/renderui.vmat
+dot2
+dot3
+dot4
+environmentmapped
+error.vfx
+error.vmat
+error.vmat_c
+exp2
+externaldescriptorset
+features
+fff?+
+firstrenderstatelement < 0 : i = %d, frse = %d\n
+float2
+float3
+float3x3
+float4
+float4x3
+float4x4
+frac
+g_bFogTypeEnabled
+g_bOtherFxEnabled
+g_bRoughnessParams
+g_bStereoEnabled
+g_bTexCoordScaleByModel
+g_bUseSecondaryUvForDetailTexture
+g_bWrinkleOverride
+g_flDetailNormalStrength
+g_flDetailTexCoordRotation
+g_flDirectionalLightmapMinZ
+g_flDirectionalLightmapStrength
+g_flEnvMapScalar
+g_flFadeExponent
+g_flFarPlane
+g_flFogBlendToBackground
+g_flFogExponent
+g_flFogMaxDensity
+g_flFrame
+g_flHenyeyGreensteinCoeff
+g_flInvFogRange
+g_flLightBinnerFarPlane
+g_flLightMapScalar
+g_flMod2xIdentity
+g_flModelTintAmount
+g_flNearPlane
+g_flNegFogStartOverFogRange
+g_flPad2
+g_flStereoCameraIndex
+g_flTime
+g_flToneMapScalarGamma
+g_flToneMapScalarLinear
+g_flViewportMaxZ
+g_flViewportMinZ
+g_flWindAnimationAmplitudeX
+g_flWindAnimationAmplitudeY
+g_flWindAnimationAmplitudeZ
+g_flWindAnimationRate
+g_flWindAnimationVarianceInSpace
+g_flWrinkleOverride
+g_mVolFogFromWorld
+g_matProjectionToWorld
+g_matViewToProjection
+g_matWorldToProjection
+g_matWorldToProjectionMultiview
+g_matWorldToView
+g_matvCubeFogSkyWsToOs
+g_nScaleTexCoordUByModelScaleAxis
+g_nScaleTexCoordVByModelScaleAxis
+g_sTransformTexture
+g_tTransformTexture
+g_vAoProxyDownres
+g_vCameraAngles
+g_vCameraDirWs
+g_vCameraPositionWs
+g_vCameraPositionWsMultiview
+g_vCameraUpDirWs
+g_vClipPlane0
+g_vColorTint
+g_vCubeFogCullingParams
+g_vCubeFog_Height_Offset_Scale_Exponent_Log2Mip
+g_vCubeFog_Offset_Scale_Bias_Exponent
+g_vDepthPsToVsConversion
+g_vDetailNormalStrengthOffsetScale
+g_vDetailTexCoordOffset
+g_vDetailTexCoordScale
+g_vDetailTexCoordXform
+g_vFogColor
+g_vFrameBufferCopyInvSizeAndUvScale
+g_vGradientFogBiasAndScale
+g_vGradientFogColor_Opacity
+g_vGradientFogCullingParams
+g_vHighPrecisionLightingOffsetWs
+g_vInteractionProjectionOrigin
+g_vInteractionTriggerVolumeInvMins
+g_vInteractionTriggerVolumeWorldToVolumeScale
+g_vInteractionVolumeInvExtents
+g_vInvCMTDims
+g_vInvGBufferSize
+g_vInvProjRow3
+g_vInvViewportSize
+g_vMiddleEyePositionWs
+g_vMorphTextureAtlasSize
+g_vPerViewConstantExtraData0
+g_vPerViewConstantExtraData1
+g_vPerViewConstantExtraData2
+g_vPerViewConstantExtraData3
+g_vPositionKeyFramesInvDim
+g_vRenderTargetSize
+g_vSphericalVignetteBiasAndScale
+g_vSphericalVignetteColor_Opacity
+g_vSphericalVignetteOrigin_Exponent
+g_vTexCoordOffset
+g_vTexCoordScale
+g_vTexCoordScaleByModelU
+g_vTexCoordScaleByModelV
+g_vTexCoordScrollSpeed
+g_vViewportOffset
+g_vViewportSize
+g_vViewportToGBufferRatio
+g_vVolFogDitherScaleBias
+g_vVolFogPostWorldToFrustumBias
+g_vVolFogPostWorldToFrustumScale
+g_vVolFog_VolumeScale_Shift_Near_Range
+g_vWindDirection
+g_vWindStrengthFreqMulHighStrength
+g_vWireframeColor
+g_vWorldToCameraOffset
+g_vWorldToCameraOffsetMultiview
+g_vWrinkleScaleOffset
+g_vXenAnimation
+game_controls
+gamelayer
+gs_4_0
+gs_4_1
+gs_5_0
+gs_6_0
+iEJA+
+iOS SM 4.0 (VULKAN)
+iOS SM 4.1 (VULKAN)
+iOS SM 5.0 (VULKAN)
+int2
+int3
+int4
+lerp
+lib_6_4
+log2
+m_allVars
+m_argIndexArray
+m_argTypeArray
+m_argValueArray
+m_attribIdx
+m_attributes
+m_bAllowLayerOverride
+m_bDevShader
+m_bGlobalsBDA
+m_bHasShaderProgram
+m_bIsLayerConstant
+m_bStaticCB
+m_byteCodeData
+m_byteCodeIndex
+m_comboType
+m_constantBufferBindingArray
+m_defaultInputTexture
+m_dynamicComboArray
+m_dynamicComboIDs
+m_dynamicComboRenderState
+m_dynamicComboRuleArray
+m_dynamicComboVars
+m_dynamicComboVarsRef
+m_expr
+m_flDefault
+m_flUiStep
+m_hash
+m_iFeatureIndex
+m_indexAndRegisterOffsetArray
+m_indexAndRegisterOffsetCount
+m_indexAndRegisterOffsetStart
+m_inputColorSpace
+m_inputProcessingCommand
+m_intDefault
+m_intMax
+m_intMin
+m_mipProcessingCommand
+m_modeArray
+m_nByteCodeDataIdx
+m_nChannelDesc
+m_nChannelInfoIndex
+m_nComboIndexValue
+m_nCompareValue
+m_nConstantBufferSize
+m_nContextStateAffectedByVariable
+m_nDescriptorSet
+m_nExtraRuleData
+m_nFirstConstantElement
+m_nFirstRenderStateElement
+m_nHashChar
+m_nInputTextures
+m_nMaxRes
+m_nMinPrecisionBits
+m_nOffs
+m_nRegisterElements
+m_nRegisterOffset
+m_nSize
+m_nTypeSpecificBits
+m_nVariableBinding
+m_nVariableSourceMax
+m_offs
+m_outputColorSpace
+m_outputTextureFormat
+m_pCompiledExpression
+m_pCompiledUIVisibilityExpression
+m_pSourceString
+m_programData
+m_programHashes
+m_registerType
+m_ruleType
+m_shaderComboSourceType
+m_sourceIndex
+m_sourceType
+m_staticComboArray
+m_staticComboData
+m_staticComboIDs
+m_staticComboRuleArray
+m_staticComboSettings
+m_stringArray
+m_szAliasName
+m_szErrorString
+m_szShaderFallback
+m_szStaticCombo
+m_szTextureFileEnding
+m_szUiGroup
+m_textureChannelProcessorArray
+m_uiType
+m_vGradientFogExponents
+m_variableDescriptionArray
+m_variableDescriptionVersionHash
+m_vsInputSignatureArray
+m_vsInputSignatureIndexArray
+main
+mat_assert_on_shader_use disabled\n
+mat_print_material_info %s
+mat_print_materials "[Error"
+mat_print_materials "[No Valid Layers]"
+mat_print_materials %s
+mat_print_materials %s -show_none
+mat_print_shader_info %s -show_used_combos
+mat_print_shader_info %s -show_used_combos -%s
+materials/dev/combine_colorcorrection_lut_cs.vmat
+materials/dev/cs_compress_bc7.vmat
+materials/dev/cs_compress_dxt5.vmat
+materials/dev/cs_mipgen.vmat
+materials/dev/msaa_resolve.vmat
+materials/error.vmat
+materialsystem.material_evaluated
+materialsystem.material_last_executed
+materialsystem.material_similaritykey
+materialsystem.mode_evaluated
+materialsystem.skip_mode
+materialsystem2.dll
+matsystemtexture_%s_%lld.vtex
+modes
+ms_6_5
+nBatchIndices <= 16384
+nBatchIndices <= nMaxIndexCountPerPass
+normalize_safe
+procedural
+ps_4_0
+ps_4_1
+ps_5_0
+ps_6_0
+psrs
+r\tV_strspn
+radians
+random
+rasterizerStateDesc
+resourcesystem
+rotate2d
+rotation2d
+rsqrt
+rwbuffer
+rwbyteaddressbuffer
+rwstructuredbuffer
+rwstructuredbufferwithcounter
+rwtexture1d
+rwtexture1darray
+rwtexture2d
+rwtexture2darray
+rwtexture3d
+sampler1D
+sampler1DARRAY
+sampler2D
+sampler2DARRAY
+sampler3D
+sampler3DARRAY
+samplerCUBE
+samplerCUBEARRAY
+samplerstateindex
+saturate
+schemasystem
+setting.shaderquality
+shader
+shaders\vfx
+shaders_android_vulkan.vpk
+shaders_ios_vulkan.vpk
+shaders_pc.vpk
+shaders_vulkan.vpk
+sign
+sincos
+smoothstep
+step
+struct
+struct GS_INPUT
+struct PS_INPUT
+struct VS_INPUT
+structuredbuffer
+texcoord
+texture2darrayindex
+texture2dindex
+texture3dindex
+texturecubearrayindex
+texturecubeindex
+v$G2
+vfx_dx11
+vfx_vulkan
+vfxc
+vfxexprLexerNew
+vfxexprLexerNewSSD
+vfxexprParserNew
+vfxexprParserNewSSD
+view.bIsToolView
+vs_4_0
+vs_4_1
+vs_5_0
+vs_6_0
+w\tV_strtoui64
+win98japanese

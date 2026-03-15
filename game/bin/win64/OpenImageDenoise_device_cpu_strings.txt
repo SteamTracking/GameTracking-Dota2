@@ -29,7 +29,6 @@
 .?AV<lambda_0>@?0??submit@CPUUpsample@oidn@@UEAAXXZ@
 .?AV<lambda_1>@?0??submit@CPUUpsample@oidn@@UEAAXXZ@
 .?AV<lambda_1>@?0??submitUSMCopy@CPUEngine@oidn@@UEAAXPEAXPEBX_K@Z@
-.?AV?$_Func_base@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??submit@CPUAutoexposure@oidn@@UEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??submit@CPUConv@oidn@@UEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??submit@CPUImageCopy@oidn@@UEAAXXZ@X$$V@std@@
@@ -39,18 +38,10 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??submit@CPUUpsample@oidn@@UEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0??submit@CPUUpsample@oidn@@UEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0??submitUSMCopy@CPUEngine@oidn@@UEAAXPEAXPEBX_K@Z@X$$V@std@@
-.?AV?$_Iosb@H@std@@
 .?AV?$_Ref_count_obj2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@
 .?AV?$_Ref_count_obj2@VPinningObserver@oidn@@@std@@
 .?AV?$_Ref_count_obj2@VThreadAffinity@oidn@@@std@@
 .?AV?$_Ref_count_obj2@Vtask_arena@d1@detail@tbb@@@std@@
-.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@
-.?AV?$basic_iostream@DU?$char_traits@D@std@@@std@@
-.?AV?$basic_istream@DU?$char_traits@D@std@@@std@@
-.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@
-.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@
-.?AV?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@
-.?AV?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@
 .?AV?$task_arena_function@V<lambda_4>@?0??processQueue@CPUEngine@oidn@@IEAAXXZ@X@d1@detail@tbb@@
 .?AVAutoexposure@oidn@@
 .?AVCPUAutoexposure@oidn@@
@@ -80,19 +71,11 @@
 .?AVRefCount@oidn@@
 .?AVUpsample@oidn@@
 .?AVVerbose@oidn@@
-.?AV_Ref_count_base@std@@
-.?AVbad_alloc@std@@
-.?AVbad_array_new_length@std@@
 .?AVdelegate_base@d1@detail@tbb@@
-.?AVexception@std@@
 .?AVinvalid_argument@std@@
-.?AVios_base@std@@
-.?AVlogic_error@std@@
-.?AVout_of_range@std@@
 .?AVtask@d1@detail@tbb@@
 .?AVtask_scheduler_observer@d1@detail@tbb@@
 .?AVtask_traits@d1@detail@tbb@@
-.?AVtype_info@@
 5(p1A
 :]G\t<]G\t<]G\t<]G\t<I
 ??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ
@@ -185,14 +168,6 @@
 AVX-512
 AVX2
 DisableThreadLibraryCalls
-GetCurrentProcess
-GetCurrentProcessId
-GetCurrentThreadId
-GetSystemTimeAsFileTime
-InitializeSListHead
-IsDebuggerPresent
-IsProcessorFeaturePresent
-KERNEL32.dll
 MSVCP140.dll
 NEON
 OIDN_NUM_THREADS
@@ -202,19 +177,10 @@ OIDN_SET_AFFINITY environment variable overrides device parameter
 OpenImageDenoise_core.dll
 OpenImageDenoise_device_cpu.dll
 Q8>w
-QueryPerformanceCounter
 R\n0\tp
-RtlCaptureContext
-RtlLookupFunctionEntry
-RtlVirtualUnwind
 SSE2
 SSE4.1
-SetUnhandledExceptionFilter
 TBB_runtime_interface_version
-TerminateProcess
-TlsFree
-UnhandledExceptionFilter
-Unknown exception
 VCRUNTIME140.dll
 Warning: 
 _Cnd_broadcast
@@ -222,6 +188,7 @@ _Cnd_destroy_in_situ
 _Cnd_do_broadcast_at_thread_exit
 _Cnd_init_in_situ
 _Cnd_wait
+_CxxThrowException
 _Mtx_destroy_in_situ
 _Mtx_init_in_situ
 _Mtx_lock
@@ -245,7 +212,9 @@ _initialize_onexit_table
 _initterm
 _initterm_e
 _invalid_parameter_noinfo_noreturn
+_purecall
 _seh_filter_dll
+abort
 api-ms-win-crt-environment-l1-1-0.dll
 api-ms-win-crt-heap-l1-1-0.dll
 api-ms-win-crt-math-l1-1-0.dll
@@ -253,26 +222,30 @@ api-ms-win-crt-runtime-l1-1-0.dll
 api-ms-win-crt-string-l1-1-0.dll
 autoexposure destination not set
 autoexposure source not set
-bad allocation
-bad array new length
+ceilf
 conving source/destination not set
 deque<T> too long
+exp2f
+getenv
 image copy destination smaller than the source
 image copy source/destination not set
 incompatible tensor accessor
-invalid hash bucket count
 invalid image format
 invalid storage mode
 invalid tensor layout
+log2f
+malloc
+memcpy
+memmove
+memset
 non-affinitized
 oidn_init_module_device_cpu_v20300
 operation is not implemented
 pooling source/destination not set
 r\n0\tp
-string too long
+strlen
 tbb12.dll
 terminate
-unordered_map/set too long
 unsupported convolution bias layout/data type
 unsupported convolution kernel size
 unsupported convolution source layout/data type

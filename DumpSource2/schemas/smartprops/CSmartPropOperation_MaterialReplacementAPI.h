@@ -1,0 +1,3 @@
+class CSmartPropOperation_MaterialReplacementAPI
+{
+};

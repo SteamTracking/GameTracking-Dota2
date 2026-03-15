@@ -87,7 +87,7 @@ class CLightInfoBase
 	float32 m_flLightning_duration_max;
 	float32 m_flLightning_fluctuation_min;
 	float32 m_flLightning_fluctuation_max;
-	char[4096] m_pszLightningSound;
+	char[260] m_pszLightningSound;
 	float32 m_flNextLightningStartTime;
 	float32 m_flNextLightningEndTime;
 	float32 m_flLightningFluctuationTimeStart;

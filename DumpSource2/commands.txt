@@ -52,6 +52,9 @@
 +herochatwheel (developmentonly clientdll defensive)
 	Opens hero chatwheel menu while held
 
++midi_note (developmentonly clientdll defensive)
+	<no description>
+
 +showitems (developmentonly clientdll defensive)
 	<no description>
 
@@ -111,6 +114,9 @@
 
 -herochatwheel (developmentonly clientdll defensive)
 	Executes the highlighted hero chatwheel menu item
+
+-midi_note (developmentonly clientdll defensive)
+	<no description>
 
 -showitems (developmentonly clientdll defensive)
 	<no description>
@@ -651,6 +657,9 @@ cl_ent_visibility_traces (clientdll cheat vconsole_fuzzy_matching)
 cl_ents (developmentonly clientdll defensive)
 	List client entities, sorted by spawn group
 
+cl_fow_viz (developmentonly clientdll)
+	FoW viz commands
+
 cl_fullupdate (cheat)
 	Force uncompressed update
 
@@ -938,6 +947,9 @@ client_metrics_upload_immediate (developmentonly clientdll)
 
 cmd (developmentonly defensive)
 	Forward command to server.
+
+col_viz (developmentonly gamedll replicated defensive)
+	Collision visualizer commands
 
 collect_entity_model_name (gamedll cheat)
 	Collect model names of the entities you're pointing at
@@ -2748,6 +2760,9 @@ force_assert (developmentonly)
 force_fatal_error (developmentonly)
 	Fire a fatal error
 
+force_floating_point_exceptions (developmentonly)
+	Enable floating point exceptions to find bugs
+
 force_hibernate (developmentonly)
 	Force toggle hibernation state
 
@@ -2759,6 +2774,9 @@ fow_server_stats (gamedll cheat)
 
 fow_server_test_tempviewer (gamedll cheat)
 	test a temp viewer
+
+fow_viz (developmentonly gamedll)
+	FoW viz commands
 
 fs_clear_open_duplicate_times (developmentonly defensive)
 	Clear the list of files that have been opened.
@@ -3098,9 +3116,6 @@ lrucache_set_size (developmentonly defensive)
 lrucache_stats (developmentonly defensive)
 	Spews information about all CUtlLRUCaches
 
-malloc_stats_dump (developmentonly defensive)
-	Dump malloc stats to stderr.
-
 map (release vconsole_fuzzy_matching vconsole_set_focus)
 	map <mapname> :Load a new map.
 
@@ -3208,6 +3223,24 @@ memory (developmentonly defensive)
 
 memory_check_limit (developmentonly)
 	Assert if peak memory use is over the limit.
+
+midi_connect_port (developmentonly clientdll defensive)
+	Attempt to open a connection on the passed port ( or 0 if not specfied ). Will close existing connection
+
+midi_release (developmentonly clientdll defensive)
+	Release any connected MIDI device
+
+midi_reset_notes (developmentonly clientdll defensive)
+	Send emergency Note OFF for all active notes on all channels
+
+midi_status (developmentonly clientdll defensive)
+	Dump info about connected MIDI devices
+
+midi_test_off (developmentonly clientdll defensive)
+	Send a test note OFF to the connected MIDI device
+
+midi_test_on (developmentonly clientdll defensive)
+	Send a test note ON to the connected MIDI device
 
 minimap_create (clientdll cheat)
 	Does a bunch of work to create a minimap
@@ -3578,6 +3611,9 @@ print_ti8_challenges (developmentonly clientdll)
 progress_enable (developmentonly defensive)
 	<no description>
 
+projection_reload_ability_data (developmentonly clientdll defensive)
+	Reload ability_projection.txt
+
 prop_debug (gamedll cheat)
 	Toggle prop debug mode. If on, props will show colorcoded bounding boxes. Red means ignore all damage. White means respond physically to damage but never break. Green maps health in the range of 100 down to 1.
 
@@ -3607,6 +3643,9 @@ push_var_values (developmentonly defensive)
 quit (release vconsole_set_focus)
 	Quit the game
 
+r_dx11_report_live_objects (developmentonly defensive)
+	Prints out live D3D11 objects (requires -dx11debug)
+
 r_force_engine_render_frame (developmentonly defensive)
 	Force a single render of the engine viewport.
 
@@ -3616,14 +3655,20 @@ r_gpu_mem_stats (linked_concommand developmentonly defensive)
 r_print_buffers (linked_concommand developmentonly defensive)
 	Print Vertex/Index/GPU buffers.
 
+r_print_texture_stats (developmentonly defensive)
+	Texture stats
+
 r_render_coordination_state (developmentonly defensive)
 	Prints out the current render coordination state.
 
 r_renderdoc_capture_frame (linked_concommand developmentonly defensive)
 	Triggers a RenderDoc capture
 
-r_renderdoc_capture_window_vulkan (developmentonly)
+r_renderdoc_capture_window_dx11 (developmentonly)
 	Triggers a RenderDoc capture of a specific Window
+
+r_textures_evict_all (linked_concommand developmentonly defensive)
+	Evict all resident texture.
 
 r_toggleviewportsize (developmentonly defensive)
 	Toggles viewport size between small + full window.
@@ -3718,6 +3763,9 @@ resource_list (developmentonly defensive)
 
 resource_log_allocate_timing (developmentonly defensive)
 	Log time spent in Allocate for all resource types
+
+resource_manifest_validate_modules (developmentonly defensive)
+	Scan all of the loaded modules and validate any resource manifests found
 
 resource_repeated_reload (developmentonly defensive)
 	resource_repeated_reload <count> <resource_name> (<resource name> ...): Load and unload the specified resource(s)
@@ -4713,27 +4761,6 @@ vprof_time_scale (developmentonly hidden)
 
 vtune (developmentonly defensive)
 	Controls VTune's sampling.
-
-vulkan_framebuffermgr_print (developmentonly defensive)
-	Prints out stats for the Vulkan Framebuffer manager
-
-vulkan_memgr_fragmentation_print (developmentonly defensive)
-	Prints out detailed memory fragmentation stats for the Vulkan memory manager
-
-vulkan_memgr_print (developmentonly defensive)
-	Prints out stats for the Vulkan memory manager
-
-vulkan_pipelinemgr_print (developmentonly defensive)
-	Prints out stats for the Vulkan Pipeline manager
-
-vulkan_shader_table_print (developmentonly defensive)
-	Prints out stats for the Vulkan shader table
-
-vulkan_vma_defrag (developmentonly defensive)
-	Force defragmenting memory with VMA
-
-vulkan_vma_gpu_mem_dump (developmentonly defensive)
-	Dump .json file for use by GpuMemDumpVis.py
 
 watch_server (developmentonly clientdll defensive)
 	Watch a server steam id
