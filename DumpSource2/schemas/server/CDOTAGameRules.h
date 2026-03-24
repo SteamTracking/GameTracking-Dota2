@@ -693,4 +693,5 @@ class CDOTAGameRules : public CMultiplayRules
 	float64[15] m_flLastItemSuggestionRequestTime;
 	float64 m_flLastPerfSampleTime;
 	int32 m_nMultipleTickFrameCount;
+	int32 m_nTimesPlayersDisconnected;
 };
