@@ -1,5 +1,7 @@
 class CPhysConstraint : public CLogicalEntity
 {
+	// MPhysPtr
+	IPhysicsJoint* m_hJoint;
 	CUtlSymbolLarge m_nameAttach1;
 	CUtlSymbolLarge m_nameAttach2;
 	CHandle< CBaseEntity > m_hAttach1;

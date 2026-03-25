@@ -1,4 +1,5 @@
 class CDOTA_Ability_Obsidian_Destroyer_AstralImprisonment : public CDOTABaseAbility
 {
-	CHandle< CBaseEntity > m_hImprisonedUnit;
+	float32 m_flCurrentDurationOverride;
+	float32 m_flCurrentPotency;
 };

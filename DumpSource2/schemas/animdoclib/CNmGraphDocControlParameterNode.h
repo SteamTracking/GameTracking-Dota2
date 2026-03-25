@@ -16,8 +16,10 @@
 //	"m_outputPins":
 //	[
 //	],
-//	"m_groupName": ""
+//	"m_groupName": "",
+//	"m_dictionaryParameterBinding": "00000000-0000-0000-0000-000000000000"
 //}
 class CNmGraphDocControlParameterNode : public CNmGraphDocParameterBaseNode
 {
+	V_uuid_t m_dictionaryParameterBinding;
 };

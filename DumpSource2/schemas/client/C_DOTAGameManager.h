@@ -1,4 +1,3 @@
-// MNetworkVarNames = "bool m_CurrentHeroAvailable"
 class C_DOTAGameManager
 {
 	// MNotSaved
@@ -22,6 +21,5 @@ class C_DOTAGameManager
 	bool[9] m_bLoadedPortraits;
 	KeyValues* m_pControlGroupsKeyValues;
 	KeyValues3* m_pItemSuggestPreferenceKeyValues;
-	// MNetworkEnable
 	bool[256] m_CurrentHeroAvailable;
 };

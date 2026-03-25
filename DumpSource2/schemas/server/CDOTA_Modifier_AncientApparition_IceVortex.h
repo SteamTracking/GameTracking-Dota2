@@ -1,12 +1,11 @@
 class CDOTA_Modifier_AncientApparition_IceVortex : public CDOTA_Buff
 {
-	int32 movement_speed_pct;
 	int32 spell_resist_pct;
 	int32 drag_speed;
 	float32 aura_origin_x;
 	float32 aura_origin_y;
-	int32 shard_dps;
+	int32 movement_speed_pct;
 	int32 shard_attack_speed_reduction;
-	int32 frost_stacks;
+	int32 damage_per_second;
 	Vector m_vCenter;
 };

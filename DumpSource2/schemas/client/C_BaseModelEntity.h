@@ -1,30 +1,9 @@
-// MNetworkVarNames = "CRenderComponent::Storage_t m_CRenderComponent"
-// MNetworkVarNames = "CHitboxComponent::Storage_t m_CHitboxComponent"
-// MNetworkVarNames = "CDestructiblePartsComponent * m_pDestructiblePartsSystemComponent"
-// MNetworkVarNames = "RenderMode_t m_nRenderMode"
-// MNetworkVarNames = "RenderFx_t m_nRenderFX"
-// MNetworkVarNames = "Color m_clrRender"
-// MNetworkVarNames = "EntityRenderAttribute_t m_vecRenderAttributes"
-// MNetworkVarNames = "bool m_bRenderToCubemaps"
-// MNetworkVarNames = "bool m_bNoInterpolate"
-// MNetworkVarNames = "CCollisionProperty m_Collision"
-// MNetworkVarNames = "CGlowProperty m_Glow"
-// MNetworkVarNames = "float m_flGlowBackfaceMult"
-// MNetworkVarNames = "float32 m_fadeMinDist"
-// MNetworkVarNames = "float32 m_fadeMaxDist"
-// MNetworkVarNames = "float32 m_flFadeScale"
-// MNetworkVarNames = "float32 m_flShadowStrength"
-// MNetworkVarNames = "uint8 m_nObjectCulling"
-// MNetworkVarNames = "uint32 m_bvDisabledHitGroups"
 class C_BaseModelEntity : public C_BaseEntity
 {
 	// MNotSaved
 	CRenderComponent* m_CRenderComponent;
-	// MNetworkEnable
-	// MNetworkUserGroup = "CHitboxComponent"
-	// MNetworkAlias = "CHitboxComponent"
-	// MNetworkTypeAlias = "CHitboxComponent"
 	CHitboxComponent m_CHitboxComponent;
+	CChoreoComponent* m_pChoreoComponent;
 	HitGroup_t m_nDestructiblePartInitialStateDestructed0;
 	HitGroup_t m_nDestructiblePartInitialStateDestructed1;
 	HitGroup_t m_nDestructiblePartInitialStateDestructed2;
@@ -35,13 +14,12 @@ class C_BaseModelEntity : public C_BaseEntity
 	int32 m_nDestructiblePartInitialStateDestructed2_PartIndex;
 	int32 m_nDestructiblePartInitialStateDestructed3_PartIndex;
 	int32 m_nDestructiblePartInitialStateDestructed4_PartIndex;
-	// MNetworkEnable
-	// MPtrAutoallocate
-	// MNetworkTypeAlias = "CDestructiblePartsSystemComponent*"
+	bool m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces;
+	bool m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces;
+	bool m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces;
+	bool m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces;
+	bool m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces;
 	CDestructiblePartsComponent* m_pDestructiblePartsSystemComponent;
-	HitGroup_t m_LastHitGroup;
-	CGlobalSymbol m_sLastDamageSourceName;
-	VectorWS m_vLastDamagePosition;
 	// MNotSaved
 	bool m_bInitModelEffects;
 	// MNotSaved
@@ -52,44 +30,24 @@ class C_BaseModelEntity : public C_BaseEntity
 	int32 m_iTeamVisibilityBitmask;
 	// MNotSaved
 	int32 m_iOldHealth;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnRenderModeChanged"
 	RenderMode_t m_nRenderMode;
 	bool m_bVisibilityDirtyFlag;
-	// MNetworkEnable
 	RenderFx_t m_nRenderFX;
 	bool m_bAllowFadeInView;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnColorChanged"
 	Color m_clrRender;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnRenderAttributesChanged"
 	C_UtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t > m_vecRenderAttributes;
-	// MNetworkEnable
 	bool m_bRenderToCubemaps;
-	// MNetworkEnable
 	bool m_bNoInterpolate;
-	// MNetworkEnable
 	CCollisionProperty m_Collision;
-	// MNetworkEnable
 	CGlowProperty m_Glow;
-	// MNetworkEnable
 	float32 m_flGlowBackfaceMult;
-	// MNetworkEnable
 	float32 m_fadeMinDist;
-	// MNetworkEnable
 	float32 m_fadeMaxDist;
-	// MNetworkEnable
 	float32 m_flFadeScale;
-	// MNetworkEnable
 	float32 m_flShadowStrength;
-	// MNetworkEnable
 	uint8 m_nObjectCulling;
 	DecalRtEncoding_t m_nRequiredDecalRtEncoding;
-	// MNetworkEnable
-	// MNetworkPriority = 32
-	// MNetworkUserGroup = "Player"
-	// MNetworkChangeCallback = "OnViewOffsetChanged"
+	CUtlOrderedMap< CGlobalSymbol, int32 > m_bodyGroupChoices;
 	CNetworkViewOffsetVector m_vecViewOffset;
 	// MNotSaved
 	CClientAlphaProperty* m_pClientAlphaProperty;
@@ -97,8 +55,6 @@ class C_BaseModelEntity : public C_BaseEntity
 	Color m_ClientOverrideTint;
 	// MNotSaved
 	bool m_bUseClientOverrideTint;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnDisabledHitgroupsChanged"
-	// MSaveOpsForField = "GetHitgroupDisableListSaveRestoreOps"
+	// MKV3TransferSaveOpsForField = "GetHitgroupDisableListSaveRestoreOps"
 	uint32[1] m_bvDisabledHitGroups;
 };

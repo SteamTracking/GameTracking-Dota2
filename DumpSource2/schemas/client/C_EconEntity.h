@@ -1,7 +1,5 @@
-// MNetworkVarNames = "CAttributeContainer m_AttributeManager"
-class C_EconEntity : public C_BaseFlex, public IHasAttributes
+class C_EconEntity : public C_BaseAnimatingOverlay, public IHasAttributes
 {
-	// MNetworkEnable
 	CAttributeContainer m_AttributeManager;
 	bool m_bClientside;
 	EconEntityParticleDisableMode_t m_nDisableMode;

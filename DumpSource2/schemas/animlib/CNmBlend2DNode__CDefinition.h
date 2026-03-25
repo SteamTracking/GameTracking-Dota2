@@ -4,8 +4,6 @@
 //	"m_sourceNodeIndices":
 //	[
 //	],
-//	"m_nInputParameterNodeIdx0": -1,
-//	"m_nInputParameterNodeIdx1": -1,
 //	"m_values":
 //	[
 //	],
@@ -15,15 +13,17 @@
 //	"m_hullIndices":
 //	[
 //	],
+//	"m_nInputParameterNodeIdx0": -1,
+//	"m_nInputParameterNodeIdx1": -1,
 //	"m_bAllowLooping": true
 //}
 class CNmBlend2DNode::CDefinition : public CNmPoseNode::CDefinition
 {
-	CUtlVectorFixedGrowable< int16, 5 > m_sourceNodeIndices;
+	CUtlLeanVectorFixedGrowable< int16, 5 > m_sourceNodeIndices;
+	CUtlLeanVectorFixedGrowable< Vector2D, 10 > m_values;
+	CUtlLeanVectorFixedGrowable< uint8, 30 > m_indices;
+	CUtlLeanVectorFixedGrowable< uint8, 10 > m_hullIndices;
 	int16 m_nInputParameterNodeIdx0;
 	int16 m_nInputParameterNodeIdx1;
-	CUtlVectorFixedGrowable< Vector2D, 10 > m_values;
-	CUtlVectorFixedGrowable< uint8, 30 > m_indices;
-	CUtlVectorFixedGrowable< uint8, 10 > m_hullIndices;
 	bool m_bAllowLooping;
 };

@@ -1,9 +1,3 @@
-// MNetworkVarNames = "CGameSceneNodeHandle m_hParent"
-// MNetworkVarNames = "CNetworkOriginCellCoordQuantizedVector m_vecOrigin"
-// MNetworkVarNames = "QAngle m_angRotation"
-// MNetworkVarNames = "float m_flScale"
-// MNetworkVarNames = "CUtlStringToken m_name"
-// MNetworkVarNames = "CUtlStringToken m_hierarchyAttachName"
 class CGameSceneNode
 {
 	// MNotSaved
@@ -16,25 +10,9 @@ class CGameSceneNode
 	CGameSceneNode* m_pChild;
 	// MNotSaved
 	CGameSceneNode* m_pNextSibling;
-	// MNetworkEnable
-	// MNetworkSerializer = "gameSceneNode"
-	// MNetworkChangeCallback = "gameSceneNodeHierarchyParentChanged"
-	// MNetworkPriority = 32
-	// MNetworkVarEmbeddedFieldOffsetDelta = 8
 	CGameSceneNodeHandle m_hParent;
-	// MNetworkEnable
-	// MNetworkPriority = 32
-	// MNetworkUserGroup = "Origin"
-	// MNetworkChangeCallback = "gameSceneNodeLocalOriginChanged"
 	CNetworkOriginCellCoordQuantizedVector m_vecOrigin;
-	// MNetworkEnable
-	// MNetworkPriority = 32
-	// MNetworkSerializer = "gameSceneNodeStepSimulationAnglesSerializer"
-	// MNetworkChangeCallback = "gameSceneNodeLocalAnglesChanged"
 	QAngle m_angRotation;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "gameSceneNodeLocalScaleChanged"
-	// MNetworkPriority = 32
 	float32 m_flScale;
 	VectorWS m_vecAbsOrigin;
 	QAngle m_angAbsRotation;
@@ -75,12 +53,10 @@ class CGameSceneNode
 	uint8 m_nHierarchyType;
 	// MNotSaved
 	uint8 m_nDoNotSetAnimTimeInInvalidatePhysicsCount;
-	// MNetworkEnable
 	CUtlStringToken m_name;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "gameSceneNodeHierarchyAttachmentChanged"
 	CUtlStringToken m_hierarchyAttachName;
 	float32 m_flZOffset;
+	QAngle m_angLocalOrientation;
 	float32 m_flClientLocalScale;
 	Vector m_vRenderOrigin;
 };

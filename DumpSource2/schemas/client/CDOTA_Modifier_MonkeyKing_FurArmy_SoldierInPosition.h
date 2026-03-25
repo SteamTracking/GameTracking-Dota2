@@ -4,7 +4,11 @@ class CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition : public CDOTA_Buff
 	CHandle< C_BaseEntity > m_hAttackTarget;
 	float32 attack_speed;
 	float32 final_radius;
+	float32 third_radius;
+	float32 second_radius;
 	int32 outer_attack_buffer;
+	int32 attack_speed_pct;
+	int32 damage_pct;
 	CHandle< C_BaseEntity > m_hThinker;
 	bool m_bDisarmed;
 	GameTime_t m_flNextAttackTime;

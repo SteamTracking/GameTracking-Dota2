@@ -149,6 +149,10 @@ class CBaseRendererSource2 : public CParticleFunctionRenderer
 	// MPropertySortPriority = 200
 	// MPropertySuppressExpr = "!m_bRefract"
 	bool m_bRefractSolid;
+	// MPropertyFriendlyName = "refract in 2 passes - can refract particles behind, requires (MBOIT!)"
+	// MPropertySortPriority = 200
+	// MPropertySuppressExpr = "mod != hlx || !m_bRefract"
+	bool m_bRefract2Passes;
 	// MPropertyFriendlyName = "refract amount"
 	// MPropertyAttributeRange = "-2 2"
 	// MPropertySortPriority = 200

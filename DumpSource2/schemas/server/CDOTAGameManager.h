@@ -1,4 +1,3 @@
-// MNetworkVarNames = "bool m_CurrentHeroAvailable"
 class CDOTAGameManager
 {
 	// MNotSaved
@@ -18,6 +17,5 @@ class CDOTAGameManager
 	KeyValues* m_pRegionKeyValues;
 	KeyValues* m_pSurveyQuestionData;
 	KeyValues3 m_AddonInfoKeyValues;
-	// MNetworkEnable
 	bool[256] m_CurrentHeroAvailable;
 };

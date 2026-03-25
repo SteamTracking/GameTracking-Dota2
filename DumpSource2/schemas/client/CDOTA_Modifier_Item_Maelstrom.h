@@ -7,6 +7,6 @@ class CDOTA_Modifier_Item_Maelstrom : public CDOTA_Buff_Item
 	int32 chain_damage;
 	int32 chain_radius;
 	float32 chain_cooldown;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 	CountdownTimer m_ChainTimer;
 };

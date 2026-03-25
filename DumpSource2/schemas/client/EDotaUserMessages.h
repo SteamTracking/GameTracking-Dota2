@@ -168,4 +168,5 @@ enum EDotaUserMessages : uint32_t
 	DOTA_UM_MonsterHunter_HuntAlert = 633,
 	DOTA_UM_TormentorTimer = 634,
 	DOTA_UM_KillEffect = 635,
+	DOTA_UM_GiveItem = 636,
 };

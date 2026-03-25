@@ -8,4 +8,5 @@ enum EOverworldNodeFlags : uint32_t
 	InvisibleUntilNearby = 32,
 	Secret = 64,
 	FinalNode = 128,
+	Invisible = 256,
 };

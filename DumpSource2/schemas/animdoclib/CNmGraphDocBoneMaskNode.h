@@ -23,9 +23,18 @@
 //			"m_bAllowMultipleOutConnections": true
 //		}
 //	],
+//	"m_pDefaultVariationData":
+//	{
+//		"_class": "CNmGraphDocBoneMaskNode::CData",
+//		"m_overrideMaskID": ""
+//	},
+//	"m_overrides":
+//	[
+//	],
+//	"m_defaultResourceName": "",
 //	"m_maskID": ""
 //}
-class CNmGraphDocBoneMaskNode : public CNmGraphDocFlowNode
+class CNmGraphDocBoneMaskNode : public CNmGraphDocVariationDataNode
 {
 	// MPropertyAttributeEditor = "BoneMaskID()"
 	CGlobalSymbol m_maskID;

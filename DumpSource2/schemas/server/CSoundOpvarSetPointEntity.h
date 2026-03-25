@@ -23,9 +23,9 @@ class CSoundOpvarSetPointEntity : public CSoundOpvarSetPointBase
 	// MNotSaved
 	float32 m_flPathingDistanceNormFactor;
 	// MNotSaved
-	Vector m_vPathingSourcePos;
+	VectorWS m_vPathingSourcePos;
 	// MNotSaved
-	Vector m_vPathingListenerPos;
+	VectorWS m_vPathingListenerPos;
 	// MNotSaved
 	Vector m_vPathingDirection;
 	// MNotSaved

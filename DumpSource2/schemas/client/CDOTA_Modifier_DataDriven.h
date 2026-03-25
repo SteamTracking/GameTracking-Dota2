@@ -23,12 +23,8 @@ class CDOTA_Modifier_DataDriven : public CDOTA_Buff
 	char* m_pszStatusEffectName;
 	int32 m_nStatusEffectPriority;
 	int32 m_nOverrideAnimation;
-	int32 m_nOrbPriority;
-	int32 m_nOrbLabel;
-	bool m_bOrbIsCastAttack;
 	bool m_bNeedsReParseIfRefreshed;
 	char* m_pszModelName;
-	char* m_pszOrbProjectileName;
 	uint64 m_nModifierStatesEnabled;
 	uint64 m_nModifierStatesDisabled;
 	KeyValues* m_pOnCreated;

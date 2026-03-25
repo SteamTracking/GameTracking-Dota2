@@ -17,4 +17,7 @@ enum EOverworldAuditAction : uint32_t
 	k_eOverworldAuditAction_EncounterRewardTokenReward = 14,
 	k_eOverworldAuditAction_SupportGrantTokens = 16,
 	k_eOverworldAuditAction_TokenGiftSent = 17,
+	k_eOverworldAuditAction_DevSetFortune = 18,
+	k_eOverworldAuditAction_DevClearFortune = 19,
+	k_eOverworldAuditAction_RequestFortune = 20,
 };

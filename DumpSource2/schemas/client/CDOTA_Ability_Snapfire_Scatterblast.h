@@ -4,5 +4,6 @@ class CDOTA_Ability_Snapfire_Scatterblast : public C_DOTABaseAbility
 	float32 debuff_duration;
 	int32 point_blank_range;
 	float32 point_blank_dmg_bonus_pct;
+	float32 point_blank_debuff_duration_pct;
 	float32 blast_width_end;
 };

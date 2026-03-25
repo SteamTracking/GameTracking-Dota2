@@ -1,11 +1,8 @@
 class CPathTrack : public CPointEntity
 {
-	// MClassPtr
-	CPathTrack* m_pnext;
-	// MClassPtr
-	CPathTrack* m_pprevious;
-	// MClassPtr
-	CPathTrack* m_paltpath;
+	CHandle< CPathTrack > m_pnext;
+	CHandle< CPathTrack > m_pprevious;
+	CHandle< CPathTrack > m_paltpath;
 	float32 m_flRadius;
 	float32 m_length;
 	CUtlSymbolLarge m_altName;

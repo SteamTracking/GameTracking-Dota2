@@ -5,6 +5,7 @@ class CFuncMover : public CBaseModelEntity
 	CHandle< CPathMover > m_hPrevPathMover;
 	CUtlSymbolLarge m_iszPathNodeStart;
 	CUtlSymbolLarge m_iszPathNodeEnd;
+	bool m_bIgnoreEndNode;
 	CFuncMover::Move_t m_eMoveType;
 	bool m_bIsReversing;
 	float32 m_flStartSpeed;
@@ -43,10 +44,9 @@ class CFuncMover : public CBaseModelEntity
 	GameTime_t m_flTimeStartOrientationChange;
 	float32 m_flTimeToBlendToNewOrientation;
 	float32 m_flDurationBlendToNewOrientationRan;
-	int32 m_nOriginalOrientationIndex;
 	bool m_bCreateMovableNavMesh;
 	bool m_bAllowMovableNavMeshDockingOnEntireEntity;
-	CEntityIOOutput m_OnNodePassed;
+	CEntityOutputTemplate< CUtlString > m_OnNodePassed;
 	CUtlSymbolLarge m_iszOrientationMatchEntityName;
 	CHandle< CBaseEntity > m_hOrientationMatchEntity;
 	float32 m_flTimeToTraverseToNextNode;
@@ -57,8 +57,9 @@ class CFuncMover : public CBaseModelEntity
 	CEntityIOOutput m_OnLerpToPositionComplete;
 	bool m_bIsPaused;
 	CFuncMover::TransitionToPathNodeAction_t m_eTransitionedToPathNodeAction;
+	Quaternion m_qTransitionSourceOrientation;
 	int32 m_nDelayedTeleportToNode;
-	bool m_bIsVerboseLogging;
+	bool m_bIsImGuiLogging;
 	CHandle< CBaseEntity > m_hFollowEntity;
 	float32 m_flFollowDistance;
 	float32 m_flFollowMinimumSpeed;
@@ -77,11 +78,17 @@ class CFuncMover : public CBaseModelEntity
 	CHandle< CFuncMover > m_hFollowMover;
 	CUtlSymbolLarge m_iszFollowMoverEntityName;
 	float32 m_flFollowMoverDistance;
+	float32 m_flFollowMoverRatio;
 	float32 m_flFollowMoverCalculatedDistance;
 	float32 m_flFollowMoverSpringStrength;
+	int32 m_nFollowMoverConstraintPriority;
 	bool m_bFollowConstraintsInitialized;
 	CFuncMover::FollowConstraint_t m_eFollowConstraint;
 	float32 m_flFollowMoverSpeed;
 	float32 m_flFollowMoverVelocity;
 	GameTick_t m_nTickMovementRan;
+	FuncMoverMovementSummary_t m_movementSummary;
+	bool m_bStopFromBeginStopTarget;
+	bool m_bQueueStop;
+	bool m_bQueueStopMoving;
 };

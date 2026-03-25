@@ -5,9 +5,7 @@ class CPathKeyFrame : public CLogicalEntity
 	Quaternion m_qAngle;
 	CUtlSymbolLarge m_iNextKey;
 	float32 m_flNextTime;
-	// MClassPtr
-	CPathKeyFrame* m_pNextKey;
-	// MClassPtr
-	CPathKeyFrame* m_pPrevKey;
+	CHandle< CPathKeyFrame > m_pNextKey;
+	CHandle< CPathKeyFrame > m_pPrevKey;
 	float32 m_flMoveSpeed;
 };

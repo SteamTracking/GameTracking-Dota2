@@ -22,7 +22,7 @@ class CModifierParams
 	int32 nDamageflags;
 	int32 nDamageCategory;
 	int32 iFailType;
-	int16 iRecord;
+	AttackRecord_t iRecord;
 	int32 nCost;
 	int32 nHealthCost;
 	int32 nOrdertype;
@@ -33,7 +33,6 @@ class CModifierParams
 	bool bMKBTested;
 	bool bSpecialistTested;
 	bool bOctarineTested;
-	bool bHeartRegenApplied;
 	bool bSangeAmpApplied;
 	bool bLocketAmpApplied;
 	bool bPaladinAmpApplied;
@@ -44,15 +43,13 @@ class CModifierParams
 	bool bStoutConsidered;
 	bool bAegisUsed;
 	bool bRaindropUsed;
+	bool bBonusIllusion;
 	bool bInterrupted;
 	bool bDiffusalApplied;
 	bool bChainLightningConsidered;
 	bool bSuppressDamage;
 	bool bRangedAttack;
 	bool bProcessProcs;
-	bool bProjectileIsFromIllusion;
-	bool bHasMagicComponent;
-	bool bIsSpellLifesteal;
 	bool bBloodstoneRegenApplied;
 	bool bShroudManaRestoreApplied;
 	bool bPhylacteryApplied;
@@ -76,4 +73,6 @@ class CModifierParams
 	CHandle< C_DOTABaseAbility > inflictor;
 	CHandle< C_DOTABaseAbility > inflictor2;
 	CDOTA_Buff* pAddedBuff;
+	Vector vAttemptedKnockbackDirection;
+	float32 flAttemptedKnockbackMagnitude;
 };

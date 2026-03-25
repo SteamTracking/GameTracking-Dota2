@@ -4,5 +4,5 @@ class sndopvarlatchdata_t
 	CUtlSymbolLarge m_iszOperator;
 	CUtlSymbolLarge m_iszOpvar;
 	float32 m_flVal;
-	Vector m_vPos;
+	VectorWS m_vPos;
 };

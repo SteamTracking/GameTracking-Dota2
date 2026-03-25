@@ -1,4 +1,4 @@
 class CPhysTorque : public CPhysForce
 {
-	VectorWS m_axis;
+	Vector m_axis;
 };

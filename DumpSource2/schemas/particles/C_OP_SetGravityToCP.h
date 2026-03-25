@@ -76,6 +76,7 @@
 //		}
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
+//	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
 //	"m_flOpStartFadeInTime": 0.000000,
 //	"m_flOpEndFadeInTime": 0.000000,
 //	"m_flOpStartFadeOutTime": 0.000000,
@@ -168,6 +169,7 @@
 //			]
 //		}
 //	},
+//	"m_bSetPosition": true,
 //	"m_bSetOrientation": true,
 //	"m_bSetZDown": true
 //}
@@ -179,6 +181,8 @@ class C_OP_SetGravityToCP : public CParticleFunctionPreEmission
 	int32 m_nCPOutput;
 	// MPropertyFriendlyName = "gravity scale"
 	CParticleCollectionFloatInput m_flScale;
+	// MPropertyFriendlyName = "set position to gravity vector"
+	bool m_bSetPosition;
 	// MPropertyFriendlyName = "set orientation"
 	bool m_bSetOrientation;
 	// MPropertyFriendlyName = "set gravity orientation to Z Down (instead of X)"

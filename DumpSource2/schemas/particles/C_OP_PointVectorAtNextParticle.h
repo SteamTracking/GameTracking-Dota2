@@ -76,6 +76,7 @@
 //		}
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
+//	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
 //	"m_flOpStartFadeInTime": 0.000000,
 //	"m_flOpEndFadeInTime": 0.000000,
 //	"m_flOpStartFadeOutTime": 0.000000,
@@ -165,7 +166,8 @@
 //				0.000000
 //			]
 //		}
-//	}
+//	},
+//	"m_bPrevious": false
 //}
 class C_OP_PointVectorAtNextParticle : public CParticleFunctionOperator
 {
@@ -174,4 +176,6 @@ class C_OP_PointVectorAtNextParticle : public CParticleFunctionOperator
 	ParticleAttributeIndex_t m_nFieldOutput;
 	// MPropertyFriendlyName = "Interpolation"
 	CPerParticleFloatInput m_flInterpolation;
+	// MPropertyFriendlyName = "Point at Previous instead of next"
+	bool m_bPrevious;
 };

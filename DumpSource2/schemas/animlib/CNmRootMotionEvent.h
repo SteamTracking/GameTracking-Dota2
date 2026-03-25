@@ -9,7 +9,6 @@
 //		"m_flValue": 0.000000
 //	},
 //	"m_syncID": "",
-//	"m_bClientOnly": false,
 //	"m_flBlendTimeSeconds": 0.100000
 //}
 class CNmRootMotionEvent : public CNmEvent

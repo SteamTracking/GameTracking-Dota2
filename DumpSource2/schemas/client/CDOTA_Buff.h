@@ -12,9 +12,11 @@ class CDOTA_Buff : public C_HorizontalMotionController, public C_VerticalMotionC
 	float32 m_flDuration;
 	GameTime_t m_flDieTime;
 	CHandle< C_BaseEntity > m_hCaster;
+	HeroID_t m_nApplierHeroID;
 	CHandle< C_BaseEntity > m_hAbility;
 	CHandle< C_BaseEntity > m_hParent;
 	CHandle< C_BaseEntity > m_hDuplicationSource;
+	AbilityID_t m_nApplierAbilityID;
 	CHandle< C_BaseEntity > m_hAuraOwner;
 	int32 m_iStackCount;
 	int16 m_iAuraSearchTeam;

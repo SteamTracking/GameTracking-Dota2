@@ -7,5 +7,5 @@ class CDOTA_Modifier_Item_Silver_Edge : public CDOTA_Buff_Item
 	int32 crit_chance;
 	int32 crit_multiplier;
 	float32 backstab_duration;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 };

@@ -1,19 +1,9 @@
-// MNetworkVarNames = "PlayerResourcePlayerTeamData_t m_vecPlayerTeamData"
-// MNetworkVarNames = "PlayerResourcePlayerData_t m_vecPlayerData"
-// MNetworkVarNames = "PlayerResourceBroadcasterData_t m_vecBrodcasterData"
-// MNetworkVarNames = "uint32 m_vecEventsForDisplay"
-// MNetworkVarNames = "int8 m_nPrimaryEventIndex"
 class CDOTA_PlayerResource : public CBaseEntity
 {
-	// MNetworkEnable
 	CUtlVectorEmbeddedNetworkVar< PlayerResourcePlayerTeamData_t > m_vecPlayerTeamData;
-	// MNetworkEnable
 	CUtlVectorEmbeddedNetworkVar< PlayerResourcePlayerData_t > m_vecPlayerData;
-	// MNetworkEnable
 	CUtlVectorEmbeddedNetworkVar< PlayerResourceBroadcasterData_t > m_vecBrodcasterData;
-	// MNetworkEnable
 	CNetworkUtlVectorBase< uint32 > m_vecEventsForDisplay;
-	// MNetworkEnable
 	int8 m_nPrimaryEventIndex;
 	CHandle< CBaseEntity >[64] m_playerIDToPlayer;
 	CHandle< CBaseEntity >[64] m_playerIDToPawn;

@@ -1,0 +1,3 @@
+class CTestPulseIOComponent_DerivedAPI
+{
+};

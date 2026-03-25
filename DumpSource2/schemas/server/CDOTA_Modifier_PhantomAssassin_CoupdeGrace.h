@@ -5,6 +5,6 @@ class CDOTA_Modifier_PhantomAssassin_CoupdeGrace : public CDOTA_Buff
 	int32 attacks_to_proc;
 	int32 attacks_to_proc_creeps;
 	int32 dagger_crit_chance;
-	int32 m_iCritRecord;
+	AttackRecord_t m_iCritRecord;
 	float32 duration;
 };

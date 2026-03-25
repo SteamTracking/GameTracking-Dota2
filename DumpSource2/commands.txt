@@ -729,14 +729,7 @@ cl_phys_list (developmentonly clientdll)
 	    -world -save <name>   save world to a file
 	    -world -mem           memory dump (separately per game dll)
 	    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory
-	    -world -profiletraces ProfileRecordedTraces
 	    -world -agg           current aggregate data registry (loaded resources)
-
-cl_phys_record_rays (developmentonly clientdll)
-	Dump physics main world to file
-
-cl_phys_record_rays_and_world (developmentonly clientdll)
-	Dump traces physics main world to file
 
 cl_phys_sleep (developmentonly clientdll)
 	Put all physics in all the worlds to sleep
@@ -1210,6 +1203,9 @@ dota_bot_give_item (gamedll client_can_execute)
 dota_bot_give_level (gamedll client_can_execute)
 	Gives all bots the specified number of levels.
 
+dota_bot_give_minutes (developmentonly gamedll cheat)
+	Gives all bots gold and XP as if they had played some additional number of minutes.
+
 dota_bot_populate (gamedll client_can_execute)
 	Populates the remaining slots with bots
 
@@ -1450,9 +1446,6 @@ dota_crownfall_show_archive_page (developmentonly clientdll)
 dota_crownfall_show_credits_page (developmentonly clientdll)
 	<no description>
 
-dota_crownfall_show_tokens_received (developmentonly clientdll)
-	<no description>
-
 dota_crownfall_visual_novel_dialogue (developmentonly clientdll)
 	<no description>
 
@@ -1648,6 +1641,9 @@ dota_help_tips_reset_intro (developmentonly clientdll defensive)
 dota_hero_adjectives_dump (developmentonly clientdll defensive)
 	[adjective] [value] Dumps out which heroes have which adjectives
 
+dota_hero_muerta_add_supernatural_stack (developmentonly gamedll defensive)
+	<no description>
+
 dota_hero_ringmaster_dark_carnival_souvenir_add_charge (developmentonly gamedll defensive)
 	<no description>
 
@@ -1788,6 +1784,9 @@ dota_muerta_release_event_simulate_minigame_score (developmentonly clientdll)
 
 dota_onstage_toggle_cursor (developmentonly clientdll)
 	Toggles the cursor on the onstage panel, helpful for pano debugging
+
+dota_overworld_show_tokens_received (developmentonly clientdll)
+	<no description>
 
 dota_party_debug (developmentonly clientdll defensive)
 	Prints local party objects
@@ -2784,6 +2783,12 @@ fs_clear_open_duplicate_times (developmentonly defensive)
 fs_dump_open_duplicate_times (developmentonly defensive)
 	Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them.
 
+func_mover_count (gamedll cheat)
+	<no description>
+
+func_mover_enable_debug_all (gamedll cheat)
+	<no description>
+
 game_particle_manager_dump_requeue (developmentonly clientdll)
 	Dump contents of particle manager requeue
 
@@ -3450,6 +3455,9 @@ npc_test_autostyle (developmentonly gamedll)
 open_asset (developmentonly defensive)
 	Opens an asset in it's primary editor of choice. Specify the full path to the asset from the mod directory.
 
+open_current_map_in_hammer (developmentonly)
+	opens the current map in hammer.
+
 openshop_category (developmentonly clientdll defensive)
 	opens shop from clicks on the world shop model, specific tab request
 
@@ -3461,6 +3469,9 @@ p2p_listpeers (developmentonly defensive)
 
 p2p_ping (developmentonly clientdll defensive)
 	Ping a peer.
+
+panorama_console_reset_size_and_position (linked_concommand developmentonly clientdll hidden defensive)
+	Resets the panorama console to its default size and position
 
 panorama_dispatch_event (developmentonly defensive)
 	Dispatch the event defined by the argument string. No creating panel is specified.
@@ -3534,14 +3545,7 @@ phys_list (developmentonly gamedll)
 	    -world -save <name>   save world to a file
 	    -world -mem           memory dump (separately per game dll)
 	    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory
-	    -world -profiletraces ProfileRecordedTraces
 	    -world -agg           current aggregate data registry (loaded resources)
-
-phys_record_rays (developmentonly gamedll)
-	Dump physics main world to file
-
-phys_record_rays_and_world (developmentonly gamedll)
-	Dump traces physics main world to file
 
 phys_shoot (gamedll cheat)
 	Shoots a phys object.
@@ -3845,6 +3849,9 @@ sc_setclassflags (cheat)
 sc_showclasses (cheat)
 	List the object class names known by scenesystem
 
+scene_coordinator_add_request (developmentonly gamedll defensive)
+	Add a request to the scene coordinator
+
 scene_playvcd (gamedll cheat)
 	Play the given VCD as an instanced scripted scene.
 
@@ -4110,20 +4117,11 @@ snd_list_soundevents (developmentonly cheat)
 snd_list_soundevents_by_stack (developmentonly cheat)
 	List all available soundevents using specified stack name
 
-snd_print_activetracks (cheat)
-	List all active tracks
-
-snd_print_arrangements (cheat)
-	List all available sequence arrangments
-
 snd_print_current_mixer_mixgroup (developmentonly defensive)
 	Get data related to mix group matching string
 
 snd_print_samplers (cheat)
 	List all available samplers
-
-snd_print_sequences (cheat)
-	List all available midi sequences
 
 snd_print_soundevent (developmentonly vconsole_fuzzy_matching vconsole_set_focus)
 	Print the data associated with the specified soundevent.
@@ -4155,17 +4153,29 @@ snd_samplers_play_note (cheat)
 snd_samplers_stop_note (cheat)
 	Stop a note from a specified sampler
 
-snd_sequence_set_track_bpm (cheat)
+snd_sequencer_print_activetracks (cheat)
+	List all active tracks
+
+snd_sequencer_print_arrangements (cheat)
+	List all available sequence arrangments
+
+snd_sequencer_print_sequences (cheat)
+	List all available midi sequences
+
+snd_sequencer_set_track_bpm (cheat)
 	Sets the tempo of the specified track
 
-snd_sequence_set_track_transpose (cheat)
+snd_sequencer_set_track_transpose (cheat)
 	Sets the transposition of the specified track
 
-snd_sequence_stop_all_tracks (cheat)
+snd_sequencer_stop_all_tracks (cheat)
 	Stops all currently playing sequences
 
-snd_sequence_stop_track (cheat)
+snd_sequencer_stop_track (cheat)
 	Stops the specified track
+
+snd_sequencer_vmidi_flush (cheat)
+	Purge and reload all vmidi data and files.
 
 snd_set_physics_surface_properties (cheat)
 	Set physics surface properties for materials. Usage: <heuristic #> <commit>
@@ -4263,6 +4273,9 @@ snd_sos_stop_soundevent_guid (cheat)
 snd_sos_stop_soundevent_index (cheat)
 	Stops a specified soundevent
 
+snd_sos_stop_track (cheat)
+	Stop the specified track and it's queue.
+
 snd_sos_sv_soundevent_pause_last (developmentonly gamedll defensive)
 	Test
 
@@ -4308,9 +4321,6 @@ snd_soundmixer_setmixlayer_amount (developmentonly)
 snd_steamaudio_display_probes (developmentonly defensive)
 	Load all the probes from a file and display probes based on the passed on arguments.
 
-snd_steamaudio_export_scene (cheat)
-	Exports scene currently used by Steam Audio as a phononscene file.
-
 snd_stereo_speaker_pan_exponent (developmentonly defensive)
 	Specifies the exponent for the pan xfade from speaker to speaker if the "exp" pan law is being used.
 
@@ -4322,9 +4332,6 @@ snd_surround_speaker_pan_exponent (developmentonly defensive)
 
 snd_surround_speaker_pan_radial_weight (developmentonly defensive)
 	Apply cos(angle) * weight before pan law
-
-snd_vmidi_flush (cheat)
-	Purge and reload all vmidi data and files.
 
 sndplaydelay (developmentonly defensive)
 	<no description>

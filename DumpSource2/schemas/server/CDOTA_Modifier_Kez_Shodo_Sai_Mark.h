@@ -6,7 +6,8 @@ class CDOTA_Modifier_Kez_Shodo_Sai_Mark : public CDOTA_Buff
 	int32 invis_bonus_crit;
 	float32 stun_duration;
 	float32 parry_stun_duration;
-	CUtlVector< int16 > m_vecAttackRecords;
+	float32 parry_bonus_stun_duration;
+	CUtlVector< AttackRecord_t > m_vecAttackRecords;
 	bool m_bFromParry;
 	bool m_bParryBonus;
 	bool m_bConsumed;

@@ -7,7 +7,5 @@ class CDOTA_Modifier_Item_Shivas_Guard_Thinker : public CDOTA_Buff
 	int32 blast_speed;
 	float32 blast_radius;
 	int32 blast_damage;
-	int32 illusion_multiplier_pct;
 	float32 blast_debuff_duration;
-	float32 resist_debuff_duration;
 };

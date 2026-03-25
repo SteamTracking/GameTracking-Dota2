@@ -5,5 +5,5 @@ class CDOTA_Modifier_Bloodthorn_Debuff : public CDOTA_Buff
 	int32 proc_damage_heroes;
 	int32 proc_damage_creeps;
 	float32 m_flDamageTaken;
-	CUtlVector< int16 > m_vRecords;
+	CUtlVector< AttackRecord_t > m_vRecords;
 };

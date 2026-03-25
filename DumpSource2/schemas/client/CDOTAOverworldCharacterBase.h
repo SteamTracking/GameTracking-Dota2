@@ -13,7 +13,7 @@
 //	],
 //	"m_unFrameWidth": 0,
 //	"m_unFrameTime": 100,
-//	"bUse3dPreview": false,
+//	"m_bUse3dPreview": false,
 //	"m_nPreviewHeroID": 0
 //}
 // MVDataRoot
@@ -25,6 +25,6 @@ class CDOTAOverworldCharacterBase
 	Vector2D m_vOffset;
 	uint16 m_unFrameWidth;
 	uint16 m_unFrameTime;
-	bool bUse3dPreview;
+	bool m_bUse3dPreview;
 	HeroID_t m_nPreviewHeroID;
 };

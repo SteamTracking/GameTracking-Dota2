@@ -6,9 +6,10 @@ class CDOTA_Modifier_SkeletonKing_BoneGuard_Summon : public CDOTA_Buff
 	bool m_bRespawnConsumed;
 	bool m_bKillParentOnDestroy;
 	GameTime_t m_flRespawnTime;
-	int32 vampiric_aura;
+	float32 vampiric_aura;
 	int32 gold_bounty;
 	int32 xp_bounty;
 	int32 skeleton_building_damage_reduction;
 	int32 skeleton_bonus_hero_damage;
+	int32 m_nVampiricAura;
 };

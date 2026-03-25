@@ -6,4 +6,6 @@ class CDOTA_Modifier_Alchemist_GoblinsGreed : public CDOTA_Buff
 	int32 bonus_gold;
 	int32 bonus_bonus_gold;
 	int32 bonus_gold_cap;
+	int32 bonus_gold_per_scepter;
+	int32 scepter_bonus_damage;
 };

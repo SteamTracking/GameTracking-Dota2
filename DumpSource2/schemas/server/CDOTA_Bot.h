@@ -23,6 +23,7 @@ class CDOTA_Bot
 	DOTA_LANE m_ForcedLane;
 	float32 m_fCurrentLaneAmount;
 	bool m_bIsNPXCarry;
+	bool m_bIsInLaningPhase;
 	float32 m_fEstimatedUnitDamage;
 	float32 m_fEstimatedMaxUnitDamage;
 	float32 m_fEstimatedBuildingDamage;
@@ -62,7 +63,7 @@ class CDOTA_Bot
 	GameTime_t m_fRequestedBlinkExpire;
 	CUtlVector< CHandle< CBaseEntity > > m_hMinions;
 	CUtlVector< CDOTABaseAbility* > m_Build;
-	float32[28] m_fModeDesires;
+	float32[31] m_fModeDesires;
 	int32 m_iPreviousBotModeType;
 	GameTime_t m_fPendingActionExecuteTime;
 	bool m_bPendingActionBypass;

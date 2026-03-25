@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = {
+//	"m_namespace": "",
 //	"m_bUseReference": true,
 //	"m_sound": "",
 //	"m_pSound": null
@@ -7,6 +8,7 @@
 // MPropertyDescription = "Reference to a vsnd file or another container."
 class CSoundContainerReference
 {
+	CUtlString m_namespace;
 	// MPropertyFriendlyName = "Use Vsnd File"
 	bool m_bUseReference;
 	// MPropertySuppressExpr = "m_bUseReference == 0"

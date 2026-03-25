@@ -5,7 +5,8 @@
 //	"nSpawnNodeID": -1,
 //	"nRetiredAtNodeID": -1,
 //	"flLastReferenced": 0.000000,
-//	"nLastValidEntryIdx": 0
+//	"nLastValidEntryIdx": 0,
+//	"bWasAnObservableComputation": false
 //}
 class PulseGraphExecutionHistoryCursorDesc_t
 {
@@ -14,4 +15,5 @@ class PulseGraphExecutionHistoryCursorDesc_t
 	PulseDocNodeID_t nRetiredAtNodeID;
 	float32 flLastReferenced;
 	int32 nLastValidEntryIdx;
+	bool bWasAnObservableComputation;
 };

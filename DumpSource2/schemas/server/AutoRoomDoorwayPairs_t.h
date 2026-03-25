@@ -1,5 +1,5 @@
 class AutoRoomDoorwayPairs_t
 {
-	Vector vP1;
-	Vector vP2;
+	VectorWS vP1;
+	VectorWS vP2;
 };

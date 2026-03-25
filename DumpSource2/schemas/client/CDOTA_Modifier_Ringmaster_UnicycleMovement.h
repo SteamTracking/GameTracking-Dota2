@@ -13,4 +13,5 @@ class CDOTA_Modifier_Ringmaster_UnicycleMovement : public CDOTA_Buff
 	float32 m_bCrashScheduled;
 	float32 m_flDesiredYaw;
 	ParticleIndex_t m_nMaxSpeedFXIndex;
+	CHandle< C_BaseEntity > m_hUnicycle;
 };

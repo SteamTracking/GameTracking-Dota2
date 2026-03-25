@@ -1,8 +1,5 @@
-// MNetworkVarNames = "CHandle< CFogController> m_hCtrl"
 class fogplayerparams_t
 {
-	// MNetworkEnable
-	// MNetworkUserGroup = "PlayerFogController"
 	CHandle< CFogController > m_hCtrl;
 	float32 m_flTransitionTime;
 	Color m_OldColor;

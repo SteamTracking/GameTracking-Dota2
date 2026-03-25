@@ -8,6 +8,6 @@ class CDOTA_Modifier_PhantomAssassin_BlurActive : public CDOTA_Buff
 	CHandle< CBaseEntity > m_hVisibleEntity;
 	float32 m_flCountdown;
 	float32 buff_duration_after_break;
-	int32 active_movespeed_bonus;
+	float32 active_movespeed_bonus;
 	GameTime_t m_rtLastTime;
 };

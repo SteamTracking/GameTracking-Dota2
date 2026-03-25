@@ -8,8 +8,7 @@
 //	{
 //		"m_flValue": 0.000000
 //	},
-//	"m_syncID": "",
-//	"m_bClientOnly": false
+//	"m_syncID": ""
 //}
 class CNmOrientationWarpEvent : public CNmEvent
 {

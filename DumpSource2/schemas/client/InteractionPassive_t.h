@@ -1,0 +1,6 @@
+enum InteractionPassive_t : uint32_t
+{
+	INTERACT_PASSIVE_NONE = 0,
+	INTERACT_PASSIVE_LOOKAT = 1,
+	INTERACT_PASSIVE_SPEAK = 2,
+};

@@ -223,6 +223,9 @@
 //	"m_DynNodeWindBases":
 //	[
 //	],
+//	"m_SelfCollisionLayers":
+//	[
+//	],
 //	"m_flInternalPressure": 0.000000,
 //	"m_flDefaultTimeDilation": 0.000000,
 //	"m_flWindage": 0.000000,
@@ -335,6 +338,7 @@ class PhysFeModelDesc_t
 	CUtlVector< uint16 > m_LockToGoal;
 	CUtlVector< int16 > m_SkelParents;
 	CUtlVector< FeNodeWindBase_t > m_DynNodeWindBases;
+	CUtlVector< FeModelSelfCollisionLayer_t > m_SelfCollisionLayers;
 	float32 m_flInternalPressure;
 	float32 m_flDefaultTimeDilation;
 	float32 m_flWindage;

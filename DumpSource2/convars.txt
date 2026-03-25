@@ -1,6 +1,3 @@
-HACK_dota_tooltip_force_properties_for_test_id 0 (developmentonly clientdll defensive)
-	<no description>
-
 _fov 0 (developmentonly clientdll defensive)
 	Automates fov command to server.
 
@@ -85,12 +82,6 @@ ai_debug_speech 0 (developmentonly gamedll defensive)
 ai_disabled false (gamedll clientdll replicated cheat)
 	<no description>
 
-ai_expression_frametime 0.05 (developmentonly gamedll defensive)
-	Maximum frametime to still play background expressions.
-
-ai_expression_optimization false (developmentonly gamedll defensive)
-	Disable npc background expressions when you can't see them.
-
 ai_force_serverside_ragdoll false (developmentonly gamedll defensive)
 	<no description>
 
@@ -118,7 +109,7 @@ always_perform_full_spatial_partition_update false (developmentonly gamedll clie
 anim_decode_forcewritealltransforms false (developmentonly)
 	Force BatchAnimationDecode to write transformations for all bones
 
-anim_disable false (developmentonly gamedll clientdll replicated defensive)
+anim_disable false (developmentonly gamedll clientdll replicated)
 	<no description>
 
 anim_noposeparameters false (developmentonly gamedll clientdll replicated)
@@ -643,7 +634,7 @@ cl_async_usercmd_send_recvmargin_min 1 (developmentonly defensive)
 cl_batch_entity_list_ops_during_latch false (developmentonly clientdll)
 	Batch entity list adds / removes while latching interpolated variables to avoid mutex contention.
 
-cl_bone_cache_optimization true (developmentonly clientdll defensive)
+cl_bone_cache_optimization true (developmentonly clientdll)
 	<no description>
 
 cl_boxmove 0 (developmentonly clientdll)
@@ -727,6 +718,9 @@ cl_debug_overlay_fullposition false (developmentonly clientdll defensive)
 cl_debug_overlays_broadcast false (release)
 	Render debug overlays from server.
 
+cl_debug_precipitation_surface_graph false (clientdll replicated cheat)
+	When true, use the surface graph to pass in positions for rainfall.
+
 cl_debugviewangle false (developmentonly clientdll)
 	Plots view angles yaw at various stages of the frame/tick in Tracy.
 
@@ -805,6 +799,12 @@ cl_dota_mk_tree_shake_peak_time 0.25 (developmentonly clientdll defensive)
 cl_dota_mk_tree_shake_strength 15 (developmentonly clientdll defensive)
 	<no description>
 
+cl_dota_preview_hero_vision false (clientdll archive)
+	<no description>
+
+cl_dota_preview_hero_vision_hold_time 0.25 (clientdll archive)
+	<no description>
+
 cl_dota_projectile_debug false (developmentonly clientdll cheat)
 	<no description>
 
@@ -856,14 +856,14 @@ cl_draw_simulating_entities_distance false (developmentonly clientdll defensive)
 cl_drawhud true (clientdll cheat)
 	Enable the rendering of the hud
 
-cl_enable_eye_occlusion true (developmentonly clientdll defensive)
-	<no description>
-
 cl_ent_attachment_filter_substrings "" (clientdll cheat)
 	If an attachment's name has any of the given substrings in it, it will be displayed. Substrings can be delimited by the ',' or '|' character.
 
 cl_ent_joint_axis_size 4 (developmentonly clientdll defensive)
 	<no description>
+
+cl_ent_joint_filter_name "" (clientdll cheat)
+	If a joint's entire name matches (case insensitive), it will be displayed.
 
 cl_ent_joint_filter_substrings "" (clientdll cheat)
 	If a joint's name has any of the given substrings in it, it will be displayed. Substrings can be delimited by the ',' or '|' character.
@@ -909,18 +909,6 @@ cl_extrapolate false (clientdll cheat)
 
 cl_extrapolate_amount 0.25 (clientdll cheat)
 	Set how many seconds the client will extrapolate entities for.
-
-cl_eye_occlusion_debug false (clientdll cheat)
-	<no description>
-
-cl_eye_sin_wave false (developmentonly clientdll defensive)
-	<no description>
-
-cl_eye_target_override [0, 0, 0] (developmentonly clientdll defensive)
-	<no description>
-
-cl_eye_yaw_multiplier 1 (developmentonly clientdll defensive)
-	<no description>
 
 cl_fasttempentcollision 5 (developmentonly clientdll defensive)
 	<no description>
@@ -1129,7 +1117,7 @@ cl_phys_debug_callback_entities false (clientdll cheat)
 cl_phys_enabled true (clientdll cheat)
 	Enable all physics simulation
 
-cl_phys_networked_start_sleep false (developmentonly clientdll defensive)
+cl_phys_networked_start_sleep false (developmentonly clientdll)
 	<no description>
 
 cl_phys_sleep_enable true (clientdll cheat)
@@ -1185,9 +1173,6 @@ cl_pred_print_every_cmd false (clientdll release)
 
 cl_predict true (clientdll userinfo cheat)
 	Perform client side prediction.
-
-cl_predict_after_every_createmove true (developmentonly)
-	run prediction after every CreateMove instead of only after CreateMove for the final tick in a frame.
 
 cl_prediction_savedata_postentitypacketreceived false (clientdll release)
 	Experimental optimization.  If you are reading this in 2026, please delete this convar.
@@ -1387,9 +1372,6 @@ cl_tickpacket_recvmargin_timeconstant 0.4 (developmentonly)
 cl_tickpacket_recvmargin_window 4 (developmentonly)
 	Recvmargin-based usercommand pacing will use past N seconds
 
-cl_tickpacket_send_every_tick true (developmentonly)
-	Send a network packet each time we generate a new usercommand, even if our frame rate is slow and we generate multiple commands in one frame
-
 cl_ticks_net_print_threshold 2 (release)
 	Print a message if network issues cause problems with server snapshots of user commands not being available when needed, if the percentage (0...100) exceeds this value.  A value of 0 will cause the message to always print each time it is calculated
 
@@ -1419,9 +1401,6 @@ cl_usercmd_showsize false (developmentonly)
 
 cl_usesocketsforloopback false (developmentonly defensive)
 	When connecting to local listen server (for example, using the 'map' command), default to loopback=false, which connects to '127.0.0.1' instead of 'loopback'.  This uses the network stack so that fake lag/loss can be simulated.
-
-cl_viewtarget_clamp true (developmentonly clientdll defensive)
-	<no description>
 
 cl_voice_transmit_lobby false (clientdll archive)
 	<no description>
@@ -1696,6 +1675,9 @@ debug_draw_enable true (developmentonly replicated)
 debug_error_model false (gamedll clientdll replicated cheat)
 	<no description>
 
+debug_font_name "Courier New" (developmentonly defensive)
+	Debug font name
+
 debug_font_size 14 (developmentonly defensive)
 	Font size for the debug font
 
@@ -1727,7 +1709,7 @@ debugoverlay_show_text_outline false (cheat)
 	Toggle display of box around text
 
 debugoverlay_text_scale 1 (archive cheat)
-	Scale of the text used for 3d display
+	Scale of the text used for 3d display, but see also debug_font_{size,name}
 
 decalfrequency 10 (developmentonly gamedll notify defensive)
 	<no description>
@@ -1835,6 +1817,9 @@ dota_ability_quick_cast true (clientdll archive per_user)
 	<no description>
 
 dota_ability_refcount_modifiers false (gamedll cheat)
+	<no description>
+
+dota_ability_schema_force_save_ids false (developmentonly gamedll clientdll replicated)
 	<no description>
 
 dota_ability_schema_require_locked_ids false (developmentonly gamedll clientdll replicated)
@@ -2236,7 +2221,10 @@ dota_bloodstone_aoe_size 0 (gamedll clientdll replicated cheat)
 dota_bot_allow_human_control false (gamedll cheat)
 	<no description>
 
-dota_bot_assert_on_invalid_ability_usage false (developmentonly gamedll)
+dota_bot_assert_on_invalid_ability_usage false (developmentonly gamedll archive)
+	<no description>
+
+dota_bot_assert_on_invalid_build false (developmentonly gamedll clientdll replicated)
 	<no description>
 
 dota_bot_challenge_submode 1 (developmentonly gamedll defensive)
@@ -2247,6 +2235,18 @@ dota_bot_chat_throttle_duration 4 (developmentonly gamedll defensive)
 
 dota_bot_client_debug false (developmentonly clientdll defensive)
 	Draw some basic client-side debug info for each hero.
+
+dota_bot_debug_force_push_tower 0 (developmentonly gamedll)
+	<no description>
+
+dota_bot_debug_force_retreat false (developmentonly gamedll)
+	<no description>
+
+dota_bot_debug_force_roshan 0 (developmentonly gamedll)
+	<no description>
+
+dota_bot_debug_force_team_roam 0 (developmentonly gamedll)
+	<no description>
 
 dota_bot_debug_grid 0 (developmentonly gamedll defensive)
 	<no description>
@@ -2272,6 +2272,9 @@ dota_bot_debug_pathing false (developmentonly gamedll defensive)
 dota_bot_debug_potential_location 0 (developmentonly gamedll defensive)
 	<no description>
 
+dota_bot_debug_roles false (developmentonly gamedll)
+	<no description>
+
 dota_bot_debug_team 0 (developmentonly gamedll clientdll replicated defensive)
 	<no description>
 
@@ -2290,6 +2293,9 @@ dota_bot_disable true (gamedll cheat)
 dota_bot_disable_test "" (developmentonly gamedll defensive)
 	<no description>
 
+dota_bot_enable_trial true (developmentonly gamedll)
+	<no description>
+
 dota_bot_failed_pathfind_warnings false (gamedll cheat)
 	<no description>
 
@@ -2304,9 +2310,6 @@ dota_bot_force_pick_slot "" (developmentonly gamedll defensive)
 
 dota_bot_level 0 (developmentonly gamedll defensive)
 	If set, bots will be set to the level specified with appropriate gold on game start
-
-dota_bot_loadout_use_pregenerated_file true (developmentonly gamedll)
-	Replace the loadout in the hero file with the pregenerated loadout saved from dota plus
 
 dota_bot_long_frame_limit 2 (gamedll archive)
 	<no description>
@@ -2339,12 +2342,6 @@ dota_bot_practice_team_desired 0 (clientdll archive)
 	<no description>
 
 dota_bot_purchase_item_enable true (developmentonly gamedll defensive)
-	<no description>
-
-dota_bot_purchase_using_dota_suggest false (developmentonly gamedll)
-	<no description>
-
-dota_bot_report_dota_suggest_loadout true (developmentonly gamedll defensive)
 	<no description>
 
 dota_bot_script_index_mask 15 (clientdll archive per_user)
@@ -2962,6 +2959,9 @@ dota_client_ping_max_allowance 4 (clientdll cheat)
 dota_client_ping_max_allowance_period_seconds 1 (clientdll cheat)
 	<no description>
 
+dota_client_send_network_stats_seconds 5 (developmentonly clientdll hidden defensive)
+	<no description>
+
 dota_clientside_wearables true (gamedll clientdll replicated release)
 	<no description>
 
@@ -3349,13 +3349,13 @@ dota_crownfall_map_fow 1 (developmentonly clientdll)
 dota_crownfall_most_recent_active_season_id 0 (clientdll archive)
 	<no description>
 
-dota_crownfall_node_tooltip_show_delay 0.2 (developmentonly clientdll defensive)
+dota_crownfall_node_tooltip_show_delay 0.2 (developmentonly clientdll)
 	<no description>
 
 dota_crownfall_pit_fighter_disable_checks false (developmentonly clientdll)
 	<no description>
 
-dota_crownfall_sticky_tooltip_time_required 0.4 (developmentonly clientdll defensive)
+dota_crownfall_sticky_tooltip_time_required 0.4 (developmentonly clientdll)
 	<no description>
 
 dota_crownfall_store_fake_coins -1 (developmentonly clientdll)
@@ -3619,6 +3619,12 @@ dota_drow_ranger_arcana_slash_delay 1 (developmentonly clientdll cheat)
 dota_drow_ranger_arcana_slash_interval 0.4 (developmentonly clientdll cheat)
 	<no description>
 
+dota_dump_ability_and_item_contributions 1 (developmentonly gamedll defensive)
+	Ability contributions logging mode. 0 = off, 1 = bad records only, 2 = all records
+
+dota_dump_ability_and_item_contributions_error_rate_limit 5 (developmentonly gamedll defensive)
+	Minimum time between ability contributions error log entries
+
 dota_dump_keybindings false (developmentonly clientdll defensive)
 	<no description>
 
@@ -3711,6 +3717,9 @@ dota_enable_range_finder false (clientdll archive per_user)
 
 dota_enable_regeneration true (gamedll replicated cheat)
 	<no description>
+
+dota_enable_reload_game_keyvalues_on_save false (developmentonly clientdll archive)
+	On saving keyvalues in dota/scripts/npc, reload_game_keyvalues will be triggered
 
 dota_enable_same_user_chat_wheel_pitch_increase false (clientdll cheat)
 	<no description>
@@ -3842,6 +3851,9 @@ dota_fake_lobby_browser_data false (developmentonly clientdll defensive)
 	<no description>
 
 dota_fake_lobby_count 100 (developmentonly clientdll defensive)
+	<no description>
+
+dota_fake_match_private_metadata_not_ready_yet false (developmentonly clientdll)
 	<no description>
 
 dota_fake_mvp_vote false (developmentonly clientdll)
@@ -6985,7 +6997,7 @@ dota_reset_camera_on_spawn true (clientdll archive per_user)
 dota_restrict_partner_type_chat true (developmentonly gamedll defensive)
 	Disallow chat between certain partner types
 
-dota_reverse_alt_detail_tooltip true (clientdll archive)
+dota_reverse_alt_detail_tooltip false (clientdll archive)
 	If false (default), tooltip summaries will be displayed by default and holding Alt will show detailed versions. If true, detailed tooltips will be shown by default and holding Alt will show tooltip summaries.
 
 dota_river_type 0 (developmentonly clientdll cheat)
@@ -7258,7 +7270,7 @@ dota_shop_search_autofocus false (clientdll archive per_user)
 dota_shop_speech_timer 30 (clientdll archive)
 	<no description>
 
-dota_shop_watched_items_5 "item_arcane_boots item_guardian_greaves item_pipe item_crimson_guard item_spirit_vessel item_boots_of_bearing item_vladmir item_assault item_shivas_guard item_solar_crest item_force_staff item_glimmer_cape item_sphere item_lotus_orb item_cyclone item_wind_waker item_black_king_bar item_heavens_halberd item_silver_edge item_nullifier item_bloodthorn item_gungir item_desolator item_monkey_king_bar item_skadi item_radiance item_rapier item_gem" (clientdll archive per_user)
+dota_shop_watched_items_6 "item_arcane_boots item_guardian_greaves item_pipe item_crimson_guard item_essence_distiller item_spirit_vessel item_boots_of_bearing item_vladmir item_assault item_bloodstone item_crellas_crozier item_shivas_guard item_solar_crest item_force_staff item_glimmer_cape item_sphere item_lotus_orb item_cyclone item_wind_waker item_black_king_bar item_heavens_halberd item_silver_edge item_nullifier item_bloodthorn item_gungir item_desolator item_monkey_king_bar item_skadi item_radiance item_rapier item_gem" (clientdll archive per_user)
 	Team items list for the shop
 
 dota_short_path_backtracking_limit 350 (developmentonly gamedll cheat)
@@ -8098,9 +8110,6 @@ dota_tier_treasure_display_override_item_def 0 (developmentonly clientdll cheat)
 dota_time_of_day_rate 0.00166667 (gamedll clientdll replicated cheat)
 	Rate at which time of day changes relative to game seconds
 
-dota_toast_manager_override_duration -1 (developmentonly clientdll)
-	<no description>
-
 dota_toasts_show_courierleftfountain false (clientdll archive per_user)
 	<no description>
 
@@ -8134,8 +8143,8 @@ dota_toggle_autoattack_automatically_during_orders false (clientdll archive per_
 dota_tormentor_daynight_teleport_telegraph_duration 2 (gamedll clientdll replicated cheat)
 	<no description>
 
-dota_tormentor_desired_team_override 0 (gamedll clientdll replicated cheat)
-	<no description>
+dota_tormentor_desired_location_override 0 (gamedll clientdll replicated cheat)
+	Override tormentor location, 1 is bottom, 2 is top
 
 dota_tormentor_force_hit_sound_direction -1 (developmentonly gamedll clientdll replicated)
 	<no description>
@@ -8160,6 +8169,9 @@ dota_tormentor_upgrade_rate 60 (gamedll clientdll replicated cheat)
 
 dota_tournament_override false (developmentonly gamedll clientdll replicated)
 	<no description>
+
+dota_track_ability_and_item_contributions false (developmentonly gamedll defensive)
+	Whether all attacks/heals attribute ability contributions into the damage contribution log
 
 dota_track_chat_mutes false (gamedll cheat)
 	Track chat prior to a mute happening in sql?
@@ -8275,10 +8287,31 @@ dota_ui_armory_item_duplicate 1 (developmentonly clientdll defensive)
 dota_ui_force_custom_games_players false (developmentonly clientdll cheat)
 	<no description>
 
+dota_ui_give_item_indicator_max_range 1200 (developmentonly clientdll defensive)
+	<no description>
+
+dota_ui_give_item_indicator_no_destroy false (developmentonly clientdll defensive)
+	<no description>
+
+dota_ui_give_item_indicator_receiver_animation_duration 0.2 (developmentonly clientdll defensive)
+	<no description>
+
+dota_ui_give_item_indicator_receiver_animation_offset 30 (developmentonly clientdll defensive)
+	<no description>
+
+dota_ui_give_item_indicator_x_offset 64 (developmentonly clientdll defensive)
+	<no description>
+
+dota_ui_give_item_indicator_y_offset 135 (developmentonly clientdll defensive)
+	<no description>
+
 dota_ui_popup_collectors_cache_available_voted_items "" (clientdll archive)
 	<no description>
 
 dota_ui_popup_collectors_cache_available_voted_items_timestamp 0 (clientdll archive)
+	<no description>
+
+dota_ui_show_give_item_indicator true (developmentonly clientdll defensive)
 	<no description>
 
 dota_underdraft_cache_duration 300 (developmentonly clientdll defensive)
@@ -8722,6 +8755,9 @@ dota_wraith_king_arcana_hero_claim_bucket_4 0 (clientdll archive per_user)
 dota_wraith_king_arcana_hero_claim_bucket_5 0 (clientdll archive per_user)
 	<no description>
 
+dota_wraith_king_arcana_hero_claim_bucket_6 0 (clientdll archive per_user)
+	<no description>
+
 dota_wraith_king_arcana_meepo_test false (developmentonly clientdll)
 	<no description>
 
@@ -8733,6 +8769,9 @@ dota_wraith_king_arcana_progress_linger_duration 6 (developmentonly clientdll ch
 
 dota_wraith_king_arcana_show_hero_alive "" (developmentonly clientdll)
 	<no description>
+
+dota_write_ability_contributions_to_match false (developmentonly gamedll defensive)
+	Whether contribution data is sent to the GC as part of the private match metadata
 
 dota_xp_fountain_activation_interval 420 (developmentonly gamedll clientdll replicated cheat)
 	<no description>
@@ -8895,6 +8934,9 @@ ent_debug_draw_thinkers false (developmentonly gamedll clientdll replicated defe
 
 ent_joint_axis_size 4 (developmentonly gamedll defensive)
 	<no description>
+
+ent_joint_filter_name "" (gamedll cheat)
+	If a joint's entire name matches (case insensitive), it will be displayed.
 
 ent_joint_filter_substrings "" (gamedll cheat)
 	If a joint's name has any of the given substrings in it, it will be displayed. Substrings can be delimited by the ',' or '|' character.
@@ -9262,16 +9304,25 @@ func_mover_async_movable_navmesh_updates true (developmentonly gamedll defensive
 func_mover_debug false (developmentonly gamedll defensive)
 	<no description>
 
-func_mover_debug_extra_text false (developmentonly gamedll defensive)
+func_mover_debug_all false (developmentonly gamedll defensive)
 	<no description>
 
 func_mover_debug_follower false (developmentonly gamedll defensive)
 	<no description>
 
+func_mover_debug_parallel false (developmentonly gamedll defensive)
+	<no description>
+
+func_mover_debug_showtext false (developmentonly gamedll defensive)
+	<no description>
+
+func_mover_debug_verbose false (developmentonly gamedll defensive)
+	<no description>
+
 func_mover_get_speed_override 0 (developmentonly gamedll defensive)
 	<no description>
 
-func_mover_verbose_log_count 15 (developmentonly gamedll defensive)
+func_mover_imgui_log_count 30 (developmentonly gamedll defensive)
 	<no description>
 
 func_rotator_debug false (developmentonly gamedll defensive)
@@ -9739,9 +9790,6 @@ language_fake_unsupported_primary false (developmentonly clientdll defensive)
 lb_allow_shadow_rotation true (developmentonly cheat menubar_item)
 	SceneSystem/LightBinner/Shadow Rotation
 
-lb_allow_time_sliced_shadow_map_rendering true (developmentonly defensive)
-	Allow time-sliced shadow buffer rendering when enabled via gameinfo.gi
-
 lb_barnlight_shadow_use_precomputed_vis true (developmentonly defensive)
 	<no description>
 
@@ -9835,7 +9883,7 @@ lb_dynamic_shadow_resolution true (developmentonly defensive)
 lb_dynamic_shadow_resolution_base 1024 (min: 128, max: 2048, developmentonly defensive)
 	Base resolution for dynamic shadowmap sizing.  Shadowmap size of a screen sized light
 
-lb_dynamic_shadow_resolution_base_cmp_shadowmapsize false (developmentonly cheat)
+lb_dynamic_shadow_resolution_base_cmp_shadowmapsize false (developmentonly)
 	take min of lb_dynamic_shadow_resolution and barnlight shadowmapsize as base shadowmapsize
 
 lb_dynamic_shadow_resolution_delay 0.85 (min: 0.1, max: 3, developmentonly defensive)
@@ -9864,9 +9912,6 @@ lb_enable_fog_mixed_shadows true (developmentonly cheat menubar_item)
 
 lb_enable_lights true (developmentonly cheat menubar_item)
 	SceneSystem/LightBinner/Enable Lights
-
-lb_enable_newsum true (developmentonly cheat menubar_item)
-	SceneSystem/LightBinner/Enable New Sum
 
 lb_enable_shadow_casting true (developmentonly defensive)
 	Allow stationary/dynamic lights to cast shadows.
@@ -9898,7 +9943,7 @@ lb_override_barn_light_fade_sizes_enable false (developmentonly cheat)
 lb_override_barn_light_shadow_fade_sizes [0.1, 0.05] (developmentonly cheat)
 	<no description>
 
-lb_precomputed_shadowmap_depth_bias 0.0001 (developmentonly)
+lb_precomputed_shadowmap_depth_bias 0.00035 (developmentonly)
 	<no description>
 
 lb_precomputed_shadowmap_enable true (developmentonly)
@@ -9927,6 +9972,15 @@ lb_sun_csm_size_cull_threshold_texels 10 (developmentonly defensive)
 
 lb_tile_pixels 8 (developmentonly defensive)
 	<no description>
+
+lb_time_sliced_shadow_map_reallocation_age 0.7 (developmentonly defensive)
+	Age of cached allocation to be considered for re-allocation
+
+lb_time_sliced_shadow_map_reallocation_pct 0.2 (developmentonly defensive)
+	Likelyhood we'll re-allocate a timesliced shadowmap (to try to improve packing)
+
+lb_time_sliced_shadow_map_rendering_enable true (developmentonly defensive)
+	Allow time-sliced shadow buffer rendering when enabled via gameinfo.gi
 
 lb_timesliced_shadows_dynamic_size true (developmentonly defensive)
 	<no description>
@@ -9968,6 +10022,9 @@ markup_volume_ref_cone_angle 135 (developmentonly gamedll defensive)
 	<no description>
 
 mat_assert_on_error_shader_use false (developmentonly)
+	<no description>
+
+mat_async_shader_load false (release)
 	<no description>
 
 mat_cache_and_skip_commandbuffers true (developmentonly)
@@ -10333,6 +10390,9 @@ nav_draw_dormant_movable_meshes false (gamedll cheat)
 nav_draw_externally_created false (gamedll cheat)
 	<no description>
 
+nav_draw_flow_map false (gamedll cheat)
+	<no description>
+
 nav_draw_indirect_connections false (gamedll cheat)
 	<no description>
 
@@ -10531,21 +10591,6 @@ nav_genrt_debug false (gamedll cheat)
 nav_ignore_vpk_navdata false (developmentonly gamedll)
 	For testing using legacy nav data
 
-nav_navlink_debug_connections true (developmentonly gamedll)
-	<no description>
-
-nav_navlink_enable_splits true (developmentonly gamedll)
-	Split wide nav links into narrower ones to increase lanes and alleviate 'crossing' effect.
-
-nav_navlink_save_movable_connections true (developmentonly gamedll)
-	TEMP: Save nav link connections to movable meshes?
-
-nav_navlink_split_max_width 144 (developmentonly gamedll)
-	The maximum desired width of a nav link split.
-
-nav_navlink_split_scale_with_length true (developmentonly gamedll)
-	Nav link splits' widths are proportional to the nav link's length.
-
 nav_obstacle_validate false (gamedll cheat)
 	<no description>
 
@@ -10678,19 +10723,16 @@ nav_show_elem_info_font_size -1 (gamedll cheat)
 nav_show_elem_info_font_voffset -11 (gamedll cheat)
 	<no description>
 
-nav_smooth_constrain_results true (gamedll cheat)
+nav_smooth_constrain_spline true (gamedll cheat)
 	<no description>
 
-nav_smooth_constrain_results_relax 0.006 (gamedll cheat)
+nav_smooth_constrain_spline_relax 0.006 (gamedll cheat)
 	<no description>
 
 nav_smooth_constrain_spring 2 (gamedll cheat)
 	<no description>
 
 nav_smooth_constrain_spring_relax 0.01 (gamedll cheat)
-	<no description>
-
-nav_smooth_draw_accel 0 (gamedll cheat)
 	<no description>
 
 nav_smooth_draw_boundary 0 (gamedll cheat)
@@ -10708,7 +10750,10 @@ nav_smooth_draw_constraint_spring 0 (gamedll cheat)
 nav_smooth_draw_speed 0 (gamedll cheat)
 	<no description>
 
-nav_smooth_enable true (gamedll cheat)
+nav_smooth_enable 1 (gamedll cheat)
+	<no description>
+
+nav_smooth_push_from_walls -1 (developmentonly gamedll)
 	<no description>
 
 nav_smooth_relax true (gamedll cheat)
@@ -10930,6 +10975,15 @@ nav_test_ray_space 0 (gamedll cheat)
 nav_test_rays false (gamedll cheat)
 	<no description>
 
+nav_test_rays_use_npc_move false (gamedll cheat)
+	<no description>
+
+nav_test_search_on_path false (gamedll cheat)
+	Test the 'on path' search mode for tactical searches. Requires a selected NPC with a current path.
+
+nav_test_search_on_path_boundary_edges_only false (gamedll cheat)
+	Activate the 'boundary edges only' constraint when testing the 'on path' search mode for tactical searches.
+
 nav_test_smooth false (gamedll cheat)
 	<no description>
 
@@ -11071,6 +11125,9 @@ npc_go_do_run true (developmentonly gamedll defensive)
 npc_go_max_distance 56755.8 (developmentonly gamedll defensive)
 	How far is the trace we shoot when using NPC Go
 
+npc_record_snapshot_data false (developmentonly gamedll)
+	<no description>
+
 npcsolve_attract_draw false (developmentonly gamedll defensive)
 	<no description>
 
@@ -11164,6 +11221,9 @@ panorama_allow_texture_composition_layer_fast_path true (developmentonly hidden 
 panorama_allow_transitions true (developmentonly hidden defensive)
 	<no description>
 
+panorama_apply_styles_for_invisible_parents false (developmentonly hidden defensive)
+	Specifies whether to short circuit applying styles when a parent is invisible.
+
 panorama_assert_loading_panel_type false (developmentonly hidden defensive)
 	Force style invalidation of the entire panel subtree when adding / removing classes.
 
@@ -11183,9 +11243,6 @@ panorama_classes_force_invalidate false (developmentonly hidden defensive)
 	Force style invalidation of the entire panel subtree when adding / removing classes.
 
 panorama_clear_frames_on_device_restore 2 (developmentonly hidden defensive)
-	<no description>
-
-panorama_command_reordering true (developmentonly hidden defensive)
 	<no description>
 
 panorama_comp_layer_lru_lifetime 1 (developmentonly hidden defensive)
@@ -11284,6 +11341,15 @@ panorama_dragscroll_mintime 0.02 (developmentonly hidden defensive)
 panorama_dragscroll_velocitymultiplier 0.5 (developmentonly hidden defensive)
 	Multiplier for flick velocity off of actual measured velocity
 
+panorama_draw_fast_path_img_shadow true (developmentonly hidden defensive)
+	<no description>
+
+panorama_draw_text_fast_path true (developmentonly hidden defensive)
+	<no description>
+
+panorama_draw_text_fast_path_text_shadow true (developmentonly hidden defensive)
+	<no description>
+
 panorama_enable_secondary_layout_pass true (developmentonly hidden defensive)
 	<no description>
 
@@ -11365,6 +11431,12 @@ panorama_movie_async_load_size_bytes 20971520 (developmentonly clientdll hidden 
 panorama_movie_force_not_ready_behavior -1 (developmentonly clientdll hidden defensive)
 	<no description>
 
+panorama_panel_occlusion true (developmentonly hidden defensive)
+	<no description>
+
+panorama_print_render_tree "" (developmentonly hidden defensive)
+	Print the RenderOperation_t tree for the given root window; set to * to print all
+
 panorama_reload_animations 2 (developmentonly hidden defensive)
 	<no description>
 
@@ -11383,7 +11455,7 @@ panorama_show_fps_scale 1 (developmentonly defensive)
 panorama_simple_borders_no_comp_layer true (developmentonly hidden defensive)
 	<no description>
 
-panorama_skip_composition_layer_content_paint false (developmentonly hidden defensive)
+panorama_skip_composition_layer_content_paint true (developmentonly hidden defensive)
 	<no description>
 
 panorama_skip_composition_layer_content_paint_tint false (developmentonly hidden defensive)
@@ -11428,10 +11500,16 @@ panorama_transforms_no_comp_layer false (developmentonly hidden defensive)
 panorama_transition_time_factor 1 (developmentonly hidden defensive)
 	A float representing a scale factor for transitions. 1.0 is normal, 2.0 would be twice as fast as normal, 0.5 half as fast
 
+panorama_unlink_from_render_tree true (developmentonly hidden defensive)
+	<no description>
+
 panorama_use_backbuffer_directly true (developmentonly hidden defensive)
 	<no description>
 
-panorama_use_new_occlusion_invalidation false (developmentonly hidden defensive)
+panorama_use_composite_cmd_for_cached_layers true (developmentonly hidden defensive)
+	<no description>
+
+panorama_use_new_occlusion_invalidation true (developmentonly hidden defensive)
 	<no description>
 
 panorama_worldpanel_update_cull_distance 1000 (developmentonly clientdll defensive)
@@ -11479,6 +11557,9 @@ password "" (archive dontrecord server_cannot_query missing1)
 path_closest_point_debug false (developmentonly gamedll clientdll replicated)
 	<no description>
 
+path_node_evaluation_debug 0 (developmentonly gamedll clientdll replicated)
+	<no description>
+
 pawn_mimic_all false (developmentonly gamedll clientdll replicated)
 	<no description>
 
@@ -11504,6 +11585,9 @@ phys_dynamic_scaling true (gamedll clientdll replicated cheat)
 	<no description>
 
 phys_expensive_shape_threshold 6 (clientdll cheat)
+	<no description>
+
+phys_force_controller_debug false (developmentonly gamedll)
 	<no description>
 
 phys_highlight_expensive_objects false (cheat)
@@ -11781,6 +11865,27 @@ r_always_render_all_windows false (developmentonly defensive)
 
 r_aoproxy_cull_dist 12 (developmentonly defensive)
 	Distance to cull the AO proxy as a factor of size
+
+r_aoproxy_default_ambient_strength 1 (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_cone_angles [0.3, 0.3, 0.3, 1] (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_cone_strengths [3, 8, 1, 4] (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_position_0 [0.816497, 0, 0.57735] (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_position_1 [-0.408248, 0.707107, 0.57735] (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_position_2 [-0.408248, -0.707107, 0.57735] (developmentonly defensive)
+	<no description>
+
+r_aoproxy_default_light_position_3 [0, 0, 1] (developmentonly defensive)
+	<no description>
 
 r_aoproxy_min_dist 3 (developmentonly defensive)
 	<no description>
@@ -12196,9 +12301,6 @@ r_force_render_frame_count 5 (developmentonly)
 r_force_thick_hair false (developmentonly cheat)
 	<no description>
 
-r_force_zprepass -1 (cheat)
-	0: Force z prepass off. 1: Force on. -1: Don't force
-
 r_frame_sync_enable true (developmentonly defensive)
 	<no description>
 
@@ -12448,17 +12550,8 @@ r_shadowtile_waveops false (reference)
 r_showdebugoverlays false (cheat)
 	Set to render debug overlays
 
-r_showdebugrendertarget false (cheat)
-	Set the debug render target to show, 0 == disable
-
 r_showsceneobjectbounds false (cheat)
 	Show scenesystem object bounding boxes
-
-r_showsunshadowdebugrendertargets false (cheat)
-	Set to render sun shadow render targets
-
-r_showsunshadowdebugsplitvis false (cheat)
-	Set to render sun shadow split visibility debugger
 
 r_size_cull_threshold 0.8 (developmentonly)
 	Threshold of screen size percentage below which objects get culled
@@ -12625,9 +12718,6 @@ r_world_wind_smooth_time 2 (developmentonly defensive)
 r_world_wind_strength 40 (developmentonly defensive)
 	<no description>
 
-r_zprepass_normals false (cheat)
-	0: Use normals reconstructed from depth. 1: Output correct normals in z prepass.
-
 ragdoll_debug_item_detachment false (developmentonly gamedll replicated defensive)
 	<no description>
 
@@ -12793,6 +12883,9 @@ run_voicecontainer_async false (developmentonly)
 save_async true (developmentonly gamedll defensive)
 	<no description>
 
+save_debug_snapshots false (developmentonly gamedll clientdll replicated defensive)
+	Save/Load debug snapshot data
+
 save_fake_hitch 0 (developmentonly gamedll defensive)
 	Force a busy wait for the specified number of milliseconds during save to simulate a hitch
 
@@ -12811,7 +12904,7 @@ save_screenshot 2 (developmentonly gamedll defensive)
 save_spew false (developmentonly gamedll clientdll replicated defensive)
 	<no description>
 
-save_version 1 (developmentonly gamedll clientdll replicated defensive)
+save_version 2 (developmentonly gamedll clientdll replicated defensive)
 	0: (V0) Legacy save format, 1: (V1) KeyValues3 save format, 2: (V2) KV3Transfer saves
 
 save_write_kv3 false (developmentonly gamedll clientdll replicated defensive)
@@ -12877,6 +12970,9 @@ sc_aggregate_rtproxy_instanced_geo true (developmentonly cheat)
 sc_aggregate_rtproxy_unique_geo true (developmentonly cheat)
 	<no description>
 
+sc_aggregate_rtproxy_visualize false (developmentonly cheat)
+	<no description>
+
 sc_aggregate_show_outside_vis false (developmentonly)
 	<no description>
 
@@ -12934,6 +13030,9 @@ sc_disable_spotlight_shadows false (cheat)
 sc_disable_world_materials false (cheat)
 	<no description>
 
+sc_distancefield_visualize_atlas false (developmentonly defensive)
+	<no description>
+
 sc_dithered_lod_transition_amt 0.075 (min: 0, max: 0.2, developmentonly defensive)
 	Percentage of the transition between two lods we will apply a dither
 
@@ -12976,11 +13075,17 @@ sc_imgui_show_id_stack false (developmentonly cheat menubar_item)
 sc_imgui_show_metrics false (developmentonly cheat menubar_item)
 	SceneSystem/Imgui/Show Metrics
 
+sc_instanced_debug_visualizer false (developmentonly cheat menubar_item)
+	SceneSystem/Instanced/Debug Visualizer
+
+sc_instanced_gpu_culling_show_culled false (developmentonly menubar_item)
+	SceneSystem/Instanced/Show GPU Culled Meshlets
+
 sc_instanced_material_solo "" (developmentonly cheat)
 	<no description>
 
-sc_instanced_mesh_enable true (developmentonly cheat)
-	Toggles rendering instanced meshes
+sc_instanced_mesh_enable true (developmentonly cheat menubar_item)
+	SceneSystem/Instanced/Draw Instanced
 
 sc_instanced_mesh_gpu_culling true (developmentonly defensive)
 	Toggles GPU culling of instanced meshes
@@ -13005,6 +13110,9 @@ sc_instanced_mesh_mesh_shader true (developmentonly defensive)
 
 sc_instanced_mesh_motion_vectors true (developmentonly defensive)
 	Toggles motion vector support for instanced meshes
+
+sc_instanced_mesh_opaque_fade true (developmentonly defensive)
+	Toggles fade support for instanced meshes
 
 sc_instanced_mesh_size_cull_bias 1.5 (developmentonly defensive)
 	Bias for size culling of instanced meshes
@@ -13313,6 +13421,9 @@ snd_gamevolume 1 (min: 0, max: 1, archive missing1)
 	Game volume
 
 snd_group_cluster_debug false (replicated cheat)
+	<no description>
+
+snd_group_occlusion_debug false (developmentonly)
 	<no description>
 
 snd_group_priority_debug false (replicated cheat)
@@ -13957,14 +14068,14 @@ sv_client_predict -1 (developmentonly gamedll clientdll replicated defensive)
 sv_clockcorrection_msecs 60 (gamedll release)
 	The server tries to keep each player's m_nTickBase withing this many msecs of the server absolute tickcount
 
+sv_clockdbg false (developmentonly)
+	Print spew related to server clock and ticking
+
 sv_cluster 0 (release)
 	Data center cluster this server lives in.
 
 sv_condense_late_buttons true (developmentonly gamedll defensive)
 	When condensing late commands. Should we compress multiple moves of button presses into the target move?
-
-sv_connectionless_legacy_events_allowed false (developmentonly)
-	<no description>
 
 sv_cq_min_queue 0 (min: 0, developmentonly replicated defensive)
 	Server min buffer size.
@@ -14245,14 +14356,26 @@ sv_noclipfriction 4 (gamedll clientdll archive notify replicated)
 sv_noclipspeed 1200 (gamedll clientdll archive notify replicated)
 	<no description>
 
+sv_noclipspeedscaleonshift 0.5 (gamedll clientdll archive notify replicated)
+	<no description>
+
 sv_outofpvsentityupdates false (developmentonly)
 	<no description>
+
+sv_pack_entities_really_verbose false (release)
+	Increase verbosity for entity packing
+
+sv_pack_entities_verbose_entidx -1 (release)
+	Verbose output for entity packing, set to the entindex of the entity you want verbose output for.
 
 sv_parallel_checktransmit 0 (gamedll release)
 	Set to 1 to use threaded checkentities for transmit/pvs on listen servers, 2 for dedicated servers.
 
 sv_parallel_packentities 2 (release)
 	Set to 1 to use threaded snapshot sending on listen servers, 2 for dedicated servers.
+
+sv_parallel_prepare_client_updates false (developmentonly)
+	<no description>
 
 sv_parallel_sendsnapshot 2 (release)
 	0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration
@@ -14409,9 +14532,6 @@ sv_showlagcompensation_rec 0 (developmentonly gamedll)
 
 sv_shutdown_immediately_on_request false (developmentonly defensive)
 	The server will always shutdown on receiving the shutdown request, even if not hibernating
-
-sv_simulate_in_job false (developmentonly)
-	<no description>
 
 sv_skel_constraints_enable false (replicated cheat)
 	<no description>
@@ -14658,6 +14778,9 @@ timedemo_end "-1" (developmentonly defensive)
 
 timedemo_start "-1" (developmentonly defensive)
 	Starts timedemo on given tick.
+
+toast_manager_override_duration -1 (developmentonly clientdll)
+	<no description>
 
 tool_spawned_model_scales [1, 1, 1] (developmentonly gamedll replicated)
 	<no description>

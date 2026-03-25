@@ -21,12 +21,14 @@
 //	"m_pEnvelopeAnalyzer": null,
 //	"m_firstSound":
 //	{
+//		"m_namespace": "",
 //		"m_bUseReference": true,
 //		"m_sound": "",
 //		"m_pSound": null
 //	},
 //	"m_secondSound":
 //	{
+//		"m_namespace": "",
 //		"m_bUseReference": true,
 //		"m_sound": "",
 //		"m_pSound": null

@@ -1,5 +1,6 @@
 class CGenericConstraint : public CPhysConstraint
 {
+	bool m_bPlaceAnchorsAtConstraintTransform;
 	JointMotion_t m_nLinearMotionX;
 	JointMotion_t m_nLinearMotionY;
 	JointMotion_t m_nLinearMotionZ;

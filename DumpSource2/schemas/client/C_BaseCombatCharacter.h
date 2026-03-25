@@ -1,9 +1,5 @@
-// MNetworkExcludeByUserGroup = "LocalPlayerExclusive"
-// MNetworkVarNames = "CHandle<C_EconWearable > m_hMyWearables"
-class C_BaseCombatCharacter : public C_BaseFlex
+class C_BaseCombatCharacter : public C_BaseAnimatingOverlay
 {
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnWearablesChanged"
 	// MNotSaved
 	C_NetworkUtlVectorBase< CHandle< C_EconWearable > > m_hMyWearables;
 	// MNotSaved

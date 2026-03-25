@@ -76,6 +76,7 @@
 //		}
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
+//	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
 //	"m_flOpStartFadeInTime": 0.000000,
 //	"m_flOpEndFadeInTime": 0.000000,
 //	"m_flOpStartFadeOutTime": 0.000000,
@@ -94,6 +95,7 @@
 //	"m_nControlPointNumber": 0,
 //	"m_flVelocityScale": 1.000000
 //}
+// MGPUParticleFunction
 class C_INIT_InheritVelocity : public CParticleFunctionInitializer
 {
 	// MPropertyFriendlyName = "control point number"

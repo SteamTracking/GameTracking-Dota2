@@ -1,12 +1,6 @@
-// MNetworkVarNames = "float32 m_flFallVelocity"
 class CPlayer_MovementServices_Humanoid : public CPlayer_MovementServices
 {
 	float32 m_flStepSoundTime;
-	// MNetworkEnable
-	// MNetworkMinValue = -4096.000000
-	// MNetworkMaxValue = 4096.000000
-	// MNetworkEncodeFlags = 4
-	// MNetworkBitCount = 17
 	float32 m_flFallVelocity;
 	// MNotSaved
 	Vector m_groundNormal;

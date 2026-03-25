@@ -6,5 +6,5 @@ class CDOTA_Modifier_Primalbeast_Trample : public CDOTA_Buff
 	int32 step_distance;
 	int32 bonus_magic_resistance;
 	bool m_bIsUnslowable;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 };

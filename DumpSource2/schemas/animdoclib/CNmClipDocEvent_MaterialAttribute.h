@@ -2,6 +2,7 @@
 //	"_class": "CNmClipDocEvent_MaterialAttribute",
 //	"m_flStartTime": 0.000000,
 //	"m_flDuration": 0.000000,
+//	"m_target": "Self",
 //	"m_attributeName": "",
 //	"m_x":
 //	{
@@ -82,6 +83,7 @@
 //}
 class CNmClipDocEvent_MaterialAttribute : public CNmClipDocEvent
 {
+	CNmEventTargetEntity_t m_target;
 	CUtlString m_attributeName;
 	CPiecewiseCurve m_x;
 	CPiecewiseCurve m_y;

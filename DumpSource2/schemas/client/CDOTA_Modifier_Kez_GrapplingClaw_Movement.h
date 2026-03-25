@@ -19,9 +19,12 @@ class CDOTA_Modifier_Kez_GrapplingClaw_Movement : public CDOTA_Buff
 	int32 impact_damage;
 	int32 land_distance;
 	int32 max_distance_break;
+	int32 lifesteal_pct;
 	CHandle< C_BaseEntity > m_hTarget;
 	bool m_bDidAttack;
 	bool m_bStartedAnimation;
 	GameActivity_t m_Activity;
 	float32 m_flTimeLeftForActivity;
+	AttackRecord_t m_nGrappleAttackRecord;
+	C_DotaTree* m_pTree;
 };

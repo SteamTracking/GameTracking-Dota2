@@ -7,7 +7,7 @@ class CDOTA_Modifier_Item_AbyssalBlade : public CDOTA_Buff_Item
 	float32 bash_cooldown;
 	int32 bonus_chance_damage;
 	int32 bonus_damage;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 	int32 hp_regen_amp;
 	int32 slow_resistance;
 };

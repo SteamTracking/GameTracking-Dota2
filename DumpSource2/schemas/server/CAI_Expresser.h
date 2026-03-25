@@ -1,5 +1,9 @@
 class CAI_Expresser
 {
+	// MKV3TransferSaveOpsForField = "GetConceptCooldownSaveDataOps"
+	CUtlDict< GameTime_t > m_conceptCooldowns;
+	// MKV3TransferSaveOpsForField = "GetRuleCooldownSaveDataOps"
+	CUtlDict< GameTime_t > m_ruleCooldowns;
 	GameTime_t m_flStopTalkTime;
 	GameTime_t m_flStopTalkTimeWithoutDelay;
 	GameTime_t m_flQueuedSpeechTime;
@@ -11,5 +15,5 @@ class CAI_Expresser
 	bool m_bSceneEntityDisabled;
 	int32 m_nLastSpokenPriority;
 	// MNotSaved
-	CBaseFlex* m_pOuter;
+	CBaseModelEntity* m_pOuter;
 };

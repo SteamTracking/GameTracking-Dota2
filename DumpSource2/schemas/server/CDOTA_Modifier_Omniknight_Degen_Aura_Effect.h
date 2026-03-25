@@ -1,6 +1,6 @@
 class CDOTA_Modifier_Omniknight_Degen_Aura_Effect : public CDOTA_Buff
 {
-	int32 speed_bonus;
+	float32 speed_bonus;
 	int32 bonus_damage_per_stack;
 	float32 stack_interval;
 	float32 linger_duration;

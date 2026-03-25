@@ -1,0 +1,7 @@
+class CDOTA_Modifier_ForgargersHealth_Buff : public CDOTA_Buff
+{
+	int32 health_regen_pct;
+	int32 break_on_hero_damage;
+	float32 m_fHealingDone;
+	float32 m_fUseSpeed;
+};

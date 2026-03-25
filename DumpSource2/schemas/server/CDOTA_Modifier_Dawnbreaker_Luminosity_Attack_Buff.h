@@ -13,4 +13,5 @@ class CDOTA_Modifier_Dawnbreaker_Luminosity_Attack_Buff : public CDOTA_Buff
 	float32 cooldown_reduction;
 	float32 movespeed_bonus_duration;
 	float32 movespeed_bonus_from_creeps;
+	bool m_bShouldRecreate;
 };

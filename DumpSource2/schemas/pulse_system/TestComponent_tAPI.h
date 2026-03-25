@@ -1,0 +1,3 @@
+class TestComponent_tAPI
+{
+};

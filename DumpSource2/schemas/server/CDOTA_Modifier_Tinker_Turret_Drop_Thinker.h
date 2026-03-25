@@ -1,0 +1,30 @@
+class CDOTA_Modifier_Tinker_Turret_Drop_Thinker : public CDOTA_Buff
+{
+	float32 missile_damage;
+	float32 radius;
+	float32 turret_placement_radius;
+	float32 delay;
+	float32 drop_knockback_distance;
+	float32 drop_knockback_distance_tinker;
+	float32 drop_knockback_duration;
+	float32 drop_knockback_duration_tinker;
+	float32 slow_duration;
+	float32 missile_target_range;
+	float32 activation_time;
+	float32 turret_duration;
+	int32 turrets_per_drop;
+	int32 extra_turrets_per_drop;
+	float32 drop_damage;
+	float32 pre_delay;
+	bool m_bAttachToRocket1;
+	CUtlVector< CHandle< CBaseEntity > > m_vecHitHeroes;
+	bool m_bHitInvisibleHeroes;
+	ParticleIndex_t m_nIndicatorParticle;
+	bool m_bWaitingForPreDelay;
+	bool m_bTurretsSpawned;
+	CUtlVector< CHandle< CBaseEntity > > m_vecTurrets;
+	CUtlVector< float32 > m_vecTurretActivationTimes;
+	float32 m_flTotalTurretLifeTime;
+	float32 m_flTurretSpawnTime;
+	CHandle< CBaseEntity > m_hCurrentTarget;
+};

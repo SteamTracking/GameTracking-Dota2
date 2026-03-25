@@ -10,6 +10,6 @@
 //}
 class CNmSelectorNode::CDefinition : public CNmPoseNode::CDefinition
 {
-	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;
-	CUtlLeanVectorFixedGrowable< int16, 5 > m_conditionNodeIndices;
+	CUtlLeanVectorFixedGrowable< int16, 8 > m_optionNodeIndices;
+	CUtlLeanVectorFixedGrowable< int16, 8 > m_conditionNodeIndices;
 };

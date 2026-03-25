@@ -7,7 +7,7 @@ class CFuncTrackTrain : public CBaseModelEntity
 	Vector m_controlMins;
 	Vector m_controlMaxs;
 	// MNotSaved
-	Vector m_lastBlockPos;
+	VectorWS m_lastBlockPos;
 	// MNotSaved
 	int32 m_lastBlockTick;
 	float32 m_flVolume;

@@ -24,5 +24,6 @@ class CDOTA_Modifier_Dawnbreaker_Fire_Wreath_Caster : public CDOTA_Buff
 	float32 movespeed_bonus_ally_max;
 	float32 movespeed_bonus_radius;
 	float32 movespeed_bonus_duration;
+	float32 immunity_resist;
 	int32 m_iSuccessfulSwipesHittingHeroes;
 };

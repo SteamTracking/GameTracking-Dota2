@@ -2,6 +2,7 @@
 //	"m_skeleton": "",
 //	"m_attachToBoneID": ""
 //}
+// MPropertyAutoExpandSelf
 class CNmSkeletonDocument::SecondarySkeleton_t
 {
 	// MPropertyAttributeEditor = "AssetBrowse( vnmskel, *requiredoubleclick )"

@@ -19,6 +19,7 @@
 //		"m_flRangeStart": 0.000000,
 //		"m_flRangeLength": -1.000000
 //	},
+//	"m_nTrackReadOffset": 0,
 //	"m_constantRotation":
 //	[
 //		0.000000,
@@ -36,6 +37,7 @@ class NmCompressionSettings_t
 	NmCompressionSettings_t::QuantizationRange_t m_translationRangeY;
 	NmCompressionSettings_t::QuantizationRange_t m_translationRangeZ;
 	NmCompressionSettings_t::QuantizationRange_t m_scaleRange;
+	int32 m_nTrackReadOffset;
 	Quaternion m_constantRotation;
 	bool m_bIsRotationStatic;
 	bool m_bIsTranslationStatic;

@@ -45,10 +45,14 @@
 //		}
 //	],
 //	"m_offsetType": "RelativeToCharacter",
-//	"m_samplingMode": "WorldSpace"
+//	"m_samplingMode": "WorldSpace",
+//	"m_bWarpTranslation": false
 //}
 class CNmGraphDocOrientationWarpNode : public CNmGraphDocFlowNode
 {
 	CNmGraphDocOrientationWarpNode::OffsetType_t m_offsetType;
 	CNmRootMotionData::SamplingMode_t m_samplingMode;
+	// MPropertyGroupName = "Experimental"
+	// MPropertyDescription = "Should the translation curve change as the orientation is being warped?"
+	bool m_bWarpTranslation;
 };

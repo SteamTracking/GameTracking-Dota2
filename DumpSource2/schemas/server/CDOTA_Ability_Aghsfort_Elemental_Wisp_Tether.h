@@ -1,7 +1,5 @@
-// MNetworkVarNames = "CHandle< CBaseEntity> m_hTarget"
 class CDOTA_Ability_Aghsfort_Elemental_Wisp_Tether : public CDOTABaseAbility, public CHorizontalMotionController
 {
-	// MNetworkEnable
 	CHandle< CBaseEntity > m_hTarget;
 	Vector m_vProjectileLocation;
 	bool m_bProjectileActive;

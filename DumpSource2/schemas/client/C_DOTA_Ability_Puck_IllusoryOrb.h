@@ -2,7 +2,6 @@ class C_DOTA_Ability_Puck_IllusoryOrb : public C_DOTABaseAbility
 {
 	int32 m_iProjectile;
 	CountdownTimer m_ViewerTimer;
-	int32 curve_orb;
 	float32 m_fTimeRemaining;
 	float32 m_fElapsedTime;
 	Vector m_vVectorTargetEndpoint;
@@ -16,5 +15,6 @@ class C_DOTA_Ability_Puck_IllusoryOrb : public C_DOTABaseAbility
 	float32 damage_interval;
 	float32 radius;
 	float32 damage_over_time_pct;
+	bool m_bIsAltCastState;
 	ParticleIndex_t m_nCurvePathPreviewFXIndex;
 };

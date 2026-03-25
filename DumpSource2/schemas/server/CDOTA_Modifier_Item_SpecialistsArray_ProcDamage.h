@@ -1,4 +1,5 @@
 class CDOTA_Modifier_Item_SpecialistsArray_ProcDamage : public CDOTA_Buff_Item
 {
+	int32 base_proc_dmg;
 	int32 proc_dmg_pct;
 };

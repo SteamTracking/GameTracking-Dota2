@@ -1,8 +1,7 @@
 class CDOTA_Modifier_Item_Dagon : public CDOTA_Buff_Item
 {
-	int32 bonus_int;
-	int32 bonus_str;
-	int32 bonus_agi;
-	float32 passive_spell_lifesteal;
-	float32 dagon_spell_lifesteal;
+	int32 bonus_all_stats;
+	int32 bonus_mana;
+	int32 bonus_health;
+	int32 cast_range_bonus;
 };

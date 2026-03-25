@@ -1441,11 +1441,6 @@ CONTINUE event %s | %s: elapsed time: %f, next sync time: %f, local elapsed: %f,
 CPiecewiseCurve
 CSequence: %s\n
 CSequence:\t%f : %i : %i\n
-CSndSeqInstBaseSchema
-CSndSeqInstMidiSampler
-CSndSeqInstSndEvtSchema
-CSndSeqInstruments
-CSosGroupActionOcclusionSchema
 CSosOPeratorGetOpVarInfo
 CSosOperatorAudibility::Execute
 CSosOperatorConvar
@@ -1538,10 +1533,8 @@ CVSoundStackScriptTypeManager::Allocate can't parse stack %s\n
 CVSoundStackScriptTypeManager::Allocate stack with empty name\n
 CVSoundTypeManager::CreateProceduralSfx
 CVSoundTypeManager::GetSfx
-CVoiceContainerLoopXFade
 CVoiceContainerRandomSampler: Loaded %d grains into table Total of %lld samples, %f MB.\n
 C\nw+C
-Calculation interval ( seconds ).
 Can't find mix layer %s\n
 Can't find mixgroup name %s for submix\n
 Can't find sound event to remove for %s!\n
@@ -1851,7 +1844,6 @@ High Cutoff Freq
 HighPass
 Hold Time MS
 IKV3TransferInterface_ResourceSave
-ISndSeqInstruments
 Ignoring reload of '%s' whose only changes are in vsnd_duration\n
 Incorrect sampling rate in %s (mp3 frames are at %dHz, .vsnd file has %dHz)\n
 Increased audio mix latency to %.1f ms\n
@@ -1868,7 +1860,6 @@ Invalid arg %s set for subvoice playing %s\n
 Invalid field type %s for field %s\n
 Is Oneshot
 KV3 Pointer
-KeyGroup_t
 Ksnd_enable_subgraph_log
 L?fff?
 LFO Amount
@@ -1887,7 +1878,6 @@ LoadVMixList
 Loading mapping from %s file.\n
 Loop End
 Loop Start
-Loop XFade
 Low Cutoff Freq
 LowPass
 Lowpass4Tap
@@ -1909,7 +1899,6 @@ Match Event Name: %s\n
 Match Event Type: %i\n
 Match SubString ?: %s\n
 Max Index
-Midi Sampler
 MidiSampler: Key Groups: %i\n
 MidiSampler: Max: %i\n
 MidiSampler: Min: %i\n
@@ -1969,11 +1958,6 @@ OPEN SIDED OUTDOOR AREA Detected \n
 OUTSIDE ALLEY Detected \n
 OUTSIDE COURTYARD Detected \n
 OUTSIDE STREET Detected \n
-Occlusion Info
-Occlusion max.
-Occlusion min.
-Occlusion radius.
-Occlusion scale.
 Octaves shifted
 Only Tails On Fade Out
 OpenMutexA
@@ -2088,8 +2072,6 @@ STACK FPS: %f\n
 S_Init( finish )
 S_MixSampleFrames
 S_UpdateVoicesPerFrame
-Sample accurate looping with xfade capabilities.
-SamplerVoice_t
 Select Tone
 Serialization failure: %s\n
 Set Blend
@@ -2114,20 +2096,6 @@ Size in bytes
 Size of TRASHSYNTH instance on stack: %d\n
 Size of TRASHSYNTH on stack: %d\n
 SndOperators
-SndSeqInstrumentType_t
-SndSeqMidiStatusChannelPressure
-SndSeqMidiStatusCtrlChange
-SndSeqMidiStatusKeyPressure
-SndSeqMidiStatusNoteOff
-SndSeqMidiStatusNoteOn
-SndSeqMidiStatusPitchBend
-SndSeqMidiStatusProgramChange
-SndSeqMidiStatusType_t
-SndSeqPlayerType_t
-SndSeqQuantizeType_t
-SndSeqRegionType_t
-SndSeqSyncType_t
-SndSeqTrackPlaybackType_t
 Something Weird ( check the BindInstanceParams implementation )
 SosBaseDataTypeDef_t: %i\n
 SosOpFieldInfo_t: %i\n
@@ -2150,7 +2118,6 @@ Sound system not started\n
 SoundEvent %s, has invalid input_owner_entity_index, defaulting to 'neutral' perspective.\n
 SoundEvent %s, input_entity_index %i found but specified attachment %s was not\n
 SoundEvent %s, input_entity_index %i was valid but no longer is\n
-SoundEvent on Start
 SoundEvent_error
 SoundMixer %s:\n
 SoundMixers
@@ -2196,7 +2163,6 @@ Starts VSND: %s\nStarts Event(s): %s\n
 Status: \t%lld, %d (mix channels:%d)\n
 Steam Audio is not enabled.
 Stop sound event: %s\n
-Stop the specified track and it's queue.
 StopTime: %f\n
 Stopping All Sounds...\n
 String Count: %i\n
@@ -2210,7 +2176,6 @@ TOPOLOGY: Stack %s, soundevent_start operator %s, soundevent_name field, source 
 TUNNEL Detected \n
 TanFrameQuat
 Taps
-Test depth.
 The soundsystem requires the filesystem to run!\n
 Threshold dB
 Time Scale
@@ -2313,7 +2278,6 @@ Value Operator Offset: %i\n
 Value Stack Offset: %i\n
 ValveSMMem:%s
 ValveSMMut:%s
-VelocityZone_t
 VertexElementAnnotation
 VertexGenericIntegerData
 VertexPaintBlendParams
@@ -2582,27 +2546,6 @@ dsppreset
 duck_to_percent
 ducker_threshold
 dynamicEQScale
-eSndSeqInstMidiSampler
-eSndSeqInstNull
-eSndSeqInstSndEvt
-eSndSeqPlayerMidiSeq
-eSndSeqPlayerNull
-eSndSeqPlayerSndEvt
-eSndSeqQuantizeBar
-eSndSeqQuantizeBeat
-eSndSeqQuantizeInvalid
-eSndSeqQuantizeNone
-eSndSeqQuantizeReset
-eSndSeqQuantizeSeek
-eSndSeqQuantizeSequence
-eSndSeqRegionTypeMidiSeq
-eSndSeqRegionTypeNull
-eSndSeqRegionTypeSndEvt
-eSndSeqSyncTypeNone
-eSndSeqSyncTypeSeek
-eSndSeqSyncTypeWait
-eSndSeqTrackPlaybackTypeFwd
-eSndSeqTrackPlaybackTypeStep
 ease_sin_out
 econ_replacement
 end_as_info
@@ -3153,20 +3096,14 @@ m_additionalOutputs
 m_audioMeters
 m_automaticControlInputs
 m_bBakedTwoSided
-m_bBeatEnvelopes
 m_bCanBatchWithDynamicShaderConstants
 m_bDrawLast
-m_bEqualPow
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
 m_bIsNotMatchedToMaterial
 m_bNoShadow
 m_bOnlyShadow
-m_bPlayHead
-m_bPlayTail
 m_bShouldPause
-m_bStopCurrentEvents
-m_bStopPrevious
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
 m_controlInputArrays
@@ -3177,18 +3114,8 @@ m_controlPoints
 m_controlTransientInputs
 m_curves
 m_effectsPreview
-m_flBPM
-m_flBPMFactor
-m_flBPMInvFactor
-m_flCalculationInterval
-m_flLoopEnd
-m_flLoopStart
 m_flMasterVolume
-m_flMaxVelocityAtten
 m_flMaxVolumeChangePerBuffer
-m_flMinVelocityAtten
-m_flOcclusionScale
-m_flRelease
 m_flSeekTime
 m_flSend
 m_flSendFacingDSP
@@ -3196,24 +3123,17 @@ m_flSendRoomDSP
 m_flSlopeIncoming
 m_flSlopeOutgoing
 m_flSystemVolumeFadeRate
-m_flTestDepth
 m_graphName
-m_hSoundEventHash
 m_impulseResponseInputs
 m_impulseResponseValues
 m_nChannelSelect
 m_nGuid
-m_nMaxNote
 m_nMemSize: %i -> %i\n
-m_nMinNote
 m_nMixGroups
-m_nNextVoiceSlot
-m_nPlayerType
 m_nStartSample
 m_nVoiceId
 m_nameInputMeters
 m_nameInputs
-m_namespace
 m_pHandle
 m_pStack
 m_pVoice
@@ -3328,18 +3248,9 @@ ms delay max
 ms delay min
 ms of mod depth
 mult
-music
 mute: %3.2f\n
 muteTrackList
-nCenterNote
-nMaxNote
-nMaxVel
-nMinNote
 nNameSpaceIndex: %i -> %i\n
-nNextSelection
-nNoteNum
-nNumSamples
-nNumVelocityZones
 named
 namespace
 neutral
@@ -3609,9 +3520,7 @@ output_y_max
 output_y_min
 output_z
 overwrite
-pSamples
 pSource != nullptr
-pVelocityZones
 parallel filters
 parameter
 params
@@ -3703,17 +3612,7 @@ sine
 single
 slerp
 slerp_bounce
-snd_group_occlusion_debug
 snd_print_soundevent %s
-snd_sequencer_print_activetracks
-snd_sequencer_print_arrangements
-snd_sequencer_print_sequences
-snd_sequencer_set_track_bpm
-snd_sequencer_set_track_transpose
-snd_sequencer_stop_all_tracks
-snd_sequencer_stop_track
-snd_sequencer_vmidi_flush
-snd_sos_stop_track
 snd_sos_update_server_message %s
 snd_soundmixer_setmixlayer_amount %s %f\n
 sndevt
@@ -3785,7 +3684,6 @@ source_column
 source_file_searchpath
 source_soundscape
 spawn_orphans
-sphere
 spline
 startSubvoice
 startVoice

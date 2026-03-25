@@ -4,6 +4,7 @@
 //	"m_flDuration": 0.000000,
 //	"m_relevance": "ClientAndServer",
 //	"m_type": "Create",
+//	"m_target": "Self",
 //	"m_particleSystem": "",
 //	"m_bDetachFromOwner": false,
 //	"m_bStopImmediately": false,
@@ -20,6 +21,7 @@ class CNmClipDocEvent_Particle : public CNmClipDocEvent
 {
 	CNmEventRelevance_t m_relevance;
 	CNmParticleEvent::Type_t m_type;
+	CNmEventTargetEntity_t m_target;
 	// MPropertyStartGroup = "+Particle"
 	// MPropertyAttributeEditor = "AssetBrowse( vpcf, *requiredoubleclick )"
 	CUtlString m_particleSystem;

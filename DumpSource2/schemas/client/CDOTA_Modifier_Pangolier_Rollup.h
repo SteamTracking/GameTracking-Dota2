@@ -7,6 +7,7 @@ class CDOTA_Modifier_Pangolier_Rollup : public CDOTA_Modifier_DebuffImmune
 	float32 turn_rate;
 	float32 hit_radius;
 	float32 knockback_radius;
+	float32 magic_resistance;
 	bool m_bHitFirstUpdate;
 	GameTime_t m_flHitEndTime;
 	float32 hit_recover_time;

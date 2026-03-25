@@ -84,6 +84,7 @@
 //	"m_flMinimumSimTime": 0.000000,
 //	"m_flMinimumTimeStep": 0.000000,
 //	"m_nMinimumFrames": 0,
+//	"m_bIsGPUParticleSystem": false,
 //	"m_nMinCPULevel": 0,
 //	"m_nMinGPULevel": 0,
 //	"m_flNoDrawTimeToGoToSleep": 8.000000,
@@ -216,6 +217,9 @@ class CParticleSystemDefinition : public IParticleSystemDefinition
 	float32 m_flMinimumTimeStep;
 	// MPropertyFriendlyName = "minimum required rendered frames"
 	int32 m_nMinimumFrames;
+	// MPropertyFriendlyName = "simulated on the GPU"
+	// MPropertySuppressExpr = "mod != hlx"
+	bool m_bIsGPUParticleSystem;
 	// MPropertyStartGroup = "Performance Options"
 	// MPropertyFriendlyName = "minimum CPU level"
 	int32 m_nMinCPULevel;

@@ -2,6 +2,7 @@ class CDOTA_TeamCommander
 {
 	GameTick_t m_nLastUnitsCollectTick;
 	CountdownTimer m_LaneFrontUpdate;
+	CountdownTimer m_LastKnownEnemyLocationTimer;
 	uint64 m_ulBotScriptUGC;
 	uint32 m_rtBotScriptUpdated;
 	CountdownTimer m_AvoidanceGridTimer;
@@ -15,9 +16,6 @@ class CDOTA_TeamCommander
 	float32[4][2] m_LaneFrontTowersAmounts;
 	CountdownTimer m_LaneReassignTimer;
 	CUtlVector< int32 > m_AvoidanceGrid;
-	GameTime_t[24] m_fNextPotentialLocationTick;
-	int32[24] m_iPotentialLocationBuffer;
-	CUtlVector< uint8 >[24][2] m_PotentialLocationGrid;
 	CHandle< CBaseEntity > m_hRoamingUnit;
 	DOTA_LANE m_RoamTargetLane;
 	CHandle< CBaseEntity >[8][4] m_Buildings;
@@ -32,6 +30,7 @@ class CDOTA_TeamCommander
 	float32[4] m_fFarmLaneDesire;
 	int32 m_iLastSeenRoshanHealth;
 	float32 m_fRoshanDesire;
+	bool[2] m_bWisdomShrineBelievedToBeReady;
 	CUtlVector< CHandle< CBaseEntity > >[4] m_hProposedPushUnits;
 	CUtlVector< CHandle< CBaseEntity > >[4] m_hProposedDefendUnits;
 	CUtlVector< CHandle< CBaseEntity > > m_hProposedRoamUnits;
@@ -42,6 +41,9 @@ class CDOTA_TeamCommander
 	float32 m_fRoamPositionFactor;
 	CHandle< CBaseEntity > m_hRoamTarget;
 	Vector m_vRoamTargetLoc;
+	CHandle< CBaseEntity > m_hTeamRoamLeader;
+	CUtlVector< CHandle< CBaseEntity > > m_hTeamRoamCamps;
+	GameTime_t m_fTeamRoamStartTime;
 	float32[24] m_fHeroSelectionTimes;
 	Vector m_vBaseLocation;
 	Vector m_vPregameGatherLocation;

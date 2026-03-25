@@ -1,8 +1,6 @@
 class CDOTA_Modifier_Tiny_Tree_Grab : public CDOTA_Buff
 {
 	int32 attack_count;
-	int32 bonus_damage;
-	int32 bonus_damage_buildings;
 	float32 stun_duration;
 	int32 attack_range;
 	int32 m_nOriginalAttackCapability;

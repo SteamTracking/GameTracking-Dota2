@@ -1,15 +1,13 @@
-// MNetworkVarNames = "int m_nConsecutiveHits"
 class CDOTA_Ability_Pudge_MeatHook : public C_DOTABaseAbility
 {
 	Vector m_vEndpoint;
-	// MNetworkEnable
 	int32 m_nConsecutiveHits;
 	bool m_bIsVectorTargeted;
-	Vector m_vTurnLocation;
+	VectorWS m_vTurnLocation;
 	Vector m_vDirectionAfterTurn;
 	bool m_bHasTurned;
 	float32 m_flDistanceAfterTurn;
-	Vector m_vFinalPosition;
+	VectorWS m_vFinalPosition;
 	float32 reveal_duration;
 	int32 curve_hook;
 	float32 curve_hook_turn_rate;

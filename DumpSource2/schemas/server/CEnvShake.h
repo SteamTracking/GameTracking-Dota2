@@ -9,5 +9,7 @@ class CEnvShake : public CPointEntity
 	GameTime_t m_nextShake;
 	float32 m_currentAmp;
 	Vector m_maxForce;
+	// MPhysPtr
+	IPhysicsMotionController* m_pShakeController;
 	CPhysicsShake m_shakeCallback;
 };

@@ -4,5 +4,7 @@ enum AnimationAlgorithm_t : uint8_t
 	eNone = 0,
 	eSequence = 1,
 	eAnimGraph2 = 2,
-	eAnimGraph1 = 3,
+	eAnimGraph2Secondary = 3,
+	eAnimGraph1 = 4,
+	eCount = 5,
 };

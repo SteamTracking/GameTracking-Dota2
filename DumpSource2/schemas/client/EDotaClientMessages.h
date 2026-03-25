@@ -124,4 +124,8 @@ enum EDotaClientMessages : uint32_t
 	DOTA_CM_MonsterHunter_HuntAlert = 828,
 	DOTA_CM_AbilitySpecificChannelRequiresHalt = 829,
 	DOTA_CM_TormentorTimer = 830,
+	DOTA_CM_ChooseDeityBlessing = 831,
+	DOTA_CM_ChooseAghanimUpgrade = 832,
+	DOTA_CM_ChooseAbilityImbue = 833,
+	DOTA_CM_NetworkStats = 834,
 };

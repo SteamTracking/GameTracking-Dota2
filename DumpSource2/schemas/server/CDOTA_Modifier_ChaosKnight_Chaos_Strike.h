@@ -6,5 +6,5 @@ class CDOTA_Modifier_ChaosKnight_Chaos_Strike : public CDOTA_Buff
 	int32 lifesteal;
 	float32 chance;
 	int32 m_nNextCrit;
-	CUtlVector< int16 > m_vCritRecords;
+	CUtlVector< AttackRecord_t > m_vCritRecords;
 };

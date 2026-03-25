@@ -11,5 +11,5 @@ class CDOTA_Modifier_Brewmaster_DrunkenBrawler_Passive : public CDOTA_Buff
 	float32 brewed_up_duration_extend;
 	float32 brewed_up_bonus;
 	bool m_bBrewedUp;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 };

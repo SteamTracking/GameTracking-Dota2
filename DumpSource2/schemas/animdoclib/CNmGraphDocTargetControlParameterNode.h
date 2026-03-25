@@ -24,6 +24,7 @@
 //		}
 //	],
 //	"m_groupName": "",
+//	"m_dictionaryParameterBinding": "00000000-0000-0000-0000-000000000000",
 //	"m_bIsSet": false,
 //	"m_bIsBoneID": false,
 //	"m_targetOrientation":

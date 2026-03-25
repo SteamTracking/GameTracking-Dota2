@@ -21,6 +21,7 @@
 //	"m_pEnvelopeAnalyzer": null,
 //	"m_sound":
 //	{
+//		"m_namespace": "",
 //		"m_bUseReference": true,
 //		"m_sound": "",
 //		"m_pSound": null

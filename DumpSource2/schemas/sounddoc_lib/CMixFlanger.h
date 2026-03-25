@@ -7,7 +7,7 @@
 //	"m_bEditProperties": false,
 //	"m_flDelay": 8.000000,
 //	"m_flFeedback": -40.000000,
-//	"m_flFeedfoward": -3.000000,
+//	"m_flFeedfoward": 0.500000,
 //	"m_flModRate": 0.500000,
 //	"m_flModDepth": 0.500000,
 //	"m_bPhaseInvert": false,
@@ -23,10 +23,10 @@ class CMixFlanger : public CMixPropertyBase
 	// MPropertyAttributeRange = "0.5 14"
 	float32 m_flDelay;
 	// MPropertyFriendlyName = "Feedback Gain (dB)"
-	// MPropertyAttributeRange = "-24 -0.6"
+	// MPropertyAttributeRange = "-40 -0.6"
 	float32 m_flFeedback;
-	// MPropertyFriendlyName = "Mix (Feedforward Gain) (dB)"
-	// MPropertyAttributeRange = "-24 0"
+	// MPropertyFriendlyName = "Wet (linear)"
+	// MPropertyAttributeRange = "0 1.0"
 	float32 m_flFeedfoward;
 	// MPropertyFriendlyName = "Modulation Rate (Hz)"
 	// MPropertyAttributeRange = "0 4"

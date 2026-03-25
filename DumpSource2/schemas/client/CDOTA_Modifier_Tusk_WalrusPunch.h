@@ -8,6 +8,6 @@ class CDOTA_Modifier_Tusk_WalrusPunch : public CDOTA_Buff
 	CHandle< C_BaseEntity > m_hTarget;
 	bool m_bWalrusPunch;
 	bool m_bTalentProc;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 	ParticleIndex_t m_nFXIndex;
 };

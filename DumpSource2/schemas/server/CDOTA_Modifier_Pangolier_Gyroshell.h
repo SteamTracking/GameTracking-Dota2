@@ -9,6 +9,7 @@ class CDOTA_Modifier_Pangolier_Gyroshell : public CDOTA_Modifier_DebuffImmune
 	float32 hit_radius;
 	float32 knockback_radius;
 	int32 damage_pct;
+	float32 magic_resistance;
 	bool m_bHitFirstUpdate;
 	GameTime_t m_flHitEndTime;
 	float32 hit_recover_time;

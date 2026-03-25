@@ -6,7 +6,6 @@ class CPhysHinge : public CPhysConstraint
 	CEntityIOOutput m_NotifyMaxLimitReached;
 	bool m_bAtMinLimit;
 	bool m_bAtMaxLimit;
-	// MNotSaved
 	constraint_hingeparams_t m_hinge;
 	float32 m_hingeFriction;
 	float32 m_systemLoadScale;

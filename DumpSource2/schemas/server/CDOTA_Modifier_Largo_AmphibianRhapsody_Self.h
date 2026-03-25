@@ -27,4 +27,5 @@ class CDOTA_Modifier_Largo_AmphibianRhapsody_Self : public CDOTA_Buff
 	CountdownTimer m_doubleSongTimer;
 	int32 m_nConsecutiveBursts;
 	bool m_bSpokeConcept;
+	CHandle< CDOTA_Ability_Largo_AmphibianRhapsody_Song > m_pFirstStrumSong;
 };

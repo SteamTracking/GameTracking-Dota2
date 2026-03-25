@@ -3,7 +3,7 @@ class CTriggerSndSosOpvar : public CBaseTrigger
 	// MNotSaved
 	CUtlVector< CHandle< CBaseEntity > > m_hTouchingPlayers;
 	// MNotSaved
-	Vector m_flPosition;
+	VectorWS m_flPosition;
 	float32 m_flCenterSize;
 	float32 m_flMinVal;
 	float32 m_flMaxVal;

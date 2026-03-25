@@ -10,5 +10,6 @@ class CDOTA_Modifier_Item_HydrasBreath : public CDOTA_Buff_Item
 	int32 secondary_target_range_bonus;
 	int32 secondary_target_angle;
 	int32 base_attack_range;
+	int32 base_proc_dmg;
 	float32 poison_duration;
 };

@@ -6,6 +6,7 @@ class CDOTA_Modifier_Largo_Frogstomp_Thinker : public CDOTA_Buff
 	float32 stun_duration;
 	float32 stomp_interval;
 	float32 delay;
+	int32 infinite_stomps;
 	bool m_bStarted;
 	ParticleIndex_t m_nFXIndex;
 	int32 nNumTicks;

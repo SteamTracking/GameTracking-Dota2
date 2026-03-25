@@ -7,6 +7,7 @@ class DOTAAbilityDefinition_t
 	char* m_pszKeyOverride;
 	char* m_pszItemRecipeName;
 	char* m_pszLinkedAbility;
+	char* m_pszTooltipSummaryProperties;
 	int32 m_castActivity;
 	DotaGestureSlot_t m_castActivityGestureSlot;
 	KeyValues* m_pKVData;
@@ -37,15 +38,20 @@ class DOTAAbilityDefinition_t
 	AbilityID_t m_nRecipeResultAbilityID;
 	CUtlVector< AbilityID_t > m_vecItemCombinesInto;
 	CUtlVector< ItemRecipe_t > m_vecItemRecipes;
+	float32 m_flBackpackCooldownOverride;
 	int32 m_nUpgradeGoal;
 	ItemQuality_t m_ItemQuality;
 	float32 m_flModifierValue;
 	float32 m_flModifierValueBonus;
 	bool m_bHasScepterUpgrade;
 	bool m_bHasShardUpgrade;
+	int32 m_nScepterUpgradeID;
+	int32 m_nShardUpgradeID;
 	CUtlStringToken m_strScepterRequiredFacet;
 	CUtlStringToken m_strShardRequiredFacet;
+	CUtlStringToken m_strForbiddenTomeRequiredFacet;
 	char* m_strSubAbilityNames;
+	char* m_strFakeSubAbilityNames;
 	bool m_bShowCooldownInTooltips;
 	bool m_bSharedWithTeammates;
 	int32 m_nCastRangeBuffer;
@@ -60,6 +66,7 @@ class DOTAAbilityDefinition_t
 	char* m_pszRequiredCustomShopName;
 	char* m_pszLinkedScepterAbility;
 	char* m_pszLinkedShardAbility;
+	char* m_pszLinkedForbiddenTomeAbility;
 	char* m_pszDependentOnAbility;
 	int32 m_nKillToastOverride;
 	int32 m_iLevelsBetweenUpgrades;
@@ -86,6 +93,7 @@ class DOTAAbilityDefinition_t
 	bitfield:1 m_bAnimationIgnoresModelScale;
 	bitfield:1 m_bIsPlayerSpecificCooldown;
 	bitfield:1 m_bIsAllowedInBackpack;
+	bitfield:1 m_bCanSkipBackpackCooldown;
 	bitfield:1 m_bIsObsolete;
 	bitfield:1 m_bItemRequiresCustomShop;
 	bitfield:1 m_bSuggestPregame;
@@ -106,4 +114,6 @@ class DOTAAbilityDefinition_t
 	bitfield:1 m_bBreakable;
 	bitfield:1 m_bActiveNeutral;
 	bitfield:1 m_bPassiveNeutral;
+	bitfield:1 m_bShowGiveIndicatorOnTargetCast;
+	bitfield:1 m_bImbueRequiresAOE;
 };

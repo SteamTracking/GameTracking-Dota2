@@ -24,9 +24,6 @@
  randseed[
  rot[
  yaw[
-!m_bCastShadows || m_nLightType == PARTICLE_LIGHT_TYPE_FX || mod == csgo
-!m_bCastShadows || mod == csgo
-!m_bDynamicBounce
 "Limit Count: " + m_nLimitCount
 "Position within sphere random" no longer supports the "randomly distribute to highest supplied Control Point" feature\n\t"Emit continuously" and "Emit noise" no longer support "scale emission to used control points".\n\t"Position from control points" had a max control point added to it.
 "Remap control point orientation to rotation" does something approaching sanity for the cases I looked at.  If we have cases where this isn't appropriate, we can split out the behavior.\n
@@ -965,9 +962,6 @@ $SFXDetailBlendMode
 .?AVISceneObjectListener@@
 .?AVISequence@@
 0=don't clear particle attrs at init 1=clear to zero 2=clear to 0xdb -1=clear to zero at first sim
-1 512
-14 Segment
-16 Segment
 2\vpt
 33S@ff
 3E"F
@@ -975,7 +969,6 @@ $SFXDetailBlendMode
 3E"g
 3L?Zb%
 4?Ku
-7 Segment
 7?sk3mx>>*vn[9d
 8f?D
 :???;???;???3776>????/?/????7'7&>?????????
@@ -1022,7 +1015,6 @@ Add R%d <- R%d + R%d
 Add the array 'b' to the end of 'a'.
 Address of m_Children.m_pHead: [%p]\n
 All Particle Systems:\n
-All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon.
 Allocated Particles
 Alpha Alternate
 Alpha fade and decay
@@ -1093,7 +1085,6 @@ Begin testing a condition composed of Observable variable references. Continues 
 BindlessParticleShader
 Blobulator
 Bone Indices
-Bounce Scale
 Box Angles
 Box Flags
 Box Maxs
@@ -1280,9 +1271,6 @@ C_INIT_InitFromCPSnapshot: Unsupported attribute data type! (%d)\n
 C_INIT_InitFromCPSnapshot: cannot initialize PREV_XYZ - XYZ cannot be read!\n
 C_INIT_InitFromCPSnapshot: framerate unknown initializing PREV_XYZ! Defaulting to 30fps, but particle velocity may look wrong...\n
 C_INIT_InitFromParentKilled: Unsupported attribute data type! (%d)\n
-C_OP_MultiSegmentDisplaySnapshotGenerator
-C_OP_RemapVectorToRotations
-C_OP_RenderVolumetricEmitter
 C_OP_SetFromCPSnapshot: cannot initialize PREV_XYZ - XYZ cannot be read!\n
 C_OP_SetFromCPSnapshot: framerate unknown initializing PREV_XYZ! Defaulting to 30fps, but particle velocity may look wrong...\n
 Calculate vector attribute
@@ -1309,7 +1297,6 @@ Class does not allow allocation from its schema binding
 Collide with Parent Particles
 Collide with Self Simple Per-Particle
 Collision via traces
-Colon
 Color Adjust
 Color fade
 Color fade random
@@ -1321,13 +1308,11 @@ Compare strings with case sensitivity, in contrast to normal string equality whi
 Completed
 Computes 2 ( 2.71...) raised to a power
 Computes e ( 2.71...) raised to a power
-Cone Angle Offset
 Constrain distance to control point
 Constrain distance to path between two control points
 Constrain distance to user specified path
 Constrain particles to a box
 Constrain particles to initial shape
-Continuous Injection From Particles
 Control Point Velocity Force
 Convert %s R%d <- %s R%d
 Convert degrees (0-180) to radians (0-pi)
@@ -1376,18 +1361,13 @@ Dampen Movement relative to model
 Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
-Decimal Point
-Default String
 Deg2 Rad
-Degrees
 Density-based force
 Depth
 DepthMap
 Desired Kill Priority
 Detach R%d
 Diffuse particle attributes
-Digits After Decimal
-Disable Cloth Ground Collision
 Disable to get a better look at what's happening offscreen
 DisableSorting
 Div R%d <- R%d / R%d
@@ -1396,11 +1376,9 @@ Dot Product Vector
 Dot Product of Vector a 
 Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes)
 Drive CP from global sound float
-Dynamic Bounce (RTGI)
 ERROR: SweepRenderer::render_slices got into an infinite loop!\n
 Elapsed time = %f\n
 Element Access R%d <- R%d[R%d]
-Emission
 Emit continuously
 Emit instantaneously
 Emit noise
@@ -1469,16 +1447,11 @@ Find all the yielded cursors on this graph and cancel them.
 Find all the yielded cursors on this graph with the matching tag and cancel them.
 Find first element 'a' which compare equal to 'element' and return its index.
 FindParticleSystem
-Fired immediately when this node begins for chaining purposes.
-Fired when the observable boolean is false, and killed when true.
-Fired when the observable boolean is true, and killed when false.
 Fixed "Animation Type" in Sprite Renderer not working for non-particle normal alignment types.\n
 Fixed "Inherit Attribute from Parent Particles" not keeping parent particles in sync with children.\n
 Fixed Float Evaluator "Particle Count Percent of Total Count" being off-by-one at the end. Double-check remapping of any Particle Count Normalized float evaluators.\n
 Fixed bugs in "Position along path sequential" where it could incorrectly create too many particles at the last control point. Also fixed issues with control points specified in backward order in that operator as well as "Movement lock to saved position along path".\n
-Float Input
 Float To Game Time
-Float Value
 Float16HDRBackBuffer
 Floor - round float down to nearest integer
 Floor Float
@@ -1500,7 +1473,6 @@ GPU Particle Simulate
 GPU Particles InitialValues %s
 GPU Particles0 %s
 GPU Particles1 %s
-GPUParticleCollisionMode_t
 GPUParticleRemapTexture %s
 GPUParticleRequiredResources
 GPUSimulateSupportsRaytracing
@@ -1531,7 +1503,6 @@ Hit maximum implicit vertex buffer size of %u, desired %u\n
 Hitbox Index
 Hitbox Offset Position
 How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive.
-Hybrid RT + Depth Buffer
 IKV3TransferInterface_ResourceSave
 IKV3TransferInterface_UtlSymbolLarge
 IS_EFFECTS_LAYER
@@ -1576,9 +1547,7 @@ Init from parent particle event
 Init vector attribute from a list of values
 Init vector attribute to vector expression
 InitializeNewParticles
-Input Type
 Insert 'element' in the given index in 'a', increasing its count by one and moving the elements after index.
-Instant Impulse On Each Particle Event
 Integer Divide
 Integer division - unlike the divide (/) node, this will truncate any remainder (floor) and return an integer.
 Intra-particle force
@@ -1686,14 +1655,12 @@ Max Int
 Max Particles
 Max Render (us)
 Max Sim (us)
-Maximum Digits Count
 Maximum of two values (float)
 Maximum of two values (int)
 MbP?a
 Memory at [%p]:\n
 Min Float
 Min Int
-Minimum Digits Count
 Minimum of two values (float)
 Minimum of two values (int)
 Mirror
@@ -1706,7 +1673,6 @@ Model Helper Pointer 2
 Model Helper Pointer 3
 Model Helper Pointer 4
 Model Surface UV Snapshot Generator
-Monitor Observable
 MotionVectorsTexture
 Move particles between 2 control points
 Movement Lerp to Initial Position relative to CP
@@ -1758,15 +1724,11 @@ Normalize Vector a
 Normalize vector
 Not R%d <- !R%d
 Not safe to 'new' this class due to alignment requirements
-Number Of Lights To Create
 O@33S@
-Observable
 Offset of m_Children.m_pHead: [%i]\n
 On Interval
 On True
 OnInterval
-Only Enabled in Game
-Only Enabled in Tools
 Only wrote %d (of %d) values when saving map!
 Operator Name
 Optional. After taking an OnCanceled outflow, signal to any observers that this cursor is now canceled. Equivalent to not handling the original cancel outflow. If you don't use this, handling OnCanceled will be treated as success.
@@ -1781,30 +1743,8 @@ OverlayProjectionDirection
 P8?2
 PARENT_PARTICLE_ID
 PARENT_PARTICLE_INDEX
-PARTICLE_GPU_COLLISION_MODE_DEPTH
-PARTICLE_GPU_COLLISION_MODE_HYBRID
-PARTICLE_GPU_COLLISION_MODE_RT
 PARTICLE_ID
-PARTICLE_MULTISEGMENT_SEG_COUNT_14
-PARTICLE_MULTISEGMENT_SEG_COUNT_16
-PARTICLE_MULTISEGMENT_SEG_COUNT_7
-PARTICLE_MULTISEGMENT_SELECTION_FLOAT
-PARTICLE_MULTISEGMENT_SELECTION_STRING
-PARTICLE_MULTISEGMENT_SPECIAL_COLON
-PARTICLE_MULTISEGMENT_SPECIAL_DECIMAL
-PARTICLE_MULTISEGMENT_SPECIAL_DEGREES
-PARTICLE_MULTISEGMENT_SPECIAL_NONE
-PARTICLE_TOOLS_STATE_ALWAYS_ON
-PARTICLE_TOOLS_STATE_GAME_ONLY
-PARTICLE_TOOLS_STATE_TOOLS_ONLY
-PARTICLE_VOLUMETRIC_SMOKE_TYPE_CONTINUOUS
-PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION
-PARTICLE_VOLUMETRIC_SMOKE_TYPE_IMPULSE
-PARTICLE_VOLUMETRIC_SMOKE_TYPE_REPEL
-PARTICLE_VOLUMETRIC_SMOKE_TYPE_SINK
 PET_SupportFadingOpaqueModels
-PF_TYPE_CONTROL_POINT_IS_SET
-PF_TYPE_SNAPSHOT_CHANGED
 PITCH
 PRECIPITATION
 PREV_XYZ
@@ -1824,15 +1764,9 @@ Particle effect %s setting count to %d\n
 Particle initializers always run. Previously, some initializers would silently be skipped.\n
 Particle needs recompiling: '%s'\nBrowse to the particle in asset browser, right click and select Full Recompile.
 Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway.
-ParticleMultiSegmentCountSelection_t
-ParticleMultiSegmentInputSelection_t
-ParticleMultiSegmentSpecialCharacter_t
 ParticleParamID_t
 ParticleSystem
 ParticleSystemRequiredResources
-ParticleToolsState_t
-ParticleVolumetricSmokeCreationType_t
-ParticleVolumetricSmokeType_t
 Particlelib: Unsupported CPU or GPU for particle definition "%s"!\n
 Particlelight
 Particles
@@ -1859,7 +1793,6 @@ Pin Particle to control point
 Pin Rope Segment Particle to Parent Particle
 PivotPaint
 Play EndCap when Finished
-Point at Previous instead of next
 Point vector at next particle position
 Position
 Position On Grid
@@ -1887,10 +1820,8 @@ Position within box random
 Position within capsule random
 Position within sphere random
 PostSimulate
-Prepend Empty Digits
 Prevent passing through a plane
 Prevent passing through static part of world
-Primary View Depth Buffer
 Print debug message every time a particle collection is created
 Print out information on existing particle systems
 Problem loading error.vpcf, please validate your game install\n
@@ -1934,7 +1865,6 @@ Ramp scalar spline simple
 Random World Position
 Random force
 Randomizes the order of items in the array (Knuth/Fisher-Yates Shuffle)
-Raytracing TLAS
 Reciprocoal square root (1/sqrt)
 Ref Counted Pointer
 Register Test Checkpoint
@@ -2053,7 +1983,6 @@ Render volumetric smoke
 RenderOps_Init(15288): 
 RenderSimpleModelCollection is missing a model to render
 Repeatedly Trigger Child Group
-Repel
 Restart effect after duration
 Return the number of elements in the array.
 Returns -1 or 0 or 1 based on the sign of the argument
@@ -2115,8 +2044,6 @@ Screen Space Distance To Edge
 Screen Space Position of Target
 Screen Space Rotate Toward Target
 Second Sequence Number / Alpha Window Threshold
-Segment Count
-Segment Special Character
 Selectively Enable Children
 Sequence Number
 Sequence from control point
@@ -2184,9 +2111,7 @@ Sim Time Average: %.2fms\n
 Sim Time Max: %.2fms\n
 Sim Time Min: %.2fms\n
 Sine of angle. Input in radians, output in radians
-Sink
 Snapshot load error for resource '%s': %s\n
-Spacing Scale
 SphericalHarmonicsTextureA
 SphericalHarmonicsTextureB
 SphericalHarmonicsTextureC
@@ -2238,7 +2163,6 @@ Tangent of angle. Input in radians, output in radians
 Teleport Beam
 Test Mode Assert True
 TestCheckpoint: %s
-Text Input
 TextureLayer1
 TextureLayer2
 TextureLayer3
@@ -2271,8 +2195,6 @@ Use fixed seeds for easier debugging
 Use random seeds in debug
 Used to flag a test as having failed.
 User Event States
-VDataChoice( scripts/light_styles.vdata )
-VDataChoice( scripts/volumetric_channels.vdata )
 Value 0-1 how far along duration (always 0 if duration is -1)
 Variable '%s' is referenced but not declared in this system (%s). Adding a fallback now.\n
 Vector To World Vector
@@ -2301,12 +2223,10 @@ WARNING: Particle system '%s' was not precached correctly. Performing blocking l
 WARNING: Particle system '%s' with missing path was not found in existing particle system list.\n
 WARNING: Removing circular reference to particle child '%s'.\n
 Wait Complete
-Wait Until
 Warning: Missing fallback for particle system "%s"!\n
 When False
 When Steady State in %f Seconds
 When True
-While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled.
 World Vector To Vector
 X to the Y power
 Y>UU
@@ -2364,7 +2284,6 @@ bE"W
 bE"g
 bInherit
 bValue
-bWasAnObservableComputation
 beginFrame
 beginTile
 bentnormal
@@ -2374,7 +2293,6 @@ blendweights
 blob indirect draw
 blobulator
 body part
-bounce scale
 bouncescale
 box_angles
 box_maxs
@@ -2387,7 +2305,6 @@ cable_tesselation_vb_meshlets
 cables.vfx
 cablevertices
 can't solve quadratic for light %f %f\n
-channel type
 cl_max_particle_pvs_aabb_edge_length
 cl_particle_create_duplicate_work_for_profiling
 cl_particle_log_creates
@@ -2395,20 +2312,16 @@ cl_particle_newinit
 clamp
 compressedtangentframe
 con_command
-creation type
 creation_time
 curvature
 data_offset
 data_size
-debug orientation
 def min cpu=%d system cpu=%d def gpu=%d system gpu=%d\n
 default_sort
 deg2rad
 densityVolume.InterpolatedVoxel( 0, Vector( 0.f, 0.f, 0.f ) )=%?
-direction input
 domain_scope
 dumpparticlelist
-dynamic bounce (RTGI)
 dynamicbounce
 element
 endFrame
@@ -2471,87 +2384,46 @@ implicit indices
 implicit particles
 implicit vertices
 inherit attribute from peer particle systems
-interaction type
 internal error in particle system MapParticleOrientationIndexToShaderCombo()
 invalid_hitbox
 is_selector
 itemgroups
 k>Mg
 k?C9
-kill radius
 kv3:ParticleParamID_t
 length2d
 length3d
 lerp
 lifespan
 light has _fifty_percent_distance of %f but no zero_percent_distance\n
-light style
-light style time
-lit segment color
 lj?HP
 log2
 lookup tables
 lowprecisionuv
 lowprecisionuv1
 lwK?
-m_Always
 m_Children.m_pHead: [%p]\n
-m_SpecialCharList
 m_Stops
 m_TagValue
 m_bBakedTwoSided
 m_bCanBatchWithDynamicShaderConstants
 m_bConditionValue
-m_bDebugOrientation
-m_bDisableClothGroundCollision
 m_bDrawLast
-m_bDynamicBounce
 m_bFirstEvaluate
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
-m_bIsGPUParticleSystem
 m_bIsNotMatchedToMaterial
 m_bNoShadow
 m_bOnlyShadow
-m_bPrependEmpty
-m_bPrevious
-m_bRefract2Passes
-m_bSetPosition
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
 m_buffer=
 m_externalMethodTargetGraph
-m_flBounceScale
-m_flDigitsAfterDecimal
-m_flKillRadius
-m_flLightStyleTime
-m_flMaxCount
-m_flMinCount
-m_flNumberOfLightsToCreate
 m_flSlopeIncoming
 m_flSlopeOutgoing
-m_flTemperature
-m_nBlackboardIndex
-m_nCreationType
-m_nCreationType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_CONTINUOUS
 m_nCurrentWakeIndex
 m_nGraphID
-m_nInputType != PARTICLE_MULTISEGMENT_SELECTION_FLOAT
-m_nInputType != PARTICLE_MULTISEGMENT_SELECTION_STRING
-m_nMaxAllowed
-m_nSegCount
-m_nToolsState
-m_nType != PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION
-m_nType != PARTICLE_VOLUMETRIC_SMOKE_TYPE_SINK
-m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION
-m_strChannelType
-m_strDefaultString
-m_strLightStyle
-m_strLightStyle == ''
 m_szEffect
-m_vecColorLit
-m_vecColorUnlit
-m_vecConeRotationOffset
 manual_animation_frame
 materials/dev/gpu_particles_initialize.vmat
 materials/dev/gpu_particles_simulate.vmat
@@ -2564,10 +2436,8 @@ max_instances
 max_particles
 max_render
 max_sim
-maximum light count
 medium
 mesh group
-mod != hlx || !m_bRefract
 n?9a
 nDenominator
 nFirstParticle=%?
@@ -2582,7 +2452,6 @@ num_particles
 o\tV_sind
 o\t\raHC
 opacity
-operator enabled in tools or game only
 operators
 optionallycompressedtangentframe
 p?33s?
@@ -2680,7 +2549,6 @@ r_physics_particle_op_spawn_scale
 rad2deg
 random_position
 read attribute from neighboring particle
-refract in 2 passes - can refract particles behind, requires (MBOIT!)
 remap
 remap vector component to scalar
 render particles 100 times and show perf
@@ -2703,13 +2571,11 @@ scratch_float
 scratch_vec
 self
 sequence_number1
-set position to gravity vector
 shader
 shader_extra_data_1
 shader_extra_data_2
 sheet
 sign
-simulated on the GPU
 skinning
 spritecard.vfx
 spritecardparticles
@@ -2721,13 +2587,11 @@ spritecardparticlestrailwithnormal
 spritecardtessvb
 strValue
 string_list
-sub-sample parent particles
 systems
 t>vTU>
 tagValue
 tangent
 tangentu_signv
-temperature
 tes_index_buffer
 tes_sprite_index_buffer
 texcoord
@@ -2741,12 +2605,10 @@ total_sim
 trail_length
 translucent
 turn on optimized particle init
-unlit segment color
 vMins=%?
 vecValue
 vecValueA
 vecValueB
-vector input
 very_fast
 vn[90
 wH>r

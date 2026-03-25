@@ -1,6 +1,9 @@
 // MGetKV3ClassDefaults = {
 //	"m_variationID": "",
 //	"m_skeleton": "",
+//	"m_supportedSecondarySkeletons":
+//	[
+//	],
 //	"m_pUserData": null,
 //	"m_persistentNodeIndices":
 //	[
@@ -38,6 +41,7 @@ class CNmGraphDefinition
 {
 	CGlobalSymbol m_variationID;
 	CStrongHandle< InfoForResourceTypeCNmSkeleton > m_skeleton;
+	CUtlVector< CStrongHandle< InfoForResourceTypeCNmSkeleton > > m_supportedSecondarySkeletons;
 	CNmGraphVariationUserData* m_pUserData;
 	CUtlVector< int16 > m_persistentNodeIndices;
 	int16 m_nRootNodeIdx;

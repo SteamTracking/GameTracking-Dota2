@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
-//	"m_nViewId": 0,
-//	"m_nFrameCount": 0
+//	"m_nViewId": 4294967295,
+//	"m_nFrameCount": 4294967295
 //}
 class SceneViewId_t
 {

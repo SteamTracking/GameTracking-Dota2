@@ -10,4 +10,5 @@ class CDOTA_Modifier_XP_Fountain_Aura : public CDOTA_Buff
 	float32 m_flRemainingCountDownTime;
 	float32 radius;
 	float32 m_flPauseDuration;
+	bool m_bCapturableByEnemy;
 };

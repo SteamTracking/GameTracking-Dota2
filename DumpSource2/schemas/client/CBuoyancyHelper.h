@@ -1,5 +1,7 @@
 class CBuoyancyHelper
 {
+	// MPhysPtr
+	IPhysicsMotionController* m_pController;
 	CUtlStringToken m_nFluidType;
 	float32 m_flFluidDensity;
 	float32 m_flNeutrallyBuoyantGravity;

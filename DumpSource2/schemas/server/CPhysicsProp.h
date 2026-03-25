@@ -1,9 +1,3 @@
-// MNetworkExcludeByName = "m_flexWeight"
-// MNetworkExcludeByUserGroup = "m_flPoseParameter"
-// MNetworkExcludeByName = "m_animationController.m_flPlaybackRate"
-// MNetworkExcludeByUserGroup = "overlay_vars"
-// MNetworkIncludeByName = "m_spawnflags"
-// MNetworkVarNames = "bool m_bAwake"
 class CPhysicsProp : public CBreakableProp
 {
 	CEntityIOOutput m_MotionEnabled;
@@ -39,6 +33,7 @@ class CPhysicsProp : public CBreakableProp
 	Color m_glowColor;
 	bool m_bShouldAutoConvertBackFromDebris;
 	bool m_bMuteImpactEffects;
+	INavObstacle::NavObstacleType_t m_nNavObstacleType;
 	bool m_bUpdateNavWhenMoving;
 	bool m_bForceNavObstacleCut;
 	bool m_bAllowObstacleConvexHullMerging;
@@ -48,7 +43,6 @@ class CPhysicsProp : public CBreakableProp
 	CUtlSymbolLarge[4] m_strItemClass;
 	int32[4] m_nItemCount;
 	bool m_bRemovableForAmmoBalancing;
-	// MNetworkEnable
 	bool m_bAwake;
 	bool m_bAttachedToReferenceFrame;
 };

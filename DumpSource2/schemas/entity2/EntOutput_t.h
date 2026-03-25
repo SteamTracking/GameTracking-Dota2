@@ -1,3 +1,0 @@
-class EntOutput_t
-{
-};

@@ -1,0 +1,4 @@
+// MResourceTypeForInfoType = "itemdefs"
+class InfoForResourceTypeCVDataItemDefs
+{
+};

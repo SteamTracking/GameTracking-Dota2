@@ -22,8 +22,10 @@
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		}
-//	]
+//	],
+//	"m_bShouldSampleRootMotion": false
 //}
 class CNmGraphDocExternalPoseNode : public CNmGraphDocFlowNode
 {
+	bool m_bShouldSampleRootMotion;
 };

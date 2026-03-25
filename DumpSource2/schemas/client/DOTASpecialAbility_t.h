@@ -15,10 +15,12 @@ class DOTASpecialAbility_t
 	CUtlStringToken m_strRequiredFacet;
 	DAMAGE_TYPES m_nDamageTypeField;
 	uint8 m_unLevelUpInterval;
+	uint8 m_unLevelUpBonusRequiredLevel;
 	bool m_bSpellDamageField;
 	bool m_bRequiresScepterField;
 	bool m_bRequiresShardField;
 	bool m_bAffectedByAoEIncrease;
 	bool m_bDynamicValue;
 	bool m_bAffectedByCurio;
+	bool m_bShowAbsoluteValues;
 };

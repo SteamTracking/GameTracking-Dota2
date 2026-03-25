@@ -1,3 +1,4 @@
+// MGetKV3ClassDefaults = null
 class CDecalInstance
 {
 	CGlobalSymbol m_sDecalGroup;
@@ -7,6 +8,7 @@ class CDecalInstance
 	int32 m_nBoneIndex;
 	int32 m_nTriangleIndex;
 	Vector m_vPositionLS;
+	Vector m_vPositionOS;
 	Vector m_vNormalLS;
 	Vector m_vSAxisLS;
 	DecalFlags_t m_nFlags;
@@ -27,5 +29,4 @@ class CDecalInstance
 	// MNotSaved
 	bool m_bIsAdjacent;
 	bool m_bDoDecalLightmapping;
-	DecalRtEncoding_t m_nDecalRtEncoding;
 };

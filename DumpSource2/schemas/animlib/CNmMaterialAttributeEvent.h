@@ -9,7 +9,7 @@
 //		"m_flValue": 0.000000
 //	},
 //	"m_syncID": "",
-//	"m_bClientOnly": false,
+//	"m_target": "Self",
 //	"m_attributeName": "",
 //	"m_attributeNameToken": "",
 //	"m_x":
@@ -91,6 +91,7 @@
 //}
 class CNmMaterialAttributeEvent : public CNmEvent
 {
+	CNmEventTargetEntity_t m_target;
 	CUtlString m_attributeName;
 	CUtlStringToken m_attributeNameToken;
 	CPiecewiseCurve m_x;

@@ -1,5 +1,6 @@
 class CDOTA_Modifier_Venomancer_PoisonSting_Applier : public CDOTA_Buff
 {
+	float32 debuff_dmg;
 	float32 duration;
-	int32 damage;
+	float32 damage;
 };

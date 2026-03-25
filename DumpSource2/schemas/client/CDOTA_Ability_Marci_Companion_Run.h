@@ -10,7 +10,7 @@ class CDOTA_Ability_Marci_Companion_Run : public C_DOTABaseAbility
 	int32 max_jump_distance;
 	int32 impact_position_offset;
 	int32 vector_preview_radius;
-	Vector m_vEndpoint;
+	VectorWS m_vEndpoint;
 	ParticleIndex_t m_nToBounceFXIndex;
 	ParticleIndex_t m_nToTargetFXIndex;
 	bool m_bIsAltCastState;

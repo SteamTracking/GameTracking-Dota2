@@ -1,4 +1,3 @@
-// MNetworkVarNames = "int m_nConsecutiveHits"
 class CDOTA_Ability_Aghsfort_Bonus_Pudge_MeatHook : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	VectorWS m_vProjectileLocation;
@@ -16,6 +15,5 @@ class CDOTA_Ability_Aghsfort_Bonus_Pudge_MeatHook : public CDOTABaseAbility, pub
 	int32 m_nManaCost;
 	CHandle< CBaseEntity > m_hSourceCaster;
 	int32 m_nNextConsecutiveHitCount;
-	// MNetworkEnable
 	int32 m_nConsecutiveHits;
 };

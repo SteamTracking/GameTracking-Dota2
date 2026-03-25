@@ -12,7 +12,7 @@
 //}
 class CNmTargetSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
-	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;
+	CUtlLeanVectorFixedGrowable< int16, 8 > m_optionNodeIndices;
 	float32 m_flOrientationScoreWeight;
 	float32 m_flPositionScoreWeight;
 	int16 m_parameterNodeIdx;

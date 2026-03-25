@@ -76,6 +76,7 @@
 //		}
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
+//	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
 //	"m_flOpStartFadeInTime": 0.000000,
 //	"m_flOpEndFadeInTime": 0.000000,
 //	"m_flOpStartFadeOutTime": 0.000000,
@@ -1791,6 +1792,7 @@
 //	},
 //	"m_bRefract": false,
 //	"m_bRefractSolid": false,
+//	"m_bRefract2Passes": false,
 //	"m_flRefractAmount":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
@@ -4245,6 +4247,7 @@
 //		}
 //	}
 //}
+// MGPUParticleFunction
 class C_OP_RenderSprites : public CBaseRendererSource2
 {
 	// MPropertyStartGroup = "Animation"

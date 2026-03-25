@@ -9,6 +9,6 @@ class CDOTA_Modifier_Item_Mjollnir : public CDOTA_Buff_Item
 	int32 chain_damage_per_charge;
 	int32 max_charges;
 	float32 chain_cooldown;
-	CUtlVector< int16 > m_InFlightAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 	CountdownTimer m_ChainTimer;
 };

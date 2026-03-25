@@ -1,5 +1,5 @@
 class CNavVolumeBreadthFirstSearch : public CNavVolumeCalculatedVector
 {
-	Vector m_vStartPos;
+	VectorWS m_vStartPos;
 	float32 m_flSearchDist;
 };

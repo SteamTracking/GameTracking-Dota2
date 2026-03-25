@@ -14,4 +14,7 @@ enum EGCMsgUseItemResponse : uint32_t
 	k_EGCMsgUseItemResponse_EmoticonUnlock_NoNew = 11,
 	k_EGCMsgUseItemResponse_EmoticonUnlock_Complete = 12,
 	k_EGCMsgUseItemResponse_ItemUsed_Compendium = 13,
+	k_EGCMsgUseItemResponse_CannotUseWhileUntradable = 14,
+	k_EGCMsgUseItemResponse_CannotBeUsedByAccount = 15,
+	k_EGCMsgUseItemResponse_RecipientCannotRecieve = 16,
 };

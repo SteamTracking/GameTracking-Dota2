@@ -1,9 +1,6 @@
-// MNetworkExcludeByUserGroup = "LocalPlayerExclusive"
-// MNetworkVarNames = "CHandle< CEconWearable > m_hMyWearables"
-class CBaseCombatCharacter : public CBaseFlex
+class CBaseCombatCharacter : public CBaseAnimatingOverlay
 {
 	bool m_bForceServerRagdoll;
-	// MNetworkEnable
 	// MNotSaved
 	CNetworkUtlVectorBase< CHandle< CEconWearable > > m_hMyWearables;
 	float32 m_impactEnergyScale;

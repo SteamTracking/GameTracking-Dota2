@@ -24,6 +24,7 @@
 //		}
 //	],
 //	"m_groupName": "",
+//	"m_dictionaryParameterBinding": "00000000-0000-0000-0000-000000000000",
 //	"m_previewStartValue": 0.000000,
 //	"m_previewMin": 0.000000,
 //	"m_previewMax": 1.000000

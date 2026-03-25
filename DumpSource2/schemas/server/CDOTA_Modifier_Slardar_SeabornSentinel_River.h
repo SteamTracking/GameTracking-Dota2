@@ -2,7 +2,7 @@ class CDOTA_Modifier_Slardar_SeabornSentinel_River : public CDOTA_Buff
 {
 	int32 river_speed;
 	float32 puddle_regen;
-	int32 puddle_armor;
+	float32 puddle_armor;
 	int32 puddle_status_resistance;
-	int32 river_damage;
+	float32 river_damage_pct;
 };

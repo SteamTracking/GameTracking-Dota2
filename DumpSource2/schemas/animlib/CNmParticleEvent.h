@@ -9,9 +9,9 @@
 //		"m_flValue": 0.000000
 //	},
 //	"m_syncID": "",
-//	"m_bClientOnly": false,
 //	"m_relevance": "ClientAndServer",
 //	"m_type": "Create",
+//	"m_target": "Self",
 //	"m_hParticleSystem": "",
 //	"m_tags": "",
 //	"m_bStopImmediately": false,
@@ -28,6 +28,7 @@ class CNmParticleEvent : public CNmEvent
 {
 	CNmEventRelevance_t m_relevance;
 	CNmParticleEvent::Type_t m_type;
+	CNmEventTargetEntity_t m_target;
 	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_hParticleSystem;
 	CUtlString m_tags;
 	bool m_bStopImmediately;

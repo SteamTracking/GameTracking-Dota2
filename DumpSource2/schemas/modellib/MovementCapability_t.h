@@ -14,5 +14,10 @@ enum MovementCapability_t : uint32_t
 	eShuffle = 5,
 	// MPropertyFriendlyName = "Planted Turn"
 	ePlantedTurn = 6,
-	eCount = 7,
+	// MPropertyFriendlyName = "Stop/Start Planted Turn"
+	eUseStartAsPlantedTurn = 7,
+	// MPropertyFriendlyName = "Lean"
+	eLean = 8,
+	// MPropertySuppressEnumerator
+	eCount = 9,
 };

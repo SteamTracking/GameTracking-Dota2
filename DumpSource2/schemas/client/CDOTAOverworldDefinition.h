@@ -13,6 +13,19 @@
 //	"m_unGridSize": 64,
 //	"m_unMapWidth": 0,
 //	"m_unMapHeight": 0,
+//	"m_flMinCameraDistance": 0.000000,
+//	"m_flMaxCameraDistance": 0.000000,
+//	"m_flInnerCameraDistanceThreshold": 0.000000,
+//	"m_vMinCameraBounds":
+//	[
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vMaxCameraBounds":
+//	[
+//		0.000000,
+//		0.000000
+//	],
 //	"m_sMapVisualsXmlPath": "",
 //	"m_vecStartNodeIds":
 //	[
@@ -25,6 +38,7 @@
 //	"m_unPremiumItemDef": 0,
 //	"m_unFullCompletionItemDef": 0,
 //	"m_unScrapTokenID": 0,
+//	"m_unFortuneDuration": 0,
 //	"m_vecEventActionTriggers":
 //	[
 //	],
@@ -34,7 +48,19 @@
 //	"m_vecPathColorRules":
 //	[
 //	],
+//	"m_Theme":
+//	{
+//		"m_sButtonType": "DOTACrownfallButton",
+//		"m_sTokenType": "DOTACrownfallToken",
+//		"m_sTokenReceivedPopupLayout": "file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_tokens_received.xml",
+//		"m_sTokenTraderEncounterLayout": "file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_token_trader.xml",
+//		"m_sInventoryPickerLayout": "file://{resources}/layout/ui_overworld_inventory_picker.xml",
+//		"m_sTextPrefix": "Crownfall"
+//	},
 //	"m_vecTokenTypes":
+//	[
+//	],
+//	"m_vecTarotCards":
 //	[
 //	],
 //	"m_vecHeroRewards":
@@ -60,6 +86,9 @@
 //	],
 //	"m_vecClickables":
 //	[
+//	],
+//	"m_vecRoomGroups":
+//	[
 //	]
 //}
 // MVDataRoot
@@ -80,6 +109,16 @@ class CDOTAOverworldDefinition
 	uint32 m_unGridSize;
 	uint32 m_unMapWidth;
 	uint32 m_unMapHeight;
+	// MPropertyDescription = "Minimum camera distance. Lower means more zoom in possible"
+	float32 m_flMinCameraDistance;
+	// MPropertyDescription = "Maximum camera distance. Higher means more zoom out possible"
+	float32 m_flMaxCameraDistance;
+	// MPropertyDescription = "The camera distance at which we reveal rooms / train car interior."
+	float32 m_flInnerCameraDistanceThreshold;
+	// MPropertyDescription = "Minimum camera center position."
+	Vector2D m_vMinCameraBounds;
+	// MPropertyDescription = "Minimum camera center position."
+	Vector2D m_vMaxCameraBounds;
 	CUtlString m_sMapVisualsXmlPath;
 	// MPropertyDescription = ""
 	CUtlVector< OverworldNodeID_t > m_vecStartNodeIds;
@@ -99,10 +138,14 @@ class CDOTAOverworldDefinition
 	item_definition_index_t m_unFullCompletionItemDef;
 	// MPropertyDescription = "ID of the scrap token rewarded for playing matches."
 	OverworldTokenID_t m_unScrapTokenID;
+	// MPropertyDescription = "How long a fortune lasts for an account in seconds"
+	uint32 m_unFortuneDuration;
 	CUtlVector< CDOTAEventActionTrigger > m_vecEventActionTriggers;
 	CUtlVector< CDOTAEventActionGrantAndClaimPairTrigger > m_vecEventActionGrantAndClaimPairTriggers;
 	CUtlVector< CDOTAOverworldPathColorRule > m_vecPathColorRules;
+	CDOTAOverworldTheme m_Theme;
 	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes;
+	CUtlVector< CDOTAOverworldTarotCard* > m_vecTarotCards;
 	CUtlVector< CDOTAOverworldHeroReward* > m_vecHeroRewards;
 	CUtlVector< CDOTAOverworldNode* > m_vecNodes;
 	CUtlVector< CDOTAOverworldPath* > m_vecPaths;
@@ -111,4 +154,5 @@ class CDOTAOverworldDefinition
 	CUtlVector< CDOTAOverworldHero* > m_vecHeroes;
 	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters;
 	CUtlVector< CDOTAOverworldClickable* > m_vecClickables;
+	CUtlVector< CDOTAOverworldRoomGroup* > m_vecRoomGroups;
 };

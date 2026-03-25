@@ -15,4 +15,5 @@ class CPointTemplate : public CLogicalEntity
 	HSCRIPT m_ScriptSpawnCallback;
 	// MNotSaved
 	HSCRIPT m_ScriptCallbackScope;
+	CEntityOutputTemplate< CUtlVector< CEntityHandle > > m_OnEntitySpawned;
 };

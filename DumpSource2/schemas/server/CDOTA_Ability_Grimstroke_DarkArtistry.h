@@ -21,6 +21,7 @@ class CDOTA_Ability_Grimstroke_DarkArtistry : public CDOTABaseAbility
 	int32 m_nRealHeroesHit;
 	int32 m_nVisibleHeroesHit;
 	float32 m_fDmgMultiplierTalent;
+	bool m_bIsAltCastState;
 	float32 projectile_speed;
 	float32 slow_duration;
 	float32 start_radius;

@@ -1,5 +1,7 @@
 class CPhysicsSpring : public CBaseEntity
 {
+	// MPhysPtr
+	IPhysicsJoint* m_pSpringJoint;
 	float32 m_flFrequency;
 	float32 m_flDampingRatio;
 	float32 m_flRestLength;

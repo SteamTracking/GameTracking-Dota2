@@ -6,7 +6,7 @@ class CDOTA_Modifier_FacelessVoid_TimeLock : public CDOTA_Buff
 	int32 chance_pct;
 	int32 bonus_damage;
 	GameTime_t last_attack_time;
-	CUtlVector< int16 > m_ProcAttackRecords;
+	CUtlVector< AttackRecord_t > m_ProcAttackRecords;
 	GameTime_t apply_activity_modifier_until;
 	GameTime_t disable_activity_modifier_until;
 	CUtlOrderedMap< CHandle< CDOTA_BaseNPC >, int32 > m_mapTargets;

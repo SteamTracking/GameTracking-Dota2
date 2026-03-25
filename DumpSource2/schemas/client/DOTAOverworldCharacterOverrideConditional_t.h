@@ -22,7 +22,7 @@
 //		],
 //		"m_unFrameWidth": 0,
 //		"m_unFrameTime": 100,
-//		"bUse3dPreview": false,
+//		"m_bUse3dPreview": false,
 //		"m_nPreviewHeroID": 0
 //	}
 //}

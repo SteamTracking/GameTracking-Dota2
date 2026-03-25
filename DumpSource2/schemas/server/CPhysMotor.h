@@ -12,5 +12,9 @@ class CPhysMotor : public CLogicalEntity
 	float32 m_flTorqueScale;
 	float32 m_flTargetSpeed;
 	float32 m_flSpeedWhenSpinUpOrSpinDownStarted;
+	// MPhysPtr
+	IPhysicsBody* m_pFixedWorldBody;
+	// MPhysPtr
+	IPhysicsJoint* m_pMotorJoint;
 	CMotorController m_motor;
 };

@@ -1,11 +1,12 @@
 enum DecalRtEncoding_t : uint8_t
 {
 	kDecalInvalid = 255,
+	// MPropertySuppressEnumerator
+	kDecalMin = 0,
 	kDecalBlood = 0,
 	kDecalCloak = 1,
-	kDecalCloakDamage = 2,
 	// MPropertySuppressEnumerator
-	kDecalMax = 3,
+	kDecalMax = 2,
 	// MPropertySuppressEnumerator
 	kDecalDefault = 0,
 };

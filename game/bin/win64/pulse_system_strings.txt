@@ -167,7 +167,6 @@ Absolute value (int)
 Add R%d <- R%d + R%d
 Add the array 'b' to the end of 'a'.
 Adjust heading (positive = right, negative = left)
-All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon.
 Always
 And R%d <- R%d && R%d
 Any Other Cursors Have Tag
@@ -558,11 +557,8 @@ Find a spawned entity by name.
 Find all the yielded cursors on this graph and cancel them.
 Find all the yielded cursors on this graph with the matching tag and cancel them.
 Find first element 'a' which compare equal to 'element' and return its index.
-Fired immediately when this node begins for chaining purposes.
 Fired when A becomes 0 from any other number.
 Fired when A exceeds 5.
-Fired when the observable boolean is false, and killed when true.
-Fired when the observable boolean is true, and killed when false.
 Fired whenever the global A value changes.
 Float To Game Time
 Floor - round float down to nearest integer
@@ -693,7 +689,6 @@ Minimum of two values (int)
 Mirror
 Missing cell class '%s', replacing with 'CPulseCell_Unknown'\n
 Mod R%d <- R%d %% R%d
-Monitor Observable
 Move forward in the facing direction
 Mul R%d <- R%d * R%d
 Multiple Return Test
@@ -709,7 +704,6 @@ Normalize Vector a
 Not R%d <- !R%d
 Not safe to 'new' this class due to alignment requirements
 NotReloading
-Observable
 On Interval
 On True
 OnAsyncChild1
@@ -884,8 +878,6 @@ Test step with return value
 TestCheckpoint: %s
 TestClock_AutoRun
 TestClock_ExplicitStepped
-TestComponent_t
-TestComponent_tAPI
 TestComponent_tAPI::ComponentFunc
 TestDomain
 TestDomain Tracepoint: %s\n
@@ -912,12 +904,10 @@ WARNING: Pulse failed to restore yielded cursor - error with cell state (%d:%s)\
 WARNING: Pulse failed to restore yielded cursor - no yielding cell or landing pad (%d:%s)\n
 WARNING: Pulse failed to save yielded cursor - no yielding cell or landing pad (C%d:I%d)\n
 Wait Complete
-Wait Until
 Wake Cancel
 Wake Fail
 When False
 When True
-While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled.
 World Vector To Vector
 X to the Y power
 Yield Resume1
@@ -967,7 +957,6 @@ attr_factory
 bInAutoWakeList
 bInherit
 bValue
-bWasAnObservableComputation
 baseclass
 bodygroupchoices
 cableclass
@@ -1071,12 +1060,10 @@ localaxis
 localization_required
 lod_level
 log2
-m_Always
 m_BaseClasses
 m_BlackboardResourceName
 m_Classes
 m_ClockScopeID
-m_ComponentData
 m_DefaultKV3
 m_HelpContextName
 m_Helpers
@@ -1115,7 +1102,6 @@ m_hInstance
 m_hListenerInstance
 m_hObserver
 m_iValue
-m_nBlackboardIndex
 m_nClassType
 m_nCurrentWakeIndex
 m_nCursorID

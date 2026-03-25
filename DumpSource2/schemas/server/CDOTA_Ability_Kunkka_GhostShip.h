@@ -5,6 +5,7 @@ class CDOTA_Ability_Kunkka_GhostShip : public CDOTABaseAbility
 	float32 ghostship_width;
 	float32 ghostship_width_scepter;
 	int32 num_cannon_volleys;
+	float32 rum_factor;
 	Vector m_vFinalDestination;
 	Vector m_vStartingPoint;
 	int32 m_hProjectileID;

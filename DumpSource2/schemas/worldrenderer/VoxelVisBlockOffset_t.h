@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"m_nOffset": 0,
-//	"m_nElementCount": 0
+//	"m_nElementCount": 4294967295
 //}
 class VoxelVisBlockOffset_t
 {

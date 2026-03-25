@@ -7,6 +7,9 @@ class CParticleFunction
 	// MPropertyFriendlyName = "operator end cap state"
 	// MPropertySortPriority = -100
 	ParticleEndcapMode_t m_nOpEndCapState;
+	// MPropertyFriendlyName = "operator enabled in tools or game only"
+	// MPropertySortPriority = -100
+	ParticleToolsState_t m_nToolsState;
 	// MPropertyStartGroup = "Operator Fade"
 	// MPropertyFriendlyName = "operator start fadein"
 	// MParticleAdvancedField

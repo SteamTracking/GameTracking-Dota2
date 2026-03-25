@@ -6,7 +6,7 @@ class CEnvEntityMaker : public CPointEntity
 	Vector m_vecEntityMaxs;
 	CHandle< CBaseEntity > m_hCurrentInstance;
 	CHandle< CBaseEntity > m_hCurrentBlocker;
-	Vector m_vecBlockerOrigin;
+	VectorWS m_vecBlockerOrigin;
 	QAngle m_angPostSpawnDirection;
 	float32 m_flPostSpawnDirectionVariance;
 	float32 m_flPostSpawnSpeed;

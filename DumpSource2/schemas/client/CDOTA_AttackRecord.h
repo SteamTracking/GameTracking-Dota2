@@ -12,7 +12,7 @@ class CDOTA_AttackRecord
 	float32 m_flDamageMagical;
 	float32 m_flDamageComposite;
 	float32 m_flDamagePure;
-	int16 m_iRecord;
+	AttackRecord_t m_iRecord;
 	int32 m_iDamageCategory;
 	int32 m_iFailType;
 	int32 m_iDamageType;
@@ -29,7 +29,6 @@ class CDOTA_AttackRecord
 	bitfield:1 m_bNoCooldown;
 	bitfield:1 m_bProcessProcs;
 	bitfield:1 m_bUseProjectile;
-	bitfield:1 m_bUseCastAttackOrb;
 	bitfield:1 m_bAutoCastAttack;
 	bitfield:1 m_bIgnoreBaseArmor;
 	bitfield:1 m_bIgnoreObstructions;
@@ -39,7 +38,7 @@ class CDOTA_AttackRecord
 	bitfield:1 m_bSuppressDamageEffects;
 	int32 m_nBashSource;
 	int32 m_nCritSource;
-	float32 m_flAttackHeight;
+	int32 m_nAttackHeight;
 	float32 m_flCombatLogCreditFactor;
 	float32 m_flCriticalBonus;
 	float32 m_flCriticalDamage;
@@ -56,4 +55,5 @@ class CDOTA_AttackRecord
 	ParticleIndex_t m_iCustomFXIndex;
 	DOTAProjectileAttachment_t m_iCustomProjectileAttachment;
 	KeyValues3 m_kvExtraData;
+	float32 m_flActualDamageDealtResult;
 };

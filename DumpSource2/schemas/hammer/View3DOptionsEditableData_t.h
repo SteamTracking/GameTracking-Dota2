@@ -4,6 +4,8 @@ class View3DOptionsEditableData_t
 	bool bReverseY;
 	// MPropertyFriendlyName = "Pan Speed"
 	float32 flPanSpeed;
+	// MPropertyFriendlyName = "Rotation scale"
+	float32 flRotationScale;
 	// MPropertyFriendlyName = "Forward speed max (world units/sec)"
 	int32 nForwardSpeedMax;
 	// MPropertyFriendlyName = "Time to max speed (ms)"

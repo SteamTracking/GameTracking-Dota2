@@ -21,6 +21,5 @@ class CDOTA_Modifier_CrystalMaiden_FreezingField : public CDOTA_Buff
 	CUtlVector< CHandle< CBaseEntity > > m_hHitEntities;
 	CUtlVector< CHandle< CBaseEntity > > m_hHitHeroes;
 	bool m_bHitInvisibleHero;
-	bool m_bColdComfortActive;
 	int32 can_move;
 };

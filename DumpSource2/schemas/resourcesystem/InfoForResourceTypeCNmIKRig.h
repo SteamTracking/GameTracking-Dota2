@@ -1,4 +1,0 @@
-// MResourceTypeForInfoType = "vnmik"
-class InfoForResourceTypeCNmIKRig
-{
-};

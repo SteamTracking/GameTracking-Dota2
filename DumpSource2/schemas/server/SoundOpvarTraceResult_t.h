@@ -1,6 +1,6 @@
 class SoundOpvarTraceResult_t
 {
-	Vector vPos;
+	VectorWS vPos;
 	bool bDidHit;
 	float32 flDistSqrToCenter;
 };

@@ -8,5 +8,5 @@ class CDOTA_Modifier_Item_Harpoon : public CDOTA_Buff_Item
 	float32 bonus_mana_regen;
 	int32 bonus_damage;
 	int32 bonus_speed;
-	CUtlVector< int16 > m_InFlightProcAttackRecords;
+	CUtlVector< AttackRecord_t > m_InFlightProcAttackRecords;
 };

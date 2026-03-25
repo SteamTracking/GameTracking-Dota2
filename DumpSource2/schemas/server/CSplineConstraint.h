@@ -2,6 +2,8 @@ class CSplineConstraint : public CPhysConstraint
 {
 	Vector m_vAnchorOffsetRestore;
 	CHandle< CBaseEntity > m_hSplineEntity;
+	// MPhysPtr
+	IPhysicsBody* m_pSplineBody;
 	bool m_bEnableLateralConstraint;
 	bool m_bEnableVerticalConstraint;
 	bool m_bEnableAngularConstraint;

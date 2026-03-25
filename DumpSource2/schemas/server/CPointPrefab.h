@@ -6,4 +6,5 @@ class CPointPrefab : public CServerOnlyPointEntity
 	bool m_fixupNames;
 	bool m_bLoadDynamic;
 	CHandle< CPointPrefab > m_associatedRelayEntity;
+	CUtlVector< CHandle< CBaseEntity > > m_ProceduralRelaySources;
 };
