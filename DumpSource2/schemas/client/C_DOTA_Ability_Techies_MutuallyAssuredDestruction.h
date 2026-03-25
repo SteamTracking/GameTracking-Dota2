@@ -6,6 +6,5 @@ class C_DOTA_Ability_Techies_MutuallyAssuredDestruction : public C_DOTABaseAbili
 	float32 base_damage;
 	GameTime_t m_ActiveExplodeTime;
 	GameTime_t m_PassiveExplodeTime;
-	CHandle< C_BaseEntity > m_hActiveMAD;
 	CHandle< C_BaseEntity > m_hPassiveMAD;
 };
