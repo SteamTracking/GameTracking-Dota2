@@ -102,6 +102,7 @@ class C_DOTAPlayerController : public CBasePlayerController
 	int32 m_iMusicStatus;
 	int32 m_iPreviousMusicStatus;
 	bool m_bRequestedInventory;
+	bool m_bPrecachedInventory;
 	float32[3] m_flMusicOperatorVals;
 	int32[4] m_iMusicOperatorVals;
 	CUtlVector< sControlGroupElem >[10] m_ControlGroups;
