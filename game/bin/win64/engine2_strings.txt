@@ -152,11 +152,10 @@
  %i refs\n
  (08@HPX`hpx
  (08@HPX`j
- (08@HPXbp
+ (08@HPXb
  (08@HPZ
- (08@HRp
- (08@Jp
- (0X`hpzp
+ (08@HR
+ (0X`hpz
  (Start: 
  (default = .tga + .wav file)\n
  (fallback, started with 
@@ -985,7 +984,7 @@ $tI(knN
 (channel = 
 (dump took %.1fms)\n
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
-(f 6G
+(f@8G
 (merge 
 (no landmark)
 (no reason given)
@@ -1133,9 +1132,9 @@ $tI(knN
 ../src/shaders
 ..\content
 .00cfg
-.0BG
-.0GG
-.0IG
+.0CG
+.0DG
+.0KG
 .9GXdx
 .>\rfJBGo
 .?AU?$Container@VUnknownFieldSet@protobuf@google@@@InternalMetadata@internal@protobuf@google@@
@@ -2534,7 +2533,10 @@ $tI(knN
 .ESource2PlayStatsFieldType
 .ESplitScreenMessageType
 .P6AXPEBD@Z
+.PDG
 .PEAVCEntityIdentity@@
+.PIG
+.PKG
 .PLACEHOLDER_VALUE
 .ProtoFlattenedSerializer_t
 .RequestPause_t
@@ -2550,7 +2552,7 @@ $tI(knN
 .bss
 .cfg
 .csv
-.d1Y\t
+.d1Y\r
 .data
 .data$r
 .data$rs
@@ -2576,9 +2578,6 @@ $tI(knN
 .log
 .los
 .lzh
-.pAG
-.pBG
-.pCG
 .pdata
 .placeholder.proto
 .rdata
@@ -2606,7 +2605,6 @@ $tI(knN
 .tls
 .tls$
 .tls$ZZZ
-.tuB
 .vcfg
 .vpk
 .wav
@@ -2653,7 +2651,7 @@ $tI(knN
 0123456789abcdefghijklmnopqrstuvwxyz
 08@HP
 08@HR
-08@Jp
+08@J
 08\fj
 0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration
 0:<\n\fdelta_ignore
@@ -2663,17 +2661,15 @@ $tI(knN
 0C&C
 0E>X
 0T.Q
-0TtF
 0X8b?~
 0\n\vserializers
-0\sB
 0\tV_fopen
 0iN>/
-0tYB
-0vtuB
+0tvF
 0x%x,
 0|t?L
 0|t?uj
+0|uB
 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause.
 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused.
 1#IND
@@ -2725,10 +2721,9 @@ $tI(knN
 2\r.PrefetchType"h\n
 2\rU2t
 2\tV_fpclassifyd
-2\vpTtF
-2\vp\sB
+2\vptvF
+2\vp|uB
 2i0/
-2pa'
 3$EE\f
 3'F^7
 30000
@@ -2767,18 +2762,22 @@ $tI(knN
 5\n\vnested_type
 5c;3E
 5y?4
-6 0G
-60&G
-60/G
+6 KG
+60"G
+60GG
 64-bit
 6?k 6?t
+6@2G
 6GQ^h~
 6KT3c7
 6NK>
-6P7G
+6P!G
+6P(G
+6P1G
 6\fXO>\ntA
 6\n\fmessage_type
 6\r56t
+6p9G
 6s?fBbEcJYG[I[NYVP\B]@f;g<h<u4{,
 6tmT
 6uu?>
@@ -2799,6 +2798,7 @@ $tI(knN
 8@HP:
 8A3b
 8Csinf
+8F 4G
 8Smt
 8W?i
 8\n\textension
@@ -3238,18 +3238,17 @@ $tI(knN
 ?ysB
 @ Current  :  %s\n
 @08@HPX`hpx
-@08NtuB
-@60?G
-@60AG
+@08N
+@6 CG
+@6PAG
+@6PCG
 @GetProfile_ultrafast
 @HPX
 @HPX&I
 @HPX`hv
 @\tV_fwrite
 @^8U)zj
-@ftuB
 @i-kuX
-@ntuB
 A command with the specified name already exists. Cannot create an alias with the same name.\n
 A dB floor of when to stop transmitting packets, the volume between this and voice_threshold will still transmit packets to allow for volume ramping.
 A file with this name is already in the pool.
@@ -3547,6 +3546,7 @@ Boolean
 Boolean default must be true or false.
 Bopomofo
 Bounds ( %f %f %f ) ( %f %f %f )\n
+Bpb'
 Braille
 Brazilian
 Break in debugger when missing resource match is found.\nFormat: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to turn off.\n
@@ -5246,13 +5246,13 @@ Extensions to non-lite types can only be declared in non-lite files.  Note that 
 Extra arguments given after name\n
 ExtractModuleMetadata
 Extraneous token
-F05G
 F>qUxv
 FAIL
 FALSE
 FATAL
 FCVAR_CHEAT cvars reverted to defaults (sv_cheats disabled).\n
 FEMh\f
+FP7G
 FPS: Avg=%.1f, P1=%.1f\n
 FSKey=
 FWj|
@@ -5694,8 +5694,8 @@ G|u0J\n
 H$6t
 H*0"ZOW
 H.FM
+H5y_
 HD?0
-HEh_
 HGR9\f
 HH:mm:ss
 HKR~
@@ -5718,6 +5718,8 @@ HardCancel
 HasField
 HasLegacyGameUI
 HasModAppSystems
+Haw_
+Hay_
 Hebrew
 Hello world!
 HelpSystem_001
@@ -5753,7 +5755,6 @@ Hostname for server.
 How far back before our current playback head in seconds to hold onto fragments.
 How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time
 How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always)
-Hqh_
 HudUpdate
 Huffman code size table overflow
 Huffman table 0x%02x was not defined
@@ -5789,7 +5790,6 @@ IPulseInstanceLoadAPI
 IPulseInstanceSaveAPI
 IPulseSystem_001
 IRCU
-IZi_
 I\n NETWORK_DISCONNECT_STEAM_DROPPED
 I\n%NETWORK_DISCONNECT_REJECT_HIDDEN_GAME
 I\tV_isdigit_str
@@ -6642,11 +6642,10 @@ Override Fog color: %f %f %f\n
 Overrides the SourceTV master root address.
 Overrides the max players reported to prospective clients
 Overriding minidump handler with Engine2MinidumpFunction\n
-P08@Jp
+P08@J
 P08J
-P08NtuB
+P08N
 P4File
-P6`?G
 P:S;A
 P?fff?33s?{
 P@HPX`hpx\f
@@ -6714,7 +6713,6 @@ PX`hpx
 P\n#NETWORK_DISCONNECT_BADRELAYPASSWORD
 P\n#NETWORK_DISCONNECT_RELIABLEOVERFLOW
 P\n#NETWORK_DISCONNECT_SNAPSHOTOVERFLOW
-P\sB
 PackEntities_Normal EnsureInstanceBaseline
 PackEntity: SnagChangeFrameList returned null
 PackEntity: ent(%d) at tick %d Encountered field '%s' %s in incremental change that was not in the diff change. This can lead to slight network inefficiency\n
@@ -6921,7 +6919,6 @@ Playing Broadcast (%s)
 Playing Demo (%s)
 Playing back demo: '%s' at tick %u\n
 PmNk
-PntuB
 Pointers cannot be used as numeric values
 Polish
 PollAndProcessInput
@@ -7016,7 +7013,6 @@ Protobuf: %s(%d): %s\n
 Protocol Buffer map usage error:\n
 Protocol Buffer reflection usage error:\n  Method      : google::protobuf::Reflection::
 Psapi.dll
-PtYB
 Public :  %s\n
 Pulse
 PulseCursorCancelPriority_t
@@ -7029,6 +7025,7 @@ PulseRuntimeChunkIndex_t
 PulseSymbol_t
 PulseValueType_t
 Puts the server into extremely low CPU usage mode when no clients connected
+P|uB
 Q%llx,
 Q2XXR
 Q5rHg,>
@@ -7111,7 +7108,7 @@ RP_PAUSE
 RP_TOGGLEPAUSE
 RSDS
 RST%d
-R\vp\sB
+R\vp|uB
 RaiseException
 Random Float
 Random Integer
@@ -8421,6 +8418,7 @@ UtlVectorMemory_FailedAllocation
 U}JK
 U}g7x~
 V/?[w8rV
+V0;G
 V<@ss
 V?wm\v
 VApplication001
@@ -8517,7 +8515,6 @@ V_TryAndMakeFriendlyNameFromCppName
 V_UInt32ToString_Unsafe
 V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
-V`9G
 Validation stalled\n
 Value must be "true" or "false" for boolean option "
 Value must be identifier for boolean option "
@@ -8729,6 +8726,7 @@ X/4B
 X?/QY?s
 X?OsX?
 XSzi
+XYx_
 X\n'NETWORK_DISCONNECT_BADSPECTATORPASSWORD
 X\n'NETWORK_DISCONNECT_DIFFERENTCLASSTABLES
 X\n'NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET
@@ -8836,8 +8834,7 @@ Zq",9\fB
 \fV4U
 \fX\fm\vH\vH\vm\v
 \f\ng_pThreadPool
-\fp\sB
-\fp\v`tYB
+\fp|uB
 \g is not followed by a braced, angle-bracketed, or quoted name/number or by a plain number
 \n    Actual    : 
 \n    Field type: 
@@ -9184,7 +9181,7 @@ Zq",9\fB
 \t?\tZ\tZ\tZ\tZ\t?\tg\t\n\t
 \t?\tZ\tt\tt\tt\t
 \tN1a
-\tTP8J
+\tTPHJ
 \tV_asinf
 \tV_atan2f
 \tV_atof
@@ -9243,7 +9240,6 @@ Zq",9\fB
 \vH\vm\vm\vm\vm\vH\vH\vH\vH\vH\v
 \vIG]h
 \vInterp
-\vPtYB
 \vSimulationTicks
 \vSource
 \vVyC
@@ -9252,7 +9248,7 @@ Zq",9\fB
 \vm\vm\vm\vH\vm\vm\v
 \vm\vm\vm\vm\vH\v
 \vnJH
-\vp\sB
+\vp|uB
 \vxYT
 ] is an invalid data character in JavaScript compatibility mode
 ]\n,NETWORK_DISCONNECT_REJECT_INVALIDRESERVATION
@@ -9318,8 +9314,9 @@ _spawngroup_logging/log_%s_group_%s.txt
 _temp_mapcycle.txt
 `-uRQg
 `3Q"X
-`6PAG
-`6PBG
+`6 EG
+`6pCG
+`6pDG
 `?m'_?&~]?(
 `RTTI
 `adjustor{
@@ -9333,7 +9330,6 @@ _temp_mapcycle.txt
 `eh vector destructor iterator'
 `eh vector vbase constructor iterator'
 `eh vector vbase copy constructor iterator'
-`ftuB
 `generic-class-parameter-
 `generic-method-parameter-
 `generic-type-
@@ -9348,7 +9344,6 @@ _temp_mapcycle.txt
 `managed vector copy constructor iterator'
 `managed vector destructor iterator'
 `non-type-template-parameter
-`ntuB
 `omni callsig'
 `placement delete closure'
 `placement delete[] closure'
@@ -9379,7 +9374,6 @@ a numbered reference must not be zero
 a&M-=Z]<i*k)n-t&q&p&|
 a6>r
 a?wSa?\
-aBvtuB
 a\tV_logf
 a\v4+Wk
 abcdefghijklmnopqrstuvwxyz
@@ -10102,7 +10096,6 @@ false:=\n\rvalve_map_key
 false:?\n
 false:A\n
 fast path %d at %d\n
-fbXG
 fi_FI
 field
 field_serializer_name_sym
@@ -10137,7 +10130,6 @@ float32
 float64
 floor
 fmod
-fnXG
 fog_enable
 fog_override_color
 fog_override_enable
@@ -10184,7 +10176,6 @@ friendly_name
 fs_report_sync_opens
 ft: %-60s %-40s : %-80.80s raw:%s\n
 ftLh!b
-ftuB
 fu`z
 full
 full:
@@ -10296,6 +10287,7 @@ height
 height,
 hero_id
 hfdDD
+hi7^
 hibernating
 hidden
 hidden_in_tool
@@ -10338,7 +10330,6 @@ hostname
 hostname : %s\n
 hostname_in_client_status
 hostport
-hpzp
 hscript
 hscript_lightbinding
 http Send %.3f ms ave, %.3f ms max\n
@@ -10593,6 +10584,7 @@ listen
 listenserver
 listid
 listip
+live=%d play=%d gap=%d anchor=%d tps=%.1f upToDate=%d\n
 load
 load 
 loaded
@@ -10835,7 +10827,6 @@ multvar
 multvar: cvar "%s" not found\n
 multvar: no varname specified!\n
 mx=E
-n02G
 n03>Pu
 n>sak><
 n?A6
@@ -10845,11 +10836,13 @@ nGh>
 nI9>h
 nMax
 nMin
+nP4G
 nReadHandle != UINT64_MAX
 nTries < 10000000
 n\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 n\tV_qsort
 n]?iJ
+n`0G
 n`xBF|7T
 name
 nan(ind)
@@ -10953,9 +10946,6 @@ not started
 not supported
 notes
 nothing to repeat
-np%G
-np4G
-ntuB
 null
 nullptr
 num_bits
@@ -11064,14 +11054,14 @@ overwatch
 owM&
 owner dead
 oz>!km>
-p08@H^tuB
+p08@H^
 p0p@
 p2p_listpeers
 p2p_ping "%s"
 p4edit
-p6@,G
-p>7XG
-p>tuB
+p6`.G
+p>8ZG
+p>WZG
 p?ff
 p@HPX`h\f
 pClass
@@ -11087,7 +11077,6 @@ pNewSet->m_writePipe.OpenPipe_OSFILEHANDLE( true, (OSFILEHANDLE)nWriteHandle, nP
 pServerClass
 pYa(bu
 p\r0\fP
-p\sB
 package
 packed
 packet
@@ -11158,7 +11147,6 @@ playsound
 playsound <soundname>
 png 
 png_screenshot
-pntuB
 pointer, 
 polish
 polymorphic_dependent_arg
@@ -11198,7 +11186,6 @@ protocol
 protocol error
 protocol not supported
 proxies
-ptYB
 pt_BR
 pt_PT
 public
@@ -11220,6 +11207,7 @@ punct
 purecall
 push_var_values
 py_generic_services
+p|uB
 qIU<
 qM1H
 qS>g?h3
@@ -12099,9 +12087,9 @@ utcdatetime_vals
 utl_vector, 
 utlstringtoken
 uzKs@>
-v0FG
 v2!L.2
 vE-2
+vPHG
 vQO+t
 vWewe
 val_bool
@@ -12211,7 +12199,6 @@ vrgrp
 vrnmd
 vscript
 vsnd_c
-vtuB
 vtune
 vtune "pause" | "resume" : Suspend or resume VTune's sampling.\n
 vxml
