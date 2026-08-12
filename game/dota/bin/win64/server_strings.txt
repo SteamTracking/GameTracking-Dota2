@@ -499,6 +499,7 @@
 #DOTA_Chat_Ability_Draft_Start
 #DOTA_Chat_AegisStolen
 #DOTA_Chat_AlchemistGrantedScepter
+#DOTA_Chat_AssassinAnnounce
 #DOTA_Chat_AssassinFailed
 #DOTA_Chat_AssassinSuccess
 #DOTA_Chat_BannerPlanted
@@ -566,7 +567,6 @@
 #DOTA_Chat_TowerDenied
 #DOTA_Chat_TowerPlayerKilled
 #DOTA_Chat_VictoryPredictionSingleUserConfirm
-#DOTA_Chat_VictoryPredictionStreak
 #DOTA_Chat_YearBeastKilled
 #DOTA_ContextualTips_AbilityCounters_Invisibility_Text
 #DOTA_ContextualTips_AbilityCounters_Magic_Text
@@ -1850,7 +1850,7 @@ $hRh
 (0.1s interval)
 (0x%08X)'??'
 (15j
-(4 Iv
+(4`Iv
 (5Me
 (5jP
 (93j
@@ -23567,10 +23567,9 @@ $hRh
 05=k
 08bX
 09,h
-0:`Yn
 0;Q5[
 0<cz
-0>0E
+0>pE
 0M2~@p
 0W/5
 0Z@q
@@ -23836,8 +23835,9 @@ $hRh
 2-.CMsgInGamePrediction.ERandomSelectionGroup_t
 2..CDOTAUserMsg_MadstoneAlert.EMadstoneAlertType
 2..CMvpData.MvpDatum.MvpAccolade.MvpAccoladeType
+20'r
 20.CMsgClientToGCGetBattleReportResponse.EResponse
-202o
+201r
 20t\f
 21.CMsgClientToGCDotaLabsFeedbackResponse.EResponse"
 21.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
@@ -23915,7 +23915,7 @@ $hRh
 2I y)
 2J.CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse.EResponse"u\n\tEResponse
 2L.CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse.EResponse
-2P5r
+2PYn
 2Tm=#
 2Uiwp"9
 2Zq)
@@ -24025,6 +24025,7 @@ $hRh
 2\r.DOTA_GC_TEAM:
 2\r.ELeaguePhase
 2\rlhp
+2\vpl
 2^pV
 2_bot
 2_mid
@@ -24037,7 +24038,7 @@ $hRh
 2nIg
 2ndry
 2p"6
-2pYn
+2p2o
 2prB
 3%3+3/353A3G3[3_3g3k3s3y3
 31tPR
@@ -24203,6 +24204,7 @@ $hRh
 4_bot
 4_top
 4f h
+4q\n"Af
 4tpD
 4zj@1;IJ
 5'0v2ZP
@@ -24440,8 +24442,6 @@ $hRh
 8= zp
 8A6j
 8DemoFile
-8F@D
-8FPC
 8GZS
 8SIffK5W
 8TZvrv<
@@ -24558,9 +24558,7 @@ $hRh
 9r#xV
 : unrecognized parent "%s"\n
 :':+:1:K:Q:[:c:g:m:y:
-:02o
-:0Ev
-:0Wn
+:01r
 :4\n\vdescription
 :9\n\tkey_field
 :BAD OBJECT
@@ -24611,7 +24609,9 @@ $hRh
 :eaI
 :gN(dq
 :mIR
-:pYn
+:p2o
+:pEv
+:pWn
 :parsed on tick %d of %d got %d new commands through command number %d [%s]\n
 :w4v
 ;!;#;-;9;E;S;Y;_;q;{;
@@ -24844,6 +24844,7 @@ $hRh
 ?uWS
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
+@08N4
 @0pp
 @333?
 @@map tree
@@ -24875,7 +24876,7 @@ $hRh
 @dKb]
 @end_camera
 @fff>fff>fff>fff>
-@ht Iv
+@ht`Iv
 @i1V
 @n2w
 @player_start_teleport_destination
@@ -26247,7 +26248,6 @@ BOT_MODE_SIDE_SHOP
 BOT_MODE_TEAM_ROAM
 BOT_MODE_WARD
 BOUNDARY
-BPWn
 BRouteMsgToJob
 BT5f
 BUCKSHOT
@@ -31209,7 +31209,6 @@ CutDownRegrowAfter
 Cuts down this tree. Parameters: float flRegrowAfter (-1 = never regrow), int nTeamNumberKnownTo (-1 = invalid team)
 Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)
 Cycle: %.5f (%.5f)
-D Iv
 D"bu
 D#D)D;D?DEDKDQDSDYDeDoD
 D(n%6
@@ -31732,6 +31731,7 @@ D\n\nItemDetail
 D\n\nmessage_id
 D\n\rplayer_states
 D\n\thunted_by
+D`Iv
 Damage
 Damage %.0f, energy %.0f (%.2f)\n
 Damage Flags: 
@@ -39897,10 +39897,12 @@ P-224
 P-256
 P-384
 P-521
-P08J 
+P08J`
+P08N4
 P1\t98"
 P5[1
-PA#DOTA_Chat_AssassinAnnounce
+P60\
+PA#DOTA_Chat_VictoryPredictionStreak
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s\n
@@ -40745,7 +40747,6 @@ RO%s.
 ROAM
 ROCKETFLARE
 ROSHAN
-RP5r
 RP;e!
 RR: could not apply operator %s to prior value %s\n
 RR:%s
@@ -40852,6 +40853,7 @@ RUNE_XP
 R\n\fActivityInfo
 R\r1>Vp
 R\vp!y
+R\vpl
 R]Di
 Rad2 Deg
 Radiant
@@ -45687,9 +45689,8 @@ X\n\rkilling_blows
 X\tQo
 Xbox VDP is not supported on this platform.
 Xd3h
+Xf G
 XfJ7
-XfPF
-XfpG
 XjfR
 XqgA+
 Xuub
@@ -45749,7 +45750,6 @@ ZH^r
 ZL9L
 ZLIB
 ZLONG
-ZPWn
 ZSz@
 ZXF,`i
 Z\n\fPositionPair
@@ -45858,15 +45858,16 @@ Z~wl
 \f<<0A1pq
 \fCEntityIndex"
 \fKS1
+\fPAw
 \fW9c
 \fXu"L
-\f\nPtu
 \f\rbad allocation
 \f\tV_acosd
 \f]ne3
 \fdhWTh
 \fevents.proto"
 \fiaR
+\fp\vPT
 \ful2
 \fy&3Gl
 \l:ArR
@@ -46076,14 +46077,11 @@ Z~wl
 \n.steammessages_unified_base.steamworkssdk.proto
 \n/CMsgServerToGCCompendiumChosenInGamePredictions
 \n/CMsgServerToGCCompendiumInGamePredictionResults
-\n02o
 \n0CMsgClientToGCMonsterHunterGiftMaterialsResponse
 \n0CMsgClientToGCOverworldDevClearInventoryResponse
 \n0CMsgClientToGCSurvivorsGameTelemetryDataResponse
 \n0CMsgGCtoGCAssociatedExploiterAccountInfoResponse
 \n0CMsgServerToGCMatchPlayerNeutralItemEquipHistory
-\n0Ev
-\n0Yn
 \n1CDOTAClientMsg_AbilitySpecificChannelRequiresHalt
 \n1CDOTAUserMsg_MonsterHunter_InvestigationGameState
 \n1CMsgClientToGCFightingGameAnswerChallengeResponse
@@ -46156,8 +46154,7 @@ Z~wl
 \nLeagueID_t"
 \nLeagueID_t"M\n;CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse
 \nLeagueID_t"N\n$CMsgServerToGCGetCheerConfigResponse
-\nP5r
-\nPWn
+\nP4r
 \nPlayerID_t
 \nPlayerID_t"
 \nSimulating Entities:\n\n
@@ -47370,7 +47367,9 @@ Z~wl
 \ng_VProfSignalSpike
 \ng_flConfigMaxCoord
 \ngrant_periodic_action '%s' doesn't specify an action to grant
-\np3r
+\np2o
+\npEv
+\npYn
 \nqYu
 \ntM(ie-V
 \r!\r+\r-\r=\r?\rO\rU\ri\ry\r
@@ -47575,7 +47574,9 @@ _tools_event_desc
 _turbo
 _xU`u
 _}eOk
+`20'r
 `28)fk
+`60p
 `:zQF
 `D$daM-l
 `DZG
@@ -47603,6 +47604,7 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
+aBv4
 aD/x
 aDSS
 aECDH
@@ -48556,7 +48558,6 @@ a|gj(
 a|w9i
 b <= sizeof ctx->buf
 b <= sizeof ctx->final
-b02o
 b0M%
 b2i_PVK_bio
 b5o-
@@ -49189,6 +49190,7 @@ box_outer_maxs
 box_outer_mins
 box_self_cast
 box_size
+bp2o
 bpFh
 brain_sap
 brainpoolP160r1
@@ -62538,6 +62540,7 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
+p08@H^4
 p2{l
 p4Z3
 p5Z3
@@ -71709,7 +71712,6 @@ zF):O4
 zFar
 zG2m8
 zNear
-zPWn
 zPos
 zRXU 
 z\tV_sind
