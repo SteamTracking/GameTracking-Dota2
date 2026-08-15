@@ -15154,6 +15154,9 @@ tv_playcast_retry_timeout 25 (release)
 tv_playcast_showerrors "" (hidden release)
 	Set to display headers upon error (e.g. "CF-Ray,CF-Cache-Status,Body" )
 
+tv_playcast_slow_playback_fragment_count 3 (hidden release)
+	Number of fragments we need to have in the buffer before slowing down playback. For use with tv_playcast_slow_playback_when_fragment_requests_fail
+
 tv_playcast_slow_playback_when_fragment_requests_fail true (hidden release)
 	Whether or not we slow playback rate if we start running out of buffered stream fragments.
 
