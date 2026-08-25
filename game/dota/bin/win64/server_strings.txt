@@ -528,8 +528,8 @@
 #DOTA_Chat_ItemStored
 #DOTA_Chat_ItemsCombined
 #DOTA_Chat_LowPriorityCompletedExplanation
+#DOTA_Chat_MatchWillNotBeScored
 #DOTA_Chat_MatchWillNotBeScoredNetwork
-#DOTA_Chat_MatchWillNotBeScoredRanked
 #DOTA_Chat_MatchWillNotBeScoredRankedNetwork
 #DOTA_Chat_NewPlayerReminder
 #DOTA_Chat_ObserverWardKilled
@@ -772,6 +772,7 @@
 #lyj
 #y"jl
 $)$=$A$C$M$_$g$k$y$}$
+$0Jv
 $4cC
 $>Mm/JhA
 $@D4Z
@@ -1849,33 +1850,30 @@ $hRh
 (0'yX
 (0.1s interval)
 (0x%08X)'??'
-(1dj
-(1nj
-(1uj
-(1vj
-(4@Jv
+(40Jv
+(53j
 (5Me
-(5Vj
 (5jP
-(5tj
-(95j
-(A3j
+(5mj
+(90j
+(9Rj
+(A6j
+(A9j
 (ACTIVE)
-(AIj
+(Aoj
 (BZq
 (D4D
 (DOTA_INVALID_ORDERS nReason) Return the error string of a failed order.
 (Deprecated: use GetNumConnectedHumanPlayers) Players on a valid team (radiant, dire, or custom*) who haven't abandoned the game
-(ELj
 (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
 (HSCRIPT hTarget) Return the error string of a failed command on a target.
 (HSCRIPT hTarget, VectorWS vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
 (HSCRIPT hTarget, VectorWS vLocation, int nHandle) Projectile has collided with a given target or reached its destination (target is invalid).
 (HSCRIPT hTarget, VectorWS vLocation, table kv) Projectile has collided with a given target or reached its destination (target is invalid).
 (Has breakpieces or commands)
-(IAj
-(ISj
-(Iyj
+(IMj
+(M4j
+(Mkj
 (NAV IGNORED)
 (NAV_IGNORED)
 (NONE)
@@ -1883,11 +1881,12 @@ $hRh
 (Output drawable)
 (Preview/Unreleased) Gets the player's custom game account record, as it looked at the start of this session
 (Preview/Unreleased) Sets a callback to handle saving custom game account records (callback is passed a Player ID and should return a flat simple table)
-(Qjj
+(QQj
 (SERVER) Inventory for account (%d):\n
 (Server) 
 (U1h
-(U4j
+(UNj
+(UWj
 (Unknown error)
 (VectorWS vLocation) Determine whether an issued command on a location is valid.
 (VectorWS vLocation) Projectile is actively moving.
@@ -1895,8 +1894,9 @@ $hRh
 (VectorWS vLocation, table kv ) Projectile is actively moving.
 (VectorWS vOrigin, float flRadius )
 (WIPE AND EXTRACT)
-(YNj
-(YWj
+(Y5j
+(YTj
+(Yij
 (ZdOt\n&
 (\f"#\n!CDOTABroadcastMsg_LANLobbyRequest"
 (\f";\n%CDOTAUserMsg_CustomHudElement_Destroy
@@ -2497,10 +2497,7 @@ $hRh
 (\v2\v.CMsgVector"l\n
 (\v2\v.CMsgVector"o\n)CDOTAUserMsg_UpdateLinearProjectileCPData
 (\v2\v.CMsgVector*
-(a2j
-(aPj
-(aTj
-(aXj
+(aYj
 (b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.
 (bSafeToLeave) - Mark this game as safe to leave.
 (bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)
@@ -2508,8 +2505,8 @@ $hRh
 (bool bSpent) Runs when item's charge count changes. bSpent is true when the charge count change is coming from SpendCharge.
 (d4t8
 (default)
-(e7j
-(exj
+(eIj
+(enj
 (fS{ggRcjh
 (flMinimapCreepIconScale) - Scale the creep icons on the minimap.
 (flMinimapHeroIconScale) - Scale the hero minimap icons on the minimap.
@@ -2521,10 +2518,6 @@ $hRh
 (hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.
 (h`H1pqA
 (i/Al
-(i1j
-(i5r
-(iRj
-(imj
 (index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect
 (int iIndex, int iPoint, Vector vecPosition)
 (int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.
@@ -2533,10 +2526,12 @@ $hRh
 (int nPct)
 (int nProjectileHandle) Projectile is actively moving.
 (int targets [0=all, 1=enemy, 2=ally], bool bNow, bool bPermanent, bool bDeath)
+(ipj
+(itj
 (jvg;
-(m8j
-(mLj
-(mtj
+(m3j
+(mPj
+(mRj
 (nMusicStatus, flIntensity) - Set the music status for this player, note this will only really apply if dota_music_battle_enable is off.
 (nPlayerID)
 (nPlayerID, eEvent, nActionID)
@@ -2548,16 +2543,17 @@ $hRh
 (playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP
 (playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP, without transferring items/abilities if same hero
 (position, radius, checkFullTreeRadius?) Checks whether there are any trees overlapping the given point
-(q5j
-(q6j
-(qCj
-(qKj
+(q8j
+(qXj
+(qcj
 (quaternion,quaternion,float) very basic interpolation of v0 to v1 over t on [0,1]
 (quaternion,vector,float) rotates a quaternion by the specified angle around the specified vector axis
+(qvj
 (test) brawl
 (test) flee
 (test) pursue
-(uYj
+(u1j
+(umj
 (update disabled)
 (vQF
 (vector,float) constructs a quaternion representing a rotation by angle around the specified vector axis
@@ -2565,7 +2561,6 @@ $hRh
 (vector,vector,float) lerp between two vectors by a float factor returning new vector
 (vector,vector,float) very basic interpolation of v0 to v1 over t on [0,1]
 (wMww
-(y3j
 )!)#)?)G)])e)i)o)u)
 ).CMsgSteamLearn_InferenceMetadata_Request
 )Ck?B
@@ -23572,9 +23567,9 @@ $hRh
 05=k
 08bX
 09,h
+0:pZn
 0;Q5[
 0<cz
-0>PF
 0M2~@p
 0W/5
 0Z@q
@@ -23803,6 +23798,7 @@ $hRh
 2 .CMsgBattleReport_CompareContext"
 2 .CMsgConnectedPlayers.SendReason
 2 .CMsgGCRoutingInfo.RoutingMethod:
+2 Zn
 2!.CMsgAddSocketResponse.EAddSocket"
 2!.CMsgBattleReport_HighlightRarity
 2!.CMsgDevModifyCodexAction.EAction"#\n
@@ -23841,7 +23837,6 @@ $hRh
 2..CDOTAUserMsg_MadstoneAlert.EMadstoneAlertType
 2..CMvpData.MvpDatum.MvpAccolade.MvpAccoladeType
 20.CMsgClientToGCGetBattleReportResponse.EResponse
-20Zn
 20t\f
 21.CMsgClientToGCDotaLabsFeedbackResponse.EResponse"
 21.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
@@ -23910,6 +23905,7 @@ $hRh
 2?.CMsgClientToGCMonsterHunterDevGrantMaterialsResponse.EResponse"u\n\tEResponse
 2?.CMsgClientToGCRemoveItemAttributeResponse.ERemoveItemAttribute
 2@.CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse.EResponse"u\n\tEResponse
+2@3o
 2C.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.EResponse"
 2C.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
 2C.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
@@ -23919,7 +23915,6 @@ $hRh
 2I y)
 2J.CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse.EResponse"u\n\tEResponse
 2L.CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse.EResponse
-2P3o
 2Tm=#
 2Uiwp"9
 2Zq)
@@ -24029,11 +24024,11 @@ $hRh
 2\r.DOTA_GC_TEAM:
 2\r.ELeaguePhase
 2\rlhp
-2\vpL
 2^pV
 2_bot
 2_mid
 2_top
+2`6r
 2a"l
 2bT~
 2cb:RO
@@ -24042,7 +24037,7 @@ $hRh
 2nIg
 2ndry
 2p"6
-2p6r
+2p@w
 2prB
 3%3+3/353A3G3[3_3g3k3s3y3
 31tPR
@@ -24438,6 +24433,7 @@ $hRh
 7wKR
 7zRQ
 8+Qw
+8-2j
 80F2<
 82\n:XPH
 851Pe
@@ -24445,10 +24441,11 @@ $hRh
 8= zp
 8A6j
 8DemoFile
-8E(j
-8F`E
-8FpD
+8E+j
+8FPE
+8F`D
 8GZS
+8I7j
 8SIffK5W
 8TZvrv<
 8\n0series_current_selection_priority_used_coin_toss
@@ -24508,7 +24505,7 @@ $hRh
 8pe7?
 8q-S*]X
 8sOy
-8u+j
+8ujj
 9#9%9)9/9=9A9M9[9k9y9}9
 9)PF
 9)jx
@@ -24572,9 +24569,6 @@ $hRh
 :LBN
 :NAy
 :Navigator
-:P3o
-:PFv
-:PXn
 :QYJ
 :Vlq
 :\n5kKillEaterEventType_Brewmaster_KillsDuringPrimalSplit
@@ -24763,6 +24757,7 @@ $hRh
 >>NAVGEN: pass %d/%d: orig tris %d\n
 >>NAVGEN: stage %02d / %02d: 
 >>NAVGEN: stage %02d / %02d: %s, disabled\n
+>CDOTA_Ability_Special_Bonus_Cooldown_Reduction_10
 >FPct Games With Roshan Advantage (Player team killed Roshan more times)
 >HTotal Games With Roshan Advantage (Player team killed Roshan more times)
 >Sem
@@ -24810,7 +24805,6 @@ $hRh
 >fN46R^
 >l\rur
 >p00<
->special_bonus_cooldown_reduction_10
 >yhP
 >ztq
 ?CColorGradient
@@ -24851,6 +24845,7 @@ $hRh
 @!@%@+@1@?@C@E@]@a@g@m@
 @0pp
 @333?
+@6pV
 @@map tree
 @BH]f
 @BoneSetup
@@ -24881,7 +24876,7 @@ $hRh
 @dKb]
 @end_camera
 @fff>fff>fff>fff>
-@ht@Jv
+@ht0Jv
 @i1V
 @n2w
 @player_start_teleport_destination
@@ -26291,6 +26286,7 @@ B\n\rneutral_items
 B\n\tbuildings
 B\vp\n0
 B`4I
+B`Xn
 Back compat: Is this entity a player pawn *or* controller?
 BackpackCooldownOverride
 Backswing interrupted, action locked.
@@ -26452,7 +26448,6 @@ BountyGoldMin
 BountyXP
 BountyXPExtra
 BoxAngles
-BpXn
 Branch (%s): %s
 Branch value: %s
 Branch%02d
@@ -27299,6 +27294,7 @@ CDOTAGCServerSystem::MatchSignOut gathering sign out stats. Duration in minutes 
 CDOTAGCServerSystem::MatchSignOut no GC connection for local bot match, not performing MatchSignout\n
 CDOTAGCServerSystem::OnCustomGameInstallStatus() - lobby no longer present.
 CDOTAGCServerSystem::OnCustomGameInstallStatus() - lobby no longer present.\n
+CDOTAGCServerSystem::OnCustomGameInstallStatus: Custom game install ready, finishing server activation %s\n
 CDOTAGCServerSystem::OnCustomGameInstallStatus: Sending CMsgServerAvailable %s\n
 CDOTAGCServerSystem::SOChanged setting match ID to %llu\n
 CDOTAGCServerSystem::SOChanged: Lobby object destroyed, so clearing the lobby while game rules is still in state %s(%d).\n
@@ -31222,6 +31218,7 @@ D(n%6
 D*64
 D.Hog^
 D.]ppM
+D0Jv
 D2I_ASN1_BIT_STRING
 D2I_ASN1_GENERALIZEDTIME
 D2I_ASN1_HEADER
@@ -31237,7 +31234,6 @@ D2Lb!
 D4tp
 D514p
 D@D/lcO+hcK
-D@Jv
 DAE!
 DAL\fL@
 DAMAGE_TYPE_ArmorPhysical
@@ -34901,6 +34897,7 @@ GuildContractID_t
 GuildTagDecoration
 Gz,J
 G{Ol
+H%4r
 H.aR
 H0+G+R
 H5gRR-
@@ -34986,6 +34983,7 @@ HERO_PICK_STATE_ABILITY_DRAFT_SELECT
 HERO_PICK_STATE_ARDM_SELECT
 HEY! Leaving modifier think with a locked modifier manager!\n
 HH&a
+HI4r
 HIGH
 HLTV UserCmd Server Tick %d: cmd_num: %d, client_tick: %d\n
 HLTVDirector: Inserted game event %s at tick %d (%d total)\n
@@ -36651,6 +36649,7 @@ Hp)X?
 Hq,r/f
 HqI9x
 Ht4qw
+Hu4r
 Hull
 HullDesc_tiny
 HullDesc_tiny_centered
@@ -36658,7 +36657,6 @@ HullParams
 Hulls are convex point clouds in body space
 HuntedBy
 H{1S
-H}4r
 I died
 I"9|OxTex
 I+8G
@@ -39904,10 +39902,10 @@ P-224
 P-256
 P-384
 P-521
-P08J@
+P08J0
 P1\t98"
 P5[1
-PA#DOTA_Chat_MatchWillNotBeScored
+PA#DOTA_Chat_MatchWillNotBeScoredRanked
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s\n
@@ -40679,7 +40677,6 @@ RAND part of OpenSSL 1.0.2j  26 Sep 2016
 RAND_get_rand_method
 RAND_init_fips
 RAY TEST: %d hits, %d misses, %.2fms   (%d rays, %d sweeps against %d aggregates)\n
-RC e,
 RC2(128)
 RC2(40)
 RC2(56)
@@ -40703,6 +40700,7 @@ RC5-CFB
 RC5-ECB
 RC5-OFB
 RC5_CTRL
+RCdota_call_gg
 RD6O
 RDNS
 RE!r
@@ -40858,8 +40856,8 @@ RUNE_XP
 R\n\fActivityInfo
 R\r1>Vp
 R\vp!y
-R\vpL
 R]Di
+R`6r
 Rad2 Deg
 Radiant
 Radiant Only
@@ -41384,7 +41382,6 @@ Rotators
 Round - round float up or down to integer
 Round Float
 RowRange
-Rp6r
 Rq[R
 RrBoN
 RtIF
@@ -45696,7 +45693,7 @@ X\tQo
 Xbox VDP is not supported on this platform.
 Xd3h
 XfJ7
-XfpG
+Xf`G
 XjfR
 XqgA+
 Xuub
@@ -45762,6 +45759,7 @@ Z\n\fPositionPair
 Z\n\fSubChallenge
 Z\n\nmap_values
 Z\tV_localeconv
+Z`Xn
 Zd[w
 Ze2Zh@
 Zero Pose Task
@@ -45771,7 +45769,6 @@ ZjLS
 Zod6
 Zone1Distance
 Zone2Distance
-ZpXn
 Zpwz
 Z~wl
 [ Chunk%d ]
@@ -45861,21 +45858,19 @@ Z~wl
 \\n\vCheerRemaps
 \f%\f/\f1\fA\f[\f_\fa\fm\fs\fw\f
 \f*t\n ESteamLearnGetAccessTokensResult
-\f0Bw
+\f0Jv
 \f7ig
 \f<<0A1pq
 \fCEntityIndex"
 \fKS1
 \fW9c
 \fXu"L
-\f\npuu
 \f\rbad allocation
 \f\tV_acosd
 \f]ne3
 \fdhWTh
 \fevents.proto"
 \fiaR
-\fp\vP4
 \ful2
 \fy&3Gl
 \l:ArR
@@ -46085,12 +46080,12 @@ Z~wl
 \n.steammessages_unified_base.steamworkssdk.proto
 \n/CMsgServerToGCCompendiumChosenInGamePredictions
 \n/CMsgServerToGCCompendiumInGamePredictionResults
-\n05r
 \n0CMsgClientToGCMonsterHunterGiftMaterialsResponse
 \n0CMsgClientToGCOverworldDevClearInventoryResponse
 \n0CMsgClientToGCSurvivorsGameTelemetryDataResponse
 \n0CMsgGCtoGCAssociatedExploiterAccountInfoResponse
 \n0CMsgServerToGCMatchPlayerNeutralItemEquipHistory
+\n0Wn
 \n1CDOTAClientMsg_AbilitySpecificChannelRequiresHalt
 \n1CDOTAUserMsg_MonsterHunter_InvestigationGameState
 \n1CMsgClientToGCFightingGameAnswerChallengeResponse
@@ -46163,9 +46158,7 @@ Z~wl
 \nLeagueID_t"
 \nLeagueID_t"M\n;CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse
 \nLeagueID_t"N\n$CMsgServerToGCGetCheerConfigResponse
-\nP3o
-\nPFv
-\nPZn
+\nPWn
 \nPlayerID_t
 \nPlayerID_t"
 \nSimulating Entities:\n\n
@@ -47378,8 +47371,6 @@ Z~wl
 \ng_VProfSignalSpike
 \ng_flConfigMaxCoord
 \ngrant_periodic_action '%s' doesn't specify an action to grant
-\np6r
-\npXn
 \nqYu
 \ntM(ie-V
 \r!\r+\r-\r=\r?\rO\rU\ri\ry\r
@@ -47585,15 +47576,22 @@ _turbo
 _xU`u
 _}eOk
 `28)fk
+`5Cj
+`6pW
+`96r
 `:zQF
 `D$daM-l
 `DZG
 `H(hqA1p
+`IDj
 `ITS
+`Q5r
 `VX:H
 `\n\rvector_values
+`a2j
 `fPw.\vM
 `h9T~
+`iVj
 `o_je
 `yNT
 a null shared library handle was used
@@ -48569,6 +48567,7 @@ b0M%
 b2i_PVK_bio
 b5o-
 b=G3
+b@3o
 bAggro
 bAllChat
 bAllow
@@ -48666,7 +48665,6 @@ bOnlyPlayerHero
 bOriginalModel
 bOverheadEffect
 bOverride
-bP3o
 bPathResult[%d]
 bPb:L7X)
 bPedestal
@@ -68586,6 +68584,7 @@ special_bonus_cleave_30
 special_bonus_cleave_35
 special_bonus_cleave_40
 special_bonus_cleave_60
+special_bonus_cooldown_reduction_10
 special_bonus_cooldown_reduction_12
 special_bonus_cooldown_reduction_14
 special_bonus_cooldown_reduction_15
@@ -71721,6 +71720,7 @@ zNear
 zPos
 zRXU 
 z\tV_sind
+z`Xn
 zealots
 zero_value
 zfriction
@@ -71733,7 +71733,6 @@ zombie_bonus_damage
 zombie_duration
 zombie_spawn_padding
 zone
-zpXn
 zuus_arc_lightning
 zuus_cloud
 zuus_heavenly_jump
