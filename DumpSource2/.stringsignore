@@ -21410,8 +21410,6 @@ MISSING_PARENT_FIND_NEW
 MISSING_PARENT_KILL
 MISSING_PARENT_SAME_INDEX
 MM:SS with leading zeros
-MMR below which we will not upload item purchases
-MMR below which we will not upload neutral item equips
 MM_SS_LEADING_ZERO
 MOD
 MODEL_BONE_FLEX_INVALID
@@ -33192,6 +33190,7 @@ dota_steamcontroller_view_distance_scale
 dota_steamcontroller_view_haptic_intensity
 dota_steamcontroller_view_mode
 dota_steamcontroller_view_sensitivity
+dota_steamlearn_match_state_interval
 dota_steamtimeline_show_dev_messages
 dota_steamtimeline_tower_distance_threshold
 dota_stencil_glows
@@ -33503,12 +33502,6 @@ dota_update_gc_connection_check_count
 dota_update_gc_connection_check_time
 dota_update_gc_server_info
 dota_update_p4_team_info_cache
-dota_upload_item_purchase_history_duration_threshold
-dota_upload_item_purchase_history_mmr_threshold
-dota_upload_match_state_history_duration_threshold
-dota_upload_match_state_history_interval
-dota_upload_neutral_item_equip_history_duration_threshold
-dota_upload_neutral_item_equip_history_mmr_threshold
 dota_use_aghanims_postprocess_material
 dota_use_experimental_npc_controller
 dota_use_heightmap
@@ -35525,7 +35518,7 @@ interpolation scale
 interpolationMode
 intersection height CP
 interval
-interval in seconds that we track game states
+interval in seconds that we send match state to SteamLearn
 interval to snap to
 interval_rate
 interval_scepter
@@ -54503,8 +54496,6 @@ mat_tonemap_uncap_exposure
 mat_viewportscale
 mat_warn_bad_modes
 mat_wireframe
-match duration below which we will not upload item purchases
-match duration below which we will not upload neutral item equips
 material float variables
 material override
 material override enable
