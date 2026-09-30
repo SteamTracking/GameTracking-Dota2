@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 // MNetworkNoBase
 // MDisableDataDescValidation
 // MHasKV3TransferPolymorphicClassname

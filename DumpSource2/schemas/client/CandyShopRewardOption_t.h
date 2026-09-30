@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unRewardOptionID": 0,
-//	"m_sRewardClass": "",
-//	"m_bDisplayIfAlreadyOwned": true
-//}
 // MPropertyAutoExpandSelf
 class CandyShopRewardOption_t
 {
@@ -11,5 +6,5 @@ class CandyShopRewardOption_t
 	// MPropertyDescription = "A CSS class to assign to rewards of this type"
 	CUtlString m_sRewardClass;
 	// MPropertyDescription = "If we should display that this reward is already owned in the user's inventory"
-	bool m_bDisplayIfAlreadyOwned;
+	bool m_bDisplayIfAlreadyOwned; // = true
 };

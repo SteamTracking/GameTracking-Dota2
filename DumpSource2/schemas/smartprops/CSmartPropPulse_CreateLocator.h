@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CSmartPropPulse_CreateLocator",
-//	"m_nEditorNodeID": -1,
-//	"m_LocatorName": ""
-//}
 // MPropertyFriendlyName = "Create Locator"
 // MPropertyDescription = "Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer."
 // MVDataClassGroup = "Manipulators"

@@ -1,41 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_player":
-//	{
-//		"m_nInitialHealth": 1,
-//		"m_nInitialMana": 0
-//	},
-//	"m_vecStages":
-//	[
-//	],
-//	"m_flTimeLimit": 0.000000,
-//	"m_nIllusionManaCost": 0,
-//	"m_nStageProgressionTimerIncrease": 0,
-//	"m_dustEffect": "",
-//	"m_grassEffect": "",
-//	"m_explosionEffect": "",
-//	"m_manaPotEffect": "",
-//	"m_timerIncreaseEffect": "",
-//	"m_illusionEffect": "",
-//	"m_lostManaPotEffect": "",
-//	"m_lostTimerIncreaseEffect": "",
-//	"m_nManaPotRestoration": 0,
-//	"m_nMaxConcurrentManaPots": 0,
-//	"m_nManaPotExpireClicks": 0,
-//	"m_nManaPotChance": 0,
-//	"m_flTimeExtension": 0.000000,
-//	"m_nMaxConcurrentTimerIncreases": 0,
-//	"m_nTimerIncreaseExpireClicks": 0,
-//	"m_nTimerIncreaseChance": 0,
-//	"m_nScorePerCellRevealed": 0,
-//	"m_nScorePerStageCleared": 0,
-//	"m_nScorePerSecondsRemaining": 0,
-//	"m_nFailedChordClickTimes": 0,
-//	"m_flFailedChordClickCooldown": 0
-//}
 // MVDataRoot
 class CDOTAMinesweeperGameDefinition
 {
-	CDOTAMinesweeperPlayerDefinition m_player;
+	CDOTAMinesweeperPlayerDefinition m_player; // = { "m_nInitialHealth": 1, "m_nInitialMana": 0 }
 	CUtlVector< CDOTAMinesweeperStageDefinition > m_vecStages;
 	float32 m_flTimeLimit;
 	int32 m_nIllusionManaCost;

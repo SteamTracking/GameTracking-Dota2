@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_nForcedRevealCount": 0
-//}
 // MVDataRoot
 class CDOTAOverworldFortuneForcedReveal
 {

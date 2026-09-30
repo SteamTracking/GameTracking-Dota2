@@ -1,13 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"e_action_desired": "",
-//	"e_action_handshake_restart": "",
-//	"e_action_handshake_body_authority_current": "",
-//	"e_action_handshake_body_authority_desired": "",
-//	"e_movement_type_desired": "",
-//	"e_movement_handshake_restart": "",
-//	"e_movement_handshake_body_authority_current": "",
-//	"e_movement_handshake_body_authority_desired": ""
-//}
 // MPropertyFriendlyName = "AnimGraph"
 class AI_BaseNPCAnimGraph_DebugSnapshotData_t
 {

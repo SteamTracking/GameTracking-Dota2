@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strNameInMap": "",
-//	"m_flSpeed": 0.000000,
-//	"m_vPathOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vecPathEvents":
-//	[
-//	]
-//}
 // MVDataRoot
 class CShmupPathDefinition
 {

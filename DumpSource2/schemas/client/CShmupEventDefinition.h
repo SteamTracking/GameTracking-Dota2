@@ -1,15 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_type": "k_eShmupEventType_Invalid",
-//	"m_vecEnemySpawns":
-//	[
-//	],
-//	"m_strPathName": "",
-//	"m_strUIEvent": ""
-//}
 // MVDataRoot
 class CShmupEventDefinition
 {
-	EShmupEventType m_type;
+	EShmupEventType m_type; // = "k_eShmupEventType_Invalid"
 	// MPropertySuppressExpr = "m_type != k_eShmupEventType_SpawnEnemy"
 	CUtlVector< CShmupEventEnemySpawn > m_vecEnemySpawns;
 	// MPropertySuppressExpr = "m_type != k_eShmupEventType_SpawnEnemy"

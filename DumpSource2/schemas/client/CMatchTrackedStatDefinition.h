@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unStatID": 0,
-//	"m_eStatImpl": "k_eMatchTrackedStatImpl_Invalid",
-//	"m_expressionData":
-//	{
-//		"strExpression": ""
-//	},
-//	"m_aggregateData":
-//	{
-//		"m_strIndividualStat": "",
-//		"m_eAggregate": "k_eTrackedStatAggregate_Invalid"
-//	}
-//}
 // MVDataRoot
 class CMatchTrackedStatDefinition
 {
@@ -19,11 +6,11 @@ class CMatchTrackedStatDefinition
 	// MPropertyAttributeEditor = "locked_int()"
 	TrackedStatID_t m_unStatID;
 	// MPropertyDescription = "how this stat is implemented"
-	EMatchTrackedStatImpl m_eStatImpl;
+	EMatchTrackedStatImpl m_eStatImpl; // = "k_eMatchTrackedStatImpl_Invalid"
 	// MPropertyDescription = "For k_eMatchTrackedStatImpl_Expression, what is the expression information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_eMatchTrackedStatImpl_Expression"
 	TrackedStatExpressionData_t m_expressionData;
 	// MPropertyDescription = "For k_eMatchTrackedStatImpl_PlayerAggregate or k_eMatchTrackedStatImpl_TeamAggregate, what is the aggregate information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_eMatchTrackedStatImpl_PlayerAggregate && m_eStatImpl != k_eMatchTrackedStatImpl_TeamAggregate"
-	TrackedStatAggregateData_t m_aggregateData;
+	TrackedStatAggregateData_t m_aggregateData; // = { "m_eAggregate": "k_eTrackedStatAggregate_Invalid", "m_strIndividualStat": "" }
 };

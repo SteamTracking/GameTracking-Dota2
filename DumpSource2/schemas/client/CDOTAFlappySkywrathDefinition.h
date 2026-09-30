@@ -1,62 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"strID": "",
-//	"sLayoutPath": "",
-//	"sMapFile": "",
-//	"sMapLoopingFile": "",
-//	"sMapBGFile": "",
-//	"vecDifficulties":
-//	[
-//	],
-//	"flMinimumSpeed": 100.000000,
-//	"flGravity": -2000.000000,
-//	"flJumpPower": 600.000000,
-//	"flGlideAcceleration": -20.000000,
-//	"flGlideFallSpeed": 0.250000,
-//	"flDashDuration": 1.000000,
-//	"flDashBoost": 50.000000,
-//	"flDashSpeed": 200.000000,
-//	"flDiveDuration": 0.500000,
-//	"flDiveSpeed": 100.000000,
-//	"flTrackDistance": 5120.000000,
-//	"flCameraDistance": 3672.000000,
-//	"vCameraOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		500.000000
-//	],
-//	"vCameraEdgeThresholds":
-//	[
-//		-400.000000,
-//		0.000000
-//	],
-//	"flCameraAcceleration": 50.000000,
-//	"vPlayerSize":
-//	[
-//		100.000000,
-//		100.000000
-//	],
-//	"vPlayerVerticalBounds":
-//	[
-//		30.000000,
-//		650.000000
-//	],
-//	"vObstacleVerticalBounds":
-//	[
-//		30.000000,
-//		900.000000
-//	],
-//	"vObstacleHorizontalBounds":
-//	[
-//		-900.000000,
-//		900.000000
-//	],
-//	"flTopOffsetToTip": -1060.000000,
-//	"flBottomOffsetToTip": 764.000000,
-//	"vecInputActions":
-//	[
-//	]
-//}
 // MVDataRoot
 // MVDataSingleton
 class CDOTAFlappySkywrathDefinition
@@ -67,26 +8,26 @@ class CDOTAFlappySkywrathDefinition
 	CUtlString sMapLoopingFile;
 	CUtlString sMapBGFile;
 	CUtlVector< CDOTAFlappySkywrathDifficulty > vecDifficulties;
-	float32 flMinimumSpeed;
-	float32 flGravity;
-	float32 flJumpPower;
-	float32 flGlideAcceleration;
-	float32 flGlideFallSpeed;
-	float32 flDashDuration;
-	float32 flDashBoost;
-	float32 flDashSpeed;
-	float32 flDiveDuration;
-	float32 flDiveSpeed;
-	float32 flTrackDistance;
-	float32 flCameraDistance;
-	Vector vCameraOffset;
-	Vector2D vCameraEdgeThresholds;
-	float32 flCameraAcceleration;
-	Vector2D vPlayerSize;
-	Vector2D vPlayerVerticalBounds;
-	Vector2D vObstacleVerticalBounds;
-	Vector2D vObstacleHorizontalBounds;
-	float32 flTopOffsetToTip;
-	float32 flBottomOffsetToTip;
+	float32 flMinimumSpeed; // = 100
+	float32 flGravity; // = -2000
+	float32 flJumpPower; // = 600
+	float32 flGlideAcceleration; // = -20
+	float32 flGlideFallSpeed; // = 0.25
+	float32 flDashDuration; // = 1
+	float32 flDashBoost; // = 50
+	float32 flDashSpeed; // = 200
+	float32 flDiveDuration; // = 0.5
+	float32 flDiveSpeed; // = 100
+	float32 flTrackDistance; // = 5120
+	float32 flCameraDistance; // = 3672
+	Vector vCameraOffset; // = [ 0, 0, 500 ]
+	Vector2D vCameraEdgeThresholds; // = [ -400, 0 ]
+	float32 flCameraAcceleration; // = 50
+	Vector2D vPlayerSize; // = [ 100, 100 ]
+	Vector2D vPlayerVerticalBounds; // = [ 30, 650 ]
+	Vector2D vObstacleVerticalBounds; // = [ 30, 900 ]
+	Vector2D vObstacleHorizontalBounds; // = [ -900, 900 ]
+	float32 flTopOffsetToTip; // = -1060
+	float32 flBottomOffsetToTip; // = 764
 	CUtlVector< CDOTAFlappySkywrathInputAction > vecInputActions;
 };

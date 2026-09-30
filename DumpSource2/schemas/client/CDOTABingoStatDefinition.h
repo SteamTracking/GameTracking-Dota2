@@ -1,18 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strExclusiveString": "",
-//	"m_fStatAverage": 0.000000,
-//	"m_fStatStdDev": 0.000000,
-//	"m_strHeroAdjective": "",
-//	"m_bNegativeHeroAdjective": false,
-//	"m_nMinLeaguePhase": 1,
-//	"m_nMaxLeaguePhase": 99,
-//	"m_fPlayoffsStatAverage": 0.000000,
-//	"m_fPlayoffsStatStdDev": 0.000000,
-//	"m_fMainEventStatAverage": 0.000000,
-//	"m_fMainEventStatStdDev": 0.000000,
-//	"m_sLocName": "",
-//	"m_sLocTooltip": ""
-//}
 // MVDataRoot
 class CDOTABingoStatDefinition
 {
@@ -27,9 +12,9 @@ class CDOTABingoStatDefinition
 	// MPropertyDescription = "Whether we negate the hero adjective when displaying tooltip"
 	bool m_bNegativeHeroAdjective;
 	// MPropertyDescription = "At which league phase this stat unlocks"
-	int32 m_nMinLeaguePhase;
+	int32 m_nMinLeaguePhase; // = 1
 	// MPropertyDescription = "Up to which league phase this stat is usable"
-	int32 m_nMaxLeaguePhase;
+	int32 m_nMaxLeaguePhase; // = 99
 	// MPropertyDescription = "Expected value for League Phase Playoffs game."
 	float32 m_fPlayoffsStatAverage;
 	// MPropertyDescription = "Statistical standard deviation of League Phase Playoffs game."

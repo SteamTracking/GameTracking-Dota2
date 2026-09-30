@@ -1,27 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_vecPrefixes":
-//	[
-//	],
-//	"m_vecSuffixes":
-//	[
-//	],
-//	"m_vecGems":
-//	[
-//	],
-//	"m_vecShapes":
-//	[
-//	],
-//	"m_vecQualities":
-//	[
-//	],
-//	"m_vecTablets":
-//	[
-//	],
-//	"m_vecOperations":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class FantasyCraftSetupData_t
 {

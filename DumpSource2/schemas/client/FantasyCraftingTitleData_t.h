@@ -1,15 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unTitle": 0,
-//	"m_sLocName": "",
-//	"m_sLocNameIndividual": "",
-//	"m_sLocExplanation": "",
-//	"m_sLocExplanationMouseOver": "",
-//	"m_eMode": "k_FantasyStatMatchMode_All",
-//	"m_vecStats":
-//	[
-//	],
-//	"m_nBonus": 0
-//}
 // MPropertyAutoExpandSelf
 class FantasyCraftingTitleData_t
 {
@@ -24,7 +12,7 @@ class FantasyCraftingTitleData_t
 	// MPropertyDescription = "Localization token for explaining what the title does in sitations that allow mouseover"
 	CUtlString m_sLocExplanationMouseOver;
 	// MPropertyDescription = "Controls how we decide to use the stat vector"
-	EFantasyStatMatchMode m_eMode;
+	EFantasyStatMatchMode m_eMode; // = "k_FantasyStatMatchMode_All"
 	// MPropertyDescription = "Stats to Track"
 	CUtlVector< FantasyCraftingTrackedStat_t > m_vecStats;
 	// MPropertyDescription = "Bonus this title provides"

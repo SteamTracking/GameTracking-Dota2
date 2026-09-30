@@ -1,23 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unStatID": 0,
-//	"m_eStatImpl": "k_ePlayerTrackedStatImpl_Invalid",
-//	"m_killEaterData":
-//	{
-//		"unKillEaterEvent": 4294967295
-//	},
-//	"m_combatQueryData":
-//	{
-//		"strCombatQueryPath": ""
-//	},
-//	"m_expressionData":
-//	{
-//		"strExpression": ""
-//	},
-//	"m_heroAdjectiveData":
-//	{
-//		"m_strAdjective": ""
-//	}
-//}
 // MVDataRoot
 class CPlayerTrackedStatDefinition
 {
@@ -26,10 +6,10 @@ class CPlayerTrackedStatDefinition
 	// MPropertyAttributeEditor = "locked_int()"
 	TrackedStatID_t m_unStatID;
 	// MPropertyDescription = "how this stat is implemented"
-	EPlayerTrackedStatImpl m_eStatImpl;
+	EPlayerTrackedStatImpl m_eStatImpl; // = "k_ePlayerTrackedStatImpl_Invalid"
 	// MPropertyDescription = "For k_ePlayerTrackedStatImpl_KillEater, what is the kill eater information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_ePlayerTrackedStatImpl_KillEater"
-	TrackedStatKillEaterData_t m_killEaterData;
+	TrackedStatKillEaterData_t m_killEaterData; // = { "unKillEaterEvent": 4294967295 }
 	// MPropertyDescription = "For k_ePlayerTrackedStatImpl_CombatQuery, what is the combat query information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_ePlayerTrackedStatImpl_CombatQuery"
 	TrackedStatCombatQueryData_t m_combatQueryData;

@@ -1,14 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CSmartPropPulse_PlaceOnPath",
-//	"m_nEditorNodeID": -1,
-//	"m_OutflowList":
-//	{
-//		"m_Outflows":
-//		[
-//		]
-//	},
-//	"m_PathName": ""
-//}
 // MPropertyFriendlyName = "Place On Path"
 // MPulseEditorHeaderIcon = "tools/images/pulse_editor/requirements.png"
 // MPulseEditorCanvasItemSpecKV3 = "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"

@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CTagsWorkshopFileFilter",
-//	"m_tags":
-//	[
-//	]
-//}
 // MPropertyFriendlyName = "Tags"
 // MWorkshopFileListerFilterAllowMultiple
 // MHasKV3TransferPolymorphicClassname

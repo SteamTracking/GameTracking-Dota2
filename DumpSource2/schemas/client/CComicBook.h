@@ -1,23 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_nId": 0,
-//	"m_Name": "",
-//	"m_strNameToken": "",
-//	"m_CoverImage": "",
-//	"m_nNumberOfImages": 0,
-//	"m_URLForImages": "https://cdn.beta.steampowered.com/apps/dota2/images/crownfall/comic_part1/english",
-//	"m_nNumDigitsInFilename": 3,
-//	"m_ImageFileExtension": "jpg",
-//	"m_AllowedLanguages":
-//	[
-//	],
-//	"m_LanguageOverrideMap":
-//	{
-//	},
-//	"m_StartPages":
-//	[
-//	],
-//	"m_nCacheBustingVersion": 0
-//}
 // MVDataRoot
 class CComicBook
 {
@@ -32,11 +12,11 @@ class CComicBook
 	// MPropertyDescription = "Number Of Images"
 	int32 m_nNumberOfImages;
 	// MPropertyDescription = "URL for images.  Supports %CDN% and %LANGUAGE% variables to be replaced at runtime."
-	CUtlString m_URLForImages;
+	CUtlString m_URLForImages; // = "https://cdn.beta.steampowered.com/apps/dota2/images/crownfall/comic_part1/english"
 	// MPropertyDescription = "Num digits in filename.  Will be zero padded (i.e. 001, 002, 003, etc)"
-	int32 m_nNumDigitsInFilename;
+	int32 m_nNumDigitsInFilename; // = 3
 	// MPropertyDescription = "Image file extension."
-	CUtlString m_ImageFileExtension;
+	CUtlString m_ImageFileExtension; // = "jpg"
 	// MPropertyDescription = "Allowed languages for this comic book.  Anything not specified here will default to English."
 	CUtlVector< ELanguage > m_AllowedLanguages;
 	// MPropertyDescription = "Language mapping for overrides. This is used when we don't have content like tchinese but have schinese and want to map one to the other."

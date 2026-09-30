@@ -1,6 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"strExpression": ""
-//}
 // MPropertyAutoExpandSelf
 class TrackedStatExpressionData_t
 {

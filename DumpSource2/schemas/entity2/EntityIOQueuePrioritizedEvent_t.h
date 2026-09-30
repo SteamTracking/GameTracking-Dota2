@@ -1,12 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_flFireTime": null,
-//	"m_targetType": 0,
-//	"m_pTarget": "",
-//	"m_pTargetInput": "",
-//	"m_hActivator": null,
-//	"m_hCaller": null,
-//	"m_hEntTarget": null
-//}
 class EntityIOQueuePrioritizedEvent_t
 {
 	GameTime_t m_flFireTime;

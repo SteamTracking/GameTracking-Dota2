@@ -1,17 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CDOTAMotionComicVideoFrame",
-//	"m_flAutoAdvanceDelay": -1.000000,
-//	"m_bFireEventOnStart": false,
-//	"m_bLooping": false,
-//	"m_flAllowSkipAfterDelay": -1.000000,
-//	"m_sVideoPath": "",
-//	"m_sSoundEventName": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CDOTAMotionComicVideoFrame : public CDOTAMotionComicFrame
 {
 	bool m_bLooping;
-	float32 m_flAllowSkipAfterDelay;
+	float32 m_flAllowSkipAfterDelay; // = -1
 	CUtlString m_sVideoPath;
 	CUtlString m_sSoundEventName;
 };

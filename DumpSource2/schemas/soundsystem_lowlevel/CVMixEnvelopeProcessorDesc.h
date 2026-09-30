@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CVMixEnvelopeProcessorDesc",
-//	"m_name": "",
-//	"m_nDebugId": 0,
-//	"m_nChannels": -1,
-//	"m_flxfade": 0.100000,
-//	"m_desc":
-//	{
-//		"m_flAttackTimeMS": 0.000000,
-//		"m_flHoldTimeMS": 0.000000,
-//		"m_flReleaseTimeMS": 0.000000
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class CVMixEnvelopeProcessorDesc : public CVMixBaseProcessorDesc
 {

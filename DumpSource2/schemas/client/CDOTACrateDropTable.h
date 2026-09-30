@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sDropType": "",
-//	"szDropName": "",
-//	"nDropWeight": 0
-//}
 // MVDataRoot
 class CDOTACrateDropTable
 {

@@ -1,30 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecMaterials":
-//	[
-//	],
-//	"m_vecEconItems":
-//	[
-//	],
-//	"m_vecCraftableRewards":
-//	[
-//	],
-//	"m_vecHeroes":
-//	[
-//	],
-//	"m_vecTradeRecipes":
-//	[
-//	],
-//	"m_mapCodexEntriesLocalized":
-//	{
-//	},
-//	"m_strTokenLocStringPrefix": "",
-//	"m_vecSmallRewards":
-//	[
-//	],
-//	"m_vecHunterRankRewardLine":
-//	[
-//	]
-//}
 // MVDataRoot
 // MVDataSingleton
 class CMonsterHunterWorldDefinition

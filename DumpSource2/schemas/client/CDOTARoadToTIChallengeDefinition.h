@@ -1,21 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"m_eEvent": "EVENT_ID_NONE",
-//	"m_unTotalQuestPeriods": 0,
-//	"m_unHeroesPerQuest": 0,
-//	"m_vecQuestPattern":
-//	[
-//	],
-//	"m_unCullingBladeItemDef": 0,
-//	"m_unRerollItemDef": 0,
-//	"m_vecQuests":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTARoadToTIChallengeDefinition
 {
 	// MPropertyDescription = "Event ID that the challenge is for"
-	EEvent m_eEvent;
+	EEvent m_eEvent; // = "EVENT_ID_NONE"
 	// MPropertyDescription = "Total Quest Periods within the challenge"
 	uint32 m_unTotalQuestPeriods;
 	// MPropertyDescription = "Number of hero options expected in each quest."

@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unRewardData": 0,
-//	"m_sEventAction": "",
-//	"m_kvRewardExtraData": null,
-//	"m_sRewardTitle": ""
-//}
 // MVDataRoot
 class CDOTAOverworldEncounterReward
 {

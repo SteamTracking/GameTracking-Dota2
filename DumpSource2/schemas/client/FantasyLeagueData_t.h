@@ -1,27 +1,10 @@
-// MGetKV3ClassDefaults = {
-//	"m_nFantasyLeagueID": 0,
-//	"m_eEvent": "EVENT_ID_NONE",
-//	"m_nCraftingID": 0,
-//	"m_nLeagues":
-//	[
-//	],
-//	"m_vecTeams":
-//	[
-//	],
-//	"m_vecPlayers":
-//	[
-//	],
-//	"m_vecPeriods":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class FantasyLeagueData_t
 {
 	// MPropertyDescription = "Unique identifier for the league"
 	FantasyLeagueID_t m_nFantasyLeagueID;
 	// MPropertyDescription = "What event this data is tied to"
-	EEvent m_eEvent;
+	EEvent m_eEvent; // = "EVENT_ID_NONE"
 	// MPropertyDescription = "What data to use for crafting"
 	FantasyCraftDataID_t m_nCraftingID;
 	// MPropertyDescription = "Which Leagues is this attached to"

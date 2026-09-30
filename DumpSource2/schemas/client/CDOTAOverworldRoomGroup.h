@@ -1,27 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unGroupID": 0,
-//	"m_strLocName": "",
-//	"m_strEntityParentName": "",
-//	"m_vPosition":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vSize":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vecRooms":
-//	[
-//	],
-//	"m_flTrainCarViewDistance": 100.000000,
-//	"m_flTrainCarViewOffset":
-//	[
-//		0.000000,
-//		0.000000
-//	]
-//}
 class CDOTAOverworldRoomGroup
 {
 	OverworldRoomGroupID_t m_unGroupID;
@@ -33,6 +9,6 @@ class CDOTAOverworldRoomGroup
 	// MPropertyDescription = "Size in Overworld coordinates. This should completely encompass the dynamic prop entity."
 	Vector2D m_vSize;
 	CUtlVector< OverworldRoomID_t > m_vecRooms;
-	float32 m_flTrainCarViewDistance;
+	float32 m_flTrainCarViewDistance; // = 100
 	Vector2D m_flTrainCarViewOffset;
 };

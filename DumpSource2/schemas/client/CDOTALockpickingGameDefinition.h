@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecStages":
-//	[
-//	],
-//	"m_successEffect": "",
-//	"m_failEffect": "",
-//	"m_nScorePerUnlock": 0
-//}
 // MVDataRoot
 class CDOTALockpickingGameDefinition
 {

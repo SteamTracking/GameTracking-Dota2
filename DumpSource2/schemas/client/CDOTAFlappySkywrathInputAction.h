@@ -1,12 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"eAction": "None",
-//	"vecButtons":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTAFlappySkywrathInputAction
 {
-	EFlappySkywrathInputAction eAction;
+	EFlappySkywrathInputAction eAction; // = "None"
 	CUtlVector< int32 > vecButtons;
 };

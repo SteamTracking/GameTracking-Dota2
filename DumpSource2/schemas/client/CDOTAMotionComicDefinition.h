@@ -1,12 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"m_flDefaultMinimumTimePerFrame": 0.300000,
-//	"m_vecFrames":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTAMotionComicDefinition
 {
-	float32 m_flDefaultMinimumTimePerFrame;
+	float32 m_flDefaultMinimumTimePerFrame; // = 0.3
 	CUtlVector< CDOTAMotionComicFrame* > m_vecFrames;
 };

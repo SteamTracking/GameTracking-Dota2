@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"active_motor": "",
-//	"desired_speed": 0.000000,
-//	"motor_velocity":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"motor_path":
-//	[
-//	]
-//}
 // MPropertyFriendlyName = "Motor Services"
 // MDebugSnapshotDataRenderFn
 class AI_MotorServices_DebugSnapshotData_t

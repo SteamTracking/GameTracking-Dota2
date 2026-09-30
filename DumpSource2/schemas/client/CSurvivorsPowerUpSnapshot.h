@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unPowerUpID": 0,
-//	"m_vecUpgradeIDs":
-//	[
-//	],
-//	"m_bShardUpgraded": false,
-//	"m_bScepterUpgraded": false
-//}
 // MVDataRoot
 class CSurvivorsPowerUpSnapshot
 {

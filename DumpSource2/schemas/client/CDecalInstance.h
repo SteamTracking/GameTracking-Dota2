@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class CDecalInstance
 {
 	CGlobalSymbol m_sDecalGroup;

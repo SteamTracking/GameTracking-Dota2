@@ -1,20 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_spheres":
-//	[
-//	],
-//	"m_capsules":
-//	[
-//	],
-//	"m_hulls":
-//	[
-//	],
-//	"m_meshes":
-//	[
-//	],
-//	"m_CollisionAttributeIndices":
-//	[
-//	]
-//}
 class VPhysics2ShapeDef_t
 {
 	CUtlVector< RnSphereDesc_t > m_spheres;

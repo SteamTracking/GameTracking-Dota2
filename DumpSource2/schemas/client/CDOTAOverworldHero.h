@@ -1,32 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_unStartNodeID": 0,
-//	"m_vecBlockedNodes":
-//	[
-//	],
-//	"m_baseAppearance":
-//	{
-//		"m_sImage": "",
-//		"m_sClassName": "",
-//		"m_vSize":
-//		[
-//			0.000000,
-//			0.000000
-//		],
-//		"m_vOffset":
-//		[
-//			0.000000,
-//			0.000000
-//		],
-//		"m_unFrameWidth": 0,
-//		"m_unFrameTime": 100,
-//		"m_bUse3dPreview": false,
-//		"m_nPreviewHeroID": 0
-//	},
-//	"m_vecOverrides":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTAOverworldHero
 {
@@ -35,7 +6,7 @@ class CDOTAOverworldHero
 	OverworldNodeID_t m_unStartNodeID;
 	// MPropertyDescription = "Nodes the hero cannot pass through, even if unlocked. Allows us to have multiple heroes split up on the map"
 	CUtlVector< OverworldNodeID_t > m_vecBlockedNodes;
-	CDOTAOverworldCharacterBase m_baseAppearance;
+	CDOTAOverworldCharacterBase m_baseAppearance; // = { "m_bUse3dPreview": false, "m_nPreviewHeroID": 0, "m_sClassName": "", "m_sImage": "", "m_unFrameTime": 100, "m_unFrameWidth": 0, "m_vOffset": [ 0, 0 ], "m_vSize": [ 0, 0 ] }
 	// MPropertyDescription = "The highest priority overrides go first. The first override that meets its conditions is applied."
 	CUtlVector< DOTAOverworldCharacterOverrideConditional_t > m_vecOverrides;
 };

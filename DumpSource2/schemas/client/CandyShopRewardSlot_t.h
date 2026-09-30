@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sSlotClass": "",
-//	"m_vecSlotRewardOptions":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class CandyShopRewardSlot_t
 {

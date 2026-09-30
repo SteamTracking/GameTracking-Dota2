@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CUpdatedBeforeWorkshopFileFilter",
-//	"m_nSecondsSinceEpoch": 0
-//}
 // MPropertyFriendlyName = "Updated Before"
 // MHasKV3TransferPolymorphicClassname
 class CUpdatedBeforeWorkshopFileFilter : public IWorkshopFileListerFilter

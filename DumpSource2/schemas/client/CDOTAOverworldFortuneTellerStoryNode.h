@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_nFortuneRequestCount": 0,
-//	"m_sDialogueName": "",
-//	"m_sRewardEventAction": ""
-//}
 // MVDataRoot
 class CDOTAOverworldFortuneTellerStoryNode
 {

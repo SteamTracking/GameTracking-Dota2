@@ -1,28 +1,9 @@
-// MGetKV3ClassDefaults = {
-//	"nID": -1,
-//	"BlessingType": "",
-//	"nCost": 0,
-//	"nValue": 0,
-//	"bStartNode": false,
-//	"vecPos":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"flSize": 1.000000,
-//	"color":
-//	[
-//		255,
-//		255,
-//		255
-//	]
-//}
 // MVDataOutlinerIconExpr = "'tools/images/common/icon_node_generic.png'"
 class Blessing_t
 {
 	// MVDataUniqueMonotonicInt = "m_nNextBlessingID"
 	// MPropertyAttributeEditor = "locked_int()"
-	BlessingID_t nID;
+	BlessingID_t nID; // = -1
 	// MPropertyAttributeEditor = "VDataNodePicker(//m_mapBlessingTypes/*)"
 	CUtlString BlessingType;
 	// MPropertyDescription = "fragment cost"
@@ -33,7 +14,7 @@ class Blessing_t
 	bool bStartNode;
 	Vector2D vecPos;
 	// MPropertyAttributeRange = "0 10"
-	float32 flSize;
+	float32 flSize; // = 1
 	// MPropertyDescription = "node color"
-	Color color;
+	Color color; // = [ 255, 255, 255 ]
 };

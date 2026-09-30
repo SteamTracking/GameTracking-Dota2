@@ -1,21 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unRoomID": 0,
-//	"m_vPos":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vSize":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_strBackgroundImage": "",
-//	"m_vecNodes":
-//	[
-//	],
-//	"m_unUnlockedByNodeID": 0
-//}
 // MVDataRoot
 class CDOTAOverworldRoom
 {

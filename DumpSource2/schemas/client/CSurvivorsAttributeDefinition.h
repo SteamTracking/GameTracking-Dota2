@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sLocName": "",
-//	"m_sLocTooltip": "",
-//	"m_sLocDescription": "",
-//	"m_sLocMetaUpgradesTooltip": "",
-//	"m_sImage": "",
-//	"m_bPrimary": false,
-//	"m_bPercentage": false,
-//	"m_bShouldUpgradeProgressionText": true,
-//	"m_vecMetaProgressionTiers":
-//	[
-//	]
-//}
 // MVDataRoot
 class CSurvivorsAttributeDefinition
 {
@@ -21,6 +8,6 @@ class CSurvivorsAttributeDefinition
 	CPanoramaImageName m_sImage;
 	bool m_bPrimary;
 	bool m_bPercentage;
-	bool m_bShouldUpgradeProgressionText;
+	bool m_bShouldUpgradeProgressionText; // = true
 	CUtlVector< CSurvivorsAttributeDefinition::MetaProgressionTier_t > m_vecMetaProgressionTiers;
 };

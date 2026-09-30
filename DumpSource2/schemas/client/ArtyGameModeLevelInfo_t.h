@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_szLevelName": "",
-//	"m_unLevelID": 0
-//}
 // MVDataRoot
 class ArtyGameModeLevelInfo_t
 {

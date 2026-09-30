@@ -1,14 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"flInitialSpeed": 300.000000,
-//	"flMaxSpeed": 800.000000,
-//	"flAcceleration": 50.000000,
-//	"flActionCooldown": 1.000000
-//}
 // MVDataRoot
 class CDOTAFlappySkywrathCharacter
 {
-	float32 flInitialSpeed;
-	float32 flMaxSpeed;
-	float32 flAcceleration;
-	float32 flActionCooldown;
+	float32 flInitialSpeed; // = 300
+	float32 flMaxSpeed; // = 800
+	float32 flAcceleration; // = 50
+	float32 flActionCooldown; // = 1
 };

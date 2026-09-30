@@ -1,33 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CModelConfigElement_AttachedModel",
-//	"m_ElementName": "",
-//	"m_NestedElements":
-//	[
-//	],
-//	"m_InstanceName": "",
-//	"m_EntityClass": "",
-//	"m_hModel": "",
-//	"m_vOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_aAngOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_AttachmentName": "",
-//	"m_LocalAttachmentOffsetName": "",
-//	"m_AttachmentType": "MODEL_CONFIG_ATTACHMENT_ROOT_RELATIVE",
-//	"m_bBoneMergeFlex": false,
-//	"m_bUserSpecifiedColor": false,
-//	"m_bUserSpecifiedMaterialGroup": false,
-//	"m_BodygroupOnOtherModels": "",
-//	"m_MaterialGroupOnOtherModels": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CModelConfigElement_AttachedModel : public CModelConfigElement
 {
@@ -38,7 +8,7 @@ class CModelConfigElement_AttachedModel : public CModelConfigElement
 	QAngle m_aAngOffset;
 	CUtlString m_AttachmentName;
 	CUtlString m_LocalAttachmentOffsetName;
-	ModelConfigAttachmentType_t m_AttachmentType;
+	ModelConfigAttachmentType_t m_AttachmentType; // = "MODEL_CONFIG_ATTACHMENT_ROOT_RELATIVE"
 	bool m_bBoneMergeFlex;
 	bool m_bUserSpecifiedColor;
 	bool m_bUserSpecifiedMaterialGroup;

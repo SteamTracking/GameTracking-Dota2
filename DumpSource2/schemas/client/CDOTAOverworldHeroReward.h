@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unHeroID": 0,
-//	"m_vecTokenNames":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTAOverworldHeroReward
 {

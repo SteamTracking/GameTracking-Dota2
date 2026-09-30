@@ -1,18 +1,5 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CVMixOscProcessorDesc",
-//	"m_name": "",
-//	"m_nDebugId": 0,
-//	"m_nChannels": -1,
-//	"m_flxfade": 0.100000,
-//	"m_desc":
-//	{
-//		"oscType": "LFO_SHAPE_SINE",
-//		"m_freq": 440.000000,
-//		"m_flPhase": 0.000000
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class CVMixOscProcessorDesc : public CVMixBaseProcessorDesc
 {
-	VMixOscDesc_t m_desc;
+	VMixOscDesc_t m_desc; // = { "m_flPhase": 0, "m_freq": 440, "oscType": "LFO_SHAPE_SINE" }
 };

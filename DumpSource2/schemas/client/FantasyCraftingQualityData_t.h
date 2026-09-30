@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unQualityID": 0,
-//	"m_sLocName": "",
-//	"m_nBonus": 0,
-//	"m_nRollWeight": 0
-//}
 // MPropertyAutoExpandSelf
 class FantasyCraftingQualityData_t
 {

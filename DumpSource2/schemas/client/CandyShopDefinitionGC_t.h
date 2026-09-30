@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unCandyShopID": 0,
-//	"m_vecRewards":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class CandyShopDefinitionGC_t
 {

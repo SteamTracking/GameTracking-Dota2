@@ -1,17 +1,9 @@
-// MGetKV3ClassDefaults = {
-//	"m_nFilterType": "FILTER_UNKNOWN",
-//	"m_nFilterSlope": "FILTER_SLOPE_12dB",
-//	"m_bEnabled": true,
-//	"m_fldbGain": 0.000000,
-//	"m_flCutoffFreq": 1000.000000,
-//	"m_flQ": 0.707107
-//}
 class VMixFilterDesc_t
 {
-	VMixFilterType_t m_nFilterType;
-	VMixFilterSlope_t m_nFilterSlope;
-	bool m_bEnabled;
+	VMixFilterType_t m_nFilterType; // = "FILTER_UNKNOWN"
+	VMixFilterSlope_t m_nFilterSlope; // = "FILTER_SLOPE_12dB"
+	bool m_bEnabled; // = true
 	float32 m_fldbGain;
-	float32 m_flCutoffFreq;
-	float32 m_flQ;
+	float32 m_flCutoffFreq; // = 1000
+	float32 m_flQ; // = 0.707107
 };

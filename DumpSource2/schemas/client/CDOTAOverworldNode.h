@@ -1,33 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_sDialogueName": "",
-//	"m_sEncounterName": "",
-//	"m_sRewardEventAction": "",
-//	"m_vPos":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_eNodeFlags": "",
-//	"m_bSkipGrantingRewardOnUnlock": false,
-//	"m_sHiddenWithoutEventAction": "",
-//	"m_sJSEvent": "",
-//	"m_sCustomClass": "",
-//	"m_flUnlockDelay": 0.000000,
-//	"m_flModelRotation": 0.000000,
-//	"m_flModelScalePercentage": 100.000000,
-//	"m_vModelOffset":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vecUnlockMapClasses":
-//	[
-//	],
-//	"m_vecVisitMapClasses":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTAOverworldNode
 {
@@ -50,7 +20,7 @@ class CDOTAOverworldNode
 	// MPropertyDescription = "Yaw rotation of model preview (if this Node has one)."
 	float32 m_flModelRotation;
 	// MPropertyDescription = "Percent scale of model preview (if this Node has one)."
-	float32 m_flModelScalePercentage;
+	float32 m_flModelScalePercentage; // = 100
 	// MPropertyDescription = "2D panorama position offset of model preview (if this Node has one)."
 	Vector2D m_vModelOffset;
 	// MPropertyDescription = "CSS Classes that will be applied to the map when this node is unlocked."

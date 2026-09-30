@@ -1,6 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sLayout": ""
-//}
 // MVDataRoot
 class CDOTASlarkJailbreakStageDefinition
 {

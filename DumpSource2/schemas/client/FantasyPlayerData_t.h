@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unAccountID": 0,
-//	"m_unTeamID": 0,
-//	"m_strPlayerName": "",
-//	"m_bIsValid": false
-//}
 // MPropertyAutoExpandSelf
 class FantasyPlayerData_t
 {

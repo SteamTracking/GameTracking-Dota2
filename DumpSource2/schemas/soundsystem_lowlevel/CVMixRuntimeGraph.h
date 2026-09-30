@@ -1,74 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"Name": "",
-//	"m_nGraphOutputChannels": -1,
-//	"m_bIsMainGraph": false,
-//	"m_Submixes":
-//	[
-//	],
-//	"m_Processors":
-//	[
-//	],
-//	"m_controlInputs":
-//	[
-//	],
-//	"m_controlTransientInputs":
-//	[
-//	],
-//	"m_controlInputArrays":
-//	[
-//	],
-//	"m_controlOutputs":
-//	[
-//	],
-//	"m_nameInputs":
-//	[
-//	],
-//	"m_vsndInputs":
-//	[
-//	],
-//	"m_impulseResponseInputs":
-//	[
-//	],
-//	"m_MixCommands":
-//	[
-//	],
-//	"m_values":
-//	[
-//	],
-//	"m_valueArrays":
-//	[
-//	],
-//	"m_impulseResponseValues":
-//	[
-//	],
-//	"m_controlPoints":
-//	[
-//	],
-//	"m_curves":
-//	[
-//	],
-//	"m_audioMeters":
-//	[
-//	],
-//	"m_controlMeters":
-//	[
-//	],
-//	"m_nameInputMeters":
-//	[
-//	],
-//	"m_additionalOutputs":
-//	[
-//	],
-//	"m_automaticControlInputs":
-//	[
-//	],
-//	"m_sources": null
-//}
 class CVMixRuntimeGraph
 {
 	// MKV3TransferName = "Name"
 	CUtlString m_name;
-	int32 m_nGraphOutputChannels;
+	int32 m_nGraphOutputChannels; // = -1
 	bool m_bIsMainGraph;
 	// MKV3TransferName = "m_Submixes"
 	CUtlVector< CVMixSubmix > m_submixes;

@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unCandyTypeID": 0,
-//	"m_sLocName": "",
-//	"m_sImage": ""
-//}
 // MPropertyAutoExpandSelf
 class CandyShopCandyType_t
 {

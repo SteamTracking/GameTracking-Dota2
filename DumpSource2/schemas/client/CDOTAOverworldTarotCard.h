@@ -1,19 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_sName": "",
-//	"m_bIsCardBack": false,
-//	"m_eFortuneReward": "k_eOverworldFortuneReward_Invalid",
-//	"m_eFortuneRequirement": "k_eOverworldFortuneRequirement_Invalid",
-//	"m_eFortuneModifier": "k_eOverworldFortuneModifier_Invalid",
-//	"m_sFortunePosition1": "",
-//	"m_sFortunePosition2": "",
-//	"m_sFortunePosition3": "",
-//	"m_sSoundEventName": "",
-//	"m_vecSoundEventOptions":
-//	[
-//	],
-//	"m_unUnlockReward": 0
-//}
 // MVDataRoot
 class CDOTAOverworldTarotCard
 {
@@ -25,11 +9,11 @@ class CDOTAOverworldTarotCard
 	// MPropertyDescription = ""
 	bool m_bIsCardBack;
 	// MPropertyDescription = ""
-	EOverworldFortuneReward m_eFortuneReward;
+	EOverworldFortuneReward m_eFortuneReward; // = "k_eOverworldFortuneReward_Invalid"
 	// MPropertyDescription = ""
-	EOverworldFortuneRequirement m_eFortuneRequirement;
+	EOverworldFortuneRequirement m_eFortuneRequirement; // = "k_eOverworldFortuneRequirement_Invalid"
 	// MPropertyDescription = ""
-	EOverworldFortuneModifier m_eFortuneModifier;
+	EOverworldFortuneModifier m_eFortuneModifier; // = "k_eOverworldFortuneModifier_Invalid"
 	// MPropertyDescription = ""
 	CUtlString m_sFortunePosition1;
 	// MPropertyDescription = ""

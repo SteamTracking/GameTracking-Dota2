@@ -1,11 +1,5 @@
-// MGetKV3ClassDefaults = {
-//	"m_flChance": 1.000000,
-//	"m_vecLootEntries":
-//	[
-//	]
-//}
 class CSurvivorsLootTable::CLootEntryCollection
 {
-	float32 m_flChance;
+	float32 m_flChance; // = 1
 	CUtlVector< CSurvivorsLootTable::CLootEntry > m_vecLootEntries;
 };

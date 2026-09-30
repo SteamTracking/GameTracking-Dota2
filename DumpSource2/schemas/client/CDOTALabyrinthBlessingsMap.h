@@ -1,27 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strBlessingEventAction": "",
-//	"m_nNextBlessingTypeID": 0,
-//	"m_nNextBlessingID": 0,
-//	"m_UnlockHeroBlessingType": "",
-//	"m_vecHeroNames":
-//	[
-//	],
-//	"m_nNumStartingHeroesUnlocked": 0,
-//	"m_UnlockLegacyHeroBlessingType": "",
-//	"m_vecLegacyHeroNames":
-//	[
-//	],
-//	"m_nNumStartingLegacyHeroesUnlocked": 0,
-//	"m_mapBlessingTypes":
-//	{
-//	},
-//	"m_mapBlessings":
-//	{
-//	},
-//	"m_vecPaths":
-//	[
-//	]
-//}
 // MVDataRoot
 // MVDataSingleton
 // MVDataPreviewWidget = "blessing_graph"

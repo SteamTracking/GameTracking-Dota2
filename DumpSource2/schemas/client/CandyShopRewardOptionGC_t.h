@@ -1,15 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unRewardOptionID": 0,
-//	"m_unRewardOptionMaxCount": 0,
-//	"m_unCandyPrice": 0,
-//	"m_unWeight": 0,
-//	"m_eOptionType": "k_eCandyShopRewardOptionType_Invalid",
-//	"m_unSingleItemDef": 0,
-//	"m_sLootList": "",
-//	"m_eEvent": "EVENT_ID_NONE",
-//	"m_unEventActionID": 0,
-//	"m_unEventPoints": 0
-//}
 // MPropertyAutoExpandSelf
 class CandyShopRewardOptionGC_t
 {
@@ -22,7 +10,7 @@ class CandyShopRewardOptionGC_t
 	// MPropertyDescription = "what are the odds that this option will be picked compared to other options"
 	uint32 m_unWeight;
 	// MPropertyDescription = "how should rewards for this option be generated?"
-	ECandyShopRewardOptionType m_eOptionType;
+	ECandyShopRewardOptionType m_eOptionType; // = "k_eCandyShopRewardOptionType_Invalid"
 	// MPropertyDescription = "For k_eCandyShopRewardOptionType_SingleItem, what is the item def."
 	// MPropertySuppressExpr = "m_eOptionType != k_eCandyShopRewardOptionType_SingleItem"
 	item_definition_index_t m_unSingleItemDef;
@@ -31,7 +19,7 @@ class CandyShopRewardOptionGC_t
 	CUtlString m_sLootList;
 	// MPropertyDescription = "For k_eCandyShopRewardOptionType_SingleEventAction, what is the event id for the action."
 	// MPropertySuppressExpr = "m_eOptionType != k_eCandyShopRewardOptionType_SingleEventAction && m_eOptionType != k_eCandyShopRewardOptionType_EventPoints"
-	EEvent m_eEvent;
+	EEvent m_eEvent; // = "EVENT_ID_NONE"
 	// MPropertyDescription = "For k_eCandyShopRewardOptionType_SingleEventAction, what is the action id for the action."
 	// MPropertySuppressExpr = "m_eOptionType != k_eCandyShopRewardOptionType_SingleEventAction"
 	uint32 m_unEventActionID;

@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_strName": "",
-//	"m_eRarity": "k_eMonsterHunterMaterialRarity_Invalid",
-//	"m_bUniversal": false,
-//	"m_bHidden": false,
-//	"m_bDeprecated": false
-//}
 // MVDataRoot
 class CMonsterHunterMaterialDefinition
 {
@@ -15,7 +7,7 @@ class CMonsterHunterMaterialDefinition
 	// MPropertyDescription = ""
 	CUtlString m_strName;
 	// MPropertyDescription = ""
-	EMonsterHunterMaterialRarity m_eRarity;
+	EMonsterHunterMaterialRarity m_eRarity; // = "k_eMonsterHunterMaterialRarity_Invalid"
 	bool m_bUniversal;
 	bool m_bHidden;
 	bool m_bDeprecated;

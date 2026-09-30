@@ -1,32 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unCandyShopID": 0,
-//	"m_sLocName": "",
-//	"m_unDefaultInventorySize": 0,
-//	"m_unMaximumInventorySize": 0,
-//	"m_unDefaultRerollCharges": 0,
-//	"m_unDefaultMaxRerollCharges": 0,
-//	"m_unCandyBagItemDef": 0,
-//	"m_unFixedExchangeRecipeMaxCandies": 0,
-//	"m_unFixedExchangeRecipeStartDate": 0,
-//	"m_unFixedExchangeRecipeUpdateRateInSeconds": 0,
-//	"m_unFixedExchangeRecipeDefaultCount": 0,
-//	"m_unFixedExchangeRecipeMaximumCount": 0,
-//	"m_unVariableExchangeInputCandyCount": 0,
-//	"m_unVariableExchangeOutputCandyCount": 0,
-//	"m_eExpireEvent": "EVENT_ID_NONE",
-//	"m_unRewardSlotsDefaultCount": 0,
-//	"m_sAttrLootList": "",
-//	"m_sViewPageEvent": "",
-//	"m_vecCandyTypes":
-//	[
-//	],
-//	"m_vecRewardSlots":
-//	[
-//	],
-//	"m_vecDefaultRewardOptions":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTACandyShopDefinition
 {
@@ -59,7 +30,7 @@ class CDOTACandyShopDefinition
 	// MPropertyDescription = "Output candy count for variable exchange recipe"
 	uint8 m_unVariableExchangeOutputCandyCount;
 	// MPropertyDescription = "After this event expires, you can no longer interact with this candy shop."
-	EEvent m_eExpireEvent;
+	EEvent m_eExpireEvent; // = "EVENT_ID_NONE"
 	// MPropertyDescription = "Number of reward slots that are available by default"
 	uint8 m_unRewardSlotsDefaultCount;
 	// MPropertyDescription = "Loot list which contains attributes to add to all items received from this shop."

@@ -1,12 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_nID": 0,
-//	"m_eGameMode": "DOTA_GAMEMODE_NONE",
-//	"m_sCustomGame": "",
-//	"m_nShardsPerWin": 100,
-//	"m_nShardsPerLoss": 50,
-//	"m_sStartTime": "",
-//	"m_sEndTime": ""
-//}
 // MVDataRoot
 class CDOTAFeaturedGamemodeDefinition
 {
@@ -15,13 +6,13 @@ class CDOTAFeaturedGamemodeDefinition
 	// MPropertyAttributeEditor = "locked_int()"
 	uint16 m_nID;
 	// MPropertyDescription = "Game Mode; use DOTA_GAMEMODE_EVENT for custom games and include custom game name"
-	DOTA_GameMode m_eGameMode;
+	DOTA_GameMode m_eGameMode; // = "DOTA_GAMEMODE_NONE"
 	// MPropertyDescription = "custom game addon name if any; references event_games.txt"
 	CUtlString m_sCustomGame;
 	// MPropertyDescription = "shards per win"
-	int32 m_nShardsPerWin;
+	int32 m_nShardsPerWin; // = 100
 	// MPropertyDescription = "shards per loss"
-	int32 m_nShardsPerLoss;
+	int32 m_nShardsPerLoss; // = 50
 	// MPropertyDescription = "the date/time this mode starts (YYYY-MM-DD hh:mm:ss) UTC"
 	CUtlString m_sStartTime;
 	// MPropertyDescription = "the date/time this mode ends (YYYY-MM-DD hh:mm:ss) UTC"

@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CSmartPropPulse_SmartProp",
-//	"m_nEditorNodeID": -1,
-//	"m_hSmartProp": ""
-//}
 // MPropertyFriendlyName = "Smart Prop Reference"
 // MHasKV3TransferPolymorphicClassname
 class CSmartPropPulse_SmartProp : public CPulseCell_BaseFlow

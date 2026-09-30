@@ -1,6 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"strCombatQueryPath": ""
-//}
 // MPropertyAutoExpandSelf
 class TrackedStatCombatQueryData_t
 {

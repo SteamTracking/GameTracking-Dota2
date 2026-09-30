@@ -1,10 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"name": "",
-//	"value": 0.000000,
-//	"str": "",
-//	"resource": "",
-//	"desc": ""
-//}
 class CMatch3AbilityParamDefinition
 {
 	CUtlString name;

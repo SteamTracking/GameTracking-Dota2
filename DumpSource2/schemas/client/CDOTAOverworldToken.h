@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unID": 0,
-//	"m_sName": "",
-//	"m_eTokenType": "k_eOverworldTokenType_Generic"
-//}
 // MVDataRoot
 class CDOTAOverworldToken
 {
@@ -12,5 +7,5 @@ class CDOTAOverworldToken
 	// MPropertyDescription = ""
 	CUtlString m_sName;
 	// MPropertyDescription = ""
-	EOverworldTokenType m_eTokenType;
+	EOverworldTokenType m_eTokenType; // = "k_eOverworldTokenType_Generic"
 };

@@ -1,21 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_nID": 0,
-//	"m_bObtainable": true,
-//	"m_bShowProgressBar": false,
-//	"m_bShowInitialEarn": true,
-//	"m_sCreationDate": "",
-//	"m_nBadgePointsPerUnit": 0,
-//	"m_nUnitsPerBadgePoint": 1,
-//	"m_nMaxUnitsForBadgePoints": 0,
-//	"m_nSortTier": 0,
-//	"m_sLocCategory": "",
-//	"m_sLocName": "",
-//	"m_sLocDescription": "",
-//	"m_sLocUnitsPluralizable": "",
-//	"m_vecLevels":
-//	[
-//	]
-//}
 // MVDataRoot
 class CDOTATrophyDefinition
 {
@@ -24,11 +6,11 @@ class CDOTATrophyDefinition
 	// MPropertyAttributeEditor = "locked_int()"
 	uint16 m_nID;
 	// MPropertyDescription = "is this trophy still obtainable? This way we can have different presentations based on past and current trophies"
-	bool m_bObtainable;
+	bool m_bObtainable; // = true
 	// MPropertyDescription = "should we render a progrss bar of progress towards the next tier"
 	bool m_bShowProgressBar;
 	// MPropertyDescription = "should we show the popup when you earn the first tier of this trophy"
-	bool m_bShowInitialEarn;
+	bool m_bShowInitialEarn; // = true
 	// MPropertyDescription = "the date this trophy was introduced (YYYY-MM-DD or YYYY-MM-DD hh:mm:ss)"
 	CUtlString m_sCreationDate;
 	// MPropertyDescription = "how many badge points to grant for each increment"
@@ -36,7 +18,7 @@ class CDOTATrophyDefinition
 	uint32 m_nBadgePointsPerUnit;
 	// MPropertyDescription = "how many units need to be leveled up in order to get the badge point grant"
 	// MPropertyHideField
-	uint32 m_nUnitsPerBadgePoint;
+	uint32 m_nUnitsPerBadgePoint; // = 1
 	// MPropertyDescription = "the cutoff for where badge points stop granting (0 is disable this limit)"
 	// MPropertyHideField
 	uint32 m_nMaxUnitsForBadgePoints;

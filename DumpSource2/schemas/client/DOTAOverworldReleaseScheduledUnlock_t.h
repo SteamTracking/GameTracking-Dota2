@@ -1,10 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strLocName": "",
-//	"m_strVisualNovelName": "",
-//	"m_strRingmasterVisualNovelName": "",
-//	"m_unReleaseTime": 0,
-//	"m_unGroupID": 0
-//}
 class DOTAOverworldReleaseScheduledUnlock_t
 {
 	CUtlString m_strLocName;

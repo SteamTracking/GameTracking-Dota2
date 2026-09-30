@@ -1,13 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"m_eReward": "k_eOverworldFortuneReward_Invalid",
-//	"m_flWeight": 0.000000,
-//	"m_unEventActionID": 0
-//}
 // MVDataRoot
 class CDOTAOverworldFortuneTellerReward
 {
 	// MPropertyDescription = ""
-	EOverworldFortuneReward m_eReward;
+	EOverworldFortuneReward m_eReward; // = "k_eOverworldFortuneReward_Invalid"
 	// MPropertyDescription = ""
 	float32 m_flWeight;
 	// MPropertyDescription = ""
