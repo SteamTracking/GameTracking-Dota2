@@ -4,12 +4,7 @@ import "dota_gcmessages_common.proto";
 import "gcsdk_gcmessages.proto";
 
 message CMsgSurvivorsUserData {
-	message AttributeLevelsEntry {
-		optional int32 key = 1;
-		optional uint32 value = 2;
-	}
-
-	repeated .CMsgSurvivorsUserData.AttributeLevelsEntry attribute_levels = 1;
+	map<int32, uint32> attribute_levels = 1;
 	optional uint32 unlocked_difficulty = 2;
 }
 

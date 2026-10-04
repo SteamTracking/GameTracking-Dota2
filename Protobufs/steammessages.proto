@@ -1,5 +1,7 @@
 import "google/protobuf/descriptor.proto";
 
+option additional_includes = "gcsdk/gcsdk_types.h";
+
 extend .google.protobuf.FieldOptions {
 	optional bool key_field = 60000 [default = false];
 }
@@ -38,7 +40,7 @@ message CMsgProtoBufHeader {
 	optional int32 eresult = 13 [default = 2];
 	optional string error_message = 14;
 	optional .GCProtoBufMsgSrc gc_msg_src = 200 [default = GCProtoBufMsgSrc_Unspecified];
-	optional int32 gc_dir_index_source = 201 [default = -1];
+	optional int32 gc_dir_index_source = 201 [default = -1, boxed_type = "GCSDK::GCDirIndex_t", synthetic_default = "-1"];
 }
 
 message CGCSystemMsg_GetAccountDetails {

@@ -1,3 +1,5 @@
+option additional_includes = "events/base_event_schema.h";
+
 message CMsgEventAction {
 	optional uint32 action_id = 1;
 	optional uint32 times_completed = 2 [default = 1];
@@ -12,5 +14,5 @@ message CMsgUserEventPoints {
 	optional uint32 premium_points = 6;
 	repeated .CMsgEventAction completed_actions = 7;
 	optional bool owned = 8;
-	optional uint32 active_season_id = 9;
+	optional uint32 active_season_id = 9 [boxed_type = "EventSeasonID_t"];
 }

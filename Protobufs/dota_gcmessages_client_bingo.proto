@@ -23,8 +23,8 @@ enum EBingoAuditAction {
 }
 
 message CMsgBingoSquare {
-	optional uint32 stat_id = 1;
-	optional int32 stat_threshold = 2;
+	optional uint32 stat_id = 1 [boxed_type = "TrackedStatID_t"];
+	optional int32 stat_threshold = 2 [boxed_type = "TrackedStatValue_t"];
 	optional uint32 upgrade_level = 3;
 }
 
@@ -37,18 +37,8 @@ message CMsgBingoCard {
 }
 
 message CMsgBingoUserData {
-	message BingoCardsEntry {
-		optional uint32 key = 1;
-		optional .CMsgBingoCard value = 2;
-	}
-
-	message BingoTokensEntry {
-		optional uint32 key = 1;
-		optional .CMsgBingoTokens value = 2;
-	}
-
-	repeated .CMsgBingoUserData.BingoCardsEntry bingo_cards = 1;
-	repeated .CMsgBingoUserData.BingoTokensEntry bingo_tokens = 2;
+	map<uint32, .CMsgBingoCard> bingo_cards = 1;
+	map<uint32, .CMsgBingoTokens> bingo_tokens = 2;
 }
 
 message CMsgClientToGCBingoGetUserData {
@@ -69,8 +59,8 @@ message CMsgClientToGCBingoGetUserDataResponse {
 }
 
 message CMsgBingoIndividualStatData {
-	optional uint32 stat_id = 1;
-	optional int32 stat_value = 2;
+	optional uint32 stat_id = 1 [boxed_type = "TrackedStatID_t"];
+	optional int32 stat_value = 2 [boxed_type = "TrackedStatValue_t"];
 }
 
 message CMsgBingoStatsData {

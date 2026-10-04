@@ -3,6 +3,10 @@ import "gcsdk_gcmessages.proto";
 import "dota_shared_enums.proto";
 import "networkbasetypes.proto";
 
+option additional_includes = "basetypes.h";
+option additional_includes = "game/shared/econ/econ_item_constants.h";
+option additional_includes = "dota_stat_tracker.h";
+
 enum ESpecialPingValue {
 	k_ESpecialPingValue_NoData = 16382;
 	k_ESpecialPingValue_Failed = 16383;
@@ -164,7 +168,7 @@ message CSODOTAGameAccountClient {
 	optional uint32 solo_competitive_games_played = 61;
 	optional uint32 party_competitive_games_played = 62;
 	optional uint32 casual_1v1_games_played = 65;
-	optional int32 curr_all_hero_challenge_id = 67;
+	optional int32 curr_all_hero_challenge_id = 67 [boxed_type = "HeroID_t"];
 	optional uint32 play_time_points = 68;
 	optional uint32 account_flags = 69;
 	optional uint32 play_time_level = 70;
@@ -189,7 +193,7 @@ message CSODOTAGameAccountClient {
 	repeated .CSODOTAGameAccountClient.RoleHandicap role_handicaps = 115;
 	optional uint32 event_mode_recent_time = 120;
 	optional uint32 mmr_recalibration_time = 121;
-	repeated int32 banned_hero_ids = 123;
+	repeated int32 banned_hero_ids = 123 [boxed_type = "HeroID_t"];
 }
 
 message CSODOTAGameAccountPlus {
@@ -204,7 +208,7 @@ message CSODOTAGameAccountPlus {
 }
 
 message CSODOTAChatWheel {
-	optional uint32 message_id = 1 [default = 4294967295, (key_field) = true];
+	optional uint32 message_id = 1 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295", (key_field) = true];
 }
 
 message CMsgLobbyFeaturedGamemodeProgress {
@@ -238,18 +242,18 @@ message CMsgDOTABroadcastNotification {
 }
 
 message CProtoItemHeroStatue {
-	optional int32 hero_id = 1;
+	optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 	optional uint32 status_effect_index = 2;
 	optional string sequence_name = 3;
 	optional float cycle = 4;
-	repeated uint32 wearable = 5;
+	repeated uint32 wearable = 5 [boxed_type = "item_definition_index_t"];
 	optional string inscription = 6;
-	repeated uint32 style = 7;
+	repeated uint32 style = 7 [boxed_type = "style_index_t"];
 	optional bool tournament_drop = 8;
 }
 
 message CMatchPlayerAbilityUpgrade {
-	optional int32 ability = 1 [default = -1];
+	optional int32 ability = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 	optional uint32 time = 2;
 }
 
@@ -309,7 +313,7 @@ message CMatchTeamTimedStats {
 
 message CMatchAdditionalUnitInventory {
 	optional string unit_name = 1;
-	repeated int32 items = 2;
+	repeated int32 items = 2 [boxed_type = "AbilityID_t"];
 }
 
 message CMatchPlayerPermanentBuff {
@@ -321,7 +325,7 @@ message CMatchPlayerPermanentBuff {
 message CMatchHeroSelectEvent {
 	optional bool is_pick = 1;
 	optional uint32 team = 2;
-	optional int32 hero_id = 3;
+	optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
 }
 
 message CMatchClip {
@@ -330,8 +334,8 @@ message CMatchClip {
 	optional uint32 game_time_seconds = 3;
 	optional uint32 duration_seconds = 4;
 	optional uint32 player_id = 5;
-	optional int32 hero_id = 6;
-	optional int32 ability_id = 7 [default = -1];
+	optional int32 hero_id = 6 [boxed_type = "HeroID_t"];
+	optional int32 ability_id = 7 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 	optional uint32 camera_mode = 8;
 	optional string comment = 9;
 }
@@ -344,7 +348,7 @@ message CPartySearchClientParty {
 
 message CMsgDOTAHasItemQuery {
 	optional uint32 account_id = 1;
-	optional uint64 item_id = 2;
+	optional uint64 item_id = 2 [boxed_type = "itemid_t"];
 }
 
 message CMsgDOTAHasItemResponse {
@@ -353,13 +357,13 @@ message CMsgDOTAHasItemResponse {
 
 message CMsgGCGetPlayerCardItemInfo {
 	optional uint32 account_id = 1;
-	repeated uint64 player_card_item_ids = 2;
+	repeated uint64 player_card_item_ids = 2 [boxed_type = "itemid_t"];
 	optional uint32 all_for_event = 3;
 }
 
 message CMsgGCGetPlayerCardItemInfoResponse {
 	message PlayerCardInfo {
-		optional uint64 player_card_item_id = 1;
+		optional uint64 player_card_item_id = 1 [boxed_type = "itemid_t"];
 		optional uint32 account_id = 2;
 		optional uint64 packed_bonuses = 3;
 	}
@@ -391,11 +395,11 @@ message CMsgDOTAProfileCard {
 
 		message Item {
 			optional bytes serialized_item = 1;
-			optional uint64 item_id = 2;
+			optional uint64 item_id = 2 [boxed_type = "itemid_t"];
 		}
 
 		message Hero {
-			optional int32 hero_id = 1;
+			optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 			optional uint32 hero_wins = 2;
 			optional uint32 hero_losses = 3;
 		}
@@ -459,14 +463,14 @@ message CSODOTAPlayerChallenge {
 	optional uint32 quest_rank = 14;
 	optional uint32 max_quest_rank = 15;
 	optional uint32 instance_id = 16;
-	optional int32 hero_id = 17;
+	optional int32 hero_id = 17 [boxed_type = "HeroID_t"];
 	optional uint32 template_id = 18;
 }
 
 message CMsgClientToGCRerollPlayerChallenge {
 	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
 	optional uint32 sequence_id = 3;
-	optional int32 hero_id = 4;
+	optional int32 hero_id = 4 [boxed_type = "HeroID_t"];
 }
 
 message CMsgGCRerollPlayerChallengeResponse {
@@ -502,7 +506,7 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message ItemDetails {
-		optional int32 item_ability_id = 1 [default = -1];
+		optional int32 item_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 		optional string name = 2;
 		optional int32 time = 3;
 		optional bool sold = 4;
@@ -510,7 +514,7 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message AbilityDetails {
-		optional int32 id = 1 [default = -1];
+		optional int32 id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 		optional string name = 2;
 		optional uint32 level = 3;
 		optional float cooldown = 4;
@@ -518,21 +522,21 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message HeroToHeroStats {
-		optional int32 victimid = 1 [default = -1];
+		optional int32 victimid = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional uint32 kills = 2;
 		optional uint32 assists = 3;
 	}
 
 	message AbilityList {
-		repeated int32 id = 1;
+		repeated int32 id = 1 [boxed_type = "AbilityID_t"];
 	}
 
 	message PlayerDetails {
 		optional uint32 accountid = 1;
-		optional int32 playerid = 2 [default = -1];
+		optional int32 playerid = 2 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional string name = 3;
 		optional uint32 team = 4;
-		optional int32 heroid = 5;
+		optional int32 heroid = 5 [boxed_type = "HeroID_t"];
 		optional uint32 healthpoints = 6;
 		optional uint32 maxhealthpoints = 7;
 		optional float healthregenrate = 8;
@@ -592,23 +596,23 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message KillDetails {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 death_time = 2;
-		optional int32 killer_player_id = 3 [default = -1];
+		optional int32 killer_player_id = 3 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	}
 
 	message BroadcasterDetails {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	}
 
 	message PickBanDetails {
-		optional int32 hero = 1;
+		optional int32 hero = 1 [boxed_type = "HeroID_t"];
 		optional uint32 team = 2;
 	}
 
 	message MatchDetails {
 		optional fixed64 server_steam_id = 1;
-		optional uint64 match_id = 2;
+		optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 		optional uint32 timestamp = 3;
 		optional float time_of_day = 4;
 		optional bool is_nightstalker_night = 5;
@@ -621,8 +625,8 @@ message CMsgDOTARealtimeGameStats {
 		repeated .CMsgDOTARealtimeGameStats.KillDetails kills = 12;
 		repeated .CMsgDOTARealtimeGameStats.BroadcasterDetails broadcasters = 13;
 		optional uint32 game_mode = 14;
-		optional uint32 league_id = 15;
-		optional uint32 league_node_id = 18;
+		optional uint32 league_id = 15 [boxed_type = "LeagueID_t"];
+		optional uint32 league_node_id = 18 [boxed_type = "LeagueNodeID_t"];
 		optional bool single_team = 16;
 		optional uint32 cheers_peak = 17;
 		optional uint32 lobby_type = 20;
@@ -685,10 +689,10 @@ message CMsgDOTARealtimeGameStatsTerse {
 
 	message PlayerDetails {
 		optional uint32 accountid = 1;
-		optional int32 playerid = 2 [default = -1];
+		optional int32 playerid = 2 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional string name = 3;
 		optional uint32 team = 4;
-		optional int32 heroid = 5;
+		optional int32 heroid = 5 [boxed_type = "HeroID_t"];
 		optional uint32 level = 6;
 		optional uint32 kill_count = 7;
 		optional uint32 death_count = 8;
@@ -699,8 +703,8 @@ message CMsgDOTARealtimeGameStatsTerse {
 		optional float x = 13;
 		optional float y = 14;
 		optional uint32 net_worth = 15;
-		repeated int32 abilities = 16;
-		repeated int32 items = 17;
+		repeated int32 abilities = 16 [boxed_type = "AbilityID_t"];
+		repeated int32 items = 17 [boxed_type = "AbilityID_t"];
 		optional uint32 team_slot = 18;
 	}
 
@@ -716,19 +720,19 @@ message CMsgDOTARealtimeGameStatsTerse {
 	}
 
 	message PickBanDetails {
-		optional int32 hero = 1;
+		optional int32 hero = 1 [boxed_type = "HeroID_t"];
 		optional uint32 team = 2;
 	}
 
 	message MatchDetails {
 		optional fixed64 server_steam_id = 1;
-		optional uint64 match_id = 2;
+		optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 		optional uint32 timestamp = 3;
 		optional int32 game_time = 4;
 		repeated uint32 steam_broadcaster_account_ids = 6;
 		optional uint32 game_mode = 7;
-		optional uint32 league_id = 8;
-		optional uint32 league_node_id = 9;
+		optional uint32 league_id = 8 [boxed_type = "LeagueID_t"];
+		optional uint32 league_node_id = 9 [boxed_type = "LeagueNodeID_t"];
 		optional uint32 game_state = 10;
 		repeated .CMsgDOTARealtimeGameStatsTerse.PickBanDetails picks = 11;
 		repeated .CMsgDOTARealtimeGameStatsTerse.PickBanDetails bans = 12;
@@ -760,7 +764,7 @@ message CMsgGCToClientMatchGroupsVersion {
 }
 
 message CMsgDOTASDOHeroStatsHistory {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional uint32 game_mode = 2;
 	optional uint32 lobby_type = 3;
 	optional uint32 start_time = 4;
@@ -881,7 +885,7 @@ message CMsgDOTASeasonPredictions {
 		optional .ELeagueRegion region = 17 [default = LEAGUE_REGION_UNSET];
 		repeated .ELeaguePhase phases = 18;
 		optional .EEvent reward_event = 19 [default = EVENT_ID_NONE];
-		optional uint32 league_node_id = 20;
+		optional uint32 league_node_id = 20 [boxed_type = "LeagueNodeID_t"];
 		optional string reward_event_action = 21;
 	}
 
@@ -893,7 +897,7 @@ message CMsgDOTASeasonPredictions {
 
 message CMsgAvailablePredictions {
 	message MatchPrediction {
-		optional uint64 match_id = 1;
+		optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 		repeated .CMsgInGamePrediction predictions = 2;
 	}
 
@@ -902,12 +906,12 @@ message CMsgAvailablePredictions {
 
 message CMsgLeagueWatchedGames {
 	message Series {
-		optional uint32 node_id = 1;
+		optional uint32 node_id = 1 [boxed_type = "LeagueNodeID_t"];
 		repeated uint32 game = 2;
 	}
 
 	message League {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		repeated .CMsgLeagueWatchedGames.Series series = 2;
 	}
 
@@ -936,19 +940,19 @@ message CMsgDOTAMatch {
 		}
 
 		optional uint32 account_id = 1;
-		optional uint32 player_slot = 2;
-		optional int32 hero_id = 3;
-		optional int32 item_0 = 4 [default = -1];
-		optional int32 item_1 = 5 [default = -1];
-		optional int32 item_2 = 6 [default = -1];
-		optional int32 item_3 = 7 [default = -1];
-		optional int32 item_4 = 8 [default = -1];
-		optional int32 item_5 = 9 [default = -1];
-		optional int32 item_6 = 59 [default = -1];
-		optional int32 item_7 = 60 [default = -1];
-		optional int32 item_8 = 61 [default = -1];
-		optional int32 item_9 = 76 [default = -1];
-		optional int32 item_10 = 83 [default = -1];
+		optional uint32 player_slot = 2 [boxed_type = "GCPlayerSlot_t"];
+		optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
+		optional int32 item_0 = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_1 = 5 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_2 = 6 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_3 = 7 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_4 = 8 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_5 = 9 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_6 = 59 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_7 = 60 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_8 = 61 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_9 = 76 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+		optional int32 item_10 = 83 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 		optional int32 item_10_lvl = 84;
 		optional float expected_team_contribution = 10;
 		optional float scaled_metric = 11;
@@ -1011,7 +1015,7 @@ message CMsgDOTAMatch {
 		optional uint32 outposts_captured = 78;
 		optional .DOTA_GC_TEAM team_number = 80 [default = DOTA_GC_TEAM_GOOD_GUYS];
 		optional uint32 team_slot = 81;
-		optional uint32 selected_facet = 82;
+		optional uint32 selected_facet = 82 [boxed_type = "HeroFacetID_t"];
 	}
 
 	message BroadcasterInfo {
@@ -1049,7 +1053,7 @@ message CMsgDOTAMatch {
 	optional uint32 duration = 3;
 	optional fixed32 starttime = 4;
 	repeated .CMsgDOTAMatch.Player players = 5;
-	optional uint64 match_id = 6;
+	optional uint64 match_id = 6 [boxed_type = "MatchID_t"];
 	repeated uint32 tower_status = 8;
 	repeated uint32 barracks_status = 9;
 	optional uint32 cluster = 10;
@@ -1063,7 +1067,7 @@ message CMsgDOTAMatch {
 	optional float game_balance = 19;
 	optional uint32 radiant_team_id = 20;
 	optional uint32 dire_team_id = 21;
-	optional uint32 leagueid = 22;
+	optional uint32 leagueid = 22 [boxed_type = "LeagueID_t"];
 	optional string radiant_team_name = 23;
 	optional string dire_team_name = 24;
 	optional uint64 radiant_team_logo = 25;
@@ -1108,10 +1112,10 @@ message CMsgPlayerCard {
 
 message CMsgDOTAFantasyPlayerStats {
 	optional uint32 player_account_id = 1;
-	optional uint64 match_id = 2;
+	optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 	optional bool match_completed = 3;
 	optional uint32 team_id = 4;
-	optional uint32 league_id = 5;
+	optional uint32 league_id = 5 [boxed_type = "LeagueID_t"];
 	optional uint32 delay = 6;
 	optional uint32 series_id = 7;
 	optional uint32 series_type = 8;
@@ -1145,7 +1149,7 @@ message CMsgDOTABotDebugInfo {
 		message Mode {
 			optional uint32 mode_id = 1;
 			optional float desire = 2;
-			optional int32 target_entity = 3 [default = -1];
+			optional int32 target_entity = 3 [default = -1, boxed_type = "CEntityIndex", synthetic_default = "-1"];
 			optional uint32 target_x = 4;
 			optional uint32 target_y = 5;
 			optional uint32 target_z = 6;
@@ -1156,8 +1160,8 @@ message CMsgDOTABotDebugInfo {
 			optional string action_target = 2;
 		}
 
-		optional int32 player_owner_id = 1 [default = -1];
-		optional int32 hero_id = 2;
+		optional int32 player_owner_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
+		optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 		optional uint32 difficulty = 3;
 		optional uint32 power_current = 4;
 		optional uint32 power_max = 5;
@@ -1186,19 +1190,19 @@ message CMsgDOTABotDebugInfo {
 }
 
 message CMsgSuccessfulHero {
-	optional int32 hero_id = 1;
+	optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 	optional float win_percent = 2;
 	optional uint32 longest_streak = 3;
 }
 
 message CMsgRecentMatchInfo {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional .DOTA_GameMode game_mode = 2 [default = DOTA_GAMEMODE_NONE];
 	optional uint32 kills = 3;
 	optional uint32 deaths = 4;
 	optional uint32 assists = 5;
 	optional uint32 duration = 6;
-	optional uint32 player_slot = 7;
+	optional uint32 player_slot = 7 [boxed_type = "GCPlayerSlot_t"];
 	optional .EMatchOutcome match_outcome = 8 [default = k_EMatchOutcome_Unknown];
 	optional uint32 timestamp = 9;
 	optional uint32 lobby_type = 10;
@@ -1219,19 +1223,19 @@ message CMsgMatchTips {
 message CMsgDOTAMatchMinimal {
 	message Player {
 		optional uint32 account_id = 1;
-		optional int32 hero_id = 2;
+		optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 		optional uint32 kills = 3;
 		optional uint32 deaths = 4;
 		optional uint32 assists = 5;
-		repeated int32 items = 6;
-		optional uint32 player_slot = 7;
+		repeated int32 items = 6 [boxed_type = "AbilityID_t"];
+		optional uint32 player_slot = 7 [boxed_type = "GCPlayerSlot_t"];
 		optional string pro_name = 8;
 		optional uint32 level = 9;
 		optional .DOTA_GC_TEAM team_number = 10 [default = DOTA_GC_TEAM_GOOD_GUYS];
 	}
 
 	message Tourney {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		optional uint32 series_type = 8;
 		optional uint32 series_game = 9;
 		optional uint32 weekend_tourney_tournament_id = 10;
@@ -1248,7 +1252,7 @@ message CMsgDOTAMatchMinimal {
 		optional string dire_team_logo_url = 15;
 	}
 
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional fixed32 start_time = 2;
 	optional uint32 duration = 3;
 	optional .DOTA_GameMode game_mode = 4 [default = DOTA_GAMEMODE_NONE];
@@ -1262,7 +1266,7 @@ message CMsgDOTAMatchMinimal {
 }
 
 message CMsgConsumableUsage {
-	optional uint32 item_def = 1;
+	optional uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 	optional int32 quantity_change = 2;
 }
 
@@ -1300,11 +1304,11 @@ message CMsgCustomGameWhitelistForEdit {
 }
 
 message CMsgPlayerRecentMatchInfo {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional uint32 timestamp = 2;
 	optional uint32 duration = 3;
 	optional bool win = 4;
-	optional int32 hero_id = 5;
+	optional int32 hero_id = 5 [boxed_type = "HeroID_t"];
 	optional uint32 kills = 6;
 	optional uint32 deaths = 7;
 	optional uint32 assists = 8;
@@ -1349,7 +1353,7 @@ message CMsgRecentAccomplishments {
 
 message CMsgServerToGCRequestPlayerRecentAccomplishments {
 	optional uint32 account_id = 1;
-	optional int32 hero_id = 2;
+	optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 }
 
 message CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse {
@@ -1367,7 +1371,7 @@ message CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse {
 
 message CMsgArcanaVoteMatchVotes {
 	optional uint32 match_id = 1;
-	optional int32 hero_id = 2;
+	optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 	optional uint32 vote_count = 3;
 }
 
@@ -1396,7 +1400,7 @@ message CMsgPullTabsData {
 	message Slot {
 		optional uint32 event_id = 1;
 		optional uint32 board_id = 2;
-		optional int32 hero_id = 3;
+		optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
 		optional uint32 action_id = 4;
 		optional bool redeemed = 5;
 	}
@@ -1404,7 +1408,7 @@ message CMsgPullTabsData {
 	message Jackpot {
 		optional uint32 board_id = 1;
 		optional uint32 action_id = 2;
-		optional int32 hero_id = 3;
+		optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
 	}
 
 	repeated .CMsgPullTabsData.Slot slots = 1;
@@ -1415,13 +1419,13 @@ message CMsgPullTabsData {
 message CMsgUnderDraftData {
 	message BenchSlot {
 		optional uint32 slot_id = 1;
-		optional int32 hero_id = 2;
+		optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 		optional uint32 stars = 3;
 	}
 
 	message ShopSlot {
 		optional uint32 slot_id = 1;
-		optional int32 hero_id = 2;
+		optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 		optional bool is_special_reward = 3;
 	}
 
@@ -1477,7 +1481,7 @@ message CMsgGameDataFacetAbilityBonus {
 }
 
 message CMsgGameDataAbilityOrItem {
-	optional int32 id = 1 [default = -1];
+	optional int32 id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 	optional string name = 2;
 	optional string name_loc = 5;
 	optional string desc_loc = 6;
@@ -1534,7 +1538,7 @@ message CMsgGameDataHero {
 		optional uint32 index = 7;
 	}
 
-	optional int32 id = 1;
+	optional int32 id = 1 [boxed_type = "HeroID_t"];
 	optional string name = 2;
 	optional uint32 order_id = 3;
 	optional string name_loc = 5;
@@ -1586,7 +1590,7 @@ message CMsgGameDataHeroes {
 
 message CMsgGameDataHeroList {
 	message HeroInfo {
-		optional int32 id = 1;
+		optional int32 id = 1 [boxed_type = "HeroID_t"];
 		optional string name = 2;
 		optional string name_loc = 3;
 		optional string name_english_loc = 4;
@@ -1600,10 +1604,10 @@ message CMsgGameDataHeroList {
 message CMsgGameDataItemAbilityList {
 	message ItemAbilityInfo {
 		message Recipe {
-			repeated int32 items = 1;
+			repeated int32 items = 1 [boxed_type = "AbilityID_t"];
 		}
 
-		optional int32 id = 1 [default = -1];
+		optional int32 id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 		optional string name = 2;
 		optional string name_loc = 3;
 		optional string name_english_loc = 4;
@@ -1627,25 +1631,25 @@ message CSOEconItemDropRateBonus {
 	optional fixed32 expiration_date = 2;
 	optional float bonus = 3 [(key_field) = true];
 	optional uint32 bonus_count = 4;
-	optional uint64 item_id = 5;
-	optional uint32 def_index = 6;
+	optional uint64 item_id = 5 [boxed_type = "itemid_t"];
+	optional uint32 def_index = 6 [boxed_type = "item_definition_index_t"];
 	optional uint32 seconds_left = 7;
 	optional uint32 booster_type = 8 [(key_field) = true];
 }
 
 message CSOEconItemTournamentPassport {
 	optional uint32 account_id = 1;
-	optional uint32 league_id = 2;
-	optional uint64 item_id = 3;
+	optional uint32 league_id = 2 [boxed_type = "LeagueID_t"];
+	optional uint64 item_id = 3 [boxed_type = "itemid_t"];
 	optional uint32 original_purchaser_id = 4;
 	optional uint32 passports_bought = 5;
 	optional uint32 version = 6;
-	optional uint32 def_index = 7;
+	optional uint32 def_index = 7 [boxed_type = "item_definition_index_t"];
 	optional uint32 reward_flags = 8;
 }
 
 message CMsgStickerbookSticker {
-	optional uint32 item_def_id = 1;
+	optional uint32 item_def_id = 1 [boxed_type = "item_definition_index_t"];
 	optional uint32 sticker_num = 2;
 	optional uint32 quality = 3;
 	optional float position_x = 4;
@@ -1653,7 +1657,7 @@ message CMsgStickerbookSticker {
 	optional float position_z = 8;
 	optional float rotation = 6;
 	optional float scale = 7;
-	optional uint64 source_item_id = 9;
+	optional uint64 source_item_id = 9 [boxed_type = "itemid_t"];
 	optional uint32 depth_bias = 10;
 }
 
@@ -1676,10 +1680,10 @@ message CMsgStickerbook {
 }
 
 message CMsgStickerHero {
-	optional int32 hero_id = 1;
-	optional uint32 item_def_id = 2;
+	optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
+	optional uint32 item_def_id = 2 [boxed_type = "item_definition_index_t"];
 	optional uint32 quality = 3;
-	optional uint64 source_item_id = 4;
+	optional uint64 source_item_id = 4 [boxed_type = "itemid_t"];
 }
 
 message CMsgStickerHeroes {
@@ -1693,7 +1697,7 @@ message CMsgHeroRoleStats {
 }
 
 message CMsgHeroRoleHeroStats {
-	optional int32 hero_id = 1;
+	optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 	repeated .CMsgHeroRoleStats role_stats = 2;
 }
 
@@ -1728,18 +1732,18 @@ message CMsgGlobalMapStats {
 }
 
 message CMsgTrackedStat {
-	optional uint32 tracked_stat_id = 1;
-	optional int32 tracked_stat_value = 2;
+	optional uint32 tracked_stat_id = 1 [boxed_type = "TrackedStatID_t"];
+	optional int32 tracked_stat_value = 2 [boxed_type = "TrackedStatValue_t"];
 }
 
 message CMsgDOTAClaimEventActionResponse {
 	message MysteryItemRewardData {
-		optional uint32 item_def = 1;
+		optional uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 		optional uint32 item_category = 2;
 	}
 
 	message LootListRewardData {
-		repeated uint32 item_def = 1;
+		repeated uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 	}
 
 	message ActionListRewardData {
@@ -1823,15 +1827,15 @@ message CDotaMsg_PredictionResult {
 			k_eResult_Destroyed = 2;
 		}
 
-		optional uint32 item_def = 1;
+		optional uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 		optional uint32 num_correct = 2;
 		optional uint32 num_fails = 3;
 		optional .CDotaMsg_PredictionResult.Prediction.EResult result = 4 [default = k_eResult_ItemGranted];
-		repeated uint32 granted_item_defs = 6;
+		repeated uint32 granted_item_defs = 6 [boxed_type = "item_definition_index_t"];
 	}
 
 	optional uint32 account_id = 1;
-	optional uint64 match_id = 2;
+	optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 	optional bool correct = 3;
 	repeated .CDotaMsg_PredictionResult.Prediction predictions = 4;
 }

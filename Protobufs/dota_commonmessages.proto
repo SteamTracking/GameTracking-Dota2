@@ -1,5 +1,7 @@
 import "networkbasetypes.proto";
 
+option additional_includes = "dota_constants.h";
+
 enum EPingSource {
 	k_ePingSource_Default = 0;
 	k_ePingSource_Warning = 1;
@@ -77,9 +79,9 @@ message CDOTAMsg_PingWaypointPath {
 message CDOTAMsg_LocationPing {
 	optional int32 x = 1;
 	optional int32 y = 2;
-	optional int32 target = 3 [default = -1];
+	optional int32 target = 3 [default = -1, boxed_type = "CEntityIndex", synthetic_default = "-1"];
 	optional bool direct_ping = 4;
-	optional uint32 type = 5 [default = 4294967295];
+	optional uint32 type = 5 [default = 4294967295, boxed_type = "PingWheelMessageID_t", synthetic_default = "4294967295"];
 	optional .EPingSource ping_source = 6 [default = k_ePingSource_Default];
 	optional .CDOTAMsg_PingWaypointPath waypoint_path = 7;
 }
@@ -87,7 +89,7 @@ message CDOTAMsg_LocationPing {
 message CDOTAMsg_ItemAlert {
 	optional int32 x = 1;
 	optional int32 y = 2;
-	optional int32 item_ability_id = 3 [default = -1];
+	optional int32 item_ability_id = 3 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 }
 
 message CDOTAMsg_MapLine {
@@ -126,9 +128,9 @@ message CDOTAMsg_CoachHUDPing {
 
 message CDOTAMsg_UnitOrder {
 	optional .dotaunitorder_t order_type = 2 [default = DOTA_UNIT_ORDER_NONE];
-	repeated int32 units = 3;
-	optional int32 target_index = 4 [default = 0];
-	optional int32 ability_index = 5 [default = -1];
+	repeated int32 units = 3 [boxed_type = "CEntityIndex"];
+	optional int32 target_index = 4 [default = 0, boxed_type = "CEntityIndex"];
+	optional int32 ability_index = 5 [default = -1, boxed_type = "CEntityIndex", synthetic_default = "-1"];
 	optional .CMsgVector position = 6;
 	optional int32 sequence_number = 8;
 	optional uint32 flags = 9;
@@ -146,7 +148,7 @@ message VersusScene_PlayActivity {
 }
 
 message VersusScene_ChatWheel {
-	optional uint32 chat_message_id = 1 [default = 4294967295];
+	optional uint32 chat_message_id = 1 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295"];
 	optional uint32 emoticon_id = 2;
 }
 

@@ -4,6 +4,8 @@ import "dota_gcmessages_common.proto";
 import "dota_gcmessages_common_survivors.proto";
 import "gcsdk_gcmessages.proto";
 
+option additional_includes = "dota_overworld.h";
+
 enum EOverworldNodeState {
 	k_eOverworldNodeState_Invalid = 0;
 	k_eOverworldNodeState_Locked = 1;
@@ -55,7 +57,7 @@ enum EOverworldMinigameAction {
 }
 
 message CMsgOverworldTokenCount {
-	optional uint32 token_id = 1;
+	optional uint32 token_id = 1 [boxed_type = "OverworldTokenID_t"];
 	optional uint32 token_count = 2;
 }
 
@@ -84,7 +86,7 @@ message CMsgOverworldEncounterTokenQuestData {
 }
 
 message CMsgOverworldHeroList {
-	repeated int32 hero_ids = 1;
+	repeated int32 hero_ids = 1 [boxed_type = "HeroID_t"];
 }
 
 message CMsgOverworldEncounterChooseHeroData {
@@ -104,13 +106,13 @@ message CMsgOverworldEncounterData {
 }
 
 message CMsgOverworldNode {
-	optional uint32 node_id = 1;
+	optional uint32 node_id = 1 [boxed_type = "OverworldNodeID_t"];
 	optional .EOverworldNodeState node_state = 2 [default = k_eOverworldNodeState_Invalid];
 	optional .CMsgOverworldEncounterData node_encounter_data = 3;
 }
 
 message CMsgOverworldPath {
-	optional uint32 path_id = 1;
+	optional uint32 path_id = 1 [boxed_type = "OverworldPathID_t"];
 	optional .CMsgOverworldTokenQuantity path_cost = 2;
 	optional .EOverworldPathState path_state = 3 [default = k_eOverworldPathState_Invalid];
 }
@@ -122,18 +124,18 @@ message CMsgOverworldMinigameCustomData {
 }
 
 message CMsgOverworldMinigameUserData {
-	optional uint32 node_id = 1;
+	optional uint32 node_id = 1 [boxed_type = "OverworldNodeID_t"];
 	optional uint32 currency_amount = 2;
 	optional .CMsgOverworldMinigameCustomData custom_data = 3;
 }
 
 message CMsgOverworldFortune {
 	message CMsgFortuneCount {
-		optional uint32 fortune = 1;
+		optional uint32 fortune = 1 [boxed_type = "OverworldTarotCardID_t"];
 		optional uint32 count = 2;
 	}
 
-	optional uint32 fortune = 1;
+	optional uint32 fortune = 1 [boxed_type = "OverworldTarotCardID_t"];
 	optional uint32 timestamp = 4;
 	optional uint32 times_completed = 5;
 	optional bool reward_claimed = 7;
@@ -147,33 +149,28 @@ message CMsgLobbyOverworldFortuneList {
 }
 
 message CMsgOverworldUserData {
-	message MinigameDataEntry {
-		optional uint32 key = 1;
-		optional .CMsgOverworldMinigameUserData value = 2;
-	}
-
 	optional .CMsgOverworldTokenQuantity token_inventory = 1;
 	repeated .CMsgOverworldNode overworld_nodes = 2;
 	repeated .CMsgOverworldPath overworld_paths = 3;
-	optional uint32 current_node_id = 4;
-	repeated .CMsgOverworldUserData.MinigameDataEntry minigame_data = 5;
+	optional uint32 current_node_id = 4 [boxed_type = "OverworldNodeID_t"];
+	map<uint32, .CMsgOverworldMinigameUserData> minigame_data = 5;
 	optional .CMsgOverworldFortune current_fortune = 6;
-	optional int32 last_related_hero_id = 7;
+	optional int32 last_related_hero_id = 7 [boxed_type = "HeroID_t"];
 	optional uint32 overworld_version = 8;
 }
 
 message CMsgOverworldMatchRewards {
 	message Player {
-		optional uint32 player_slot = 1;
+		optional uint32 player_slot = 1 [boxed_type = "GCPlayerSlot_t"];
 		optional .CMsgOverworldTokenQuantity tokens = 2;
-		optional uint32 overworld_id = 3;
+		optional uint32 overworld_id = 3 [boxed_type = "OverworldID_t"];
 	}
 
 	repeated .CMsgOverworldMatchRewards.Player players = 1;
 }
 
 message CMsgClientToGCOverworldGetUserData {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldGetUserDataResponse {
@@ -191,13 +188,13 @@ message CMsgClientToGCOverworldGetUserDataResponse {
 }
 
 message CMsgGCToClientOverworldUserDataUpdated {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 	optional .CMsgOverworldUserData user_data = 2;
 }
 
 message CMsgClientToGCOverworldCompletePath {
-	optional uint32 overworld_id = 1;
-	optional uint32 path_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 path_id = 2 [boxed_type = "OverworldPathID_t"];
 	optional bool use_path_unlocker = 3;
 	optional bool dev_ignore_release_schedule = 4;
 }
@@ -223,15 +220,15 @@ message CMsgClientToGCOverworldCompletePathResponse {
 }
 
 message CMsgOverworldEncounterPitFighterRewardData {
-	optional uint32 token_id = 1;
+	optional uint32 token_id = 1 [boxed_type = "OverworldTokenID_t "];
 	optional uint32 choice = 2;
 }
 
 message CMsgClientToGCOverworldClaimEncounterReward {
-	optional uint32 overworld_id = 1;
-	optional uint32 node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 node_id = 2 [boxed_type = "OverworldNodeID_t"];
 	optional uint32 reward_data = 3;
-	optional uint32 periodic_resource_id = 4;
+	optional uint32 periodic_resource_id = 4 [boxed_type = "PeriodicResourceID_t"];
 	optional .CMsgOverworldEncounterData extra_reward_data = 5;
 	optional uint32 leaderboard_data = 6;
 	optional uint32 leaderboard_index = 7;
@@ -265,8 +262,8 @@ message CMsgClientToGCOverworldClaimEncounterRewardResponse {
 }
 
 message CMsgClientToGCOverworldVisitEncounter {
-	optional uint32 overworld_id = 1;
-	optional uint32 node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 node_id = 2 [boxed_type = "OverworldNodeID_t"];
 }
 
 message CMsgClientToGCOverworldVisitEncounterResponse {
@@ -287,8 +284,8 @@ message CMsgClientToGCOverworldVisitEncounterResponse {
 }
 
 message CMsgClientToGCOverworldMoveToNode {
-	optional uint32 overworld_id = 1;
-	optional uint32 node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 node_id = 2 [boxed_type = "OverworldNodeID_t"];
 }
 
 message CMsgClientToGCOverworldMoveToNodeResponse {
@@ -307,11 +304,11 @@ message CMsgClientToGCOverworldMoveToNodeResponse {
 }
 
 message CMsgClientToGCOverworldTradeTokens {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 	optional .CMsgOverworldTokenQuantity token_offer = 2;
 	optional .CMsgOverworldTokenQuantity token_request = 3;
 	optional uint32 recipe = 4;
-	optional uint32 encounter_id = 5;
+	optional uint32 encounter_id = 5 [boxed_type = "OverworldEncounterID_t"];
 }
 
 message CMsgClientToGCOverworldTradeTokensResponse {
@@ -336,10 +333,10 @@ message CMsgClientToGCOverworldTradeTokensResponse {
 }
 
 message CMsgClientToGCOverworldGiftTokens {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 	optional .CMsgOverworldTokenCount token_gift = 2;
 	optional uint32 recipient_account_id = 3;
-	optional uint32 periodic_resource_id = 4;
+	optional uint32 periodic_resource_id = 4 [boxed_type = "PeriodicResourceID_t"];
 }
 
 message CMsgClientToGCOverworldGiftTokensResponse {
@@ -363,7 +360,7 @@ message CMsgClientToGCOverworldGiftTokensResponse {
 
 message CMsgClientToGCOverworldRequestTokensNeededByFriend {
 	optional uint32 friend_account_id = 1;
-	optional uint32 overworld_id = 2;
+	optional uint32 overworld_id = 2 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldRequestTokensNeededByFriendResponse {
@@ -385,7 +382,7 @@ message CMsgClientToGCOverworldRequestTokensNeededByFriendResponse {
 }
 
 message CMsgClientToGCOverworldDevResetAll {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldDevResetAllResponse {
@@ -403,8 +400,8 @@ message CMsgClientToGCOverworldDevResetAllResponse {
 }
 
 message CMsgClientToGCOverworldDevResetNode {
-	optional uint32 overworld_id = 1;
-	optional uint32 node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 node_id = 2 [boxed_type = "OverworldNodeID_t"];
 }
 
 message CMsgClientToGCOverworldDevResetNodeResponse {
@@ -423,7 +420,7 @@ message CMsgClientToGCOverworldDevResetNodeResponse {
 }
 
 message CMsgClientToGCOverworldDevGrantTokens {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 	optional .CMsgOverworldTokenQuantity token_quantity = 2;
 }
 
@@ -442,7 +439,7 @@ message CMsgClientToGCOverworldDevGrantTokensResponse {
 }
 
 message CMsgClientToGCOverworldDevClearInventory {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldDevClearInventoryResponse {
@@ -460,8 +457,8 @@ message CMsgClientToGCOverworldDevClearInventoryResponse {
 }
 
 message CMsgClientToGCOverworldDevSetFortune {
-	optional uint32 overworld_id = 1;
-	optional uint32 fortune_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 fortune_id = 2 [boxed_type = "OverworldTarotCardID_t"];
 }
 
 message CMsgClientToGCOverworldDevSetFortuneResponse {
@@ -479,8 +476,8 @@ message CMsgClientToGCOverworldDevSetFortuneResponse {
 }
 
 message CMsgClientToGCOverworldDevClearFortune {
-	optional uint32 overworld_id = 1;
-	optional uint32 fortune_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 fortune_id = 2 [boxed_type = "OverworldTarotCardID_t"];
 }
 
 message CMsgClientToGCOverworldDevClearFortuneResponse {
@@ -498,7 +495,7 @@ message CMsgClientToGCOverworldDevClearFortuneResponse {
 }
 
 message CMsgClientToGCOverworldDevGrantFortuneTellerCoin {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse {
@@ -516,7 +513,7 @@ message CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse {
 }
 
 message CMsgClientToGCOverworldRequestFortune {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldRequestFortuneResponse {
@@ -537,7 +534,7 @@ message CMsgClientToGCOverworldRequestFortuneResponse {
 }
 
 message CMsgClientToGCOverworldClaimFortuneReward {
-	optional uint32 overworld_id = 1;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 }
 
 message CMsgClientToGCOverworldClaimFortuneRewardResponse {
@@ -558,8 +555,8 @@ message CMsgClientToGCOverworldClaimFortuneRewardResponse {
 }
 
 message CMsgClientToGCOverworldClaimFortunePermanentReward {
-	optional uint32 overworld_id = 1;
-	optional uint32 fortune_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 fortune_id = 2 [boxed_type = "OverworldTarotCardID_t"];
 }
 
 message CMsgClientToGCOverworldClaimFortunePermanentRewardResponse {
@@ -580,7 +577,7 @@ message CMsgClientToGCOverworldClaimFortunePermanentRewardResponse {
 
 message CMsgClientToGCOverworldFeedback {
 	optional uint32 language = 1;
-	optional uint32 overworld_id = 2;
+	optional uint32 overworld_id = 2 [boxed_type = "OverworldID_t"];
 	optional string feedback = 3;
 }
 
@@ -623,8 +620,8 @@ message CMsgClientToGCOverworldGetDynamicImageResponse {
 }
 
 message CMsgClientToGCOverworldMinigameAction {
-	optional uint32 overworld_id = 1;
-	optional uint32 node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 node_id = 2 [boxed_type = "OverworldNodeID_t"];
 	optional .EOverworldMinigameAction action = 3 [default = k_eOverworldMinigameAction_Invalid];
 	optional uint32 selection = 4;
 	optional uint32 option_value = 5;
@@ -651,8 +648,8 @@ message CMsgClientToGCOverworldMinigameActionResponse {
 }
 
 message CMsgClientToGCOverworldClaimFortuneTellerStoryNode {
-	optional uint32 overworld_id = 1;
-	optional uint32 story_node_id = 2;
+	optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
+	optional uint32 story_node_id = 2 [boxed_type = "OverworldFortuneTellerStoryNodeID_t"];
 }
 
 message CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse {

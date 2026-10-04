@@ -269,19 +269,9 @@ message CMsgSteamLearn_InferenceMetadata_Response {
 			optional uint64 count = 3;
 		}
 
-		message MapValuesEntry {
-			optional uint32 key = 1;
-			optional .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry value = 2;
-		}
-
-		message MapMappingsEntry {
-			optional uint32 key = 1;
-			optional .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry value = 2;
-		}
-
 		optional string name = 1;
-		repeated .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry map_values = 2;
-		repeated .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry map_mappings = 3;
+		map<uint32, .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry> map_values = 2;
+		map<uint32, .CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry> map_mappings = 3;
 	}
 
 	message SequenceTable {
@@ -291,19 +281,9 @@ message CMsgSteamLearn_InferenceMetadata_Response {
 			optional uint32 count = 3;
 		}
 
-		message MapValuesEntry {
-			optional uint32 key = 1;
-			optional .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry value = 2;
-		}
-
-		message MapMappingsEntry {
-			optional string key = 1;
-			optional .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry value = 2;
-		}
-
 		optional string name = 1;
-		repeated .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry map_values = 2;
-		repeated .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry map_mappings = 3;
+		map<uint32, .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry> map_values = 2;
+		map<string, .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry> map_mappings = 3;
 		optional uint64 total_count = 4;
 	}
 
@@ -338,11 +318,6 @@ message CMsgSteamLearn_InferenceMetadata_Response {
 		optional bool adult_sex = 7;
 	}
 
-	message AppInfoEntry {
-		optional uint32 key = 1;
-		optional .CMsgSteamLearn_InferenceMetadata_Response.AppInfo value = 2;
-	}
-
 	optional .ESteamLearnInferenceMetadataResult inference_metadata_result = 1 [default = STEAMLEARN_INFERENCE_METADATA_ERROR];
 	optional .CMsgSteamLearn_InferenceMetadata_Response.RowRange row_range = 2;
 	repeated .CMsgSteamLearn_InferenceMetadata_Response.Range ranges = 3;
@@ -350,7 +325,7 @@ message CMsgSteamLearn_InferenceMetadata_Response {
 	repeated .CMsgSteamLearn_InferenceMetadata_Response.CompactTable compact_tables = 5;
 	repeated .CMsgSteamLearn_InferenceMetadata_Response.SequenceTable sequence_tables = 9;
 	repeated .CMsgSteamLearn_InferenceMetadata_Response.KMeans kmeans = 6;
-	repeated .CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry app_info = 8;
+	map<uint32, .CMsgSteamLearn_InferenceMetadata_Response.AppInfo> app_info = 8;
 	optional .CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram snapshot_histogram = 7;
 }
 

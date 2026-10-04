@@ -19,7 +19,7 @@ enum ETeamInviteResult {
 
 message CMsgDOTATeamInfo {
 	message HeroStats {
-		optional int32 hero_id = 1;
+		optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 		optional uint32 picks = 2;
 		optional uint32 wins = 3;
 		optional uint32 bans = 4;
@@ -51,7 +51,7 @@ message CMsgDOTATeamInfo {
 	}
 
 	message DPCResult {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		optional uint32 standing = 2;
 		optional uint32 points = 3;
 		optional uint32 earnings = 4;
@@ -103,7 +103,7 @@ message CMsgDOTATeamInfo {
 }
 
 message CMsgDOTATeamsInfo {
-	optional uint32 league_id = 1;
+	optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 	repeated .CMsgDOTATeamInfo teams = 2;
 }
 

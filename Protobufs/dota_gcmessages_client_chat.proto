@@ -81,12 +81,12 @@ message CMsgDOTAChatMessage {
 	}
 
 	message PlayerDraftPick {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 team = 2;
 	}
 
 	message ChatWheelMessage {
-		optional uint32 message_id = 1 [default = 4294967295];
+		optional uint32 message_id = 1 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295"];
 		optional uint32 emoticon_id = 2;
 		optional string message_text = 3;
 		optional uint32 hero_badge_tier = 4;
@@ -104,7 +104,7 @@ message CMsgDOTAChatMessage {
 	optional uint32 event_id = 10;
 	optional bool suggest_invite_to_lobby = 11;
 	optional bool coin_flip = 13;
-	optional int32 player_id = 14 [default = -1];
+	optional int32 player_id = 14 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	optional uint32 share_profile_account_id = 15;
 	optional uint32 channel_user_id = 16;
 	optional .CMsgDOTAChatMessage.DiceRoll dice_roll = 17;
@@ -117,23 +117,23 @@ message CMsgDOTAChatMessage {
 	optional bool legacy_battle_cup_victory = 24;
 	optional uint32 battle_cup_streak = 29;
 	optional uint32 badge_level = 25;
-	optional int32 suggest_pick_hero_id = 26;
+	optional int32 suggest_pick_hero_id = 26 [boxed_type = "HeroID_t"];
 	optional string suggest_pick_hero_role = 27;
-	optional int32 suggest_ban_hero_id = 30;
+	optional int32 suggest_ban_hero_id = 30 [boxed_type = "HeroID_t"];
 	optional .CMsgDOTAChatMessage.TriviaAnswered trivia_answer = 32;
-	optional int32 requested_ability_id = 33 [default = -1];
+	optional int32 requested_ability_id = 33 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 	optional uint32 chat_flags = 34;
 	optional bool started_finding_match = 35;
 	optional bool ctrl_is_down = 36;
 	optional uint32 favorite_team_id = 37;
 	optional uint32 favorite_team_quality = 38;
-	optional int32 suggest_player_draft_pick = 39 [default = -1];
+	optional int32 suggest_player_draft_pick = 39 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	optional .CMsgDOTAChatMessage.PlayerDraftPick player_draft_pick = 40;
 	optional .CMsgDOTAChatMessage.ChatWheelMessage chat_wheel_message = 41;
 	optional uint32 event_level = 42;
-	optional uint32 suggest_pick_hero_facet = 43;
-	optional int32 requested_hero_id = 44;
-	optional uint64 requested_hero_facet_key = 45;
+	optional uint32 suggest_pick_hero_facet = 43 [boxed_type = "HeroFacetID_t"];
+	optional int32 requested_hero_id = 44 [boxed_type = "HeroID_t"];
+	optional uint64 requested_hero_facet_key = 45 [boxed_type = "HeroFacetKey_t"];
 }
 
 message CMsgDOTAChatMember {

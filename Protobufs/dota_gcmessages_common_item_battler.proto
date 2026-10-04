@@ -3,6 +3,8 @@ import "dota_shared_enums.proto";
 import "dota_gcmessages_common.proto";
 import "gcsdk_gcmessages.proto";
 
+option additional_includes = "itembattler/dota_item_battler_types.h";
+
 enum EItemBattlerAuditAction {
 	k_eItemBattlerAuditAction_Invalid = 0;
 }
@@ -36,24 +38,24 @@ message CMsgItemBattlerItemModifier {
 }
 
 message CMsgItemBattlerItem {
-	optional uint32 item_definition_id = 1;
-	optional uint32 item_instance_id = 2;
-	optional uint32 item_container_id = 3;
+	optional uint32 item_definition_id = 1 [boxed_type = "ItemBattlerItemDefinitionID_t"];
+	optional uint32 item_instance_id = 2 [boxed_type = "ItemBattlerItemInstanceID_t"];
+	optional uint32 item_container_id = 3 [boxed_type = "ItemBattlerItemContainerID_t"];
 	optional uint32 position_x = 4;
 	optional uint32 position_y = 5;
 	repeated .CMsgItemBattlerItemModifier permanent_modifiers = 6;
 }
 
 message CMsgItemBattlerItemContainer {
-	optional uint32 item_container_id = 1;
-	repeated uint32 item_slot_ids = 2;
+	optional uint32 item_container_id = 1 [boxed_type = "ItemBattlerItemContainerID_t"];
+	repeated uint32 item_slot_ids = 2 [boxed_type = "ItemBattlerItemInstanceID_t"];
 	optional int32 width = 3;
 	optional int32 height = 4;
 	optional bool is_shop = 5;
 }
 
 message CMsgItemBattlerFightEvent {
-	optional uint32 item_instance_id = 1;
+	optional uint32 item_instance_id = 1 [boxed_type = "ItemBattlerItemInstanceID_t"];
 	repeated uint32 item_target_instance_ids = 2;
 	optional uint32 tick = 3;
 	optional uint32 effect = 4;
@@ -70,8 +72,8 @@ message CMsgItemBattlerFightResult {
 
 message CMsgItemBattlerPlayerData {
 	optional uint32 account_id = 1;
-	optional uint32 hero_id = 2;
-	optional uint32 monster_id = 3;
+	optional uint32 hero_id = 2 [boxed_type = "ItemBattlerHeroID_t"];
+	optional uint32 monster_id = 3 [boxed_type = "ItemBattlerMonsterDefinitionID_t"];
 	optional .CMsgItemBattlerItemContainer board = 4;
 	optional int32 wins = 5;
 	optional int32 losses = 6;
@@ -88,33 +90,18 @@ message CMsgItemBattlerPlayerData {
 
 message CMsgItemBattlerEncounterData {
 	optional bool is_shop = 1;
-	optional uint32 encounter_id = 2;
+	optional uint32 encounter_id = 2 [boxed_type = "ItemBattlerEncounterDefinitionID_t"];
 	optional .CMsgItemBattlerItemContainer shop_items = 3;
 }
 
 message CMsgItemBattlerGhostData {
-	message ItemsEntry {
-		optional uint32 key = 1;
-		optional .CMsgItemBattlerItem value = 2;
-	}
-
-	message AbilitiesEntry {
-		optional uint32 key = 1;
-		optional .CMsgItemBattlerItem value = 2;
-	}
-
 	optional .CMsgItemBattlerPlayerData player_data = 1;
-	repeated .CMsgItemBattlerGhostData.ItemsEntry items = 2;
+	map<uint32, .CMsgItemBattlerItem> items = 2;
 	optional int32 day = 3;
-	repeated .CMsgItemBattlerGhostData.AbilitiesEntry abilities = 4;
+	map<uint32, .CMsgItemBattlerItem> abilities = 4;
 }
 
 message CMsgItemBattlerWorldData {
-	message ItemsEntry {
-		optional uint32 key = 1;
-		optional .CMsgItemBattlerItem value = 2;
-	}
-
 	optional bool run_active = 1;
 	optional uint32 run_id = 2;
 	optional .EItemBattlerGameState game_state = 3 [default = k_eGameState_Invalid];
@@ -123,11 +110,11 @@ message CMsgItemBattlerWorldData {
 	optional .CMsgItemBattlerItemContainer stash = 6;
 	optional .CMsgItemBattlerEncounterData encounter = 7;
 	optional .CMsgItemBattlerFightResult fight_result = 8;
-	repeated .CMsgItemBattlerWorldData.ItemsEntry items = 9;
+	map<uint32, .CMsgItemBattlerItem> items = 9;
 	optional int32 day = 10;
 	optional int32 hour = 11;
-	repeated uint32 encounter_choices = 12;
-	repeated uint32 monster_choices = 13;
+	repeated uint32 encounter_choices = 12 [boxed_type = "ItemBattlerEncounterDefinitionID_t"];
+	repeated uint32 monster_choices = 13 [boxed_type = "ItemBattlerMonsterDefinitionID_t"];
 	optional bool conceded = 14;
 }
 
@@ -169,8 +156,8 @@ message CMsgClientToGCItemBattlerGameAction {
 
 	optional .CMsgClientToGCItemBattlerGameAction.EAction action = 1 [default = k_eInvalid];
 	optional uint32 choice_index = 2;
-	optional uint32 item_instance_id = 3;
-	optional uint32 item_container_id = 4;
+	optional uint32 item_instance_id = 3 [boxed_type = "ItemBattlerItemInstanceID_t"];
+	optional uint32 item_container_id = 4 [boxed_type = "ItemBattlerItemContainerID_t"];
 	optional uint32 item_position_x = 5;
 	optional uint32 item_position_y = 6;
 }
@@ -190,7 +177,7 @@ message CMsgClientToGCItemBattlerGameActionResponse {
 }
 
 message CMsgClientToGCItemBattlerDevGrantItem {
-	optional uint32 item_definition_id = 1;
+	optional uint32 item_definition_id = 1 [boxed_type = "ItemBattlerItemDefinitionID_t"];
 }
 
 message CMsgClientToGCItemBattlerDevGrantItemResponse {

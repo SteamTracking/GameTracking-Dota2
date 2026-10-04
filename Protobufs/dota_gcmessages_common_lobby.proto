@@ -2,6 +2,9 @@ import "steammessages.proto";
 import "dota_shared_enums.proto";
 import "gcsdk_gcmessages.proto";
 
+option additional_includes = "game/shared/econ/econ_item_constants.h";
+option additional_includes = "events/base_event_schema.h";
+
 enum ELobbyMemberCoachRequestState {
 	k_eLobbyMemberCoachRequestState_None = 0;
 	k_eLobbyMemberCoachRequestState_Accepted = 1;
@@ -30,7 +33,7 @@ message CMsgLobbyCoachFriendRequest {
 
 message CMsgLobbyPlayerPlusSubscriptionData {
 	message HeroBadge {
-		optional int32 hero_id = 1;
+		optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 		optional uint32 hero_badge_xp = 2;
 	}
 
@@ -43,7 +46,7 @@ message CMsgEventActionData {
 }
 
 message CMsgPeriodicResourceData {
-	optional uint32 periodic_resource_id = 1;
+	optional uint32 periodic_resource_id = 1 [boxed_type = "PeriodicResourceID_t"];
 	optional uint32 remaining = 2;
 	optional uint32 max = 3;
 }
@@ -59,7 +62,7 @@ message CMsgLobbyEventPoints {
 		optional uint32 wager_streak = 23;
 		repeated .CMsgEventActionData event_game_custom_actions = 25;
 		optional uint32 tip_amount_index = 26;
-		optional uint32 active_event_season_id = 27;
+		optional uint32 active_event_season_id = 27 [boxed_type = "EventSeasonID_t"];
 		optional uint32 teleport_fx_level = 28;
 		repeated .CMsgEventActionData networked_event_actions = 30;
 		repeated .CMsgPeriodicResourceData periodic_resources = 31;
@@ -93,7 +96,7 @@ message CSODOTALobbyInvite {
 
 message CSODOTALobbyMember {
 	optional fixed64 id = 1 [(key_field) = true];
-	optional int32 hero_id = 2;
+	optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 	optional .DOTA_GC_TEAM team = 3 [default = DOTA_GC_TEAM_GOOD_GUYS];
 	optional uint32 slot = 7;
 	optional .DOTALeaverStatus_t leaver_status = 16 [default = DOTA_LEAVER_NONE];
@@ -132,11 +135,11 @@ message CSODOTAServerStaticLobbyMember {
 	optional uint64 favorite_team_packed = 12;
 	optional bool is_steam_china = 13;
 	optional uint32 title = 14;
-	optional uint32 guild_id = 15;
+	optional uint32 guild_id = 15 [boxed_type = "GuildID_t"];
 	repeated fixed32 disabled_random_hero_bits = 16;
-	repeated int32 disabled_hero_id = 17;
-	repeated int32 enabled_hero_id = 18;
-	repeated int32 banned_hero_ids = 19;
+	repeated int32 disabled_hero_id = 17 [boxed_type = "HeroID_t"];
+	repeated int32 enabled_hero_id = 18 [boxed_type = "HeroID_t"];
+	repeated int32 banned_hero_ids = 19 [boxed_type = "HeroID_t"];
 }
 
 message CLobbyTeamDetails {
@@ -157,7 +160,7 @@ message CLobbyTeamDetails {
 }
 
 message CLobbyGuildDetails {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [boxed_type = "GuildID_t"];
 	optional uint32 guild_primary_color = 2;
 	optional uint32 guild_secondary_color = 3;
 	optional uint32 guild_pattern = 4;
@@ -171,7 +174,7 @@ message CLobbyGuildDetails {
 }
 
 message CLobbyTimedRewardDetails {
-	optional uint32 item_def_index = 2;
+	optional uint32 item_def_index = 2 [boxed_type = "item_definition_index_t"];
 	optional bool is_supply_crate = 3;
 	optional bool is_timed_drop = 4;
 	optional uint32 account_id = 5;
@@ -186,7 +189,7 @@ message CLobbyBroadcastChannelInfo {
 }
 
 message CLobbyGuildChallenge {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [boxed_type = "GuildID_t"];
 	optional .EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 challenge_instance_id = 3;
 	optional uint32 challenge_parameter = 4;
@@ -257,11 +260,11 @@ message CSODOTALobby {
 	optional uint32 num_spectators = 23;
 	optional uint32 matchgroup = 25;
 	optional .DOTA_CM_PICK cm_pick = 28 [default = DOTA_CM_RANDOM];
-	optional uint64 match_id = 30;
+	optional uint64 match_id = 30 [boxed_type = "MatchID_t"];
 	optional bool allow_spectating = 31 [default = true];
 	optional .DOTABotDifficulty bot_difficulty_radiant = 36 [default = BOT_DIFFICULTY_HARD];
 	optional string pass_key = 39;
-	optional uint32 leagueid = 42;
+	optional uint32 leagueid = 42 [boxed_type = "LeagueID_t"];
 	optional uint32 penalty_level_radiant = 43 [default = 0];
 	optional uint32 penalty_level_dire = 44 [default = 0];
 	optional uint32 series_type = 46;
@@ -288,8 +291,8 @@ message CSODOTALobby {
 	optional fixed64 custom_game_crc = 76;
 	optional bool custom_game_auto_created_lobby = 77;
 	optional fixed32 custom_game_timestamp = 80;
-	repeated uint64 previous_series_matches = 81;
-	optional uint64 previous_match_override = 82;
+	repeated uint64 previous_series_matches = 81 [boxed_type = "MatchID_t"];
+	optional uint64 previous_match_override = 82 [boxed_type = "MatchID_t"];
 	optional uint32 game_start_time = 87;
 	optional .LobbyDotaPauseSetting pause_setting = 88 [default = LobbyDotaPauseSetting_Unlimited];
 	optional uint32 weekend_tourney_division_id = 90;
@@ -307,17 +310,17 @@ message CSODOTALobby {
 	optional bool series_current_selection_priority_used_coin_toss = 102;
 	optional .EEvent current_primary_event = 103 [default = EVENT_ID_NONE];
 	optional .EEvent current_primary_event_for_display = 104 [default = EVENT_ID_NONE];
-	repeated int32 emergency_disabled_hero_ids = 105;
+	repeated int32 emergency_disabled_hero_ids = 105 [boxed_type = "HeroID_t"];
 	optional fixed64 custom_game_private_key = 106;
 	optional bool custom_game_penalties = 107;
 	optional string lan_host_ping_location = 109;
-	optional uint32 league_node_id = 110;
+	optional uint32 league_node_id = 110 [boxed_type = "LeagueNodeID_t"];
 	optional uint32 match_duration = 111;
 	optional uint32 league_phase = 113;
 	optional bool experimental_gameplay_enabled = 116;
 	repeated .CLobbyGuildChallenge guild_challenges = 117;
 	repeated .CLobbyGuildDetails guild_details = 118;
-	repeated int32 requested_hero_ids = 124;
+	repeated int32 requested_hero_ids = 124 [boxed_type = "HeroID_t"];
 	repeated .CMsgLobbyCoachFriendRequest coach_friend_requests = 125;
 	optional bool is_in_steam_china = 126;
 	optional bool with_scenario_save = 127;
@@ -348,13 +351,13 @@ message CSODOTAServerStaticLobby {
 
 message CMsgAdditionalLobbyStartupAccountData {
 	message ChatWheelMessageRange {
-		optional uint32 message_id_start = 1 [default = 4294967295];
-		optional uint32 message_id_end = 2 [default = 4294967295];
+		optional uint32 message_id_start = 1 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295"];
+		optional uint32 message_id_end = 2 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295"];
 	}
 
 	message PingWheelMessageRange {
-		optional uint32 message_id_start = 1 [default = 4294967295];
-		optional uint32 message_id_end = 2 [default = 4294967295];
+		optional uint32 message_id_start = 1 [default = 4294967295, boxed_type = "PingWheelMessageID_t", synthetic_default = "4294967295"];
+		optional uint32 message_id_end = 2 [default = 4294967295, boxed_type = "PingWheelMessageID_t", synthetic_default = "4294967295"];
 	}
 
 	optional uint32 account_id = 1;
@@ -371,7 +374,7 @@ message CMsgLobbyPlaytestDetails {
 }
 
 message CMsgLocalServerGuildData {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [boxed_type = "GuildID_t"];
 	optional .EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 guild_points = 3;
 	optional uint64 guild_logo = 4;

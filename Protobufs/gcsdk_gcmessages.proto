@@ -141,16 +141,16 @@ message CMsgGCMultiplexMessage {
 }
 
 message CMsgGCToGCSubGCStarting {
-	optional int32 dir_index = 1 [default = -1];
+	optional int32 dir_index = 1 [default = -1, boxed_type = "GCSDK::GCDirIndex_t", synthetic_default = "-1"];
 }
 
 message CGCToGCMsgMasterAck {
 	message Process {
-		optional int32 dir_index = 1 [default = -1];
-		repeated uint32 type_instances = 2;
+		optional int32 dir_index = 1 [default = -1, boxed_type = "GCSDK::GCDirIndex_t", synthetic_default = "-1"];
+		repeated uint32 type_instances = 2 [boxed_type = "GCType_t"];
 	}
 
-	optional int32 dir_index = 1 [default = -1];
+	optional int32 dir_index = 1 [default = -1, boxed_type = "GCSDK::GCDirIndex_t", synthetic_default = "-1"];
 	optional string machine_name = 3;
 	optional string process_name = 4;
 	repeated .CGCToGCMsgMasterAck.Process directory = 6;
@@ -170,7 +170,7 @@ message CMsgGCToGCUniverseStartupResponse {
 
 message CGCToGCMsgMasterStartupComplete {
 	message GCInfo {
-		optional int32 dir_index = 1 [default = -1];
+		optional int32 dir_index = 1 [default = -1, boxed_type = "GCSDK::GCDirIndex_t", synthetic_default = "-1"];
 		optional string machine_name = 2;
 	}
 

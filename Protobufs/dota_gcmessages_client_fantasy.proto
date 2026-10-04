@@ -1,5 +1,8 @@
 import "dota_shared_enums.proto";
 
+option additional_includes = "game/shared/econ/econ_item_constants.h";
+option additional_includes = "dota/dota_fantasy_crafting_schema.h";
+
 enum DOTA_2013PassportSelectionIndices {
 	PP13_SEL_ALLSTAR_PLAYER_0 = 0;
 	PP13_SEL_ALLSTAR_PLAYER_1 = 1;
@@ -101,7 +104,7 @@ enum DOTA_2013PassportSelectionIndices {
 
 message CMsgDOTAPlayerInfo {
 	message Results {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		optional uint32 placement = 2;
 		optional uint32 earnings = 3;
 	}
@@ -179,7 +182,7 @@ message CMsgDOTALeaderboards {
 }
 
 message CMsgDOTAPassportVoteTeamGuess {
-	optional uint32 league_id = 1;
+	optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 	optional uint32 winner_id = 2;
 	optional uint32 runnerup_id = 3;
 }
@@ -206,8 +209,8 @@ message CMsgDOTAPassportVote {
 }
 
 message CMsgClientToGCGetPlayerCardRosterRequest {
-	optional uint32 league_id = 1;
-	optional uint32 fantasy_period = 3 [default = 4294967295];
+	optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
+	optional uint32 fantasy_period = 3 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 }
 
 message CMsgClientToGCGetPlayerCardRosterResponse {
@@ -219,7 +222,7 @@ message CMsgClientToGCGetPlayerCardRosterResponse {
 	}
 
 	optional .CMsgClientToGCGetPlayerCardRosterResponse.Result result = 1 [default = SUCCESS];
-	repeated uint64 player_card_item_id = 2;
+	repeated uint64 player_card_item_id = 2 [boxed_type = "itemid_t"];
 	optional float score = 3;
 	optional bool finalized = 4;
 	optional float percentile = 5;
@@ -227,8 +230,8 @@ message CMsgClientToGCGetPlayerCardRosterResponse {
 
 message CMsgClientToGCBatchGetPlayerCardRosterRequest {
 	message LeagueTimestamp {
-		optional uint32 league_id = 1;
-		optional uint32 fantasy_period = 3 [default = 4294967295];
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
+		optional uint32 fantasy_period = 3 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 	}
 
 	repeated .CMsgClientToGCBatchGetPlayerCardRosterRequest.LeagueTimestamp league_timestamps = 1;
@@ -236,14 +239,14 @@ message CMsgClientToGCBatchGetPlayerCardRosterRequest {
 
 message CMsgClientToGCBatchGetPlayerCardRosterResponse {
 	message RosterResponse {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		optional uint32 deprecated_timestamp = 2;
 		optional .CMsgClientToGCBatchGetPlayerCardRosterResponse.Result result = 3 [default = SUCCESS];
-		repeated uint64 player_card_item_id = 4;
+		repeated uint64 player_card_item_id = 4 [boxed_type = "itemid_t"];
 		optional float score = 5;
 		optional bool finalized = 6;
 		optional float percentile = 7;
-		optional uint32 fantasy_period = 8 [default = 4294967295];
+		optional uint32 fantasy_period = 8 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 	}
 
 	enum Result {
@@ -257,12 +260,12 @@ message CMsgClientToGCBatchGetPlayerCardRosterResponse {
 }
 
 message CMsgClientToGCSetPlayerCardRosterRequest {
-	optional uint32 league_id = 1;
+	optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 	optional uint32 deprecated_timestamp = 2;
 	optional uint32 slot = 3;
-	optional uint64 player_card_item_id = 4;
+	optional uint64 player_card_item_id = 4 [boxed_type = "itemid_t"];
 	optional uint32 event_id = 5;
-	optional uint32 fantasy_period = 6 [default = 4294967295];
+	optional uint32 fantasy_period = 6 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 }
 
 message CMsgClientToGCSetPlayerCardRosterResponse {
@@ -285,7 +288,7 @@ message CMsgClientToGCSetPlayerCardRosterResponse {
 
 message CMsgDOTAFantasyDPCLeagueStatus {
 	message LeagueInfo {
-		optional uint32 league_id = 1;
+		optional uint32 league_id = 1 [boxed_type = "LeagueID_t"];
 		optional string league_name = 2;
 		optional uint32 start_timestamp = 3;
 		optional uint32 end_timestamp = 4;
@@ -345,36 +348,31 @@ message CMsgDOTADPCTeamFavoriteRankings {
 message CMsgDotaFantasyCraftingTabletPeriodData {
 	message Gem {
 		optional .Fantasy_Gem_Type type = 1 [default = FANTASY_GEM_TYPE_RUBY];
-		optional uint32 slot = 2;
-		optional uint32 shape = 3;
-		optional uint32 quality = 4;
+		optional uint32 slot = 2 [boxed_type = "FantasyGemSlot_t"];
+		optional uint32 shape = 3 [boxed_type = "FantasyGemShape_t"];
+		optional uint32 quality = 4 [boxed_type = "FantasyGemQuality_t"];
 		optional .Fantasy_Scoring stat = 5 [default = FANTASY_SCORING_KILLS];
 	}
 
 	message Tablet {
-		optional uint32 tablet_id = 1;
+		optional uint32 tablet_id = 1 [boxed_type = "FantasyTabletID_t"];
 		optional uint32 tablet_level = 2;
 		optional .Fantasy_Roles fantasy_role = 3 [default = FANTASY_ROLE_UNDEFINED];
 		optional uint32 account_id = 4;
-		optional uint32 prefix = 5;
-		optional uint32 suffix = 6;
+		optional uint32 prefix = 5 [boxed_type = "FantasyTitle_t"];
+		optional uint32 suffix = 6 [boxed_type = "FantasyTitle_t"];
 		optional uint32 team_id = 10;
 		repeated .CMsgDotaFantasyCraftingTabletPeriodData.Gem gems = 7;
 		optional float score = 8;
 		optional uint32 best_series = 9;
 	}
 
-	optional uint32 fantasy_period = 1 [default = 4294967295];
+	optional uint32 fantasy_period = 1 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 	repeated .CMsgDotaFantasyCraftingTabletPeriodData.Tablet tablets = 2;
 }
 
 message CMsgDotaFantasyCraftingTabletData {
-	message TabletPeriodDataEntry {
-		optional uint32 key = 1;
-		optional .CMsgDotaFantasyCraftingTabletPeriodData value = 2;
-	}
-
-	repeated .CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry tablet_period_data = 1;
+	map<uint32, .CMsgDotaFantasyCraftingTabletPeriodData> tablet_period_data = 1;
 }
 
 message CMsgDotaFantasyCraftingUserData {
@@ -383,25 +381,15 @@ message CMsgDotaFantasyCraftingUserData {
 		optional float percentile = 2;
 	}
 
-	message PeriodRollTokensEntry {
-		optional uint32 key = 1;
-		optional uint32 value = 2;
-	}
-
-	message PeriodScoresEntry {
-		optional uint32 key = 1;
-		optional .CMsgDotaFantasyCraftingUserData.PeriodScore value = 2;
-	}
-
-	repeated uint32 available_rolls = 1;
-	repeated .CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry period_roll_tokens = 2;
-	repeated .CMsgDotaFantasyCraftingUserData.PeriodScoresEntry period_scores = 3;
+	repeated uint32 available_rolls = 1 [boxed_type = "FantasyOperationID_t"];
+	map<uint32, uint32> period_roll_tokens = 2;
+	map<uint32, .CMsgDotaFantasyCraftingUserData.PeriodScore> period_scores = 3;
 }
 
 message CMsgDotaFantasyCraftingDataCache {
 	message CacheEntry {
 		optional uint32 account_id = 1;
-		optional uint32 fantasy_league = 2;
+		optional uint32 fantasy_league = 2 [boxed_type = "FantasyLeagueID_t"];
 		optional .CMsgGCToClientFantasyCraftingDataUpdated cache_data = 3;
 	}
 
@@ -409,7 +397,7 @@ message CMsgDotaFantasyCraftingDataCache {
 }
 
 message CMsgClientToGCFantasyCraftingGetData {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	optional uint32 account_id = 2;
 }
 
@@ -429,16 +417,16 @@ message CMsgClientToGCFantasyCraftingGetDataResponse {
 }
 
 message CMsgClientToGCFantasyCraftingPerformOperation {
-	optional uint32 fantasy_league = 1;
-	optional uint32 tablet_id = 2;
-	optional uint32 operation_id = 3;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
+	optional uint32 tablet_id = 2 [boxed_type = "FantasyTabletID_t"];
+	optional uint32 operation_id = 3 [boxed_type = "FantasyOperationID_t"];
 	optional uint64 extra_data = 4;
 }
 
 message CMsgClientToGCFantasyCraftingPerformOperationResponse {
 	message TitleChoice {
-		optional uint32 prefix_choice = 1;
-		optional uint32 suffix_choice = 2;
+		optional uint32 prefix_choice = 1 [boxed_type = "FantasyTitle_t"];
+		optional uint32 suffix_choice = 2 [boxed_type = "FantasyTitle_t"];
 	}
 
 	enum EResponse {
@@ -453,28 +441,28 @@ message CMsgClientToGCFantasyCraftingPerformOperationResponse {
 	}
 
 	optional .CMsgClientToGCFantasyCraftingPerformOperationResponse.EResponse response = 1 [default = k_eInternalError];
-	optional uint32 operation_id = 2;
-	optional uint32 tablet_id = 7;
+	optional uint32 operation_id = 2 [boxed_type = "FantasyOperationID_t"];
+	optional uint32 tablet_id = 7 [boxed_type = "FantasyTabletID_t"];
 	optional .CMsgDotaFantasyCraftingUserData user_data = 8;
 	optional .CMsgDotaFantasyCraftingTabletData tablet_data = 9;
 	repeated uint32 player_choices = 3;
-	repeated uint32 prefix_choices = 4;
-	repeated uint32 suffix_choices = 5;
+	repeated uint32 prefix_choices = 4 [boxed_type = "FantasyTitle_t"];
+	repeated uint32 suffix_choices = 5 [boxed_type = "FantasyTitle_t"];
 	repeated .CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice title_choices = 6;
 }
 
 message CMsgGCToClientFantasyCraftingDataUpdated {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	optional .CMsgDotaFantasyCraftingUserData user_data = 2;
 	optional .CMsgDotaFantasyCraftingTabletData tablet_data = 4;
 }
 
 message CMsgClientToGCFantasyCraftingDevModifyTablet {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	optional bool reset_tablet = 2;
 	optional uint32 modify_tokens = 3;
 	optional bool upgrade_tablets = 6;
-	optional uint32 fantasy_period = 5 [default = 4294967295];
+	optional uint32 fantasy_period = 5 [default = 4294967295, boxed_type = "FantasyPeriod_t", synthetic_default = "4294967295"];
 }
 
 message CMsgClientToGCFantasyCraftingDevModifyTabletResponse {
@@ -493,7 +481,7 @@ message CMsgClientToGCFantasyCraftingDevModifyTabletResponse {
 }
 
 message CMsgClientToGCFantasyCraftingSelectPlayer {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	optional uint32 account_id = 2;
 }
 
@@ -513,7 +501,7 @@ message CMsgClientToGCFantasyCraftingSelectPlayerResponse {
 }
 
 message CMsgClientToGCFantasyCraftingSelectTeam {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	optional .Fantasy_Roles role = 2 [default = FANTASY_ROLE_UNDEFINED];
 	optional uint32 team_id = 3;
 }
@@ -534,8 +522,8 @@ message CMsgClientToGCFantasyCraftingSelectTeamResponse {
 }
 
 message CMsgClientToGCFantasyCraftingSelectGlobalPrefix {
-	optional uint32 fantasy_league = 1;
-	optional uint32 prefix = 2;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
+	optional uint32 prefix = 2 [boxed_type = "FantasyTitle_t"];
 }
 
 message CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse {
@@ -554,8 +542,8 @@ message CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse {
 }
 
 message CMsgClientToGCFantasyCraftingSelectGlobalSuffix {
-	optional uint32 fantasy_league = 1;
-	optional uint32 suffix = 2;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
+	optional uint32 suffix = 2 [boxed_type = "FantasyTitle_t"];
 }
 
 message CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse {
@@ -579,7 +567,7 @@ message CMsgClientToGCFantasyCraftingGenerateTablets {
 		optional uint32 team_id = 2;
 	}
 
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 	repeated uint32 account_ids = 2;
 	repeated .CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice selected_teams = 3;
 }
@@ -602,7 +590,7 @@ message CMsgClientToGCFantasyCraftingGenerateTabletsResponse {
 }
 
 message CMsgClientToGcFantasyCraftingUpgradeTablets {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 }
 
 message CMsgClientToGcFantasyCraftingUpgradeTabletsResponse {
@@ -620,7 +608,7 @@ message CMsgClientToGcFantasyCraftingUpgradeTabletsResponse {
 }
 
 message CMsgClientToGCFantasyCraftingRerollOptions {
-	optional uint32 fantasy_league = 1;
+	optional uint32 fantasy_league = 1 [boxed_type = "FantasyLeagueID_t"];
 }
 
 message CMsgClientToGCFantasyCraftingRerollOptionsResponse {

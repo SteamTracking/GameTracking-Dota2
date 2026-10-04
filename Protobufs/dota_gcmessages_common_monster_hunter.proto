@@ -3,6 +3,8 @@ import "dota_shared_enums.proto";
 import "dota_gcmessages_common.proto";
 import "gcsdk_gcmessages.proto";
 
+option additional_includes = "dota_monster_hunter_types.h";
+
 enum EMonsterHunterAuditAction {
 	k_eMonsterHunterAuditAction_Invalid = 0;
 	k_eMonsterHunterAuditAction_DevModifyMaterials = 1;
@@ -36,7 +38,7 @@ enum EHeroCodexEntryStatType {
 }
 
 message CMsgMonsterHunterMaterialCount {
-	optional uint32 material_id = 1;
+	optional uint32 material_id = 1 [boxed_type = "MonsterHunterMaterialID_t"];
 	optional uint32 material_count = 2;
 }
 
@@ -46,25 +48,20 @@ message CMsgMonsterHunterHeroCodexEntry {
 }
 
 message CMsgMonsterHunterUserData {
-	message HeroCodexEntry {
-		optional int32 key = 1;
-		optional .CMsgMonsterHunterHeroCodexEntry value = 2;
-	}
-
 	optional .CMsgMonsterHunterMaterialQuantity material_inventory = 1;
-	repeated .CMsgMonsterHunterUserData.HeroCodexEntry hero_codex = 2;
+	map<int32, .CMsgMonsterHunterHeroCodexEntry> hero_codex = 2;
 	optional int32 unlocked_count = 3;
 }
 
 message CMsgMonsterHunterMatchRewards {
 	message Player {
 		message HuntReward {
-			optional int32 hero_id = 1;
+			optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 			optional .CMsgMonsterHunterMaterialQuantity materials = 2;
 			optional bool success = 3;
 		}
 
-		optional uint32 player_slot = 1;
+		optional uint32 player_slot = 1 [boxed_type = "GCPlayerSlot_t"];
 		optional .CMsgMonsterHunterMaterialQuantity possible_match_reward_materials = 2;
 		optional .CMsgMonsterHunterMaterialQuantity actual_match_reward_materials = 3;
 		optional .CMsgMonsterHunterMatchRewards.Player.HuntReward hunt_reward = 4;
@@ -122,7 +119,7 @@ message CMsgClientToGCMonsterHunterClaimRewardResponse {
 }
 
 message CMsgMonsterHunterItemSet {
-	optional uint32 econ_item_id = 1;
+	optional uint32 econ_item_id = 1 [boxed_type = "MonsterHunterEconItemID_t"];
 	optional uint32 set_index = 2;
 }
 
@@ -149,7 +146,7 @@ message CMsgClientToGCMonsterHunterClaimSetRewardResponse {
 message CMsgClientToGCMonsterHunterTradeMaterials {
 	optional .CMsgMonsterHunterMaterialQuantity material_offer = 1;
 	optional .CMsgMonsterHunterMaterialQuantity material_request = 2;
-	optional uint32 recipe_id = 3;
+	optional uint32 recipe_id = 3 [boxed_type = "MonsterHunterTradeRecipeID_t"];
 }
 
 message CMsgClientToGCMonsterHunterTradeMaterialsResponse {
@@ -173,7 +170,7 @@ message CMsgClientToGCMonsterHunterTradeMaterialsResponse {
 message CMsgClientToGCMonsterHunterGiftMaterials {
 	optional .CMsgMonsterHunterMaterialCount token_gift = 1;
 	optional uint32 recipient_account_id = 2;
-	optional uint32 periodic_resource_id = 3;
+	optional uint32 periodic_resource_id = 3 [boxed_type = "PeriodicResourceID_t"];
 }
 
 message CMsgClientToGCMonsterHunterGiftMaterialsResponse {
@@ -282,7 +279,7 @@ message CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse {
 }
 
 message CMsgClientToGCMonsterHunterClaimCodexReward {
-	optional uint32 codex_id = 1;
+	optional uint32 codex_id = 1 [boxed_type = "MonsterHunterCodexID_t"];
 	optional uint32 reward = 2;
 }
 
@@ -307,7 +304,7 @@ message CMsgDevModifyCodexAction {
 		k_eAdd = 1;
 	}
 
-	optional uint32 codex_id = 1;
+	optional uint32 codex_id = 1 [boxed_type = "MonsterHunterCodexID_t"];
 	optional .EHeroCodexEntryStatType stat_type = 2 [default = k_eHeroCodexEntryStatType_Killed];
 	optional .CMsgDevModifyCodexAction.EAction action = 3 [default = k_eClear];
 }

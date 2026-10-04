@@ -14,7 +14,7 @@ message CScenarioGame_RoshanSpawner {
 
 message CScenarioEnt_Courier {
 	optional int32 team_number = 1;
-	optional int32 owner_player_id = 2 [default = -1];
+	optional int32 owner_player_id = 2 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	optional float cooldown = 3 [default = -1];
 }
 
@@ -29,7 +29,7 @@ message CScenarioEnt_NPC {
 }
 
 message CScenarioEnt_SpiritBear {
-	optional int32 owner_id = 1 [default = -1];
+	optional int32 owner_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 	optional int32 team_id = 2;
 }
 
@@ -39,7 +39,7 @@ message CScenarioEnt_DroppedItem {
 
 message CMsgDotaScenario {
 	message EntityRef {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 neutral_stash_id = 2 [default = -1];
 		optional int32 entity_idx = 3 [default = -1];
 		optional bool roshan = 4 [default = false];
@@ -47,10 +47,10 @@ message CMsgDotaScenario {
 	}
 
 	message Game {
-		optional uint64 match_id = 1;
+		optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 		optional int32 game_mode = 2;
 		optional float clock_time = 3;
-		optional float internal_time = 4;
+		optional float internal_time = 4 [boxed_type = "GameTime_t"];
 		optional .CScenarioGame_RoshanSpawner roshan = 5;
 	}
 
@@ -71,12 +71,12 @@ message CMsgDotaScenario {
 	}
 
 	message HeroHeroInt {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 value = 2;
 	}
 
 	message HeroHeroFloat {
-		optional int32 player_id = 1 [default = -1];
+		optional int32 player_id = 1 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional float value = 2;
 	}
 
@@ -109,7 +109,7 @@ message CMsgDotaScenario {
 
 	message Hero {
 		optional fixed64 steam_id = 1;
-		optional int32 player_id = 2 [default = -1];
+		optional int32 player_id = 2 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 team_id = 3;
 		optional string hero = 4;
 		optional int32 total_xp = 5;
@@ -138,8 +138,8 @@ message CMsgDotaScenario {
 		optional int32 claimed_deny_count = 34;
 		optional int32 claimed_miss_count = 35;
 		optional int32 miss_count = 36;
-		optional float buyback_cooldown_time = 40;
-		optional float buyback_gold_limit_time = 41;
+		optional float buyback_cooldown_time = 40 [boxed_type = "GameTime_t"];
+		optional float buyback_gold_limit_time = 41 [boxed_type = "GameTime_t"];
 		optional float stun_duration = 44;
 		optional float healing = 45;
 		optional int32 tower_kills = 46;
@@ -171,7 +171,7 @@ message CMsgDotaScenario {
 		repeated .CMsgDotaScenario.HeroHeroInt enemy_kills = 150;
 		repeated .CMsgDotaScenario.DamageStatsByType damage_stats = 151;
 		repeated .CMsgDotaScenario.HeroAbility abilities = 152;
-		optional uint32 hero_facet = 153;
+		optional uint32 hero_facet = 153 [boxed_type = "HeroFacetID_t"];
 		optional uint32 total_madstone = 154;
 		optional uint32 current_madstone = 155;
 		repeated .CMsgDotaScenario.HeroNeutralTier neutral_tiers = 156;
@@ -183,7 +183,7 @@ message CMsgDotaScenario {
 	message Stock {
 		optional string name = 1;
 		optional int32 team_number = 2 [default = -1];
-		optional int32 player_id = 3 [default = -1];
+		optional int32 player_id = 3 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 current_stock = 4;
 		optional float cooldown = 5;
 		optional int32 bonus_stock = 6;
@@ -207,7 +207,7 @@ message CMsgDotaScenario {
 	message Item {
 		optional string name = 1;
 		optional .CMsgDotaScenario.EntityRef location = 2;
-		optional int32 owner_id = 3 [default = -1];
+		optional int32 owner_id = 3 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional int32 item_slot = 4;
 		optional int32 neutral_drop_team = 5;
 		optional int32 charges = 6;

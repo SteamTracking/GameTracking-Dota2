@@ -1,6 +1,9 @@
 import "netmessages.proto";
 import "networkbasetypes.proto";
 
+option additional_includes = "dota_constants.h";
+option additional_includes = "game/shared/econ/econ_item_constants.h";
+
 message CMsgFightingGame_GameData_Fighting {
 	message InputSample {
 		optional uint32 button_mask = 1;
@@ -18,12 +21,12 @@ message CMsgFightingGame_GameData_Fighting {
 
 message CMsgFightingGame_GameData_CharacterSelect {
 	message Item {
-		optional uint32 item_def = 1;
-		optional uint32 style_index = 2 [default = 255];
+		optional uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
+		optional uint32 style_index = 2 [default = 255, boxed_type = "style_index_t", synthetic_default = "255"];
 	}
 
 	optional uint32 cursor_index = 1;
-	optional int32 selected_hero_id = 2;
+	optional int32 selected_hero_id = 2 [boxed_type = "HeroID_t"];
 	optional uint32 selected_style = 3;
 	repeated .CMsgFightingGame_GameData_CharacterSelect.Item econ_item_refs = 4;
 	optional int64 message_ack = 5;

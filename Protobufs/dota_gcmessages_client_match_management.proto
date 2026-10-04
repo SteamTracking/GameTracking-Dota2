@@ -131,7 +131,7 @@ message CMsgPracticeLobbySetDetails {
 	optional bool fill_with_bots = 11;
 	optional bool allow_spectating = 13;
 	optional string pass_key = 15;
-	optional uint32 leagueid = 16;
+	optional uint32 leagueid = 16 [boxed_type = "LeagueID_t"];
 	optional uint32 penalty_level_radiant = 17;
 	optional uint32 penalty_level_dire = 18;
 	optional uint32 series_type = 20;
@@ -149,7 +149,7 @@ message CMsgPracticeLobbySetDetails {
 	optional .DOTALobbyVisibility visibility = 33 [default = DOTALobbyVisibility_Public];
 	optional fixed64 custom_game_crc = 34;
 	optional fixed32 custom_game_timestamp = 37;
-	optional uint64 previous_match_override = 38;
+	optional uint64 previous_match_override = 38 [boxed_type = "MatchID_t"];
 	optional .LobbyDotaPauseSetting pause_setting = 42 [default = LobbyDotaPauseSetting_Unlimited];
 	optional .DOTABotDifficulty bot_difficulty_dire = 43 [default = BOT_DIFFICULTY_PASSIVE];
 	optional uint64 bot_radiant = 44;
@@ -157,8 +157,8 @@ message CMsgPracticeLobbySetDetails {
 	optional .DOTASelectionPriorityRules selection_priority_rules = 46 [default = k_DOTASelectionPriorityRules_Manual];
 	optional bool custom_game_penalties = 47;
 	optional string lan_host_ping_location = 48;
-	optional uint32 league_node_id = 49;
-	repeated int32 requested_hero_ids = 50;
+	optional uint32 league_node_id = 49 [boxed_type = "LeagueNodeID_t"];
+	repeated int32 requested_hero_ids = 50 [boxed_type = "HeroID_t"];
 	optional .CMsgLobbyScenarioSave scenario_save = 51;
 	optional .CMsgPracticeLobbySetDetails.AbilityDraftSpecificDetails ability_draft_specific_details = 52;
 	optional bool do_player_draft = 53;
@@ -240,7 +240,7 @@ message CMsgPracticeLobbyListResponseEntry {
 	optional string custom_map_name = 15;
 	optional uint32 max_player_count = 16;
 	optional uint32 server_region = 17;
-	optional uint32 league_id = 19;
+	optional uint32 league_id = 19 [boxed_type = "LeagueID_t"];
 	optional string lan_host_ping_location = 20;
 	optional uint32 min_player_count = 21;
 	optional bool penalties_enabled = 22;
@@ -388,11 +388,11 @@ message CMsgSpectatorLobbyGameDetails {
 	}
 
 	optional uint32 language = 1;
-	optional uint64 match_id = 2;
+	optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 	optional fixed64 server_steam_id = 3;
 	optional string stream_url = 4;
 	optional string stream_name = 5;
-	optional uint32 league_id = 6;
+	optional uint32 league_id = 6 [boxed_type = "LeagueID_t"];
 	optional uint32 series_type = 7;
 	optional uint32 series_game = 8;
 	optional .CMsgSpectatorLobbyGameDetails.Team radiant_team = 9;

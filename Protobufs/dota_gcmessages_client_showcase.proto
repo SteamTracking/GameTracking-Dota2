@@ -8,6 +8,8 @@ import "econ_gcmessages.proto";
 import "dota_gcmessages_client.proto";
 import "valveextensions.proto";
 
+option additional_includes = "dota_showcase.h";
+
 enum EShowcaseHeroPlusFlag {
 	k_eShowcaseHeroPlusFlag_None = 0;
 	k_eShowcaseHeroPlusFlag_BadgePosTop = 1;
@@ -60,9 +62,9 @@ enum EShowcaseItemFlag_Hero {
 }
 
 message CMsgShowcaseEconItemReference {
-	optional uint64 id = 1;
-	optional uint64 original_id = 2;
-	optional uint32 definition_index = 3;
+	optional uint64 id = 1 [boxed_type = "itemid_t"];
+	optional uint64 original_id = 2 [boxed_type = "itemid_t"];
+	optional uint32 definition_index = 3 [boxed_type = "item_definition_index_t"];
 	optional int32 equipment_slot_index = 4 [default = -1];
 }
 
@@ -91,12 +93,12 @@ message CMsgShowcaseItem_EconItem {
 message CMsgShowcaseItem_Hero {
 	message Data {
 		repeated .CSOEconItem econ_items = 1;
-		optional int32 actual_hero_id = 2;
+		optional int32 actual_hero_id = 2 [boxed_type = "HeroID_t"];
 		optional uint32 plus_hero_xp = 3;
 	}
 
 	optional .CMsgShowcaseItem_Hero.Data data = 1;
-	optional int32 hero_id = 2;
+	optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 	repeated .CMsgShowcaseEconItemReference econ_item_refs = 3;
 	optional uint32 rotation = 4;
 	optional uint32 flags = 5;
@@ -115,13 +117,13 @@ message CMsgShowcaseItem_HeroIcon {
 	}
 
 	optional .CMsgShowcaseItem_HeroIcon.Data data = 1;
-	optional int32 hero_id = 2;
+	optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 	optional .CMsgShowcaseEconItemReference econ_item_ref = 3;
 }
 
 message CMsgShowcaseItem_PlayerMatch {
 	message Data {
-		optional int32 hero_id = 1;
+		optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 		optional uint32 timestamp = 2;
 		optional uint32 duration = 3;
 		optional .DOTA_GameMode game_mode = 4 [default = DOTA_GAMEMODE_NONE];
@@ -139,8 +141,8 @@ message CMsgShowcaseItem_PlayerMatch {
 	}
 
 	optional .CMsgShowcaseItem_PlayerMatch.Data data = 1;
-	optional uint64 match_id = 2;
-	optional uint32 player_slot = 3;
+	optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
+	optional uint32 player_slot = 3 [boxed_type = "GCPlayerSlot_t"];
 }
 
 message CMsgShowcaseItem_ChatWheel {
@@ -148,7 +150,7 @@ message CMsgShowcaseItem_ChatWheel {
 	}
 
 	optional .CMsgShowcaseItem_ChatWheel.Data data = 1;
-	optional uint32 chat_wheel_message_id = 2 [default = 4294967295];
+	optional uint32 chat_wheel_message_id = 2 [default = 4294967295, boxed_type = "ChatWheelMessageID_t", synthetic_default = "4294967295"];
 }
 
 message CMsgShowcaseItem_Emoticon {
@@ -226,14 +228,14 @@ message CMsgShowcaseItemPosition {
 	optional uint32 width = 4;
 	optional uint32 height = 5;
 	optional uint32 rotation = 6;
-	optional uint32 parent_id = 7;
-	optional uint32 parent_attachment_point_id = 8;
+	optional uint32 parent_id = 7 [boxed_type = "ShowcaseItemID_t"];
+	optional uint32 parent_attachment_point_id = 8 [boxed_type = "ShowcaseAttachmentPointID_t"];
 	optional uint32 attachment_anchor_x = 9;
 	optional uint32 attachment_anchor_y = 10;
 }
 
 message CMsgShowcaseItem {
-	optional uint32 showcase_item_id = 1;
+	optional uint32 showcase_item_id = 1 [boxed_type = "ShowcaseItemID_t"];
 	optional .CMsgShowcaseItemPosition item_position = 2;
 	optional .CMsgShowcaseItemData item_data = 3;
 	optional .EShowcaseItemState state = 4 [default = k_eShowcaseItemState_Ok];
@@ -314,7 +316,7 @@ message CMsgClientToGCShowcaseSubmitReportResponse {
 }
 
 message CMsgShowcaseReportsRollupInfo {
-	optional uint32 rollup_id = 1;
+	optional uint32 rollup_id = 1 [boxed_type = "ShowcaseReportsRollupID_t"];
 	optional uint32 start_timestamp = 2;
 	optional uint32 end_timestamp = 3;
 }
@@ -352,7 +354,7 @@ message CMsgClientToGCShowcaseAdminGetReportsRollupListResponse {
 }
 
 message CMsgClientToGCShowcaseAdminGetReportsRollup {
-	optional uint32 rollup_id = 1;
+	optional uint32 rollup_id = 1 [boxed_type = "ShowcaseReportsRollupID_t"];
 }
 
 message CMsgClientToGCShowcaseAdminGetReportsRollupResponse {

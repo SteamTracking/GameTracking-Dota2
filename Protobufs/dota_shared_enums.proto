@@ -1,5 +1,8 @@
 import public "events.proto";
 
+option additional_includes = "dota_constants.h";
+option additional_includes = "entity2/gametime.h";
+
 enum DOTA_GameMode {
 	DOTA_GAMEMODE_NONE = 0;
 	DOTA_GAMEMODE_AP = 1;
@@ -718,7 +721,7 @@ message CDOTASaveGame {
 		optional uint32 save_time = 7;
 	}
 
-	optional uint64 match_id = 5;
+	optional uint64 match_id = 5 [boxed_type = "MatchID_t"];
 	optional uint32 save_time = 2;
 	repeated .CDOTASaveGame.Player players = 3;
 	repeated .CDOTASaveGame.SaveInstance save_instances = 4;
@@ -739,7 +742,7 @@ message CMsgDOTACombatLogEntry {
 	optional bool is_visible_dire = 12;
 	optional uint32 value = 13;
 	optional int32 health = 14;
-	optional float timestamp = 15;
+	optional float timestamp = 15 [boxed_type = "GameTime_t"];
 	optional float stun_duration = 16;
 	optional float slow_duration = 17;
 	optional bool is_ability_toggle_on = 18;
@@ -764,7 +767,7 @@ message CMsgDOTACombatLogEntry {
 	optional bool is_target_building = 37;
 	optional uint32 neutral_camp_type = 38;
 	optional uint32 rune_type = 39;
-	repeated int32 assist_players = 40;
+	repeated int32 assist_players = 40 [boxed_type = "PlayerID_t"];
 	optional bool is_heal_save = 41;
 	optional bool is_ultimate_ability = 42;
 	optional uint32 attacker_hero_level = 43;
@@ -819,16 +822,11 @@ message CMsgPendingEventAward {
 }
 
 message CMsgMonsterHunterMaterialQuantity {
-	message MaterialCountsEntry {
-		optional uint32 key = 1;
-		optional int32 value = 2;
-	}
-
-	repeated .CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry material_counts = 1;
+	map<uint32, int32> material_counts = 1;
 }
 
 message CMsgMonsterHunterInvestigation {
-	optional int32 hero_id = 1;
+	optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 	optional int32 persona_id = 2;
 	optional .CMsgMonsterHunterMaterialQuantity match_rewards = 3;
 	optional .CMsgMonsterHunterMaterialQuantity hunt_rewards = 4;
@@ -837,7 +835,7 @@ message CMsgMonsterHunterInvestigation {
 
 message CMsgMonsterHunterInvestigationGameState {
 	message HuntedBy {
-		optional int32 hero_id = 1;
+		optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 		optional int32 persona_id = 2;
 		optional .CMsgMonsterHunterMaterialQuantity hunt_rewards = 3;
 		optional bool success_state = 4;
@@ -849,12 +847,12 @@ message CMsgMonsterHunterInvestigationGameState {
 
 message CMsgMonsterHunterCodexUpdateData {
 	message KillInfo {
-		optional int32 hero_id = 1;
+		optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 		optional int32 kill_count = 2;
 	}
 
-	optional int32 player_hero = 1;
-	repeated int32 allies = 2;
-	repeated int32 enemies = 3;
+	optional int32 player_hero = 1 [boxed_type = "HeroID_t"];
+	repeated int32 allies = 2 [boxed_type = "HeroID_t"];
+	repeated int32 enemies = 3 [boxed_type = "HeroID_t"];
 	repeated .CMsgMonsterHunterCodexUpdateData.KillInfo player_kills = 4;
 }

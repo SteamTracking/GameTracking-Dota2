@@ -9,12 +9,14 @@ import "dota_gcmessages_client.proto";
 import "valveextensions.proto";
 import "dota_gcmessages_common_craftworks.proto";
 
+option additional_includes = "dota_craftworks.h";
+
 message CMsgCraftworksUserData {
 	optional .CMsgCraftworksComponents component_inventory = 1;
 }
 
 message CMsgClientToGCCraftworksGetUserData {
-	optional uint32 craftworks_id = 1;
+	optional uint32 craftworks_id = 1 [boxed_type = "CraftworksID_t"];
 }
 
 message CMsgClientToGCCraftworksGetUserDataResponse {
@@ -33,13 +35,13 @@ message CMsgClientToGCCraftworksGetUserDataResponse {
 }
 
 message CMsgGCToClientCraftworksUserDataUpdated {
-	optional uint32 craftworks_id = 1;
+	optional uint32 craftworks_id = 1 [boxed_type = "CraftworksID_t"];
 	optional .CMsgCraftworksUserData user_data = 2;
 }
 
 message CMsgClientToGCCraftworksCraftRecipe {
-	optional uint32 craftworks_id = 1;
-	optional uint64 recipe_id = 2;
+	optional uint32 craftworks_id = 1 [boxed_type = "CraftworksID_t"];
+	optional uint64 recipe_id = 2 [boxed_type = "CraftworksRecipeID_t"];
 }
 
 message CMsgClientToGCCraftworksCraftRecipeResponse {
@@ -67,7 +69,7 @@ message CMsgClientToGCCraftworksDevModifyComponents {
 		k_eSubtractComponents = 2;
 	}
 
-	optional uint32 craftworks_id = 1;
+	optional uint32 craftworks_id = 1 [boxed_type = "CraftworksID_t"];
 	optional .CMsgCraftworksComponents components = 2;
 	optional .CMsgClientToGCCraftworksDevModifyComponents.EOperation operation = 3 [default = k_eAddComponents];
 }

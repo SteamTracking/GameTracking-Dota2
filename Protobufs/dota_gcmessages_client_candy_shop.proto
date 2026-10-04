@@ -8,6 +8,8 @@ import "econ_gcmessages.proto";
 import "dota_gcmessages_client.proto";
 import "valveextensions.proto";
 
+option additional_includes = "dota_candy_shop.h";
+
 enum ECandyShopAuditAction {
 	k_ECandyShopAuditAction_Invalid = 0;
 	k_ECandyShopAuditAction_SupportModify = 1;
@@ -31,7 +33,7 @@ enum ECandyShopRewardType {
 }
 
 message CMsgCandyShopCandyCount {
-	optional uint32 candy_type = 1;
+	optional uint32 candy_type = 1 [boxed_type = "CandyShopCandyTypeID_t"];
 	optional uint32 candy_count = 2;
 }
 
@@ -40,13 +42,13 @@ message CMsgCandyShopCandyQuantity {
 }
 
 message CMsgCandyShopExchangeRecipe {
-	optional uint32 recipe_id = 1;
+	optional uint32 recipe_id = 1 [boxed_type = "CandyShopRecipeID_t"];
 	optional .CMsgCandyShopCandyQuantity input = 2;
 	optional .CMsgCandyShopCandyQuantity output = 3;
 }
 
 message CMsgCandyShopRewardData_Item {
-	optional uint32 item_def = 1;
+	optional uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 }
 
 message CMsgCandyShopRewardData_EventAction {
@@ -60,8 +62,8 @@ message CMsgCandyShopRewardData_EventPoints {
 }
 
 message CMsgCandyShopReward {
-	optional uint32 reward_id = 1;
-	optional uint32 reward_option_id = 2;
+	optional uint32 reward_id = 1 [boxed_type = "CandyShopRewardID_t"];
+	optional uint32 reward_option_id = 2 [boxed_type = "CandyShopRewardOptionID_t"];
 	optional .CMsgCandyShopCandyQuantity price = 3;
 	optional .ECandyShopRewardType reward_type = 4 [default = k_eCandyShopRewardType_None];
 	optional .CMsgCandyShopRewardData_Item item_data = 5;
@@ -82,7 +84,7 @@ message CMsgCandyShopUserData {
 }
 
 message CMsgClientToGCCandyShopGetUserData {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 }
 
 message CMsgClientToGCCandyShopGetUserDataResponse {
@@ -101,13 +103,13 @@ message CMsgClientToGCCandyShopGetUserDataResponse {
 }
 
 message CMsgGCToClientCandyShopUserDataUpdated {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional .CMsgCandyShopUserData user_data = 2;
 }
 
 message CMsgClientToGCCandyShopPurchaseReward {
-	optional uint32 candy_shop_id = 1;
-	optional uint64 reward_id = 2;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
+	optional uint64 reward_id = 2 [boxed_type = "CandyShopRewardID_t"];
 }
 
 message CMsgClientToGCCandyShopPurchaseRewardResponse {
@@ -127,7 +129,7 @@ message CMsgClientToGCCandyShopPurchaseRewardResponse {
 }
 
 message CMsgClientToGCCandyShopOpenBags {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional uint32 bag_count = 2;
 }
 
@@ -149,8 +151,8 @@ message CMsgClientToGCCandyShopOpenBagsResponse {
 }
 
 message CMsgClientToGCCandyShopDoExchange {
-	optional uint32 candy_shop_id = 1;
-	optional uint32 recipe_id = 2;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
+	optional uint32 recipe_id = 2 [boxed_type = "CandyShopRecipeID_t"];
 }
 
 message CMsgClientToGCCandyShopDoExchangeResponse {
@@ -171,7 +173,7 @@ message CMsgClientToGCCandyShopDoExchangeResponse {
 }
 
 message CMsgClientToGCCandyShopDoVariableExchange {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional .CMsgCandyShopCandyQuantity input = 2;
 	optional .CMsgCandyShopCandyQuantity output = 3;
 }
@@ -194,7 +196,7 @@ message CMsgClientToGCCandyShopDoVariableExchangeResponse {
 }
 
 message CMsgClientToGCCandyShopRerollRewards {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 }
 
 message CMsgClientToGCCandyShopRerollRewardsResponse {
@@ -227,7 +229,7 @@ message CCandyShopDev {
 }
 
 message CMsgClientToGCCandyShopDevGrantCandy {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional .CMsgCandyShopCandyQuantity candy_quantity = 2;
 }
 
@@ -236,7 +238,7 @@ message CMsgClientToGCCandyShopDevGrantCandyResponse {
 }
 
 message CMsgClientToGCCandyShopDevClearInventory {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 }
 
 message CMsgClientToGCCandyShopDevClearInventoryResponse {
@@ -244,7 +246,7 @@ message CMsgClientToGCCandyShopDevClearInventoryResponse {
 }
 
 message CMsgClientToGCCandyShopDevGrantCandyBags {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional uint32 quantity = 2;
 }
 
@@ -253,7 +255,7 @@ message CMsgClientToGCCandyShopDevGrantCandyBagsResponse {
 }
 
 message CMsgClientToGCCandyShopDevShuffleExchange {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 }
 
 message CMsgClientToGCCandyShopDevShuffleExchangeResponse {
@@ -261,7 +263,7 @@ message CMsgClientToGCCandyShopDevShuffleExchangeResponse {
 }
 
 message CMsgClientToGCCandyShopDevGrantRerollCharges {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 	optional uint32 reroll_charges = 2;
 }
 
@@ -270,7 +272,7 @@ message CMsgClientToGCCandyShopDevGrantRerollChargesResponse {
 }
 
 message CMsgClientToGCCandyShopDevResetShop {
-	optional uint32 candy_shop_id = 1;
+	optional uint32 candy_shop_id = 1 [boxed_type = "CandyShopID_t"];
 }
 
 message CMsgClientToGCCandyShopDevResetShopResponse {

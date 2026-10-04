@@ -9,6 +9,10 @@ import "dota_shared_enums.proto";
 import "gcsdk_gcmessages.proto";
 import "networkbasetypes.proto";
 
+option additional_includes = "dota_cavern_crawl_types.h";
+option additional_includes = "dota_craftworks.h";
+option additional_includes = "dota_ability_contribution_common.h";
+
 enum EPlayerInventorySnapshotFlags {
 	EPlayerInventorySnapshotFlags_HasScepter = 1;
 	EPlayerInventorySnapshotFlags_HasShard = 2;
@@ -18,17 +22,17 @@ message CDOTAMatchMetadataFile {
 	option (maximum_size_bytes) = 1000000;
 
 	optional int32 version = 1;
-	optional uint64 match_id = 2;
+	optional uint64 match_id = 2 [boxed_type = "MatchID_t"];
 	optional .CDOTAMatchMetadata metadata = 3;
 	optional bytes private_metadata = 5;
 }
 
 message CDOTAMatchMetadata {
 	message EconItem {
-		optional uint32 def_index = 1;
+		optional uint32 def_index = 1 [boxed_type = "item_definition_index_t"];
 		optional uint32 quality = 2 [default = 4];
 		repeated .CSOEconItemAttribute attribute = 3;
-		optional uint32 style = 4 [default = 0];
+		optional uint32 style = 4 [default = 0, boxed_type = "style_index_t"];
 		repeated .CSOEconItemEquipped equipped_state = 5;
 	}
 
@@ -39,20 +43,20 @@ message CDOTAMatchMetadata {
 		}
 
 		message ItemPurchase {
-			optional int32 item_id = 1 [default = -1];
+			optional int32 item_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 			optional int32 purchase_time = 2;
 		}
 
 		message InventorySnapshot {
-			repeated int32 item_id = 1;
+			repeated int32 item_id = 1 [boxed_type = "AbilityID_t"];
 			optional int32 game_time = 2;
 			optional uint32 kills = 3;
 			optional uint32 deaths = 4;
 			optional uint32 assists = 5;
 			optional uint32 level = 6;
-			repeated int32 backpack_item_id = 7;
-			optional int32 neutral_item_id = 8 [default = -1];
-			optional int32 neutral_enhancement_id = 9 [default = -1];
+			repeated int32 backpack_item_id = 7 [boxed_type = "AbilityID_t"];
+			optional int32 neutral_item_id = 8 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 neutral_enhancement_id = 9 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 			optional uint32 last_hits = 10;
 			optional uint32 denies = 11;
 			optional uint32 flags = 12;
@@ -65,17 +69,17 @@ message CDOTAMatchMetadata {
 
 		message StrangeGemProgress {
 			optional uint32 kill_eater_type = 1;
-			optional uint32 gem_item_def_index = 2;
-			optional int32 required_hero_id = 3;
+			optional uint32 gem_item_def_index = 2 [boxed_type = "item_definition_index_t"];
+			optional int32 required_hero_id = 3 [boxed_type = "HeroID_t"];
 			optional uint32 starting_value = 4;
 			optional uint32 ending_value = 5;
-			optional uint32 owner_item_def_index = 6;
-			optional uint64 owner_item_id = 7;
+			optional uint32 owner_item_def_index = 6 [boxed_type = "item_definition_index_t"];
+			optional uint64 owner_item_id = 7 [boxed_type = "itemid_t"];
 		}
 
 		message VictoryPrediction {
-			optional uint64 item_id = 1;
-			optional uint32 item_def_index = 2;
+			optional uint64 item_id = 1 [boxed_type = "itemid_t"];
+			optional uint32 item_def_index = 2 [boxed_type = "item_definition_index_t"];
 			optional uint32 starting_value = 3;
 			optional bool is_victory = 4;
 		}
@@ -88,8 +92,8 @@ message CDOTAMatchMetadata {
 		}
 
 		message CavernChallengeResult {
-			optional uint32 completed_path_id = 1 [default = 255];
-			optional uint32 claimed_room_id = 2 [default = 255];
+			optional uint32 completed_path_id = 1 [default = 255, boxed_type = "CavernCrawlPathID_t", synthetic_default = "255"];
+			optional uint32 claimed_room_id = 2 [default = 255, boxed_type = "CavernCrawlRoomID_t", synthetic_default = "255"];
 		}
 
 		message ActionGrant {
@@ -105,7 +109,7 @@ message CDOTAMatchMetadata {
 		}
 
 		message PeriodicResourceData {
-			optional uint32 periodic_resource_id = 1;
+			optional uint32 periodic_resource_id = 1 [boxed_type = "PeriodicResourceID_t"];
 			optional uint32 remaining = 2;
 			optional uint32 max = 3;
 		}
@@ -129,11 +133,11 @@ message CDOTAMatchMetadata {
 			repeated .CDOTAMatchMetadata.Team.CavernChallengeResult cavern_challenge_map_results = 17;
 			optional uint32 cavern_challenge_plus_shard_winnings = 18;
 			repeated .CDOTAMatchMetadata.Team.ActionGrant actions_granted = 19;
-			optional uint32 cavern_crawl_map_variant = 20 [default = 255];
+			optional uint32 cavern_crawl_map_variant = 20 [default = 255, boxed_type = "CavernCrawlMapVariant_t", synthetic_default = "255"];
 			optional uint32 team_wager_bonus_pct = 21;
 			optional uint32 wager_streak_pct = 22;
 			repeated .CDOTAMatchMetadata.Team.CandyGrant candy_points_granted = 23;
-			optional uint32 active_season_id = 24;
+			optional uint32 active_season_id = 24 [boxed_type = "EventSeasonID_t"];
 			optional bool cavern_crawl_half_credit = 25;
 			repeated .CDOTAMatchMetadata.Team.PeriodicResourceData periodic_resources = 26;
 			repeated .CExtraMsgBlock extra_event_messages = 27;
@@ -155,15 +159,15 @@ message CDOTAMatchMetadata {
 			}
 
 			optional .CDOTAMatchMetadata.Team.KillInfo.KillType kill_type = 1 [default = KILL_TYPE_PLAYER];
-			optional uint32 victim_player_slot = 2;
-			repeated uint32 killer_player_slot = 3;
+			optional uint32 victim_player_slot = 2 [boxed_type = "GCPlayerSlot_t"];
+			repeated uint32 killer_player_slot = 3 [boxed_type = "GCPlayerSlot_t"];
 			optional int32 time = 4;
 			optional int32 bounty = 5;
 		}
 
 		message Player {
 			message ContractProgress {
-				optional uint32 guild_id = 1;
+				optional uint32 guild_id = 1 [boxed_type = "GuildID_t"];
 				optional uint32 event_id = 2;
 				optional uint32 challenge_instance_id = 3;
 				optional uint32 challenge_parameter = 4;
@@ -173,18 +177,18 @@ message CDOTAMatchMetadata {
 			}
 
 			message OverworldRewards {
-				optional uint32 overworld_id = 1;
+				optional uint32 overworld_id = 1 [boxed_type = "OverworldID_t"];
 				optional .CMsgOverworldTokenQuantity tokens = 2;
 			}
 
 			message NeutralItem {
-				optional int32 trinket_id = 1 [default = -1];
-				optional int32 enchantment_id = 2 [default = -1];
+				optional int32 trinket_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+				optional int32 enchantment_id = 2 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 				optional int32 tier = 3;
 			}
 
-			repeated int32 ability_upgrades = 2;
-			optional uint32 player_slot = 3;
+			repeated int32 ability_upgrades = 2 [boxed_type = "AbilityID_t"];
+			optional uint32 player_slot = 3 [boxed_type = "GCPlayerSlot_t"];
 			repeated .CDOTAMatchMetadata.Team.PlayerKill kills = 5;
 			repeated .CDOTAMatchMetadata.Team.ItemPurchase items = 6;
 			optional uint32 avg_kills_x16 = 7;
@@ -226,19 +230,19 @@ message CDOTAMatchMetadata {
 			optional float stun_duration = 45;
 			optional .EDOTAMMRBoostType rank_mmr_boost_type = 46 [default = k_EDOTAMMRBoostType_None];
 			repeated .CDOTAMatchMetadata.Team.Player.ContractProgress contract_progress = 48;
-			repeated uint32 guild_ids = 49;
+			repeated uint32 guild_ids = 49 [boxed_type = "GuildID_t"];
 			repeated float graph_hero_damage = 50;
 			optional .DOTA_GC_TEAM team_number = 51 [default = DOTA_GC_TEAM_GOOD_GUYS];
 			optional uint32 team_slot = 52;
 			optional .CDOTAMatchMetadata.Team.FeaturedGamemodeProgress featured_gamemode_progress = 53;
-			optional uint32 featured_hero_sticker_index = 54;
+			optional uint32 featured_hero_sticker_index = 54 [boxed_type = "item_definition_index_t"];
 			optional uint32 featured_hero_sticker_quality = 55;
 			repeated .CDOTAMatchMetadata.EconItem equipped_econ_items = 56;
-			optional int32 game_player_id = 57 [default = -1];
+			optional int32 game_player_id = 57 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 			repeated .CMsgTrackedStat player_tracked_stats = 58;
 			optional .CDOTAMatchMetadata.Team.Player.OverworldRewards overworld_rewards = 59;
 			repeated .CMsgCraftworksQuestReward craftworks_quest_rewards = 60;
-			optional int32 ad_facet_hero_id = 61;
+			optional int32 ad_facet_hero_id = 61 [boxed_type = "HeroID_t"];
 			optional .CMsgMonsterHunterMatchRewards.Player monster_hunter_rewards = 62;
 			optional uint32 wisdom_shrines_taken = 63;
 			repeated .CDOTAMatchMetadata.Team.Player.NeutralItem neutral_items = 64;
@@ -250,7 +254,7 @@ message CDOTAMatchMetadata {
 		repeated float graph_gold_earned = 4;
 		repeated float graph_net_worth = 5;
 		optional bool cm_first_pick = 6;
-		optional int32 cm_captain_player_id = 7 [default = -1];
+		optional int32 cm_captain_player_id = 7 [default = -1, boxed_type = "PlayerID_t", synthetic_default = "-1"];
 		optional uint32 cm_penalty = 10;
 		repeated .CMsgTrackedStat team_tracked_stats = 11;
 		repeated .CDOTAMatchMetadata.Team.KillInfo kills = 12;
@@ -259,10 +263,10 @@ message CDOTAMatchMetadata {
 	message GuildChallengeProgress {
 		message IndividualProgress {
 			optional uint32 progress = 2;
-			optional uint32 player_slot = 3;
+			optional uint32 player_slot = 3 [boxed_type = "GCPlayerSlot_t"];
 		}
 
-		optional uint32 guild_id = 1;
+		optional uint32 guild_id = 1 [boxed_type = "GuildID_t"];
 		optional .EEvent event_id = 2 [default = EVENT_ID_NONE];
 		optional uint32 challenge_instance_id = 3;
 		optional uint32 challenge_parameter = 4;
@@ -273,8 +277,8 @@ message CDOTAMatchMetadata {
 	}
 
 	message Tip {
-		optional uint32 source_player_slot = 1;
-		optional uint32 target_player_slot = 2;
+		optional uint32 source_player_slot = 1 [boxed_type = "GCPlayerSlot_t"];
+		optional uint32 target_player_slot = 2 [boxed_type = "GCPlayerSlot_t"];
 		optional uint32 tip_amount = 3;
 		optional .EEvent event_id = 4 [default = EVENT_ID_NONE];
 	}
@@ -304,23 +308,23 @@ message CDOTAMatchPrivateMetadata {
 			message CombatSegment {
 				message DamageByAbility {
 					message ByHeroTarget {
-						optional int32 hero_id = 1;
+						optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 						optional uint32 damage = 2;
 					}
 
 					optional uint32 source_unit_index = 3;
-					optional int32 ability_id = 1 [default = -1];
+					optional int32 ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 					repeated .CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility.ByHeroTarget by_hero_targets = 2;
 				}
 
 				message HealingByAbility {
 					message ByHeroTarget {
-						optional int32 hero_id = 1;
+						optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 						optional uint32 healing = 2;
 					}
 
 					optional uint32 source_unit_index = 3;
-					optional int32 ability_id = 1 [default = -1];
+					optional int32 ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 					repeated .CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.ByHeroTarget by_hero_targets = 2;
 				}
 
@@ -331,13 +335,13 @@ message CDOTAMatchPrivateMetadata {
 
 			message BuffRecord {
 				message ByHeroTarget {
-					optional int32 hero_id = 1;
+					optional int32 hero_id = 1 [boxed_type = "HeroID_t"];
 					optional float elapsed_duration = 2;
 					optional bool is_hidden = 3;
 					optional int32 instance_count = 4;
 				}
 
-				optional int32 buff_ability_id = 1 [default = -1];
+				optional int32 buff_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 				optional string buff_modifier_name = 3;
 				repeated .CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget by_hero_targets = 2;
 			}
@@ -365,7 +369,7 @@ message CDOTAMatchPrivateMetadata {
 				optional uint32 summons = 8;
 			}
 
-			optional uint32 player_slot = 2;
+			optional uint32 player_slot = 2 [boxed_type = "GCPlayerSlot_t"];
 			optional bytes position_stream = 3;
 			repeated .CDOTAMatchPrivateMetadata.Team.Player.CombatSegment combat_segments = 4;
 			repeated string damage_unit_names = 5;
@@ -379,6 +383,8 @@ message CDOTAMatchPrivateMetadata {
 			optional .CDOTAMatchPrivateMetadata.Team.Player.XPReceived xp_received = 13;
 			optional .DOTA_GC_TEAM team_number = 14 [default = DOTA_GC_TEAM_GOOD_GUYS];
 			optional uint32 team_slot = 15;
+
+			reserved 16 to 25;
 		}
 
 		message Building {
@@ -391,64 +397,66 @@ message CDOTAMatchPrivateMetadata {
 		optional uint32 dota_team = 1;
 		repeated .CDOTAMatchPrivateMetadata.Team.Player players = 2;
 		repeated .CDOTAMatchPrivateMetadata.Team.Building buildings = 3;
+
+		reserved 4;
 	}
 
 	message ContributionsCombatSegment {
 		message DamageContributionRecord {
-			optional int32 attacker_ability_id = 1 [default = -1];
-			optional int32 attacker_hero_id = 2;
-			optional int32 target_hero_id = 3;
-			optional int32 contributor_ability_id = 4 [default = -1];
-			optional int32 contributor_hero_id = 5;
+			optional int32 attacker_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 attacker_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 3 [boxed_type = "HeroID_t"];
+			optional int32 contributor_ability_id = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 contributor_hero_id = 5 [boxed_type = "HeroID_t"];
 			optional uint32 value = 6;
-			optional uint32 type = 7;
+			optional uint32 type = 7 [boxed_type = "AbilityContributionType_t"];
 			optional uint32 attacker_unit_index = 8;
 		}
 
 		message DamageMitigationRecord {
-			optional int32 attacker_ability_id = 1 [default = -1];
-			optional int32 attacker_hero_id = 2;
-			optional int32 target_hero_id = 3;
-			optional int32 contributor_ability_id = 4 [default = -1];
-			optional int32 contributor_hero_id = 5;
+			optional int32 attacker_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 attacker_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 3 [boxed_type = "HeroID_t"];
+			optional int32 contributor_ability_id = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 contributor_hero_id = 5 [boxed_type = "HeroID_t"];
 			optional uint32 value = 6;
-			optional uint32 type = 7;
+			optional uint32 type = 7 [boxed_type = "AbilityContributionType_t"];
 			optional uint32 attacker_unit_index = 8;
 		}
 
 		message HealingContributionRecord {
-			optional int32 attacker_ability_id = 1 [default = -1];
-			optional int32 attacker_hero_id = 2;
-			optional int32 target_hero_id = 3;
-			optional int32 contributor_ability_id = 4 [default = -1];
-			optional int32 contributor_hero_id = 5;
+			optional int32 attacker_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 attacker_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 3 [boxed_type = "HeroID_t"];
+			optional int32 contributor_ability_id = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 contributor_hero_id = 5 [boxed_type = "HeroID_t"];
 			optional uint32 value = 6;
-			optional uint32 type = 7;
+			optional uint32 type = 7 [boxed_type = "AbilityContributionType_t"];
 			optional uint32 attacker_unit_index = 8;
 		}
 
 		message HealingReductionRecord {
-			optional int32 attacker_ability_id = 1 [default = -1];
-			optional int32 attacker_hero_id = 2;
-			optional int32 target_hero_id = 3;
-			optional int32 contributor_ability_id = 4 [default = -1];
-			optional int32 contributor_hero_id = 5;
+			optional int32 attacker_ability_id = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 attacker_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 3 [boxed_type = "HeroID_t"];
+			optional int32 contributor_ability_id = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 contributor_hero_id = 5 [boxed_type = "HeroID_t"];
 			optional uint32 value = 6;
-			optional uint32 type = 7;
+			optional uint32 type = 7 [boxed_type = "AbilityContributionType_t"];
 			optional uint32 attacker_unit_index = 8;
 		}
 
 		message KillingBlow {
-			optional int32 attacker_hero_id = 1;
-			optional int32 target_hero_id = 2;
-			optional int32 inflictor_ability_id = 3 [default = -1];
+			optional int32 attacker_hero_id = 1 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 inflictor_ability_id = 3 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 		}
 
 		message Dispel {
-			optional int32 attacker_hero_id = 1;
-			optional int32 target_hero_id = 2;
-			optional int32 inflictor_ability_id = 3 [default = -1];
-			optional int32 modifier_ability_id = 4 [default = -1];
+			optional int32 attacker_hero_id = 1 [boxed_type = "HeroID_t"];
+			optional int32 target_hero_id = 2 [boxed_type = "HeroID_t"];
+			optional int32 inflictor_ability_id = 3 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+			optional int32 modifier_ability_id = 4 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
 			optional float duration_reduced = 5;
 		}
 

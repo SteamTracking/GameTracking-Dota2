@@ -29,7 +29,7 @@ enum EPlayerCoachMatchFlag {
 }
 
 message CMsgPlayerCoachMatch {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional .EMatchOutcome match_outcome = 2 [default = k_EMatchOutcome_Unknown];
 	optional uint32 coached_team = 3;
 	optional fixed32 start_time = 4;
@@ -45,7 +45,7 @@ message CMsgPrivateCoachingSessionMember {
 }
 
 message CMsgPrivateCoachingSession {
-	optional uint64 private_coaching_session_id = 1;
+	optional uint64 private_coaching_session_id = 1 [boxed_type = "PrivateCoachingSessionID_t"];
 	optional fixed32 requested_timestamp = 2;
 	optional uint32 requested_language = 3;
 	optional .EPrivateCoachingSessionState coaching_session_state = 4 [default = k_ePrivateCoachingSessionState_Invalid];
@@ -90,7 +90,7 @@ message CMsgClientToGCRequestPlayerCoachMatchesResponse {
 }
 
 message CMsgClientToGCRequestPlayerCoachMatch {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 }
 
 message CMsgClientToGCRequestPlayerCoachMatchResponse {
@@ -106,7 +106,7 @@ message CMsgClientToGCRequestPlayerCoachMatchResponse {
 }
 
 message CMsgClientToGCSubmitCoachTeammateRating {
-	optional uint64 match_id = 1;
+	optional uint64 match_id = 1 [boxed_type = "MatchID_t"];
 	optional uint32 coach_account_id = 2;
 	optional .ECoachTeammateRating rating = 3 [default = k_ECoachTeammateRating_None];
 	optional string reason = 4;

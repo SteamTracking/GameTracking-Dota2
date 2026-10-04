@@ -3,7 +3,7 @@ import "dota_gcmessages_common.proto";
 message CSourceTVGameSmall {
 	message Player {
 		optional uint32 account_id = 1;
-		optional int32 hero_id = 2;
+		optional int32 hero_id = 2 [boxed_type = "HeroID_t"];
 		optional uint32 team_slot = 3;
 		optional uint32 team = 4;
 	}
@@ -12,14 +12,14 @@ message CSourceTVGameSmall {
 	optional uint32 deactivate_time = 2;
 	optional uint64 server_steam_id = 3;
 	optional uint64 lobby_id = 4;
-	optional uint32 league_id = 5;
+	optional uint32 league_id = 5 [boxed_type = "LeagueID_t"];
 	optional uint32 lobby_type = 6;
 	optional int32 game_time = 7;
 	optional uint32 delay = 8;
 	optional uint32 spectators = 9;
 	optional uint32 game_mode = 10;
 	optional uint32 average_mmr = 11;
-	optional uint64 match_id = 12;
+	optional uint64 match_id = 12 [boxed_type = "MatchID_t"];
 	optional uint32 series_id = 13;
 	optional string team_name_radiant = 15;
 	optional string team_name_dire = 16;
@@ -45,8 +45,8 @@ message CSourceTVGameSmall {
 
 message CMsgClientToGCFindTopSourceTVGames {
 	optional string search_key = 1;
-	optional uint32 league_id = 2;
-	optional int32 hero_id = 3;
+	optional uint32 league_id = 2 [boxed_type = "LeagueID_t"];
+	optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
 	optional uint32 start_game = 4;
 	optional uint32 game_list_index = 5;
 	repeated uint64 lobby_ids = 6;
@@ -54,8 +54,8 @@ message CMsgClientToGCFindTopSourceTVGames {
 
 message CMsgGCToClientFindTopSourceTVGamesResponse {
 	optional string search_key = 1;
-	optional uint32 league_id = 2;
-	optional int32 hero_id = 3;
+	optional uint32 league_id = 2 [boxed_type = "LeagueID_t"];
+	optional int32 hero_id = 3 [boxed_type = "HeroID_t"];
 	optional uint32 start_game = 4;
 	optional uint32 num_games = 5;
 	optional uint32 game_list_index = 6;
@@ -75,7 +75,7 @@ message CMsgClientToGCTopFriendMatchesRequest {
 }
 
 message CMsgClientToGCMatchesMinimalRequest {
-	repeated uint64 match_ids = 1;
+	repeated uint64 match_ids = 1 [boxed_type = "MatchID_t"];
 }
 
 message CMsgClientToGCMatchesMinimalResponse {
