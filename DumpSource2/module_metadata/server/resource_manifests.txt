@@ -1,0 +1,109 @@
+GameStartup "BaseEntity" // src/game/server/baseentity.cpp
+	materials/tools/show_collision_geometry_wire.vmat
+	materials/tools/show_collision_geometry.vmat
+	materials/tools/show_collision_geometry_depthtest.vmat
+
+GameSessionManifest_server "ClientPrecacheRegistry_server" // src/game/server/client.cpp
+	// resources = null
+
+GameSessionManifest_server "ClientGamePrecache_server" // src/game/server/dota/dota_client.cpp
+	// resources = null
+
+GameSessionManifest_server "player_server" // src/game/server/dota/dota_player_controller.cpp
+	player.ventr
+
+GameStartup "ResponseRulesManifest_global_server" // src/game/shared/ai_responsesystem.cpp
+	scripts/talker/response_rules.vrr
+
+GameStartup "ComicBookSchema_global_server" // src/game/shared/comic_viewer/comic_book.cpp
+	scripts/comics.vdata
+
+GameStartup "DOTABattleReportSchema_global_server" // src/game/shared/dota/dota_battle_report_schema.cpp
+	scripts/battle_report_highlights.vdata
+	scripts/battle_report_hero_stat_list.vdata
+
+GameStartup "DotaBingo_global_server" // src/game/shared/dota/dota_bingo_schema.cpp
+	scripts/bingo_2024.vdata
+
+GameStartup "DotaFantasyCrafting_global_server" // src/game/shared/dota/dota_fantasy_crafting_schema.cpp
+	scripts/fantasy_crafting.vdata
+
+GameStartup "DotaFeaturedGamemodes_global_server" // src/game/shared/dota/dota_featured_gamemode_schema.cpp
+	scripts/featured_gamemodes.vdata
+	scripts/featured_gamemodes_staging.vdata
+
+GameStartup "DotaLabyrithBlessings_global_server" // src/game/shared/dota/dota_labyrinth_blessings_schema.cpp
+	scripts/events/labyrinth/fall_2021.vdata
+
+GameStartup "DotaMonsterHunter_global_server" // src/game/shared/dota/dota_monster_hunter_schema.cpp
+	scripts/events/monster_hunter/monster_hunter_world.vdata
+
+GameStartup "DotaPingWheel_global_server" // src/game/shared/dota/dota_ping_wheel_schema.cpp
+	scripts/ping_wheel.vdata
+	scripts/ping_wheel_staging.vdata
+
+GameStartup "DotaStatTracker_global_server" // src/game/shared/dota/dota_stat_tracker_schema.cpp
+	scripts/tracked_stats_player.vdata
+	scripts/tracked_stats_player_staging.vdata
+	scripts/tracked_stats_team.vdata
+	scripts/tracked_stats_team_staging.vdata
+	scripts/tracked_stats_match.vdata
+	scripts/tracked_stats_match_staging.vdata
+
+GameStartup "DotaTrophies_global_server" // src/game/shared/dota/dota_trophies_schema.cpp
+	scripts/trophies.vdata
+	scripts/trophies_staging.vdata
+
+GameSessionManifest_server "wearable_item_server" // src/game/shared/econ/econ_wearable.cpp
+	wearable_item.ventr
+
+GameStartup "ExplosionTypesManifest_global_server" // src/game/shared/explosiontypes.cpp
+	scripts/explosion_types.vdata
+
+"" "LoopModeGame_server" // src/game/shared/loopmodegame.cpp
+	// resources = null
+
+GameSessionManifest_server "PhysFrictionEffectPrecache_server" // src/game/shared/physics_shared.cpp
+	// resources = null
+
+"" "PhysicsGameSystemManifest_server" // src/game/shared/physicsgamesystem.cpp
+	materials/tools/show_collision_geometry_wire_nodepth.vmat
+	materials/physics/wireframe_basic.vmat
+	materials/physics/wireframe_hidden.vmat
+	materials/physics/flat_basic.vmat
+
+"" "PrecacheTest2" // src/game/shared/precache_register.cpp
+	// resources = null
+
+"" "PrecacheTest3" // src/game/shared/precache_register.cpp
+	// resources = null
+
+PrecacheTest_server "PrecacheTest" // src/game/shared/precache_register.cpp
+	PrecacheTest2
+	precacheTest3.vrnmd
+	entityflame.ventr
+
+GameStartup "CPropDataManifest_global_server" // src/game/shared/props_shared.cpp
+	scripts/propdata.vdata
+
+GameSessionManifest_server "PrecacheEffectBubbles_server" // src/game/shared/te/te_bubbles.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheEffectBubbleTrail_server" // src/game/shared/te/te_bubbletrail.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheEffectEnergySplash_server" // src/game/shared/te/te_energysplash.cpp
+	// resources = null
+
+GameSessionManifest_server "CTEFizz_server" // src/game/shared/te/te_fizz.cpp
+	// resources = null
+
+GameSessionManifest_server "CTEGlowSprite_server" // src/game/shared/te/te_glowsprite.cpp
+	// resources = null
+
+GameSessionManifest_server "CTELargeFunnel_server" // src/game/shared/te/te_largefunnel.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheTESmoke_server" // src/game/shared/te/te_smoke.cpp
+	// resources = null
+

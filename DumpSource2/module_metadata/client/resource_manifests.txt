@@ -1,0 +1,456 @@
+GameStartup "" // src/game/client/base_world_panel.cpp
+	dev/panorama_world_panel_default.vmat
+	dev/panorama_world_panel_opaque.vmat
+	dev/panorama_world_panel_lit_default.vmat
+	dev/panorama_world_panel_lit_opaque.vmat
+
+GameSessionManifest_client "PrecacheWaterWake_client" // src/game/client/c_basecombatcharacter.cpp
+	// resources = null
+
+GameStartup "_BaseEntity" // src/game/client/c_baseentity.cpp
+	materials/tools/show_collision_geometry_wire.vmat
+	materials/tools/show_collision_geometry_wire.vmat
+
+GameStartup "DeferredLightStartup" // src/game/client/c_env_deferred_light.cpp
+	materials/dev/deferred_local_light_sphere.vmat
+
+LoopModeGameStartup "GlassImpact_global_client" // src/game/client/c_impact_effects.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheRopes_client" // src/game/client/c_rope.cpp
+	// resources = null
+
+LoopModeGameStartup "ShakeRopes_global_client" // src/game/client/c_rope.cpp
+	// resources = null
+
+LoopModeGameStartup "Error_global_client" // src/game/client/c_te_effect_dispatch.cpp
+	particles/error/error.vpcf
+
+GameSessionManifest_client "PrecacheGlowAssets_client" // src/game/client/clientglowproperty.cpp
+	materials/dev/glowproperty.vmat
+
+EngineGameUI "DOTACapture" // src/game/client/dota/c_dota_capture.cpp
+	materials/vgui/econ/item_icon_fg.vmat
+	materials/dev/composite_portrait.vmat
+	materials/portraits_card/portrait_backgrounds/full_view_background.vmat
+
+GameStartup "DOTAClientControllerSupport_client" // src/game/client/dota/c_dota_player_controller_support_helper.cpp
+	particles/ui_mouseactions/unit_direction_move_target.vpcf
+	particles/ui_mouseactions/world_cursor_move_target.vpcf
+	particles/ui_mouseactions/world_cursor_move_target_position.vpcf
+	particles/ui_mouseactions/world_cursor_locked_target.vpcf
+	particles/ui_mouseactions/camera_focus_target.vpcf
+
+GameStartup "DOTAClientPrecache_client" // src/game/client/dota/clientmode_dota.cpp
+	materials/vgui/hud/fog_of_war_clear.vmat
+	particles/ui_mouseactions/clicked_basemove.vpcf
+	particles/ui_mouseactions/clicked_unit_select.vpcf
+	particles/ui_mouseactions/select_hero_active.vpcf
+	particles/ui_mouseactions/hero_ring.vpcf
+	particles/ui_mouseactions/selected_ring.vpcf
+	particles/generic_gameplay/lasthit_coins.vpcf
+	particles/ui_mouseactions/hero_underglow.vpcf
+	particles/ui_mouseactions/ping_world.vpcf
+	particles/newplayer_fx/npx_moveto_goal.vpcf
+	particles/ui_mouseactions/ping_player.vpcf
+	particles/speechbubbles/speech_voice.vpcf
+	particles/ui_mouseactions/select_unit.vpcf
+	particles/ui_mouseactions/unit_highlight.vpcf
+	particles/ui_mouseactions/ping_waypoint.vpcf
+	particles/ui_mouseactions/ping_retreat.vpcf
+	particles/ui_mouseactions/ping_attack.vpcf
+	particles/ui_mouseactions/ping_enemyward.vpcf
+	particles/ui_mouseactions/ping_friendlyward.vpcf
+
+GameStartup "DotaHudPortrait" // src/game/client/dota/dota_hud_base.cpp
+	materials/vgui/hud/drawportraittoscreen.vmat
+	materials/vgui/hud/as_directional_crosshair_01.vmat
+	materials/vgui/hud/neutral_timer_half_arrow.vmat
+	materials/vgui/hud/neutral_timer_half.vmat
+	materials/vgui/hud/neutral_timer_full_arrow.vmat
+	materials/vgui/hud/pull_icon.vmat
+	materials/vgui/hud/stack_icon.vmat
+
+GameStartup "StatusEffectProxyManifest" // src/game/client/dota/dota_material_proxies.cpp
+	materials/models/heroes/statuseffects/frozen.vtex
+	materials/models/heroes/statuseffects/frozen.vtex
+	materials/models/heroes/statuseffects/colorwarp_frost.vtex
+	materials/models/heroes/statuseffects/electric.vtex
+	materials/models/heroes/statuseffects/colorwarp_banegrip.vtex
+	materials/models/heroes/statuseffects/colorwarp_electrical.vtex
+	materials/models/heroes/statuseffects/rupture.vtex
+	materials/models/heroes/statuseffects/colorwarp_rupture.vtex
+	materials/models/heroes/statuseffects/colorwarp_illusion.vtex
+	materials/models/heroes/statuseffects/colorwarp_goldenglow.vtex
+	materials/models/heroes/statuseffects/colorwarp_goldenglow2.vtex
+	materials/models/heroes/statuseffects/colorwarp_icechrome.vtex
+	materials/models/heroes/statuseffects/colorwarp_redchrome.vtex
+	materials/models/heroes/statuseffects/burning.vtex
+	materials/models/heroes/statuseffects/colorwarp_morphling1.vtex
+	materials/models/heroes/statuseffects/colorwarp_morphling2.vtex
+	materials/models/heroes/statuseffects/shadow_shackle.vtex
+	materials/models/heroes/statuseffects/colorwarp_maledict.vtex
+	materials/models/heroes/statuseffects/colorwarp_desat.vtex
+	materials/models/heroes/statuseffects/colorwarp_desat_huskar.vtex
+	materials/models/heroes/statuseffects/colorwarp_gods_strength.vtex
+	materials/models/heroes/statuseffects/colorwarp_blur.vtex
+	materials/models/heroes/statuseffects/colorwarp_dust.vtex
+	materials/models/heroes/statuseffects/colorwarp_item_view.vtex
+	materials/models/heroes/statuseffects/stone_status.vtex
+	materials/models/heroes/statuseffects/colorwarp_inversion.vtex
+	materials/models/heroes/statuseffects/colorwarp_duel.vtex
+	materials/models/heroes/statuseffects/mossy_stone_status.vtex
+	materials/models/heroes/statuseffects/compendium_2014_stone.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2014_radiant.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2014_dire.vtex
+	materials/models/heroes/statuseffects/statue_frosty_rad.vtex
+	materials/models/heroes/statuseffects/statue_frosty_dire.vtex
+	materials/models/heroes/statuseffects/colorwarp_frosty_effigy_radiant.vtex
+	materials/models/heroes/statuseffects/colorwarp_frosty_effigy_dire.vtex
+	materials/models/heroes/statuseffects/colorwarp_jade_stone.vtex
+	materials/models/heroes/statuseffects/gold_statue.vtex
+	materials/models/heroes/statuseffects/colorwarp_goldenmetal.vtex
+	materials/models/heroes/statuseffects/colorwarp_specgoldenmetal.vtex
+	materials/models/heroes/statuseffects/jade_statue.vtex
+	materials/models/heroes/statuseffects/colorwarp_jade_stone_dire.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2015_radiant.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2015_dire.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2015_lvl2_radiant.vtex
+	materials/models/heroes/statuseffects/colorwarp_c2015_lvl2_dire.vtex
+	materials/models/heroes/statuseffects/colorwarp_savage_roar.vtex
+	materials/models/heroes/statuseffects/colorwarp_burning.vtex
+	materials/models/heroes/statuseffects/colorwarp_frosty_effigy_radiant_2d.vtex
+	materials/models/heroes/statuseffects/colorwarp_frosty_effigy_dire_2d.vtex
+	materials/models/heroes/statuseffects/blankmasks1.vtex
+
+EngineGameUI "DOTA_MinimapRenderer" // src/game/client/dota/dota_minimap_helpers.cpp
+	materials/vgui/white_no_stencil.vmat
+	materials/vgui/white_alpha_only_no_stencil.vmat
+	materials/vgui/hud/ping_minimap.vmat
+	materials/vgui/hud/minimap_camerabounds.vmat
+	materials/vgui/hud/minimap_camerabounds_cocast.vmat
+	materials/vgui/hud/minimap_softglow.vmat
+	materials/overviews/minimap_fow.vmat
+
+GameStartup "DotaArtillerySchema_global_client" // src/game/client/dota/panorama/crownfall/artillery/dota_artillery_schema.cpp
+	scripts/events/crownfall/artillery_graphics.vdata
+	scripts/events/crownfall/artillery_weapons.vdata
+	scripts/events/crownfall/artillery_gameobjects.vdata
+	scripts/events/crownfall/artillery_levels.vdata
+	scripts/events/crownfall/artillery_constants.vdata
+	scripts/events/crownfall/artillery_gamemodes.vdata
+
+GameStartup "DotaCrownfallCredits_global_client" // src/game/client/dota/panorama/crownfall/dota_db_page_bp_crownfall_credits.cpp
+	scripts/events/crownfall/crownfall_credits.vdata
+
+GameStartup "DotaMatch3_global_client" // src/game/client/dota/panorama/crownfall/match3/dota_match3_schema.cpp
+	scripts/events/crownfall/match3_abilities.vdata
+	scripts/events/crownfall/match3_heroes.vdata
+	scripts/events/crownfall/match3_opponents.vdata
+	scripts/events/crownfall/match3_opponent_actions.vdata
+	scripts/events/crownfall/match3_game_modes.vdata
+
+GameStartup "DotaMinesweeper_global_client" // src/game/client/dota/panorama/crownfall/minesweeper/dota_minesweeper_schema.cpp
+	scripts/events/crownfall/minesweeper/game.vdata
+
+GameStartup "DotaShmup_global_client" // src/game/client/dota/panorama/crownfall/shmup/dota_shmup_schema.cpp
+	scripts/events/crownfall/shmup/track0.vdata
+	scripts/events/crownfall/shmup/paths.vdata
+	scripts/events/crownfall/shmup/enemies.vdata
+	scripts/events/crownfall/shmup/events.vdata
+	scripts/events/crownfall/shmup/game.vdata
+
+GameStartup "DotaCrateDrop_global_client" // src/game/client/dota/panorama/dark_carnival/crate_drop/dota_crate_drop_schema.cpp
+	scripts/events/dark_carnival/crate_drop/crate_drop_game.vdata
+	scripts/events/dark_carnival/crate_drop/crate_drop_objects.vdata
+	scripts/events/dark_carnival/crate_drop/crate_drop_levels.vdata
+
+GameStartup "DotaLockpicking_global_client" // src/game/client/dota/panorama/dark_carnival/lockpicking/dota_lockpicking_schema.cpp
+	scripts/events/dark_carnival/lockpicking/game.vdata
+
+GameStartup "DotaSlarkJailbreak_global_client" // src/game/client/dota/panorama/dark_carnival/slark_jailbreak/dota_slark_jailbreak_schema.cpp
+	scripts/events/dark_carnival/slark_jailbreak/slark_jailbreak.vdata
+
+GameStartup "DotaNewSettings_global_client" // src/game/client/dota/panorama/popups/dota_db_popup_settings_reborn.cpp
+	scripts/new_settings.vdata
+
+"" "RenderingPipelineDotaPortraitManifest" // src/game/client/dota/renderingpipeline_dota_portrait.cpp
+	materials/dev/composite_portrait.vmat
+
+GameStartup "RenderingPipelineDotaPortraitGroup" // src/game/client/dota/renderingpipeline_dota_portrait.cpp
+	RenderingPipelineDotaPortraitManifest
+
+"" "DotaGlobaLightManifest" // src/game/client/dota_global_light.cpp
+	materials/effects/light_clouds_00.vtex
+
+LoopModeGameStartup "MuzzleFlash_global_client" // src/game/client/fx.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectBloodSpray_client" // src/game/client/fx_blood.cpp
+	// resources = null
+
+LoopModeGameStartup "bloodspray_global_client" // src/game/client/fx_blood.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectExplosion_client" // src/game/client/fx_explosion.cpp
+	particles/entity/env_explosion/explosion_default.vpcf
+
+LoopModeGameStartup "Explosion_global_client" // src/game/client/fx_explosion.cpp
+	// resources = null
+
+LoopModeGameStartup "ParticleTracer_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+LoopModeGameStartup "TracerSound_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+LoopModeGameStartup "Tracer_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectSplash_client" // src/game/client/fx_water.cpp
+	particles/water_impact/water_splash_01_drops.vpcf
+	particles/water_impact/water_splash_02_drops.vpcf
+	particles/water_impact/water_splash_03_drops.vpcf
+
+LoopModeGameStartup "gunshotsplash_global_client" // src/game/client/fx_water.cpp
+	// resources = null
+
+LoopModeGameStartup "watersplash_global_client" // src/game/client/fx_water.cpp
+	// resources = null
+
+PanoramaUIStartup "CloseCaptionPanoramaResources" // src/game/client/hud_closecaption.cpp
+	// resources = null
+
+GameStartup "" // src/game/client/panorama/ui_canvas.cpp
+	materials/vgui/white_no_stencil.vmat
+	materials/dev/msaa_resolve.vmat
+
+"" "RenderingPipelineDotaManifest" // src/game/client/renderingpipeline_dota.cpp
+	materials/dev/deferred_unlit.vmat
+	materials/dev/deferred_global_light.vmat
+	materials/dev/deferred_local_light_cs.vmat
+	materials/dev/fow.vmat
+	materials/dev/fow_blur.vmat
+	materials/dev/fow_unseen.vmat
+	materials/dev/bloom.vmat
+	materials/dev/bloom_cs.vmat
+	materials/dev/bloom_blur.vmat
+	materials/dev/bloom_blur_cs.vmat
+	materials/dev/game_dead.vmat
+	materials/dev/game_paused.vmat
+	materials/dev/db_isingame.vmat
+	materials/dev/color_correction_default.vmat
+	materials/dev/color_correction_warp.vmat
+	materials/dev/dof1_general.vmat
+	materials/dev/dof1_blur.vmat
+	materials/dev/dof2.vmat
+	materials/dev/downsample_depth.vmat
+	materials/dev/copy_depth.vmat
+	materials/dev/blur_gaussian_25.vmat
+	materials/dev/copytexturemultiply.vmat
+	materials/dev/black.vmat
+	materials/dev/dota_glow_blur.vmat
+	materials/dev/glow_output.vmat
+
+GameStartup "RenderingPipelineDotaGroup" // src/game/client/renderingpipeline_dota.cpp
+	RenderingPipelineDotaSharedManifest
+	RenderingPipelineDotaManifest
+	DotaGlobaLightManifest
+
+"" "RenderingPipelineDotaReflectRefractManifest" // src/game/client/renderingpipeline_dota_reflect_refract.cpp
+	materials/dev/solid_sky.vmat
+
+GameStartup "RenderingPipelineDotaReflectRefractGroup" // src/game/client/renderingpipeline_dota_reflect_refract.cpp
+	RenderingPipelineDotaReflectRefractManifest
+
+"" "RenderingPipelineDotaSharedManifest" // src/game/client/renderingpipeline_dota_shared.cpp
+	materials/dev/flat_normal.vtex
+	materials/dev/deferred_post_process.vmat
+	materials/dev/deferred_post_process.vmat
+	materials/dev/deferred_post_process.vmat
+	materials/dev/fxaa.vmat
+	materials/dev/upsample.vmat
+	materials/dev/ssao.vmat
+	materials/dev/visualize_depth.vmat
+	materials/dev/fow_tools_mask.vtex
+	materials/dev/desaturate.vmat
+	materials/dev/variable_desaturate.vmat
+	materials/dev/fully_lit_lighting_buffer.vtex
+	materials/dev/identitylightwarp.vtex
+	materials/dev/rgbtograyscale.vtex
+	materials/dev/primary_white_color.vtex
+	materials/dev/primary_black_color_alpha0.vtex
+	materials/dev/warptogray50.vtex
+	materials/dev/wireframe_warp.vtex
+	materials/dev/simple_downsample.vmat
+	materials/dev/flow_map_preview.vmat
+	materials/dev/radial_distortion.vmat
+	materials/dev/radial_distortion_alpha.vmat
+	materials/dev/upsample_fsr.vmat
+	materials/dev/upsample_rcas.vmat
+
+GameStartup "ResponseRulesManifest_global_client" // src/game/shared/ai_responsesystem.cpp
+	scripts/talker/response_rules.vrr
+
+GameStartup "BeamManifest" // src/game/shared/beam_shared.cpp
+	particles/beams/default_beam.vpcf
+
+GameStartup "ComicBookSchema_global_client" // src/game/shared/comic_viewer/comic_book.cpp
+	scripts/comics.vdata
+
+GameStartup "DOTABattleReportSchema_global_client" // src/game/shared/dota/dota_battle_report_schema.cpp
+	scripts/battle_report_highlights.vdata
+	scripts/battle_report_hero_stat_list.vdata
+
+GameStartup "DotaBingo_global_client" // src/game/shared/dota/dota_bingo_schema.cpp
+	scripts/bingo_2024.vdata
+
+GameStartup "DotaCandyShops_global_client" // src/game/shared/dota/dota_candy_shop_schema.cpp
+	scripts/candy_shops.vdata
+	scripts/candy_shops_staging.vdata
+
+GameStartup "DotaFantasyCrafting_global_client" // src/game/shared/dota/dota_fantasy_crafting_schema.cpp
+	scripts/fantasy_crafting.vdata
+
+GameStartup "DotaFeaturedGamemodes_global_client" // src/game/shared/dota/dota_featured_gamemode_schema.cpp
+	scripts/featured_gamemodes.vdata
+	scripts/featured_gamemodes_staging.vdata
+
+GameStartup "DotaFightingGame_global_client" // src/game/shared/dota/dota_fighting_game_schema.cpp
+	scripts/events/crownfall/fighting_game_hero_fallback.vdata
+	scripts/events/crownfall/fighting_game_hero_tusk.vdata
+	scripts/events/crownfall/fighting_game_hero_bristleback.vdata
+	scripts/events/crownfall/fighting_game_hero_vengeful.vdata
+	scripts/events/crownfall/fighting_game_hero_marci.vdata
+	scripts/events/crownfall/fighting_game_hero_dawnbreaker.vdata
+
+GameStartup "DotaFishingGame_global_client" // src/game/shared/dota/dota_fishing_game_schema.cpp
+	scripts/events/crownfall/fishing1.vdata
+	scripts/events/crownfall/fishing2.vdata
+	scripts/events/crownfall/fishing2_sand.vdata
+	scripts/events/crownfall/fishing3.vdata
+	scripts/events/crownfall/fishing4.vdata
+
+GameStartup "DotaFlappySkywrathGame_global_client" // src/game/shared/dota/dota_flappy_skywrath_schema.cpp
+	scripts/events/crownfall/flappy_skywrath_act2.vdata
+
+GameSessionManifest_client "PrecacheGuildBanner_client" // src/game/shared/dota/dota_guild_banner_prop.cpp
+	models/props_teams/banner_guild_lvl0.vmdl
+	models/props_teams/banner_guild_lvl1.vmdl
+	models/props_teams/banner_guild_lvl2.vmdl
+	models/props_teams/banner_guild_lvl3.vmdl
+	models/props_teams/banner_guild_lvl4.vmdl
+	particles/teams/guilds/banner_guild_lvl4_ambient.vpcf
+
+GameStartup "DotaLabyrithBlessings_global_client" // src/game/shared/dota/dota_labyrinth_blessings_schema.cpp
+	scripts/events/labyrinth/fall_2021.vdata
+
+GameStartup "DotaMonsterHunter_global_client" // src/game/shared/dota/dota_monster_hunter_schema.cpp
+	scripts/events/monster_hunter/monster_hunter_world.vdata
+
+GameStartup "DotaMotionComic_global_client" // src/game/shared/dota/dota_motion_comic_schema.cpp
+	scripts/events/dark_carnival/dark_carnival_motion_comics_part2.vdata
+	scripts/events/dark_carnival/dark_carnival_motion_comics_part3.vdata
+
+GameStartup "DotaOverworld_global_client" // src/game/shared/dota/dota_overworld_schema.cpp
+	scripts/events/crownfall/crownfall_chapter1.vdata
+	scripts/events/crownfall/crownfall_chapter2.vdata
+	scripts/events/crownfall/crownfall_chapter3.vdata
+	scripts/events/crownfall/crownfall_chapter4.vdata
+	scripts/events/dark_carnival/darkcarnival_act1.vdata
+
+GameStartup "DotaPingWheel_global_client" // src/game/shared/dota/dota_ping_wheel_schema.cpp
+	scripts/ping_wheel.vdata
+	scripts/ping_wheel_staging.vdata
+
+GameStartup "DotaPropsManifest" // src/game/shared/dota/dota_props.cpp
+	materials/dev/flat_normal.vtex
+
+GameStartup "DotaRoadToTI_global_client" // src/game/shared/dota/dota_roadtoti_schema.cpp
+	scripts/roadtoti.vdata
+	scripts/roadtoti_staging.vdata
+
+GameStartup "DotaStatTracker_global_client" // src/game/shared/dota/dota_stat_tracker_schema.cpp
+	scripts/tracked_stats_player.vdata
+	scripts/tracked_stats_player_staging.vdata
+	scripts/tracked_stats_team.vdata
+	scripts/tracked_stats_team_staging.vdata
+	scripts/tracked_stats_match.vdata
+	scripts/tracked_stats_match_staging.vdata
+
+GameStartup "DotaSurvivors_global_client" // src/game/shared/dota/dota_survivors_schema.cpp
+	scripts/events/crownfall/survivors_enemies.vdata
+	scripts/events/crownfall/survivors_spawners.vdata
+	scripts/events/crownfall/survivors_game_modes.vdata
+	scripts/events/crownfall/survivors_heroes.vdata
+	scripts/events/crownfall/survivors_levels.vdata
+	scripts/events/crownfall/survivors_powerups.vdata
+	scripts/events/crownfall/survivors_pickups.vdata
+	scripts/events/crownfall/survivors_attributes.vdata
+	scripts/events/crownfall/survivors_difficulty.vdata
+
+GameStartup "DotaTrophies_global_client" // src/game/shared/dota/dota_trophies_schema.cpp
+	scripts/trophies.vdata
+	scripts/trophies_staging.vdata
+
+GameSessionManifest_client "wearable_item_client" // src/game/shared/econ/econ_wearable.cpp
+	wearable_item.ventr
+
+GameStartup "ExplosionTypesManifest_global_client" // src/game/shared/explosiontypes.cpp
+	scripts/explosion_types.vdata
+
+"" "LoopModeGame_client" // src/game/shared/loopmodegame.cpp
+	// resources = null
+
+LoopModeGameStartup "ParticleEffectStop_global_client" // src/game/shared/particle_system.cpp
+	// resources = null
+
+LoopModeGameStartup "ParticleEffect_global_client" // src/game/shared/particle_system.cpp
+	// resources = null
+
+GameSessionManifest_client "PhysFrictionEffectPrecache_client" // src/game/shared/physics_shared.cpp
+	// resources = null
+
+"" "PhysicsGameSystemManifest_client" // src/game/shared/physicsgamesystem.cpp
+	materials/tools/show_collision_geometry_wire_nodepth.vmat
+	materials/physics/wireframe_basic.vmat
+	materials/physics/wireframe_hidden.vmat
+	materials/physics/flat_basic.vmat
+
+GameStartup "" // src/game/shared/point_worldtext.cpp
+	dev/point_worldtext_default.vmat
+	dev/point_worldtext_translucent.vmat
+	dev/point_worldtext_fullbright.vmat
+	dev/point_worldtext_translucent_fullbright.vmat
+	dev/point_worldtext_default_background.vmat
+
+GameStartup "CPropDataManifest_global_client" // src/game/shared/props_shared.cpp
+	scripts/propdata.vdata
+
+GameSessionManifest_client "PrecacheEffectBubbles_client" // src/game/shared/te/te_bubbles.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectBubbleTrail_client" // src/game/shared/te/te_bubbletrail.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectEnergySplash_client" // src/game/shared/te/te_energysplash.cpp
+	// resources = null
+
+GameSessionManifest_client "CTEFizz_client" // src/game/shared/te/te_fizz.cpp
+	// resources = null
+
+GameSessionManifest_client "CTEGlowSprite_client" // src/game/shared/te/te_glowsprite.cpp
+	// resources = null
+
+GameSessionManifest_client "CTELargeFunnel_client" // src/game/shared/te/te_largefunnel.cpp
+	// resources = null
+
+GameSessionManifest_client "TE_MuzzleFlash_client" // src/game/shared/te/te_muzzleflash.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheTESmoke_client" // src/game/shared/te/te_smoke.cpp
+	// resources = null
+
+GameStartup "VoiceStatusManifest_global_client" // src/game/shared/voice_status.cpp
+	materials/voice/icntlk_pl.vmat
+

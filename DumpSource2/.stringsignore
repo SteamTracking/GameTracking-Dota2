@@ -338,6 +338,7 @@ $SPECULARSCALE
 2D panorama position offset of model preview (if this Node has one).
 3D
 7 Segment
+8
 <ESymbolType> Dump all of the symbols in the Panorama symbol table
 <account id> <showcase type> - show the report dialog for a given showcase
 <b>Check</b> this if the input position is relative to the listener.<br /> <b>Don't check</b> this if the input position is aboslute world space coordinates.
@@ -1827,6 +1828,9 @@ AF_NONE
 AF_PANORAMA
 AF_PARTICLES
 AF_SELECTORS_WITHOUT_REQUIREMENTS
+AG2_OnAnimGraphDefinitionOrModeChanged
+AG2_OnAnimGraphSerializationContextInvalidated
+AG2_PoseRecipeChanged
 AGGREGATE_INSTANCE_STREAM_LIGHTMAPUV_UNORM16
 AGGREGATE_INSTANCE_STREAM_NONE
 AGGREGATE_INSTANCE_STREAM_VERTEXBLEND_UNORM8
@@ -1922,6 +1926,7 @@ ARRAY: Grid is a specific number of grid divisions. FILL: The boundary is filled
 ASYNC_FIRE_AND_FORGET
 AUTO
 A_Sharp
+Abilities
 Ability
 Ability contributions logging mode. 0 = off, 1 = bad records only, 2 = all records
 AbilityBarType_t
@@ -2202,6 +2207,7 @@ AnimScriptHandle
 AnimScriptType
 AnimStateID
 AnimTagID
+AnimTime
 AnimValueSource
 AnimVectorSource
 Animation
@@ -2993,6 +2999,7 @@ CAttributeContainer
 CAttributeList
 CAttributeManager
 CAttributeManager::cached_attribute_float_t
+CAttributeManager::m_hOuter
 CAudioAmpNodeDesc
 CAudioAnimTag
 CAudioAutoFilterNodeDesc
@@ -3250,8 +3257,10 @@ CDOTAFlappySkywrathInputAction
 CDOTAFogOfWarTempViewers
 CDOTAGameEvents
 CDOTAGameManager
+CDOTAGameManager*
 CDOTAGameManagerProxy
 CDOTAGameRules
+CDOTAGameRules*
 CDOTAGamerulesProxy
 CDOTAInGamePredictionState
 CDOTALabyrinthBlessingsMap
@@ -3301,6 +3310,7 @@ CDOTARoadToTIChallengeDefinition
 CDOTASlarkJailbreakGameDefinition
 CDOTASlarkJailbreakStageDefinition
 CDOTASpectatorGraphManager
+CDOTASpectatorGraphManager*
 CDOTASpectatorGraphManagerProxy
 CDOTASubChallengeInfo
 CDOTATeam
@@ -3309,7 +3319,9 @@ CDOTATurboGameMode
 CDOTATurboHeroPickRules
 CDOTAWearableItem
 CDOTA_AbilityDraftAbilityState
+CDOTA_AbilityDraftAbilityState[MAX_ABILITY_DRAFT_ABILITIES]
 CDOTA_AbilityDraftHeroState
+CDOTA_AbilityDraftHeroState[DOTA_ABILITY_DRAFT_HEROES_PER_GAME]
 CDOTA_Ability_Abaddon_AphoticShield
 CDOTA_Ability_Abaddon_BorrowedTime
 CDOTA_Ability_Abaddon_DeathCoil
@@ -9860,6 +9872,7 @@ CDemoSettingsComponentUpdater
 CDestructiblePart
 CDestructiblePart_DamageLevel
 CDestructiblePartsComponent
+CDestructiblePartsSystemComponent*
 CDestructiblePartsSystemData
 CDetailPropModel
 CDetailPropType
@@ -9900,6 +9913,7 @@ CEconEntity
 CEconEntity::AttachedParticleInfo_t
 CEconItemAttribute
 CEconItemView
+CEconItemView::m_iInventoryPosition
 CEconWearable
 CEditableMotionGraph
 CEffectData
@@ -10065,6 +10079,9 @@ CGameGibManager
 CGameRules
 CGameRulesProxy
 CGameSceneNode
+CGameSceneNode::m_angRotation
+CGameSceneNode::m_hParent
+CGameSceneNode::m_hierarchyAttachName
 CGameSceneNodeHandle
 CGameScriptedMoveData
 CGameScriptedMoveDef_t
@@ -11878,6 +11895,7 @@ CUnaryUpdateNode
 CUnitOrders
 CUpdatedAfterWorkshopFileFilter
 CUpdatedBeforeWorkshopFileFilter
+CUtlVector< CEconItemAttribute >
 CVAudioNodeBaseDesc
 CVControlNodeBaseDesc
 CVMMDAssetTypeInfo
@@ -15233,6 +15251,7 @@ Clamp Blend Curve
 Clamp Non-Sheet texture V coords
 Clamp UVs
 ClampDuration
+ClampHealth
 ClampTo180
 ClampTo360
 Class_T
@@ -15330,6 +15349,7 @@ Collision Interaction Mask
 Collision Options
 Collision Wireframe
 Collision visualizer commands
+CollisionAttributeChanged
 CollisionDetailLayerInfo_t
 CollisionDetailLayerInfo_t::Name_t
 CollisionGroupContext_t
@@ -15746,6 +15766,8 @@ DOTAChannelType_Whisper
 DOTAChatChannelType_t
 DOTACommLevel_t
 DOTACommType_t
+DOTACommentatorTable
+DOTACompendiumData
 DOTAConnectionState_t
 DOTACrateDropLevelDefID_t
 DOTACrateDropObjectDefID_t
@@ -15795,6 +15817,7 @@ DOTASlotType_t
 DOTASpecialAbilityBonus_t
 DOTASpecialAbility_t
 DOTASpeechType_t
+DOTATeamMatesAndCommentatorTable
 DOTATeam_t
 DOTATeleportInfo_t
 DOTAThreatLevelInfo_t
@@ -16175,6 +16198,7 @@ DOTA_CUSTOM_UI_TYPE_HUD
 DOTA_CUSTOM_UI_TYPE_HUD_TOP_BAR
 DOTA_CUSTOM_UI_TYPE_INVALID
 DOTA_CUSTOM_UI_TYPE_PREGAME_STRATEGY
+DOTA_CombatLogQueryProgress
 DOTA_DAMAGE_CATEGORY_ATTACK
 DOTA_DAMAGE_CATEGORY_BARRIER
 DOTA_DAMAGE_CATEGORY_SPELL
@@ -19546,6 +19570,7 @@ Fog
 Fog Scale
 Fog end for Free Camera.
 Fog start for Free Camera.
+FogController
 Folder in the game directory where server logs will be stored.
 Follow Attachment
 Follow Direction
@@ -21427,6 +21452,7 @@ Level up talent on the right.
 LifeState_t
 Light Radius
 LightMapper
+LightRenderingChanged
 LightRigType_t
 Lighten
 Lighting
@@ -21531,6 +21557,11 @@ Local Space
 Local graph expected values
 Local space position translation to apply to the current transform
 Local space rotation (in degrees) to apply to the current transform
+LocalPlayerAndObserversExclusive
+LocalPlayerAndPredictorsExclusive
+LocalPlayerExclusive
+LocalTeamExclusive
+LocalWeaponExclusive
 Localization String describing the operation
 Localization System
 Localization name of the gem
@@ -22254,6 +22285,7 @@ MapVisibilityV001RESOURCE_TYPE_COMPILER_002
 Maps the shape to it's code behavior.
 Mark all of the trees on the map as visible.
 Mark all the trees on the map as hidden.
+MarkSurroundingBoundsDirty
 Marks the Area or Ladder under the cursor for manipulation by subsequent editing commands.
 Marks the current demo playback tick for later use
 Mask All
@@ -22593,6 +22625,7 @@ Mix Amp
 Mix Blend Mode
 Mix Down Rule
 Mix value to blend spatial and non-spatial audio in Dota 2.
+MixedShadowsChanged
 Mixes audio tracks together into a single track.  Mix levels can be automated.
 Mixgroup Modifiers
 Mixgroup Name
@@ -22918,6 +22951,7 @@ NETWORK_DISCONNECT_TICKMSG_OVERFLOW
 NETWORK_DISCONNECT_TIMEDOUT
 NETWORK_DISCONNECT_UNUSUAL
 NETWORK_DISCONNECT_USERCMD
+NETWORK_FIELD_CHANGES_OFTEN_PRIORITY
 NET_Messages
 NE_ARRAY
 NE_BOOL
@@ -23360,12 +23394,18 @@ On the 'I will purchase <item>' alert, the minimum cost of an item to show the r
 On, Frequency Dependent Transmission
 On, Frequency Independent Transmission
 On, No Transmission
+OnAbilitiesChanged
+OnAbilityColorChanged
 OnAbilityEndChannel
 OnAbilityExecuted
 OnAbilityFullyCast
+OnAbilityPointsChanged
 OnAbilityStart
 OnAbilitySwapped
 OnAbilityToggled
+OnAcornTreePlanted
+OnActiveWeaponChanged
+OnAllPredictionsFinished
 OnAssist
 OnAttack
 OnAttackAllied
@@ -23378,69 +23418,220 @@ OnAttackRecordDestroy
 OnAttackStart
 OnAttacked
 OnAttemptProjectileDodge
+OnBaseLayerSequenceChanged
+OnBaseStatChanged
+OnBlackboardStateChanged
+OnBountyLastSpawnTimeChanged
+OnBrawlActiveChanged
 OnBreakInvisibility
 OnBuildingKilled
+OnBurstEffectChanged
+OnCellChanged
+OnCellChangedWS
+OnChaliceStoredRuneChanged
+OnChoicesChanged
+OnCinematicModeChanged
 OnCleaveAttackLanded
+OnClientPlayerChallengeProgressChanged
+OnClientPlayerQuestRankChanged
+OnClientRagdollChanged
+OnClientRagdollEnabledChanged
+OnColorChanged
+OnConnectionStateChanged
+OnControllerChanged
 OnCustom1
 OnCustom2
 OnCustom3
+OnCustomGameRuneSpawnerLastSpawnTimeChanged
 OnCycleEnd
+OnDamageByTypeReceivedPostReductionChangedCompat
+OnDamageByTypeReceivedPreReductionChangedCompat
 OnDamageCalculated
 OnDamageHPLoss
+OnDamageMaxChanged
+OnDamageMinChanged
 OnDamagePrevented
+OnDataTeamPlayerPlayerSteamIDsChanged
+OnDataTeamPlayerSelectionDirty
+OnDataTeamPlayerSuggestedGeneralItemsChanged
+OnDataTeamPlayerSuggestedItemOptionsChanged
+OnDataTeamPlayerSuggestedItemSequenceChanged
+OnDataTeamPlayerSuggestedItemSequenceVariantsChanged
+OnDataTeamPlayerSuggestedNeutralsChanged
+OnDataTeamPlayerSuggestedPregameItemsChanged
 OnDayStarted
 OnDeath
 OnDeathCompleted
+OnDecalDimensionsChanged
+OnDialogActivatorChanged
+OnDirtyButtonsChanged
+OnDisabledHitgroupsChanged
 OnDominated
+OnDrowArcanaChanged
+OnEffectsChanged
 OnEntry
 OnExit
+OnFacelessVoidArcanaChanged
+OnFailEffectChanged
+OnFieldChanged
+OnFlagsChanged
 OnFoWTeamChanged
 OnForceProcMagicStick
+OnForcedHUDSkinChanged
+OnGameModeEntityChanged
+OnGameTimeChangedCompat
+OnGlowColorChanged
+OnGlowTypeChanged
+OnGravityUpdated
+OnGuideChanged
 OnHealReceived
 OnHealthGained
+OnHealthRegenChanged
 OnHeroBeginDying
+OnHeroDamageChangedCompat
 OnHeroKilled
+OnHeroStatueLiked
+OnHiddenLoadoutSlotsChanged
+OnHideWearableButDrawAdditionalWearablesChanged
 OnIllusionCreated
+OnInterpolationAmountChanged
+OnInterpolationFrameChanged
+OnInventoryChanged
+OnInventoryParityChanged
+OnItemChanged
 OnKill
+OnLastBuybackTimeChanged
+OnLastDispellTimeChanged
+OnLevelChanged
+OnLifeStateChanged
+OnLoopingChangedCompat
 OnMagicDamageCalculated
 OnManaGained
+OnManaRegenChanged
 OnModelChanged
 OnModifierAdded
 OnModifierRefreshed
 OnModifierRemoved
+OnMoveTypeChanged
+OnMuertaReleaseEventMiniGameActiveChanged
+OnMuertaReleaseEventMiniGamePointsChanged
+OnMuertaReleaseEventTargetAssignmentsChanged
 OnMuteDamageAbilities
+OnMyWeaponsChanged
+OnNavIgnoreChanged
+OnNetVarTeamNumChanged
+OnNetworkedAnimationChanged
+OnNetworkedDisableChanged
+OnNetworkedSequenceChanged
 OnNightStarted
+OnNoClipEnableChanged
+OnObserverModeChanged
+OnObserverTargetChanged
+OnObsoleteEvent
+OnObsoleteIngameEventChanged
+OnObsoletePrimaryEventChanged
 OnOrder
 OnOrderReceived
+OnOutgoingDamageByTypePostReductionChangedCompat
+OnOutgoingDamageByTypePreReductionChangedCompat
+OnOverlaysChanged2
+OnPawnChanged
+OnPerchedTreeChanged
+OnPineConeAcornTreePlanted
+OnPlayerBountyTimestampChanged
+OnPlayerControllerNameChanged
+OnPlayerDataFakeClientChanged
+OnPlayerDataPlayerCoachedPlayerIDsChanged
+OnPlayerDataPlayerConnectionStateChanged
+OnPlayerDataPlayerNamesChanged
+OnPlayerDataPlayerSteamIDsChanged
+OnPlayerDataTeamChanged
+OnPlayerIDChanged
+OnPlayerIDChangedCompat
+OnPlayerIDUpdated
+OnPlayerTeamDataSelectionDirty
+OnPlayerTeamDataTeamChanged
+OnPlayerTeamDataTeamFoWChanged
+OnPowerTreadsStatChanged
+OnPowerupLastSpawnTimeChanged
 OnProcessCleave
 OnProjectileDodge
 OnProjectileObstructionHit
 OnPureDamageCalculated
 OnPurged
+OnQuickBuyChanged
+OnQuickBuyItemsChanged
+OnQuickBuySlotParityChanged
+OnQuickBuySlotPurchasableChanged
+OnRazorArcanaChanged
 OnRedirectHealthGain
+OnRenderAttributesChanged
+OnRenderModeChanged
+OnReplayComap_TaggedAsVisibleByTeam
+OnReplayCompat_ForwardAudioParamsCallback
+OnReplayCompat_GameSceneNodeOriginAngles
+OnReserveAmmoChanged
 OnReset
+OnResetClientTime
 OnResetOrCycleEnd
 OnRespawn
+OnRootBoneOffsetChanged
+OnRootBoneOffsetResetChanged
 OnRuneSpawn
+OnSKArcanaProgressChanged
+OnSatchelStatChange
+OnScepterIllusionChanged
 OnScepterUpgradeSelected
+OnSecondarySkeletonsChanged
+OnServerVelocityChanged
 OnSetLocation
+OnSetStartLocation
 OnShardUpgradeSelected
+OnSimulationTimeChanged
+OnSpectreArcanaProgressChanged
 OnSpellAppliedSuccessfully
 OnSpellTargetReady
 OnSpentHealth
 OnSpentItemCharge
 OnSpentMana
+OnSpriteScaleChanged
 OnStateChanged
+OnSteamIDChanged
+OnStoredRuneChanged
+OnSubclassIDChanged
 OnTakeDamage
 OnTakeDamageKillCredit
 OnTakeDamagePostUnavoidableBlock
+OnTeamNeutralStashItemsChanged
+OnTeamWorldTreeModelsChanged
+OnTeamWorldTreeStateChanged
 OnTeleported
 OnTeleporting
 OnTierTokenRerolled
 OnTooltip
 OnTooltip2
+OnTowerDamageChangedCompat
+OnTrackedStatsChanged
+OnTransformChanged
 OnTreeCutDown
+OnUnitModelVariantChanged
 OnUnitMoved
+OnUnitNameIndexChanged
+OnUnitStateChanged
+OnUpdateCapsule
+OnUpdateEnablePhysics
+OnUpdateOBB
+OnUpdateSolidFlags
+OnUpdateSolidType
+OnUproarActiveChanged
+OnVambraceStatChanged
+OnViewOffsetChanged
+OnWagerChanged
+OnWagerTimeChanged
+OnWaterLevelChangeNetworked
+OnWearablesChanged
+OnWhitelistChanged
+OnXPLastSpawnTimeChanged
 Once fully connected in a custom game game, player will be kicked if they don't send a network message within this interval.
 Once fully connected in a tournament game, player will be kicked if he doesn't send a network message within this interval.
 Once fully connected in an event game, player will be kicked if they don't send a network message within this interval.
@@ -24498,6 +24689,7 @@ Player selecting a team during custom game setup.
 Player takes damage but won't die
 Player's active weapon will never run out of ammo
 PlayerConnectedState
+PlayerFogController
 PlayerID_t
 PlayerInputMotorInstanceData_t
 PlayerNeutralChoices_t
@@ -24509,6 +24701,7 @@ PlayerResourcePlayerPeriodicResourceData_t
 PlayerResourcePlayerTeamData_t
 PlayerSeatAssignment_t
 PlayerUltimateStateOrTime_t
+PlayerVisibilityStateChanged
 Players can hear all other players' voice communication, no team restrictions
 Players can receive all other players' text chat, no death restrictions
 Players may not participate in another weekend tourney scheduled for N hours after the most recent schedule time
@@ -25104,6 +25297,7 @@ Recalculate Or Offset Warped Root Motion
 Recalculate Warped Root Motion
 RecalculateOrOffset
 Recalculation Rate
+RecomputeSprings
 Reconnecting
 Reconnects the SourceTV relay proxy.
 Record a demo incrementally.
@@ -26042,6 +26236,8 @@ Send embedded full frames
 Send emergency Note OFF for all active notes on all channels
 Send full frame on every hltv replay transition
 Send tables cache file
+SendProxyNeverSend_RecipientsFilter
+SendProxyNoPlayerEntities_RecipientsFilter
 Sends a command string to all bots
 SeqCmd_Add
 SeqCmd_Blend
@@ -26496,6 +26692,7 @@ Skips the current demo playback to the marked tick
 Skips to a tick in demo.
 Skips to location in demo.
 Skirt
+SkyStateChanged
 Slams viewport size to a specified value.
 Sleep randomly 0..net_async_job_random_sleep ms in the parallel server jobs; sleep is per job
 Slope
@@ -26803,6 +27000,7 @@ Specify which new-style announcer pack you want to use. For debugging only.
 Spectate a player by name or slot
 Spectate next player
 Spectate previous player
+SpectatorsOnly
 Speed
 Speed Function
 Speed Scale
@@ -26909,6 +27107,7 @@ State
 State Machine
 State Status Condition
 StateActionBehavior
+StateChanged
 StateComparisonValueType
 StateComparisonValue_FixedValue
 StateComparisonValue_Parameter
@@ -26959,6 +27158,7 @@ Step Height Max Angle
 StepPhase
 StepPhase_InAir
 StepPhase_OnGround
+StepSimulationFuncRotatingAnglesSerializer
 Steps Remaining Metric
 Stereo delay with resonant filter on feedback.
 Stick On Collision Cache Field
@@ -27021,6 +27221,7 @@ Sub-Sample Between Input Points
 SubGraph
 SubGraph File
 SubModel Field Type
+SubclassID_RecipientsFilter
 SubclassVDataChangeType_t
 Subsurface sample count
 Subtitle offset distance (forward, in front of player)
@@ -28289,6 +28490,9 @@ VPhysXRange_t
 VPhysics2ShapeDef_t
 VPhysics2_Interface_001
 VPhysicsCollisionAttribute_t
+VPhysicsCollisionAttribute_t::m_nEntityId
+VPhysicsCollisionAttribute_t::m_nHierarchyId
+VPhysicsCollisionAttribute_t::m_nOwnerId
 VProcessUtils002
 VProf
 VProfService_001
@@ -29050,6 +29254,7 @@ ancient
 angle
 angle_per_ring_portal
 angular velocity attribute (improves motion blur)
+animTimeSerializer
 anim_decode_forcewritealltransforms
 anim_delay
 anim_disable
@@ -29066,6 +29271,9 @@ animation rate
 animation rate scale field
 animation sequence field
 animation type
+animationLayerCycleReset
+animationLayerOpChanged
+animationLayerOrderChanged
 animation_rate
 animation_time
 animevent_debug
@@ -29534,6 +29742,7 @@ barrier_flat
 barrier_pct
 barrier_per_stack
 barrier_restore_time
+baseAnimBaseLayerChanged
 base_absorb_amount
 base_agi
 base_aoe
@@ -29629,6 +29838,7 @@ bind
 binddefaults
 bindss
 bindtoggle
+bitCount
 blade_dance_crit_chance
 blade_dance_crit_mult
 blade_dance_lifesteal
@@ -29674,6 +29884,7 @@ block_damage_ranged
 block_penalty_ranged
 block_targeting
 boar_bonus_damage
+bodyGroupChoiceChanged
 bodyMassScale
 body_head
 body_head_persona_1
@@ -30129,6 +30340,9 @@ cc_vr_forward_offset
 cc_vr_vertical_offset
 cc_vr_width
 cd_per_kill
+cellx
+celly
+cellz
 center around control point
 center core radius
 center mesh
@@ -30149,6 +30363,7 @@ chance
 chance_pct
 chance_reduce
 change callback msec warning limit
+changeCallback
 changelevel
 changelevel <mapname> :Multiplayer change level.
 channel
@@ -30702,6 +30917,7 @@ cli_ent_pivot
 cli_ent_skeleton
 cli_ent_vcollide_wireframe
 client physics type
+clientSideAnimCycleReset
 client_metrics_upload_batch_seconds
 client_metrics_upload_immediate
 clientport
@@ -30881,6 +31097,7 @@ cooldown_refund_ally
 cooldown_refund_pct
 cooldown_speed_per_stack
 cooldown_time
+coord
 corpse_explosion_chance_pct
 corpse_explosion_damage_pct
 corpse_explosion_radius
@@ -34688,6 +34905,7 @@ editor_size
 effect
 effectSpeedMax
 effectSpeedMin
+effectStateChanged
 effect_duration
 effect_multiplier
 effect_multiplier_distance
@@ -34696,6 +34914,7 @@ effect_strength_max_duration
 effect_time
 effective_distance
 effectiveness_pct
+ehandle
 eidelon_base_damage
 eidelon_base_movespeed
 eidelon_max_health
@@ -34740,6 +34959,7 @@ enchant_damage
 enchant_health
 enchantment_bonus_base
 enchantment_bonus_growth
+encoder
 end
 end alpha
 end cap effect
@@ -34904,6 +35124,7 @@ ent_viewoffset
 ent_viewpunch
 ent_visibility_traces
 entity
+entityIdentityNameChanged
 entity_log_load_unserialize
 entity_lump_list
 entity_lump_spew
@@ -35141,6 +35362,7 @@ fissure_radius
 fist
 fix_keyvalues_bad_newlines
 fix_keyvalues_missing_quotes
+fixed64
 fixed_day_vision
 fixed_movement_speed
 fixed_movespeed
@@ -35305,6 +35527,7 @@ flip cull normal
 flip horizontal
 flip percentage
 flip twist axis with yaw
+float32
 flurry_bonus_attack_speed
 flurry_charge_increment
 flwaitSound
@@ -35479,6 +35702,7 @@ fs_report_sync_opens
 fs_spew_readfieldlist
 fs_warning_mode
 full_heart
+funcRotatingSimulationTimeSerializer
 func_break_max_pieces
 func_break_reduction_factor
 func_breakdmg_bullet
@@ -35511,6 +35735,13 @@ g_ragdoll_lvfadespeed
 g_ragdoll_maxcount
 gain of wet signal (dB)
 gait_switch_blocked_reason
+gameSceneNode
+gameSceneNodeHierarchyAttachmentChanged
+gameSceneNodeHierarchyParentChanged
+gameSceneNodeLocalAnglesChanged
+gameSceneNodeLocalOriginChanged
+gameSceneNodeLocalScaleChanged
+gameSceneNodeStepSimulationAnglesSerializer
 game_data_list{ key = 'CDestructiblePart' }
 game_data_list{ key = 'CNPCPhysicsHull' }
 game_particle_manager_dump_requeue
@@ -36305,6 +36536,7 @@ instant_replay_skip
 instant_replay_skip_live
 instant_replay_timescale
 instant_replay_togglepause
+int32
 int_bonus_pct
 int_charges
 int_damage_multiplier
@@ -39138,6 +39370,7 @@ kill_radius_expansion
 kill_radius_expansion_speed
 kill_streak_test
 killvector
+kind8
 knockback
 knockback_amp
 knockback_damage
@@ -40993,6 +41226,7 @@ m_YieldResume1
 m_YieldResume2
 m_aAngOffset
 m_aNeutralChoicesLoaded
+m_aPawns
 m_aPlayerControllers
 m_aPlayers
 m_aShootSounds
@@ -41064,6 +41298,8 @@ m_angPostSpawnDirection
 m_angPrev
 m_angPushEntitySpace
 m_angRotation
+m_angRotation[0]
+m_angRotation[1]
 m_angSrc
 m_angStart
 m_angWrappedLocalRotation
@@ -41083,6 +41319,7 @@ m_animNameMap
 m_animNamePrefix
 m_animation
 m_animationController
+m_animationController.m_flPlaybackRate
 m_animationLayers
 m_animationSkeletonName
 m_ankleBoneIndex
@@ -41128,6 +41365,7 @@ m_audio
 m_audioMeters
 m_audioParams
 m_audioSounds
+m_audio\..*
 m_authoredPosition
 m_autoLayerArray
 m_autoResetMap
@@ -43870,6 +44108,7 @@ m_bUserSpecifiedMaterialGroup
 m_bUsesBakedShadowing
 m_bUsesConstantGesture
 m_bUsesGestureBasedAttackAnimation
+m_bUsesIndexedBakedLighting
 m_bUsesTwoSlots
 m_bUsingAssistedCameraOperator
 m_bUsingCameraMan
@@ -43972,6 +44211,7 @@ m_baseClipName
 m_baseInput
 m_baseInputConnection
 m_baseLayer
+m_baseLayer.m_hSequence
 m_baseNameHash
 m_baseSequence
 m_bbox
@@ -44003,6 +44243,7 @@ m_blendTimes
 m_blendValue
 m_blendValueSource
 m_blendWeightEasing
+m_blinktoggle
 m_blockSpans
 m_bloomParams
 m_body
@@ -45688,6 +45929,7 @@ m_flEmissionScale
 m_flEmitRate
 m_flEmitterAngle
 m_flEnableTime
+m_flEncodedController
 m_flEnd
 m_flEndAlpha
 m_flEndAmplitude
@@ -47910,6 +48152,7 @@ m_fldbThresholdBelow
 m_flexController
 m_flexControllerToken
 m_flexControllers
+m_flexWeight
 m_floatAttributes
 m_floatChannelData
 m_floatChannelSets
@@ -48242,6 +48485,7 @@ m_hIllusionOwner
 m_hIllusions
 m_hInflictor
 m_hInfoFan
+m_hIngameEvent
 m_hInteractionMainEntity
 m_hInterruptScene
 m_hInventoryParent
@@ -48273,6 +48517,7 @@ m_hLerpTarget
 m_hLerpTargetAttachment
 m_hLight
 m_hLightCookie
+m_hLightingOrigin
 m_hLinkedEntities
 m_hListManagers
 m_hLoadedUnit
@@ -48818,6 +49063,8 @@ m_iCustomTeamAssignments
 m_iDamage
 m_iDamageBase
 m_iDamageBonus
+m_iDamageByTypeReceivedPostReduction
+m_iDamageByTypeReceivedPreReduction
 m_iDamageCategory
 m_iDamageCustom
 m_iDamageDonePct
@@ -48856,13 +49103,20 @@ m_iEntangleDamage
 m_iEntityLevel
 m_iEntityQuality
 m_iEntityQuantity
+m_iEventArcanaPeriodicResourceMax
+m_iEventArcanaPeriodicResourceRemaining
+m_iEventBountiesRemaining
 m_iEventEffectsMask
 m_iEventID
 m_iEventLevel
+m_iEventPointAdjustmentsRemaining
 m_iEventPoints
 m_iEventPremiumPoints
+m_iEventRanks
 m_iEventTeleportFXLevel
 m_iEventWagerStreak
+m_iEventWagerTokensMax
+m_iEventWagerTokensRemaining
 m_iExperimental2Gold
 m_iExperimental2GoldEarned
 m_iExperimentalGold
@@ -49080,6 +49334,8 @@ m_iOriginalAttackCapability
 m_iOriginalTeam
 m_iOtherBlockerName
 m_iOtherGold
+m_iOutgoingDamageByTypePostReduction
+m_iOutgoingDamageByTypePreReduction
 m_iOutpostsCaptured
 m_iPaddingToMakeSchemaHappy
 m_iParity
@@ -49146,7 +49402,10 @@ m_iRangeFX
 m_iRank
 m_iRankTier
 m_iRankUncertainty
+m_iRankWagersAvailable
+m_iRankWagersMax
 m_iRapiersPurchased
+m_iRawValue32
 m_iReapplyProvisionParity
 m_iRecentDamage
 m_iRecentKillCount
@@ -49172,6 +49431,7 @@ m_iRumbleEffect
 m_iRunePickups
 m_iRuneType
 m_iSaluteAmountIndex
+m_iSaluteAmounts
 m_iScaledHealing
 m_iScore
 m_iSearchRadius
@@ -49268,6 +49528,7 @@ m_iTotalDrainAmount
 m_iTotalEarnedGold
 m_iTotalEarnedXP
 m_iTotalToSpawn
+m_iTowerDamage
 m_iTowerKills
 m_iTowerType
 m_iTrackerProjectile
@@ -50500,6 +50761,7 @@ m_nEntityStickNormalField
 m_nEntryConditionNodeIdx
 m_nEpitaph
 m_nEstimatedDamageUpdatedTick
+m_nEventIDAssociatedWithEventData
 m_nEventIdx
 m_nEventNPCReplaced
 m_nEventPlayerInfo
@@ -51067,6 +51329,7 @@ m_nMaxAllowed
 m_nMaxAmount
 m_nMaxBulletAbsorption
 m_nMaxCP
+m_nMaxCPULevel
 m_nMaxCarry
 m_nMaxCharges
 m_nMaxCol
@@ -51086,6 +51349,7 @@ m_nMaxFactorAll
 m_nMaxFactor_1
 m_nMaxFactor_2
 m_nMaxFactor_3
+m_nMaxGPULevel
 m_nMaxHPRegen
 m_nMaxImpaleTargets
 m_nMaxJumpDistance
@@ -53214,6 +53478,7 @@ m_shutdownTime
 m_size
 m_skeleton
 m_skeletonInstance
+m_skeletonInstance\.m_vecOrigin\..*|
 m_skeletonName
 m_skidStop
 m_skin
@@ -54182,6 +54447,7 @@ m_vLocation
 m_vLocations
 m_vLookAt
 m_vLookTarget
+m_vLookTargetPosition
 m_vLsFallbackHingeAxis
 m_vMSRootMotionAnlyzerTarget
 m_vManualFacingDirection
@@ -54515,6 +54781,7 @@ m_vecAxis
 m_vecBanNominatedHeroes
 m_vecBanners
 m_vecBaseAttributes
+m_vecBaseVelocity
 m_vecBigHealthBarUnits
 m_vecBlacklistedHeroes
 m_vecBlockCommentDefaultSize
@@ -55612,6 +55879,7 @@ ministun
 ministun_duration
 minium number of quads per render segment
 minor_imp_duration
+minusone
 misc
 misc_persona_1
 miss_chance
@@ -56633,6 +56901,7 @@ output value at min distance
 outputSubmix
 overall size multiplier (-1 count based distribution)
 overbright factor
+overlay_vars
 overload_aoe
 overload_attack_slow
 overload_cast_range
@@ -56781,6 +57050,7 @@ panorama_worldpanel_update_culling
 parallel_perform_invalidate_physics
 parallel_update_surrounding_bounds_in_spatial_partition_update
 paramName
+parametersChanged
 parent particle radius scale
 parentIndex
 parry_bonus_crit
@@ -56985,6 +57255,7 @@ pierces_creeps
 pierces_debuff_immunity
 pierces_immunity
 pin break type
+pinStateChanged
 ping_wheel_0
 ping_wheel_1
 ping_wheel_2
@@ -57019,6 +57290,7 @@ play end cap effect
 play endcap when children are removed
 play when emission ends
 play_particle
+playbackRateChanged
 playcast
 playdemo
 playdemo_scripted
@@ -57057,6 +57329,7 @@ population_distribution_debug
 popups_force_close
 portals_per_ring
 portrait_red
+poseParametersChanged
 position
 position cache attribute
 position input
@@ -57064,6 +57337,9 @@ position of target point.
 position of up point.
 position to get
 post_gaze_debuff_duration_multiplier
+posx
+posy
+posz
 pounce_acceleration
 pounce_damage
 pounce_distance
@@ -57238,6 +57514,8 @@ qAdjust
 qAngles
 qInvChange
 qTarget
+qangle
+qangle_pitch_yaw
 quas_damage
 quelling_bonus
 quelling_bonus_ranged
@@ -57654,6 +57932,7 @@ radius_increase
 radius_max
 radius_min
 radius_scepter
+ragEnabledChanged
 ragdoll_cleanup_all
 ragdoll_debug_item_detachment
 ragdoll_fixup_joint_limits
@@ -58375,6 +58654,8 @@ sequence min
 sequence number
 sequence number 1
 sequence override
+sequenceOpSequenceChanged
+serializer
 server_game_time
 server_gc_status
 servercfgfile
@@ -58610,6 +58891,7 @@ silencer
 simulate_player_cards_ti9
 simulated on the GPU
 simulation timescale
+simulationTimeSerializer
 siphon_buffer
 size at which to fade away
 size at which to start fading
@@ -58623,6 +58905,10 @@ sk_player_leg
 sk_player_stomach
 skel_constraints_enable
 skel_debug
+skeletonMaterialGroupChanged
+skeletonMeshGroupMaskChanged
+skeletonModelChanged
+skeletonMotionTypeChanged
 skeleton_bonus_hero_damage
 skeleton_building_damage_reduction
 skeleton_charges_per_hero_multiplier
@@ -60227,6 +60513,10 @@ twister_tick_rate
 type
 ugc_fake_state
 ui_hud_dist
+uint16
+uint32
+uint64
+uint8
 un-grabs all objects
 unAccountID
 unAssists
@@ -60324,6 +60614,7 @@ use the derivative
 use velocity for test direction
 use vertical velocity for weighting
 use_item_client
+userGroup
 users
 uv x offset during copy to cascade.
 uv y offset during copy to cascade.
@@ -60479,11 +60770,14 @@ vismon_poll_frequency
 vismon_trace_limit
 visual_height
 visualzdelta
+vmat
+vmdl
 vmem_dump
 vmix_debug_list
 vmix_input
 vmix_output
 vmixtool
+vnmgraph
 voice
 voice_all_icons
 voice_always_sample_mic
@@ -60541,8 +60835,10 @@ vortex_duration
 vortex_in
 vortex_out
 vote_create_failed_t
+vpcf
 vphysics_save_cphysicsbody_t
 vphysics_save_ragdoll_control_t
+vpost
 vprof_counters
 vprof_counters_show_minmax
 vprof_dump_counters
@@ -60564,6 +60860,7 @@ vr camera right eye
 vsmart
 vsnd
 vt_sim_streaming_delay_ms
+vtex
 vtune
 vulkan_batch_size
 vulkan_batch_submits
