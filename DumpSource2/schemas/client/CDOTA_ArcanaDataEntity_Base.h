@@ -1,3 +1,4 @@
+// MConstructibleClassBase
 class CDOTA_ArcanaDataEntity_Base
 {
 	// MNotSaved
