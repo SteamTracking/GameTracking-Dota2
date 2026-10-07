@@ -1,6 +1,12 @@
 {
 	"373301": // dota 2 content
 	[
+		// Entries inside pak01, only the chunks holding them are downloaded
+		"game/dota/pak01_dir.vpk:regex:^scripts/npc/.+\\.txt$",
+		"game/dota/pak01_dir.vpk:regex:^scripts/.+\\.vdata_c$",
+		"game/dota/pak01_dir.vpk:scripts/heroes.herolist_c",
+		"game/dota/pak01_dir.vpk:regex:^resource/localization/(.+/)?[^/]+_english\\.txt$",
+		"game/dota/pak01_dir.vpk:patchnotes/patchnotes.vdpn_c",
 		"regex:.+?\\.(vdf|kv3|txt|cfg|lst|db|jpg|png|gif|inf|gi|fgd|lua|json|js|ts|html|vcfg|gameevents)",
 		"regex:.+?asset_info\\.bin",
 		"regex:.+?_dir\\.vpk",
