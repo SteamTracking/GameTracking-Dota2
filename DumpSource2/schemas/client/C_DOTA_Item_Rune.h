@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Item_Rune : public CBaseAnimatingActivity
 {
 	int32 m_iRuneType;

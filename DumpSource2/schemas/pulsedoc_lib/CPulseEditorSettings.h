@@ -2,6 +2,9 @@ class CPulseEditorSettings
 {
 	Color m_colCanvasBackground; // = [ 16, 16, 16 ]
 	Color m_colCanvasBackgroundWhenDebugging; // = [ 45, 16, 16 ]
+	Color m_colCanvasBackgroundStaleCompile; // = [ 16, 16, 16 ]
+	Color m_colCanvasBorderStaleCompile; // = [ 96, 96, 0 ]
+	Color m_colCanvasBorderDebuggerDetached; // = [ 0, 80, 96 ]
 	// MPropertyStartGroup = "+Grid"
 	float32 m_flGridSnapV2; // = 40
 	bool m_bSnapAbsToGrid; // = true
@@ -59,6 +62,9 @@ class CPulseEditorSettings
 	CUtlString m_FontParentAssets; // = "Lucida Sans,20,-1,5,50,0,0,0,0,0,Regular"
 	Color m_colParentAssets; // = [ 64, 64, 64 ]
 	Color m_colParentAssetsBroken; // = [ 255, 144, 144 ]
+	// MPropertyAttributeEditor = "Font()"
+	CUtlString m_FontCompileStatus; // = "Lucida Sans,16,-1,5,50,0,0,0,0,0,Regular"
+	Color m_colCompileStatus; // = [ 64, 64, 64 ]
 	// MPropertyStartGroup = "+Literals"
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flLiteralLabelSpacing; // = 8
@@ -66,6 +72,8 @@ class CPulseEditorSettings
 	Color m_colDebuggerBrokenBorder; // = [ 255, 144, 144 ]
 	CUtlString m_DebuggerBrokenImg; // = "tools/images/pulse_editor/debugger_broken.png"
 	CUtlString m_DebuggerBrokenOtherImg; // = "tools/images/pulse_editor/debugger_broken_other.png"
+	CUtlString m_DebuggerBrokenStackImg; // = "tools/images/pulse_editor/debugger_broken_instack.png"
+	CUtlString m_DebuggerBrokenStackOtherImg; // = "tools/images/pulse_editor/debugger_broken_instack_other.png"
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flDebuggerBrokenMarkerOffset; // = 2
 	// MPropertyAttributeRange = "0 32"
@@ -97,6 +105,8 @@ class CPulseEditorSettings
 	bool m_bBreakOnExceptions;
 	bool m_bShowExecutionHistory;
 	bool m_bBoxSelectRequiresFullyContained;
+	bool m_bShowFullContextLogging;
+	bool m_bFollowCursorDuringDebugSteps; // = true
 	// MPropertyStartGroup = "+Group Layout"
 	float32 m_flFlowMinWidth; // = 200
 	Color m_colSelectedBorder; // = [ 255, 255, 0 ]

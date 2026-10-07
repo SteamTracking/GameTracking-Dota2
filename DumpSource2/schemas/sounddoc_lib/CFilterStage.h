@@ -14,6 +14,8 @@ class CFilterStage
 	float32 m_fldbGain; // = 1
 	// MPropertyFriendlyName = "Slope"
 	VMixFilterSlope_t m_nFilterSlope; // = "FILTER_SLOPE_12dB"
+	// MPropertyFriendlyName = "Channel Set"
+	VMixFilterChannelSet_t m_nChannelSet; // = "FILTER_ALL_CHANNELS"
 	// MPropertyFriendlyName = "Enabled"
 	bool m_bEnable; // = true
 };

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Hoodwink_Decoy : public C_DOTABaseAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > hIllusion;

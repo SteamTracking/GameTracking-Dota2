@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CDotaTutorialNetworker : public CBaseEntity
 {
 	int32 m_nTutorialState;

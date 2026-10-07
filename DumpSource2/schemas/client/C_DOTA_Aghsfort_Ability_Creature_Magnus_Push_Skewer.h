@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Aghsfort_Ability_Creature_Magnus_Push_Skewer : public C_DOTABaseAbility
 {
 	float32 skewer_radius;

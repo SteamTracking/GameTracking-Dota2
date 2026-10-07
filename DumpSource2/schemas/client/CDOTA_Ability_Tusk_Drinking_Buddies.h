@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Tusk_Drinking_Buddies : public C_DOTABaseAbility
 {
 	float32 buff_duration;

@@ -7,4 +7,5 @@ class CNmTargetSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinit
 	int16 m_parameterNodeIdx; // = -1
 	bool m_bIgnoreInvalidOptions;
 	bool m_bIsWorldSpaceTarget; // = true
+	CGlobalSymbol m_alignmentBoneID;
 };

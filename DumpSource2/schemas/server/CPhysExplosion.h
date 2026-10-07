@@ -5,6 +5,7 @@ class CPhysExplosion : public CPointEntity
 	float32 m_flDamage;
 	float32 m_radius;
 	CUtlSymbolLarge m_targetEntityName;
+	CUtlSymbolLarge m_ignoreEntityName;
 	float32 m_flInnerRadius;
 	float32 m_flPushScale;
 	bool m_bConvertToDebrisWhenPossible;

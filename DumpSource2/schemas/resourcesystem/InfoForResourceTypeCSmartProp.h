@@ -1,4 +1,0 @@
-// MResourceTypeForInfoType = "vsmart"
-class InfoForResourceTypeCSmartProp
-{
-};

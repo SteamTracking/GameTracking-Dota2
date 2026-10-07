@@ -1,4 +1,3 @@
-// MDisableDataDescValidation
 class CPhysicsProp : public CBreakableProp
 {
 	CEntityIOOutput m_MotionEnabled;
@@ -16,7 +15,6 @@ class CPhysicsProp : public CBreakableProp
 	int32 m_damageType;
 	int32 m_damageToEnableMotion;
 	float32 m_flForceToEnableMotion;
-	bool m_bThrownByPlayer;
 	bool m_bDroppedByPlayer;
 	bool m_bTouchedByPlayer;
 	bool m_bFirstCollisionAfterLaunch;
@@ -37,7 +35,6 @@ class CPhysicsProp : public CBreakableProp
 	INavObstacle::NavObstacleType_t m_nNavObstacleType;
 	bool m_bUpdateNavWhenMoving;
 	bool m_bForceNavObstacleCut;
-	bool m_bAllowObstacleConvexHullMerging;
 	bool m_bAcceptDamageFromHeldObjects;
 	bool m_bEnableUseOutput;
 	CPhysicsProp::CrateType_t m_CrateType;

@@ -1,4 +1,5 @@
 import public "events.proto";
+import "event_gcmessages_common.proto";
 import "google/protobuf/descriptor.proto";
 
 option additional_includes = "dota_constants.h";
@@ -645,11 +646,6 @@ enum EDPCPushNotification {
 	DPC_PUSH_NOTIFICATION_FANTASY_PLAYER_CLEARED = 40;
 	DPC_PUSH_NOTIFICATION_FANTASY_DAILY_SUMMARY = 41;
 	DPC_PUSH_NOTIFICATION_FANTASY_FINAL_RESULTS = 42;
-}
-
-enum EEventActionScoreMode {
-	k_eEventActionScoreMode_Add = 0;
-	k_eEventActionScoreMode_Min = 1;
 }
 
 enum EPlayerChallengeHistoryType {

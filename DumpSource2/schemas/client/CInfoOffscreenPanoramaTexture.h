@@ -2,6 +2,7 @@
 class CInfoOffscreenPanoramaTexture : public C_PointEntity
 {
 	bool m_bDisabled;
+	bool m_bEnableMipGen;
 	int32 m_nResolutionX;
 	int32 m_nResolutionY;
 	CUtlSymbolLarge m_szPanelType;

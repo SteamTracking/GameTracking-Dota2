@@ -6,4 +6,5 @@ class CDOTA_Modifier_Item_Consecrated_Wraps : public CDOTA_Buff_Item
 	int32 bonus_all_stats;
 	float32 stack_threshold_damage;
 	float32 duration;
+	bool damage_must_be_player_owned_or_roshan;
 };

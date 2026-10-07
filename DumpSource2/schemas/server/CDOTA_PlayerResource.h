@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CDOTA_PlayerResource : public CBaseEntity
 {
 	CUtlVectorEmbeddedNetworkVar< PlayerResourcePlayerTeamData_t > m_vecPlayerTeamData;

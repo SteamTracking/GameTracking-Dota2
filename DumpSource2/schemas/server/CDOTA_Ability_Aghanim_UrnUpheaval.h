@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Aghanim_UrnUpheaval : public CDOTABaseAbility
 {
 	VectorWS m_vPosition;

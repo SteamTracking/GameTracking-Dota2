@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item : public CDOTABaseAbility
 {
 	int32 m_iState;
@@ -63,5 +62,6 @@ class CDOTA_Item : public CDOTABaseAbility
 	PlayerID_t m_iPlayerOwnerID;
 	AbilityID_t m_nImbuedAbility;
 	bool m_bPurchasedWhileDead;
+	int32 m_nPurchasedPrice;
 	int32 m_nCombineVersion;
 };

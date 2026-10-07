@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_SandKing_BurrowStrike : public C_DOTABaseAbility
 {
 	float32 burrow_width;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_WitchDoctor_ParalyzingCask : public CDOTABaseAbility
 {
 	int32 m_iBounces;

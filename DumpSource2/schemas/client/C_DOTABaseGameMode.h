@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class C_DOTABaseGameMode : public C_BaseEntity
 {
 	CUtlString m_ForcedHUDSkin;
@@ -65,6 +64,8 @@ class C_DOTABaseGameMode : public C_BaseEntity
 	float32 m_flIntelligenceSpellAmpPercent;
 	float32 m_flStrengthMagicResistancePercent;
 	float32 m_flAttributeAllDamage;
+	float32 m_flCreepLifestealFactor;
+	float32 m_flCreepSpellLifestealFactor;
 	float32 m_flDraftingHeroPickSelectTimeOverride;
 	float32 m_flDraftingBanningTimeOverride;
 	bool m_bPauseEnabled;

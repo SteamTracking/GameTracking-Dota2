@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Special_Bonus_Armor_4 : public CDOTABaseAbility
 {
 };

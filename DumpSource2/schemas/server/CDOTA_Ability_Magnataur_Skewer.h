@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Magnataur_Skewer : public CDOTABaseAbility
 {
 	float32 skewer_radius;

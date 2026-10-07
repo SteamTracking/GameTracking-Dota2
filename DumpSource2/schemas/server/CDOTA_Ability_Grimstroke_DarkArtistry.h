@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Grimstroke_DarkArtistry : public CDOTABaseAbility
 {
 	Vector m_vCastDir;

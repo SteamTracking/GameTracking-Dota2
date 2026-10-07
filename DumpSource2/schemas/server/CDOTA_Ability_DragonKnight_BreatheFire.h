@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_DragonKnight_BreatheFire : public CDOTABaseAbility
 {
 	float32 start_radius;

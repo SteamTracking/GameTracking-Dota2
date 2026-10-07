@@ -1,0 +1,3 @@
+class CSoundOpvarSetPrecipitationOBBEntity : public CSoundOpvarSetPrecipitationEntity
+{
+};

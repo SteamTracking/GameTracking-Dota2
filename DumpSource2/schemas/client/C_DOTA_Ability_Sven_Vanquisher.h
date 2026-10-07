@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Sven_Vanquisher : public C_DOTABaseAbility
 {
 };

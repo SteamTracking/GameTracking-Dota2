@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CLightInfoBase
 {
 	Vector2D m_origin2D;

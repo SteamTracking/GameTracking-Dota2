@@ -1,5 +1,4 @@
-class CVMixVsndInput : public CVMixInputBase
+class CVMixVsndInput
 {
 	CUtlString m_defaultValue;
-	int32 m_nProcessor; // = -1
 };

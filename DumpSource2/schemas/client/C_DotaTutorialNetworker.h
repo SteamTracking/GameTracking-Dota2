@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class C_DotaTutorialNetworker : public C_BaseEntity
 {
 	int32 m_nTutorialState;

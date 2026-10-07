@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_EconEntity : public C_BaseAnimatingOverlay, public IHasAttributes
 {
 	CAttributeContainer m_AttributeManager;
@@ -12,5 +11,4 @@ class C_EconEntity : public C_BaseAnimatingOverlay, public IHasAttributes
 	bool m_bAttachmentDirty;
 	style_index_t m_iOldStyle;
 	CHandle< C_BaseEntity > m_hOldProvidee;
-	CUtlVector< C_EconEntity::AttachedModelData_t > m_vecAttachedModels;
 };

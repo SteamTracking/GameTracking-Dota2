@@ -167,6 +167,14 @@
 ]
 
 
+@ModelBreakCommand
+= break_create_joint_null : "Creates a null joint between two spawned breakpieces, which disables collision between them without physically constraining them."
+[
+	parent_piece(model_breakpiece)	: "Parent Piece" : ""
+	child_piece(model_breakpiece)	: "Child Piece" : ""
+]
+
+
 @ModelGameData
 	game_data_list( animating_breakable_stage_list )
 = animating_breakable_stage : "A stage in a prop_animating_breakable progression"

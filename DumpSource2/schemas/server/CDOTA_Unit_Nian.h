@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Unit_Nian : public CDOTA_BaseNPC_Creature
 {
 	CUtlVector< NianDamageTaken_t > m_vecRecentDamage;

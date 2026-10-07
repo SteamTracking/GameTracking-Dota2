@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_DataDriven : public C_DOTABaseAbility
 {
 	bool m_bProcsMagicStick;

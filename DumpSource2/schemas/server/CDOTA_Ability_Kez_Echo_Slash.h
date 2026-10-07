@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Kez_Echo_Slash : public CDOTA_Ability_Kez_BaseAbility
 {
 	Vector m_vInitialDirection;

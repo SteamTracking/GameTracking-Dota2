@@ -15,16 +15,16 @@ class C_OP_RemapModelVolumetoCP : public CParticleFunctionPreEmission
 	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
 	int32 m_nField;
 	// MPropertyFriendlyName = "input volume minimum"
-	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
+	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS && m_nBBoxType != BBOX_SURFACE_AREA"
 	float32 m_flInputMin;
 	// MPropertyFriendlyName = "input volume maximum"
-	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
+	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS && m_nBBoxType != BBOX_SURFACE_AREA"
 	float32 m_flInputMax; // = 128
 	// MPropertyFriendlyName = "output minimum"
-	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
+	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS && m_nBBoxType != BBOX_SURFACE_AREA"
 	float32 m_flOutputMin;
 	// MPropertyFriendlyName = "output maximum"
-	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
+	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS && m_nBBoxType != BBOX_SURFACE_AREA"
 	float32 m_flOutputMax; // = 1
 	// MPropertyFriendlyName = "check full bbox only"
 	// MPropertySuppressExpr = "m_nBBoxType != BBOX_VOLUME"

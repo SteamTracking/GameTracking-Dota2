@@ -1,6 +1,6 @@
 class CVMixToolDoc
 {
-	// MKV3TransferName = "dsp_presets"
+	// MKV3TransferName = "dsp"
 	CVMixToolEffectsList m_dspPresets;
 	CEffectsPreviewList m_effectsPreview; // = { "m_flMix": 1, "m_previewGraphInput": "", "m_previewList": { "m_bPreviewInGame": false, "m_sounds": [  ] } }
 	// MKV3TransferName = "Graphs"

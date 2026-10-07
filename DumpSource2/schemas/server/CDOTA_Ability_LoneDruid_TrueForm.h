@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_LoneDruid_TrueForm : public CDOTABaseAbility
 {
 };

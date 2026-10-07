@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Item : public C_DOTABaseAbility
 {
 	int32 m_CastAnimation;
@@ -39,6 +38,7 @@ class C_DOTA_Item : public C_DOTABaseAbility
 	GameTime_t m_flPurchaseTime;
 	GameTime_t m_flAssembledTime;
 	bool m_bPurchasedWhileDead;
+	int32 m_nPurchasedPrice;
 	bool m_bCanBeUsedOutOfInventory;
 	bool m_bItemEnabled;
 	GameTime_t m_flEnableTime;

@@ -1,4 +1,5 @@
 import "netmessages.proto";
+import "networkbasetypes.proto";
 
 message C2S_CONNECT_SameProcessCheck {
 	optional uint64 localhost_process_id = 1;
@@ -6,6 +7,8 @@ message C2S_CONNECT_SameProcessCheck {
 }
 
 message C2S_CONNECT_Message {
+	option (maximum_size_bytes) = 2400;
+
 	optional uint32 host_version = 1;
 	optional uint32 auth_protocol = 2;
 	optional uint32 challenge_number = 3;

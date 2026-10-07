@@ -104,6 +104,8 @@ message CMsgPlayerInfo {
 	optional fixed64 steamid = 4;
 	optional bool fakeplayer = 5;
 	optional bool ishltv = 6;
+	optional bool clan_member = 9;
+	optional bool clan_officer = 10;
 }
 
 message CEntityMsg {
@@ -234,6 +236,15 @@ message CNETMsg_SpawnGroup_LoadCompleted {
 	optional uint32 spawngrouphandle = 1;
 }
 
+message QuantizedFloatEncoderAlias_t {
+	optional string name = 1;
+	optional int32 bit_count = 2;
+	optional int32 encode_flags = 3;
+	optional float min_value = 4;
+	optional float max_value = 5;
+	optional bool validate = 6;
+}
+
 message CSVCMsg_GameSessionConfiguration {
 	optional bool is_multiplayer = 1;
 	optional bool is_loadsavegame = 2;
@@ -254,6 +265,8 @@ message CSVCMsg_GameSessionConfiguration {
 	optional bool is_transition = 16;
 	optional string previouslevel = 17;
 	optional string landmarkname = 18;
+	repeated .QuantizedFloatEncoderAlias_t quantized_float_encoder_aliases = 20;
+	optional float max_coord = 21;
 }
 
 message CNETMsg_DebugOverlay {

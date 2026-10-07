@@ -6,4 +6,5 @@ class CMeshletDescriptor
 	uint32 m_nTriangleOffset;
 	uint8 m_nVertexCount;
 	uint8 m_nTriangleCount;
+	uint16 m_nBoneIndex; // = 65534
 };

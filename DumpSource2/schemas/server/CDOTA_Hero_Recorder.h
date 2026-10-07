@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Hero_Recorder : public CBaseEntity
 {
 	bool m_bStartRecording;

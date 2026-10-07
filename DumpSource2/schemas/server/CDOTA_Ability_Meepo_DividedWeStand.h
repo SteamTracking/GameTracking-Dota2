@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Meepo_DividedWeStand : public CDOTABaseAbility
 {
 	bool m_bInventoryUpdating;

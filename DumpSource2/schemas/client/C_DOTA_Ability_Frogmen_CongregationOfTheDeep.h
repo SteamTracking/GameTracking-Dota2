@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Frogmen_CongregationOfTheDeep : public C_DOTABaseAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > hAlreadyHitList;

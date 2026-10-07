@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Skywrath_Mage_Arcane_Bolt : public CDOTABaseAbility
 {
 	int32 bolt_vision;

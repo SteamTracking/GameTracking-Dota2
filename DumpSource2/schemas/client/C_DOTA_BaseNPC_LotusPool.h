@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_BaseNPC_LotusPool : public C_DOTA_BaseNPC_Building
 {
 	int32 m_nLotusCount;

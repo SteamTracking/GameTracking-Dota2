@@ -9,8 +9,8 @@ class CSmartPropElement_ModelEntity : public CSmartPropElement
 	// MPropertyDescription = "Specifies the name of the material group (skin) to use when displaying the specified model."
 	CSmartPropAttributeMaterialGroup m_MaterialGroupName;
 	// MPropertyFriendlyName = "Cast Shadows"
-	// MPropertyDescription = "Should the entity created by this element cast shadows."
-	CSmartPropAttributeBool m_bCastShadows;
+	// MPropertyDescription = "Specifies the type of shadows (static or dynamic) that that should be cast by the entity."
+	CSmartPropAttributeCastShadows m_nCastShadows;
 	// MPropertyFriendlyName = "Force Static"
 	// MPropertyDescription = "Force this model to be placed as a static model rather then generating an entity."
 	CSmartPropAttributeBool m_bForceStatic;

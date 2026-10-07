@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Unit_Roshan : public CDOTA_BaseNPC_Additive
 {
 	int32 m_iKillerTeam;

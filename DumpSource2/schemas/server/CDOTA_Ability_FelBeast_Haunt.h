@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_FelBeast_Haunt : public CDOTABaseAbility
 {
 	int32 radius;

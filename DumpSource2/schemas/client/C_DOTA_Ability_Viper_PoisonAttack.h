@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Viper_PoisonAttack : public C_DOTABaseAbility
 {
 };

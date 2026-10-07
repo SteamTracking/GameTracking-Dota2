@@ -6,5 +6,6 @@ class CNmOrientationWarpNode::CDefinition : public CNmPoseNode::CDefinition
 	bool m_bIsOffsetNode;
 	bool m_bIsOffsetRelativeToCharacter; // = true
 	bool m_bWarpTranslation;
+	CNmOrientationWarpNode::AlignmentMode_t m_alignmentMode; // = "MovementDirection"
 	CNmRootMotionData::SamplingMode_t m_samplingMode; // = "WorldSpace"
 };

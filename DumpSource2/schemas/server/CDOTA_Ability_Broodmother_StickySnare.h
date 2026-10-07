@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Broodmother_StickySnare : public CDOTABaseAbility
 {
 	VectorWS m_vEndpoint;

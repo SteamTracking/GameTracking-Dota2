@@ -2,7 +2,7 @@ class CPulse_Variable
 {
 	PulseSymbol_t m_Name;
 	CUtlString m_Description;
-	CPulseValueFullType m_Type; // = "PVAL_VOID"
+	CPulseType m_Type; // = "PVAL_VOID"
 	KeyValues3 m_DefaultValue;
 	PulseVariableKeysSource_t m_nKeysSource; // = "PRIVATE"
 	bool m_bIsPublicBlackboardVariable;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_DeathProphet_SpiritSiphon : public CDOTABaseAbility
 {
 	VectorWS m_vStartPos;

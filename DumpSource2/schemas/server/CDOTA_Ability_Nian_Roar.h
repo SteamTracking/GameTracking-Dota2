@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Nian_Roar : public CDOTABaseAbility
 {
 	int32 base_projectiles;

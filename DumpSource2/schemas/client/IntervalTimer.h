@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MDisableDataDescValidation
 // MHasKV3TransferPolymorphicClassname
 class IntervalTimer
 {

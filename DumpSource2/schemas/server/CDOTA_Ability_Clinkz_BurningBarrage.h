@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Clinkz_BurningBarrage : public CDOTABaseAbility
 {
 	VectorWS m_vStartPos;

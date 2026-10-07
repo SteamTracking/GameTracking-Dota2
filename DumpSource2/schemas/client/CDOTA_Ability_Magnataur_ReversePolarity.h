@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Magnataur_ReversePolarity : public C_DOTABaseAbility
 {
 	ParticleIndex_t m_nFXIndex;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Weaver_Shukuchi : public C_DOTABaseAbility
 {
 	float32 duration;

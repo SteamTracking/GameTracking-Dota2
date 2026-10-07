@@ -82,6 +82,7 @@ $prefix_element$
 '?SetCount@FbxLayerElementArray@fbxsdk@@QEAA_NHW4EFbxMemoryClearMode@2@@Z
 '?SetCurrentAnimationStack@FbxScene@fbxsdk@@QEAAXPEAVFbxAnimStack@2@@Z
 '?SetFileName@FbxFileTexture@fbxsdk@@QEAA_NPEBD@Z
+(9W3
 (?SetLegacyStyle@FbxShape@fbxsdk@@QEAAX_N@Z
 (?SetLink@FbxCluster@fbxsdk@@QEAAXPEBVFbxNode@2@@Z
 (?SetLinkMode@FbxCluster@fbxsdk@@QEAAXW4ELinkMode@12@@Z
@@ -117,6 +118,7 @@ $prefix_element$
 *** Unable to find or add attribute "%s" to element "%s"!\n
 **?SetVertexColors@FbxLayer@fbxsdk@@QEAAXPEAVFbxLayerElementVertexColor@2@@Z
 *?Transpose@FbxAMatrix@fbxsdk@@QEBA?AV12@XZ
+*\tV_ZSTD_decompress
 ---- dmxconvert cmdline ----\n
 ---- dmxconvert output ----\n
 ---------------------------\n
@@ -765,7 +767,6 @@ $prefix_element$
 .?AVCSchemaRegistration_exportsystem@@
 .?AVCSchemaRegistration_toolutils2@@
 .?AVCSimpleAssetTypeInfo@@
-.?AVCSimpleErrorListener@@
 .?AVCUndoAttributeAddRemove@@
 .?AVCUndoAttributeRenameElement@@
 .?AVCUndoCreateElement@@
@@ -800,13 +801,12 @@ $prefix_element$
 .png
 .tga
 .vmat
-08v'
 0x%llx
 16-byte data pool
+1\f%1t
 2(?SetFrame@FbxTime@fbxsdk@@QEAAX_JW4EMode@12@@Z
 2\nP!E
-2\vp8v'
-2\vpdn)
+3<IA><CMI<
 4-byte data pool
 5sfm_v8
 64 283 0
@@ -818,7 +818,7 @@ $prefix_element$
 <UNKNOWN_EXPORT_TYPE>
 <\v??BFbxString@fbxsdk@@QEBAPEBDXZ
 ='?SetAxisSystem@FbxGlobalSettings@fbxsdk@@QEAAXAEBVFbxAxisSystem@2@@Z
-=8l3
+=ati_compress_wrapper.dll
 >"?IsValid@FbxProperty@fbxsdk@@QEBA_NXZ
 ??0FbxAMatrix@fbxsdk@@QEAA@AEBV01@@Z
 ??0FbxAMatrix@fbxsdk@@QEAA@XZ
@@ -925,11 +925,13 @@ $prefix_element$
 ?Get@FbxAMatrix@fbxsdk@@QEBANHH@Z
 ?Get@FbxProperty@fbxsdk@@IEBA_NPEAXAEBW4EFbxType@2@@Z
 ?GetAt@FbxLayerElementArray@fbxsdk@@QEBA_NHPEAPEAXW4EFbxType@2@@Z
+?GetChannel@FbxAnimCurveNode@fbxsdk@@AEAA?AVFbxProperty@2@I@Z
 ?GetChild@FbxNode@fbxsdk@@QEAAPEAV12@H@Z
 ?GetChildCount@FbxNode@fbxsdk@@QEBAH_N@Z
 ?GetCurrentAnimationStack@FbxScene@fbxsdk@@QEAAPEAVFbxAnimStack@2@XZ
 ?GetCurve@FbxProperty@fbxsdk@@QEAAPEAVFbxAnimCurve@2@PEAVFbxAnimLayer@2@PEBD_N@Z
 ?GetCurve@FbxProperty@fbxsdk@@QEAAPEAVFbxAnimCurve@2@PEAVFbxAnimLayer@2@_N@Z
+?GetCurveNode@FbxProperty@fbxsdk@@QEAAPEAVFbxAnimCurveNode@2@PEAVFbxAnimLayer@2@_N@Z
 ?GetDirectArrayVoid@FbxLayerElementUserData@fbxsdk@@QEAAPEAV?$FbxLayerElementArrayTemplate@PEAX@2@PEBDPEA_N@Z
 ?GetDocumentInfo@FbxDocument@fbxsdk@@QEBAPEAVFbxDocumentInfo@2@XZ
 ?GetErrorString@FbxStatus@fbxsdk@@QEBAPEBDXZ
@@ -963,10 +965,11 @@ $prefix_element$
 ?GetT@FbxAMatrix@fbxsdk@@QEBA?AVFbxVector4@2@XZ
 ?GetTexture@FbxScene@fbxsdk@@QEAAPEAVFbxTexture@2@H@Z
 ?GetTextureCount@FbxScene@fbxsdk@@QEBAHXZ
-?alpha
 ?expf
 ?model_default_preview_sequence_name
 ?vtex
+@BoneSetup
+@alpha
 AddNewLayer
 AddUndoElement '%s'\n
 Adding %s helper key at %d value 
@@ -1277,6 +1280,7 @@ DmeLog
 DmeLogLayer
 DmeMakefile
 DmeMaterial
+DmeMaya
 DmeMayaAnimationMakefile
 DmeMayaMakefile
 DmeMayaModelMakefile
@@ -1434,7 +1438,7 @@ Fingers_L
 Fingers_R
 FlattenLayers
 FloatBitMap_t::WriteInMemoryEXRFast
-FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:170
+FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:171
 FoldLipLo
 FoldLipUp
 FoliageAnimation
@@ -1444,14 +1448,17 @@ Generic MovieObjects
 Generic SFM
 GenericType
 GetClipboardData
-GetProfile_ultrafast
 GlobalSize
+H)T3
+HUT3
 Hammer temp export
 HemiOctAnisoRoughness_RG_BA
 HemiOctIsoRoughness_RG_B
 HemiOctNormal
+HiU3
 Hold
 I(?SetGlobalTimeMode@FbxTime@fbxsdk@@SAXW4EMode@12@N@Z
+I>U3
 IExportSystem
 IKV3TransferInterface_ResourceSave
 IOSRoot
@@ -1588,7 +1595,7 @@ Preset File
 Procedural
 PropWorldOrigin
 QAngle
-R\fp8v'
+RSDS=C
 Radius Random
 Random Cull
 Randomly Flip Yaw
@@ -1635,6 +1642,7 @@ Sequence( %s, %.3f ) : %.3f
 Serialize: File encoding %s is undefined!\n
 Serialize: File encoding '%s' is undefined!\n
 Serialize: Format %s expects to be written to a binary format, but the buffer is a text-format buffer\n
+ShapeOffset
 ShotBoundsChannel
 Simple Cubic
 Solved Foot 
@@ -1712,6 +1720,8 @@ ZFP compression is not supported in this build
 [%s] Forced dmxconvert - Finished [%s] in %0.2f secs. Please re-save or upconvert this asset!\n
 [morph_controls
 \f*?SetUserData@FbxLayer@fbxsdk@@QEAAXPEAVFbxLayerElementUserData@2@@Z
+\n_V_StringAfterPrefixCaseSensitive
+\n_V_StripLastDir
 \r?AddBlendShapeChannel@FbxBlendShape@fbxsdk@@QEAA_NPEAVFbxBlendShapeChannel@2@@Z
 \r?AddChild@FbxNode@fbxsdk@@QEAA_NPEAV12@@Z
 \r?AddCluster@FbxSkin@fbxsdk@@QEAA_NPEAVFbxCluster@2@@Z
@@ -1726,14 +1736,12 @@ ZFP compression is not supported in this build
 \t??8FbxVector4@fbxsdk@@QEBA_NAEBV01@@Z
 \tError\n
 \tNAN encountered in element '%s' guid %s attribute '%s'!\n
+\tV_log2f
 \tV_sscanf_s
 \tV_strnchr
 \t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 \t\t\t\t\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-\t_V_StringAfterPrefixCaseSensitive
-\t_V_StripLastDir
 \v??_7FbxAnimCurveFilter@fbxsdk@@6B@
-]\tV_log2f
 _basetintmask_
 _colorSetNames
 _detailmask_
@@ -1751,6 +1759,9 @@ _selfillummask_
 _specexp_
 _specmask_
 _texcoordNames
+`5Y3
+`EV3
+`eV3
 activeBookmarkSet
 adding layer %d to stack\n
 addlayer: log %p lc[%d], layer %p
@@ -1778,7 +1789,6 @@ animflags
 aperture
 appVersion
 arrayEntries
-ati_compress_wrapper.dll
 attached_prop_physics
 attenuation0
 attenuation1
@@ -1988,6 +1998,7 @@ exportType
 exportsystem
 exportsystem.dll
 exporttags
+expr
 eyeOffset
 eyelid
 eyes
@@ -2061,6 +2072,7 @@ hold
 hold_left
 hold_right
 houdini
+ih> Gl>\f.p>
 index
 indices
 indirectlight
@@ -2262,6 +2274,7 @@ note
 npcclass
 numTimeSteps
 oOffset
+offseTime
 offsetTime
 operators
 optionallycompressedtangentframe
@@ -2281,7 +2294,6 @@ overrideParent
 overridePos
 overrideRot
 ownerlog
-p8v'
 parentBindRotation
 parentConstraint
 pathNodeName
@@ -2324,7 +2336,6 @@ prefab_has_runtime_entity_by_default
 prefab_root
 presetGroups
 presetRemap
-presets
 procedural
 prop_physics_override
 prop_physics_respawnable
@@ -2337,7 +2348,6 @@ qangle_array
 quadraticAttenuation
 quaternion log
 quaternion_array
-r\vp8v'
 radiusScale
 radius_random
 radius_scale
@@ -2623,5 +2633,4 @@ z)?SetScale@FbxTexture@fbxsdk@@QEAAXNN@Z
 zfar
 znear
 {+?currentDateTimeGMT@FbxDateTime@fbxsdk@@SA?AV12@XZ
-|BBoneSetup
 ~CGenericFilter

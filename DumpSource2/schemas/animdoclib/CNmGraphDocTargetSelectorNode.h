@@ -1,5 +1,5 @@
 // MHasKV3TransferPolymorphicClassname
-class CNmGraphDocTargetSelectorNode : public CNmGraphDocFlowNode
+class CNmGraphDocTargetSelectorNode : public CNmGraphDocVariationDataNode
 {
 	// MPropertyAutoExpandSelf
 	// MPropertyResizable = 0

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Shredder_Chakram : public CDOTABaseAbility
 {
 	float32 radius;

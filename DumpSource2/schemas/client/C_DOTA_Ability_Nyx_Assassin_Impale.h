@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Nyx_Assassin_Impale : public C_DOTABaseAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > hAlreadyHitList;

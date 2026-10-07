@@ -25,6 +25,4 @@ class CSmartPropRoot
 	// MPropertyFriendlyName = "Modifiers"
 	// MVDataPromoteField = 2
 	CUtlVector< CSmartPropModifier* > m_Modifiers;
-	// MPropertySuppressExpr = "!__IsSmartPropPulseActive"
-	CStrongHandle< InfoForResourceTypeIPulseGraphDef > m_hPulseGraph;
 };

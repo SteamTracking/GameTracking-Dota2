@@ -167,8 +167,8 @@
 	fog_end_night(float) : "Fog End - Night" : "0" : "Night Fog End distance."
 	fog_height_day(float) : "Height Fog - Day" : "0" : "Daytime Fog Height."
 	fog_height_night(float) : "Height Fog - Night" : "0" : "Night Fog Height."
-	fog_hight_color_day(color255) : "Height Fog Color - Day" : "0" : "Daytime Height Fog Color"
-	fog_hight_color_night(color255) : "Height Fog Color - Night" : "0" : "Night Height Fog Color"
+	fog_hight_color_day(color255) : "Height Fog Color - Day" : "0 0 0" : "Daytime Height Fog Color"
+	fog_hight_color_night(color255) : "Height Fog Color - Night" : "0 0 0" : "Night Height Fog Color"
 	fow_darkess_day(float) : "FoW Darkness - Day" : "0" : "Daytime FoW Darkness."
 	fow_darkess_night(float) : "FoW Darkness - Night" : "0" : "Night FoW Darkness."
 	fow_color_r_day(float) : "FoW Color R - Day" : "0" : "Daytime FoW Color R"
@@ -1361,6 +1361,29 @@ editormodel
 
 @PointClass base(trigger_multiple,dota_entity_filter_flags) = filter_dota : "Dota-specific Filter."
 [
+]
+
+// Pair this with a prop_dynamic using models/props_structures/ancient_trigger001.vmdl, placed in
+// the same tile and named to match the "Plate Prop" key. The trigger drives that prop's
+// up/down animations; game mode code reads the plate's state with IsPressed().
+@SolidClass base(Targetname, Parentname, EnableDisable)
+	metadata
+	{
+		physics_only_model = true
+		auto_apply_material = "materials/tools/toolstrigger.vmat"
+	}
+	= trigger_dota_pressure_plate : "Floor plate that is held down while something stands on it."
+[
+	plate_prop(target_destination) : "Plate Prop" : "pressure_plate_prop" : "Name of the prop_dynamic in this tile that is the visible plate. It must use models/props_structures/ancient_trigger001.vmdl."
+	any_unit_can_press(boolean) : "Any Unit Can Press" : 0 : "By default only real heroes trip the plate. Turn this on to let creeps, summons and enemies trip it too."
+	latching(boolean) : "Latching" : 0 : "If set, the plate stays down forever once it has been stepped on. OnEndTouchAll still fires when the last unit leaves."
+	filtername(filterclass) : "Filter Name" : : "Optional additional filter applied on top of the hero check."
+
+	// Outputs
+	output OnStartTouch(void) : "Fired when a unit starts touching the plate."
+	output OnStartTouchAll(void) : "Fired when the plate goes down, i.e. the first unit steps on it."
+	output OnEndTouch(void) : "Fired when a unit stops touching the plate."
+	output OnEndTouchAll(void) : "Fired when the last unit steps off the plate. A latching plate does not rise, but this still fires."
 ]
 
 @OverrideClass = prop_static

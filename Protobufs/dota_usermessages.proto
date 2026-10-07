@@ -176,6 +176,8 @@ enum EDotaUserMessages {
 	DOTA_UM_TormentorTimer = 634;
 	DOTA_UM_KillEffect = 635;
 	DOTA_UM_GiveItem = 636;
+	DOTA_UM_TidehunterArcanaProgress_Ravages = 637;
+	DOTA_UM_TidehunterArcanaProgress_Fish = 638;
 }
 
 enum DOTA_CHAT_MESSAGE {
@@ -820,6 +822,7 @@ message CDOTAUserMsg_UnitEvent {
 		optional .CDOTAUserMsg_UnitEvent.Interval predelay = 6;
 		optional uint32 flags = 7;
 		optional int32 response_type = 8;
+		optional int32 speech_target_entity_index = 9;
 	}
 
 	message SpeechMute {
@@ -1777,4 +1780,10 @@ message CDOTAUserMsg_GiveItem {
 	optional uint32 item_ent_index = 3 [default = 16777215, boxed_type = "CEHandleNetworkableInt", synthetic_default = "16777215"];
 	optional .CDOTAUserMsg_GiveItem.EGiveStatus give_status = 4 [default = Start];
 	optional uint32 id = 5;
+}
+
+message CDOTAUserMsg_TidehunterArcanaProgress_Ravages {
+}
+
+message CDOTAUserMsg_TidehunterArcanaProgress_Fish {
 }

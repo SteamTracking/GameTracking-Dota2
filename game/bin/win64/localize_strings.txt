@@ -116,7 +116,6 @@ $1.23
 .?AVCLocalizeCompiledStringLocVariables@@
 .?AVCLocalizeCompiledStringMessageFormat@@
 .?AVCLocalizeCompiledStringSinglePlain@@
-.?AVCSimpleErrorListener@@
 .?AVILocVariableSource@@
 .?AVILocalize@@
 .?AVILocalizeCompiledString@@
@@ -126,7 +125,6 @@ $1.23
 12.3456
 12.35
 12345
-2\vp0
 :foo
 :help
 :name_ref
@@ -263,8 +261,12 @@ WARNING: Duplicate string token '%s' found in %s (original in %s) - new value '%
 [!s:notavar]
 [!s:notpresent]
 [END]
+\n_V_StringAfterPrefixCaseSensitive
 \resource\valve_
-\t_V_StringAfterPrefixCaseSensitive
+\tV_UTF16ToUChar32
+\tV_UTF8ToUChar32
+\tV_UTF8ToUTF16
+\tV_powd
 \{s:foo} {s:bar}
 \{s:foo} {} {,:} {s:} {s:bar} extra
 duplicate selector case
@@ -281,7 +283,6 @@ gen test mod B
 gender
 instance %d:\n
 invalid plural predicate after '='
-j\tV_powd
 korean
 localize.dll
 many

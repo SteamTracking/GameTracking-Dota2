@@ -16,6 +16,7 @@
 	input SetStyle(string) : "',' separated list of styles from light_styles.vdata to play in sequence. The last entry will loop. The last style can be 'on'/'off' to enable/disable the light with no light style."
 	input SetFogStrength(float) : "Set the fog strength."
 	input SetFogScale(float) : "Set the fog multiplier, which defaults to 1."
+	input SetBounceScale(float) : "Set the indirect bounce multiplier."
 	output OnStyleEvent0(void) : "Fired when the current light style plays an event of the type specified by Style Output Event 0."
 	output OnStyleEvent1(void) : "Fired when the current light style plays an event of the type specified by Style Output Event 1."
 	output OnStyleEvent2(void) : "Fired when the current light style plays an event of the type specified by Style Output Event 2."
@@ -33,12 +34,11 @@
 		entity_tool_group = "Lighting"
 		entity_tool_sortname = "lights2"
 		view_attach_offset = [ -10.0, 0.0, 0.0 ]
-		kv3_field_names = [ "precomputed_vis_clusters" ]
 	}
 = light_barn : "A cinematic barn door style light"
 [
 	// Light Units
-	brightness_units(choices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
+	brightness_units(intchoices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
 	[
 		"1" : "Lumens"
 		"0" : "EV"
@@ -50,7 +50,7 @@
 
 	// Direct Lighting
 	enabled(boolean) { group="Direct Light" } : "Enabled" : 1 // Toggle any component of the light that is dynamic - direct, fog, eventually bounce
-	directlight(choices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
+	directlight(intchoices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
 	[
 		// Ordered by expensiveness
 		"0" : "None"
@@ -58,7 +58,7 @@
 		"3" : "Stationary"
 		"2" : "Dynamic"
 	]
-	colormode(choices) { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
+	colormode(intchoices) { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
 	[
 		"0" : "Color"
 		"1" : "Color Temperature"
@@ -72,7 +72,7 @@
 	skirt_near(float) { group="Direct Light" min="0.0" max="1.0" } : "Near Falloff" : "0.05" : "Controls the light falloff from the light source."
 
 	// Bounce
-	bouncelight(choices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
+	bouncelight(intchoices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
 	[
         "-1" : "Default"
 		"0" : "Disabled"
@@ -82,7 +82,7 @@
 	bouncescale(float) { group="Indirect Light" } : "Indirect Light Multiplier" : "1.0" : "Increases the intensity of indirect (bounce) light"
 
 	// Light Source / Area Light Settings
-	luminaire_shape(choices) { group="Light Source" }: "Light Source Type" : "1" : "Point or area light shapes. Point produces sharp shadows whereas Disk and Rectangle are area lights, with shadow softness/falloff influenced by the Area Light Size/Width." =
+	luminaire_shape(intchoices) { group="Light Source" }: "Light Source Type" : "1" : "Point or area light shapes. Point produces sharp shadows whereas Disk and Rectangle are area lights, with shadow softness/falloff influenced by the Area Light Size/Width." =
 	[
 		"0" : "Point"
 		"1" : "Disk (Area Light)"
@@ -102,7 +102,7 @@
 	lightcookie(resource:vtex) { group="Cookie" initial_filter_string="materials/effects/lightcookies/" } : "Cookie" : "" : "Choose a light cookie texture (.vtex) to represent your light shape."
 
 	// Specular
-	bakespeculartocubemaps(choices) { group="Specular" enabled={ variable="directlight" value="1" } } : "Bake Specular to Cubemaps" : 0 : "Bake specular into cubemaps. Only works when Direct Lighting Type is set to Baked." =
+	bakespeculartocubemaps(intchoices) { group="Specular" enabled={ variable="directlight" value="1" } } : "Bake Specular to Cubemaps" : 0 : "Bake specular into cubemaps. Only works when Direct Lighting Type is set to Baked." =
 	[
 		"0" : "None"
 		"2" : "Disk"
@@ -113,13 +113,13 @@
 	minroughness(float) { group="Specular" min="0.0" max="1.0" } : "Specular Softness" : "0" : "USE WITH CAUTION: Artificially softens direct specular (not cubemaps) to simulate cheap, soft area lights. Note: Direct Lighting must be set to Stationary or Dynamic for this to have an effect."
 
 	// Shadows
-	castshadows(choices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
+	castshadows(intchoices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
 	[
 		"0" : "No"
 		"1" : "Static & Dynamic"
 		"2" : "Static Only"
 	]
-	shadowmapsize(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
+	shadowmapsize(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
 	[
 		"4096" : "4096"
 		"3584" : "3584"
@@ -131,7 +131,7 @@
 		"512" : "512"
 		"-1" : "Default"
 	]
-    shadowpriority(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
+    shadowpriority(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
     [
         "100" : "Highest"
         "10"  : "High"
@@ -164,14 +164,14 @@
 	// Hacks
 
 	// Fog
-	fog(choices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
+	fog(intchoices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
 	[
 		"0" : "Disabled"
         // Baked is the old "clipmaps" mode which we no longer support.
 		//"1" : "Baked"
 		"2" : "Enabled"
 	]
-	fogshadows(choices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
+	fogshadows(intchoices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
 	[
 		"-1" : "Use \"Cast Shadows\" Setting"
 		"0" : "No Volumetric Shadows"
@@ -192,12 +192,11 @@
 		entity_tool_group = "Lighting"
 		entity_tool_sortname = "lights2"
 		view_attach_offset = [ -10.0, 0.0, 0.0 ]
-		kv3_field_names = [ "precomputed_vis_clusters" ]
 	}
 = light_rect : "A rectangular or disk shaped light"
 [
 	// Units
-	brightness_units(choices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
+	brightness_units(intchoices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
 	[
 		"1" : "Lumens"
 		"4" : "Candelas"
@@ -212,7 +211,7 @@
 
 	// Direct Lighting
 	enabled(boolean) { group="Direct Light" } : "Enabled" : 1 // Toggle any component of the light that is dynamic - direct, fog, eventually bounce
-	directlight(choices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
+	directlight(intchoices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
 	[
 		// Ordered by expensiveness
 		"0" : "None"
@@ -220,7 +219,7 @@
 		"3" : "Stationary"
 		"2" : "Dynamic"
 	]
-	colormode(choices)  { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
+	colormode(intchoices)  { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
 	[
 		"0" : "Color"
 		"1" : "Color Temperature"
@@ -232,7 +231,7 @@
 	skirt(float) { group="Direct Light" min="0.0" max="1.0" } : "Falloff" : "0.1" : "Light Falloff based on set range."
 
 	// Bounce
-	bouncelight(choices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
+	bouncelight(intchoices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
 	[
         "-1" : "Default"
 		"0" : "Disabled"
@@ -242,7 +241,7 @@
 	bouncescale(float) { group="Indirect Light" } : "Indirect Light Multiplier" : "1.0" : "Increases the intensity of a lights' Indirect (bounce) light"
 
 	// Shape
-	shape(choices) { group="Light Shape" } : "Light Shape" : "0" : "Shape of the light" =
+	shape(intchoices) { group="Light Shape" } : "Light Shape" : "0" : "Shape of the light" =
 	[
 		"0" : "Rectangle"
 		"1" : "Disk"
@@ -255,13 +254,13 @@
 	minroughness(float) { group="Specular" min="0.0" max="1.0" } : "Specular Softness" : "0" : "Artificially softens direct specular (not cubemaps) to simulate cheap, soft area lights. Note: Direct Lighting must be set to Stationary or Dynamic for this to have an effect."
 
 	// Shadows
-	castshadows(choices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
+	castshadows(intchoices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
 	[
 		"0" : "No"
 		"1" : "Static & Dynamic"
 		"2" : "Static Only"
 	]
-	shadowmapsize(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
+	shadowmapsize(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
 	[
 		"4096" : "4096"
 		"3584" : "3584"
@@ -273,7 +272,7 @@
 		"512" : "512"
 		"-1" : "Default"
 	]
-    shadowpriority(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
+    shadowpriority(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
     [
         "100" : "Highest"
         "10"  : "High"
@@ -305,14 +304,14 @@
 	light_style_target3(target_destination) { group="Style" } : "Style Target 3" : "" : "Sets $light_emissive for use in material expressions. The emissive geometry's surface area should be approximately equal to the area light's surface area."
 
 	// Fog
-	fog(choices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
+	fog(intchoices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
 	[
 		"0" : "Disabled"
         // Baked is the old "clipmaps" mode which we no longer support.
 		//"1" : "Baked"
 		"2" : "Enabled"
 	]
-	fogshadows(choices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
+	fogshadows(intchoices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
 	[
 		"-1" : "Use \"Cast Shadows\" Setting"
 		"0" : "No Volumetric Shadows"
@@ -333,7 +332,6 @@
 		entity_tool_group = "Lighting"
 		entity_tool_sortname = "lights2"
 		default_pitch = 90.0
-		kv3_field_names = [ "precomputed_vis_clusters" ]
 	}
 	iconsprite
 	{
@@ -343,7 +341,7 @@
 = light_omni2 : "A sphere or tube shaped light"
 [
 	// Light Units
-	brightness_units(choices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
+	brightness_units(intchoices) { group="Light Units" } : "Units" : "1" : "Brightness Units" =
 	[
 		"1" : "Lumens"
 		"4" : "Candelas"
@@ -358,7 +356,7 @@
 
 	// Direct Lighting
 	enabled(boolean) { group="Direct Light" } : "Enabled" : 1 // Toggle any component of the light that is dynamic - direct, fog, eventually bounce
-	directlight(choices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
+	directlight(intchoices) { group="Direct Light" } : "Direct Lighting Type" : "3" : "How direct lighting should be represented: Static=Fully baked into lightmap (cheapest), Stationary=Dynamic direct light with baked shadows, Dynamic=Fully dynamic (Most expensive)" =
 	[
 		// Ordered by expensiveness
 		"0" : "None"
@@ -366,7 +364,7 @@
 		"3" : "Stationary"
 		"2" : "Dynamic"
 	]
-	colormode(choices) { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
+	colormode(intchoices) { group="Direct Light" } : "Color Mode" : "0" : "How to calculate the light's color" =
 	[
 		"0" : "Color"
 		"1" : "Color Temperature"
@@ -378,7 +376,7 @@
 	skirt(float) { group="Direct Light" min="0.0" max="1.0" } : "Falloff" : "0.1" : "Controls the light falloff based on the set Range."
 	
 	// Bounce
-	bouncelight(choices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
+	bouncelight(intchoices) { group="Indirect Light" enabled={ variable="directlight" values=["1","2","3"] } } : "Indirect Light Type" : "-1" : "How indirect (bounce) light should be computed" =
 	[
         "-1" : "Default"
 		"0" : "Disabled"
@@ -388,7 +386,7 @@
 	bouncescale(float) { group="Indirect Light" } : "Indirect Light Multiplier" : "1.0" : "Increases the intensity of a lights' Indirect (bounce) light."
 
 	// Shape
-	shape(choices) { group="Light Shape" } : "Shape" : "3" : "Shape of the light" =
+	shape(intchoices) { group="Light Shape" } : "Shape" : "3" : "Shape of the light" =
 	[
 		"3" : "Point"
 		"0" : "Sphere"
@@ -409,13 +407,13 @@
 	minroughness(float) { group="Specular" min="0.0" max="1.0" } : "Specular Softness" : "0" : "USE WITH CAUTION: Artificially softens direct specular (not cubemaps) to simulate cheap, soft area lights. Note: Direct Lighting must be set to Stationary or Dynamic for this to have an effect."
 
 	// Shadows
-	castshadows(choices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
+	castshadows(intchoices) { group="Shadows" } : "Cast Shadows" : "1" : "Whether this light casts shadow" =
 	[
 		"0" : "No"
 		"1" : "Static & Dynamic"
 		"2" : "Static Only"
 	]
-	shadowmapsize(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
+	shadowmapsize(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Map Resolution" : "-1" =
 	[
 		"4096" : "4096"
 		"3584" : "3584"
@@ -427,7 +425,7 @@
 		"512" : "512"
 		"-1" : "Default"
 	]
-    shadowpriority(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
+    shadowpriority(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" =
     [
         "100" : "Highest"
         "10"  : "High"
@@ -459,14 +457,14 @@
 	light_style_target3(target_destination) { group="Style" } : "Style Target 3" : "" : "Sets $light_emissive for use in material expressions. The emissive geometry's surface area should be approximately equal to the area light's surface area."
 
 	// Fog
-	fog(choices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
+	fog(intchoices) { group="Volumetric" } : "Volumetric Lighting" : "0" =
 	[
 		"0" : "Disabled"
         // Baked is the old "clipmaps" mode which we no longer support.
 		//"1" : "Baked"
 		"2" : "Enabled"
 	]
-	fogshadows(choices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
+	fogshadows(intchoices) { group="Volumetric" enabled={ variable="fog" value="2" } } : "Volumetric Shadows" : "-1" : "Volumetric Shadow Mode" =
 	[
 		"-1" : "Use \"Cast Shadows\" Setting"
 		"0" : "No Volumetric Shadows"

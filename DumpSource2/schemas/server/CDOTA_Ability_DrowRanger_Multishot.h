@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_DrowRanger_Multishot : public CDOTABaseAbility
 {
 	VectorWS m_vStartPos;

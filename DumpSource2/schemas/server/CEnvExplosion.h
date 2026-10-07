@@ -7,6 +7,7 @@ class CEnvExplosion : public CModelPointEntity
 	float32 m_flDamageForce;
 	CHandle< CBaseEntity > m_hInflictor;
 	DamageTypes_t m_iCustomDamageType;
+	bool m_bHasCustomDamageType;
 	bool m_bCreateDebris;
 	CUtlSymbolLarge m_iszCustomEffectName;
 	CUtlSymbolLarge m_iszCustomSoundName;

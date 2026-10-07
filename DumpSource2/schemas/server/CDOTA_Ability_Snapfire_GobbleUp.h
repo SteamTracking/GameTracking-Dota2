@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Snapfire_GobbleUp : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hGobbledUnit;

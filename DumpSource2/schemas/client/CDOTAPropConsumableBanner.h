@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTAPropConsumableBanner : public C_DynamicProp
 {
 	PlayerID_t m_nPlayerID;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTAFogOfWarTempViewers : public C_BaseEntity
 {
 	uint32 m_FoWTempViewerVersion;

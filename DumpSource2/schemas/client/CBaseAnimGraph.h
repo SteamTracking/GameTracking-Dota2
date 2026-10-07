@@ -23,6 +23,7 @@ class CBaseAnimGraph : public C_BaseModelEntity
 	bool m_bRagdollEnabled;
 	// MNotSaved
 	bool m_bRagdollClientSide;
+	bool m_bShouldUpdateTransformations;
 	// MNotSaved
 	bool m_bHasAnimatedMaterialAttributes;
 };

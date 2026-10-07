@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Lich_ChainFrost : public C_DOTABaseAbility
 {
 	float32 jump_range;

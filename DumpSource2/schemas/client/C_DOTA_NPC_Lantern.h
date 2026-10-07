@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_NPC_Lantern : public C_DOTA_BaseNPC_Building
 {
 	CUtlSymbolLarge m_szInteractAbilityName;

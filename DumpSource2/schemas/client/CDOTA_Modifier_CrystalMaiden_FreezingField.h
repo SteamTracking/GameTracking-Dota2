@@ -3,7 +3,7 @@ class CDOTA_Modifier_CrystalMaiden_FreezingField : public CDOTA_Buff
 	float32 radius;
 	int32 damage;
 	int32 bonus_armor;
-	float32 explosion_interval;
+	int32 num_explosions;
 	float32 shard_bonus_explosion;
 	float32 explosion_radius;
 	float32 slow_duration;
@@ -12,6 +12,7 @@ class CDOTA_Modifier_CrystalMaiden_FreezingField : public CDOTA_Buff
 	float32 frostbite_delay;
 	GameTime_t m_fLastTick;
 	float32 m_fTimeAccumulator;
+	float32 m_flExplosionInterval;
 	int32 m_iExplosionCount;
 	int32 m_iExplosionTotalCount;
 	int32 m_iExplosionQuadrant;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTAAppCheers : public C_BaseEntity
 {
 	int16 m_nRadiantCheers;

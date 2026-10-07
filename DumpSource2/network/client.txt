@@ -44,6 +44,7 @@ CBaseAnimGraph
 	PhysicsRagdollPose_t m_RagdollPose
 	bool m_bRagdollEnabled (change callbacks: OnClientRagdollEnabledChanged)
 	bool m_bRagdollClientSide (change callbacks: OnClientRagdollChanged)
+	bool m_bShouldUpdateTransformations
 
 CBaseAnimGraphController
 	AnimationAlgorithm_t m_nAnimationAlgorithm (change callbacks: AG2_OnAnimGraphDefinitionOrModeChanged)
@@ -231,8 +232,6 @@ CDOTA_Ability_Abyssal_Underling_Warrior_LastWill
 CDOTA_Ability_Abyssal_Underling_Warrior_ManaBurn
 
 CDOTA_Ability_Abyssal_Underling_Warrior_Sight
-
-CDOTA_Ability_Aghanim_Spear
 
 CDOTA_Ability_AghsFort_Arcanist_Potion
 
@@ -983,6 +982,12 @@ CDOTA_ArcanaDataEntity_FacelessVoid
 CDOTA_ArcanaDataEntity_Razor
 	int m_nEmpoweredKills (change callbacks: OnRazorArcanaChanged)
 
+CDOTA_ArcanaDataEntity_Tidehunter
+	int m_nRavagesCounted (change callbacks: OnTidehunterArcanaChanged)
+	int m_nRavagesMax (change callbacks: OnTidehunterArcanaChanged)
+	int m_nFishCounted (change callbacks: OnTidehunterArcanaChanged)
+	int m_nFishMax (change callbacks: OnTidehunterArcanaChanged)
+
 CDOTA_Artillery_EffectsEntity
 
 CDOTA_BaseNPC_AghsFort_Watch_Tower
@@ -1598,6 +1603,7 @@ CInfoFan
 
 CInfoOffscreenPanoramaTexture
 	bool m_bDisabled
+	bool m_bEnableMipGen
 	int m_nResolutionX
 	int m_nResolutionY
 	string_t m_szPanelType
@@ -1771,9 +1777,9 @@ CNetworkOriginCellCoordQuantizedVectorWS
 	uint16 m_cellY (serializer: celly; priority: 31; change callbacks: OnCellChangedWS)
 	uint16 m_cellZ (serializer: cellz; priority: 31; change callbacks: OnCellChangedWS)
 	uint16 m_nOutsideWorld
-	CNetworkedQuantizedFloat m_vecX (sent as: float32; serializer: posx; priority: 31; change callbacks: OnCellChanged; bit count: 13; encode flags: 1; min: 0; max: 256)
-	CNetworkedQuantizedFloat m_vecY (sent as: float32; serializer: posy; priority: 31; change callbacks: OnCellChanged; bit count: 13; encode flags: 1; min: 0; max: 256)
-	CNetworkedQuantizedFloat m_vecZ (sent as: float32; serializer: posz; priority: 31; change callbacks: OnCellChanged; bit count: 13; encode flags: 1; min: 0; max: 256)
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; serializer: posx; priority: 31; change callbacks: OnCellChangedWS; bit count: 13; encode flags: 1; min: 0; max: 256)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; serializer: posy; priority: 31; change callbacks: OnCellChangedWS; bit count: 13; encode flags: 1; min: 0; max: 256)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; serializer: posz; priority: 31; change callbacks: OnCellChangedWS; bit count: 13; encode flags: 1; min: 0; max: 256)
 
 CNetworkOriginQuantizedVector
 	vars atomic
@@ -1965,7 +1971,7 @@ C_BaseClientUIEntity
 	string_t m_PanelID
 
 C_BaseCombatCharacter
-	exclude by user group: LocalPlayerExclusive
+	exclude by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	CHandle<C_EconWearable > m_hMyWearables (sent as: ehandle; change callbacks: OnWearablesChanged)
 
 C_BaseDoor
@@ -1973,10 +1979,10 @@ C_BaseDoor
 
 C_BaseEntity
 	exclude by name: m_bClientSideRagdoll, m_iMaxHealth, m_spawnflags, m_bTakesDamage, m_nTakeDamageFlags, m_vecAbsVelocity, m_flWaterLevel, m_flTimeScale, m_vecBaseVelocity
-	exclude by user group: Player, Water, LocalPlayerExclusive
+	exclude by user group: Player, Water, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	CBodyComponent::Storage_t m_CBodyComponent (class: CBodyComponent; alias: CBodyComponent; type alias: CBodyComponent; priority: 48; user groups: CBodyComponent)
-	int32 m_iMaxHealth (user groups: LocalPlayerExclusive)
-	int32 m_iHealth (serializer: ClampHealth; priority: 32; user groups: Player)
+	int32 m_iMaxHealth (user groups: LocalPlayerAndPredictorsExclusive; change callbacks: ObservableRecv_m_iMaxHealth)
+	int32 m_iHealth (serializer: ClampHealth; priority: 32; user groups: Player; change callbacks: ObservableRecv_m_iHealth)
 	uint8 m_lifeState (priority: 32; user groups: Player)
 	DamageOptions_t m_takedamage
 	bool m_bTakesDamage
@@ -1990,9 +1996,9 @@ C_BaseEntity
 	bool m_bClientSideRagdoll
 	uint8 m_iTeamNum (change callbacks: OnNetVarTeamNumChanged)
 	uint32 m_spawnflags
-	GameTick_t m_nNextThinkTick (sent as: int32; user groups: LocalPlayerExclusive)
+	GameTick_t m_nNextThinkTick (sent as: int32; user groups: LocalPlayerAndPredictorsExclusive)
 	uint32 m_fFlags (priority: 32; user groups: Player; change callbacks: OnFlagsChanged)
-	CNetworkVelocityVector m_vecServerVelocity (alias: m_vecVelocity; priority: 32; user groups: LocalPlayerExclusive; change callbacks: OnServerVelocityChanged)
+	CNetworkVelocityVector m_vecServerVelocity (alias: m_vecVelocity; priority: 32; user groups: LocalPlayerAndPredictorsExclusive; change callbacks: OnServerVelocityChanged)
 	CHandle< CBaseEntity> m_hEffectEntity (sent as: ehandle)
 	CHandle< CBaseEntity> m_hOwnerEntity (sent as: ehandle; priority: 32)
 	MoveCollide_t m_MoveCollide
@@ -2001,10 +2007,10 @@ C_BaseEntity
 	uint32 m_fEffects (change callbacks: OnEffectsChanged)
 	CHandle< CBaseEntity> m_hGroundEntity (sent as: ehandle; priority: 32; user groups: Player)
 	int m_nGroundBodyIndex (priority: 32; user groups: Player)
-	float32 m_flFriction (user groups: LocalPlayerExclusive; bit count: 8; encode flags: 1; min: 0; max: 4)
+	float32 m_flFriction (user groups: LocalPlayerAndPredictorsExclusive; bit count: 8; encode flags: 1; min: 0; max: 4)
 	float32 m_flElasticity (encoder: coord)
 	float32 m_flGravityScale (change callbacks: OnGravityUpdated)
-	float32 m_flTimeScale (user groups: LocalPlayerExclusive)
+	float32 m_flTimeScale (user groups: LocalPlayerAndPredictorsExclusive)
 	bool m_bAnimatedEveryTick (change callbacks: OnInterpolationAmountChanged)
 	bool m_bGravityDisabled (change callbacks: OnGravityUpdated)
 	GameTime_t m_flNavIgnoreUntilTime (sent as: float32; change callbacks: OnNavIgnoreChanged)
@@ -2018,6 +2024,7 @@ C_BaseModelEntity
 	Color m_clrRender (change callbacks: OnColorChanged)
 	EntityRenderAttribute_t m_vecRenderAttributes (change callbacks: OnRenderAttributesChanged)
 	bool m_bRenderToCubemaps
+	bool m_bExpandRenderBoundsToIncludeCloth
 	bool m_bNoInterpolate
 	CCollisionProperty m_Collision
 	CGlowProperty m_Glow
@@ -2032,7 +2039,7 @@ C_BaseModelEntity
 
 C_BasePlayerPawn
 	exclude by name: m_pWeaponServices, m_pItemServices, m_pAutoaimServices, m_pObserverServices, m_pWaterServices, m_pUseServices, m_pFlashlightServices, m_pMovementServices
-	include by user group: Player, Water, LocalPlayerExclusive
+	include by user group: Player, Water, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	exclude by user group: FogController
 	overrides: m_lifeState changeCallback OnLifeStateChanged, m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
 	user group proxies: LocalPlayerExclusive
@@ -2265,6 +2272,8 @@ C_DOTABaseGameMode
 	float m_flIntelligenceSpellAmpPercent
 	float m_flStrengthMagicResistancePercent
 	float m_flAttributeAllDamage
+	float m_flCreepLifestealFactor
+	float m_flCreepSpellLifestealFactor
 	float m_flDraftingHeroPickSelectTimeOverride
 	float m_flDraftingBanningTimeOverride
 	bool m_bPauseEnabled
@@ -6238,6 +6247,7 @@ C_DOTA_ArcanaDataEntity
 	CDOTA_ArcanaDataEntity_DrowRanger * m_pArcanaData_CDOTA_ArcanaDataEntity_DrowRanger
 	CDOTA_ArcanaDataEntity_FacelessVoid * m_pArcanaData_CDOTA_ArcanaDataEntity_FacelessVoid
 	CDOTA_ArcanaDataEntity_Razor * m_pArcanaData_CDOTA_ArcanaDataEntity_Razor
+	CDOTA_ArcanaDataEntity_Tidehunter * m_pArcanaData_CDOTA_ArcanaDataEntity_Tidehunter
 
 C_DOTA_BaseNPC
 	include by name: m_fFlags, m_iHealth, m_iMaxHealth, m_lifeState, m_bTakesDamage, m_nTakeDamageFlags
@@ -6265,6 +6275,7 @@ C_DOTA_BaseNPC
 	int m_iMoveSpeed
 	float m_flBaseAttackTime
 	int m_iUnitNameIndex (change callbacks: OnUnitNameIndexChanged)
+	int m_iUnitNameStringTableIndex (change callbacks: OnUnitNameStringTableIndexChanged)
 	float m_flMana (bit count: 20; min: 0; max: 65536)
 	float m_flMaxMana (bit count: 20; min: 0; max: 65536)
 	float m_flManaThinkRegen (bit count: 14; min: -50; max: 500)
@@ -6593,6 +6604,7 @@ C_DOTA_Item
 	GameTime_t m_flPurchaseTime (sent as: float32; priority: 32)
 	GameTime_t m_flAssembledTime (sent as: float32; priority: 32)
 	bool m_bPurchasedWhileDead
+	int m_nPurchasedPrice
 	bool m_bCanBeUsedOutOfInventory
 	bool m_bItemEnabled
 	GameTime_t m_flEnableTime (sent as: float32; priority: 32)
@@ -8132,9 +8144,7 @@ C_EnvCombinedLightProbeVolume
 	HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SDF (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_R (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_G (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_B (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_L1 (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightIndicesTexture (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightScalarsTexture (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightShadowsTexture (resource type: vtex)
@@ -8229,9 +8239,7 @@ C_EnvLightProbeVolume
 	HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SDF (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_R (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_G (resource type: vtex)
-	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_B (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_L1 (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightIndicesTexture (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightScalarsTexture (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeDirectLightShadowsTexture (resource type: vtex)
@@ -8333,18 +8341,6 @@ C_EnvWind
 C_EnvWindClientside
 	CEnvWindShared m_EnvWindShared (class: C_EnvWindShared)
 
-C_EnvWindController
-	CEnvWindShared m_EnvWindShared (class: C_EnvWindShared)
-	float m_fDirectionVariation
-	float m_fSpeedVariation
-	float m_fTurbulence
-	float m_fVolumeHalfExtentXY
-	float m_fVolumeHalfExtentZ
-	int m_nVolumeResolutionXY
-	int m_nVolumeResolutionZ
-	int m_nClipmapLevels
-	bool m_bIsMaster
-
 C_EnvWindShared
 	GameTime_t m_flStartTime (sent as: float32)
 	uint32 m_iWindSeed
@@ -8360,17 +8356,6 @@ C_EnvWindShared
 	uint16 m_iInitialWindDir
 	float32 m_flInitialWindSpeed
 	VectorWS m_location (encoder: coord)
-
-C_EnvWindVolume
-	bool m_bActive
-	Vector m_vBoxMins
-	Vector m_vBoxMaxs
-	bool m_bStartDisabled
-	int m_nShape
-	float m_fWindSpeedMultiplier
-	float m_fWindTurbulenceMultiplier
-	float m_fWindSpeedVariationMultiplier
-	float m_fWindDirectionVariationMultiplier
 
 C_FoWBlockerEntity
 
@@ -8801,6 +8786,8 @@ C_SoundOpvarSetAABBEntity
 
 C_SoundOpvarSetAutoRoomEntity
 
+C_SoundOpvarSetDomeEntity
+
 C_SoundOpvarSetOBBEntity
 
 C_SoundOpvarSetOBBWindEntity
@@ -8816,6 +8803,10 @@ C_SoundOpvarSetPointBase
 	bool m_bFastRefresh
 
 C_SoundOpvarSetPointEntity
+
+C_SoundOpvarSetPrecipitationEntity
+
+C_SoundOpvarSetPrecipitationOBBEntity
 
 C_SpeechBubbleInfo
 	char m_LocalizationStr
@@ -8888,6 +8879,7 @@ C_TriggerPhysics
 	bool m_bCollapseToForcePoint
 	VectorWS m_vecLinearForcePointAtWorld
 	Vector m_vecLinearForceDirection
+	bool m_bForceDirectionIsInLocalSpace
 	bool m_bConvertToDebrisWhenPossible
 
 C_TriggerVolume
@@ -9069,7 +9061,7 @@ NeutralSpawnBoxes_t
 	int nCampType
 
 PhysicsRagdollPose_t
-	CTransform m_Transforms (encoder: coord; change callbacks: OnTransformChanged)
+	CTransform m_RelativeTransforms (encoder: coord; change callbacks: OnTransformChanged)
 	EHANDLE m_hOwner (sent as: ehandle)
 
 PingConfirmationState_t

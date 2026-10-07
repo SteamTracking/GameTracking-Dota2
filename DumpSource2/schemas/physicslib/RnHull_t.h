@@ -2,6 +2,7 @@ class RnHull_t
 {
 	Vector m_vCentroid;
 	float32 m_flMaxAngularRadius;
+	float32 m_flMinCentroidRadius;
 	AABB_t m_Bounds;
 	Vector m_vOrthographicAreas;
 	matrix3x4_t m_MassProperties; // = [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0 ]

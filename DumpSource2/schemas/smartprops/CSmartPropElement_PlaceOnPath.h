@@ -17,6 +17,9 @@ class CSmartPropElement_PlaceOnPath : public CSmartPropElement_Group
 	CSmartPropAttributeCoordinateSpace m_PathSpace; // = "WORLD"
 	// MPropertyDescription = "If true, treat the specified up direction as fixed up direction to apply to all elements placed on the path. If false the up direction is just an initial direction."
 	CSmartPropAttributeBool m_bUseFixedUpDirection;
+	// MPropertyFriendlyName = "Disallow Roll"
+	// MPropertyDescription = "When computing the transform at each path point ensure that there is no roll around the path relative to the up direction. This prevents objects from tilting side to side while still allowing them to tilt along the path (unlike Use Fixed Up which does not allow them to tilt along the path)."
+	CSmartPropAttributeBool m_bNoRoll;
 	// MPropertyDescription = "Compute the spacing distance in the 2d plane defined by the up direction. Most useful when using a fixed up direction, if maintaining a distance in the 2d plane is more important than maintaing distance along the path."
 	CSmartPropAttributeBool m_bUseProjectedDistance;
 	// MPropertyDescription = "If not using a fixed up direction, provides an initial up direction which will be used to determine the orientation of first element on the path, after that the elements will incrementally update to follow the path and may not match this direction. If Use Fixed Up direction is specified, then all elements will use this direction to deterime their up direction."

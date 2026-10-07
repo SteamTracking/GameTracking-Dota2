@@ -8,4 +8,8 @@ class CVoiceContainerGranulator : public CVoiceContainerAsyncGenerator
 	float32 m_flPlaybackJitter;
 	bool m_bShouldWraparound;
 	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_sourceAudio;
+	// MPropertyFriendlyName = "Double Buffer Source Audio"
+	bool m_bDoubleBufferSourceAudio;
+	// MPropertyFriendlyName = "Max Source Length (seconds)"
+	float32 m_flMaxSourceLength;
 };

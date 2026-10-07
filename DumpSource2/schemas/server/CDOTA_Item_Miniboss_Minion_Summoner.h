@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_Miniboss_Minion_Summoner : public CDOTA_Item
 {
 	GameTime_t m_fEquipTime;

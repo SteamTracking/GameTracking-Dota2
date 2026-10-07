@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Item_Physical : public CBaseAnimatingActivity
 {
 	CHandle< C_DOTA_Item > m_hItem;

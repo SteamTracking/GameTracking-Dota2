@@ -1,5 +1,4 @@
 // MEntityAllowsPortraitWorldSpawn
-// MClassHasEntityLimitedDataDesc
 class C_DOTAWorldParticleSystem : public C_BaseModelEntity
 {
 	int32 m_nType;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Pangolier_GyroshellStop : public C_DOTABaseAbility
 {
 };

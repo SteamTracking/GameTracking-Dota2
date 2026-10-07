@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Unit_TargetDummy : public CDOTA_BaseNPC_Hero
 {
 	float32 m_flDamageTaken;

@@ -1,26 +1,32 @@
 enum ChoreoExternalAnimgraphControlState_t : uint32_t
 {
-	// MPropertyFriendlyName = "None"
-	// MAlternateSemanticName = "None"
+	// MPropertyFriendlyName = "eNone"
+	// MAlternateSemanticName = "eNone"
 	eNone = 0,
-	// MPropertyFriendlyName = "Exit"
-	// MAlternateSemanticName = "Exit"
+	// MPropertyFriendlyName = "eExit"
+	// MAlternateSemanticName = "eExit"
 	eExit = 1,
-	// MPropertyFriendlyName = "State_01"
-	// MAlternateSemanticName = "State_01"
-	eState01 = 2,
-	// MPropertyFriendlyName = "State_02"
-	// MAlternateSemanticName = "State_02"
-	eState02 = 3,
-	// MPropertyFriendlyName = "State_03"
-	// MAlternateSemanticName = "State_03"
-	eState03 = 4,
-	// MPropertyFriendlyName = "State_04"
-	// MAlternateSemanticName = "State_04"
-	eState04 = 5,
-	// MPropertyFriendlyName = "State_05"
-	// MAlternateSemanticName = "State_05"
-	eState05 = 6,
+	// MPropertyFriendlyName = "eFallbackExit"
+	// MAlternateSemanticName = "eFallbackExit"
+	eFallbackExit = 2,
+	// MPropertyFriendlyName = "eState01"
+	// MAlternateSemanticName = "eState01"
+	eState01 = 3,
+	// MPropertyFriendlyName = "eState02"
+	// MAlternateSemanticName = "eState02"
+	eState02 = 4,
+	// MPropertyFriendlyName = "eState03"
+	// MAlternateSemanticName = "eState03"
+	eState03 = 5,
+	// MPropertyFriendlyName = "eState04"
+	// MAlternateSemanticName = "eState04"
+	eState04 = 6,
+	// MPropertyFriendlyName = "eState05"
+	// MAlternateSemanticName = "eState05"
+	eState05 = 7,
+	// MPropertyFriendlyName = "eLooping"
+	// MAlternateSemanticName = "eLooping"
+	eLooping = 8,
 	// MPropertySuppressEnumerator
-	eCount = 7,
+	eCount = 9,
 };

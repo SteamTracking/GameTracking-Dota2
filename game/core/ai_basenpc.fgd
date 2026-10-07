@@ -23,7 +23,7 @@
 		65536: "Allow jump up" : 0
 	]
 	
-	hinttype(choices) : "Hint" : 0 = 
+	hinttype(intchoices) : "Hint" : 0 = 
 	[
 		  0 : "None"
 
@@ -95,7 +95,7 @@
 	
 	generictype(string) : "Generic Hint" : "" : "String identifying what the hint type is, if generic."
 
-	priority(choices): "Priority" : 0 : "Relative importance of this hint. Will factor into how NPCs will choose a hint." =
+	priority(intchoices): "Priority" : 0 : "Relative importance of this hint. Will factor into how NPCs will choose a hint." =
 	[
 		0: "Low"
 		1: "Medium"
@@ -109,7 +109,7 @@
 	animgraph_exit_cmd(string) : "Animgraph Exit Command" : "" : "Animgraph command that NPCs using this hint should apply to their animgraph when they want to stop using it."
 	animgraph_navlink_target(target_destination) : "Navlink Target" : "" : "The name of an info_target entity that specifies the location that the animgraph's 'v_navlink_target' parameter should be set to when an NPC uses this node."
 
-	nodeFOV(choices) : "Node FOV" : 180 : "Imagine this node requires that an NPC be in the node's field of view in order to use this hint." =
+	nodeFOV(intchoices) : "Node FOV" : 180 : "Imagine this node requires that an NPC be in the node's field of view in order to use this hint." =
 	[
 		45 : "45 Degrees"
 		90 : "90 Degrees"
@@ -124,21 +124,21 @@
 	Group(string) : "Hint Group" : "" : "If specified, gives the hint a specific group name.  Useful for hint nodes that need to be logically grouped together. NPCs may also refuse to use hint nodes that don't match their hint group."
 
 	radius(integer) : "Radius" : 0 : "How close an NPC must be to consider this hint. 0 means infinite."
-	IgnoreFacing(choices) : "Ignore Facing" : 2 : "Don't pay attention to the facing of the node. May not apply to a given hint type." =
+	IgnoreFacing(intchoices) : "Ignore Facing" : 2 : "Don't pay attention to the facing of the node. May not apply to a given hint type." =
 	[
 		0 : "No"
 		1 : "Yes"
 		2 : "Default"
 	]
 
-	MinimumState(choices) : "Minimum State" : 1 : "Require an NPC have a minimum state to use the hint." =
+	MinimumState(intchoices) : "Minimum State" : 1 : "Require an NPC have a minimum state to use the hint." =
 	[
 		1 : "Idle"
 		2 : "Alert"
 		3 : "Combat"
 	]
 
-	MaximumState(choices) : "Maximum State" : 3 : "Require an NPC have a maximum state to use the hint." =
+	MaximumState(intchoices) : "Maximum State" : 3 : "Require an NPC have a maximum state to use the hint." =
 	[
 		1 : "Idle"
 		2 : "Alert"
@@ -195,7 +195,7 @@
 	nodeheight(integer) : "NodeHeight"  : 0
 ]
 
-@PointClass base(Targetname, Parentname, HintNode) editormodel("models/editor/node_hint.vmdl", fixedbounds) sphere(radius) color(255 255 255) = info_hint :
+@PointClass base(Targetname, Parentname, HintNode) drawangles_local{ angles_key = "movedir" } editormodel("models/editor/node_hint.vmdl", fixedbounds) sphere(radius) color(255 255 255) = info_hint :
 	"A hint that is not used for navigation. They don't go into the nodegraph, nor do they fall to the ground. Use these to provide " +
 	"some spatial context for NPCs, such as 'look here if you can't find the player' or 'throw rocks at this spot'."
 [
@@ -203,7 +203,7 @@
 
 @BaseClass tags( AI ) = BaseNodeLink
 [
-	initialstate(choices) : "Initial State" : 1 =
+	initialstate(intchoices) : "Initial State" : 1 =
 	[
 		0 : "Off - navigation between the nodes is disabled"
 		1 : "On - navigation between the nodes is enabled"
@@ -212,7 +212,7 @@
 	AllowUse(string) : "Allow Pass When Off" : : "Entity or class to allow passage even when node is off."
 	InvertAllow(boolean) : "Invert exclusion rules" : 0 : "Allowed entity is the only entity NOT allowed when this is checked."
 
-	priority(choices) : "Priority" : 0 =
+	priority(intchoices) : "Priority" : 0 =
 	[
 		0 : "Normal"
 		1 : "Use As Last Resort"
@@ -257,11 +257,7 @@
 //
 //-------------------------------------------------------------------------
 @BaseClass base(Targetname, RenderFields, DamageFilter, ResponseContext, Shadow, PosableSkeleton) 
-	color(0 200 200) 
-	metadata
-	{
-		api_classes = [ "base_npc" ]
-	}
+	color(0 200 200)
 = BaseNPC
 [
 	subclass_name( vdata_choice:scripts/npc_units.vdata ) : "Unit Name" : "" : "Name of the NPC Unit."
@@ -292,7 +288,7 @@
 
 	DefaultAnim(sequence) : "Preview Animation" : "" : "Name of an animation to preview in Hammer, does not do anything in game."
 
-	ai_lod(choices) : "AI LOD" : "0" : "Determines what AI features are enabled/disabled for performance reasons" =
+	ai_lod(intchoices) : "AI LOD" : "0" : "Determines what AI features are enabled/disabled for performance reasons" =
 	[
 	"-1": "Auto"
 	"0" : "High"
@@ -301,7 +297,7 @@
 	"3" : "Very Low"
 	]
 
-	destructible_part_initial_state_destructed_1(choices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 1" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_1(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 1" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -377,7 +373,7 @@
 
 	destructible_part_initial_state_destructed_1_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 1" : "0" : "Damage level to be set as fully destructed."
 
-	destructible_part_initial_state_destructed_2(choices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 2" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_2(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 2" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -451,7 +447,7 @@
 	]
 	destructible_part_initial_state_destructed_2_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 2" : "0" : "Damage level to fully destroy."
 
-	destructible_part_initial_state_destructed_3(choices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 3" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_3(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 3" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -525,7 +521,7 @@
 	]
 	destructible_part_initial_state_destructed_3_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 3" : "0" : "Damage level to fully destroy."
 
-	destructible_part_initial_state_destructed_4(choices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 4" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_4(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 4" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -599,7 +595,7 @@
 	]
 	destructible_part_initial_state_destructed_4_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 4" : "0" : "Damage level to fully destroy."
 
-	destructible_part_initial_state_destructed_5(choices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 5" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_5(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 5" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -853,13 +849,13 @@
 
 	contexttarget(target_destination) :"Context target" : "" : "(Optional) Name of an entity that the operator will use within context."
 
-	state(choices) : "Initial State" : 0 = 
+	state(intchoices) : "Initial State" : 0 = 
 	[
 		0 : "Not ready (closed, locked, etc)"
 		1 : "Ready (open and accessible)"
 	]
 
-	moveto(choices) : "How should NPC approach?" : 1 =
+	moveto(intchoices) : "How should NPC approach?" : 1 =
 	[
 		0 : "DO NOT USE THIS SETTING"
 		1 : "Walk"
@@ -894,7 +890,7 @@
 @BaseClass base(Targetname) tags( AI ) iconsprite("editor/ai_relationship.vmat") sphere() = base_ai_relationship : 
 	"AI Relationship - Sets relationships between groups of NPCs in the AI."
 [
-	disposition(choices) : "Disposition" : 3 : "Choose the way the Subject(s) should feel about the Target(s)" =
+	disposition(intchoices) : "Disposition" : 3 : "Choose the way the Subject(s) should feel about the Target(s)" =
 	[
 		// These MUST match the enum in the code! (basecombatcharacter.h)
 		1 : "Hate"
@@ -930,13 +926,13 @@
 [
 	subject(target_name_or_class) : "Subject NPC(s) whose opinion of Target(s) will change" : "" : "This is the NPC(s) whose disposition about the Target(s) will change. May be a targetname or a classname."
 	target(target_name_or_class) : "Target player or NPC(s) about whom Subject(s) will feel differently" : "" : "This is the player or NPC(s) about whom the Subject(s) will change their disposition. May be a targetname or a classname."
-	subjectclassify(choices) : "Subject NPC(s) Classification" : "0" : "This is the Classification of the NPC who's disposition will change. Optionally used instead of the subject targetname or classname." =
+	subjectclassify(intchoices) : "Subject NPC(s) Classification" : "0" : "This is the Classification of the NPC who's disposition will change. Optionally used instead of the subject targetname or classname." =
 	[
 		0 : "CLASS_NONE"
 		1 : "CLASS_PLAYER"
 		2 : "CLASS_PLAYER_ALLY"
 	]
-	targetclassify(choices) : "Target NPC(s) Classification" : "0" : "This is the Classification of the target(s) about whom the Subject(s) will change their disposition. Optionally used instead of the target targetname or classname." =
+	targetclassify(intchoices) : "Target NPC(s) Classification" : "0" : "This is the Classification of the target(s) about whom the Subject(s) will change their disposition. Optionally used instead of the target targetname or classname." =
 	[
 		0 : "CLASS_NONE"
 		1 : "CLASS_PLAYER"
@@ -956,47 +952,47 @@
 	LaggingDistance(float) : "Lagging Distance" : "96" : "The player is considered to be Lagging if they're beyond this distance. If the player is Lagging > 3-4s, they're considered Lost, and the NPC will go back to retrieve them. If the Retrieve Player option is set to 'No', the NPC will stop moving and wait instead."
 	SuccessDistance(float) : "Success Distance" : "64" : "The distance from the player (to the NPC) that the player must be within for the Lead to succeed, once the NPC has reached the goal. If set to 0, it'll use the lead distance instead (for legacy support)."
 
-	Retrieve(choices) : "Retrieve Lost players?" : 1 =
+	Retrieve(intchoices) : "Retrieve Lost players?" : 1 =
 	[
 		0 : "No, just idle and wait."
 		1 : "Yes, move to retrieve."
 	]	
-	ComingBackWaitForSpeak(choices) : "Before Coming Back, Wait for speech?" : 1 =
+	ComingBackWaitForSpeak(intchoices) : "Before Coming Back, Wait for speech?" : 1 =
 	[
 		0 : "No, come back while speaking."
 		1 : "Yes, wait for speech to finish."
 	]
-	RetrieveWaitForSpeak(choices) : "On Retrieve, Wait for speech?" : 1 =
+	RetrieveWaitForSpeak(intchoices) : "On Retrieve, Wait for speech?" : 1 =
 	[
 		0 : "No, start leading while speaking."
 		1 : "Yes, wait for speech to finish before starting to lead."
 	]
-	DontSpeakStart(choices) : "Speak start greeting?" : 0 =
+	DontSpeakStart(intchoices) : "Speak start greeting?" : 0 =
 	[
 		0 : "Yes, speak the start greeting before starting to lead."
 		1 : "No, don't speak the greeting."
 	]
-	LeadDuringCombat(choices) : "Lead during combat?" : 0 =
+	LeadDuringCombat(intchoices) : "Lead during combat?" : 0 =
 	[
 		0 : "No. Stop to fight, resume leading when safe."
 		1 : "Yes, lead while fighting."
 	]
-	StopScenesWhenPlayerLost(choices) : "Stop Scenes When Player Lagging?" : 1 : "If set, pause any choreo scenes the Leader is running when the player lags. They'll be resumed after the player has been retrieved." =
+	StopScenesWhenPlayerLost(intchoices) : "Stop Scenes When Player Lagging?" : 1 : "If set, pause any choreo scenes the Leader is running when the player lags. They'll be resumed after the player has been retrieved." =
 	[
 		0 : "No, don't pause."
 		1 : "Yes, pause scenes player lags."
 	]
-	GagLeader(choices) : "Gag Leader?" : 0 : "Prevent the Leader from speaking any concepts related to the Lead behavior." = 
+	GagLeader(intchoices) : "Gag Leader?" : 0 : "Prevent the Leader from speaking any concepts related to the Lead behavior." = 
 	[
 		0 : "No."
 		1 : "Yes, prevent speech."
 	]
-	PreventSuccess(choices) : "Prevent Success?" : 0 : "If set, the Lead won't be allowed to succeed and finish. Use this when you want the Lead to continue forever, until some other external logic intervenes and tells it to stop." = 
+	PreventSuccess(intchoices) : "Prevent Success?" : 0 : "If set, the Lead won't be allowed to succeed and finish. Use this when you want the Lead to continue forever, until some other external logic intervenes and tells it to stop." = 
 	[
 		0 : "No."
 		1 : "Yes. "
 	]
-	UseGoalFacing(choices) : "Use Goal Facing?" : 1 : "While waiting at the lead goal for the player to arrive, should the Leader face along the yaw specified by the goal entity?" =
+	UseGoalFacing(intchoices) : "Use Goal Facing?" : 1 : "While waiting at the lead goal for the player to arrive, should the Leader face along the yaw specified by the goal entity?" =
 	[
 		0 : "No, let other AI dictate facing while waiting."
 		1 : "Yes, turn to face while waiting."
@@ -1031,7 +1027,7 @@
 [
 	actor(target_destination) : "Actor(s) to affect"
 
-	SearchType(choices) : "Search Type" : 0 : "How to search for the entities using the targetname." = 
+	SearchType(intchoices) : "Search Type" : 0 : "How to search for the entities using the targetname." = 
 	[
 		0 : "Entity Name"
 		1 : "Classname"
@@ -1056,14 +1052,14 @@
 	actor(target_name_or_class) : "Actor(s) to affect"
 	goal(target_destination) : "Target Entity" : : "The name of the entity to follow. If blank, and the actor likes the player, then defaults to player"
 
-	MaximumState(choices) : "Maximum state" : 1 =
+	MaximumState(intchoices) : "Maximum state" : 1 =
 	[
 		1 : "Idle"
 		2 : "Alert"
 		3 : "Combat"
 	]
 
-	Formation(choices) : "Formation" : -1 =
+	Formation(intchoices) : "Formation" : -1 =
 	[
 		-1 : "Default"
 		0 : "Close circle"
@@ -1131,26 +1127,26 @@
 
 	seeentitytimeout(string) : "Sight Entity Timeout" : "1" : "If you provide a Sight Entity, the Actor will leave the current ActBusy if the Actor has lost sight of Sight Entity for this many seconds."
 
-	disablesearch(choices) : "Disable Active Searching" : "0" : "If set, Actors won't search for act busy opportunities, even when the act busy goal is enabled. Instead, they'll require the NPC AI code to trigger act busies opportunistically (i.e. like zombies with unreachable enemies do)." =
+	disablesearch(intchoices) : "Disable Active Searching" : "0" : "If set, Actors won't search for act busy opportunities, even when the act busy goal is enabled. Instead, they'll require the NPC AI code to trigger act busies opportunistically (i.e. like zombies with unreachable enemies do)." =
 	[
 		0 : "No"
 		1 : "Yes"
 	]
 
-	sightmethod(choices) : "Sight Enemy Method" : 0 : "The method to use to determine whether the Sight enemy is visible." = 
+	sightmethod(intchoices) : "Sight Enemy Method" : 0 : "The method to use to determine whether the Sight enemy is visible." = 
 	[
 		0 : "Default. LOS -and- Viewcone"
 		1 : "LOS Only. Disregard Viewcone"
 	]
 
-	forcetype(choices) : "Forced" : 0 =
+	forcetype(intchoices) : "Forced" : 0 =
 	[
 		0 : "Not forced"
 		1 : "Forced but not held"
 		2 : "Forced and held until deactivated via input"
 	]
 
-	type(choices) : "Actbusy Type" : 0 =
+	type(intchoices) : "Actbusy Type" : 0 =
 	[
 		0 : "Default (Standard)"
 		1 : "Combat"
@@ -1158,7 +1154,7 @@
 
 	safezone(target_destination) : "Combat Safe Zone" : "" : "Only for combat actbusy. Lets you specify a volume which is the 'safe zone'. The Combat ActBusy will cancel if any enemies are seen in the safe zone."
 
-	allowteleport(choices) : "Allow actor to teleport?" : 0 =
+	allowteleport(intchoices) : "Allow actor to teleport?" : 0 =
 	[
 		0 : "No"
 		1 : "Yes (Only for Combat Actbusy)"
@@ -1213,7 +1209,7 @@
 
 @PointClass base(Targetname) tags( AI ) sphere(Radius)  size(-8 -8 -8, 8 8 8) = ai_changehintgroup : "Change Hint Group"
 [
-	SearchType(choices) : "Search Type" : 0 : "How to search for the entities to change." = 
+	SearchType(intchoices) : "Search Type" : 0 : "How to search for the entities to change." = 
 	[
 		0 : "Entity Name"
 		1 : "Classname"
@@ -1234,21 +1230,21 @@
 	
 	StartDisabled(boolean) : "Start Disabled" : 1
 
-	MinimumState(choices) : "Minimum state" : 1 =
+	MinimumState(intchoices) : "Minimum state" : 1 =
 	[
 		1 : "Idle"
 		2 : "Alert"
 		3 : "Combat"
 	]
 
-	MaximumState(choices) : "Maximum state" : 3 =
+	MaximumState(intchoices) : "Maximum state" : 3 =
 	[
 		1 : "Idle"
 		2 : "Alert"
 		3 : "Combat"
 	]
 	
-	ScriptStatus(choices) : "Actor is running a script?" : 2 =
+	ScriptStatus(intchoices) : "Actor is running a script?" : 2 =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -1259,7 +1255,7 @@
 	MinTimeout(float) : "Minimum time out"  : 0 : "Minimum time before OnConditionsTimeout is fired. 0 = never expire."
 	MaxTimeout(float) : "Maximum time out"  : 0 : "Maximum time before OnConditionsTimeout is fired. 0 = ignore (If you don't specify a Maximum timeout, conditions will time out at exactly Minimum Time Out. If you DO specify a Maximum time out, timeout will occur randomly between Minimum and Maximum time out values.)"
 	
-	ActorSeePlayer(choices) : "Actor Sees Player" : 2 =
+	ActorSeePlayer(intchoices) : "Actor Sees Player" : 2 =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -1268,13 +1264,13 @@
 
 	PlayerActorProximity(float) : "Player distance"  : 0 : "The distance the player must/must not be to the actor. Negative values for NOT, 0 for ignore."
 	PlayerActorFOV(float) : "Player FOV for Actor " : 360 : "Specify angle of view cone in degrees. Negative value = NOT"
-	PlayerActorFOVTrueCone(choices ) : "Play FOV to Actor is a true view cone" : 0 : "Player's view cone is evaluated as a true cone, not pie slice " = 
+	PlayerActorFOVTrueCone(intchoices ) : "Play FOV to Actor is a true view cone" : 0 : "Player's view cone is evaluated as a true cone, not pie slice " = 
 	[
 		0 : "No - Tall pie slice"
 		1 : "Yes - True view cone"
 	]
 
-	PlayerActorLOS(choices) : "Player has LOS to Actor" : 2 : "Checks that the player has clear Line of Sight to the Actor" =
+	PlayerActorLOS(intchoices) : "Player has LOS to Actor" : 2 : "Checks that the player has clear Line of Sight to the Actor" =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -1283,7 +1279,7 @@
 
 
 	target(target_destination) : "Target (Optional)" : : "Optional entity to include in conditions"
-	ActorSeeTarget(choices)  : "Actor Sees Target" : 2 =
+	ActorSeeTarget(intchoices)  : "Actor Sees Target" : 2 =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -1293,41 +1289,41 @@
 	ActorTargetProximity(float) : "Target distance"  : 0 : "The distance the actor must/must not be to the Target. Negative values for NOT, 0 for ignore."
 	PlayerTargetProximity(float) : "Player distance from Target"  : 0 : "The distance the player must/must not be to the Target. Negative values for NOT, 0 for ignore."
 	PlayerTargetFOV(float) : "Player FOV for Target" : 360 : "Specify angle of view cone in degrees. Negative value = NOT"
-	PlayerTargetFOVTrueCone(choices ) : "Play FOV to Target is a true view cone" : 0 : "Player's view cone is evaluated as a true cone, not pie slice " = 
+	PlayerTargetFOVTrueCone(intchoices ) : "Play FOV to Target is a true view cone" : 0 : "Player's view cone is evaluated as a true cone, not pie slice " = 
 	[
 		0 : "No - Tall pie slice"
 		1 : "Yes - True view cone"
 	]
 
-	PlayerTargetLOS(choices) : "Player has LOS to Target" : 2 : "Checks that the player has clear Line of Sight to the Target" =
+	PlayerTargetLOS(intchoices) : "Player has LOS to Target" : 2 : "Checks that the player has clear Line of Sight to the Target" =
 	[
 		0 : "No"
 		1 : "Yes"
 		2 : "Don't care"
 	]
 	
-	PlayerBlockingActor(choices) : "Player blocking Actor" : 2 : "Checks that the player is blocking the Actor's path" =
+	PlayerBlockingActor(intchoices) : "Player blocking Actor" : 2 : "Checks that the player is blocking the Actor's path" =
 	[
 		0 : "No"
 		1 : "Yes"
 		2 : "Don't care"
 	]
 
-	ActorInPVS(choices)	: "Actor in Player's PVS" : 2 : "Checks that the actor is in the player's PVS" =
+	ActorInPVS(intchoices)	: "Actor in Player's PVS" : 2 : "Checks that the actor is in the player's PVS" =
 	[
 		0 : "No"
 		1 : "Yes"
 		2 : "Don't care"
 	]
 
-	ActorInVehicle(choices)	: "Actor in a vehicle" : 2 : "Checks the actor's state in a vehicle" =
+	ActorInVehicle(intchoices)	: "Actor in a vehicle" : 2 : "Checks the actor's state in a vehicle" =
 	[
 		0 : "No"
 		1 : "Yes"
 		2 : "Don't care"
 	]
 
-	PlayerInVehicle(choices)	: "Player in a vehicle" : 2 : "Checks the player's state in a vehicle" =
+	PlayerInVehicle(intchoices)	: "Player in a vehicle" : 2 : "Checks the player's state in a vehicle" =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -1356,7 +1352,7 @@
 	subject(target_destination) : "Subject(s)" : "" : "This is the NPC(s) whose speech we're filtering. May be a targetname or a classname."	
 
 	IdleModifier(float) : "Idle modifier." : "1.0" : "Multiplier to the percentage chance that our NPC(s) will idle speak. Set to 0 to prevent all idle speech."
-	NeverSayHello(choices) : "Greet Player?" : 0 : "If set to Yes, our NPC(s) won't greet the player when they first meet him." =
+	NeverSayHello(intchoices) : "Greet Player?" : 0 : "If set to Yes, our NPC(s) won't greet the player when they first meet him." =
 	[
 		0 : "Yes"
 		1 : "No"
@@ -1388,7 +1384,7 @@
 [
 	// Keys
 	SceneFile(resource:vcd) { asset_specific_keys_destination="vcd_keys" } : "Scene file"
-	// vcd_keys( string ) <-- populated based on whatever 'SceneFile' needs
+	vcd_keys(kv3) { asset_specific_keys_source = "SceneFile" }
 
 	// Links
 	target1(target_destination) : "Target 1"
@@ -1400,7 +1396,7 @@
 	target7(target_destination) : "Target 7"
 	target8(target_destination) : "Target 8"
 
-	busyactor(choices) : "If an Actor is talking..." : 1 : "What to do if an actor this scene needs is already talking when this scene is told to start." =
+	busyactor(intchoices) : "If an Actor is talking..." : 1 : "What to do if an actor this scene needs is already talking when this scene is told to start." =
 	[
 		0: "Start immediately"
 		1: "Wait for actor to finish"
@@ -1431,7 +1427,7 @@
 	output OnPaused(void) : "The scene has been paused"
 	output OnResumed(void) : "The scene has been resumed"
 
-	onplayerdeath(choices) : "On player death" : 0 : "What should this entity do if the player dies" =
+	onplayerdeath(intchoices) : "On player death" : 0 : "What should this entity do if the player dies" =
 	[
 		0 : "Do Nothing"
 		1 : "Cancel Script and return to AI"

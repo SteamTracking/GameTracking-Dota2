@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Shredder_Chakram : public C_DOTABaseAbility
 {
 	float32 radius;

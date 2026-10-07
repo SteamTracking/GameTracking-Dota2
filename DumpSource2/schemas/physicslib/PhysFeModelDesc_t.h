@@ -25,6 +25,10 @@ class PhysFeModelDesc_t
 	CUtlVector< FeQuad_t > m_Quads;
 	CUtlVector< FeSimdQuad_t > m_SimdQuads;
 	CUtlVector< FeSimdTri_t > m_SimdTris;
+	CUtlVector< FePrism_t > m_Prisms;
+	CUtlVector< float32 > m_PrismVolumes;
+	CUtlVector< FeSimdPrism_t > m_SimdPrisms;
+	CUtlVector< fltx4 > m_SimdPrismVolumes;
 	CUtlVector< FeSimdRodConstraint_t > m_SimdRods;
 	CUtlVector< FeSimdRodConstraintAnim_t > m_SimdRodsAnim;
 	CUtlVector< CTransform > m_InitPose;

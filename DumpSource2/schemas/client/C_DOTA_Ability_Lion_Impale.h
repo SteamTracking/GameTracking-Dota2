@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Lion_Impale : public C_DOTABaseAbility
 {
 	float32 width;

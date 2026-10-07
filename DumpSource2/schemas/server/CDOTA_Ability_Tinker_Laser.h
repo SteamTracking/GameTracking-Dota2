@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Tinker_Laser : public CDOTABaseAbility
 {
 	VectorWS m_vProjectileLocation;

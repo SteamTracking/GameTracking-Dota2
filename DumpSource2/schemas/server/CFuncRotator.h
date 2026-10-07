@@ -4,10 +4,10 @@ class CFuncRotator : public CBaseModelEntity
 	bool m_bIsRotating;
 	SolidType_t m_eSolidType;
 	float32 m_flSpeed;
+	float32 m_flRotationDistanceDegrees;
 	float32 m_flTimeToCompleteRotation;
 	CHandle< CBaseEntity > m_hRotatorTarget;
 	CUtlSymbolLarge m_strRotatorTarget;
-	CUtlVector< Quaternion > m_vecLocalRotationHistory;
 	CEntityIOOutput m_OnRotationStarted;
 	CEntityIOOutput m_OnRotationCompleted;
 	CEntityIOOutput m_OnOscillate;
@@ -23,13 +23,12 @@ class CFuncRotator : public CBaseModelEntity
 	GameTime_t m_flTimeRotationStart;
 	GameTime_t m_flTimeRotationStop;
 	float32 m_flStartSpeed;
+	Quaternion m_qLocalOrientation;
+	QAngle m_angLastWrittenLocal;
 	Quaternion m_qSpawnOrientation;
-	bool m_bRecordHistory;
-	bool m_bReturningToPreviousRotation;
 	bool m_bReturningToInitialRotation;
 	float32 m_flMinYawRotation;
 	float32 m_flMaxYawRotation;
-	int32 m_nOscillationCount;
 	bool m_bOscillationFromStart;
 	CGameSoundEventName m_iszStartSound;
 	CGameSoundEventName m_iszLoopSound;
@@ -38,4 +37,5 @@ class CFuncRotator : public CBaseModelEntity
 	float32 m_flCurrentAngle;
 	CFuncRotator::RotationAxis_t m_eRotationAxis;
 	float32 m_flSpeedDriftFromOverRotate;
+	bool m_bQueueStop;
 };

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_PrimalBeast_Rock_Throw : public CDOTABaseAbility
 {
 	int32 base_damage;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Clinkz_Burning_Army : public CDOTABaseAbility
 {
 	int32 range;

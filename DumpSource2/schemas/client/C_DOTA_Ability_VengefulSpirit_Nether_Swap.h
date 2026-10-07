@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_VengefulSpirit_Nether_Swap : public C_DOTABaseAbility
 {
 	int32 m_nFXIndex;

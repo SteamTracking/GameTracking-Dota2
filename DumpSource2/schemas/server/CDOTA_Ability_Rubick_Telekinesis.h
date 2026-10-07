@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Rubick_Telekinesis : public CDOTABaseAbility
 {
 	VectorWS m_vStartLocation;

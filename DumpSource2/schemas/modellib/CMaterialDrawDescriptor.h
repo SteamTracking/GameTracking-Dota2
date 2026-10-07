@@ -3,9 +3,10 @@ class CMaterialDrawDescriptor
 	float32 m_flUvDensity;
 	Vector m_vTintColor; // = [ 1, 1, 1 ]
 	float32 m_flAlpha; // = 1
-	uint16 m_nNumMeshlets;
+	uint32 m_nNumMeshlets;
 	uint32 m_nFirstMeshlet;
 	uint32 m_nAppliedIndexOffset;
+	int32 m_nEmissivePrimitiveCount; // = -1
 	uint8 m_nDepthVertexBufferIndex; // = 255
 	uint8 m_nMeshletPackedIVBIndex; // = 255
 	CUtlLeanVector< CMaterialDrawDescriptor::RigidMeshPart_t > m_rigidMeshParts;

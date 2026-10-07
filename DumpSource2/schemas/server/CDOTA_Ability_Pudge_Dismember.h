@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Pudge_Dismember : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hVictim;

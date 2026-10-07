@@ -5,6 +5,8 @@
 class CDOTALabyrinthBlessingsMap
 {
 	CUtlString m_strBlessingEventAction;
+	// MPropertyDescription = "periodic resource to spend on blessings; empty means use the event premium point balance"
+	CUtlString m_strCurrencyPeriodicResource;
 	// MPropertyAttributeEditor = "locked_int()"
 	BlessingTypeID_t m_nNextBlessingTypeID;
 	// MPropertyAttributeEditor = "locked_int()"

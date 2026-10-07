@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTABaseAbility : public C_BaseEntity
 {
 	bool m_bAuxCastState;

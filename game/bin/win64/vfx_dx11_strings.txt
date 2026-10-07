@@ -1,16 +1,38 @@
                                           bi  pi  ro  rc  rs\n                                         -------------------------\n
            Found size %d!\n
   %-40s   (%s)\n
+  A specialization constant is baked in when the shader is created, so its expression may only combine system values (S_REVERSE_DEPTH_BUFFER and friends) with literals and operators.\n
+  A specialization constant must either be an artist-editable material variable or an Expression() over system values.\n
+  Specialization constants are baked into the shader and can never change at draw time.\n
+  That expression is evaluated every draw, but a specialization constant is baked into the shader once. Use a plain material variable or a system-value Expression().\n
+ (Start: 
+ : Extraneous input - expected %s ...\n
+ : Extraneous input - expected <EOF>\n
+ : Extraneous input...
+ : Missing %s \n
+ : Missing <EOF>\n
+ : Missing token (%d)...\n
+ : cannot match to any predicted input...\n
+ : error %d : %s
+ : expected %s ...\n
+ : expected <EOF>\n
+ : missing elements...\n
  : packoffset( c%d.%c ) 
-!\tV_exp2f
+ : syntax error...\n
+ : syntax not recognized...\n
+ : unexpected input...\n  expected one of : 
+ LinePos:
 #define
+#else
+#endif
+#if defined(__cplusplus)
 #line
 #line 1 "
 #pragma warning( disable : 3571 ) // warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them\n#pragma warning( disable : 3596 ) // warning X3596: Microcode Compiler possible performance issue: pixel shader input semantic 'TEXCOORDx' is unused\n#pragma warning( disable : 4000 ) // warning X4000: Use of potentially uninitialized variable\n
 #undef
 $Globals
-%-40s %3d %3d %3d %3d  %s\n
-%-44s %3d %3d %3d  %s\n
+%-40s %3d %3d %3d  %s\n
+%-44s %3d %3d  %s\n
 %s() isn't a known function.
 %s[line %d:%d] 
 %s\%s_%08X%08X%08X%08X.vshadercache
@@ -109,10 +131,13 @@ $Globals
 'vector'
 'void'
 'volatile'
+'where'
 'writeonly'
 ()* loopback of 121:3: ( struct_member_decl | type_def | slang_typealias | attribute | function_definition | ( struct_decl ( ';' )? ) )*
+(channel = 
+(end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 *** ERROR! VS input struct member "%s" is missing semantic annotation!\n
-*** Error compiling UI visibility expression for variable "%s": %s\n
+*** Error compiling UiVisExpression for variable "%s": %s\n    A UiVisExpression may only read feature combos (F_*) and the values of other artist-editable variables.\n
 *** Error compiling expression for attribute "%s": %s\n
 *** Error compiling expression for attribute "%s": Expressions on attributes can't use 'this'\n
 *** Error compiling expression for render state %s: %s\n
@@ -130,6 +155,8 @@ $Globals
 *** Error! Default setting for "%s" cannot be parsed!\n
 *** Error! Duplicate channel %c in destination channel specification "%s" for texture %s\n
 *** Error! Enum Option entry is too long (limit is %i chars). "%s" for %s!\n
+*** Error! Expression for specialization constant "%s" reads something other than a system value.\n
+*** Error! Expression for specialization constant "%s" was fully resolved by the preprocessor, so it can never change at runtime.\n
 *** Error! Input color space for "%s" cannot be parsed!\n
 *** Error! Invalid Channel() annotation. Mip algorithm requires at least one input texture arg in texture %s\n
 *** Error! Invalid Channel() annotation. Missing output color channel info for texture %s\n
@@ -142,6 +169,7 @@ $Globals
 *** Error! Invalid input texture definition for %s. Missing minimum precision annotation.\n
 *** Error! Invalid input texture type for %s\n
 *** Error! Invalid output format %s in texture %s\n
+*** Error! Invalid output format %s in virtual texture %s. Only DXT5, BC7, and ATI2N are supported for virtual textures.\n
 *** Error! Invalid render attribute definition for %s\n
 *** Error! Invalid render state data type\n
 *** Error! Invalid render state definition for %s\n
@@ -154,6 +182,11 @@ $Globals
 *** Error! Range setting for "%s" cannot be parsed!\n
 *** Error! Render state %s is only allowed in %s\n
 *** Error! Sampler %s is inside a descriptor set and has to be immutable. However, sampler state %s is dynamic.\n
+*** Error! Specialization constant "%s" cannot have both a default value and an Expression().\n
+*** Error! Specialization constant "%s" has an expression source but no compiled expression.\n
+*** Error! Specialization constant "%s" must be a scalar bool, int, or float.\n
+*** Error! Specialization constant "%s" uses source "%s", which is not supported.\n
+*** Error! Specialization constant "%s" uses source "%s", whose value can change after the material is loaded.\n
 *** Error! SrgbRead value must be true or false\n
 *** Error! Texture %s must have only one Source(), Attribute() or Expression() annotation or texture processing annotations.\n
 *** Error! Texture attribute "%s": "%s" is not a shader variable!\n
@@ -162,6 +195,10 @@ $Globals
 *** Error! Too many channels in channel specification "%s" for texture %s\n
 *** Error! Too many input textures specified for %s\n
 *** Error! UiOption entry is too long (limit is %i chars). "%s" for %s!\n
+*** Error! UiVisExpression for variable "%s" is part of a cycle: it reads a variable whose own visibility depends on "%s".\n
+*** Error! UiVisExpression for variable "%s" reads "%s", which is driven by an expression.\n
+*** Error! UiVisExpression for variable "%s" reads texture "%s".  Use a feature combo or an artist-editable variable.\n
+*** Error! UiVisExpression for variable "%s" uses "this". Visibility can't depend on its own value.\n
 *** Error! Undeclared input texture %s referenced in texture %s\n
 *** Error! Unknown UiType "%s" for %s!\n
 *** Error! Unknown render state %s\n
@@ -180,10 +217,18 @@ $Globals
 *** Feature source "%s" on bool variable "%s" must stay in the range 0..1!\n
 *** Feature source "%s" on variable "%s" can only be set to an int, bool or float!\n
 *** Unknown source "%s" on variable "%s"!\n
-*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1164): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1174): Error masking unused parts for "%s"!\n\n
+*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1277): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1287): Error masking unused parts for "%s"!\n\n
 ***Error! Variable %s is not an input texture\n
 *.vshadercache
+, at offset %d
+, near %s
+, uint4( 0x%08xu, 0x%08xu, 0x%08xu, 0x%08xu )
+-Stop: 
+-end of input-(
+-memory-
+-unknown source-
+-unknown source-(
 .?AUID3DInclude@@
 .?AUISlangBlob@@
 .?AUISlangUnknown@@
@@ -206,15 +251,26 @@ $Globals
 // Relocated $Globals\n
 0x%X
 1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | BOOLLITERAL | ID | INTEGERLITERAL | HEXINTEGERLITERAL | FLOATLITERAL | COMMENT | WS );
-1:1: Tokens : ( T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | CONSTANT_REGISTER | DXC_DESCRIPTOR_SPACE | PACK_OFFSET | VECTOR_TYPE | MATRIX_TYPE | STATIC | EXPORT | ID | INTEGERLITERAL | FLOATLITERAL | STRINGLITERAL | WS | LINE | PRAGMA | UNKNOWN );
+1:1: Tokens : ( T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | CONSTANT_REGISTER | DXC_DESCRIPTOR_SPACE | PACK_OFFSET | VECTOR_TYPE | MATRIX_TYPE | STATIC | EXPORT | ID | INTEGERLITERAL | FLOATLITERAL | STRINGLITERAL | WS | LINE | PRAGMA | UNKNOWN );
 39019,30056,39001,30081,41000
 77:1: element : ( struct_decl | attribute | function_definition | groupshared_defintion | variable_definition[ false ] | constant_buffer | type_def | valve_compiler_option | slang_enum | slang_interface | slang_extension | slang_namespace | slang_typealias | semicolon= ';' );
 7xicuU
+: lexer error %d :\n\t%s at offset %d, 
+<DOWN>
+<EOR>
+<invalid>
+<missing 
+<no cbuffer>
+<no text for the token>
 =\t ();,\n\r<>
+?\tV_atof
 ALWAYS
 ANISO
 ANISOTROPIC
 ANTLR - 
+ANTLR3_EXCEPTION number %d (%08X).\n
+ANTLR3_EXCEPTION: %s\n
+Actually dude, we didn't seem to be expecting anything here, or at least\n
 Adding cached shader: %s\n
 AddressU
 AddressV
@@ -233,6 +289,19 @@ BackStencilDepthFailOp
 BackStencilFailOp
 BackStencilFunc
 BackStencilPassOp
+Base recognizer function 'alreadyParsedRule' called by unknown parser type - provide override for this function\n
+Base recognizer function 'consumeUntil' called by unknown parser type - provide override for this function\n
+Base recognizer function 'consumeUntilSet' called by unknown parser type - provide override for this function\n
+Base recognizer function 'match' called by unknown parser type - provide override for this function\n
+Base recognizer function 'matchAny' called by unknown parser type - provide override for this function\n
+Base recognizer function 'mismatch' called by unknown parser type - provide override for this function\n
+Base recognizer function 'synPred' called by unknown parser type - provide override for this function\n
+Base recognizer function antlr3RecognitionExceptionNew called by unknown parser type - provide override for this function\n
+Base recognizer function consumeUntilSet called by unknown parser type - provide override for this function\n
+Base recognizer function displayRecognitionError called by unknown parser type - provide override for this function\n
+Base recognizer function recover called by unknown parser type - provide override for this function\n
+Base recognizer function recoverFromMismatchedSet called by unknown parser type - provide override for this function\n
+Base recognizer function recoverFromMismatchedToken called by unknown parser type - provide override for this function\n
 Bindless texture %s is using implicit sampler, use explicit samplers.
 BlendEnable
 BlendEnable0
@@ -319,14 +388,15 @@ D3DCompile
 D3DCompiler_47.dll
 D3DDisassemble
 D3DPreprocess
-D3DPreprocess() failed with no error message! CVfxDx11::GetAllShaderVariables(1236): \n
+D3DPreprocess() failed with no error message! CVfxDx11::GetAllShaderVariables(1238): \n
 D3DReflect
 D3DStripShader
-D3DXPreprocess() failed with no error message! CVfxDx11::CompileShaderAndGetVariables(817): \n
+D3DXPreprocess() failed with no error message! CVfxDx11::CompileShaderAndGetVariables(819): \n
 DECR
 DECR_SAT
 DEST_ALPHA
 DEST_COLOR
+DIGIT
 DXC_DESCRIPTOR_SPACE
 Data_Branch1xy
 Data_Branch1zBranch2x
@@ -365,11 +435,13 @@ Dynamic combo %s referenced in expression doesn't exist.
 EQUAL
 ERROR!
 ESC_SEQ
+EXPONENT
 EXPORT
+Early exit
 Error adding shader to cache\n
 Error loading D3D compiler DLL %s!\n
-Error masking unused parts for vfx file CVfxDx11::CompileShaderAndGetVariables(785): \n
-Error opening vfx file CVfxDx11::CompileShaderAndGetVariables(773): \n
+Error masking unused parts for vfx file CVfxDx11::CompileShaderAndGetVariables(787): \n
+Error opening vfx file CVfxDx11::CompileShaderAndGetVariables(775): \n
 Error while running preprocessor over shader code:\n%s
 Error: D3DCompile() failed with no error string!
 Error: Invalid shader variable reference in expression: %s can't be used in expression because it is not an artist-editable variable\n
@@ -379,6 +451,7 @@ Expression Parser -
 External descriptor set %s redeclared with different bind slots (%d vs %d)\n
 ExternalDescSet
 ExternalDescriptorSet
+Extraneous token
 FARTHER
 FARTHER_EQUAL
 FEATURES
@@ -404,6 +477,8 @@ HLSL parser encountered %d %s\n
 HeightBlend
 HeightCorrection
 HighPrecisionBlendEnable
+I could not work out what I was expecting, like so many of us these days!\n
+I@tt
 IGlobalSession::createSession() failed with error %d\n
 INCR
 INCR_SAT
@@ -420,7 +495,7 @@ InvTextureDim
 InvViewportSize
 Invalid character '%c' in swizzle operation. Only xyzw or rgba are allowed.
 Invalid descriptor set name used in layout specifier
-Invalid shader program CVfxDx11::CompileShaderAndGetVariables(732): \n
+Invalid shader program CVfxDx11::CompileShaderAndGetVariables(734): \n
 Invalid shader program for %s()\n
 Invalid value data type for annotation %s\n
 KEEP
@@ -429,6 +504,7 @@ LESS_EQUAL
 LayerReference
 LightmapUV
 LightmapUVW
+Line: 
 LineStream
 Loading cached shader: %s\n
 MATRIX_TYPE
@@ -448,6 +524,9 @@ MainGs
 MainMs
 MainPs
 MainVs
+MakeGPUDebugString( %du
+MakeOrthonormalForward
+MakeOrthonormalRight
 MaterialID
 MatrixAxisAngle
 MatrixAxisToAxis
@@ -466,13 +545,17 @@ Mesh Shader
 Mesh shader VS_INPUT element %s ( D3D Semantic %s %d ) has invalid unique semantic index for FillVSInput reflection. Member won't be filled and will be invalid on any mesh shader execution!\n
 MinLOD
 MipBias
+Mismatched Token Exception
+Mismatched set
 Missing SourceArg() annotation for variable %s with source type TextureDim\n
+Missing token
 Modes
 MotionVectorsMaxDistance
 MultisampleEnable
 NEAREST
 NEVER
 NOT_EQUAL
+N\tV_exp2f
 OCTAL_ESC
 OverlayProjectionDirection
 PACK_OFFSET
@@ -497,7 +580,6 @@ PointStream
 Preprocessed HLSL code
 PropWorldOrigin
 REV_SUBTRACT
-RSDS%
 RWBuffer
 RWByteAddressBuffer
 RWStructuredBuffer
@@ -507,6 +589,7 @@ RWTexture2DArray
 RWTexture3D
 Raytracing Shader
 RaytracingAccelerationStructure
+Recognition Exception
 Remap01ScaleOffset
 RemapVal
 RemapValClamped
@@ -523,6 +606,18 @@ SRC_COLOR
 STATIC
 STRINGLITERAL
 SUBTRACT
+S_DEBUG_ASSERTS_ENABLED
+S_EXECUTION_REORDERING
+S_GPU_DEVICE_ID
+S_GPU_VENDOR_ID
+S_MOLTEN_VK
+S_REVERSE_DEPTH_BUFFER
+S_SHADER_QUALITY
+S_SUBGROUP_WAVE_OPS
+S_SUPPORTS_CLIP_DISTANCE
+S_SUPPORTS_DX_11_1
+S_TOOLS_ENABLED
+S_VR
 SampleMask
 Sampler
 Sampler1D
@@ -538,6 +633,7 @@ Shader stripping failed.\n
 Shader variable %s is illegal to use in expression. Only artist-editable variables are usable.
 ShaderIDColor
 ShadingComplexity
+ShapeOffset
 Slider
 SlopeScaleDepthBias
 Span
@@ -604,6 +700,9 @@ Two external descriptor sets have the same slot '%s' and '%s'\n
 UNICODE_ESC
 UNSUPPORTED
 USER_CONFIG
+Unexpected character
+Unexpected node
+Unexpected token
 Unknown compiler option %s=%s\n
 Unknown variable name %s.
 Unsupported annotation data type\n
@@ -613,6 +712,8 @@ UseSlangForDX11
 VECTOR_TYPE
 VFX_DLL_001
 VFX_PROGRAM_MAX
+VFX_STRING
+VFX_STRING must be written as VFX_STRING( "literal" ) on one line, with at most %d characters.\n
 VS_INPUT
 VS_MS_RTX
 VS_RTX
@@ -632,38 +733,42 @@ Vfx Error: attribute unsupported or requires a parameter binding.
 VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
 VfxLoadShaderSource(77): Cannot read file "%s"\n
 VfxLoadShaderSource(85): Cannot find include file %s\n
-VfxParseAndCompileExpression(597): : Failed to create input stream from "%s"\n
-VfxParseAndCompileExpression(605): : Failed to create lexer from "%s"\n
-VfxParseAndCompileExpression(613): : Failed to create token stream from "%s"\n
-VfxParseAndCompileExpression(621): : Failed to create parser from "%s"\n
+VfxParseAndCompileExpression(618): : Failed to create input stream from "%s"\n
+VfxParseAndCompileExpression(626): : Failed to create lexer from "%s"\n
+VfxParseAndCompileExpression(634): : Failed to create token stream from "%s"\n
+VfxParseAndCompileExpression(642): : Failed to create parser from "%s"\n
 Viewport
 VirtualTexture2D
 WIREFRAME
 WRAP
 Wrong number of items in value for annotation %s. Ignoring annotation.\n
+[Index: 
 [[vk::push_constant]] GlobalsBDAPushConstant_t g_GlobalsBDAPushConstant;\n
+\n    near %s\n    
 \n*** Error masking unused parts! Unknown text found. This is usually caused by a '{' or '}' not tabbed properly or an invalid declaration at the global scope. (line %d):\n%s\n\n
 \nMaterial Owned CB size: %d\n\n
 \n\tFetchBDAGlobals( g_GlobalsBDAPushConstant.nGlobalsBDAPerStage[ %d ] );\n
 \n\t__g_rtx_material_data__ = g_MaterialData.Load<__RTX_MATERIAL_DATA__>( RtxInstanceData( InstanceIndex() ).m_nMaterialData );\n
+\n_V_StringAfterPrefixCaseSensitive
+\n_V_strcspn
 \ncbuffer '%s' is missing %d bytes of padding between '%s' and '%s', if this definition is used in C++ it will mismatch.  Add padding to start on correct offsets.\n
-\nvoid FillVSInput( inout VS_INPUT i, uint *m_pVertexBuffer, uint nVertexBufferStride, uint nSplitVertexBufferStride, uint4 nMeshletLayout, uint nVertexIndex, uint nVertexIndexVB1 )\n{\n
+\nvoid FillVSInput( inout VS_INPUT i, uint nVertexBufferStride, uint nSplitVertexBufferStride, uint4 nMeshletLayout, uint nVertexIndex, uint nVertexIndexVB1 )\n{\n
 \src\shaders\
 \t %s = transpose( %s );\n
 \t %s = vk::RawBufferLoad<%s>( address + %i*4 );\n
+\t The lexer was matching from line %d, offset %d, which\n\t 
+\tV_log2f
+\tV_strnchr
 \tV_strspn
 \tV_towlower
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-\t\ti.%s = DecodeVSInputSemanticFloat(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t\ti.%s = DecodeVSInputSemanticFloat2(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t\ti.%s = DecodeVSInputSemanticFloat3(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t\ti.%s = DecodeVSInputSemanticFloat4(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t\ti.%s = DecodeVSInputSemanticUint(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t\ti.%s = DecodeVSInputSemanticUint4(%d, m_pVertexBuffer, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
-\t_V_StringAfterPrefixCaseSensitive
-\t_V_strcspn
+\t\ti.%s = DecodeVSInputSemanticFloat(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
+\t\ti.%s = DecodeVSInputSemanticFloat2(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
+\t\ti.%s = DecodeVSInputSemanticFloat3(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
+\t\ti.%s = DecodeVSInputSemanticFloat4(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
+\t\ti.%s = DecodeVSInputSemanticUint(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
+\t\ti.%s = DecodeVSInputSemanticUint4(%d, nVertexBufferStride, nSplitVertexBufferStride, nMeshletLayout, nVertexIndex, nVertexIndexVB1);\n
 \tuint64_t nGlobalsBDAPerStage[ 6 ];\n};\n
-]\tV_log2f
 _BindlessIndex
 _NeverRemove
 _SrgbRead
@@ -674,6 +779,9 @@ __FeatureToBool__
 __FeatureToFloat__
 __FeatureToInt__
 __RenderStateLiteral__
+__SET_BY_FEATURE_EQ__
+__SET_BY_FEATURE_NE__
+__SET_BY_FEATURE__
 __SetByArtistAndExpression__
 __SetByArtist__
 __ValveBindlessIndex__%s
@@ -716,9 +824,12 @@ descriptorset
 dot2
 dot3
 dot4
+error[E39999]: import failed due to compilation error
 errors
 exp2
 externaldescriptorset
+fatal error
+fatal error[E40003]: compilation ceased
 features
 fileExt
 float16_t
@@ -771,20 +882,25 @@ int2
 int3
 int4
 intersection
+is also the end of the line, so you must check your lexer rules\n
 layer
 layer_constant
 layeroverride
 lerp
+lexer->mTokens(): Error: No lexer rules were added to the lexer yet!\n
 lib_6_4
 line
 lineadj
 log2
+looks like this:\n\t\t%.*s\n
 lowprecisionuv
 lowprecisionuv1
 minPrecision
 ms_6_5
 nInstanceIdx
 nVertexID
+near '%c' :\n
+near char(%#02X) :\n
 normalize_safe
 optionallycompressedtangentframe
 outputFormat
@@ -834,6 +950,7 @@ snorm float
 source
 sourceArg
 space%d
+specconstant
 srgb
 static %s %s;\n
 step
@@ -871,6 +988,7 @@ vPositionOs
 vfx_dx11
 vfx_dx11.dll
 vfx_vulkan
+vk::constant_id
 vk::push_constant
 void FetchBDAGlobals( uint64_t address )\n
 vs_5_0

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Rubick_SpellSteal : public CDOTABaseAbility
 {
 	char[256] m_ActivityModifier;

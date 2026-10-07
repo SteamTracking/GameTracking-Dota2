@@ -2,6 +2,7 @@ class VPhysXAggregateData_t
 {
 	uint16 m_nFlags;
 	uint16 m_nRefCounter;
+	bool m_bCompoundsPacked;
 	CUtlVector< uint32 > m_bonesHash;
 	CUtlVector< CUtlString > m_boneNames;
 	CUtlVector< uint16 > m_indexNames;

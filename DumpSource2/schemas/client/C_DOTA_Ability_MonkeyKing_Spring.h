@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_MonkeyKing_Spring : public C_DOTABaseAbility
 {
 	VectorWS m_vPos;

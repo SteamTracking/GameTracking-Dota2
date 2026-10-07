@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Shredder_TimberChain : public CDOTABaseAbility
 {
 	int32 chain_radius;

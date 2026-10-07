@@ -9,7 +9,7 @@
 // Auto vis groups
 //--------------------------------------------------------------------------------------------------
 
-@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsclip.vmat"				group =	"Tool Brushes/Clip"					}
+@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsclip.vmat"				group =	"Tool Brushes/Clip/Standard Clip"	}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsplayerclip.vmat"		group =	"Tool Brushes/Clip/Player Clip"		}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsnpcclip.vmat"			group =	"Tool Brushes/Clip/NPC Clip"		}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsnavclip.vmat"			group =	"Tool Brushes/Clip/Nav Clip"		}
@@ -32,6 +32,8 @@
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblock_los.vmat"		group =	"Tool Brushes/Block LOS"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblockbullets.vmat"		group =	"Tool Brushes/Clip/Bullets"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsnavspaceclip.vmat"		group =	"Tool Brushes/Clip/Nav Space Clip"	}
+@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolssteamaudiofullabsorption.vmat"	group =	"Tool Brushes/Steam Audio"	}
+@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolssteamaudiofulldiffuse.vmat"	group =	"Tool Brushes/Steam Audio"	}
 
 @VisGroupFilter { filter_type = "entityTag"		tag = "Lighting"		group = "Entities/Lighting"				}
 @VisGroupFilter { filter_type = "entityTag"		tag = "Sound"			group = "Entities/Sound"				}
@@ -77,7 +79,7 @@
 
 
 //-------------------------------------------------------------------------
-// Inherit from this class to indcate support for authored skeleton pose data
+// Inherit from this class to indicate support for authored skeleton pose data
 //-------------------------------------------------------------------------
 @BaseClass = PosableSkeleton
 [
@@ -94,6 +96,9 @@
 [
 ]
 
+@BaseClass = AcousticProperty 
+[
+]
 
 @BaseClass = VScript
 [
@@ -121,6 +126,9 @@
 	input FireUser3(void) : "Causes this entity's OnUser3 output to be fired."
 	input FireUser4(void) : "Causes this entity's OnUser4 output to be fired."
 
+	input EnableAutoSleeping(void) : "Enable automatic sleeping on this entity's physics bodies. When enabled, physics bodies go to sleep when at rest."
+	input DisableAutoSleeping(void) : "Disable automatic sleeping on this entity's physics bodies. Bodies remain awake until explicitly put to sleep."
+
 	// Outputs	
 	output OnUser1(void) : "Fired in response to FireUser1 input."
 	output OnUser2(void) : "Fired in response to FireUser2 input."
@@ -138,10 +146,6 @@
 
 
 @BaseClass
-	metadata
-	{
-		api_classes = [ "" ]
-	}
  = Parentname
 [ 
 	parentname(target_destination) { group="Hierarchy" } : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
@@ -170,7 +174,7 @@
 
 	local.origin(vector) { group="Hierarchy" enabled={ variable="useLocalOffset" value="1" } } : "Local Origin" : : "Offset in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
 	local.angles(angle)  { group="Hierarchy" enabled={ variable="useLocalOffset" value="1" } } : "Local Angles" : : "Angular offset in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
-	local.scales(vector) { group="Hierarchy" enabled={ variable="useLocalOffset" value="1" } } : "Local Scale" : : "Scale in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
+	local.scales(vector) { group="Hierarchy" enabled={ variable="useLocalOffset" value="1" } } : "Local Scale" : "1 1 1" : "Scale in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
 
 	// Inputs
 	input SetParent(api)
@@ -184,17 +188,14 @@
 
 
 @BaseClass 
-	metadata
-	{
-		api_classes = [ "basemodelentity" ]
-	}
 = Studiomodel
 [
 	model(studio) { report = true sort_priority = 80 } : "World Model"
 	skin(materialgroup) [ group="Render Properties" ] : "Skin" : "default" : "Some models have multiple versions of their textures, called skins."
 	bodygroups(bodygroupchoices) [ group="Render Properties" ] : "Body Groups" : ""
-	
-	disableshadows(choices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
+
+	expand_render_bounds_to_include_cloth(boolean) [ group="Render Properties" ] : "Expand Render Bounds To Include Cloth" : 0 : "Expands this entity's render bounds to contain its simulated cloth bones. Enable this if you see this entity being render culled even though its cloth is in view."
+	disableshadows(intchoices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
 	[
 		0: "Enabled"
 		1: "No Shadows"
@@ -220,7 +221,7 @@
 
 @BaseClass base( Studiomodel ) = BaseAnimGraph2
 [
-	animgraph2_identifier(animgraph2_identifier) : "AnimGraph2 Identifier" : "" : "Which animgraph should we use when spawning the entity? Animgraph identifiers are authored in modeldoc, see the AnimGraph2 reference node."
+	animgraph2_identifier(animgraph2_identifier) { enabled={ function="ModelHasAnimgraph2" } hidden_when_readonly=true } : "AnimGraph2 Identifier" : "" : "Which animgraph should we use when spawning the entity? Animgraph identifiers are authored in modeldoc, see the AnimGraph2 reference node."
 ]
 
 @BaseClass = BasePlat
@@ -276,22 +277,15 @@
 	rendermode(choices) [ group="Render Properties" ] :"Render Mode" : "kRenderNormal" : "Used to set a non-standard rendering mode on this entity. See also 'FX Amount' and 'FX Color'." =
 	[
 		"kRenderNormal" : "Normal"
-		"kRenderTransColor" : "Color"
-		"kRenderTransTexture" : "Texture"
-		"kRenderGlow" : "Glow"
 		"kRenderTransAlpha" : "Solid"
-		"kRenderTransAdd" : "Additive"
-		"kRenderTransAddFrameBlend" : "Additive Fractional Frame"
-		"kRenderWorldGlow" : "World Space Glow"
 		"kRenderNone" : "Dont Render"
-		"kRenderDevVisualizer" : "Dev Visualizer"
 	]
 ]
 
 
 @BaseClass = Shadow
 [
-	disableshadows(choices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
+	disableshadows(intchoices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
 	[
 		0: "Enabled"
 		1: "No Shadows"
@@ -306,7 +300,7 @@
 
 @BaseClass = Glow
 [
-	glowstate(choices) [ group="Glow Properties" ] : "Glow State" : 0 =
+	glowstate(intchoices) [ group="Glow Properties" ] : "Glow State" : 0 =
 	[
 		0: "OFF"
 		1: "+use"
@@ -335,7 +329,7 @@
 	fademindist(float) [ group="Render Properties" ] : "Start Fade Dist" : -1 : "Distance at which the overlay starts to fade (-1 = subtract from fademaxdist)."
 	fademaxdist(float) [ group="Render Properties" ] : "End Fade Dist" : 0 : "Maximum distance at which the overlay is visible (0 = don't fade out)."
 
-	object_culling(choices) [ group="Render Properties" ] : "Culling Behaviour" : 0 : "Modifies culling behaviour when the object is small / distant" =
+	object_culling(intchoices) [ group="Render Properties" ] : "Culling Behaviour" : 0 : "Modifies culling behaviour when the object is small / distant" =
 	[
 		0 : "Default"
 		1 : "Smaller than default"
@@ -344,7 +338,7 @@
 	]
 
 	rendertocubemaps(boolean) [ group="Render Properties" ] : "Render to Cubemaps" : 0 : "If true, this geometry renders into baked cube maps"	
-	lightmapstatic(choices) [ group="Render Properties" ] : "Lightmap Static" : 0 : "Determines if this geometry be considered static & cast shadows/bounce light when baking lightmaps?" =
+	lightmapstatic(intchoices) [ group="Render Properties" ] : "Lightmap Static" : 0 : "Determines if this geometry be considered static & cast shadows/bounce light when baking lightmaps?" =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -355,7 +349,7 @@
 
 @BaseClass = Inputfilter
 [
-	InputFilter(choices) : "Input Filter" : 0 : "Used to specify which inputs this entity will accept." =
+	InputFilter(intchoices) : "Input Filter" : 0 : "Used to specify which inputs this entity will accept." =
 	[
 		0 : "Allow all inputs"
 		8 : "Ignore Touch/Untouch"
@@ -373,7 +367,7 @@
 @BaseClass base(Targetname) = EnvGlobal : 
 	"An entity to control a global game state, with an optional associated counter, that persists across level transitions."
 [
-	initialstate(choices) : "Initial State" : 0 =
+	initialstate(intchoices) : "Initial State" : 0 =
 	[
 		0 : "Off"
 		1 : "On"
@@ -458,7 +452,7 @@
 		16777216: "Force nav-ignore" : 0
 	]
 
-	propdata(choices) : "Prop Data" : 0 : "Set to the best approximation of the size and material of this entity's brushes. If set, it will override this entity's health and damage taken from various weapons. See the propdata.txt file in the scripts directory of your MOD to get a detailed list of what each entry specifies." =
+	propdata(intchoices) : "Prop Data" : 0 : "Set to the best approximation of the size and material of this entity's brushes. If set, it will override this entity's health and damage taken from various weapons. See the propdata.txt file in the scripts directory of your MOD to get a detailed list of what each entry specifies." =
 	[
 		0 : "None"
 		1 : "Wooden.Tiny"
@@ -488,7 +482,7 @@
 	]
 
 	health(integer) : "Strength" : 1 : "Number of points of damage to take before breaking. 0 means don't break."
-	material(choices) :"Material Type" : 0 : "Set to the material type of the brush. Used to decide what sounds to make when damaged, and what gibs to produce when broken." =
+	material(intchoices) :"Material Type" : 0 : "Set to the material type of the brush. Used to decide what sounds to make when damaged, and what gibs to produce when broken." =
 	[
 		0: "Glass"
 		1: "Wood"
@@ -502,7 +496,7 @@
 		// 9: "Web(defunct)"
 		10: "None"
 	]
-	explosion(choices) : "Gibs Direction" : 0 : "Used to decide which direction to throw gibs when broken." =
+	explosion(intchoices) : "Gibs Direction" : 0 : "Used to decide which direction to throw gibs when broken." =
 	[
 		0: "Random"
 		1: "Relative to Attack"
@@ -515,7 +509,7 @@
 	input EnableDamageForces(void) : "Damaging the entity applies physics forces to it."
 	input DisableDamageForces(void) : "Damaging the entity does *not* apply physics forces to it."
 
-	spawnobject(choices) : "Spawn On Break" : 0 : "When broken, an entity of the selected type will be created." =
+	spawnobject(intchoices) : "Spawn On Break" : 0 : "When broken, an entity of the selected type will be created." =
 	[
 		0:	""
 		1:	"item_battery"				
@@ -551,7 +545,7 @@
 
 @BaseClass = CanBeClientOnly
 [
-	clientSideEntity(choices) [ group="Misc" ] : "Create Client-Only Entity" : 0 =
+	clientSideEntity(intchoices) [ group="Misc" ] : "Create Client-Only Entity" : 0 =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -586,42 +580,6 @@
 ]
 
 @BaseClass color(0 255 0) = PlayerClass []
-
-@BaseClass color(180 10 180) = Light
-[
-	_light(color255) : "Brightness" : "255 255 255 1500"
-	_lightHDR(color255) : "BrightnessHDR" : "-1 -1 -1 1"
-	_lightscaleHDR(float) : "BrightnessScaleHDR" : "1" : "Amount to scale the light by when compiling for HDR."
-	style(Choices) : "Appearance" : 0 =
-	[
-		0 : "Normal"
-		10: "Fluorescent flicker"
-		2 : "Slow, strong pulse"
-		11: "Slow pulse, noblack"
-		5 : "Gentle pulse"
-		1 : "Flicker A"
-		6 : "Flicker B"
-		3 : "Candle A"
-		7 : "Candle B"
-		8 : "Candle C"
-		4 : "Fast strobe"
-		9 : "Slow strobe"
-	]
-	pattern(string) : "Custom Appearance" : "" : "Set a custom pattern of light brightness for this light. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
-	_constant_attn(string)	: "Constant" : "0"
-	_linear_attn(string)	: "Linear" : "0"
-	_quadratic_attn(string)	: "Quadratic" : "1"
-	_fifty_percent_distance(string) : "50 percent falloff distance" : "0": "Distance at which brightness should fall off to 50%. If set, overrides linear constant and quadratic paramaters."
-	_zero_percent_distance(string) : "0 percent falloff distance" : "0": "Distance at which brightness should fall off to negligible (1/256)%. Must set _fifty_percent_distance to use."
-	_hardfalloff(integer) : "hard falloff" : 0 : "If set, causes lights to fall to exactly zero beyond the zero percent distance. May cause unrealistic lightijng if not used carefully."
-
-	// Inputs
-	input TurnOn(void) : "Turn the light on."
-	input TurnOff(void) : "The the light off."
-	input Toggle(void) : "Toggle the light's current state."
-	input SetPattern(string) : "Set a custom pattern of light brightness for this light. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
-	input FadeToPattern(string) : "Fades from first value in old pattern, to first value in the new given pattern. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
-]
 
 @BaseClass base(Targetname, Parentname, EnableDisable, Global) tags( Trigger )
 	metadata
@@ -671,7 +629,7 @@
 	startdark(boolean) : "Level Fade In" : 0
 	startcolor(color255) : "Level Fade In Color (R G B)" : "0 0 0"
 
-	pvstype(choices) : "Precomputed Visibility" : 10 : "" = 
+	pvstype(intchoices) : "Precomputed Visibility" : 10 : "" = 
 	[
 		0 : "Disabled"
 		1 : "Test map (open space, no skybox)"
@@ -679,7 +637,10 @@
 		11 : "Partitioned solve (large map volume)"
 	]
 
-	newunit(choices) : "New Level Unit" : 0 : "Used to clear out savegame data of previous levels to keep the savegame size as small as possible. Only set it to Yes if the player cannot return to any previous levels." = 
+	novis_min_draw_volume_size(float) : "Unculled Geometry Cluster Size" : 0 : "Smallest render cluster, in units, used for geometry the compiler could not give precomputed visibility to. That geometry is always drawn, so clustering it more finely lets info_visibility_box reject it in smaller pieces, at the cost of more draw calls. 0 clusters it the same as ordinary geometry."
+	novis_max_triangles_per_cluster(integer) : "Unculled Geometry Cluster Triangles" : 0 : "Triangle budget per render cluster for geometry with no precomputed visibility. Lower values subdivide that geometry further. 0 clusters it the same as ordinary geometry."
+
+	newunit(intchoices) : "New Level Unit" : 0 : "Used to clear out savegame data of previous levels to keep the savegame size as small as possible. Only set it to Yes if the player cannot return to any previous levels." = 
 	[
 		0 : "No, keep current"
 		1 : "Yes, clear previous levels"
@@ -692,7 +653,7 @@
 [
 	message(sound) [report] : "Sound Name" : "" : "Name of the GameSound entry for the sound to play. Also supports direct .wav filenames."
 	health(integer) : "Volume" : 10 : "Sound volume, expressed as a range from 0 to 10, where 10 is the loudest."
-	preset(choices) :"Dynamic Presets" : 0 =						// NEEDHELP
+	preset(intchoices) :"Dynamic Presets" : 0 =						// NEEDHELP
 	[
 		0: "None"
 		1: "Huge Machine"
@@ -764,7 +725,7 @@
 	stopOnNew(boolean) : "Re-trigger Stops Last" : 1 : "Stop a previously playing event when a new one is started"
 	saveAndRestore(boolean) : "Save/Restore" : 0 : "This soundevent should be saved and restored."
 	sourceEntityAttachment(string) : "Entity Attachment Name" : : "If set, will play the soundevent from this attachment point."
-	entityIndexSelection(choices) :"Entity Index Selection" : 0 =	
+	entityIndexSelection(intchoices) :"Entity Index Selection" : 0 =	
 	[
 		0: "Use World Index"
 		1: "Use Entity Index"
@@ -807,7 +768,9 @@
 	box_maxs(vector) : "Box Maxs" : "64 64 64"
 ]
 
-@PointClass base(Targetname, Parentname) tags( Sound ) iconsprite("editor/snd_event.vmat") = snd_event_path_corner :
+@PointClass base(Targetname, Parentname) tags( Sound ) iconsprite("editor/snd_event.vmat")
+	selected_line( 255 255 255, targetname, pathCornerEntity )
+	= snd_event_path_corner :
 	"Plays some number of soundevents (up to max) along segments of a path corner network"
 [
 	soundName(sound) [report]: "Sound Event Name" : "" : "Name of the sound event to play"
@@ -815,7 +778,7 @@
 	toLocalPlayer(boolean) : "To Local Player" : "" : "Play the sound directly to the local player"
 	stopOnNew(boolean) : "Re-trigger Stops Last" : 1 : "Stop a previously playing event when a new one is started"
 	saveAndRestore(boolean) : "Save/Restore" : 0 : "This soundevent should be saved and restored."
-	entityIndexSelection(choices) :"Entity Index Selection" : 0 =	
+	entityIndexSelection(intchoices) :"Entity Index Selection" : 0 =	
 	[
 		0: "Use World Index"
 		1: "Use Entity Index"
@@ -831,7 +794,24 @@
 	input StopSound(void) : "Stop the sound event"
 ]
 
-@PointClass base(Targetname, Parentname) tags( Sound ) iconsprite("editor/snd_event.vmat") = snd_event_oriented_boxes :
+@PointClass base(Targetname, Parentname) tags( Sound ) iconsprite("editor/snd_event.vmat")
+	selected_line( 255 255 255, targetname, boxEntity01 )
+	selected_line( 255 255 255, targetname, boxEntity02 )
+	selected_line( 255 255 255, targetname, boxEntity03 )
+	selected_line( 255 255 255, targetname, boxEntity04 )
+	selected_line( 255 255 255, targetname, boxEntity05 )
+	selected_line( 255 255 255, targetname, boxEntity06 )
+	selected_line( 255 255 255, targetname, boxEntity07 )
+	selected_line( 255 255 255, targetname, boxEntity08 )
+	selected_line( 255 255 255, targetname, boxEntity09 )
+	selected_line( 255 255 255, targetname, boxEntity10 )
+	selected_line( 255 255 255, targetname, boxEntity11 )
+	selected_line( 255 255 255, targetname, boxEntity12 )
+	selected_line( 255 255 255, targetname, boxEntity13 )
+	selected_line( 255 255 255, targetname, boxEntity14 )
+	selected_line( 255 255 255, targetname, boxEntity15 )
+	selected_line( 255 255 255, targetname, boxEntity16 )
+	= snd_event_oriented_boxes :
 	"Plays some number of soundevents (up to max) at the closest points on a collection of oriented box helpers"
 [
 	soundName(sound) [report]: "Sound Event Name" : "" : "Name of the sound event to play"
@@ -839,13 +819,28 @@
 	toLocalPlayer(boolean) : "To Local Player" : "" : "Play the sound directly to the local player"
 	stopOnNew(boolean) : "Re-trigger Stops Last" : 1 : "Stop a previously playing event when a new one is started"
 	saveAndRestore(boolean) : "Save/Restore" : 0 : "This soundevent should be saved and restored."
-	entityIndexSelection(choices) :"Entity Index Selection" : 0 =	
+	entityIndexSelection(intchoices) :"Entity Index Selection" : 0 =	
 	[
 		0: "Use World Index"
 		1: "Use Entity Index"
 	]
 
-	boxEntityName(target_destination) : "Box Entity Name" : "" : "Name of the first snd_event_box_helper in the chain"
+	boxEntity01(target_destination) [ group="Box Helpers" ] : "Box Helper 1" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity02(target_destination) [ group="Box Helpers" ] : "Box Helper 2" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity03(target_destination) [ group="Box Helpers" ] : "Box Helper 3" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity04(target_destination) [ group="Box Helpers" ] : "Box Helper 4" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity05(target_destination) [ group="Box Helpers" ] : "Box Helper 5" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity06(target_destination) [ group="Box Helpers" ] : "Box Helper 6" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity07(target_destination) [ group="Box Helpers" ] : "Box Helper 7" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity08(target_destination) [ group="Box Helpers" ] : "Box Helper 8" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity09(target_destination) [ group="Box Helpers" ] : "Box Helper 9" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity10(target_destination) [ group="Box Helpers" ] : "Box Helper 10" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity11(target_destination) [ group="Box Helpers" ] : "Box Helper 11" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity12(target_destination) [ group="Box Helpers" ] : "Box Helper 12" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity13(target_destination) [ group="Box Helpers" ] : "Box Helper 13" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity14(target_destination) [ group="Box Helpers" ] : "Box Helper 14" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity15(target_destination) [ group="Box Helpers" ] : "Box Helper 15" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
+	boxEntity16(target_destination) [ group="Box Helpers" ] : "Box Helper 16" : "" : "The name of one or more snd_event_box_helpers (wildcards allowed)."
 	soundeventCountMax(integer) : "Max Soundevents" : "5" : "The max number of soundevents to play simultaneously"
 	distanceMax(float) : "Max Distance" : "500" : "The distance beyond which a box will not emit a soundevent"
 	dotProductMax(float) : "Max Dot Product" : "1.1" : "For excluding soundevents that are close to each other"
@@ -855,13 +850,11 @@
 	input StopSound(void) : "Stop the sound event"
 ]
 
-@PointClass base(Targetname) tags( Sound ) iconsprite("editor/snd_event.vmat") box_oriented( box_mins, box_maxs ) line(255 255 255, targetname, target) = snd_event_box_helper :
-	"Lightweight oriented box helper used by snd_event_oriented_boxes"
+@PointClass base(Targetname) tags( Sound ) iconsprite("editor/snd_event.vmat") box_oriented( box_mins, box_maxs ) = snd_event_box_helper :
+	"Lightweight oriented box. List it on a snd_event_oriented_boxes, which emits from the closest point on it."
 [
 	box_mins(vector) : "Box Mins" : "-64 -64 -64"
 	box_maxs(vector) : "Box Maxs" : "64 64 64"
-
-	target(target_destination) : "Next Box Helper" : : "The name of the next snd_event_box_helper in the chain"
 ]
 
 @PointClass base(Targetname, Parentname, point_soundevent) arc_range{ is_local_axis = true align_pie_to_local_forward = true is_enabled_key = true radius = "50" fov_key = "emitterAngle"} arc_range{ is_local_axis = true align_pie_to_local_forward = true is_enabled_key = true radius = "60" fov_key = "sweetSpotAngle" draw_triangle = false} tags( Sound ) iconsprite("editor/snd_event.vmat") editormodel("models/editor/cone_helper.vmdl") = snd_event_cone :
@@ -897,7 +890,7 @@
 	stackName(string) : "Stack Name" : "" : "The name of the stack the operator is in"
 	operatorName(string) : "Operator Name" : "" : "The name of the operator the OpVar is in"
 	opvarName(string) : "OpVar Name" : "" : "The name of the OpVar to change"
-	opvarValueType(choices) : "Opvar Value Type" : "0" : "The interpreted type of value to be set on the opvar." =
+	opvarValueType(intchoices) : "Opvar Value Type" : "0" : "The interpreted type of value to be set on the opvar." =
 	[
 		0 : "Float"
 		1 : "String"
@@ -948,7 +941,7 @@
 	occlusionMin(float) : "Minimum Occlusion" : "1.0" : "Occlusion value when fully occluded"
 	occlusionMax(float) : "Maximum Occlusion" : "1.0" : "Occlusion value when un-occluded"
 
-	simulationMode(choices) : "Simulation Mode" : "0" : "Simulation Mode for occlusion check." =
+	simulationMode(intchoices) : "Simulation Mode" : "0" : "Simulation Mode for occlusion check." =
 	[
 		0 : "Source 2"
 		1 : "Steam Audio Raycast"
@@ -1001,10 +994,15 @@
 	dynamicMaximumOcclusion(float) : "Dynamic Maximum Occlusion" : "1.0" : "Value when the dynamic occlusion is considered fully unoccluded and return 1."
 ]
 
-@PointClass base( Targetname, SndOpvarSetPointBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") box_world_aligned( box_inner_mins, box_inner_maxs ) box_world_aligned( box_outer_mins, box_outer_maxs ) = snd_opvar_set_aabb :
+@PointClass base( Targetname, SndOpvarSetPointBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") box_world_aligned( box_inner_mins, box_inner_maxs ) box_world_aligned( box_outer_mins, box_outer_maxs ) 
+metadata
+{
+	entity_tool_set_orientation = false
+}
+= snd_opvar_set_aabb :
 	"Sets an opvar value on a library stack"
 [
-	AABBDirection(choices) : "Box Direction" : "0" : "Limit the evaluation of the box to a single axis" =
+	AABBDirection(intchoices) : "Box Direction" : "0" : "Limit the evaluation of the box to a single axis" =
 	[
 		0 : "Any"
 		1 : "X Only"
@@ -1038,6 +1036,28 @@
 [
 ]
 
+@PointClass base( Targetname, Parentname, SndOpvarSetPointBaseAddition2, SndOpvarSetPointBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") sphere(size, 250, 101, 252) = snd_opvar_set_dome :
+	"Measures spatial openness via Fibonacci-distributed traces. Sets an opvar based on openness; fewer blocked rays = higher value. Clustering detection amplifies the effect of adjacent open directions."
+[
+	size(float) : "Trace Radius" : "512.0" : "Radius of the sphere to trace against."
+	totalDirections(integer) { min="2" max="1024" } : "Total Ray Directions" : "128" : "Number of Fibonacci-distributed ray directions."
+	tracesPerFrame(integer) : "Rays Per Think" : "16" : "Number of rays to evaluate per think frame."
+	domeMode(bool) : "Dome Mode" : "1" : "When enabled, traces only the upper hemisphere. Directions are always world-aligned (world +Z up)."
+	multiWall(bool) : "Count Walls" : "0" : "When off, a direction is simply open or blocked, and each ray stops at the first thing it hits. When on, a ray counts every wall between here and the Trace Radius."
+	wallTransmission(float) { min="0.01" max="0.99" } : "Per-Wall Transmission" : "0.5" : "How much of a direction's openness survives each wall it passes through.  Only used when multiWall is on."
+
+	clusterK(integer) : "Cluster K-NN" : "6" : "Number of nearest neighbors for clustering."
+	clusterP(float) { min="1.0" max="4.0" } : "Cluster Exponent" : "1.5" : "Exponent applied to cluster size"
+	clusterBlend(float) : "Cluster Blend" : "1.0" : "Blend between simple openness (0) and clustered openness (1)."
+
+	opennessExponent(float) { min="0.05" max="8.0" } : "Openness Exponent" : "0.33" : "Stretches the falloff so the value stays audible further from an opening. Lower means a longer tail: 0.33 reaches 0.1 about 10x further out than 1.0. Amplifies ray flicker equally, so raise smoothHalfLife with it."
+	smoothHalfLife(float) : "Smoothing Half-Life (seconds)" : "0.39" : "Half-life of an exponential low-pass applied to the openness value, measured in real seconds so it is unaffected by the think rate. 0.0 is instant (no smoothing)."
+
+	input SetSize(float) : "Set the trace radius. Invalidates cached results and restarts the sweep."
+	input SetTotalDirections(integer) : "Set total ray directions and recompute the direction set"
+	input SetTracesPerFrame(integer) : "Set rays evaluated per think frame"
+]
+
 @PointClass base( Targetname, Parentname ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") box_oriented( box_mins, box_maxs ) = snd_opvar_set_wind_obb:
 [
 	stackName(string) : "Stack Name" : "" : "The name of the stack the operator is in"
@@ -1059,6 +1079,67 @@
 	input SetOpvarIndex(integer) : "Change the target opvar index"	
 	input SetSoundEventGUID(integer) : "Start the sound event using a snd_event_point and pass its guid output to this."
 ]
+
+@BaseClass = SndOpvarSetPrecipitationBase
+[
+	stackName(string) : "Stack Name" : "" : "The name of the stack the operator is in"
+	operatorName(string) : "Operator Name" : "" : "The name of the operator the OpVar is in"
+	opvarName(string) : "OpVar Name" : "" : "The name of the OpVar to change"
+	opvarUseAutoCompare(bool) : "Use Auto Compare" : "1" : "All entities that point to the same opvar and have this selected will automatically have their values combined, and the weighted average of their positions written to <OpVar Name>_pos"
+	opvarArrayIndex(integer){ enabled={ variable="opvarUseAutoCompare" value="0" } } : "OpVar Index" : "" : "Index of the OpVar array to set"
+	startDisabled(bool) : "Start Disabled" : 0
+	entityUseFastRefreshRate(bool) : "Use Fast Refresh" : "0" : "Entity will run at a faster refresh rate when enabled.  Use sparingly."
+	sourceEntityName(target_destination) : "Source Entity Name" : "" : "Name of the entity to measure from, instead of this one. Follows it as it moves."
+
+	mode(intchoices) : "Mode" : "0" : "What the OpVar measures." =
+	[
+		0 : "Precipitation In Area"
+		1 : "Precipitation On Listener"
+	]
+
+	precipitationSubclass( vdata_choice:scripts/precipitation.vdata ) : "Precipitation Subclass" : "precipitation_rain" : "Which func_precipitation volumes count. Volumes of any other subclass read as no precipitation, as does everything if this is left blank."
+
+	densityMin(float){ min="0.0" max="100.0" } : "Minimum Density" : "0" : "Density that maps to the low end of the output, in the same 0-100 the volume's own Density field uses."
+	densityMax(float){ min="0.0" max="100.0" } : "Maximum Density" : "100" : "Density that maps to the high end of the output. Lower it to make light rain read as full."
+	densityMapMin(float) : "Minimum Density Map Value" : "0.0" : "Value written at minimum density."
+	densityMapMax(float) : "Maximum Density Map Value" : "1.0" : "Value written at maximum density."
+
+	totalDirections(integer){ min="1" max="256" enabled={ variable="mode" value="1" } } : "Total Ray Directions" : "16" : "Rays in the upward cone. More is a finer reading and a longer sweep."
+	tracesPerFrame(integer){ enabled={ variable="mode" value="1" } } : "Rays Per Think" : "1" : "Rays cast per think. At the default of 1 a full sweep takes Total Ray Directions thinks."
+	coneAngle(float){ min="1.0" max="90.0" enabled={ variable="mode" value="1" } } : "Cone Half-Angle" : "60.0" : "How far off vertical the shelter test looks, in degrees. Wider counts rain blowing in from the side; 90 is a full hemisphere."
+	traceDistance(float){ enabled={ variable="mode" value="1" } } : "Trace Distance" : "4096.0" : "How far up to look for sky."
+
+	smoothHalfLife(float) : "Smoothing Half-Life (seconds)" : "0.2" : "Half-life of a low-pass on the output, in real seconds so it is unaffected by the think rate. 0.0 is instant."
+
+	// inputs
+	input SetStackName(string) : "Change the target stack name"
+	input SetOperatorName(string) : "Change the target operator name"
+	input SetOpvarName(string) : "Change the target opvar name"
+	input SetOpvarIndex(integer) : "Change the target opvar index"
+	input SetSoundEventGUID(integer) : "Start the sound event using a snd_event_point and pass its guid output to this."
+	input SetSourceEntity(string) : "Set the name of the entity to measure from. Follows it as it moves."
+	input SetMode(integer) : "Switch between measuring the area and measuring the listener"
+	input Enable(void) : "Enable the entity"
+	input Disable(void) : "Disable the entity"
+]
+
+@PointClass base( Targetname, Parentname, SndOpvarSetPrecipitationBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") box_world_aligned( box_mins, box_maxs )
+metadata
+{
+	entity_tool_set_orientation = false
+}
+= snd_opvar_set_precipitation :
+	"Sets an opvar from how hard it is precipitating. In Area mode, the strongest func_precipitation volume touching the box, ignoring cover. In Listener mode, the volume the listener is standing in, scaled by how much sky is overhead. The box stays world aligned, so parenting this to the player is safe."
+[
+	box_mins(vector) : "Box Mins" : "-1024 -1024 -512" : "Region the Area reading is scoped to. Unused in Listener mode."
+	box_maxs(vector) : "Box Maxs" : "1024 1024 512" : "Region the Area reading is scoped to. Unused in Listener mode."
+]
+
+@PointClass base( Targetname, Parentname, snd_opvar_set_precipitation ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") box_oriented( box_mins, box_maxs ) = snd_opvar_set_precipitation_obb :
+	"snd_opvar_set_precipitation with a box that turns with the entity."
+[
+]
+
 
 @BaseClass = SndSoundAreaBase
 [ 
@@ -1176,7 +1257,7 @@
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 
-	InitialState(choices) : "Initial State" : 0 = 
+	InitialState(intchoices) : "Initial State" : 0 = 
 	[
 		0 : "Off"
 		1 : "On"
@@ -1291,18 +1372,18 @@
 	add_attribute(string) : "Add Attribute" : "" : "Will add an additional attribute that AI/player entities can query when checking props for information (ex: 'DogToy' or 'GrabbableResource')"
 
 	_minlight(string) : "Minimum Light Level" : : "The minimum level of ambient light that hits this brush."
-	Solidity(choices) : "Solidity" : 1 : "Used to control the solidity/collision of these brushes." =
+	Solidity(intchoices) : "Solidity" : 1 : "Used to control the solidity/collision of these brushes." =
 	[
 		0 : "Toggle"
 		1 : "Never Solid"
 		2 : "Always Solid"
 	]
 	excludednpc(string) : "NPC class excluded from collisions" : "" : "If an NPC classname is specified here, NPCs of that type won't collide with these brushes. In Episodic, you may also specify an individual entity's name."
-	invert_exclusion(choices) : "Invert NPC class exclusion" : 0 : "If set, then the excluded NPC class will consider this brush solid, and all other NPC classes will consider it non-solid." =
+	invert_exclusion(intchoices) : "Invert NPC class exclusion" : 0 : "If set, then the excluded NPC class will consider this brush solid, and all other NPC classes will consider it non-solid." =
 	[
 		0 : "No"
 		1 : "Yes"
-	]	
+	]
 	AlwaysSolidIgnoreNav(boolean) : "Nav: Ignore if 'Always Solid'" : 0 : "If set, nav generation will ignore this func_brush if 'Solidity' is set to 'Always Solid'."
 
 	interactAs(string) [ group="Physics Properties" ] : "interactAs" : "" : "comma-separated list of interaction layers"
@@ -1347,14 +1428,14 @@
 	minslidetime(float) : "Min Slide Time" : "0.5" : "Minimum amount of random time that a slide is displayed."
 	maxslidetime(float) : "Max Slide Time" : "0.5" : "Maximum amount of random time that a slide is displayed."
 
-	cycletype(choices) : "Cycle Type" : 0 = 
+	cycletype(intchoices) : "Cycle Type" : 0 = 
 	[
 		0 : "Random"
 		1 : "Forward"
 		2 : "Backward"
 	]
 
-	nolistrepeat(choices) : "No List Repeat" : 0 = 
+	nolistrepeat(intchoices) : "No List Repeat" : 0 = 
 	[
 		0 : "Allow List Repeats"
 		1 : "No List Repeats"
@@ -1399,7 +1480,6 @@
 	metadata
 	{
 		model_archetypes = [  "animated_model" ]
-		api_classes = [ "ai_base_actor" ]
 	}
 = func_orator : 
 	"A very simple model entity that has animations and response rules."
@@ -1478,7 +1558,7 @@
 		512: "Taper Out" : 0
 	]
 
-	TouchType(choices) : "Touch Type (tripwire)" : 0 : "If you want the beam to fire an output when touched by entities, choose the entity type here." =
+	TouchType(intchoices) : "Touch Type (tripwire)" : 0 : "If you want the beam to fire an output when touched by entities, choose the entity type here." =
 	[	
 		0 : "Not a tripwire"
 		1 : "Player Only"
@@ -1487,7 +1567,7 @@
 		4 : "Player or NPC or Physprop"
 	]
 
-	ClipStyle(choices) : "Beam clipping" : 0 : "Select whether you want the beam to clip against geometry or characters" =
+	ClipStyle(intchoices) : "Beam clipping" : 0 : "Select whether you want the beam to clip against geometry or characters" =
 	[	
 		0 : "Do not clip (default)"
 		1 : "Clip to geometry"
@@ -1518,7 +1598,7 @@
 	"HL1 Legacy: Beverage Dispenser."
 [
 	health(integer) : "Capacity" : 10 : "Number of cans in the dispenser."
-	beveragetype(choices) : "Beverage Type" : 0 = 
+	beveragetype(intchoices) : "Beverage Type" : 0 = 
 	[
 		0 : "Coca-Cola"
 		1 : "Sprite"
@@ -1536,7 +1616,7 @@
 	"An entity used to spawn blood effects." 
 [
 	spraydir(angle) : "Spray Direction (Pitch Yaw Roll)" : "0 0 0" : "The general direction that the blood should spray and the direction to trace to apply the decal."
-	color(choices) : "Blood Color" : 0 =
+	color(intchoices) : "Blood Color" : 0 =
 	[
 		0 : "Red (Human)"
 		1 : "Yellow (Alien)"
@@ -1614,7 +1694,8 @@
 	damage(string) : "Damage" : "0" : "If specified, amount of damage to deal. If unspecified, magnitude is used as the damage."
 	radius(string) : "Clamp Radius (0 = auto)" : "0" : "If specified, the radius in which the explosion damages entities. If unspecified, the radius will be based on the magnitude."
 	targetentityname(target_destination) : "Limit to Entity" : "" : "If specified, the explosion will only affect the matching entity."
-	explodeonspawn(boolean) : "Explode on spawn" : "Performs the physics explosion immediately upon spawning."
+	ignoreentityname(target_destination) : "Ignore Entity" : "" : "If specified, the explosion will not affect the matching entity."
+	explodeonspawn(boolean) : "Explode on spawn" : "0" : "Performs the physics explosion immediately upon spawning."
 
 	spawnflags(flags) =
 	[
@@ -1629,7 +1710,7 @@
 
 	pushscale(float) : "Physics push scale" : "1" : "Scale the applied physics force by this value."
 
-	ConvertToDebrisWhenPossible(choices) : "Convert physics props to debris when possible" : "0" =
+	ConvertToDebrisWhenPossible(intchoices) : "Convert physics props to debris when possible" : "0" =
 	[
 		"0" : "No"
 		"1" : "Yes"
@@ -1699,7 +1780,7 @@
 	health(integer) : "Duration" : 30 : "Amount of time the fire will burn."
 	firesize(integer) : "Size" : 64 : "Height (in world units) of the flame."
 	fireattack(integer) : "Attack" : 4 : "Amount of time the fire takes to grow to full strength."
-	firetype(choices) : "Type" : 0 =
+	firetype(intchoices) : "Type" : 0 =
 	[
 		0 : "Natural"
 		1 : "Plasma"
@@ -1866,7 +1947,7 @@
 	TextureScroll(integer) : "Texture Scroll Rate (0-100)" : 35 : "Rate at which the beam texture should scroll along the beam."
 	framestart(integer) : "Starting Frame" : 0 : "The frame to start the beam texture on."
 	damage(string) : "Damage / second" : "100" : "How much damage this laser does. per second. to things it hits."
-	dissolvetype(choices) : "Dissolve Type" : "None" =
+	dissolvetype(intchoices) : "Dissolve Type" : "-1" =
 	[
 		-1 : "None"
 		0 : "Energy"
@@ -1989,7 +2070,7 @@
 	"An entity that shoots models, or sprites, out of its origin."
 [
 	shootmodel(studio) : "Model" : "" : "Thing to shoot out. Can be a .vmdl or a .vmat."
-	shootsounds(choices) :"Material Sound" : -1 =
+	shootsounds(intchoices) :"Material Sound" : -1 =
 	[
 		-1: "None"
 		0: "Glass"
@@ -1998,7 +2079,7 @@
 		3: "Flesh"
 		4: "Concrete"  
 	]
-	simulation(choices) :"Simulate" : 0 =
+	simulation(intchoices) :"Simulate" : 0 =
 	[
 		0: "Point"
 		1: "Physics"
@@ -2024,7 +2105,7 @@
 	"An entity that creates gibs when it's within the influence of a helicopter's rotor wash."
 [
 	shootmodel(studio) : "Model" : "" : "Thing to shoot out.  Can be a .vmdl or a .vmat."
-	shootsounds(choices) :"Material Sound" : -1 =
+	shootsounds(intchoices) :"Material Sound" : -1 =
 	[
 		-1: "None"
 		0: "Glass"
@@ -2033,7 +2114,7 @@
 		3: "Flesh"
 		4: "Concrete"  
 	]
-	simulation(choices) :"Simulate" : 0 =
+	simulation(intchoices) :"Simulate" : 0 =
 	[
 		0: "Point"
 		1: "Physics"
@@ -2107,13 +2188,13 @@
 	"An entity used to create sparks at its origin." 
 [
 	MaxDelay(string) : "Max Delay" : "0" : "The longest delay between sparks (in seconds)."
-	SparkType(choices) : "Spark Type" : 1 : "What Type of Spark Effect" =
+	SparkType(intchoices) : "Spark Type" : 1 : "What Type of Spark Effect" =
 	[
 		1 : "Electrical"
 		2 : "Metal"
 		3 : "base"
 	]
-	Magnitude(choices) : "Magnitude" : 1 : "The size of the sparks." =
+	Magnitude(intchoices) : "Magnitude" : 1 : "The size of the sparks." =
 	[
 		1 : "Small"
 		2 : "Medium"
@@ -2121,7 +2202,7 @@
 		8 : "Huge"
 	]
 
-	TrailLength(choices) : "Spark Trail Length" : 1 =
+	TrailLength(intchoices) : "Spark Trail Length" : 1 =
 	[
 		1 : "Short"
 		2 : "Medium"
@@ -2333,7 +2414,7 @@
 	fadeout(string) : "Fade Out Time" : "0.5" : "The time it should take for the text to fade out, after the hold time has expired."
 	holdtime(string) : "Hold Time" : "1.2" : "The time the text should stay onscreen, after fading in, before it begins to fade out."
 	fxtime(string) : "Scan time (scan effect only)" : "0.25" : "If the 'Text Effect' is set to Scan Out, this is the time it should take to scan out all the letters in the text."
-	channel(choices) : "Text Channel" : 1 : "You can have up to four individual game_text messages onscreen at once, stored in channels. Select which channel this text should be placed in, which will overwrite any active message already in that channel." =
+	channel(intchoices) : "Text Channel" : 1 : "You can have up to four individual game_text messages onscreen at once, stored in channels. Select which channel this text should be placed in, which will overwrite any active message already in that channel." =
 	[
 		1 : "Channel 1"
 		2 : "Channel 2"
@@ -2398,7 +2479,7 @@
 	filtername(filterclass) : "Filter Name" : : "Filter to use to narrow set of findable entities. See filter_activator_name for more explanation."
 	referencename(target_destination) : "Reference Entity" : "" : "Name of the entity to use when evaluating criteria.  For example, when using 'Nearest', this is the entity that distance will be measured from.  If left blank will use the point_entity_finder."
 
-	Method(choices) : "Search Method" : "0" =
+	Method(intchoices) : "Search Method" : "0" =
 	[
 		0 : "Nearest"
 		1 : "Farthest"
@@ -2760,7 +2841,7 @@
 [
 	NextKey(target_destination) : "Next KeyFrame" : : "Name of the next keyframe along this keyframe path."
 
-//	TimeModifier(choices) : "Time Modifier" : 0 =
+//	TimeModifier(intchoices) : "Time Modifier" : 0 =
 //	[
 //		0 : "Linear"
 //		1 : "Accel"
@@ -2774,7 +2855,7 @@
 
 @BaseClass = Mover
 [
-	PositionInterpolator(choices) : "Position Interpolator" : 0 =
+	PositionInterpolator(intchoices) : "Position Interpolator" : 0 =
 	[
 		0 : "Linear"
 		1 : "Catmull-Rom Spline"
@@ -2791,7 +2872,7 @@
 	]
 
 	startposition(float) : "Start Position" : 0 : "Position of brush when spawned. The range is a value between 0.0 and 1.0, where 0 is the starting position and 1 is the starting position + (move direction * move distance)."	
-	authoredposition(choices) : "Authored position" : 0 : "The entity may be authored in one of three positions for convenience." =
+	authoredposition(intchoices) : "Authored position" : 0 : "The entity may be authored in one of three positions for convenience." =
 	[
 		0 : "Start position (position = 'Start Position' key)"
 		1 : "Open position (position = 1)"
@@ -2826,7 +2907,7 @@
 @SolidClass base(Targetname, Parentname, RenderFields, Shadow) = func_rotating : 
 	"A rotating brush entity."
 [
-	maxspeed(integer) : "Max Rotation Speed" : 100 : "The maximum rotation speed of the brushes, in degrees per second."
+	maxspeed(int) : "Max Rotation Speed" : 100 : "The maximum rotation speed of the brushes, in degrees per second."
 	fanfriction(integer) : "Friction (0 - 100%)" : 20 : "The amount of rotational friction. Value must be between 0 and 100 %."
 	message(sound) : "Rotating sound WAV" : : "Sound to play while rotating."
 	volume(integer) : "Volume (10 = loudest)" : 10 : "The volume of the rotation sound."
@@ -2851,7 +2932,7 @@
 	NoInterpolate(boolean) [ group="Misc" ] : "Disable Client-Side Interpolation" : 0
 	MoveWithoutPushingBlockers(boolean) [ group="Misc" ] : "Move Without Pushing Blockers" : 0 : "Just rotates the entity and anything attached to it, without going the expensive process of finding and pushing potentially blocking brush entities and NPCs. Will still push dynamic physics entities."
 
-	solidbsp(choices) : "Solid Type" : 0 =
+	solidbsp(intchoices) : "Solid Type" : 0 =
 	[
 		0 : "VPhysics"	
 		1 : "BSP"
@@ -2898,11 +2979,6 @@
 [
 ]
 
-@MoveClass base(Targetname, Parentname, KeyFrame, Mover) size(-8 -8 -8, 8 8 8) color(255 170 0) animator() = move_keyframed : 
-	"Keyframed Move Behavior"
-[
-]
-
 @MoveClass base(Targetname, Parentname, Mover, KeyFrame) size(-8 -8 -8, 8 8 8) color(255 0 0) animator() = move_track : 
 	"Track Move Behavior"
 [
@@ -2925,7 +3001,7 @@
 
 	Slack(integer) : "Slack" : 25 : "How much extra length the rope has (by default it has the length between its two endpoints in the editor)."
 
-	Type(choices) : "Type" : 0 =
+	Type(intchoices) : "Type" : 0 =
 	[
 		0  : "Rope"
 		1  : "Semi-rigid"
@@ -2957,7 +3033,7 @@
 @MoveClass base(Targetname, Parentname, KeyFrame, RopeKeyFrame) editormodel("models/editor/axis_helper.vmdl") animator() = move_rope : 
 	"The first node in set of nodes that are used to place ropes in the world. It should connect to 1 or more keyframe_rope entities."
 [
-	PositionInterpolator(choices) : "Position Interpolator" : 2 : "Curve Type. Currently only type 2 (Rope) is fully supported." =
+	PositionInterpolator(intchoices) : "Position Interpolator" : 2 : "Curve Type. Currently only type 2 (Rope) is fully supported." =
 	[
 		0 : "Linear"
 		1 : "Catmull-Rom Spline"
@@ -3074,7 +3150,7 @@
 	speed(integer) : "Speed (deg/sec)" : 50 : "The amount, in degrees, that the wheel turns per second."
 	master(string) : "Master (Obsolete)" : : "Legacy support: The name of a master entity. If the master hasn't been activated, this button cannot be used."
 	glow(target_destination) : "Glow Entity" : : "The name of an entity that will get the +use glow for this button."
-	sounds(choices) : "Sounds" : 0 = 
+	sounds(intchoices) : "Sounds" : 0 = 
 	[
 		0: "None"
 		1: "Big zap & Warmup"
@@ -3106,7 +3182,7 @@
 	]
 	_minlight(string) : "Minimum Light Level" : : "The minimum level of ambient light that hits this brush."
 	startposition(float) : "Start Position" : 0 : "Postion when spawned. The value is a range between 0.0 and 1.0, where 0 is the unrotated position and 1 is the rotated position + 'Distance'."
-	startdirection(choices) : "Start Direction" : -1 =
+	startdirection(intchoices) : "Start Direction" : -1 =
 	[
 		-1 : "Forward"		 // Reverses upon USE, so are
 		1 : "Backward"	 // reversed here.
@@ -3157,7 +3233,7 @@
 	locked_sound(sound) : "Locked Sound" : "" : "Sound played when the player tries to use the door, and fails because it's locked."
 	unlocked_sound(sound) : "Unlocked Sound" : "" : "Sound played when the door is unlocked."
 
-	spawnpos(choices) : "Spawn Position" : 0 =
+	spawnpos(intchoices) : "Spawn Position" : 0 =
 	[
 		0 : "Closed"
 		1 : "Open"
@@ -3222,7 +3298,7 @@
 	]
 	distance(integer) : "Distance" : 90 : "The amount, in degrees, that the button should rotate when it's pressed."
 
-	solidbsp(choices) : "Solid Type" : 0 =
+	solidbsp(intchoices) : "Solid Type" : 0 =
 	[
 		0 : "VPhysics"	
 		1 : "BSP"
@@ -3237,13 +3313,13 @@
 ]
 
 
-@BaseClass base(Targetname, Parentname, Global, Studiomodel, BaseFadeProp, Glow) = BasePropDoorRotating
+@BaseClass base(Targetname, Parentname, Global, Studiomodel, BaseFadeProp, Glow, AcousticProperty) = BasePropDoorRotating
 [
 	slavename(target_destination) : "Slave Name" : : "The name of any doors that should be slaved to this door (i.e. should open when this one opens, and close when this one closes)."
 	
 	ajarangle(float) : "Ajar Angle" : "0" : "If the door 'Spawn Position' is set to Ajar, this is the angle to spawn at, relative to the closed position."
 	ajardoorshouldntalwaysopen(boolean) : "Ajar Shouldn't Always Open" : "0" : "By default, Ajar doors always open fully when +USEd. If this is set to true, Ajar doors will stop opening if they cross the close position."
-	spawnpos(choices) : "Spawn Position" : 0 =
+	spawnpos(intchoices) : "Spawn Position" : 0 =
 	[
 		0 : "Closed"
 		1 : "Open forward"
@@ -3267,7 +3343,7 @@
 	forceclosed(boolean) : "Force Closed" : 0 : "If set, this door will close no matter what. Useful for doors that have to close even if the player tries to block them with objects."
 
 	rendertocubemaps(boolean) [ group="Render Properties" ] : "Render to Cubemaps" : 1 : "If true, this geometry renders into baked cube maps"
-	lightmapstatic(choices) [ group="Render Properties" ] : "Lightmap Static" : 0 : "Determines if this geometry be considered static & cast shadows/bounce light when baking lightmaps?" =
+	lightmapstatic(intchoices) [ group="Render Properties" ] : "Lightmap Static" : 0 : "Determines if this geometry be considered static & cast shadows/bounce light when baking lightmaps?" =
 	[
 		0 : "No"
 		1 : "Yes"
@@ -3285,7 +3361,7 @@
 		32768 : "Ignore player +USE" : 0
 	]
 
-	opendir(choices) : "Open Direction" : 0 : "Force the door to open only forwards or only backwards. Both directions is the standard door behavior." =
+	opendir(intchoices) : "Open Direction" : 0 : "Force the door to open only forwards or only backwards. Both directions is the standard door behavior." =
 	[
 		0 : "Open Both Directions"
 		1 : "Open Forward Only"
@@ -3590,7 +3666,7 @@
 [
 	// keys
 	DurationValue(float) : "Duration"
-	ActivityEventType(choices) : "Activity Event Type" : "0" : "Activity Event type to fire." =
+	ActivityEventType(intchoices) : "Activity Event Type" : "0" : "Activity Event type to fire." =
 	[
 		0 : "None"
 		1 : "nearby impact threat"
@@ -3628,7 +3704,7 @@
 
 	// npc type 1
 	NPCType1(npcclass) : "Class name of NPC 1 to count"
-	NPCState1(choices) : "NPC State 1" : "-1" : "Only match NPCs in this state" =
+	NPCState1(intchoices) : "NPC State 1" : "-1" : "Only match NPCs in this state" =
 	[
 		-1 : "Any"
 		0 : "None"
@@ -3649,7 +3725,7 @@
 
 	// npc type 2
 	NPCType2(npcclass) : "Class name of NPC 2 to count"
-	NPCState2(choices) : "NPC State 2" : "-1" : "Only match NPCs in this state" =
+	NPCState2(intchoices) : "NPC State 2" : "-1" : "Only match NPCs in this state" =
 	[
 		-1 : "Any"
 		0 : "None"
@@ -3671,7 +3747,7 @@
 
 	// npc type 3
 	NPCType3(npcclass) : "Class name of NPC 3 to count"
-	NPCState3(choices) : "NPC State 3" : "-1" : "Only match NPCs in this state" =
+	NPCState3(intchoices) : "NPC State 3" : "-1" : "Only match NPCs in this state" =
 	[
 		-1 : "Any"
 		0 : "None"
@@ -4022,7 +4098,7 @@
 		1 : "Visible on spawn" : 0
 	]
 
-	childSpawnGroup(choices) : "Spawn Type" : 0 : "If you select Child Spawn Group, it means the world layer is dependent on resources in the parent map that defines the info_worldlayer. For example, the dota world layers containing the dire and radiant bases refer to the tree maps of the main dota map. They would need to be set as Child spawn groups." =
+	childSpawnGroup(intchoices) : "Spawn Type" : 0 : "If you select Child Spawn Group, it means the world layer is dependent on resources in the parent map that defines the info_worldlayer. For example, the dota world layers containing the dire and radiant bases refer to the tree maps of the main dota map. They would need to be set as Child spawn groups." =
 	[
 		0 : "Default"
 		1 : "World Layer is Child Spawn Group"
@@ -4263,7 +4339,7 @@
 
 @BaseClass base(Targetname, CanBeClientOnly) = BaseFilter
 [
-	Negated(choices) : "Filter mode" : 0 : "If set to Allow, only entities who match the criteria will pass the filter. "+
+	Negated(intchoices) : "Filter mode" : 0 : "If set to Allow, only entities who match the criteria will pass the filter. "+
 		"If set to Disallow, only entities who do NOT match the criteria will pass the filter." =
 	[
 		0 : "Allow entities that match criteria"
@@ -4282,13 +4358,13 @@
 	"A filter that tests the activator against multiple filters. This allows you to build more complex filters, such as"+
 	"'Allow anyone on Team 1 who is also class engineer', or 'Allow everyone except classes npc_zombie and npc_headcrab'."
 [
-	filtertype(choices) : "Logic Type" : 0 =
+	filtertype(intchoices) : "Logic Type" : 0 =
 	[
 		0 : "AND (all filters must pass)"
 		1 : "OR (any filter must pass)"
 	]
 
-	Negated(choices) : "Negate Outcome" : 0 : "Whether to negate the result of the subfilters, after combining them using the Logic Type chosen.<br>"+
+	Negated(intchoices) : "Negate Outcome" : 0 : "Whether to negate the result of the subfilters, after combining them using the Logic Type chosen.<br>"+
 		"Negating the outcome using the AND logic type means that any subfilter must fail for this filter to pass.<br>"+
 		"Negating the outcome using the OR logic type means that all subfilters must fail for this filter to pass." =
 	[
@@ -4354,7 +4430,7 @@
 @FilterClass base(BaseFilter) iconsprite("editor/filter_type.vmat") = filter_damage_type :
 	"A damage filter that filters by the type of damage inflicted. This can only be used as a damage filter, not as an activator filter."
 [
-	damagetype(choices) : "Damage type" : 64 : "The damage type to filter by. If the filter mode is Allow, only damage types that "+
+	damagetype(intchoices) : "Damage type" : 64 : "The damage type to filter by. If the filter mode is Allow, only damage types that "+
 		"match will pass the filter. If the filter mode is Disallow, all damage types EXCEPT those who match will pass the filter." =
 	[
 		0 : "GENERIC"
@@ -4547,7 +4623,7 @@
 	Damage(integer) : "Damage" : 5 : "Damage done to all affected entities each time this entity fires."
 	DamageDelay(float) : "Delay" : 1 : "Delay between refires, in seconds."
 	
-	DamageType(choices) : "Damage Type" : 0 : "Type of damage to inflict on entities damaged." =
+	DamageType(intchoices) : "Damage Type" : 0 : "Type of damage to inflict on entities damaged." =
 	[
 		0 : "GENERIC"
 		1 : "CRUSH"
@@ -4615,7 +4691,7 @@
 
 	add_modifier(string) : "Add Modifier" : "" : "Will add this modifier when the entity spawns."
 	
-	Damagetype(choices) : "Impact Damage Type" : 0 =
+	Damagetype(intchoices) : "Impact Damage Type" : 0 =
 	[
 		-1: "Disabled"
 		0: "Blunt"
@@ -4643,7 +4719,7 @@
 	]
 	hoverposeposition(vector) : "Player-carry Hover Position" : "0 0 0" : "If the hoverposeflags Position flag is set, this position is the position which the object should move when the player picks it up, with the physgun or +USE."
 	hoverposeangles(vector) : "Player-carry Hover Angles" : "0 0 0" : "If the hoverposeflags Angles flag is set, this angle is the angle which the object should orient to when the player picks it up, with the physgun or +USE."
-	notsolid(choices) : "Not solid to world" : 0 =
+	notsolid(intchoices) : "Not solid to world" : 0 =
 	[
 		0: "Solid to World"
 		1: "Passes through World"
@@ -5198,7 +5274,7 @@
 [
 	model(studio) [report] : "World Model"
 	skin(materialgroup) [ group="Render Properties" ] : "Skin" : "default" : "Some models have multiple versions of their textures, called skins."
-	solid(choices) : "Collisions" : 6 =
+	solid(intchoices) : "Collisions" : 6 =
 	[
 		0: "Not Solid"
 		2: "Use axis-aligned box"
@@ -5206,7 +5282,7 @@
 		6: "Use VPhysics"
 	]
 
-	disableshadows(choices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting fromthis entity." = 
+	disableshadows(intchoices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting fromthis entity." = 
 	[
 		0: "Enabled"
 		1: "No Shadows"
@@ -5219,7 +5295,7 @@
 	visoccluder(boolean) [ group="Render Properties" ] : "Vis Occluder" : 0 : "If true this geometry is used as an occluder for precomputed visibility"	
 	renderamt(integer) [ group="Render Properties" ] : "Alpha" : 255 : "Alpha of the fade, where 0 = fully transparent and 255 = fully opaque." 
 	rendercolor(color255) : "Color (R G B)" : "255 255 255"
-	disablelowviolence(choices) [ group="Render Properties" ] : "Turn Off in Low-Violence" : 0 =
+	disablelowviolence(intchoices) [ group="Render Properties" ] : "Turn Off in Low-Violence" : 0 =
 	[
 		0: "No"
 		1: "Yes"
@@ -5228,7 +5304,7 @@
 
 @BaseClass base(Parentname, CanBeClientOnly, Global, BaseAnimGraph2, BreakableProp, RenderFields, Glow) tags( PropDynamic ) = prop_dynamic_base
 [
-	solid(choices) : "Collisions" : 6 =
+	solid(intchoices) : "Collisions" : 6 =
 	[
 		0: "Not Solid"
 		2: "Use axis-aligned box"
@@ -5245,7 +5321,7 @@
 		2048 : "Exclude from PVS (Always networked, use sparingly)" : 0
 	]
 
-	disablelowviolence(choices) : "Turn Off in Low-Violence" : 0 =
+	disablelowviolence(intchoices) : "Turn Off in Low-Violence" : 0 =
 	[
 		0: "No"
 		1: "Yes"
@@ -5299,6 +5375,11 @@
 	output OnAnimationReachedEnd(void) : "Fired whenever a non-looping animation playing forward hits the end (cycle=1)."
 	output OnAnimationReachedStart(void) : "Fired whenever a non-looping animation playing backward hits the beginning (cycle=0)."
 	output OnAnimationLoopCycleDone(void) : "Fires off an event when the current cycle of a looped animation is complete."
+	output OnScriptFireEvent01(void) : "Fired when the animation hits an AE_SCRIPT_FIRE_EVENT_01 anim event."
+	output OnScriptFireEvent02(void) : "Fired when the animation hits an AE_SCRIPT_FIRE_EVENT_02 anim event."
+	output OnScriptFireEvent03(void) : "Fired when the animation hits an AE_SCRIPT_FIRE_EVENT_03 anim event."
+	output OnScriptFireEvent04(void) : "Fired when the animation hits an AE_SCRIPT_FIRE_EVENT_04 anim event."
+	output OnScriptFireEvent05(void) : "Fired when the animation hits an AE_SCRIPT_FIRE_EVENT_05 anim event."
 
 	lightingorigin(target_destination) : "Lighting Origin" : "" : "Select an entity to specify a location to sample lighting from, instead of using this entity's origin."
 
@@ -5310,7 +5391,7 @@
 	forcenpcexclude(boolean) : "Force NPC Exclude" : "0" : "If set, NPC movement will ignore this prop"
 ]
 
-@PointClass base(PosableSkeleton) tags( PropStatic ) color(255 255 0) line(255 0 255, targetname, cubemap) sphere(fademindist, 200 200 200) sphere(fademaxdist, 200, 200, 200) sphere(grass_exclusion_radius, 100 200 100, singleSelect) 
+@PointClass base(PosableSkeleton, AcousticProperty) tags( PropStatic ) color(255 255 0) line(255 0 255, targetname, cubemap) sphere(fademindist, 200 200 200) sphere(fademaxdist, 200, 200, 200) sphere(grass_exclusion_radius, 100 200 100, singleSelect) 
 	model
 	{
 		static = true
@@ -5332,7 +5413,7 @@
 	skin(materialgroup) : "Material Group" : "default" : "Some props have multiple matieral variations called Material Groups, here you can see what material groups are available for selection."	
 
 //	Collision
-	solid(choices) [ group="Collision" ] : "Collision Type" : 6 =
+	solid(intchoices) [ group="Collision" ] : "Collision Type" : 6 =
 	[
 		0: "Not Solid"
 //		2: "Use axis-aligned box"
@@ -5343,13 +5424,13 @@
 	collision_override(collision_property) { group="Collision" enabled={ variable="solid" value="6" } } : "Override Collision Property" : "" : "If a value is selected, it will be applied as the collision property to all of the phsyics shapes generated by this instance of the model, overriding any values specified in the model."
 
 	// Lighting	
-	bakelighting(choices) [ group="Lighting" ] : "Lighting Type" : -1 : "Selects whether to use lightmapping or lightprobes for this mesh. Note: Selecting light probes will disable mesh merging/batching, creating extra draw calls. To merge lightprobed meshes, enable the Bake to World parameter."=
+	bakelighting(intchoices) [ group="Lighting" ] : "Lighting Type" : -1 : "Selects whether to use lightmapping or lightprobes for this mesh. Note: Selecting light probes will disable mesh merging/batching, creating extra draw calls. To merge lightprobed meshes, enable the Bake to World parameter."=
 	[
 		-1 : "Default"
 		1 : "Lightmapped"
 		0 : "Lightprobed"
 	]
-	disableshadows(choices) [ group="Lighting" ] : "Cast Shadows" : 0 : "Selects the type of shadows that should be cast from this prop_static." = 
+	disableshadows(intchoices) [ group="Lighting" ] : "Cast Shadows" : 0 : "Selects the type of shadows that should be cast from this prop_static." = 
 	[
 		0: "Enabled" : "Prop will cast static shadows, unless something forces dynamic shadows (eg Render With Dynamic)"
 		1: "Disabled" : "Prop will cast no shadows"
@@ -5358,7 +5439,7 @@
 	]
 	emissive(boolean) [ group = "Lighting" ] : "Emissive" : 1 : "Allow this prop to emit lighting. Note that this only works on materials with Self Illum parameters, and is only visible in the GPU Path Tracing Preview and in the final lightmap bake."
 	emissive_lighting_boost(float) { group = "Lighting" min="0.0" max="8.0" enabled={ variable="emissive" value="1"  } } : "Emissive Boost" : "1.0" : "Used to boost emissive lighting from a mesh. Note that boosting emissive on smaller meshes can create more lighting artifacts/noise."
-	lightmapscalebias(choices) [ group="Lighting" ] : "Lightmap Scale Bias" : 0 : "Used to scale the resolution of the lightmap for this mesh." =
+	lightmapscalebias(intchoices) [ group="Lighting" ] : "Lightmap Scale Bias" : 0 : "Used to scale the resolution of the lightmap for this mesh." =
 	[
 		-3 : "Scale down by 8"
 		-2 : "Scale down by 4"
@@ -5388,7 +5469,7 @@
 ]
 
 
-@PointClass base(prop_dynamic_base, EnableDisable) sphere(fademindist) sphere(fademaxdist) model()
+@PointClass base(prop_dynamic_base, EnableDisable, AcousticProperty) sphere(fademindist) sphere(fademaxdist) model()
 	metadata
 	{
 		model_archetypes = [ "animated_model" ]
@@ -5412,7 +5493,7 @@
 	health(integer) : "Health" : 0 : "Number of points of damage to take before breaking.  0 means don't break."	
 ]
 
-@BaseClass base(Parentname, Targetname, Global, CanBeClientOnly, BaseAnimGraph2, BreakableProp, Glow) tags( PropPhysics ) = BasePropPhysics
+@BaseClass base(Parentname, Targetname, Global, CanBeClientOnly, BaseAnimGraph2, BreakableProp, Glow, AcousticProperty) tags( PropPhysics ) = BasePropPhysics
 [ 
 	spawnflags(flags) [ group="Physics Properties" ] = 
 	[
@@ -5428,13 +5509,13 @@
 	minhealthdmg(integer) [ group="Physics Properties" ] : "Min Damage to Hurt" : 0 : "The prop will ignore any damage events if the damage is less than this amount."
 	shadowcastdist(integer) [ group="Physics Properties" ] : "Shadow Cast Distance" : 0 : "Use this to override how far this object casts shadows. 0 = default distance."
 	physdamagescale(float) [ group="Physics Properties" ] : "Physics Impact Damage Scale" : "0.1" : "Scales damage energy when this object is hit by a physics object. NOTE: 0 means this feature is disabled for backwards compatibility.<br>Set to 1.0 for materials as strong as flesh, smaller numbers indicate stronger materials."
-	Damagetype(choices) [ group="Physics Properties" ] : "Impact damage type" : 0 =
+	Damagetype(intchoices) [ group="Physics Properties" ] : "Impact damage type" : 0 =
 	[
 		0: "Blunt"
 		1: "Sharp"
 	]
 
-	nodamageforces(choices) [ group="Physics Properties" ] : "Damaging it Doesn't Push It" : 0 : "Used to determine whether or not damage should cause the brush to move." =
+	nodamageforces(intchoices) [ group="Physics Properties" ] : "Damaging it Doesn't Push It" : 0 : "Used to determine whether or not damage should cause the brush to move." =
 	[
 		0: "No"
 		1: "Yes"
@@ -5447,7 +5528,7 @@
 	buoyancyScale(float) [ group="Physics Properties" ] : "Buoyancy Scale" : "1.0" : "Scales how water forces affect this object."
 	damagetoenablemotion(integer) [ group="Physics Properties" ] : "Health Level to Override Motion" : 0 : "If specified, this object will start motion disabled. Once its health has dropped below this specified amount, it will enable motion."
 	forcetoenablemotion(float) [ group="Physics Properties" ] : "Physics Impact Force to Override Motion" : 0 : "If specified, this object will start motion disabled. Any impact that imparts a force greater than this value on the physbox will enable motion."
-	dynamiccontinuouscontactbehavior(choices) [ group="Physics Properties" ] : "Dynamic Continuous Contact Behavior" : 0 =
+	dynamiccontinuouscontactbehavior(intchoices) [ group="Physics Properties" ] : "Dynamic Continuous Contact Behavior" : 0 =
 	[
 		0 : "Allow if requested by other body"
 		1 : "Always (request continuous contact against other dynamic bodies)"
@@ -5465,9 +5546,8 @@
 	auto_convert_back_from_debris(boolean) [ group="Physics Properties" ] : "Auto Convert back from Debris" : "1" : "If set, this prop will automatically convert back to interactive debris after coming to rest as Debris."
 	updatenavwhenmoving(boolean) [ group="Physics Properties" ] : "Update Nav When Moving" : "0" : "If set, nav mesh will be constantly updated while this obstacle is moving, and not just when this obstacle is settled."
 	forcenavcut(boolean) [ group = "Physics Properties" ] : "Force Nav Cut " : "0" : "If set, this obstacle will cut the mesh causing NPC's to avoid it regardless of its mass."
-	allowobstacleconvexhullmerging(boolean) [ group = "Physics Properties" ] : "Allow Obstacle Merging" : "1" : "If set, this obstacle will be merged with nearby obstacles to improve performance."
 
-	ammobalancing_removable(choices) [ group="Break Contents" ] : "Removal Allowed for Ammo Balancing" : "0" =
+	ammobalancing_removable(intchoices) [ group="Break Contents" ] : "Removal Allowed for Ammo Balancing" : "0" =
 	[
 		"0" : "No"
 		"1" : "Yes"
@@ -5548,7 +5628,7 @@
 	"This class is the same as prop_physics, except the runtime collisions use a more bouncy method that avoids " +
 	"the prediction errors normal physics objects get."
 [
-	physicsmode(choices) : "Physics Mode" : 0 =
+	physicsmode(intchoices) : "Physics Mode" : 0 =
 	[
 		0: "Auto Detect"
 		1: "Solid, Server-side"
@@ -5558,7 +5638,7 @@
 ]
 
 
-@PointClass base(Targetname, Studiomodel, BaseFadeProp, EnableDisable, PosableSkeleton, BasePhysicsSimulated) tags( PropPhysics ) sphere(fademindist) sphere(fademaxdist) model() = prop_ragdoll :
+@PointClass base(Targetname, Parentname, Studiomodel, BaseFadeProp, EnableDisable, PosableSkeleton, BasePhysicsSimulated) tags( PropPhysics ) sphere(fademindist) sphere(fademaxdist) model() = prop_ragdoll :
 	"A prop that physically simulates and can be articulated with internal joints. The joint constraints are part of the physics model."
 [
 	spawnflags(flags) = 
@@ -5585,7 +5665,7 @@
 @PointClass base(prop_dynamic_base) model() = prop_dynamic_ornament :
 	"A way to attach one model to another as an ornament. It will render in the way that player/NPC weapons render."
 [
-	solid(choices) : "Collisions" : 6 =
+	solid(intchoices) : "Collisions" : 6 =
 	[
 		0: "Not Solid"
 		2: "Use axis-aligned box"
@@ -5630,7 +5710,7 @@
 	minhealthdmg(integer) : "Min Damage to Hurt" : 0 : "The prop will ignore any damage events if the damage is less than this amount."
 	gamemass(integer) : "Game Mass Override" : 0 : "Set the game mass by hand instead of using the code defaults."
 
-	overrideBlockLOS(choices) : "Block LOS override" : 0 : "Should this entity block or not-block LOS" =
+	overrideBlockLOS(intchoices) : "Block LOS override" : 0 : "Should this entity block or not-block LOS" =
 	[
 		0 : "use default"
 		1 : "Force no block LOS"
@@ -5732,7 +5812,7 @@
 
 @BaseClass = PlatSounds 
 [
-	movesnd(choices) : "Move Sound" : 0 : "The sound played whenever the platform starts moving." = 
+	movesnd(intchoices) : "Move Sound" : 0 : "The sound played whenever the platform starts moving." = 
 	[
 		0: "No Sound"
 		1: "big elev 1"
@@ -5749,7 +5829,7 @@
 		12: "odd elev 1"
 		13: "odd elev 2"
 	]
-	stopsnd(choices) : "Stop Sound" : 0 : "The sound played when the platform stops moving." = 
+	stopsnd(intchoices) : "Stop Sound" : 0 : "The sound played when the platform stops moving." = 
 	[
 		0: "No Sound"
 		1: "big elev stop1"
@@ -5805,14 +5885,14 @@
 	
 	speed(integer) : "Initial Speed (units / second)" : 0 : "The speed that the train will move at after it spawns, 0 = stopped."
 	
-	velocitytype(choices) : "Change Velocity" : 0 : "The method through which this train changes its velocity as it moves along the path." =
+	velocitytype(intchoices) : "Change Velocity" : 0 : "The method through which this train changes its velocity as it moves along the path." =
 	[
 		0 : "Instantaneously"
 		1 : "Linear blend"
 		2 : "Ease in/ease out"
 	]
 	
-	orientationtype(choices) : "Change angles" : 1 : "The method through which this train changes its orientation as it moves along the path." =
+	orientationtype(intchoices) : "Change angles" : 1 : "The method through which this train changes its orientation as it moves along the path." =
 	[
 		0 : "Never (fixed orientation)"
 		1 : "Near path_tracks"
@@ -5942,7 +6022,7 @@
 		"This speed must be a positive value that is less than the train's max speed. A value of 0 will cause no change in the train's speed."
 	radius(float) : "Path radius" : 0 : "Used by NPCs who follow track paths (attack chopper/gunship). This tells them the maximum distance they're allowed to be from the path at this node."
 
-	orientationtype(choices) : "Orientation Type" : 1 : "The way that the path follower faces as it moves through this path track." =
+	orientationtype(intchoices) : "Orientation Type" : 1 : "The way that the path follower faces as it moves through this path track." =
 	[
 		0 : "No change"
 		1 : "Face direction of motion"
@@ -6049,7 +6129,7 @@
 	master(string) : "Master (Obsolete)" : : "Legacy support: The name of a master entity. If the master hasn't been activated, this entity will not activate."
 	damage(integer) : "Damage" : 10 : "The amount of damage done to entities that touch this trigger. The damage is done every half-second. See also 'Damage Model' for extra details on how damage can be dealt."
 	damagecap(integer) : "Damage Cap" : 20 : "Maximum damage dealt per second. This field is only used if you select the Doubling w/Forgiveness damage model, via the spawnflag."
-	damagetype(choices) : "Damage Type" : 0 =
+	damagetype(intchoices) : "Damage Type" : 0 =
 	[
 		0		: "GENERIC"
 		1		: "CRUSH"
@@ -6071,7 +6151,7 @@
 		262144	: "ACID"
 	]
 
-	damagemodel(choices) : "Damage Model" : 0 : "How damage is dealt. Normal always does the specified amount of damage each half second. Doubling starts with the specified amount and doubles it each time it hurts the toucher. Forgiveness means that if the toucher gets out of the trigger the damage will reset to the specified value. Good for making triggers that are deadly over time without having to cause massive damage on each touch." =
+	damagemodel(intchoices) : "Damage Model" : 0 : "How damage is dealt. Normal always does the specified amount of damage each half second. Doubling starts with the specified amount and doubles it each time it hurts the toucher. Forgiveness means that if the toucher gets out of the trigger the damage will reset to the specified value. Good for making triggers that are deadly over time without having to cause massive damage on each touch." =
 	[
 		0 : "Normal"
 		1 : "Doubling w/forgiveness"
@@ -6350,7 +6430,7 @@
 
 	max_turn_rate(float) : "Maximum Turn Rate" : 0 : "Max turn rate, 0 means instantaneously point toward the target"
 
-	start_active(choices) : "Initial State" : 1 = 
+	start_active(intchoices) : "Initial State" : 1 = 
 	[
 		0 : "Inactive"
 		1 : "Active"
@@ -6387,7 +6467,7 @@
 	Target(target_destination) : "Entity to Move" : "" : "This entity will be moved to mimic the motions of Entity to Measure."
 	TargetReference(target_destination) : "Movement Reference" : "" : "The Entity to Move will move relative to this entity."
 	TargetScale(float) : "Movement scale" : "1" : "A scale to divide the measured movements by, before applying those movements to the Entity to Move. 1 = target entity moves as much as the measured entity, 2 = target entity moves half as far as the measured entity, and 0.5 = target entity moves twice as far as the measured entity."
-	MeasureType(choices) : "Measurement Type" : 0 =
+	MeasureType(intchoices) : "Measurement Type" : 0 =
 	[
 		0 : "Position"
 		1 : "Eye position"
@@ -6759,21 +6839,21 @@
 	font_size(float) : "Font Size" : "20"
 	font_name(string) : "Font Name" : "Arial Black"
 
-	justify_horizontal(choices) : "Horizontal Justify" : 0 =
+	justify_horizontal(intchoices) : "Horizontal Justify" : 0 =
 	[
 		0: "Left"
 		1: "Center"
 		2: "Right"
 	]
 
-	justify_vertical(choices) : "Vertical Justify" : 0 =
+	justify_vertical(intchoices) : "Vertical Justify" : 0 =
 	[
 		0: "Bottom"
 		1: "Center"
 		2: "Top"
 	]
 
-	reorient_mode(choices) : "Reorient Mode" : 0 =
+	reorient_mode(intchoices) : "Reorient Mode" : 0 =
 	[
 		0: "None"
 		1: "Rotate Around Up"
@@ -6804,17 +6884,22 @@
 	editor_only(boolean) : "Editor only" : 1
 ]
 
-@PointClass base(Targetname, Parentname) size(16 16 16) line(255 255 255, targetname, target) drawangles{} color(247 181 82) = path_corner : "Generic path point"
+@PointClass base(Targetname, Parentname) size(16 16 16) line(255 255 255, targetname, target) drawangles{} arc_range{ is_local_axis = true align_pie_to_local_forward = true fov_key = "arrival_direction_tolerance_angle" fov_is_half_angle = true hide_fov_at = "180" radius = "48" draw_triangle = false } color(247 181 82) = path_corner : "Generic path point"
 [
 	spawnflags(Flags) =
 	[
-		1: "Wait for retrigger" : 0
 		2: "Teleport to THIS path_corner" : 0
 	]
 	target(target_destination) : "Next stop target"
 	speed(integer) : "Speed" : 0
-	yaw_speed(integer) : "New Train rot. Speed" : 0
 	radius(float) : "Radius" : 0
+	trigger_locomotion_stop(boolean) : "Trigger Locomotion Stop" : 0 : "Should locomotion system stop a the path corner even if the wait time is zero?"
+	exact_positioning(boolean) : "Exact Positioning" : 0 : "By default, the path corner logic moves the path corner to the nearest nav location. Setting this to true disables that feature."
+	path_end_distance_from_goal(float) : "Path End From Corner" : -1 : "If specified, how far from the path_corner should the path be clipped?"
+
+	arrival_direction_entity(target_destination) : "Arrival Direction Entity" : "" : "If set, the NPC faces this entity on arrival instead of the path_corner's forward."
+	arrival_direction_tolerance_angle(float) : "Arrival Direction Tolerance Angle" : 180 : "Half-angle about the arrival direction (the entity above, else the path_corner's forward) the NPC must face within on arrival. At 180 no arrival direction is applied."
+	smooth_arrival(boolean) : "Smooth Arrival" : 1 : "Curve the end of the approach path so the NPC arrives already facing the arrival direction, instead of turning on the spot. Ignored for corners that are passed through rather than stopped at."
 
 	// Inputs 
 	input SetNextPathCorner(string) : "Sets next pathcorner"
@@ -6827,7 +6912,7 @@
 [
 	updateOnClient(boolean) : "Update On Client" : 1
 
-	inputType(choices) : "Input Position" : 0 =
+	inputType(intchoices) : "Input Position" : 0 =
 	[
 		0: "Player Shoot Position"
 		1: "Player Shoot Position Around Axis"
@@ -6841,13 +6926,13 @@
 	maximumChangePerSecond(float) : "Max Interp Change Per Second" : "1000.0"
 	maximumDistanceFromLine(float) : "Disengage Max Distance" : "1000.0"
 	engageDistance(float) : "Engage Distance" : "1000.0"
-	requiresUseKey(choices) : "Requires Use Key" : 0 =
+	requiresUseKey(intchoices) : "Requires Use Key" : 0 =
 	[
 		0: "No"
 		1: "Yes"
 	]
 
-	outputType(choices) : "Output Type" : 0 =
+	outputType(intchoices) : "Output Type" : 0 =
 	[
 		0: "Animation Cycle"
 		1: "Rotation X"
@@ -6860,13 +6945,13 @@
 	outputEntity3(target_destination) : "Output Entity 3"
 	outputEntity4(target_destination) : "Output Entity 4"
 
-	hapticsType(choices) : "Haptics Type" : 0 =
+	hapticsType(intchoices) : "Haptics Type" : 0 =
 	[
 		0: "Default"
 		1: "None"
 	]
 
-	momentumType(choices) : "Momentum Type" : 0 =
+	momentumType(intchoices) : "Momentum Type" : 0 =
 	[
 		0: "None"
 		1: "Friction"
@@ -6877,7 +6962,7 @@
 	momentumModifier(float) : "Momentum Modifier" : "0.0"
 	snapValue(float) : "Snap Value" : "0.0"
 
-	ratchetType(choices) : "Ratchet Type" : 0 =
+	ratchetType(intchoices) : "Ratchet Type" : 0 =
 	[
 		0: "Absolute"
 		1: "Each Engage"
@@ -6948,6 +7033,7 @@
 	width(float) : "Width" : "32"
 	height(float) : "Height" : "32"
 	panel_dpi(float) : "DPI" : "2"
+	window_ui_scale(float) : "Window UI Scale" : "1"
 	ignore_input(boolean) : "Ignore Input" : "0"
 	interact_distance(float) : "Interact Distance" : "8"
 	lit(boolean) : "Lit" : "0"
@@ -7035,7 +7121,7 @@
 	tint_color(color255) : "Skybox Tint Color" : "255 255 255" : "Tint the skybox"
 	brightnessscale(float) : "Brightness Scale" : "1.0" : "Scale brightness by this amount"
 
-	fog_type(choices) : "Fog Type" : 1 =
+	fog_type(intchoices) : "Fog Type" : 1 =
 	[
 		0: "None"
 		1: "Distance Based"
@@ -7063,7 +7149,7 @@
 	SpawnInvulnerability(float) : "Spawn Invulnerability" : "3"
 	StartBroken(boolean) : "Start Broken" : "0" : "Spawn in a broken state"
 	BreakShardless(boolean) : "Start Break Shardless" : "0" : "If starting broken, have no shards"
-	DamageType(choices) : "Damage Type" : 1 =
+	DamageType(intchoices) : "Damage Type" : 1 =
 	[
 		0: "Bullet"
 		1: "Melee"
@@ -7098,12 +7184,12 @@
 
 	IndirectEnabled( bool ) [ group="Indirect Lighting" ] : "Enable indirect lighting" : "0"
 	IndirectStrength( float ) [ group="Indirect Lighting" ] : "Indirect light strength" : "1.0" 
-	IndirectVoxelDim(choices) [ group="Indirect Lighting" ] : "Indirect Lighting Dimension" : "256.0" : "" = 
+	IndirectVoxelDim(intchoices) [ group="Indirect Lighting" ] : "Indirect Lighting Dimension" : "256" : "" = 
 	[
-		"512.0" : "Very High Resolution (512x)"
-		"256.0" : "High Resolution (256x)"
-		"128.0" : "Medium Resolution (128x)"
-		"64.0" : "Low Resolution (64x)"
+		"512" : "Very High Resolution (512x)"
+		"256" : "High Resolution (256x)"
+		"128" : "Medium Resolution (128x)"
+		"64" : "Low Resolution (64x)"
 	]
 
 	// Map compiler will automatically populate this and we do not want it shown in the UI.
@@ -7144,7 +7230,7 @@
 	box_maxs(vector) : "Box Maxs" : "64 64 64"
 	FogStrength( float ) : "Fog strength" : "1.0" : "Technically the scattering value. Higher values make denser fog."
 	FalloffExponent( float ) : "Falloff Exponent" : "1.0" : "Controls the fall off curve for the fog at the edges"
-	Shape(choices) : "Falloff Shape" : "0" : "" = 
+	Shape(intchoices) : "Falloff Shape" : "0" : "" = 
 	[
 		"0" : "Linear (Box) Falloff"
 		"1" : "Radial (Sphere) Falloff"
@@ -7175,11 +7261,15 @@ box_world_aligned
 	box_max = "box_maxs"
 	toggle_faces_with_selection_overlay = true
 }
+metadata
+{
+	entity_tool_set_orientation = false
+}
 = visibility_hint
 [
 	box_mins(vector) : "Box Mins" : "-64 -64 -64"
 	box_maxs(vector) : "Box Maxs" : "64 64 64"
-	hintType(choices) : "Hint Type" : 3 =
+	hintType(intchoices) : "Hint Type" : 3 =
 	[
 		0: "Use High Resolution (8 unit grid)"
 		1: "Use Normal Resolution (8 unit grid)"
@@ -7204,10 +7294,11 @@ centered_box_oriented
 = info_visibility_box : "A dynamic visibility culling box which can be used to hide objects at runtime and can be toggled on and off by entity I/O."
 [
 	box_size(vector) : "Box Size" : "128 128 128"
-	cull_mode(choices) : "Mode" : "0" : "Should the box hide objects inside or outside of its bounds. If inside is selected, any objects fully inside the box will be hidden. If outside is selected, all active visibility boxes are considered, and objects not intersecting any visibility boxes will be hidden."=
+	cull_mode(intchoices) : "Mode" : "0" : "Should the box hide objects inside or outside of its bounds. If inside is selected, any objects fully inside the box will be hidden. If outside is selected, all active visibility boxes are considered, and objects not intersecting any visibility boxes will be hidden. The camera-inside variant only applies while the camera is within the box."=
 	[
 		0: "Hide objects inside"
 		1: "Hide objects outside"
+		2: "Hide objects outside (only when camera is inside)"
 	]
 ]
 
@@ -7217,7 +7308,7 @@ centered_box_oriented
 	box_size(vector) : "Box Size" : "128 128 128"
 	limit_to_world(bool) : "Limit to Prefab" : "0" : "Limit the box to culling triangles objects in the prefab to which it belongs."
 	targets(node_id_List) : "Target Objects" : "" : "Limit the box to culling triangles from the specified target objects."
-	geometry_type(choices) : "Apply To" : "0" : "Spcifies the type of geometry which can be culled by the box" =
+	geometry_type(intchoices) : "Apply To" : "0" : "Spcifies the type of geometry which can be culled by the box" =
 	[
 		"0" : "Everything"
 		"1" : "Only Static Props"
@@ -7367,7 +7458,7 @@ centered_box_oriented
 
 	secondary_material(material) : "Secondary Material" : "" : "Optional secondary material, can be selected using Skin(1)"
 	lightingorigin(target_destination) [ group="Render Properties" ] : "Lighting Origin" : "" : "Select an entity to specify a location to sample lighting from, instead of using this entity's origin."
-	disableshadows(choices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
+	disableshadows(intchoices) [ group="Render Properties" ] : "Cast Shadows" : 0 : "Used to disable shadow casting from this entity." = 
 	[
 		0: "Enabled"
 		1: "No Shadows"
@@ -7425,12 +7516,12 @@ centered_box_oriented
 	viewtarget(target_destination) : "View Target Entity" : "" : "Optional name of an entity that the player's view will be forced to look at when listening to this node."
 	viewposition(target_destination) : "View Origin Entity" : "" : "Optional name of an entity that the player's view should move to when listening to this node."
 	teleport_origin(world_point) : "Teleport Target" : "" : "Teleport position associated with this node. If players use Mouse2 to jump to the next node, they'll be moved to that node's corresponding teleport position."
-	prevent_movement(choices) : "Prevent Movement?" : 0 : "If set, the player will be unable to move while this node is playing." =
+	prevent_movement(intchoices) : "Prevent Movement?" : 0 : "If set, the player will be unable to move while this node is playing." =
 	[
 		0 : "No"
 		1 : "Yes"
 	]
-	start_disabled(choices) : "Start Disabled?" : 0 : "If set, this node will be disabled on startup, and will require the Enable input to be fired before it will be visible to the player." =
+	start_disabled(intchoices) : "Start Disabled?" : 0 : "If set, this node will be disabled on startup, and will require the Enable input to be fired before it will be visible to the player." =
 	[
 		0 : "No"
 		1 : "Yes"

@@ -57,11 +57,17 @@ GameStartup "DotaTrophies_global_server" // src/game/shared/dota/dota_trophies_s
 GameSessionManifest_server "wearable_item_server" // src/game/shared/econ/econ_wearable.cpp
 	wearable_item.ventr
 
+GameStartup "PeriodicResourcesManifest_global_server" // src/game/shared/events/periodic_resource_schema.cpp
+	scripts/periodic_resource_definitions.vdata
+
 GameStartup "ExplosionTypesManifest_global_server" // src/game/shared/explosiontypes.cpp
 	scripts/explosion_types.vdata
 
 "" "LoopModeGame_server" // src/game/shared/loopmodegame.cpp
 	// resources = null
+
+GameStartup "NoiseStreamsManifest_global_server" // src/game/shared/noisestreams_vdata.cpp
+	scripts/noise_presets.vdata
 
 GameSessionManifest_server "PhysFrictionEffectPrecache_server" // src/game/shared/physics_shared.cpp
 	// resources = null

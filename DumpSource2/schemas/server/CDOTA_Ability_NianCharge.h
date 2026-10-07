@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_NianCharge : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	bool m_bChargeFinished;

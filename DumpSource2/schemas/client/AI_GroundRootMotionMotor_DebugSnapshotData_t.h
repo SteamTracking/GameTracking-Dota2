@@ -17,6 +17,7 @@ class AI_GroundRootMotionMotor_DebugSnapshotData_t : public DebugSnapshotBaseStr
 	CGlobalSymbol move_type;
 	float32 f_forward_strafing_angle_actual; // = -1
 	float32 f_forward_strafing_angle_desired; // = -1
+	float32 f_forward_strafing_angle_committed; // = -1
 	float32 f_current_lean;
 	float32 f_target_lean;
 	CUtlVector< AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t > vec_events;

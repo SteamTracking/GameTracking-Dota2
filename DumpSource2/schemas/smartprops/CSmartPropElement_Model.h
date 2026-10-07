@@ -32,8 +32,11 @@ class CSmartPropElement_Model : public CSmartPropElement
 	// MPropertyDescription = "Controls the size at which a model marked as a detail object will fade out."
 	SmartPropDetailFadeLevel_t m_nDetailObjectFadeLevel; // = "NORMAL"
 	// MPropertyFriendlyName = "Cast Shadows"
-	// MPropertyDescription = "Should the model cast shadows."
-	CSmartPropAttributeBool m_bCastShadows; // = true
+	// MPropertyDescription = "Specifies the type of shadows (static or dynamic) that that should be cast by the model."
+	CSmartPropAttributeCastShadows m_nCastShadows; // = "DEFAULT"
+	// MPropertyFriendlyName = "Lighting Mode"
+	// MPropertyDescription = "Specifies the type of lighting to be applied to the object. Default will select based on the type of object (static or dynamic)."
+	CSmartPropAttributeLightingMode m_nLightingMode; // = "DEFAULT"
 	// MPropertyFriendlyName = "Rigid Deformation Only"
 	// MPropertySuppressExpr = "m_bDetailObject == true"
 	// MPropertyDescription = "If enabled, only the transform of the model will be modified by any active deformer, the vertices of the model will not be changed by the deformer."

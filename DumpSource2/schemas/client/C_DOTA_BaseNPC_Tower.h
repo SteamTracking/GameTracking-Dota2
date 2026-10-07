@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_BaseNPC_Tower : public C_DOTA_BaseNPC_Building
 {
 	ParticleIndex_t m_nAltHeldRangeFX;

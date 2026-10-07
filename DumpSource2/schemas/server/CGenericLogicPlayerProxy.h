@@ -1,0 +1,3 @@
+class CGenericLogicPlayerProxy : public CLogicPlayerProxyBase
+{
+};

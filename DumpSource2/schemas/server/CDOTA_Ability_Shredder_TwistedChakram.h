@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Shredder_TwistedChakram : public CDOTABaseAbility
 {
 	int32 radius;

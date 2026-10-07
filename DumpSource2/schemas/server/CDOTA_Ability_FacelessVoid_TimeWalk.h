@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_FacelessVoid_TimeWalk : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	CHandle< CDOTABaseAbility > m_hSourceAbilityForStolen;

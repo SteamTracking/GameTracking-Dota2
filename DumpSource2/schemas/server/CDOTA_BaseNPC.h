@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_BaseNPC : public NextBotCombatCharacter
 {
 	bool m_bPledgedOfrenda;
@@ -153,6 +152,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	CUtlSymbolLarge m_iszMapUnitName;
 	CUtlSymbolLarge m_iszUnitName;
 	int32 m_iUnitNameIndex;
+	int32 m_iUnitNameStringTableIndex;
 	int32 m_iDamageMin;
 	int32 m_iDamageMax;
 	int32 m_iDamageBonus;
@@ -234,6 +234,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	VectorWS m_vFOWOriginOverride;
 	int32 m_iTeamViewerID;
 	int32 m_nAttackHeightBonus;
+	bool m_bShouldDrawPath;
 	uint32 m_nScepterUpgradeID;
 	uint32 m_nShardUpgradeID;
 	CUtlString m_strLastKillerAbility;

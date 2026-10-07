@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_SpiritBreaker_ChargeOfDarkness : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	bool m_bFinished;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_CDOTA_Ability_Special_Bonus_Unique_Muerta_TrickShotCharges : public C_DOTABaseAbility
 {
 };

@@ -12,6 +12,7 @@ class CSceneEventInfo
 	CGlobalSymbol m_sAnimClipSlot;
 	CGlobalSymbol m_sAnimClipSlotWeight;
 	bool m_bHasArrived;
+	bool m_bExternalGraphFinished;
 	int32 m_nType;
 	GameTime_t m_flNext;
 	bool m_bIsGesture;

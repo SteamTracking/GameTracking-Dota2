@@ -4,6 +4,12 @@ class ImportExportOptionsEditableData_t
 	bool bExportProps;
 	// MPropertyFriendlyName = "Export Hidden Objects"
 	bool bExportHidden;
+	// MPropertyFriendlyName = "Export Bones (FBX only)"
+	// MPropertyDescription = "Export the bones of models. Only supported by FBX export"
+	bool bExportBones;
+	// MPropertyFriendlyName = "Export Skinning (FBX only)"
+	// MPropertyDescription = "Export the skinning of models. Only supported by FBX export, Requires exporting bones. NOTE: exporting skinning can generate an FBX with skinned and un-skinned objects, which can cause problems if referenced by a vmdl."
+	bool bExportSkinning;
 	// MPropertyFriendlyName = "Export FBX Embed Textures From Content If Available"
 	// MPropertySuppressField
 	bool bExportFbxEmbedTextures;

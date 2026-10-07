@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_EarthSpirit_Magnetize : public C_DOTABaseAbility
 {
 	int32 magnetize_self;

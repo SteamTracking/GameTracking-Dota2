@@ -1,5 +1,4 @@
 // MEntityAllowsPortraitWorldSpawn
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_GuildBannerDynamic : public C_DynamicProp
 {
 	bool m_bRespawnClientEntity;

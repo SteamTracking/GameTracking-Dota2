@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Wisp_Relocate : public CDOTABaseAbility
 {
 	ParticleIndex_t m_nFXIndexEndTeam;

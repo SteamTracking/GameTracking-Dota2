@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Axe_CullingBlade : public C_DOTABaseAbility
 {
 	bool m_bInterrupted;

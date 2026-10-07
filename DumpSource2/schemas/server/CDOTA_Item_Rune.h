@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_Rune : public CBaseAnimatingActivity
 {
 	CHandle< CBaseEntity > m_hRuneSpawner;

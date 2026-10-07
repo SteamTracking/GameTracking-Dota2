@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_ChaosKnight_Reality_Rift : public CDOTABaseAbility
 {
 	float32 m_flPercentage;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_NextBotCombatCharacter : public C_BaseCombatCharacter
 {
 	CountdownTimer m_shadowTimer;

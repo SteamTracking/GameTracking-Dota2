@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_DataDriven : public CDOTABaseAbility, public CDOTA_ActionRunner
 {
 	bool m_bProcsMagicStick;

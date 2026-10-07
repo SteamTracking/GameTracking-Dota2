@@ -1,3 +1,4 @@
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_OP_LerpEndCapScalar : public CParticleFunctionOperator
 {

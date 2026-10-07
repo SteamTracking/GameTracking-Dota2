@@ -1,4 +1,4 @@
-enum VMixFilterType_t : uint16_t
+enum VMixFilterType_t : uint8_t
 {
 	FILTER_UNKNOWN = -1,
 	FILTER_LOWPASS = 0,

@@ -1,6 +1,12 @@
 import "google/protobuf/descriptor.proto";
 
 option additional_includes = "events/base_event_schema.h";
+option additional_includes = "events/periodic_resource_schema.h";
+
+enum EEventActionScoreMode {
+	k_eEventActionScoreMode_Add = 0;
+	k_eEventActionScoreMode_Min = 1;
+}
 
 message CMsgEventAction {
 	optional uint32 action_id = 1;
@@ -17,4 +23,15 @@ message CMsgUserEventPoints {
 	repeated .CMsgEventAction completed_actions = 7;
 	optional bool owned = 8;
 	optional uint32 active_season_id = 9 [boxed_type = "EventSeasonID_t"];
+}
+
+message CMsgPeriodicResourceKey {
+	optional uint32 account_id = 1;
+	optional uint32 periodic_resource_id = 2 [boxed_type = "PeriodicResourceID_t"];
+	optional uint32 timestamp = 3;
+}
+
+message CMsgPeriodicResourceValue {
+	optional uint32 periodic_resource_max = 1;
+	optional uint32 periodic_resource_used = 2;
 }

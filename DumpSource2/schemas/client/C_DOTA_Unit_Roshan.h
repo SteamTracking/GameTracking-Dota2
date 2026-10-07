@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Unit_Roshan : public C_DOTA_BaseNPC_Additive
 {
 	int32 m_iKillerTeam;

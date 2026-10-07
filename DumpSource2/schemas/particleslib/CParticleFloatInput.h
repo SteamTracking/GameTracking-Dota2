@@ -50,4 +50,5 @@ class CParticleFloatInput : public CParticleInput
 	ParticleFloatBiasType_t m_nBiasType; // = "PF_BIAS_TYPE_STANDARD"
 	float32 m_flBiasParameter;
 	CPiecewiseCurve m_Curve;
+	float32 m_flCompareValue;
 };

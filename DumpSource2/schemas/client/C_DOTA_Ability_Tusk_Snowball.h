@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Tusk_Snowball : public C_DOTABaseAbility
 {
 	float32 snowball_windup_radius;

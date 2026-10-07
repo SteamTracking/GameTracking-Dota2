@@ -2,6 +2,7 @@
 class CNmClipDocEvent_Particle : public CNmClipDocEvent
 {
 	CNmEventRelevance_t m_relevance; // = "ClientAndServer"
+	// MPropertyAutoRebuildOnChange
 	CNmParticleEvent::Type_t m_type; // = "Create"
 	CNmEventTargetEntity_t m_target; // = "Self"
 	// MPropertyStartGroup = "+Particle"

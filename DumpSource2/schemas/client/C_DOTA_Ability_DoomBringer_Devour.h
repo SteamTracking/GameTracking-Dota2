@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_DoomBringer_Devour : public C_DOTABaseAbility
 {
 	bool m_bIsAltCastState;

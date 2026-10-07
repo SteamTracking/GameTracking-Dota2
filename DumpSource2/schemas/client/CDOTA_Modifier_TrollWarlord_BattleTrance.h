@@ -5,5 +5,6 @@ class CDOTA_Modifier_TrollWarlord_BattleTrance : public CDOTA_Buff
 	int32 attack_speed;
 	int32 lifesteal;
 	int32 ignore_attack_speed_limit;
+	bool priortize_creep_heroes;
 	CHandle< C_BaseEntity > m_hTarget;
 };

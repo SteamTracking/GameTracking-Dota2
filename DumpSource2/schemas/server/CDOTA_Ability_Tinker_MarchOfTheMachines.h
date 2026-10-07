@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Tinker_MarchOfTheMachines : public CDOTABaseAbility
 {
 	int32 splash_radius;

@@ -8,5 +8,4 @@ class AI_FacingServices_DebugSnapshotData_t
 	CGlobalSymbol schedule_facing_priority;
 	CGlobalSymbol strafing_source;
 	bool strafing_enabled;
-	CGlobalSymbol movement_id;
 };

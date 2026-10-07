@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Brewmaster_PrimalSplit : public C_DOTABaseAbility
 {
 	CHandle< C_BaseEntity > m_hPrimary;

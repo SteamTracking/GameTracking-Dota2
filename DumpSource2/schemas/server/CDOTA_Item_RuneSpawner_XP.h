@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_RuneSpawner_XP : public CBaseAnimatingActivity
 {
 	CUtlSymbolLarge m_szPosition;

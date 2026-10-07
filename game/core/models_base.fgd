@@ -198,7 +198,7 @@
 	= AE_FOOTSTEP
 [
 	attachment(model_attachment) [report] : "Attachment"
-	foot(choices) [report] : "Foot" : 0 =
+	foot(intchoices) [report] : "Foot" : 0 =
 	[
 		0 : "Left"
 		1 : "Right"
@@ -298,16 +298,6 @@
 	name(string) : "Name"
 ]
 
-@ModelAnimEvent = AE_CL_ENABLE_BODYGROUP
-[
-	name(model_bodygroup) : "Body Group"
-]
-
-@ModelAnimEvent = AE_CL_DISABLE_BODYGROUP
-[
-	name(model_bodygroup) : "Body Group"
-]
-
 @ModelAnimEvent = AE_CL_CLOTH_ATTR
 [
 	script(string): "Script"
@@ -345,7 +335,7 @@
 	use_layer_sequence(bool)	[group="Sequence"]			: "Use Layer Sequence" : "0"
 	tags(string)			[group="Sequence"]			: "Tags"
 	materialgroup(string) : "Material Group" : "" : "Optionally set a material group on the created prop model.  Note that material group name comes from the prop model." // Not a materialgroup type because ModelDoc's picker populates it from the current model
-	anim_layer(choices) : "Anim Layer" : 0 =
+	anim_layer(intchoices) : "Anim Layer" : 0 =
 	[
 		0 : "Any"
 		1 : "Base Only"
@@ -402,14 +392,6 @@ game_data_list( ao_proxy_box_list )
 	offset_origin(vector) [ scale_bone_relative ] : "Offset" : "0 0 0"
 	offset_angles(angle) : "Angles" : "0 0 0"
 ]
-
-@ModelGameData
-game_data_list( CNPCPhysicsHull )
-	metadata
-    {
-        node_name_key = "m_sName"		
-    }
-= CNPCPhysicsHull [ ]
 
 
 @ModelGameData = cloth_ground_plane

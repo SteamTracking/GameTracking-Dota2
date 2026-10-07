@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_BaseNPC_Creature : public CDOTA_BaseNPC_Creep
 {
 	bool m_bInitialized;

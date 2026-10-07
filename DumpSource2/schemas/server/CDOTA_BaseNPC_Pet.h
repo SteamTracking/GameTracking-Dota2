@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_BaseNPC_Pet : public CDOTA_BaseNPC
 {
 	CHandle< CDOTA_BaseNPC_Hero > m_hHeroHandle;

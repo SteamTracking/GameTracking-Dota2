@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Snapfire_FiresnapCookie : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hTarget;

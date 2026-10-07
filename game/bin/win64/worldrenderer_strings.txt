@@ -59,6 +59,7 @@
 .?AVIKV3ResourceAllocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HDHEGOGFHG@UPermEntityLumpData_t@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0GEGPGOHHHG@UWorldNode_t@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HDHEGOGFHG@UPermEntityLumpData_t@@@@
+.?AVIKV3TransferInterface_ResourceLoad@@
 .?AVIResourceTypeManager@@
 .?AVISceneObjectDesc@@
 .?AVISequence@@
@@ -67,7 +68,8 @@
 .?AVIWorldRendererMgr@@
 .?AVIWorldVPKReference@@
 .vwnod
-9>-memory-
+2\vpD
+2\vpTF
 <<NULL ENTITY LUMP>>
 <no classname>
 <no targetname>
@@ -96,7 +98,7 @@ CEntityKeyValues::LoadFromContext: Invalid version! Expected %d, encountered %d!
 CEntityKeyValues::LoadFromKV3
 CEntityKeyValues::Unserialize: Invalid version! Expected %d, encountered %d!\n
 CGrassTileObjectDesc
-CGrassTileObjectDesc::CreateGrass(1345): 
+CGrassTileObjectDesc::CreateGrass(1338): 
 CSemiAutoRWLockT<class CThreadRWLock_FastRead>::LockForRead
 CStrongHandle
 CStrongHandleCopyable
@@ -104,9 +106,9 @@ CUtlBinaryBlock
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct EntityKeyValueData_t,int,class CMemAllocAllocator>,struct EntityKeyValueData_t,int>::InsertBeforeGetPtr
 CUtlStringToken
 CWorld::CacheNodes
-CWorldNode::CreateExtraVertexStreams(376): 
+CWorldNode::CreateExtraVertexStreams(406): 
 CWorldNode::GrassFileCreateManifest
-CWorldNode::HandleThrottledGrassTileLoading(1452): 
+CWorldNode::HandleThrottledGrassTileLoading(1506): 
 CWorldRendererMgr::CreateWorld
 CWorldRendererMgr::CreateWorld_Internal( %s ):  Blocking load because marked for deletion during load\n
 CWorldRendererMgr::ServiceWorldRequests long frame: %fms\n
@@ -116,7 +118,7 @@ Class does not allow allocation from its schema binding
 ClutterSceneObjectDesc
 Couldn't ReadTexturePixels when creating grass.\n
 CreateAggregateRTProxySceneObjects
-Creating %i scene objects for node %i\n
+Creating %i scene objects for world node\n
 Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
@@ -132,8 +134,6 @@ FoliageAnimation
 GenerateGrassTexture
 GenerateGrassTexture failed for albedo!\n
 GenerateGrassTexture failed for specular!\n
-GetProfile_ultrafast
-GrassCopyTexture.vtex
 GrassDensity.vtex
 GrassDepth.vtex
 GrassObject
@@ -149,6 +149,7 @@ GrassTileVB
 GrassTint.vtex
 Hitbox indexing is incorrect for set %s, hitbox %s. Hitboxes will not be setup properly.\n
 IKV3TransferInterface_AllowRawStringTokenTransfer
+IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 Inconsistent treatment of '%s' (existing key is %s)!\n
 KV3 load transfer failed for resource '%s': %s
@@ -166,18 +167,22 @@ Not safe to 'new' this class due to alignment requirements
 OverlayProjectionDirection
 PerVertexLighting
 PivotPaint
+PooledLayout
 PropWorldOrigin
 PushCurrentSkewBrightnessValuesToSceneObject
 RESOURCE_TYPE_ENTITY_LUMP
 RESOURCE_TYPE_WORLD
 RESOURCE_TYPE_WORLD_NODE
 RESOURCE_TYPE_WORLD_VIS
+RSDSi
 RTProxyGeometry
 RTProxyUniqueAlbedo
 RTProxyUniqueEmissive
+R\fpD
 ResourceCompiler/BakedLighting/Version
 ResourceCompiler/DefaultMapBuilders/bakedlighting
 ResourceCompiler/DefaultMapBuilders/dontrequirebakedlighting
+ShapeOffset
 TanFrameQuat
 Tried to load resource reference '%s' from a value without a resource reference specific type.
 Trying to find a flex controller (%s) that doesn't actually exist in the model.\n
@@ -204,11 +209,12 @@ WorldRenderer/GrassCastsShadows
 WorldRenderer/GrassDilateColors
 WorldRenderer/GrassNoHalfTexel
 WorldRenderer/GrassQuadSize
+[m_pSemanticName
 \nLoaded List:\n
 \nPending List:\n
 \tWorld: %s
 \t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-\t\t\tNodes Loaded: %d / %d\n
+\t\t\tWorld Node Loaded: %s\n
 an attr
 ati_compress_wrapper.dll
 attributes
@@ -249,6 +255,7 @@ matrix3x4_t
 medium
 optionallycompressedtangentframe
 posxyz
+r\vpD
 resourcesystem
 standard
 tangent
@@ -259,7 +266,6 @@ values
 very_fast
 vmap
 vpk:%s:
-w8#o
 world renderer - 
 world_layer_base
 world_layer_set_visible %s %s false

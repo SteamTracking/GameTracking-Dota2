@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Medusa_MysticSnake : public CDOTABaseAbility
 {
 	float32 radius;

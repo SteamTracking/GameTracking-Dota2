@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Juggernaut_Trinity : public C_DOTABaseAbility
 {
 	int32 max_jumps;

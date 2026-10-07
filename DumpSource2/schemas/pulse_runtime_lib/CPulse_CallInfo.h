@@ -6,4 +6,6 @@ class CPulse_CallInfo
 	PulseDocNodeID_t m_CallMethodID; // = -1
 	PulseRuntimeChunkIndex_t m_nSrcChunk; // = -1
 	int32 m_nSrcInstruction; // = -1
+	PulseRuntimeChunkIndex_t m_nBreakDestChunk; // = -1
+	int32 m_nBreakDestInstruction; // = -1
 };

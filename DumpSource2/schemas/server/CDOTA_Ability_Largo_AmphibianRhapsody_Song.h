@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Largo_AmphibianRhapsody_Song : public CDOTABaseAbility
 {
 	int32 double_song;

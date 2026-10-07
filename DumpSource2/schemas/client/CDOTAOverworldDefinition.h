@@ -32,6 +32,8 @@ class CDOTAOverworldDefinition
 	Vector2D m_vMinCameraBounds;
 	// MPropertyDescription = "Minimum camera center position."
 	Vector2D m_vMaxCameraBounds;
+	// MPropertyDescription = "Overall projection scaling of rooms."
+	float32 m_flRoomUIScale; // = 1
 	CUtlString m_sMapVisualsXmlPath;
 	// MPropertyDescription = "Optional release schedule, for if we want certain content to release at specific times."
 	CUtlVector< DOTAOverworldReleaseScheduledUnlock_t > m_vecReleaseSchedule;

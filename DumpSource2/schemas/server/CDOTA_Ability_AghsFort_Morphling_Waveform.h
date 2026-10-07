@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_AghsFort_Morphling_Waveform : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	int32 m_nProjectileID;

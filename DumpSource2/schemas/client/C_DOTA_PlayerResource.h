@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_PlayerResource : public C_BaseEntity
 {
 	bool m_bWasDataUpdateCreated;

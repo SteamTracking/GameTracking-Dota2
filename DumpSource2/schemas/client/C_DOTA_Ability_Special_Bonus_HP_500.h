@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Special_Bonus_HP_500 : public C_DOTABaseAbility
 {
 };

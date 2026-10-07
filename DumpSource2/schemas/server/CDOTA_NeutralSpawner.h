@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_NeutralSpawner : public CPointEntity
 {
 	bool m_bGameStarted;

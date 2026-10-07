@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Undying_SoulRip : public CDOTABaseAbility
 {
 	int32 damage_per_unit;

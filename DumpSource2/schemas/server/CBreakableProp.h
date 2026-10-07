@@ -1,4 +1,3 @@
-// MDisableDataDescValidation
 class CBreakableProp : public CBaseProp
 {
 	CPropDataComponent m_CPropDataComponent;
@@ -15,6 +14,9 @@ class CBreakableProp : public CBaseProp
 	CHandle< CBaseEntity > m_hBreaker;
 	PerformanceMode_t m_PerformanceMode;
 	GameTime_t m_flPreventDamageBeforeTime;
+	GameTime_t m_flPreventNonPlayerDamageBeforeTime;
+	GameTime_t m_flPreventNonPlayerDamageWhileHeldBeforeTime;
+	bool m_bUnbreakableUntilIgnited;
 	BreakableContentsType_t m_BreakableContentsType;
 	CUtlString m_strBreakableContentsPropGroupOverride;
 	CUtlString m_strBreakableContentsParticleOverride;
@@ -27,6 +29,8 @@ class CBreakableProp : public CBaseProp
 	CUtlSymbolLarge m_explosionCustomEffect;
 	CUtlSymbolLarge m_explosionCustomSound;
 	CUtlSymbolLarge m_explosionModifier;
+	float32 m_flPreventNonPlayerDamageDuration;
+	float32 m_flPreventNonPlayerDamageWhileHeldDuration;
 	CHandle< CBasePlayerPawn > m_hPhysicsAttacker;
 	GameTime_t m_flLastPhysicsInfluenceTime;
 	float32 m_flDefaultFadeScale;

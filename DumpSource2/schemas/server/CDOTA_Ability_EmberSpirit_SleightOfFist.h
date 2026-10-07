@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_EmberSpirit_SleightOfFist : public CDOTABaseAbility
 {
 	VectorWS m_vCastLoc;

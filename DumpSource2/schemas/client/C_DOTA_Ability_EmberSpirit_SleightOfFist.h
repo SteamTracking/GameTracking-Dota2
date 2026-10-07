@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_EmberSpirit_SleightOfFist : public C_DOTABaseAbility
 {
 	VectorWS m_vCastLoc;

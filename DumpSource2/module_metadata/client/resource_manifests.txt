@@ -396,11 +396,17 @@ GameStartup "DotaTrophies_global_client" // src/game/shared/dota/dota_trophies_s
 GameSessionManifest_client "wearable_item_client" // src/game/shared/econ/econ_wearable.cpp
 	wearable_item.ventr
 
+GameStartup "PeriodicResourcesManifest_global_client" // src/game/shared/events/periodic_resource_schema.cpp
+	scripts/periodic_resource_definitions.vdata
+
 GameStartup "ExplosionTypesManifest_global_client" // src/game/shared/explosiontypes.cpp
 	scripts/explosion_types.vdata
 
 "" "LoopModeGame_client" // src/game/shared/loopmodegame.cpp
 	// resources = null
+
+GameStartup "NoiseStreamsManifest_global_client" // src/game/shared/noisestreams_vdata.cpp
+	scripts/noise_presets.vdata
 
 LoopModeGameStartup "ParticleEffectStop_global_client" // src/game/shared/particle_system.cpp
 	// resources = null

@@ -1,4 +1,4 @@
-enum ModelMeshBufferUsage_t : uint8_t
+enum ModelMeshBufferUsage_t : uint16_t
 {
 	MESH_BUFFER_USAGE_NONE = 0,
 	MESH_BUFFER_USAGE_VB = 1,
@@ -8,4 +8,6 @@ enum ModelMeshBufferUsage_t : uint8_t
 	MESH_BUFFER_USAGE_RT_PROXY = 16,
 	MESH_BUFFER_USAGE_VERTEX_ALBEDO = 32,
 	MESH_BUFFER_USAGE_VERTEX_EMISSIVE = 64,
+	MESH_BUFFER_USAGE_MESHLETS = 128,
+	MESH_BUFFER_USAGE_ALIAS_TABLE = 256,
 };

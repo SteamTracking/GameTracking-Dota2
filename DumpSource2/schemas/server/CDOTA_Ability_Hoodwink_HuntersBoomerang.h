@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Hoodwink_HuntersBoomerang : public CDOTABaseAbility
 {
 	int32 radius;

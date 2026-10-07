@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Rubick_SpellSteal : public C_DOTABaseAbility
 {
 	char[256] m_ActivityModifier;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Tinker_Keen_Teleport : public C_DOTABaseAbility
 {
 	int32 creep_teleport_level;

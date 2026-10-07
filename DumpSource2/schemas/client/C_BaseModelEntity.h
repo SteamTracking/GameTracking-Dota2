@@ -37,6 +37,7 @@ class C_BaseModelEntity : public C_BaseEntity
 	Color m_clrRender;
 	C_UtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t > m_vecRenderAttributes;
 	bool m_bRenderToCubemaps;
+	bool m_bExpandRenderBoundsToIncludeCloth;
 	bool m_bNoInterpolate;
 	CCollisionProperty m_Collision;
 	CGlowProperty m_Glow;
@@ -47,6 +48,8 @@ class C_BaseModelEntity : public C_BaseEntity
 	float32 m_flShadowStrength;
 	uint8 m_nObjectCulling;
 	DecalRtEncoding_t m_nRequiredDecalRtEncoding;
+	uint32 m_bodyGroupTotalRequestCount;
+	CUtlVectorFixedGrowable< C_BaseModelEntity::BodyGroupRequest_t, 8 > m_bodyGroupRequests;
 	CUtlOrderedMap< CGlobalSymbol, int32 > m_bodyGroupChoices;
 	CNetworkViewOffsetVector m_vecViewOffset;
 	// MNotSaved

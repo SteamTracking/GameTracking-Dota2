@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_MonkeyKing_FurArmy : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hThinker;

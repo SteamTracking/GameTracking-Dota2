@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Razor_StaticLink : public CDOTABaseAbility
 {
 	int32 m_iLinkIndex;

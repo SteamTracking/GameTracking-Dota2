@@ -301,7 +301,6 @@ message CMsgGameMatchSignOut {
 		optional uint32 timestamp = 2;
 		optional uint32 event_type = 3;
 		optional int32 game_time = 4;
-		optional uint32 replay_time = 5;
 	}
 
 	message CCustomGameData {
@@ -653,7 +652,6 @@ message CMsgTournamentItemEvent {
 	optional .DOTA_TournamentEvents event_type = 3 [default = TE_FIRST_BLOOD];
 	optional int32 tv_delay = 4;
 	optional int32 dota_time = 5;
-	optional float replay_time = 6;
 	optional string loot_list = 7;
 	optional uint32 event_team = 8;
 	optional uint32 multi_kill_count = 9;

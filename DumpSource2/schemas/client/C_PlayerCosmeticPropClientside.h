@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_PlayerCosmeticPropClientside : public C_DynamicPropClientside
 {
 	int32 m_iPlayerNum;

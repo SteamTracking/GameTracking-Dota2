@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_TeleportScroll : public CDOTA_Item
 {
 	CHandle< CBaseEntity > m_hTeleportTarget;

@@ -5,5 +5,6 @@ class CNmPreviewArchetype::SecondarySkeleton_t
 	// MPropertyAttributeEditor = "AssetBrowse( vmdl, *requiredoubleclick )"
 	CUtlString m_previewModel;
 	CUtlString m_bodyPartChoiceName;
+	// MPropertyFriendlyName = "Attach to Bone/Attachment"
 	CUtlString m_attachToBoneName;
 };

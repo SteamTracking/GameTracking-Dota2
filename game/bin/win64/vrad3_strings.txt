@@ -21,11 +21,24 @@
   Round %d cumulative runtime: %dm %ds\n
   Update Block Endpoints
   [GPU memory usage (WDDM): %s / %s (rendersystem: %s)]\n
+  band +%.1f / -%.1f units at level 0, %.1f texels across it\n
+  bricks: %d (%s)\n
+  cells: %d inside solid (%.1f%%), %d beyond every band (%.1f%%)\n
+  farfield atlas %dx%dx%d (%d rows), %s resident\n
+  farfield bricks [%d, %d)...
+  farfield dilate pass %d: filled %lld samples\n
+  farfield dilate: %u samples still solid\n
+  farfield fireflies: clamped %u of %llu samples (%.3f%%) at %.1fx\n
+  farfield: %d bricks (%.1f MB) over budget, coarsening by %.3f\n
+  farfield: budget of %.1fmb exceeds the atlas limit, capping at %.1fmb\n
+  level %d: extent %7.0f units, %6.1f units/texel, %7d cells, %5d bricks\n
  !"#$%%&'()*+,-../0123456789:;<=>?@ABCDEFGHIJKLLMNOPQRSTUVWXY[]_`bdefhjlnprtvz|~
+ %s%d=%.0f%%
  (%lu = 0x%lx)\n
  (%u = 0x%x)\n
  * Requested DmAttribute of value of type "%s" From DmAttribute "%s" which is type "%s"\n
  -testmode
+ Done (%.2f seconds)\n
  Done.  Removed %i fireflies in %2.1fs\n
  LZWSetupDecode
  bn0s}Q_@r~aoPq
@@ -35,7 +48,6 @@
 "%s": Bad mode
 "%s": Information lost writing value (%g) as (unsigned) RATIONAL
 "Predictor" value %d not supported
-"\tV_expd
 "b}b*XhUu
 "channels" attribute not found in the header.
 "compression" attribute not found in the header.
@@ -64,6 +76,7 @@ $timer
 %6.2f %6.2f %6.2f %.3f %.3f %.3f\n
 %A Is
 %d Known commands:\n
+%d mesh instances\n
 %d/%d (%.2f%%) Pixel charts aliased to other luxels.\n
 %d_%lld_%x.dmx
 %d_%lld_%x_in.dmx
@@ -85,12 +98,14 @@ $timer
 %s channel
 %s compression support is not configured
 %s encoding %s %d format %s %d %s\n
+%s mesh positions (%s verts), %s mesh indices (%s verts)\n
 %s(%d) : %s\n
 %s(%s) = %s
 %s/%s.obj
 %s/channel%02d.exr
 %s/lightmap_data.dat
 %s2-d encoding
+%s: %.0f unit cells over %.0fx%.0fx%.0f -> %dx%dx%d cells\n
 %s: %s at line %u of %s %u (got %u, expected %u)
 %s: Bad code word at line %u of %s %u (x %u)
 %s: Bad field type %d for "%s"
@@ -141,7 +156,13 @@ $timer
 %s: wrong data type %d for "%s"; tag ignored
 %s: zlib error: %s
 %sEOL padding
+%s_%s_z%02i%s.exr
+%s_sdf_z%02i.exr
+%s_sh2_dc%s.exr
+%s_sh2_l1%s.exr
+%s_solid_z%02i.exr
 %suncompressed data
+&*kk<*kk<*kk<*kk<333?333?
 *** Converter error - element "%s" already has a non-int attribute "%s"!\n
 *** Element "%s" has attribute "%s" with an unexpected type!\n
 *** Log "%s" has attribute "%s" with an unexpected type (expected int array)!\n
@@ -152,6 +173,7 @@ $timer
 *** TimeFrame "%s" has attribute "%s" with an unexpected type (expected float)!\n
 *** TimeFrame "%s" is missing attribute "%s"!\n
 *** Unable to find or add attribute "%s" to element "%s"!\n
++?333?Y
 , channels = 
 , height = 
 ---- dmxconvert cmdline ----\n
@@ -161,7 +183,10 @@ $timer
 -indexlights
 -mips
 -noinvert
+-raw
 -repack
+-suffix
+.  Done (%.2f seconds)\n
 .?AV<lambda_1>@?1???$AddMatrixToMatrix@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV2@@Z@
 .?AV<lambda_1>@?1???$AddMatrixToMatrix@$0A@VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV2@@Z@
 .?AV<lambda_1>@?1???$MatrixMultiply@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBV?$CSparseMatrixBase@M@@AEBVCVariableMatrix@@PEAV3@@Z@
@@ -175,6 +200,7 @@ $timer
 .?AV<lambda_1>@?4???$SAXPY2@$00@MatrixMath@@YAXMV?$span@$$CBM$0?0@std@@V?$span@M$0?0@3@M01@Z@
 .?AV<lambda_1>@?4???$SAXPY2@$0A@@MatrixMath@@YAXMV?$span@$$CBM$0?0@std@@V?$span@M$0?0@3@M01@Z@
 .?AV<lambda_1>@?4???R<lambda_3>@?BN@??Run@CVrad3Command_path_trace_triangles_gpu@@UEAAXHPEAPEBD@Z@QEBAXH@Z@
+.?AV<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_compute_lighting@@UEAAXHPEAPEBD@Z@
 .?AV?$CBaseAppSystem@VIDataModel@@@@
 .?AV?$CBaseAppSystem@VIDmElementFramework@@@@
 .?AV?$CBaseAppSystem@VIDmSerializers@@@@
@@ -253,6 +279,7 @@ $timer
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??AmeliorateBlockCompressionArtefacts_FillBlocks@@YAXH@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??AmeliorateBlockCompressionArtefacts_SanitizeLineCharts@@YAXXZ@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??BakeLightProbeImage_Dilate@@YAXXZ@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??BakedLightProbeImage_DilateIrradianceSH@@YAXXZ@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??InitMip@CVrad3LightmapImage@@QEAAXAEBV3@H@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_dilate_over_invalid_jfa@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_encode_sh2@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
@@ -262,14 +289,21 @@ $timer
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??WriteInMemoryEXRFast@FloatBitMap_t@@IEBA_NAEAVCUtlBuffer@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?3??Run@CVrad3Command_lightmap_image_remove_fireflies@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?4???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_5>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PA6A?AV?$Vec3D@M@@AEBV5@@Z@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?5??Run@CVrad3Command_lpv_image_remove_fireflies@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?6??Run@CVrad3Command_lpv_image_median_filter@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?5??LpvImageRemoveFirefliesAmbientCube@@YAXMPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?9??Run@CVrad3Command_lpv_image_median_filter@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?CB@??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1??SweepFarfieldSDFDistances@@YAXAEBUFarfieldVolume_t@@AEAV?$CUtlVector@MHV?$CUtlVectorMemory_Growable@MH$0A@@@@@@Z@@@YAXHHPEBD$$QEAV1?1??SweepFarfieldSDFDistances@@YAXAEBUFarfieldVolume_t@@AEAV?$CUtlVector@MHV?$CUtlVectorMemory_Growable@MH$0A@@@@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?5??Run@CVrad3Command_farfield_lpv_median_filter@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV1?5??Run@CVrad3Command_farfield_lpv_median_filter@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV7@@Z@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV8@@Z@Z@@Z@_N@Z@@@YAXHHPEBD$$QEAV1?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV7@@Z@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV8@@Z@Z@@Z@_N@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV2@1@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV3@1@Z@@Z@_N@Z@@@YAXHHPEBD$$QEAV1?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV2@1@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAX0AEAV3@1@Z@@Z@_N@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_resample_borders@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_resample_borders@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_2>@?8??Run@CVrad3Command_farfield_lpv_dilate@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_2>@?8??Run@CVrad3Command_farfield_lpv_dilate@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_3>@?1??AllocateFarfieldBricks@@YAXAEBVCUtlGrid@@AEBV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@AEAV?$CUtlVector@UFarfieldBrick_t@@HV?$CUtlVectorMemory_Growable@UFarfieldBrick_t@@H$0A@@@@@@Z@@@YAXHHPEBD$$QEAV<lambda_3>@?1??AllocateFarfieldBricks@@YAXAEBVCUtlGrid@@AEBV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@AEAV?$CUtlVector@UFarfieldBrick_t@@HV?$CUtlVectorMemory_Growable@UFarfieldBrick_t@@H$0A@@@@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_4>@?1??Run@CVrad3Command_farfield_lpv_filter_fireflies@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_4>@?1??Run@CVrad3Command_farfield_lpv_filter_fireflies@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_22>@?MD@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_29>@?BEP@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_2>@?1??Run@CVrad3Command_lpv_image_ambient_occlusion@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_2>@?3??LpvImageRemoveFirefliesSH2@@YAXMPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_30>@?BEP@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_32>@?BIK@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_36>@?BNB@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
@@ -421,6 +455,7 @@ $timer
 .?AV?$CUndoAttributeSetValueElement@_K@@
 .?AV?$CUndoAttributeSetValueElement@_N@@
 .?AV?$_Func_base@XHH@std@@
+.?AV?$_Func_base@XHHPEBUFarfieldLuxel_t@@H@std@@
 .?AV?$_Func_base@XPEBM@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$AddMatrixToMatrix@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV3@@Z@XHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$AddMatrixToMatrix@$0A@VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV3@@Z@XHH@std@@
@@ -435,6 +470,8 @@ $timer
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4???$SAXPY2@$00@MatrixMath@@YAXMV?$span@$$CBM$0?0@std@@V?$span@M$0?0@4@M01@Z@XHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4???$SAXPY2@$0A@@MatrixMath@@YAXMV?$span@$$CBM$0?0@std@@V?$span@M$0?0@4@M01@Z@XHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4???R<lambda_3>@?BN@??Run@CVrad3Command_path_trace_triangles_gpu@@UEAAXHPEAPEBD@Z@QEBAXH@Z@XPEBM@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_compute_lighting@@UEAAXHPEAPEBD@Z@XHHPEBUFarfieldLuxel_t@@H@std@@
+.?AVAllocator@psd@@
 .?AVCAppLaunchableDLL@@
 .?AVCDataModel@@
 .?AVCDmElement@@
@@ -491,6 +528,7 @@ $timer
 .?AVCImportSFMV9@@
 .?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_3>@?BA@??Unserialize@CVrad3LightmapImage@@QEAA_NPEBD@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_3>@?BA@??Unserialize@CVrad3LightmapImage@@QEAA_N0@Z@@Z@
 .?AVCMultiLineFormatOutputStream@@
+.?AVCPsdBufferFile@@
 .?AVCRtxSampledRenderer@@
 .?AVCSFMBaseImporter@@
 .?AVCUndoAttributeAddRemove@@
@@ -509,11 +547,36 @@ $timer
 .?AVCVrad3Command_determinism_check_record@@
 .?AVCVrad3Command_determinism_check_replay@@
 .?AVCVrad3Command_exit@@
+.?AVCVrad3Command_farfield_lpv_box@@
+.?AVCVrad3Command_farfield_lpv_cell_size@@
+.?AVCVrad3Command_farfield_lpv_compute_bricks@@
+.?AVCVrad3Command_farfield_lpv_compute_lighting@@
+.?AVCVrad3Command_farfield_lpv_dilate@@
+.?AVCVrad3Command_farfield_lpv_filter_fireflies@@
+.?AVCVrad3Command_farfield_lpv_local_to_world@@
+.?AVCVrad3Command_farfield_lpv_max_memory@@
+.?AVCVrad3Command_farfield_lpv_median_filter@@
+.?AVCVrad3Command_farfield_lpv_resample_borders@@
+.?AVCVrad3Command_farfield_lpv_voxelize_bricks@@
+.?AVCVrad3Command_farfield_lpv_write_atlas@@
+.?AVCVrad3Command_farfield_lpv_write_brick_voxelization@@
+.?AVCVrad3Command_farfield_lpv_write_cell_voxelization@@
+.?AVCVrad3Command_farfield_sdf_band@@
+.?AVCVrad3Command_farfield_sdf_box@@
+.?AVCVrad3Command_farfield_sdf_cell_size@@
+.?AVCVrad3Command_farfield_sdf_compute_bricks@@
+.?AVCVrad3Command_farfield_sdf_compute_distances@@
+.?AVCVrad3Command_farfield_sdf_local_to_world@@
+.?AVCVrad3Command_farfield_sdf_max_memory@@
+.?AVCVrad3Command_farfield_sdf_min_level@@
+.?AVCVrad3Command_farfield_sdf_write_atlas@@
+.?AVCVrad3Command_farfield_sdf_write_bricks@@
 .?AVCVrad3Command_gpu_init@@
 .?AVCVrad3Command_lightmap_ameliorate_block_compression_artefacts@@
 .?AVCVrad3Command_lightmap_analyze_image_error@@
 .?AVCVrad3Command_lightmap_compute_block_gpu@@
 .?AVCVrad3Command_lightmap_export_packing_geometry_to_obj@@
+.?AVCVrad3Command_lightmap_free_memory@@
 .?AVCVrad3Command_lightmap_image_consolidate_small_charts@@
 .?AVCVrad3Command_lightmap_image_dilate_over_invalid_jfa@@
 .?AVCVrad3Command_lightmap_image_encode_ahd@@
@@ -547,7 +610,9 @@ $timer
 .?AVCVrad3Command_lpv_compute_block_fog_gpu@@
 .?AVCVrad3Command_lpv_compute_block_gpu@@
 .?AVCVrad3Command_lpv_flood_fill@@
+.?AVCVrad3Command_lpv_free_memory@@
 .?AVCVrad3Command_lpv_image_ambient_occlusion@@
+.?AVCVrad3Command_lpv_image_encode_sh2@@
 .?AVCVrad3Command_lpv_image_filter_ambient_cube_oidn@@
 .?AVCVrad3Command_lpv_image_filter_sh2_oidn@@
 .?AVCVrad3Command_lpv_image_fog_gpu@@
@@ -562,9 +627,10 @@ $timer
 .?AVCVrad3Command_lpv_image_write_sh2@@
 .?AVCVrad3Command_lpv_init@@
 .?AVCVrad3Command_lpv_local_to_world@@
+.?AVCVrad3Command_lpv_mark_occupied_gpu@@
+.?AVCVrad3Command_lpv_type@@
 .?AVCVrad3Command_lpv_voxelize_gpu@@
 .?AVCVrad3Command_lpv_write_debug_voxelization@@
-.?AVCVrad3Command_lpv_write_light_octree@@
 .?AVCVrad3Command_path_trace_triangles_gpu@@
 .?AVCVrad3Command_path_trace_triangles_gpu_init@@
 .?AVCVrad3Command_path_trace_triangles_gpu_shutdown@@
@@ -588,6 +654,7 @@ $timer
 .?AVCVrad3Command_validate_test_image@@
 .?AVCVrad3Command_vrad3_test_tweaked_bc6h_compression@@
 .?AVCVrad3Command_write_test_image@@
+.?AVFile@psd@@
 .?AVFindByTypeVisitor@@
 .?AVIDataModel@@
 .?AVIDmAttributeOp@@
@@ -601,6 +668,7 @@ $timer
 .?AVILaunchableDLL@@
 .?AVIUndoElement@@
 .?AVIVrad3@@
+.?AVMallocAllocator@psd@@
 .exr
 .pfm
 .png
@@ -609,16 +677,18 @@ $timer
 .tif
 .vmat
 .webp
+0hM%
 0x%llx
 16-byte data pool
+1\f%1t
 2\nP!E
-2\vpD
 2\vpL
+2\vphM%
+3<IA><CMI<
 4-byte data pool
 4F=3
 5;FJ$,XEK4<
 5>sH
-5a\v6;
 5sfm_v8
 64 283 0
 7&F|If
@@ -628,18 +698,21 @@ $timer
 8-byte data pool
 8b?fE
 969p
+;\tV_atan2d
 <!-- DMXVersion
+<ClipBoard
 <Iwi>y
 =yvn?
 >$jh?ckm
->333?333?
 >5UP?X
 >AYK?
 >nkY?
 ?DmeChannelsClip
-?SSE and SSE2 are required.
+?EncodeBC7Blocks
 ?UNKNOWN
+?\tV_atof
 ?vtex
+@DmeElement
 @Integer overflow in %s
 ActiveArea
 AddMatrixToMatrix
@@ -651,7 +724,6 @@ Alpha Fade Out Random
 Alpha Fade and Decay
 Alpha Random
 Alpha decoder initialization failed.
-AmbientCubes
 Ameliorate Block Compression Artifacts\n
 AmeliorateBlockCompressionArtefacts_FillBlocks(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:435
 AmeliorateBlockCompressionArtefacts_SanitizeLineCharts(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:526
@@ -666,7 +738,7 @@ AsShotICCProfile
 AsShotNeutral
 AsShotPreProfileMatrix
 AsShotWhiteXY
-AtlasToVolumeTextureConversion(3537): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
+AtlasToVolumeTextureConversion(3613): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
 Attempted to add two format updaters with the same file format (%s)!\n
 Attempted to add two legacy updaters with the same file format (%s)!\n
 Attempted to add two serializers with the same file encoding (%s)!\n
@@ -681,7 +753,8 @@ BA?8gV?
 B\vp\n0
 Bad code word
 BadFaxLines
-BakeLightProbeImage_Dilate(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:282
+BakeLightProbeImage_Dilate(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:424
+BakedLightProbeImage_DilateIrradianceSH(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:554
 BaselineExposure
 BaselineNoise
 BaselineSharpness
@@ -704,9 +777,9 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\datamodel\dependencygraph.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_farfieldprobevolume.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_gpu.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp
-C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp
 CCITT Group 3
 CCITT Group 4
 CCITT RLE
@@ -812,9 +885,10 @@ CUtlMemoryBlockAllocator<struct TexelCoord_t,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary::ElementInfo_t,int>,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct VertexAndFace_t,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct `public: virtual void __cdecl CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(int,char const * *)'::`2'::PlacementRequest_t,class CMemAllocAllocator>::AddPage
-CUtlOctree
 CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer\n
 CVisibilityMgr
+CVrad3Command_farfield_lpv_write_atlas::Run
+CVrad3Command_farfield_sdf_write_atlas::Run
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1088
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1180
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1280
@@ -833,27 +907,25 @@ CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildwo
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:816
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:843
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run::<lambda_24>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1946
-CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:623
-CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:699
-CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:725
-CVrad3Command_lightmap_image_encode_ahd::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1960
-CVrad3Command_lightmap_image_encode_sh2::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2143
-CVrad3Command_lightmap_image_fill_gutters::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:778
-CVrad3Command_lightmap_image_filter_median::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:960
-CVrad3Command_lightmap_image_remove_fireflies::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1109
-CVrad3Command_lpv_image_ambient_occlusion::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:908
-CVrad3Command_lpv_image_median_filter::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1144
-CVrad3Command_lpv_image_median_filter_fog::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1304
-CVrad3Command_lpv_image_remove_fireflies::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:970
-CVrad3Command_lpv_write_light_octree::Run
-CVrad3Command_path_trace_triangles_gpu::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_gpu.cpp:3417
+CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:654
+CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:730
+CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:756
+CVrad3Command_lightmap_image_encode_ahd::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1991
+CVrad3Command_lightmap_image_encode_sh2::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2174
+CVrad3Command_lightmap_image_fill_gutters::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:809
+CVrad3Command_lightmap_image_filter_median::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:991
+CVrad3Command_lightmap_image_remove_fireflies::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1140
+CVrad3Command_lpv_image_ambient_occlusion::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1118
+CVrad3Command_lpv_image_median_filter::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1548
+CVrad3Command_lpv_image_median_filter_fog::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1708
+CVrad3Command_path_trace_triangles_gpu::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_gpu.cpp:4337
 CVrad3Command_sceneinfo_gpu::Run
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2528
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2635
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2653
-CVrad3Command_uber_weld::Run::<lambda_2>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2560
-CVrad3Command_uber_weld::Run::<lambda_5>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2599
-CVrad3LightmapImage::InitMip(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:214
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2559
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2666
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2684
+CVrad3Command_uber_weld::Run::<lambda_2>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2591
+CVrad3Command_uber_weld::Run::<lambda_5>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2630
+CVrad3LightmapImage::InitMip(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:245
 Calculating hash for each luxel
 CalibrationIlluminant1
 CalibrationIlluminant2
@@ -866,8 +938,13 @@ Cannot flood fill light probe volume - invalid center\n
 Cannot handle different per-sample values for field "%s"
 Cannot read TIFF header
 Cannot reconstruct lineOffset table in DecodeEXRImage.
+Cannot serialize kv3: %s\n
 Cannot unserialize a prefix element here (type "$prefix_element$")
 Cannot write directory, out of space
+Cannot write farfield atlas to '%s'\n
+Cannot write farfield sdf atlas to '%s'\n
+Cannot write farfield solid mask to '%s'\n
+Cannot write kv3 to '%s'\n
 CellLength
 CellWidth
 Channel %d
@@ -879,7 +956,6 @@ CleanFaxData
 Cleanup
 Clearing cordon.
 Clip packing geometry to block (CPU)... 
-ClipBoard
 ClipPath
 CloseLid
 Color Fade
@@ -897,6 +973,7 @@ Compression algorithm does not support random access
 Compression scheme %u %s decoding is not implemented
 Compression scheme %u %s encoding is not implemented
 Compute block %d/%d on GPU... 
+Compute farfield lighting, %d bricks...\n
 ComputeLightmapPackingGeometryCordonMask - too many triangles (%u)\n
 Computing single-pixel chart aliases
 ConsecutiveBadFaxLines
@@ -909,6 +986,7 @@ Could not write %s - no irradiance channel.\n
 Couldn't find routine '%s'\n
 Counting luxels sharing hash value
 Create In Hierarchy
+CreateDocument failed
 Created OIDN device of type: %s\n
 Creating %dx%d mip
 Creating RayTracing Pipeline...
@@ -984,6 +1062,7 @@ DmeJoint
 DmeLight
 DmeLog
 DmeLogLayer
+DmeMaya
 DmeModel
 DmePackColorOperator
 DmeParticleOperator
@@ -1031,6 +1110,7 @@ DmeVertexData
 DocumentName
 Done (%.2f seconds)
 Done (%.2f seconds)\n
+Done.  Changed (%.1f%%) samples, %.1f seconds.\n
 Done\n
 DotRange
 DumpModeDecode: Not enough data for scanline %d
@@ -1062,17 +1142,33 @@ Error writing directory contents
 Error writing directory count
 Error writing directory link
 Error! Test image does not match validation image! Please check your math to ensure path tracing has proper convergence characteristics!\n
+Error: %s has a zero-width band, nothing to encode\n
 Error: %s has too few argments, should be %s <compute_width> <compute_height> <compute_depth>\n
-Error: %s has too few argments, should be %s <filename> <nProbeIter>\n
+Error: %s has too few argments, should be %s <exr_prefix>\n
+Error: %s has too few argments, should be %s <filename> [-suffix <suffix>]\n
+Error: %s has too few argments, should be %s <filename> [exr_prefix]\n
 Error: %s has too few argments, should be %s <filename>\n
 Error: %s has too few argments, should be %s <ground_truth_filename>\n
 Error: %s has too few argments, should be %s <shadowsfile>\n
 Error: %s has too few argments, should be %s start_x start_y start_z end_x end_y end_z [minspp] [maxspp] [err]\n
 Error: %s has too few arguments, should be %s <ahdColorFilename> <ahdDirectionFilename>\n
 Error: %s has too few arguments, should be %s <filename>\n
+Error: %s has too few arguments, should be %s <level>\n
+Error: %s has too few arguments, should be %s <m00> ... <m23>\n
+Error: %s has too few arguments, should be %s <megabytes>\n
+Error: %s has too few arguments, should be %s <minx> <miny> <minz> <maxx> <maxy> <maxz>\n
+Error: %s has too few arguments, should be %s <positive_units> <negative_units> [buffer]\n
+Error: %s has too few arguments, should be %s <units>\n
 Error: %s has too few arguments, should be %s <width> <height> <blocksize>\n
 Error: %s has too few arguments, should be lightmap_image_write_convergence <filename>\n
 Error: %s has too many arguments, should be %s <dcFilename> [rFilename] [gFilename] [bFilename]\n
+Error: %s needs a positive cell size and a box; run the _box command first\n
+Error: %s needs farfield_compute_bricks to run first\n
+Error: %s needs farfield_lpv_compute_lighting to run first\n
+Error: %s needs farfield_lpv_voxelize_bricks (or farfield_lpv_compute_lighting) to run first\n
+Error: %s needs farfield_sdf_compute_bricks to run first\n
+Error: %s needs farfield_sdf_compute_distances to run first\n
+Error: %s takes [spp] [bricks_per_batch], the atlas is written by farfield_lpv_write_atlas now\n
 Error: %s\n
 Error: Failed to get absolute path for output directory.\n
 Error: Failed to make absolute path for %s\n
@@ -1080,8 +1176,12 @@ Error: Failed to write %s\n
 Error: Must specify -script <vrad3 script file>.\n
 Error: combo has too few argments, should be combo <D_COMBO> <value>\n
 Error: failed to read %s\n
+Error: farfield needs %d bricks but the atlas only holds %d (%d per row x %d rows)\n
+Error: farfield sdf needs %d at max level, atlas stores only %d.. increase cell size\n
+Error: farfield volume is not configured: box <%g %g %g>..<%g %g %g>, %dx%dx%d cells.\n  Did the script run the _box, _local_to_world and _cells commands?\n
 Error: init_camera_from_scene has too few argments, should be init_camera_from_scene <camera_name>\n
 Error: invalid compute size %d x %d x %d\n
+Error: invalid farfield batch %d of %d bricks\n
 Error: lightmap_analyze_image_error failed to unserialize %s\n
 Error: lightmap_analyze_image_error has too few arguments, should be lightmap_analyze_image_error <reference_lightmap>\n
 Error: lightmap_image_write_ao has too few arguments, should be lightmap_image_write_ao <filename>\n
@@ -1100,6 +1200,7 @@ Error: lightmap_write_mean has too few arguments, should be lightmap_write_mean 
 Error: lpv_box has too few argments, should be lpv_box <minx> <miny> <minz> <maxx> <maxy> <maxz>\n
 Error: lpv_cells has too few argments, should be lpv_cells <num_cells_x> <num_cells_y> <num_cells_z>\n
 Error: lpv_local_to_world has too few argments, should be lpv_local_to_world <m00> ... <m23>\n
+Error: lpv_type has too few arguments, should be lpv_type cube|sh2\n
 Error: must run lightmap_image_gpu prior to lightmap_load_block_gpu\n
 Error: path_trace_triangles_gpu has too few arguments, should be path_trace_triangles_gpu <inputfile> <outputfile> <vertexcount> <minspt> <maxspt> <errortol> <smoothing>\n
 Error: path_trace_triangles_gpu_init has too few arguments, should be path_trace_triangles_gpu_init <maxtriangles>\n
@@ -1114,6 +1215,7 @@ Error: sort_test_gpu - failed at position %d got: %u expected: %u\n
 Error: sort_test_gpu - sort failed! bad payload at position %d got: %u expected: %u\n
 Error: test image and ground truth image are different sizes - %s is %dx%d, expected %dx%d\n
 Error: unknown type for lightmap_type '%s'\n
+Error: unknown type for lpv_type '%s'\n
 EstimateStripByteCounts
 Exiting (code %d)\n
 Expecting ',', didn't find it!
@@ -1142,9 +1244,21 @@ Failed to open for write in VRAD3_OUT_PATH: %s\n
 Failed to parse channel info.\n
 Failed to read %s\n
 Failed to read attribute.\n
+Failed to read lightmap importance volume vertices - skipping\n
 Failed to unserialize lightmap image: %s\n
-Failed to write %s!\n
 Failed to write %s\n
+FarFieldCellSamples
+Farfield SDF bricks...\n
+Farfield dilate...
+Farfield firefly filter at %.1fx...\n
+Farfield lighting: %d bricks, %d spp, %d per batch...\n
+Farfield median filter, pass %i...
+Farfield resampling borders...\n
+Farfield voxelizing %d bricks...\n
+FarfieldBricks
+FarfieldDistance
+FarfieldLuxels
+FarfieldSolidMask
 Fax3Decode1D
 Fax3Decode2D
 Fax3DecodeRLE
@@ -1168,11 +1282,11 @@ Fingers
 Fingers_L
 Fingers_R
 FloatBitMap_t::CopyFloatBitmap: Received NULL pointer!\n
-FloatBitMap_t::LoadFromFile(3729): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
+FloatBitMap_t::LoadFromFile(3805): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
 FloatBitMap_t::LoadFromFloatBitmap: Received improper bitmap size, skipping!\n
-FloatBitMap_t::LoadFromTGA(2678): Error loading %s\n
+FloatBitMap_t::LoadFromTGA(2754): Error loading %s\n
 FloatBitMap_t::WriteInMemoryEXRFast
-FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:170
+FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:171
 Floating point "Predictor" not supported with %d data format
 FoldLipLo
 FoldLipUp
@@ -1188,7 +1302,6 @@ Generic DMX
 Generic MovieObjects
 Generic SFM
 GetClipboardData
-GetProfile_ultrafast
 Gf95)1&!\ry9I
 GlobalSize
 GrayResponseCurve
@@ -1197,12 +1310,10 @@ GridComputeRegion
 Group3Options
 Group4Options
 H8>Y
-HA9,
 HalftoneHints
 Hammer temp export
 HammerPathTraceWorld
-HelperLoadFbmByFileExtension(3509): Error! Unknown file type for %s\n
-Hi9,
+HelperLoadFbmByFileExtension(3585): Error! Unknown file type for %s\n
 Horizontal differencing "Predictor" not supported with %d-bit samples
 HostComputer
 ICC Profile
@@ -1261,9 +1372,12 @@ KeyValues2 (no ids)
 KeyValues: Can't serialize attribute of type %s into KeyValues files!\n
 KeyValues: Element uses unknown element type %s\n
 LPV Ambient Occlude... 
+LPV Encode SH2... 
+LPV Mark Occupied...
 LPV Median Filter Fog Indirect (%dx%d)... 
 LPV Median Filter Indirect (%dx%d)... 
-LPV Remove Fireflies (ratio=%f)...
+LPV Remove Fireflies AHD (ratio=%f)...
+LPV Remove Fireflies SH2 (ratio=%f)...
 LPV Resolve... 
 LPVSolidMask
 LZWDecode: Bogus encoding, loop in the code table; scanline %d
@@ -1288,6 +1402,7 @@ Lifetime Random
 Lifetime from Time to Impact
 Lightmap does not have line charts.\n
 Lightmap does not have pixel charts.\n
+Lightmap importance volume has %d vertex floats, not a multiple of 3\n
 Lightmap: %dx%d in %d %dx%d blocks\n
 LightmapSamples
 Line length mismatch
@@ -1298,6 +1413,9 @@ LipUpV
 LipsV
 LoadEXRImageFromMemory failed! Error message: %s\n
 LoadFromInMemoryEXR( %s ) failed.\n
+LoadFromPSD: Unable to load %s: %s\n
+LoadFromPSD: Unable to read file %s\n
+Loaded %d lightmap importance volume(s), falloff from %.2f cells at %.2f levels/cell\n
 Loading %s block %d (%dx%d)... 
 Loading %s... 
 Loading VRAD3 manifest... 
@@ -1309,6 +1427,8 @@ LogL16InitState
 LogLuvDecode24: Not enough data at row %d (short %d pixels)
 LogLuvDecode32: Not enough data at row %d (short %d pixels)
 LogLuvInitState
+LpvImageRemoveFirefliesAmbientCube(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1352
+LpvImageRemoveFirefliesSH2(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1191
 LuxelChartIDs.vtex
 Made
 Make
@@ -1317,6 +1437,14 @@ MakerNoteSafety
 Making determinism checks against %s.\n
 MapClass
 MapNode
+MarkOccupiedGrids
+MarkOccupiedIndices
+MarkOccupiedInstanceTriangleOffsets
+MarkOccupiedInstances
+MarkOccupiedMask
+MarkOccupiedMaskCopy
+MarkOccupiedVertices
+MarkOccupiedVoxelsGPU: a single mesh exceeds the voxelize budget (%u v, %u i) - raise LPV_MARK_OCCUPIED_VERTEX/INDEX_BUDGET_BYTES\n
 MaskedAreas
 Match Particle Velocities
 MatrixMultiply
@@ -1383,6 +1511,7 @@ OIDN_DEVICE_TYPE_DEFAULT
 OIDN_DEVICE_TYPE_HIP
 OIDN_DEVICE_TYPE_SYCL
 OIDN_DEVICE_TYPE_UNKOWN
+O\tV_expd
 Old-style JPEG
 Old-style LZW codes, convert file
 OldSubfileType
@@ -1411,6 +1540,7 @@ PackingGeometry_t::Unserialize failed - read %d/%d bytes.\n
 PageName
 PageNumber
 ParseEXRHeaderFromMemory failed! Error message: %s\n
+ParseImageDataSection failed
 Particle Configuration File
 Path Trace Triangles... spp=[%i...%i], err=%.02f
 Path Tracing
@@ -1446,7 +1576,6 @@ Procedural
 Qu?GS
 R channel not found!\n
 R<Xb
-RSDSC
 RTLightmap
 R\fpL
 R_T5Y
@@ -1497,6 +1626,7 @@ Rotation Yaw Flip Random
 Rotation Yaw Random
 Row pixels integer overflow (rowpixels %u)
 RowsPerStrip
+RtxSampledRenderResourcesDescSet
 Rtx_Sampled_Renderer_Complete
 SAXPY2
 SFM Session
@@ -1508,6 +1638,7 @@ SGILog compression supported only for %s, or raw data
 SGILog24
 SGILogDataFmt
 SGILogEncode
+SHARC: allocated %u entries (%.1fmb)\n
 SMaxSampleValue
 SMinSampleValue
 Sample Validation and Fixup
@@ -1518,6 +1649,7 @@ SamplesPerPixel tag is missing, assuming correct SamplesPerPixel value is 3
 Sampling Large Charts
 Sampling Small Charts
 Sanitizing line charts
+SaveFarfieldKV3
 ScaleMatrix
 ScalpD
 Schema description file
@@ -1617,7 +1749,6 @@ Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
 Unserialize: Unexpected format '%s' reading file '%s' - expected format '%s'\n
-Unsupported PSD color mode!\n
 Usage: %s <dirname> [texture]\n
 Usage: %s <file> [pathid] [bforce 0|1]\n
 Usage: %s <file> [pathid]\n
@@ -1646,10 +1777,18 @@ VertexPaintBlendParams
 VertexPaintTintColor
 Vgui editor file
 Virual volume texture file
+Voxelize Farfield Probe Volume...
 Voxelize Light Probe Volume...
 Vrad3-VertexLight
+Vrad3-Voxelize
 WARNING: unable to remove '%s'\n
 WDG,r3
+Warning: farfield lighting with no bricks allocated\n
+Warning: farfield sdf band of %.1f units is only %.1f texels on %.1f unit cells.  Too coarse for a usable gradient - widen farfield_sdf_band or use smaller cells.\n
+Warning: farfield sdf cells have high anisotropy <%.1f, %.1f, %.1f>, narrow band might not be as large as expected\n
+Warning: farfield sdf needs %d bricks (lvl=%d), %s allows %d: level => %d.\n
+Warning: farfield sdf went %s over its %.1fmb budget (%d bricks > %d) at max level.  You need to raise farfield_sdf_max_memory or use larger cells.\n
+Warning: farfield voxelization with no bricks allocated\n
 Welding seams
 WhiteLevel
 WhitePoint
@@ -1660,13 +1799,17 @@ World Node Files
 Write chart IDs to GPU memory... 
 Write error at scanline %lu
 Write results to lightmap image... 
-WriteLightmapImage(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3.h:845
+WriteFarfieldLPVBrickSolidEXR
+WriteLightmapImage(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3.h:936
 Writing %s
 Writing %s... \n
 Wrote %s (%dx%dx%d).\n
 Wrote %s (%i fireflies)\n
 Wrote %s.\n
 Wrote %s\n
+Wrote %s_sdf_zNN.exr (%dx%d, %d slices, %d bricks, %d unused tiles)\n
+Wrote %s_solid_zNN.exr\n
+Wrote %s_{%s, %s, %s, %s}_zNN%s.exr (%dx%d, %d slices)\n
 Wrote image to %s\n
 Wrote test image to %s\n
 XClipPathUnits
@@ -1697,20 +1840,30 @@ ZIPVSetField
 \n# Faces\n
 \n# Lightmap UVs\n
 \n# Vertices\n
+\n***ASSERT FAILED*** Image data section has too many channels (%d).
+\n***ASSERT FAILED*** Pointer is null.
+\n***ERROR*** [DecompressRle] Malformed RLE data encountered
+\n***ERROR*** [ImageData] Unhandled bits per channel: %u.
+\n***ERROR*** [ImageData] Unhandled compression type %u.
+\n***ERROR*** [PSD] Document does not contain an image data section.
+\n***ERROR*** [PsdExtract] File seems to be corrupt, reserved bytes are not zero.
+\n***ERROR*** [PsdExtract] File seems to be corrupt, signature does not match "8BPS".
+\n***ERROR*** [PsdExtract] File seems to be corrupt, version does not match 1 or 2.
 \nFailed to read %s - %s\n
+\n_V_StringAfterPrefixCaseSensitive
 \ndummyfilename.tif
 \t%s: %.2fs\n
 \t@@@@@@@@@@@@@@@@{N{N{N{N{N{N{N{N
 \tNAN encountered in element '%s' guid %s attribute '%s'!\n
-\tV_atan2d
+\tV_log2f
+\tV_logd
+\tV_powd
 \tV_sscanf_s
 \t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 \t\t\t\t\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-\t_V_StringAfterPrefixCaseSensitive
 ] Done (%.2f seconds)
+]?fff?33s?
 ]Gsfm_v2
-]\tV_log2f
-^\tV_logd
 _TIFFMergeFieldInfo
 _TIFFSetupFieldInfo
 _TIFFVGetField
@@ -1722,11 +1875,13 @@ _volumeatlas_
 _wjb
 a?76
 activeBookmarkSet
+allocation
 alpha_fade
 alpha_fade_in_random
 alpha_fade_out_random
 alpha_random
 ambientOcclusionMode
+ambient_cube
 ambientcolor2
 ambientcolor3
 angulardiameter
@@ -1773,6 +1928,7 @@ binary
 binary_array
 binary_seqids
 binary_v
+bitmap output needs an 8 bit document
 blendColor
 blendMaxPathOpacity
 blendTransition
@@ -1795,6 +1951,7 @@ box_maxs
 box_mins
 boxproject_maxs
 boxproject_mins
+bricks
 brightness
 brightness_units
 brightnessscale
@@ -1813,12 +1970,18 @@ cannotgravitygrab
 cannotgravitypunt
 castshadows
 cellConfiguration
+cell_count
+cell_descriptors
 cellsNodeID
+cells_x
+cells_y
+cells_z
 chart_repacking.dat
 chlist
 choices
 chunkCount
 clearDecals
+cmyk document with non 8 bit channels
 collision_type
 collisionmesh
 color log
@@ -1837,6 +2000,8 @@ color_tint
 colorsIndices
 combo
 compileAsOverride
+composite channel data missing
+composite has too few channels for its color mode
 compression
 connectionsData
 constrainVelocity
@@ -1853,6 +2018,7 @@ cordon
 create from parent particles
 create_dir_hierarchy
 create_raytrace_pipeline
+cube
 current directory
 curve info
 curvetypes
@@ -1920,16 +2086,58 @@ exportTags
 exporttags
 eyes
 f %u/%u %u/%u %u/%u\n
-fJJ#
-fVJ#
+fJp%
+fVp%
 facial_animation
 fadeIn
 fadeOut
 falloff_left
 falloff_right
+farfield allocation FAILED validation: %d uncovered, %d under-served cells\n
+farfield allocation: %d bricks, %s (max %d bricks / %s), coarsen=%f\n
+farfield borders
+farfield brick voxelization: %u of %d samples solid (%.1f%%)\n
+farfield dilate
+farfield fireflies
+farfield importance bias over %d bricked cells, %% by level reduced:
+farfield lighting: %lld luxels, %lld black (%.1f%%), mean DC %.4f, max DC %.4f\n
+farfield median
+farfield sdf distances: %d bricks, %u of %d samples solid (%.1f%%)\n
+farfield sdf grid: %dx%dx%d cells, cell size <%.1f, %.1f, %.1f>\n
+farfield sdf saturated bricks: %d of %d (%.1f%%) - %d outside, %d inside, %s freed\n
+farfield sdf sweep: corrected %02d%%\n
+farfield voxelize: %d bricks, %d rays x %d iterations\n
+farfield: %d bricks but we can only store %i in an atlas\n
+farfield: cell (%d,%d,%d) wants level %d but its finest brick is level %d\n
+farfield: cell (%d,%d,%d) wants level %d but no brick covers it\n
+farfield_importance_falloff_start_cells
+farfield_importance_levels_per_cell
+farfield_lpv_box
+farfield_lpv_cell_size
+farfield_lpv_compute_bricks
+farfield_lpv_compute_lighting
+farfield_lpv_dilate
+farfield_lpv_filter_fireflies
+farfield_lpv_local_to_world
+farfield_lpv_max_memory
+farfield_lpv_median_filter
+farfield_lpv_resample_borders
+farfield_lpv_voxelize_bricks
+farfield_lpv_write_atlas
+farfield_lpv_write_brick_voxelization
+farfield_lpv_write_cell_voxelization
+farfield_sdf_band
+farfield_sdf_box
+farfield_sdf_cell_size
+farfield_sdf_compute_bricks
+farfield_sdf_compute_distances
+farfield_sdf_local_to_world
+farfield_sdf_max_memory
+farfield_sdf_min_level
+farfield_sdf_write_atlas
+farfield_sdf_write_bricks
 fast_strobe
 fbx2dmx
-fff?333?
 filterclass
 finalTime
 final_time
@@ -1960,6 +2168,11 @@ fromAttribute
 fromElement
 func_physbox
 functionName
+g_rtxAccelSet
+g_vrad3FarfieldSet
+g_vrad3LightmapSet
+g_vrad3LpvSet
+g_vrad3SampleValidationSet
 gameitemclass
 gameunitclass
 gentle_pulse
@@ -1984,9 +2197,13 @@ hold_left
 hold_right
 horizontal differencing 
 houdini
+ih> Gl>\f.p>
 incorrect count for field "%s" (%u, expecting %u); tag ignored
 incorrect count for field "%s" (%u, expecting %u); tag trimmed
 index_count
+indexed document with more than 2 channels
+indexed document with no usable palette
+indexed document with non 8 bit indices
 indices
 indirectlight
 info_particle_system
@@ -1997,6 +2214,7 @@ innerconeangle
 instance_file
 instance_parm
 instance_variable
+instances
 int_array
 invalid vector subscript
 irradiance
@@ -2005,7 +2223,6 @@ isOrientation
 isPosition
 is_line_mesh
 item_item_crate
-j\tV_powd
 jointIndices
 jointIndicesIndices
 jointList
@@ -2047,6 +2264,8 @@ lightmap_analyze_image_error
 lightmap_block_converged.vtex
 lightmap_compute_block_gpu
 lightmap_export_packing_geometry_to_obj
+lightmap_free_memory
+lightmap_free_memory: released %.1f MB (+packing geo)\n
 lightmap_image_consolidate_small_charts
 lightmap_image_dilate_over_invalid_jfa
 lightmap_image_encode_ahd
@@ -2072,6 +2291,7 @@ lightmap_image_write_samplecount
 lightmap_image_write_sh2
 lightmap_image_write_sh_irradiance
 lightmap_image_write_tangent
+lightmap_importance_volumes
 lightmap_load_block_gpu
 lightmap_load_packing_geometry_gpu
 lightmap_rasterize_rt_depth
@@ -2092,7 +2312,10 @@ lpv_cells
 lpv_compute_block_fog_gpu
 lpv_compute_block_gpu
 lpv_flood_fill
+lpv_free_memory
+lpv_free_memory: released %.1f MB\n
 lpv_image_ambient_occlusion
+lpv_image_encode_sh2
 lpv_image_filter_ambient_cube_oidn
 lpv_image_filter_sh2_oidn
 lpv_image_fog_gpu
@@ -2107,9 +2330,10 @@ lpv_image_write_fog
 lpv_image_write_sh2
 lpv_init
 lpv_local_to_world
+lpv_mark_occupied_gpu
+lpv_type
 lpv_voxelize_gpu
 lpv_write_debug_voxelization
-lpv_write_light_octree
 m_fMoveTo
 m_pVertexData
 maintain position along path
@@ -2121,6 +2345,8 @@ material_name
 materialgroup
 materials/dev/rtx/debug_visualization.vmat
 materials/dev/rtx/pathtracer.vmat
+materials/dev/vrad3/farfield_metrics.vmat
+materials/dev/vrad3/farfield_raytrace.vmat
 materials/dev/vrad3/lightmap_generate_small_chart_samples.vmat
 materials/dev/vrad3/lightmap_rasterize.vmat
 materials/dev/vrad3/lightmap_raytrace.vmat
@@ -2129,6 +2355,7 @@ materials/dev/vrad3/lightmap_test_converged.vmat
 materials/dev/vrad3/lightmap_vertexlight_reduce.vmat
 materials/dev/vrad3/lpv_raytrace.vmat
 materials/dev/vrad3/lpv_test_converged.vmat
+materials/dev/vrad3/mark_occupied_voxels.vmat
 materials/dev/vrad3/vertexlight_raytrace.vmat
 materials/dev/vrad3/vertexlight_test_converged.vmat
 matrix
@@ -2173,6 +2400,7 @@ nDataSize > 0
 nLayoffState
 name_delta
 nearclipplane
+no composite (not saved with Maximize Compatibility)
 no memory during frame initialization.
 no_collapse
 no_compression
@@ -2197,6 +2425,7 @@ o KPBf
 o1?N
 oY.o<
 ofA?
+offseTime
 offsetTime
 oidnCommitDevice
 oidnCommitFilter
@@ -2250,7 +2479,7 @@ path_trace_triangles_gpu_init
 path_trace_triangles_gpu_shutdown
 path_trajectory
 pattern
-pc64 Sep 29 2026 11:07:38
+pc64 Oct  5 2026 18:10:23
 physicsSimplificationError
 physicsSimplificationOverride
 pinEnabled
@@ -2276,7 +2505,6 @@ prefab_has_runtime_entity_by_default
 prefab_root
 presetGroups
 presetRemap
-presets
 println
 procedural
 prop_physics_override
@@ -2293,6 +2521,7 @@ random position along path
 random position on model
 random yaw
 rawControlNames
+read past end of file (truncated/corrupt)
 refOrientation
 remap_scalar
 remove_file
@@ -2340,6 +2569,7 @@ screenWindowCenter
 screenWindowWidth
 scripted_sequence
 scriptlist
+sdf_cell_size
 second_sequence_random
 selectedControls
 selectedControls2
@@ -2363,10 +2593,9 @@ sfm_v7
 sfm_v9
 sh radiance L0
 sh radiance c%i
-sh2_b_%s.exr
-sh2_dc_%s.exr
-sh2_g_%s.exr
-sh2_r_%s.exr
+sh1_b
+sh1_g
+sh1_r
 shadow_color_day
 shadow_color_night
 shadow_cull_mode
@@ -2375,6 +2604,10 @@ shadow_secondary_color_night
 shadowtextureheight
 shadowtexturewidth
 shape
+sharc
+sharc accumulation
+sharc hash entries
+sharc resolved
 shared
 should_leave_corpse
 showAmbientOcclusion
@@ -2452,6 +2685,8 @@ text_block
 textureCoordinates
 textureCoordinatesIndices
 textureFrame
+the atlas
+the memory budget
 thread initialization failed.
 tile
 tiles
@@ -2482,6 +2717,13 @@ uber_weld
 uint64_array
 uint8_array
 unexpected count for field "%s", %u, expected 2; ignored
+unknown reason
+unsupported bits per channel
+unsupported color mode: bitmap
+unsupported color mode: duotone
+unsupported color mode: lab
+unsupported color mode: multichannel
+unsupported color mode: unknown
 upAxis
 useEdgeInfo
 use_basevertex
@@ -2555,5 +2797,5 @@ write_test_image failed to write %s\n
 wyS]
 x0Ysqx
 x=%? y=%? vTruth=%? vTest=%?
-|BDmeElement
+zero sized document
 ~}|{zyxwvutsrqponmlkjihgfedcba`_^]\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?>=<;:9876543210/.-,+*)('&%$#"! 

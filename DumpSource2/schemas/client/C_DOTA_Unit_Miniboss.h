@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Unit_Miniboss : public C_DOTA_BaseNPC_Additive
 {
 	int32 m_nVisualTeam;

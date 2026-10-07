@@ -17,5 +17,7 @@ class CMixPropertyBase
 	// MPropertySortPriority = -1
 	// MPropertyHideField
 	bool m_bEditProperties;
+	// MPropertySortPriority = -1
+	// MPropertyHideField
 	int32 m_nGenerationId;
 };

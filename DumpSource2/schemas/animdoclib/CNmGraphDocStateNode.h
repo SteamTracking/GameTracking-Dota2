@@ -5,6 +5,8 @@ class CNmGraphDocStateNode : public CNmGraphDocStateMachineGraphNode
 	CNmGraphDocStateNode::StateType_t m_type; // = "BlendTreeState"
 	// MPropertySuppressField
 	V_uuid_t m_cloneSourceStateID; // = "00000000-0000-0000-0000-000000000000"
+	// MPropertySuppressField
+	V_uuid_t m_cloneStateVersion;
 	// MPropertyAutoExpandSelf
 	CUtlVector< CNmGraphDocStateNode::StateEvent_t > m_stateEvents;
 	// MPropertyAutoExpandSelf

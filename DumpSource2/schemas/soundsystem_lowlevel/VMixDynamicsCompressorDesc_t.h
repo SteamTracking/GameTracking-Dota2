@@ -16,6 +16,10 @@ class VMixDynamicsCompressorDesc_t
 	float32 m_flRMSTimeMS; // = 300
 	// MPropertyFriendlyName = "Dry/Wet"
 	float32 m_flWetMix; // = 1
+	// MPropertyFriendlyName = "SideChain Highpass"
+	float32 m_flSCHighPassFreq;
 	// MPropertyFriendlyName = "Peak mode"
 	bool m_bPeakMode;
+	// MPropertyFriendlyName = "Auto Make-up Gain"
+	bool m_bAutoMakeupGain;
 };

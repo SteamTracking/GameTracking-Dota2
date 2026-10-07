@@ -49,7 +49,7 @@ CParticleCollectionBindingInstance
 	function HACK_UnusedBinding(null);
 }
 
-// fingerprint = 3172841818
+// fingerprint = 3525226864
 CPulseArraylib
 {
 	// m_FriendlyName = "Array Append"
@@ -72,7 +72,7 @@ CPulseArraylib
 	function ArrayCount(PVAL_ARRAY:PVAL_UNKNOWN a "a") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Array Find Element Matching"
-	// m_Description = "Find first element 'a' which compare equal to 'element' and return its index."
+	// m_Description = "Find first element 'a' which compare equal to 'element' and return its index. Returns -1 if not found."
 	// a: metadata = {"polymorphic_arg":true}
 	// element: metadata = {"polymorphic_dependent_arg":"a:typeparam"}
 	function ArrayFindElementMatching(PVAL_ARRAY:PVAL_UNKNOWN a "a", PVAL_VARIANT element "element") -> (PVAL_INT retval "Result");
@@ -82,6 +82,12 @@ CPulseArraylib
 	// a: metadata = {"polymorphic_arg":true}
 	// retval: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"a:fulltype"}
 	function ArrayFirstNElements(PVAL_ARRAY:PVAL_UNKNOWN a "a", PVAL_INT nMaxElements "Max Elements" = 1) -> (PVAL_ARRAY:PVAL_UNKNOWN retval "Result");
+
+	// m_FriendlyName = "Array Has Element Matching"
+	// m_Description = "Check if any element of 'a' compares equal to 'element'."
+	// a: metadata = {"polymorphic_arg":true}
+	// element: metadata = {"polymorphic_dependent_arg":"a:typeparam"}
+	function ArrayHasElementMatching(PVAL_ARRAY:PVAL_UNKNOWN a "a", PVAL_VARIANT element "element") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Array Insert"
 	// m_Description = "Insert 'element' in the given index in 'a', increasing its count by one and moving the elements after index."
@@ -127,7 +133,6 @@ CPulseCell_Base
 	// m_nClassType = ""
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -140,7 +145,6 @@ CPulseCell_BaseFlow
 	// m_nClassType = ""
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -158,7 +162,6 @@ CPulseCell_BaseLerp
 	// m_nClassType = "baseclass"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -176,7 +179,6 @@ CPulseCell_BaseRequirement
 	// m_nClassType = ""
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -193,7 +195,6 @@ CPulseCell_BaseState
 	// m_nClassType = "baseclass"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow = false
@@ -211,7 +212,6 @@ CPulseCell_BaseValue
 	// m_nClassType = ""
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -226,7 +226,6 @@ CPulseCell_BaseYieldingInflow
 	// m_nClassType = "baseclass"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -246,7 +245,6 @@ CPulseCell_BooleanSwitchState
 	// m_Description = "While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled."
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow = false
@@ -273,7 +271,6 @@ CPulseCell_CursorQueue
 	// m_Variables[] = {"m_Name":"m_nCursorsAllowedToRunParallel","m_FullType":"integer","m_LongName":"Cursors Allowed To Run Parallel","m_Description":"Any cursors above this count will wait, up to the limit.","m_bUsingLegacyDefault":false,"m_DefaultKV3":1,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -289,13 +286,6 @@ CPulseCell_CursorQueue
 	class CPulseCell_CursorQueue(null);
 }
 
-// fingerprint = 824535693
-CPulseCell_FireCursors
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
 // fingerprint = 3452528170
 CPulseCell_Inflow_Wait
 {
@@ -304,7 +294,6 @@ CPulseCell_Inflow_Wait
 	// m_Description = "Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken."
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -318,22 +307,6 @@ CPulseCell_Inflow_Wait
 	// editor_canvas_item_spec = {"className":"IsWaitNode IsControlFlowNode","item_factory":"InflowWait"}
 	// pulse_outflows = {"name":"m_WakeResume","is_default_outflow":true,"backed_by_variable":true,"friendly_name":"Wake Resume","description":""}
 	class CPulseCell_Inflow_Wait(PVAL_FLOAT flDurationSec "Duration Sec");
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Abort;
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_WakeImmediately"
-	class ImmediateWake;
-}
-
-// fingerprint = 955696098
-CPulseCell_Inflow_Yield
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Abort;
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_WakeImmediately"
-	class Resume;
 }
 
 // fingerprint = 2476493328
@@ -345,7 +318,6 @@ CPulseCell_InlineNodeSkipSelector
 	// m_Variables[] = {"m_Name":"m_bAnd","m_FullType":"boolean","m_LongName":"And","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -369,7 +341,6 @@ CPulseCell_IntervalTimer
 	// m_Description = "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -394,9 +365,6 @@ CPulseCell_IntervalTimer
 	// flPercentage: advanced_view
 	// flPercentage: associated_outflow_name = "m_OnInterval"
 	class CPulseCell_IntervalTimer(PVAL_FLOAT flDuration "Duration" = -1.0, PVAL_FLOAT flWaitInterval "Wait Interval" = 1.0, PVAL_FLOAT flWaitIntervalHigh "Wait Interval High" = -1.0) -> (PVAL_FLOAT flElapsed "Elapsed", PVAL_FLOAT flPercentage "Percentage");
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_WakeImmediately"
-	class StopTimer;
 }
 
 // fingerprint = 3165042484
@@ -408,7 +376,6 @@ CPulseCell_LimitCount
 	// m_Variables[] = {"m_Name":"m_nLimitCount","m_FullType":"integer","m_LongName":"Limit Count","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":1,"m_KV3Metadata":{"hidden":false,"propattr_flatten_into_parent_row":true},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -421,87 +388,6 @@ CPulseCell_LimitCount
 	class CPulseCell_LimitCount(null);
 }
 
-CPulseCell_Outflow_ListenForAnimgraphTag
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_ListenForEntityOutput
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_NPCAccompanyEntity
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_NPCFollowTarget
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_NPCLeadPlayer
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_NPCScriptedIdle
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelElegantly"
-	class CancelElegantly;
-}
-
-CPulseCell_Outflow_NPCScriptedMoveTo
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_NPCUseScriptedAbility
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_PlaySequence
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelElegantly"
-	class CancelAtInterrupt;
-}
-
-CPulseCell_Outflow_PlayVCD
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelElegantly"
-	class CancelAtInterrupt;
-}
-
-CPulseCell_Outflow_PlayVOLine
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-CPulseCell_Outflow_ScriptedSequence
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
 // fingerprint = 252227061
 CPulseCell_PickBestOutflowSelector
 {
@@ -511,7 +397,6 @@ CPulseCell_PickBestOutflowSelector
 	// m_Variables[] = {"m_Name":"m_nCheckType","m_FullType":"choices","m_LongName":"Check Type","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":"SORT_BY_NUMBER_OF_VALID_CRITERIA","m_KV3Metadata":{"hidden":false},"m_pItemSet":{"m_eType":"choices","m_Items":[{"m_iValue":0,"m_Value":"SORT_BY_NUMBER_OF_VALID_CRITERIA","m_FriendlyName":"Choose Best","m_bDefault":false,"m_bCustom":false,"m_Description":"Choose the best outflow with all rules passing, as determined by number of passing rules (specificity)."},{"m_iValue":0,"m_Value":"SORT_BY_OUTFLOW_INDEX","m_FriendlyName":"Choose First","m_bDefault":false,"m_bCustom":false,"m_Description":"Choose the first outflow with all rules passing, from left to right"}]}}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity
 	// expect_default_outflow = false
@@ -528,26 +413,6 @@ CPulseCell_PickBestOutflowSelector
 	class CPulseCell_PickBestOutflowSelector(null);
 }
 
-CPulseCell_PlaySequence
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
-}
-
-// fingerprint = 1549135810
-CPulseCell_Step_CallExternalMethod
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelElegantly"
-	class StopWaiting;
-}
-
-// fingerprint = 3988269055
-CPulseCell_Timeline
-{
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Stop;
-}
-
 // fingerprint = 975032352
 CPulseCell_Value_Curve
 {
@@ -556,7 +421,6 @@ CPulseCell_Value_Curve
 	// m_Variables[] = {"m_Name":"m_Curve","m_FullType":"curve","m_LongName":"Curve","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_spline":[],"m_tangents":[],"m_vDomainMins":[0.0,0.0],"m_vDomainMaxs":[0.0,0.0]},"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -574,10 +438,9 @@ CPulseCell_Value_Gradient
 {
 	// m_BaseClasses = ["CPulseCell_BaseValue"]
 	// m_FriendlyName = "Gradient"
-	// m_Variables[] = {"m_Name":"m_Gradient","m_FullType":"kv3","m_LongName":"Gradient","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_Stops":[]},"m_KV3Metadata":{"editor":"Gradient()","hidden":false},"m_pItemSet":null}
+	// m_Variables[] = {"m_Name":"m_Gradient","m_FullType":"kv3","m_LongName":"Gradient","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_Stops":[]},"m_KV3Metadata":{"hidden":false,"editor":"Gradient()"},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -598,7 +461,6 @@ CPulseCell_Value_RandomFloat
 	// m_Description = "Generate a random float between min and max (inclusive)"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -620,7 +482,6 @@ CPulseCell_Value_RandomInt
 	// m_Description = "Generate a random integer between min and max (inclusive)"
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -645,7 +506,6 @@ CPulseCell_WaitForCursorsWithTag
 	// m_Variables[] = {"m_Name":"m_nDesiredKillPriority","m_FullType":"choices","m_LongName":"Desired Kill Priority","m_Description":"When we start waiting, how should we handle existing cursors?","m_bUsingLegacyDefault":false,"m_DefaultKV3":"None","m_KV3Metadata":{"hidden":false},"m_pItemSet":{"m_eType":"choices","m_Items":[{"m_iValue":0,"m_Value":"None","m_FriendlyName":"Keep running normally.","m_bDefault":false,"m_bCustom":false,"m_Description":""},{"m_iValue":0,"m_Value":"CancelOnSucceeded","m_FriendlyName":"Kill After.","m_bDefault":false,"m_bCustom":false,"m_Description":"Do not stop the current yielding node, but do not continue to the next node afterwards."},{"m_iValue":0,"m_Value":"SoftCancel","m_FriendlyName":"Kill Elegantly.","m_bDefault":false,"m_bCustom":false,"m_Description":"Request elegant wind-down of any associated work (e.g. vcd interrupt)."},{"m_iValue":0,"m_Value":"HardCancel","m_FriendlyName":"Kill Immediately.","m_bDefault":false,"m_bCustom":false,"m_Description":"Stop without any wind-down."}]}}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -671,7 +531,6 @@ CPulseCell_WaitForCursorsWithTagBase
 	// m_Variables[] = {"m_Name":"m_nCursorsAllowedToWait","m_FullType":"integer","m_LongName":"Cursors Allowed To Wait","m_Description":"Any extra waiting cursors will be terminated. -1 for infinite cursors.","m_bUsingLegacyDefault":false,"m_DefaultKV3":-1,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -692,7 +551,6 @@ CPulseCell_WaitForObservable
 	// m_Description = "All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon."
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
 	// hidden_in_tool = false
 	// selector_has_specificity = false
 	// expect_default_outflow
@@ -706,12 +564,9 @@ CPulseCell_WaitForObservable
 	// pulse_node_custom_attributes = [{"field_name":"m_Condition","attr_factory":"CPulseObservableExpression","friendly_name":"Observable","description":"Condition to evaluate when any of its dependent values change.","args":{"expression_type":"PVAL_BOOL"}}]
 	// pulse_outflows = {"name":"m_OnTrue","is_default_outflow":true,"backed_by_variable":true,"friendly_name":"On True","description":""}
 	class CPulseCell_WaitForObservable(null);
-
-	// legacy_name_replacement = "CPulseCell_BaseYieldingInflow::BaseFlow_CancelImmediately"
-	class Cancel;
 }
 
-// fingerprint = 2994080292
+// fingerprint = 3063805403
 CPulseCursorFuncs
 {
 	// m_FriendlyName = "Any Other Cursors Have Tag"
@@ -743,7 +598,7 @@ CPulseCursorFuncs
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// nKillPriority: advanced_view
-	function KillAllOtherCursors(PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t nKillPriority "Kill Priority" = "HardCancel");
+	function KillAllOtherCursors(PVAL_ENUM:PulseCursorCancelPriority_t nKillPriority "Kill Priority" = "HardCancel");
 
 	// m_FriendlyName = "Kill Cursors With Tag"
 	// m_Description = "Find all the yielded cursors on this graph with the matching tag and cancel them."
@@ -755,7 +610,7 @@ CPulseCursorFuncs
 	// tagValue: description = "Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value."
 	// tagValue: advanced_view
 	// nKillPriority: advanced_view
-	function KillCursorsWithTag(PVAL_STRING pTagName "Tag Name", PVAL_VARIANT tagValue "Tag Value" = ["PVAL_VARIANT",["PVAL_STRING",""]], PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t nKillPriority "Kill Priority" = "HardCancel");
+	function KillCursorsWithTag(PVAL_STRING pTagName "Tag Name", PVAL_VARIANT tagValue "Tag Value" = ["PVAL_VARIANT",["PVAL_STRING",""]], PVAL_ENUM:PulseCursorCancelPriority_t nKillPriority "Kill Priority" = "HardCancel");
 
 	// m_FriendlyName = "Remove Tag From Cursor"
 	// m_Description = "Remove the given tag from this cursor. If other cursors are waiting on us, they will resume."
@@ -773,6 +628,7 @@ CPulseCursorFuncs
 	// m_Description = "Save a named value of any type on the cursor."
 	// editor_canvas_item_spec = {"className":"IsControlFlowNode"}
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
+	// adds_cursor_tag
 	// generic_node_category = 5
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
@@ -792,62 +648,50 @@ CPulseCursorFuncs
 	// pTagName: description = "A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them."
 	// tagValue: description = "Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value."
 	// tagValue: advanced_view
-	function WakeCursorsWithTag(PVAL_STRING pTagName "Tag Name", PVAL_VARIANT tagValue "Tag Value" = ["PVAL_VARIANT",["PVAL_STRING",""]], PVAL_SCHEMA_ENUM:PulseCursorWakePriority_t nWakePriority "Wake Priority" = "WakeElegantly");
+	function WakeCursorsWithTag(PVAL_STRING pTagName "Tag Name", PVAL_VARIANT tagValue "Tag Value" = ["PVAL_VARIANT",["PVAL_STRING",""]], PVAL_ENUM:PulseCursorWakePriority_t nWakePriority "Wake Priority" = "WakeElegantly");
 }
 
-// fingerprint = 1916837592
+// fingerprint = 2503225258
 CPulseEnumlib
 {
 	// m_FriendlyName = "Add Flags"
 	// m_Description = "Add flags to the given value."
-	// value: metadata = {"polymorphic_arg":true}
+	// value: metadata = {"polymorphic_arg":true,"type_restriction":"type_restriction_is_enum_flags"}
 	// flags: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
 	// retval: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
-	function AddFlags(PVAL_SCHEMA_ENUM value "value", PVAL_SCHEMA_ENUM flags "flags") -> (PVAL_SCHEMA_ENUM retval "Result");
+	function AddFlags(PVAL_ENUM value "value", PVAL_ENUM flags "flags") -> (PVAL_ENUM retval "Result");
 
 	// m_FriendlyName = "Has All Flags"
 	// m_Description = "Whether value has ALL of the specified flags set (it may have other flags.)"
 	// expr_alias = "allflags"
-	// value: metadata = {"polymorphic_arg":true}
+	// expr_alias_info = "allflags( Enum value, Enum flags )"
+	// value: metadata = {"polymorphic_arg":true,"type_restriction":"type_restriction_is_enum_flags"}
 	// flags: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
-	function HasAllFlags(PVAL_SCHEMA_ENUM value "value", PVAL_SCHEMA_ENUM flags "flags") -> (PVAL_BOOL retval "Result");
+	function HasAllFlags(PVAL_ENUM value "value", PVAL_ENUM flags "flags") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Has Any Flags"
 	// m_Description = "Whether value has ANY of the specified flags set (it may have other flags.)"
 	// expr_alias = "anyflags"
-	// value: metadata = {"polymorphic_arg":true}
+	// expr_alias_info = "anyflags( Enum value, Enum flags )"
+	// value: metadata = {"polymorphic_arg":true,"type_restriction":"type_restriction_is_enum_flags"}
 	// flags: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
-	function HasAnyFlags(PVAL_SCHEMA_ENUM value "value", PVAL_SCHEMA_ENUM flags "flags") -> (PVAL_BOOL retval "Result");
+	function HasAnyFlags(PVAL_ENUM value "value", PVAL_ENUM flags "flags") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Remove Flags"
 	// m_Description = "Remove flags from the given value."
-	// value: metadata = {"polymorphic_arg":true}
+	// value: metadata = {"polymorphic_arg":true,"type_restriction":"type_restriction_is_enum_flags"}
 	// flags: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
 	// retval: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"value:fulltype"}
-	function RemoveFlags(PVAL_SCHEMA_ENUM value "value", PVAL_SCHEMA_ENUM flags "flags") -> (PVAL_SCHEMA_ENUM retval "Result");
+	function RemoveFlags(PVAL_ENUM value "value", PVAL_ENUM flags "flags") -> (PVAL_ENUM retval "Result");
 }
 
-// fingerprint = 362000811
-CPulseGraphInstance_SmartPropEval
-{
-	// m_FriendlyName = "Evaluate"
-	// m_Description = "Called to invoke the graph"
-	// supported_domains = {"SmartPropEval":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CPulseGraphInstance_SmartPropEval"
-	// expected_return_type = "PVAL_VOID"
-	// is_pulse_hook
-	// is_spontaneous
-	// generic_node_category = 5
-	// pulse_outflows = default
-	class Evaluate -> (null);
-}
-
-// fingerprint = 2237422034
+// fingerprint = 1311878972
 CPulseMathlib
 {
 	// m_FriendlyName = "Abs Float"
 	// m_Description = "Absolute value (float)"
 	// expr_alias = "abs"
+	// expr_alias_info = "abs( Float x )"
 	// has_observable_context
 	// is_pure_value
 	function AbsFloat(PVAL_FLOAT x "x") -> (PVAL_FLOAT retval "Result");
@@ -855,27 +699,31 @@ CPulseMathlib
 	// m_FriendlyName = "Abs Int"
 	// m_Description = "Absolute value (int)"
 	// expr_alias = "abs"
+	// expr_alias_info = "abs( Integer x )"
 	// has_observable_context
 	// is_pure_value
 	function AbsInt(PVAL_INT x "x") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Arc Cos"
-	// m_Description = "Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to π"
+	// m_Description = "Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to pi"
 	// expr_alias = "acos"
+	// expr_alias_info = "acos( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function ArcCos(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Arc Sin"
-	// m_Description = "Arc Sine of input value. Input must be -1.0, 1.0 range. Output in radians, from -π/2 to π/2"
+	// m_Description = "Arc Sine of input value. Input must be -1.0, 1.0 range. Output in radians, from -pi/2 to pi/2"
 	// expr_alias = "asin"
+	// expr_alias_info = "asin( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function ArcSin(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Arc Tan"
-	// m_Description = "Arc Tangent of input value. Input can be any real number. Output in radians, from -π/2 to π/2"
+	// m_Description = "Arc Tangent of input value. Input can be any real number. Output in radians, from -pi/2 to pi/2"
 	// expr_alias = "atan"
+	// expr_alias_info = "atan( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function ArcTan(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -883,6 +731,7 @@ CPulseMathlib
 	// m_FriendlyName = "Ceiling Float"
 	// m_Description = "Ceiling - round float up to nearest integer)"
 	// expr_alias = "ceil"
+	// expr_alias_info = "ceil( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function CeilingFloat(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -890,6 +739,7 @@ CPulseMathlib
 	// m_FriendlyName = "Clamp Float"
 	// m_Description = "Clamp value to range (float)"
 	// expr_alias = "clamp"
+	// expr_alias_info = "clamp( Float x, Float flMin, Float flMax )"
 	// has_observable_context
 	// is_pure_value
 	function ClampFloat(PVAL_FLOAT x "x", PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
@@ -897,19 +747,39 @@ CPulseMathlib
 	// m_FriendlyName = "Clamp Int"
 	// m_Description = "Clamp value to range (int)"
 	// expr_alias = "clamp"
+	// expr_alias_info = "clamp( Integer x, Integer nMin, Integer nMax )"
 	// has_observable_context
 	// is_pure_value
 	function ClampInt(PVAL_INT x "x", PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
 
+	// m_FriendlyName = "Compose Angles"
+	// m_Description = "Applies B in A's local space."
+	// expr_alias = "composeAngles"
+	// expr_alias_info = "composeAngles( Angle AngleA, Angle AngleB )"
+	// has_observable_context
+	// is_pure_value
+	function ComposeAngles(PVAL_QANGLE AngleA "Angle A", PVAL_QANGLE AngleB "Angle B") -> (PVAL_QANGLE retval "Result");
+
+	// m_FriendlyName = "Compose Transforms"
+	// m_Description = "Applies 'Local' on top of 'Base'. Inverse of 'Get Relative Transform'"
+	// expr_alias = "composeTransforms"
+	// expr_alias_info = "composeTransforms( World Transform Base, Transform Local )"
+	// has_observable_context
+	// is_pure_value
+	function ComposeTransforms(PVAL_TRANSFORM_WORLDSPACE Base "Base", PVAL_TRANSFORM Local "Local") -> (PVAL_TRANSFORM_WORLDSPACE retval "Result");
+
 	// m_FriendlyName = "Cos"
 	// m_Description = "Cosine of angle. Input in radians, output in radians"
 	// expr_alias = "cos"
+	// expr_alias_info = "cos( Float flRadians )"
 	// has_observable_context
 	// is_pure_value
 	function Cos(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Cross Product Vector"
 	// m_Description = "Cross Product of Vector a x Vector b"
+	// expr_alias = "cross"
+	// expr_alias_info = "cross( Vector a, Vector b )"
 	// has_observable_context
 	// is_pure_value
 	function CrossProductVector(PVAL_VEC3 a "a", PVAL_VEC3 b "b") -> (PVAL_VEC3 retval "Result");
@@ -917,12 +787,15 @@ CPulseMathlib
 	// m_FriendlyName = "Deg2 Rad"
 	// m_Description = "Convert degrees (0-180) to radians (0-pi)"
 	// expr_alias = "deg2rad"
+	// expr_alias_info = "deg2rad( Float flDegrees )"
 	// has_observable_context
 	// is_pure_value
 	function Deg2Rad(PVAL_FLOAT flDegrees "Degrees") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Dot Product Vector"
 	// m_Description = "Dot Product of Vector a • Vector b"
+	// expr_alias = "dot"
+	// expr_alias_info = "dot( Vector a, Vector b )"
 	// has_observable_context
 	// is_pure_value
 	function DotProductVector(PVAL_VEC3 a "a", PVAL_VEC3 b "b") -> (PVAL_FLOAT retval "Result");
@@ -930,6 +803,7 @@ CPulseMathlib
 	// m_FriendlyName = "Exp"
 	// m_Description = "Computes e ( 2.71...) raised to a power"
 	// expr_alias = "exp"
+	// expr_alias_info = "exp( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Exp(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -937,6 +811,7 @@ CPulseMathlib
 	// m_FriendlyName = "Exp2"
 	// m_Description = "Computes 2 raised to a power"
 	// expr_alias = "exp2"
+	// expr_alias_info = "exp2( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Exp2(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -950,6 +825,7 @@ CPulseMathlib
 	// m_FriendlyName = "Floor Float"
 	// m_Description = "Floor - round float down to nearest integer"
 	// expr_alias = "floor"
+	// expr_alias_info = "floor( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function FloorFloat(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -957,6 +833,7 @@ CPulseMathlib
 	// m_FriendlyName = "Frac"
 	// m_Description = "Fractional component (ie. returns 0.34 for 12.34)"
 	// expr_alias = "frac"
+	// expr_alias_info = "frac( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Frac(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -967,12 +844,37 @@ CPulseMathlib
 	// is_pure_value
 	function GameTimeToFloat(PVAL_GAMETIME flTime "Time") -> (PVAL_FLOAT retval "Result");
 
+	// m_FriendlyName = "Get Relative Transform"
+	// m_Description = "Returns a local transform that you could put back into 'Compose Transforms' to recover 'Offset'"
+	// expr_alias = "getRelativeTransform"
+	// expr_alias_info = "getRelativeTransform( World Transform Base, World Transform Offset )"
+	// has_observable_context
+	// is_pure_value
+	function GetRelativeTransform(PVAL_TRANSFORM_WORLDSPACE Base "Base", PVAL_TRANSFORM_WORLDSPACE Offset "Offset") -> (PVAL_TRANSFORM retval "Result");
+
 	// m_FriendlyName = "Integer Divide"
 	// m_Description = "Integer division - unlike the divide (/) node, this will truncate any remainder (floor) and return an integer."
 	// expr_alias = "idiv"
+	// expr_alias_info = "idiv( Integer nNumerator, Integer nDenominator )"
 	// has_observable_context
 	// is_pure_value
 	function IntegerDivide(PVAL_INT nNumerator "Numerator", PVAL_INT nDenominator "Denominator") -> (PVAL_INT retval "Result");
+
+	// m_FriendlyName = "Inverse Rotate Vector"
+	// m_Description = "Rotate a vector by the inverse of a local transform, not including position or scale. Inverse of 'Rotate Vector'."
+	// expr_alias = "inverseRotateVector"
+	// expr_alias_info = "inverseRotateVector( Transform Transform, Vector Vector )"
+	// has_observable_context
+	// is_pure_value
+	function InverseRotateVector(PVAL_TRANSFORM Transform "Transform", PVAL_VEC3 Vector "Vector") -> (PVAL_VEC3 retval "Result");
+
+	// m_FriendlyName = "Inverse Transform Vector"
+	// m_Description = "Transform a vector by the inverse of a local transform, including position and scale. Inverse of 'Transform Vector'."
+	// expr_alias = "inverseTransformVector"
+	// expr_alias_info = "inverseTransformVector( Transform Transform, Vector Vector )"
+	// has_observable_context
+	// is_pure_value
+	function InverseTransformVector(PVAL_TRANSFORM Transform "Transform", PVAL_VEC3 Vector "Vector") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Is Valid Vector"
 	// m_Description = "Returns true if the Vector is valid"
@@ -989,6 +891,7 @@ CPulseMathlib
 	// m_FriendlyName = "Length Vector"
 	// m_Description = "Length (magnitude) of Vector"
 	// expr_alias = "length3d"
+	// expr_alias_info = "length3d( Vector a )"
 	// has_observable_context
 	// is_pure_value
 	function LengthVector(PVAL_VEC3 a "a") -> (PVAL_FLOAT retval "Result");
@@ -996,27 +899,55 @@ CPulseMathlib
 	// m_FriendlyName = "Length Vector2 D"
 	// m_Description = "Length (magnitude) of Vector2D"
 	// expr_alias = "length2d"
+	// expr_alias_info = "length2d( Vector2D a )"
 	// has_observable_context
 	// is_pure_value
 	function LengthVector2D(PVAL_VEC2 a "a") -> (PVAL_FLOAT retval "Result");
 
+	// m_FriendlyName = "Lerp Angle"
+	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (angle)"
+	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, Angle AngleA, Angle AngleB )"
+	// has_observable_context
+	// is_pure_value
+	function LerpAngle(PVAL_FLOAT flFrac "Frac", PVAL_QANGLE AngleA "Angle A", PVAL_QANGLE AngleB "Angle B") -> (PVAL_QANGLE retval "Result");
+
 	// m_FriendlyName = "Lerp Float"
 	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (float)"
 	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, Float flValueA, Float flValueB )"
 	// has_observable_context
 	// is_pure_value
 	function LerpFloat(PVAL_FLOAT flFrac "Frac", PVAL_FLOAT flValueA "Value A", PVAL_FLOAT flValueB "Value B") -> (PVAL_FLOAT retval "Result");
 
+	// m_FriendlyName = "Lerp Transform"
+	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (transform)"
+	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, Transform TransformA, Transform TransformB )"
+	// has_observable_context
+	// is_pure_value
+	function LerpTransform(PVAL_FLOAT flFrac "Frac", PVAL_TRANSFORM TransformA "Transform A", PVAL_TRANSFORM TransformB "Transform B") -> (PVAL_TRANSFORM retval "Result");
+
 	// m_FriendlyName = "Lerp Vector"
 	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector)"
 	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, Vector vecValueA, Vector vecValueB )"
 	// has_observable_context
 	// is_pure_value
 	function LerpVector(PVAL_FLOAT flFrac "Frac", PVAL_VEC3 vecValueA "Value A", PVAL_VEC3 vecValueB "Value B") -> (PVAL_VEC3 retval "Result");
 
+	// m_FriendlyName = "Lerp World Transform"
+	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (world transform)"
+	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, World Transform TransformA, World Transform TransformB )"
+	// has_observable_context
+	// is_pure_value
+	function LerpWorldTransform(PVAL_FLOAT flFrac "Frac", PVAL_TRANSFORM_WORLDSPACE TransformA "Transform A", PVAL_TRANSFORM_WORLDSPACE TransformB "Transform B") -> (PVAL_TRANSFORM_WORLDSPACE retval "Result");
+
 	// m_FriendlyName = "Lerp World Vector"
 	// m_Description = "Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector)"
 	// expr_alias = "lerp"
+	// expr_alias_info = "lerp( Float flFrac, World Vector vecValueA, World Vector vecValueB )"
 	// has_observable_context
 	// is_pure_value
 	function LerpWorldVector(PVAL_FLOAT flFrac "Frac", PVAL_VEC3_WORLDSPACE vecValueA "Value A", PVAL_VEC3_WORLDSPACE vecValueB "Value B") -> (PVAL_VEC3_WORLDSPACE retval "Result");
@@ -1024,6 +955,7 @@ CPulseMathlib
 	// m_FriendlyName = "Log"
 	// m_Description = "Natural logarithm (base e)"
 	// expr_alias = "log"
+	// expr_alias_info = "log( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Log(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1031,6 +963,7 @@ CPulseMathlib
 	// m_FriendlyName = "Log10"
 	// m_Description = "Base-10 logarithm"
 	// expr_alias = "log10"
+	// expr_alias_info = "log10( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Log10(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1038,30 +971,39 @@ CPulseMathlib
 	// m_FriendlyName = "Log2"
 	// m_Description = "Base-2 logarithm"
 	// expr_alias = "log2"
+	// expr_alias_info = "log2( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Log2(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Make Angle"
 	// m_Description = "Make an Angle from component parts"
+	// expr_alias = "ang"
+	// expr_alias_info = "ang( Float flPitch, Float flYaw, Float flRoll )"
 	// has_observable_context
 	// is_pure_value
 	function MakeAngle(PVAL_FLOAT flPitch "Pitch", PVAL_FLOAT flYaw "Yaw", PVAL_FLOAT flRoll "Roll") -> (PVAL_QANGLE retval "Result");
 
 	// m_FriendlyName = "Make Angle From Forward Vector"
 	// m_Description = "Make an Angle from a Forward Vector"
+	// expr_alias = "vec2ang"
+	// expr_alias_info = "vec2ang( Vector vForward )"
 	// has_observable_context
 	// is_pure_value
 	function MakeAngleFromForwardVector(PVAL_VEC3 vForward "Forward") -> (PVAL_QANGLE retval "Result");
 
 	// m_FriendlyName = "Make Color"
 	// m_Description = "Make a Color from component parts"
+	// expr_alias = "color"
+	// expr_alias_info = "color( Integer r, Integer g, Integer b )"
 	// has_observable_context
 	// is_pure_value
 	function MakeColor(PVAL_INT r "r", PVAL_INT g "g", PVAL_INT b "b") -> (PVAL_COLOR_RGB retval "Result");
 
 	// m_FriendlyName = "Make Transform"
 	// m_Description = "Make a Transform from component parts."
+	// expr_alias = "xform"
+	// expr_alias_info = "xform( Vector origin, Angle angle, Float flScale )"
 	// has_observable_context
 	// is_pure_value
 	// flScale: advanced_view
@@ -1069,30 +1011,40 @@ CPulseMathlib
 
 	// m_FriendlyName = "Make Vector"
 	// m_Description = "Make a Vector from component parts."
+	// expr_alias = "vec"
+	// expr_alias_info = "vec( Float x, Float y, Float z )"
 	// has_observable_context
 	// is_pure_value
 	function MakeVector(PVAL_FLOAT x "x", PVAL_FLOAT y "y", PVAL_FLOAT z "z") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Make Vector2 D"
 	// m_Description = "Make a Vector2D from component parts."
+	// expr_alias = "vec2"
+	// expr_alias_info = "vec2( Float x, Float y )"
 	// has_observable_context
 	// is_pure_value
 	function MakeVector2D(PVAL_FLOAT x "x", PVAL_FLOAT y "y") -> (PVAL_VEC2 retval "Result");
 
 	// m_FriendlyName = "Make Vector4 D"
 	// m_Description = "Make a Vector from component parts."
+	// expr_alias = "vec4"
+	// expr_alias_info = "vec4( Float x, Float y, Float z, Float w )"
 	// has_observable_context
 	// is_pure_value
 	function MakeVector4D(PVAL_FLOAT x "x", PVAL_FLOAT y "y", PVAL_FLOAT z "z", PVAL_FLOAT w "w") -> (PVAL_VEC4 retval "Result");
 
 	// m_FriendlyName = "Make Vector From Angle"
 	// m_Description = "Make a Vector from an Angle"
+	// expr_alias = "ang2vec"
+	// expr_alias_info = "ang2vec( Angle angles )"
 	// has_observable_context
 	// is_pure_value
 	function MakeVectorFromAngle(PVAL_QANGLE angles "angles") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Make World Transform"
 	// m_Description = "Make a Transform from component parts."
+	// expr_alias = "wxform"
+	// expr_alias_info = "wxform( World Vector origin, Angle angle, Float flScale )"
 	// has_observable_context
 	// is_pure_value
 	// flScale: advanced_view
@@ -1100,6 +1052,8 @@ CPulseMathlib
 
 	// m_FriendlyName = "Make World Vector"
 	// m_Description = "Make a World Vector from component parts."
+	// expr_alias = "wvec"
+	// expr_alias_info = "wvec( Float x, Float y, Float z )"
 	// has_observable_context
 	// is_pure_value
 	function MakeWorldVector(PVAL_FLOAT x "x", PVAL_FLOAT y "y", PVAL_FLOAT z "z") -> (PVAL_VEC3_WORLDSPACE retval "Result");
@@ -1107,6 +1061,7 @@ CPulseMathlib
 	// m_FriendlyName = "Max Float"
 	// m_Description = "Maximum of two values (float)"
 	// expr_alias = "max"
+	// expr_alias_info = "max( Float x, Float y )"
 	// has_observable_context
 	// is_pure_value
 	function MaxFloat(PVAL_FLOAT x "x", PVAL_FLOAT y "y") -> (PVAL_FLOAT retval "Result");
@@ -1114,6 +1069,7 @@ CPulseMathlib
 	// m_FriendlyName = "Max Int"
 	// m_Description = "Maximum of two values (int)"
 	// expr_alias = "max"
+	// expr_alias_info = "max( Integer x, Integer y )"
 	// has_observable_context
 	// is_pure_value
 	function MaxInt(PVAL_INT x "x", PVAL_INT y "y") -> (PVAL_INT retval "Result");
@@ -1121,6 +1077,7 @@ CPulseMathlib
 	// m_FriendlyName = "Min Float"
 	// m_Description = "Minimum of two values (float)"
 	// expr_alias = "min"
+	// expr_alias_info = "min( Float x, Float y )"
 	// has_observable_context
 	// is_pure_value
 	function MinFloat(PVAL_FLOAT x "x", PVAL_FLOAT y "y") -> (PVAL_FLOAT retval "Result");
@@ -1128,12 +1085,15 @@ CPulseMathlib
 	// m_FriendlyName = "Min Int"
 	// m_Description = "Minimum of two values (int)"
 	// expr_alias = "min"
+	// expr_alias_info = "min( Integer x, Integer y )"
 	// has_observable_context
 	// is_pure_value
 	function MinInt(PVAL_INT x "x", PVAL_INT y "y") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Normalize Vector"
 	// m_Description = "Normalize Vector a"
+	// expr_alias = "normalize"
+	// expr_alias_info = "normalize( Vector a )"
 	// has_observable_context
 	// is_pure_value
 	function NormalizeVector(PVAL_VEC3 a "a") -> (PVAL_VEC3 retval "Result");
@@ -1141,6 +1101,7 @@ CPulseMathlib
 	// m_FriendlyName = "Pi"
 	// m_Description = "Returns the constant pi (3.14...)"
 	// expr_alias = "pi"
+	// expr_alias_info = "pi()"
 	// has_observable_context
 	// is_pure_value
 	function Pi(null) -> (PVAL_FLOAT retval "Result");
@@ -1148,6 +1109,7 @@ CPulseMathlib
 	// m_FriendlyName = "Pow"
 	// m_Description = "X to the Y power"
 	// expr_alias = "pow"
+	// expr_alias_info = "pow( Float flValue, Float flExponent )"
 	// has_observable_context
 	// is_pure_value
 	function Pow(PVAL_FLOAT flValue "Value", PVAL_FLOAT flExponent "Exponent") -> (PVAL_FLOAT retval "Result");
@@ -1155,6 +1117,7 @@ CPulseMathlib
 	// m_FriendlyName = "Rad2 Deg"
 	// m_Description = "Convert radians (0-pi) to degrees (0-180)"
 	// expr_alias = "rad2deg"
+	// expr_alias_info = "rad2deg( Float flRadians )"
 	// has_observable_context
 	// is_pure_value
 	function Rad2Deg(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
@@ -1162,18 +1125,45 @@ CPulseMathlib
 	// m_FriendlyName = "Random World Position"
 	// m_Description = "Returns a random position centered on vCenter with random min and max radius"
 	// expr_alias = "random_position"
+	// expr_alias_info = "random_position( World Vector vCenter, Float flMinRadius, Float flMaxRadius )"
 	function RandomWorldPosition(PVAL_VEC3_WORLDSPACE vCenter "Center", PVAL_FLOAT flMinRadius "Min Radius", PVAL_FLOAT flMaxRadius "Max Radius") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "Remap Clamped Float"
 	// m_Description = "Remap and clamp input value from input range to output range (float)"
 	// expr_alias = "remap"
+	// expr_alias_info = "remap( Float flVal, Float flInputA, Float flInputB, Float flOutputA, Float flOutputB )"
 	// has_observable_context
 	// is_pure_value
 	function RemapClampedFloat(PVAL_FLOAT flVal "Val", PVAL_FLOAT flInputA "Input A", PVAL_FLOAT flInputB "Input B", PVAL_FLOAT flOutputA "Output A", PVAL_FLOAT flOutputB "Output B") -> (PVAL_FLOAT retval "Result");
 
+	// m_FriendlyName = "Rotate Vector"
+	// m_Description = "Rotate a relative vector by a local transform, not including position or scale."
+	// expr_alias = "rotateVector"
+	// expr_alias_info = "rotateVector( Transform Transform, Vector LocalVector )"
+	// has_observable_context
+	// is_pure_value
+	function RotateVector(PVAL_TRANSFORM Transform "Transform", PVAL_VEC3 LocalVector "Local Vector") -> (PVAL_VEC3 retval "Result");
+
+	// m_FriendlyName = "Rotate Vector To World"
+	// m_Description = "Rotate a relative vector into a world direction, not including position or scale."
+	// expr_alias = "rotateVectorToWorld"
+	// expr_alias_info = "rotateVectorToWorld( World Transform Transform, Vector LocalVector )"
+	// has_observable_context
+	// is_pure_value
+	function RotateVectorToWorld(PVAL_TRANSFORM_WORLDSPACE Transform "Transform", PVAL_VEC3 LocalVector "Local Vector") -> (PVAL_VEC3 retval "Result");
+
+	// m_FriendlyName = "Rotate World Vector To Local"
+	// m_Description = "Rotate a world direction vector into a local direction, not including position or scale."
+	// expr_alias = "rotateVectorToLocal"
+	// expr_alias_info = "rotateVectorToLocal( World Transform Transform, Vector WorldVector )"
+	// has_observable_context
+	// is_pure_value
+	function RotateWorldVectorToLocal(PVAL_TRANSFORM_WORLDSPACE Transform "Transform", PVAL_VEC3 WorldVector "World Vector") -> (PVAL_VEC3 retval "Result");
+
 	// m_FriendlyName = "Round Float"
 	// m_Description = "Round - round float up or down to integer"
 	// expr_alias = "round"
+	// expr_alias_info = "round( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function RoundFloat(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1181,6 +1171,7 @@ CPulseMathlib
 	// m_FriendlyName = "R Sqrt"
 	// m_Description = "Reciprocoal square root (1/sqrt)"
 	// expr_alias = "rsqrt"
+	// expr_alias_info = "rsqrt( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function RSqrt(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1188,6 +1179,7 @@ CPulseMathlib
 	// m_FriendlyName = "Saturate"
 	// m_Description = "Saturate (clamps float between 0 and 1)"
 	// expr_alias = "saturate"
+	// expr_alias_info = "saturate( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Saturate(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1195,6 +1187,7 @@ CPulseMathlib
 	// m_FriendlyName = "Sign Float"
 	// m_Description = "Returns -1.0 or 0.0 or 1.0 based on the sign of the argument"
 	// expr_alias = "sign"
+	// expr_alias_info = "sign( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function SignFloat(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1202,6 +1195,7 @@ CPulseMathlib
 	// m_FriendlyName = "Sign Int"
 	// m_Description = "Returns -1 or 0 or 1 based on the sign of the argument"
 	// expr_alias = "sign"
+	// expr_alias_info = "sign( Integer nValue )"
 	// has_observable_context
 	// is_pure_value
 	function SignInt(PVAL_INT nValue "Value") -> (PVAL_INT retval "Result");
@@ -1209,6 +1203,7 @@ CPulseMathlib
 	// m_FriendlyName = "Sin"
 	// m_Description = "Sine of angle. Input in radians, output in radians"
 	// expr_alias = "sin"
+	// expr_alias_info = "sin( Float flRadians )"
 	// has_observable_context
 	// is_pure_value
 	function Sin(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
@@ -1266,6 +1261,7 @@ CPulseMathlib
 	// m_FriendlyName = "Sqr Float"
 	// m_Description = "Square"
 	// expr_alias = "sqr"
+	// expr_alias_info = "sqr( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function SqrFloat(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
@@ -1273,6 +1269,7 @@ CPulseMathlib
 	// m_FriendlyName = "Sqr Int"
 	// m_Description = "Square"
 	// expr_alias = "sqr"
+	// expr_alias_info = "sqr( Integer nValue )"
 	// has_observable_context
 	// is_pure_value
 	function SqrInt(PVAL_INT nValue "Value") -> (PVAL_INT retval "Result");
@@ -1280,43 +1277,126 @@ CPulseMathlib
 	// m_FriendlyName = "Sqrt"
 	// m_Description = "Square root"
 	// expr_alias = "sqrt"
+	// expr_alias_info = "sqrt( Float flValue )"
 	// has_observable_context
 	// is_pure_value
 	function Sqrt(PVAL_FLOAT flValue "Value") -> (PVAL_FLOAT retval "Result");
 
-	// legacy_name_replacement = "CPulseStringlib::StringsAreEqualCaseSensitive"
-	class StringsAreEqualCaseSensitive;
-
 	// m_FriendlyName = "Tan"
 	// m_Description = "Tangent of angle. Input in radians, output in radians"
 	// expr_alias = "tan"
+	// expr_alias_info = "tan( Float flRadians )"
 	// has_observable_context
 	// is_pure_value
 	function Tan(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
 
+	// m_FriendlyName = "Transform Inverse"
+	// m_Description = "Returns the inverse of a transform."
+	// expr_alias = "transformInverse"
+	// expr_alias_info = "transformInverse( Transform Transform )"
+	// has_observable_context
+	// is_pure_value
+	function TransformInverse(PVAL_TRANSFORM Transform "Transform") -> (PVAL_TRANSFORM retval "Result");
+
+	// m_FriendlyName = "Transform Vector"
+	// m_Description = "Transform a relative vector by a local transform, including position and scale."
+	// expr_alias = "transformVector"
+	// expr_alias_info = "transformVector( Transform Transform, Vector LocalVector )"
+	// has_observable_context
+	// is_pure_value
+	function TransformVector(PVAL_TRANSFORM Transform "Transform", PVAL_VEC3 LocalVector "Local Vector") -> (PVAL_VEC3 retval "Result");
+
+	// m_FriendlyName = "Transform Vector To World"
+	// m_Description = "Transform a relative vector into worldspace, including position and scale."
+	// expr_alias = "transformVectorToWorld"
+	// expr_alias_info = "transformVectorToWorld( World Transform Transform, Vector LocalVector )"
+	// has_observable_context
+	// is_pure_value
+	function TransformVectorToWorld(PVAL_TRANSFORM_WORLDSPACE Transform "Transform", PVAL_VEC3 LocalVector "Local Vector") -> (PVAL_VEC3_WORLDSPACE retval "Result");
+
+	// m_FriendlyName = "Transform World Vector To Local"
+	// m_Description = "Transform a worldspace vector into a relative vector, including position and scale."
+	// expr_alias = "transformVectorToLocal"
+	// expr_alias_info = "transformVectorToLocal( World Transform Transform, World Vector WorldVector )"
+	// has_observable_context
+	// is_pure_value
+	function TransformWorldVectorToLocal(PVAL_TRANSFORM_WORLDSPACE Transform "Transform", PVAL_VEC3_WORLDSPACE WorldVector "World Vector") -> (PVAL_VEC3 retval "Result");
+
 	// m_FriendlyName = "Vector To World Vector"
 	// m_Description = "Convert from a local-space to a world-space vector"
+	// expr_alias = "vec2wvec"
+	// expr_alias_info = "vec2wvec( Vector vecValue )"
 	// has_observable_context
 	// is_pure_value
 	function VectorToWorldVector(PVAL_VEC3 vecValue "Value") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
+	// m_FriendlyName = "World Transform Inverse"
+	// m_Description = "Returns the inverse of a world transform."
+	// expr_alias = "worldTransformInverse"
+	// expr_alias_info = "worldTransformInverse( World Transform Transform )"
+	// has_observable_context
+	// is_pure_value
+	function WorldTransformInverse(PVAL_TRANSFORM_WORLDSPACE Transform "Transform") -> (PVAL_TRANSFORM_WORLDSPACE retval "Result");
+
 	// m_FriendlyName = "World Vector To Vector"
 	// m_Description = "Convert from a world-space to local-space vector"
+	// expr_alias = "wvec2vec"
+	// expr_alias_info = "wvec2vec( World Vector vecValue )"
 	// has_observable_context
 	// is_pure_value
 	function WorldVectorToVector(PVAL_VEC3_WORLDSPACE vecValue "Value") -> (PVAL_VEC3 retval "Result");
 }
 
-// fingerprint = 1521109281
+// fingerprint = 4277376346
 CPulseStringlib
 {
+	// m_FriendlyName = "Format1"
+	// m_Description = "Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>\"Hello {} my name is {}\"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>\"Hello {0} my name is {1}\"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>"
+	// expr_alias = "fmt"
+	// expr_alias_info = "fmt( String strFormat, String value0 )"
+	// has_observable_context
+	// is_pure_value
+	function Format1(PVAL_STRING strFormat "Format", PVAL_STRING value0 "value0") -> (PVAL_STRING retval "Result");
+
+	// m_FriendlyName = "Format2"
+	// m_Description = "Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>\"Hello {} my name is {}\"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>\"Hello {0} my name is {1}\"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>"
+	// expr_alias = "fmt"
+	// expr_alias_info = "fmt( String strFormat, String value0, String value1 )"
+	// has_observable_context
+	// is_pure_value
+	function Format2(PVAL_STRING strFormat "Format", PVAL_STRING value0 "value0", PVAL_STRING value1 "value1") -> (PVAL_STRING retval "Result");
+
+	// m_FriendlyName = "Format3"
+	// m_Description = "Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>\"Hello {} my name is {}\"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>\"Hello {0} my name is {1}\"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>"
+	// expr_alias = "fmt"
+	// expr_alias_info = "fmt( String strFormat, String value0, String value1, String value2 )"
+	// has_observable_context
+	// is_pure_value
+	function Format3(PVAL_STRING strFormat "Format", PVAL_STRING value0 "value0", PVAL_STRING value1 "value1", PVAL_STRING value2 "value2") -> (PVAL_STRING retval "Result");
+
+	// m_FriendlyName = "Format4"
+	// m_Description = "Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>\"Hello {} my name is {}\"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>\"Hello {0} my name is {1}\"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>"
+	// expr_alias = "fmt"
+	// expr_alias_info = "fmt( String strFormat, String value0, String value1, String value2, String value3 )"
+	// has_observable_context
+	// is_pure_value
+	function Format4(PVAL_STRING strFormat "Format", PVAL_STRING value0 "value0", PVAL_STRING value1 "value1", PVAL_STRING value2 "value2", PVAL_STRING value3 "value3") -> (PVAL_STRING retval "Result");
+
+	// m_FriendlyName = "Format5"
+	// m_Description = "Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>\"Hello {} my name is {}\"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>\"Hello {0} my name is {1}\"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>"
+	// expr_alias = "fmt"
+	// expr_alias_info = "fmt( String strFormat, String value0, String value1, String value2, String value3, String value4 )"
+	// has_observable_context
+	// is_pure_value
+	function Format5(PVAL_STRING strFormat "Format", PVAL_STRING value0 "value0", PVAL_STRING value1 "value1", PVAL_STRING value2 "value2", PVAL_STRING value3 "value3", PVAL_STRING value4 "value4") -> (PVAL_STRING retval "Result");
+
 	// m_FriendlyName = "Format Duration String From Seconds"
 	// m_Description = "Turn a time in seconds into a display string. NOT localized."
 	// has_observable_context
 	// is_pure_value
 	// nRemainderNoiseDigits: description = "After the real remainder, how many additional digits should we continue to append to create additional visual movement?"
 	// nRemainderNoiseDigits: advanced_view
-	function FormatDurationStringFromSeconds(PVAL_FLOAT flSeconds "Seconds", PVAL_SCHEMA_ENUM:PulseDurationStringFormat_t nFormat "Format" = "MM_SS_LEADING_ZERO", PVAL_INT nRemainderDigits "Remainder Digits" = 0, PVAL_INT nRemainderNoiseDigits "Remainder Noise Digits" = 0) -> (PVAL_STRING retval "Result");
+	function FormatDurationStringFromSeconds(PVAL_FLOAT flSeconds "Seconds", PVAL_ENUM:PulseDurationStringFormat_t nFormat "Format" = "MM_SS_LEADING_ZERO", PVAL_INT nRemainderDigits "Remainder Digits" = 0, PVAL_INT nRemainderNoiseDigits "Remainder Noise Digits" = 0) -> (PVAL_STRING retval "Result");
 
 	// m_FriendlyName = "String Length"
 	// m_Description = "Count the number of codepoints in the string (unicode-aware). If you want rendered glyphs, you probably want to consider using Panorama."
@@ -1326,7 +1406,6 @@ CPulseStringlib
 
 	// m_FriendlyName = "Strings Are Equal Case Sensitive"
 	// m_Description = "Compare strings with case sensitivity, in contrast to normal string equality which is case-insensitive."
-	// legacy_names = ["CPulseMathlib::StringsAreEqualCaseSensitive"]
 	// has_observable_context
 	// is_pure_value
 	function StringsAreEqualCaseSensitive(PVAL_STRING a "a", PVAL_STRING b "b") -> (PVAL_BOOL retval "Result");
@@ -1368,718 +1447,26 @@ CPulseTestScriptLib
 	function TestModeAssertTrue(PVAL_BOOL bValue "Value", PVAL_STRING pDescription "Description");
 }
 
-// fingerprint = 427769199
-CSmartPropAPI
-{
-	// m_FriendlyName = "Add Model"
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// pModelResourceName: metadata = {"rebuild_propertyeditor_on_change":true,"MPropertyProvidesEditContextString":"ToolEditContext_ID_VMDL"}
-	// vModelScale: advanced_view
-	// pMaterialGroupName: advanced_view
-	// bIsDetailObject: advanced_view
-	// flUniformScale: advanced_view
-	// nLodLevel: advanced_view
-	// nDetailObjectFadeLevel: advanced_view
-	function AddModel(PVAL_RESOURCE_NAME:vmdl pModelResourceName "Model Resource Name", PVAL_VEC3 vModelScale "Model Scale" = ["PVAL_VEC3",[1.0,1.0,1.0]], PVAL_MODEL_MATERIAL_GROUP pMaterialGroupName "Material Group Name" = "", PVAL_BOOL bIsDetailObject "Is Detail Object" = false, PVAL_FLOAT flUniformScale "Uniform Scale" = 1.0, PVAL_INT nLodLevel "Lod Level" = -1, PVAL_SCHEMA_ENUM:SmartPropDetailFadeLevel_t nDetailObjectFadeLevel "Detail Object Fade Level" = "NORMAL");
-
-	// m_FriendlyName = "Random Float"
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	function RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
-}
-
-// fingerprint = 3805268226
-CSmartPropExprAPI
-{
-	// m_FriendlyName = "Evaluation Depth"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "EvaluationDepth"
-	function EvaluationDepth(null) -> (PVAL_INT retval "Result");
-
-	// m_FriendlyName = "Instance Count"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "InstanceCount"
-	function InstanceCount(null) -> (PVAL_INT retval "Result");
-
-	// m_FriendlyName = "Instance Index"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "InstanceIndex"
-	function InstanceIndex(null) -> (PVAL_INT retval "Result");
-
-	// m_FriendlyName = "Linear Scale"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "LinearScale"
-	function LinearScale(null) -> (PVAL_FLOAT retval "Result");
-
-	// m_FriendlyName = "Line Length"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "LineLength"
-	function LineLength(null) -> (PVAL_FLOAT retval "Result");
-
-	// m_FriendlyName = "Max Evaluation Depth"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "MaxEvaluationDepth"
-	function MaxEvaluationDepth(null) -> (PVAL_INT retval "Result");
-
-	// m_FriendlyName = "Path Parameter"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "PathParameter"
-	function PathParameter(null) -> (PVAL_FLOAT retval "Result");
-
-	// m_FriendlyName = "Random Float"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "RandomFloat"
-	function RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
-
-	// m_FriendlyName = "Random Int"
-	// supported_domains = {"SmartPropEval":true}
-	// expr_alias = "RandomInt"
-	function RandomInt(PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
-}
-
-// fingerprint = 3399126061
-CSmartPropFilterAPI
-{
-	// m_FriendlyName = "Filter"
-	// m_Description = "Filter downstream elements based on a true/false condition"
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// bContinue: description = "Whether to continue executing"
-	function Filter(PVAL_BOOL bContinue "Continue" = true);
-
-	// m_FriendlyName = "Filter Probability"
-	// m_Description = "Filter downstream elements based on a specified random probability"
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// flProbability: description = "0.0 to 1.0 value indicating the probability of this element being evaluated. Where a value of 0 means the element will never be evaluated and 1.0 means it will always be evaluated"
-	function FilterProbability(PVAL_FLOAT flProbability "Probability" = 0.5);
-
-	// m_FriendlyName = "Filter Surface Angle"
-	// m_Description = "Filter downstream elements based on the current surface angle. The surface angle is set based on the initial placement of the smart prop object, but can also be updated by the Trace to Surface modifier."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// flSurfaceSlopeMin: description = "Minimum slope on which the target will be placed. Slope is a [ 0, 180 ] value of the surface normal rotation from up such that 0 is a horizontal surface (floor), 90 is a vertical surface (wall), 180 is horizontal upside down surface (ceiling)."
-	// flSurfaceSlopeMax: description = "Maximum slope on which the target will be placed."
-	function FilterSurfaceAngle(PVAL_FLOAT flSurfaceSlopeMin "Surface Slope Min" = 0.0, PVAL_FLOAT flSurfaceSlopeMax "Surface Slope Max" = 180.0);
-}
-
-// fingerprint = 1225684538
-CSmartPropOperation_MaterialReplacementAPI
-{
-	// m_FriendlyName = "Add Material Override"
-	// m_Description = "Specifies a material replacement to apply to all following models. Mapping goes from the material specified by the model( including material group selection ) to the replacement material. Previous material overrides are not considered when determining the base material."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// originalMaterial: description = "Original material to replace. This is the material specified in the model, including any material group asignment within the model. Does not consider any existing material overrides specified within the smart prop."
-	// replacementMaterial: description = "New material to replace the original material with."
-	function AddMaterialOverride(PVAL_RESOURCE_NAME:vmat originalMaterial "Original Material", PVAL_RESOURCE_NAME:vmat replacementMaterial "New Material");
-
-	// m_FriendlyName = "Clear Material Overrides"
-	// m_Description = "Clear any previous material overrides."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	function ClearMaterialOverrides(null);
-}
-
-// fingerprint = 3432780343
-CSmartPropOperationAPI
-{
-	// m_FriendlyName = "Random Offset"
-	// m_Description = "Apply a random position offset to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vRandomPositionMin: description = "Minimum random position offset"
-	// vRandomPositionMax: description = "Maximum random position offset"
-	function RandomOffset(PVAL_VEC3 vRandomPositionMin "Random Position Min" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_VEC3 vRandomPositionMax "Random Position Max" = ["PVAL_VEC3",[0.0,0.0,0.0]]);
-
-	// m_FriendlyName = "Random Rotation"
-	// m_Description = "Apply a random rotation to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// angRandomRotationMin: description = "Minimum rotation range"
-	// angRandomRotationMax: description = "Maximum rotation range"
-	function RandomRotation(PVAL_QANGLE angRandomRotationMin "Ang Random Rotation Min" = ["PVAL_QANGLE",[0.0,0.0,0.0]], PVAL_QANGLE angRandomRotationMax "Ang Random Rotation Max" = ["PVAL_QANGLE",[0.0,0.0,0.0]]);
-
-	// m_FriendlyName = "Random Scale"
-	// m_Description = "Apply a random scale to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// flRandomScaleMin: description = "Minimum scale range"
-	// flRandomScaleMax: description = "Maximum scale range"
-	function RandomScale(PVAL_FLOAT flRandomScaleMin "Random Scale Min" = 1.0, PVAL_FLOAT flRandomScaleMax "Random Scale Max" = 1.0);
-
-	// m_FriendlyName = "Reset Scale"
-	// m_Description = "Reset the current scale such the element only inherits the object level scale, but does not inherit the scale applied to its parent."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// bIgnoreObjectScale: description = "If enabled, the object level scale will be ignored, meaning any scale applied in Hammer will have no effect on the element or its children."
-	function ResetScale(PVAL_BOOL bIgnoreObjectScale "Ignore Object Scale" = false);
-
-	// m_FriendlyName = "Rotate"
-	// m_Description = "Apply a rotation to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vRotation: description = "Local space rotation (in degrees) to apply to the current transform"
-	function Rotate(PVAL_QANGLE vRotation "Rotation" = ["PVAL_QANGLE",[0.0,0.0,0.0]]);
-
-	// m_FriendlyName = "Scale"
-	// m_Description = "Apply a scale to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// flScale: description = "Scale to apply to the current transform"
-	function Scale(PVAL_FLOAT flScale "Scale" = 1.0);
-
-	// m_FriendlyName = "Set Position"
-	// m_Description = "Set the position of the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vPosition: description = "Local space position translation to apply to the current transform"
-	// nCoordinateSpace: description = "Specifies the coordinate space of the specified position value."
-	function SetPosition(PVAL_VEC3 vPosition "Position" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nCoordinateSpace "Coordinate Space" = "WORLD");
-
-	// m_FriendlyName = "Set Tint Color"
-	// m_Description = "Change the color tint based on the specified apply mode."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	function SetTintColor(PVAL_SCHEMA_ENUM:ApplyColorMode_t nApplyMode "Apply Mode" = "MULTIPLY_OBJECT", PVAL_COLOR_RGB colorValue "Color Value" = ["PVAL_COLOR_RGB",[255,255,255]]);
-
-	// m_FriendlyName = "Trace In Direction"
-	// m_Description = "Perform a trace in a direction from a specified origin and stop when a surface is hit."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vOrigin: description = "Specifies the origin point for the start of the trace. To trace from the current position, set to < 0, 0, 0 > and set the coordinate space to Element Space"
-	// nOriginSpace: description = "Coordinate space the origin is specified in. Using Element space allows specifying a value relative to the current position. However, world space should generally be used when for variable values."
-	// flOriginOffset: description = "Offset to apply to the specified origin along the trace direction to compute the starting point of the trace."
-	// flSurfaceUpInfluence: description = "How much should the surface normal up direction influence the final orientation. [ 0, 1 ] where 0 = don't modify the orientation, 1 = completely re-orient to match the surface."
-	// nNoHitResult: description = "Specifies the behavior when the trace does not hit a surface."
-	// bIgnoreToolMaterials: description = "Do not trace against tool materials (attribute 'tools.toolsmaterial')."
-	// bIgnoreSky: description = "Do not trace against sky materials (attribute 'mapbuilder.sky')."
-	// bIgnoreNoDraw: description = "Do not trace against no draw materials (material attribute 'mapbuilder.nodraw')."
-	// bIgnoreTranslucent: description = "Do not trace against translucent materials (materials with 'alphatest' or 'translucent' attributes)."
-	// bIgnoreModels: description = "Do not trace against any models (only hit world geometry)."
-	// bIgnoreEntities: description = "Do not trace against dynamic entities which may move in game."
-	// bIgnoreCables: description = "Do not trace against any cable objects."
-	// nDirectionSpace: description = "Specifies the coordinate space the trace direction vector is specified in."
-	// flTraceLength: description = "Maximum length of the trace. Surfaces beyond this distance will not be hit."
-	function TraceInDirection(PVAL_VEC3 vOrigin "Origin" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nOriginSpace "Origin Space" = "ELEMENT", PVAL_FLOAT flOriginOffset "Origin Offset" = 0.0, PVAL_FLOAT flSurfaceUpInfluence "Surface Up Influence" = 0.0, PVAL_SCHEMA_ENUM:TraceNoHitResult_t nNoHitResult "If No Surface Hit" = "NOTHING", PVAL_BOOL bIgnoreToolMaterials "Ignore Tool Materials" = true, PVAL_BOOL bIgnoreSky "Ignore Sky" = true, PVAL_BOOL bIgnoreNoDraw "Ignore No Draw" = true, PVAL_BOOL bIgnoreTranslucent "Ignore Translucent" = false, PVAL_BOOL bIgnoreModels "Ignore Models" = false, PVAL_BOOL bIgnoreEntities "Ignore Entities" = true, PVAL_BOOL bIgnoreCables "Ignore Cables" = true, PVAL_VEC3 vTraceDirection "Trace Direction" = ["PVAL_VEC3",[0.0,0.0,-1.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nDirectionSpace "Direction Space" = "WORLD", PVAL_FLOAT flTraceLength "Trace Length" = 1000.0);
-
-	// m_FriendlyName = "Translate"
-	// m_Description = "Apply a position offset to the current transform."
-	// supported_domains = {"SmartPropEval":true}
-	// generic_node_category = 5
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vPosition: description = "Local space position translation to apply to the current transform"
-	// nCoordinateSpace: description = "Specifies the coordinate space of the specified position value."
-	function Translate(PVAL_VEC3 vPosition "Position" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nCoordinateSpace "Coordinate Space" = "ELEMENT");
-}
-
-// fingerprint = 0
-CSmartPropPulse_BaseQueryableFlow
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = default
-	// pulse_outflows = default {"allow_direct_return":true}
-	class CSmartPropPulse_BaseQueryableFlow;
-}
-
-// fingerprint = 1298909928
-CSmartPropPulse_CreateLocator
-{
-	// m_BaseClasses = ["CSmartPropPulse_BaseQueryableFlow"]
-	// m_FriendlyName = "Create Locator"
-	// m_Description = "Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer."
-	// m_Variables[] = {"m_Name":"m_LocatorName","m_FullType":"string","m_LongName":"Name","m_Description":"Name of the locator. This can be used to reference the locator in this element or its children. If the locator is configurable, the locator will be identified by this name in Hammer.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"","m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// supported_domains = {"SmartPropEval":true}
-	// MVDataClassGroup = "Manipulators"
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_CreateLocator"
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vOffset: description = "Offset of the locator relative to the current transform. This allows the locator to be created at an offset location without applying that offset to the current transform."
-	// flDisplayScale: description = "Scale to apply only to the locator model"
-	// bConfigurable: description = "Controls whether or not the locator can be edited in a smart prop configuration. If enabled an editable locator will appear when the smart prop is placed in Hammer. Any changes to that locator will modify the current transform."
-	// bAllowTranslation: metadata = {"readonly_expr":"bConfigurable == false","group":"Configuration"}
-	// bAllowRotation: metadata = {"readonly_expr":"bConfigurable == false","group":"Configuration"}
-	// bAllowScale: description = "Controls whether or not the configuration of the locator can include scale. If enabled scale can be applied to the editable locator in Hammer. If disabled the scale will not be editable and the current scale will be used."
-	// bAllowScale: metadata = {"readonly_expr":"bConfigurable == false","group":"Configuration"}
-	class CSmartPropPulse_CreateLocator(PVAL_VEC3 vOffset "Offset" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_FLOAT flDisplayScale "Display Scale" = 1.0, PVAL_BOOL bConfigurable "Configurable" = true, PVAL_BOOL bAllowTranslation "Allow Translation" = true, PVAL_BOOL bAllowRotation "Allow Rotation" = true, PVAL_BOOL bAllowScale "Allow Scale" = false);
-}
-
-// fingerprint = 2880719257
-CSmartPropPulse_CreateRotator
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Create Rotator"
-	// m_Description = "Create a rotator that will be displayed at the current location, allowing the user to manipulate a rotation around an axis. The rotation value can be applied to the current transform as well as saved to a variable."
-	// m_Variables[] = {"m_Name":"m_Name","m_FullType":"string","m_LongName":"Name","m_Description":"Name used to identify the rotator. Must be unique within the parent element.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"","m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// MVDataClassGroup = "Manipulators"
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_CreateRotator"
-	// pulse_outflows = default {"allow_direct_return":true}
-	// vOffset: description = "Offset of the rotator relative to the current transform. This allows the rotator to be created at an offset location without applying that offset to the current transform."
-	// vRotationAxis: description = "Axis around which the rotation will occur"
-	// nCoordinateSpace: description = "Coordinate space the axis of rotation is specified in."
-	// flDisplayRadius: description = "Radius at which the rotator handle should be displayed."
-	// displayColor: description = "Color to display the rotator handle with."
-	// bApplyToCurrentTransform: description = "Should the rotation be applied to the current transform."
-	// flSnappingIncrement: description = "Specifies the number of degrees the rotation should snap to. If set to 0, then the rotation snapping will be controlled by the rotation snapping in Hammer."
-	// flInitialAngle: description = "Specifies the angle the rotator should be set to initially."
-	// bEnforceLimits: description = "If enabled, the minimum and maximum rotation angles will be used to limit the range of the rotation."
-	// flMinAngle: description = "Specifies the minimum angle limit in degrees"
-	// flMinAngle: metadata = {"readonly_expr":"bEnforceLimits == false"}
-	// flMaxAngle: description = "Specifies the minimum angle limit in degrees"
-	// flMaxAngle: metadata = {"readonly_expr":"bEnforceLimits == false"}
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Run"
-	class CSmartPropPulse_CreateRotator(PVAL_VEC3 vOffset "Offset" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_VEC3 vRotationAxis "Rotation Axis" = ["PVAL_VEC3",[0.0,0.0,1.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nCoordinateSpace "Coordinate Space" = "ELEMENT", PVAL_FLOAT flDisplayRadius "Display Radius" = 16.0, PVAL_COLOR_RGB displayColor "Display Color" = ["PVAL_COLOR_RGB",[170,170,110]], PVAL_BOOL bApplyToCurrentTransform "Apply To Current Transform" = true, PVAL_FLOAT flSnappingIncrement "Snapping Increment" = 0.0, PVAL_FLOAT flInitialAngle "Initial Angle" = 0.0, PVAL_BOOL bEnforceLimits "Enforce Limits" = false, PVAL_FLOAT flMinAngle "Minimum Angle" = 0.0, PVAL_FLOAT flMaxAngle "Maximum Angle" = 0.0) -> (PVAL_FLOAT retval "Result");
-}
-
-// fingerprint = 1443227711
-CSmartPropPulse_CreateSizer
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Create Sizer"
-	// m_Description = "Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values."
-	// m_Variables[] = {"m_Name":"m_Name","m_FullType":"string","m_LongName":"Name","m_Description":"Name used to identify the sizer. Must be unique within the paraent element.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"","m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMinX","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Min X","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMaxX","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Max X","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMinY","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Min Y","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMaxY","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Max Y","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMinZ","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Min Z","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// m_Variables[] = {"m_Name":"m_bHACK_ProvideResultMaxZ","m_FullType":"boolean","m_LongName":"HAC K  Provide Result Max Z","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// MVDataClassGroup = "Manipulators"
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_CreateSizer"
-	// pulse_outflows = default {"allow_direct_return":true}
-	// bDisplayModel: description = "If enabled a model will be displayed at the position of the sizer that can be used to select the sizer in Hammer."
-	// flInitialMinX: metadata = {"group":"X-Axis Size"}
-	// flInitialMaxX: metadata = {"group":"X-Axis Size"}
-	// flConstraintMinX: metadata = {"group":"X-Axis Size"}
-	// flConstraintMaxX: metadata = {"group":"X-Axis Size"}
-	// flInitialMinY: metadata = {"group":"Y-Axis Size"}
-	// flInitialMaxY: metadata = {"group":"Y-Axis Size"}
-	// flConstraintMinY: metadata = {"group":"Y-Axis Size"}
-	// flConstraintMaxY: metadata = {"group":"Y-Axis Size"}
-	// flInitialMinZ: metadata = {"group":"Z-Axis Size"}
-	// flInitialMaxZ: metadata = {"group":"Z-Axis Size"}
-	// flConstraintMinZ: metadata = {"group":"Z-Axis Size"}
-	// flConstraintMaxZ: metadata = {"group":"Z-Axis Size"}
-	// ResultMinX: metadata = {"group":"X-Axis Size"}
-	// ResultMinX: associated_outflow_name = "OutDefault"
-	// ResultMinX: direct_return_value_for = "Run"
-	// ResultMaxX: metadata = {"group":"X-Axis Size"}
-	// ResultMaxX: associated_outflow_name = "OutDefault"
-	// ResultMaxX: direct_return_value_for = "Run"
-	// ResultMinY: metadata = {"group":"Y-Axis Size"}
-	// ResultMinY: associated_outflow_name = "OutDefault"
-	// ResultMinY: direct_return_value_for = "Run"
-	// ResultMaxY: metadata = {"group":"Y-Axis Size"}
-	// ResultMaxY: associated_outflow_name = "OutDefault"
-	// ResultMaxY: direct_return_value_for = "Run"
-	// ResultMinZ: metadata = {"group":"Z-Axis Size"}
-	// ResultMinZ: associated_outflow_name = "OutDefault"
-	// ResultMinZ: direct_return_value_for = "Run"
-	// ResultMaxZ: metadata = {"group":"Z-Axis Size"}
-	// ResultMaxZ: associated_outflow_name = "OutDefault"
-	// ResultMaxZ: direct_return_value_for = "Run"
-	class CSmartPropPulse_CreateSizer(PVAL_BOOL bDisplayModel "Display Model" = false, PVAL_FLOAT flInitialMinX "Initial Min X" = 0.0, PVAL_FLOAT flInitialMaxX "Initial Max X" = 0.0, PVAL_FLOAT flConstraintMinX "Constraint Min X" = 0.0, PVAL_FLOAT flConstraintMaxX "Constraint Max X" = 0.0, PVAL_FLOAT flInitialMinY "Initial Min Y" = 0.0, PVAL_FLOAT flInitialMaxY "Initial Max Y" = 0.0, PVAL_FLOAT flConstraintMinY "Constraint Min Y" = 0.0, PVAL_FLOAT flConstraintMaxY "Constraint Max Y" = 0.0, PVAL_FLOAT flInitialMinZ "Initial Min Z" = 0.0, PVAL_FLOAT flInitialMaxZ "Initial Max Z" = 0.0, PVAL_FLOAT flConstraintMinZ "Constraint Min Z" = 0.0, PVAL_FLOAT flConstraintMaxZ "Constraint Max Z" = 0.0) -> (PVAL_FLOAT ResultMinX "Result Min X", PVAL_FLOAT ResultMaxX "Result Max X", PVAL_FLOAT ResultMinY "Result Min Y", PVAL_FLOAT ResultMaxY "Result Max Y", PVAL_FLOAT ResultMinZ "Result Min Z", PVAL_FLOAT ResultMaxZ "Result Max Z");
-}
-
-// fingerprint = 1651974530
-CSmartPropPulse_CriteriaPathPosition
-{
-	// m_BaseClasses = ["CPulseCell_BaseRequirement"]
-	// m_FriendlyName = "Valid Path Positions"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 7
-	// requirement_pass = 1
-	// requirement_summary_expr = ""
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"CheckRequirement","friendly_name":"Check Requirement","description":"","yields":false,"terminates":false,"is_default_inflow":false,"requirement_check":true,"requirement_commit":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_CriteriaPathPosition"
-	// m_PlaceAtPositions: description = "Specifies the method to use to determine which positions this element should be placed at along the path."
-	// m_nPlaceEveryNthPosition: description = "Specifies the spacing between positions. For example, a value of 1 will place the element at very position, 2 every other position, 3 every third position"
-	// m_nPlaceEveryNthPosition: metadata = {"suppress_expr":"( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )"}
-	// m_nNthPositionIndexOffset: description = "Specifies an offset to use when determining the Nth position to place an element at. For example if placing at every third position with an offset of 0, an element will appear at positions 1, 4, 7, and so on. But if an offset of 2 is set instead of 0, then an element will appear at positions 3, 6, and 9 and so on."
-	// m_nNthPositionIndexOffset: metadata = {"suppress_expr":"( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )"}
-	// m_bAllowAtStart: description = "Should this element be placed at the first positions on the path"
-	// m_bAllowAtEnd: description = "Should this element be placed at the last positions on the path"
-	class CSmartPropPulse_CriteriaPathPosition(PVAL_SCHEMA_ENUM:SmartPropPathPositions_t m_PlaceAtPositions "Place At Positions", PVAL_INT m_nPlaceEveryNthPosition "Place Every Nth Position", PVAL_INT m_nNthPositionIndexOffset "Nth Position Index Offset", PVAL_BOOL m_bAllowAtStart "Allow At Start", PVAL_BOOL m_bAllowAtEnd "Allow At End");
-}
-
-// fingerprint = 1861564314
-CSmartPropPulse_FitOnLine
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Fit on Line"
-	// m_Description = "An element which fits one or more instances of a set of choices on to a line."
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow = false
-	// generic_node_category = 5
-	// is_state_cell = false
-	// allowed_requirements = {"CPulseCell_IsRequirementValid":true,"CSmartPropPulse_SelectionLinearLength":true,"CSmartPropPulse_SelectionEndCap":true}
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Pick","friendly_name":"Pick","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_FitOnLine"
-	// header_icon = "tools/images/pulse_editor/requirements.png"
-	// editor_canvas_item_spec = {"className":"IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode","create_special_outflows_section":true}
-	// is_selector
-	// pulse_node_custom_attributes = [{"field_name":"m_OutflowList","attr_factory":"PulseSelectorOutflowList_t","friendly_name":"Outflow List","description":""}]
-	// vStart: description = "Specifies the start point of the line in the specified coordinate space."
-	// vEnd: description = "Specifies the end point of the line in the specified coordinate space."
-	// nPointSpace: description = "Specifies the coordinate space in which the end point values are specified."
-	// bOrientAlongLine: description = "Should the child elements be oriented based on the line. If enabled the child elements placed on the line will be oriented such that their +x axis points along the line towards the end point."
-	// vUpDirection: description = "Up vector which is used to determine the rotation of each element around the line."
-	// nUpDirectionSpace: description = "Space in which the up direction is defined."
-	// bPrioritizeUp: description = "When the up direction is not orthogonal to the line direction normally the up vector will be adjusted to make it orthogonal to the line direction. If prioritize up is true, then the up direction will be maintained and the forward direction will be adjusted."
-	// nScaleMode: description = "Specifies how scale is applied to each of the selected element in order to fit them to the line."
-	// nPickMode: description = "Specifies how scale is applied to each of the selected element in order to fit them to the line."
-	class CSmartPropPulse_FitOnLine(PVAL_VEC3 vStart "Start" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_VEC3 vEnd "End" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nPointSpace "End point space" = "ELEMENT", PVAL_BOOL bOrientAlongLine "Orient Along Line" = false, PVAL_VEC3 vUpDirection "Up Direction" = ["PVAL_VEC3",[0.0,0.0,1.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nUpDirectionSpace "Up Direction Space" = "ELEMENT", PVAL_BOOL bPrioritizeUp "Prioritize Up" = false, PVAL_SCHEMA_ENUM:ScaleMode_t nScaleMode "Scale Mode" = "NONE", PVAL_SCHEMA_ENUM:PickMode_t nPickMode "Child Selection Mode" = "LARGEST_FIRST");
-}
-
-// fingerprint = 296681079
-CSmartPropPulse_Group
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Group"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow = false
-	// generic_node_category = 5
-	// is_state_cell = false
-	// allowed_requirements = {"CPulseCell_IsRequirementValid":true}
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_Group"
-	// header_icon = "tools/images/pulse_editor/requirements.png"
-	// editor_canvas_item_spec = {"className":"IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode","create_special_outflows_section":true}
-	// is_selector
-	// pulse_node_custom_attributes = [{"field_name":"m_OutflowList","attr_factory":"PulseSelectorOutflowList_t","friendly_name":"Outflow List","description":""}]
-	class CSmartPropPulse_Group(null);
-}
-
-// fingerprint = 1742532948
-CSmartPropPulse_PickOneSelector
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Select Single Child"
-	// m_Description = "An element which selects a single choice from its set of child choices."
-	// m_Variables[] = {"m_Name":"m_HandleShape","m_FullType":"choices","m_LongName":"Handle Shape","m_Description":"Shape of the configuration handle to display.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"SQUARE","m_KV3Metadata":{"hidden":false,"group":"Handle Settings","readonly_expr":"bConfigurable == false"},"m_pItemSet":{"m_eType":"choices","m_Items":[{"m_iValue":0,"m_Value":"NONE","m_FriendlyName":"None","m_bDefault":false,"m_bCustom":false,"m_Description":""},{"m_iValue":0,"m_Value":"SQUARE","m_FriendlyName":"Square","m_bDefault":false,"m_bCustom":false,"m_Description":""},{"m_iValue":0,"m_Value":"CIRCLE","m_FriendlyName":"Circle","m_bDefault":false,"m_bCustom":false,"m_Description":""},{"m_iValue":0,"m_Value":"DIAMOND","m_FriendlyName":"Diamond","m_bDefault":false,"m_bCustom":false,"m_Description":""}]}}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow = false
-	// generic_node_category = 5
-	// is_state_cell = false
-	// allowed_requirements = {"CPulseCell_IsRequirementValid":true,"CSmartPropPulse_SelectionChoiceWeight":true}
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Pick","friendly_name":"Pick","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_PickOneSelector"
-	// header_icon = "tools/images/pulse_editor/requirements.png"
-	// editor_canvas_item_spec = {"className":"IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode","create_special_outflows_section":true}
-	// is_selector
-	// pulse_node_custom_attributes = [{"field_name":"m_OutflowList","attr_factory":"PulseSelectorOutflowList_t","friendly_name":"Outflow List","description":""}]
-	// nSelectionMode: description = "Specifies how the initial selection of a choice should be handled."
-	// nSpecificChildIndex: description = "Specifies the index of the child to pick."
-	// nSpecificChildIndex: metadata = {"suppress_expr":"( nSelectionMode != SPECIFIC )"}
-	// bConfigurable: description = "Should a control to select the specific choice be shown when this prop is placed in Hammer."
-	// bConfigurable: advanced_view
-	// vHandleOffset: description = "Specifies an offset in the local space of the element to apply to the configuration handle."
-	// vHandleOffset: metadata = {"readonly_expr":"bConfigurable == false","group":"Handle Settings"}
-	// colHandleColor: description = "Color to use to display the configuration handle."
-	// colHandleColor: metadata = {"readonly_expr":"bConfigurable == false","group":"Handle Settings"}
-	// nHandleSize: description = "Size of the configuration handle."
-	// nHandleSize: metadata = {"readonly_expr":"bConfigurable == false","group":"Handle Settings"}
-	class CSmartPropPulse_PickOneSelector(PVAL_SCHEMA_ENUM:SmartPropChoiceSelectionMode_t nSelectionMode "Selection Mode" = "RANDOM", PVAL_INT nSpecificChildIndex "Specific Child" = 0, PVAL_BOOL bConfigurable "Configurable" = true, PVAL_VEC3 vHandleOffset "Handle Offset" = ["PVAL_VEC3",[0.0,0.0,0.0]], PVAL_COLOR_RGB colHandleColor "Col Handle Color" = ["PVAL_COLOR_RGB",[144,144,144]], PVAL_INT nHandleSize "Handle Size" = 9);
-}
-
-// fingerprint = 1213402800
-CSmartPropPulse_PlaceInSphere
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Place In Radius"
-	// m_Description = "An element which places multiple instances of its child elements within a radius."
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_PlaceInSphere"
-	// pulse_outflows = {"name":"m_Place","is_default_outflow":true,"backed_by_variable":true,"friendly_name":"Place","description":""}
-	// nPlacementMode: description = "Specifies how the positions are computed based on the radius."
-	// nDistributionMode: description = "Specifies the method to be used to distribute."
-	// flRandomness: description = "0 to 1 value indicating the amout of random offset that should be applied to the reguluarly spaced positions"
-	// flRandomness: metadata = {"suppress_expr":"m_DistributionMode == RANDOM"}
-	// vPlaneUpDirection: description = "Vector up direction of the plane of the circle. This in the local space of the current element."
-	// vPlaneUpDirection: metadata = {"suppress_expr":"m_PlacementMode == SPHERE"}
-	// nCountMin: description = "Minimum number of instances of this object and its children to be placed."
-	// nCountMax: description = "Maximum number of instances of this object and its children to be placed."
-	// flPositionRadiusInner: description = "Inner radius from the placement position where the model can appear."
-	// flPositionRadiusOuter: description = "Outer radius from the placement position where the model can appear."
-	// bAlignOrientation: description = "Align the initial orientation of each placed object based on it position on the sphere or circle."
-	// vAlignDirection: description = "Vector in the local space of the child element to be aligned with sphere or circle"
-	// vAlignDirection: metadata = {"readonly_expr":"m_bAlignOrientation == false"}
-	class CSmartPropPulse_PlaceInSphere(PVAL_SCHEMA_ENUM:SmartPropRadiusPlacementMode_t nPlacementMode "Placement Mode" = "SPHERE", PVAL_SCHEMA_ENUM:SmartPropDistributionMode_t nDistributionMode "Distribution Mode" = "RANDOM", PVAL_FLOAT flRandomness "Randomness" = 0.0, PVAL_VEC3 vPlaneUpDirection "Plane Up Direction" = ["PVAL_VEC3",[0.0,0.0,1.0]], PVAL_INT nCountMin "Count Min" = 1, PVAL_INT nCountMax "Count Max" = 1, PVAL_FLOAT flPositionRadiusInner "Position Radius Inner" = 0.0, PVAL_FLOAT flPositionRadiusOuter "Position Radius Outer" = 0.0, PVAL_BOOL bAlignOrientation "Align Orientation" = false, PVAL_VEC3 vAlignDirection "Align Direction" = ["PVAL_VEC3",[0.0,0.0,1.0]]);
-}
-
-// fingerprint = 365169379
-CSmartPropPulse_PlaceOnPath
-{
-	// m_BaseClasses = ["CSmartPropPulse_BaseQueryableFlow"]
-	// m_FriendlyName = "Place On Path"
-	// m_Variables[] = {"m_Name":"m_PathName","m_FullType":"string","m_LongName":"Path Name","m_Description":"Name of the path to use. This path name will show up in the property editor when selecting a placement of this smart prop in Hammer, allowing selection of a path object in the map to use.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"","m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow = false
-	// generic_node_category = 5
-	// is_state_cell = false
-	// supported_domains = {"SmartPropEval":true}
-	// allowed_requirements = {"CPulseCell_IsRequirementValid":true,"CSmartPropPulse_CriteriaPathPosition":true}
-	// pulse_inflows = {"name":"Place","friendly_name":"Place","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_PlaceOnPath"
-	// header_icon = "tools/images/pulse_editor/requirements.png"
-	// editor_canvas_item_spec = {"className":"IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode","create_special_outflows_section":true}
-	// is_selector
-	// pulse_node_custom_attributes = [{"field_name":"m_OutflowList","attr_factory":"PulseSelectorOutflowList_t","friendly_name":"Outflow List","description":""}]
-	// flSpacing: description = "Spacing between points on the path"
-	// flOffsetAlongPath: description = "Offset from the start of the path to place the first point."
-	// vPathOffset: description = "Offset to apply to the path, specifies a horizontal and vertical offset to apply relative to the up direction."
-	// nPathSpace: description = "Specifies the space in which the provided input path is to be evalauted.<br><br><b>World Space</b>: The input path will be evaluated in world space, such that child elements will be placed directly on the target path regardless of the transform of the smart prop object. <br><b>Object Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the smart prop object. <br><b>Element Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the current element within the smart prop. "
-	// bUseFixedUpDirection: description = "If true, treat the specified up direction as fixed up direction to apply to all elements placed on the path. If false the up direction is just an initial direction."
-	// bUseProjectedDistance: description = "Compute the spacing distance in the 2d plane defined by the up direction. Most useful when using a fixed up direction, if maintaining a distance in the 2d plane is more important than maintaing distance along the path."
-	// vUpDirection: description = "If not using a fixed up direction, provides an initial up direction which will be used to determine the orientation of first element on the path, after that the elements will incrementally update to follow the path and may not match this direction. If Use Fixed Up direction is specified, then all elements will use this direction to deterime their up direction."
-	// nUpDirectionSpace: description = "Space in which the up direction is defined."
-	// bDefaultPathInWorldSpace: description = "If enabled, the default path values will be treated as world space values, if disabled they are treated as object space values. Typically it makes sense for literal values to be treated as being in object space, but if the values are being supplied by locators they will typically be in world space."
-	// defaultPath: description = "A set of points defining a path to use when an external path isn't specified. This will be used in the preview and thumbnail for the smart prop. It will also be used when the smart prop is placed in Hammer before a path is selected."
-	// defaultPath: metadata = {"polymorphic_arg":true}
-	class CSmartPropPulse_PlaceOnPath(PVAL_FLOAT flSpacing "Spacing" = 1.0, PVAL_FLOAT flOffsetAlongPath "Offset Along Path" = 0.0, PVAL_VEC2 vPathOffset "Offset from path" = ["PVAL_VEC2",[0.0,0.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nPathSpace "Path Evaluation Space" = "WORLD", PVAL_BOOL bUseFixedUpDirection "Use Fixed Up Direction" = false, PVAL_BOOL bUseProjectedDistance "Use Projected Distance" = false, PVAL_VEC3 vUpDirection "Up Direction" = ["PVAL_VEC3",[0.0,0.0,1.0]], PVAL_SCHEMA_ENUM:SmartPropSpace_t nUpDirectionSpace "Up Direction Space" = "WORLD", PVAL_BOOL bDefaultPathInWorldSpace "Default Path In World Space" = false, PVAL_ARRAY:PVAL_VEC3 defaultPath "Default Path" = ["PVAL_ARRAY:PVAL_VEC3",[]]);
-}
-
-// fingerprint = 3005088875
-CSmartPropPulse_SelectionChoiceWeight
-{
-	// m_BaseClasses = ["CPulseCell_BaseRequirement"]
-	// m_FriendlyName = "Choice Weight"
-	// m_Description = "Specifies a weighting value which affects that likelyhood of selecting this element which picking a choice."
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 7
-	// requirement_pass = 1
-	// requirement_summary_expr = ""
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"CheckRequirement","friendly_name":"Check Requirement","description":"","yields":false,"terminates":false,"is_default_inflow":false,"requirement_check":true,"requirement_commit":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_SelectionChoiceWeight"
-	// m_flWeight: description = "Relative weight of this choice, higher weighted choices are more likely to be selected."
-	class CSmartPropPulse_SelectionChoiceWeight(PVAL_FLOAT m_flWeight "Weight");
-}
-
-// fingerprint = 4176728700
-CSmartPropPulse_SelectionEndCap
-{
-	// m_BaseClasses = ["CPulseCell_BaseRequirement"]
-	// m_FriendlyName = "End Cap Settings"
-	// m_Description = "Specifies that this is a special part that should be used at the start or end of the line."
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 7
-	// requirement_pass = 1
-	// requirement_summary_expr = ""
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"CheckRequirement","friendly_name":"Check Requirement","description":"","yields":false,"terminates":false,"is_default_inflow":false,"requirement_check":true,"requirement_commit":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_SelectionEndCap"
-	// m_bStart: description = "Is this an element which should be placed at the start of the line."
-	// m_bEnd: description = "Is this an element which should be placed at the end of the line."
-	class CSmartPropPulse_SelectionEndCap(PVAL_BOOL m_bStart "Start", PVAL_BOOL m_bEnd "End");
-}
-
-// fingerprint = 1476870674
-CSmartPropPulse_SelectionLinearLength
-{
-	// m_BaseClasses = ["CPulseCell_BaseRequirement"]
-	// m_FriendlyName = "Linear Length"
-	// m_Description = "Specifies the length of this element, used when fitting an element on to a line."
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 7
-	// requirement_pass = 1
-	// requirement_summary_expr = ""
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"CheckRequirement","friendly_name":"Check Requirement","description":"","yields":false,"terminates":false,"is_default_inflow":false,"requirement_check":true,"requirement_commit":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_SelectionLinearLength"
-	// m_flLength: description = "Specifies the length of the line that will be taken up if this element is selected."
-	// m_bAllowScale: description = "Can this object be scaled. If enabled the minimum and maximum lengths must be set to specify the size range of allowable scale."
-	// m_flMinLength: description = "Minimum allowable length for the object. Must be <= length. If length is 100 and minimum length is 20, then the object may be assigned a scale in the rage [ 0.2, 1.0 ]."
-	// m_flMinLength: metadata = {"suppress_expr":"m_bAllowScale == false"}
-	// m_flMaxLength: description = "Maximum allowable length for the object. Must be >= length. If length is 100 and maximum length is 160, then the object may be assigned a scale in the rage [ 1.0, 1.6 ]."
-	// m_flMaxLength: metadata = {"suppress_expr":"m_bAllowScale == false"}
-	class CSmartPropPulse_SelectionLinearLength(PVAL_FLOAT m_flLength "Length", PVAL_BOOL m_bAllowScale "Allow Scale", PVAL_FLOAT m_flMinLength "Minimum length", PVAL_FLOAT m_flMaxLength "Maximum length");
-}
-
-// fingerprint = 1529319683
-CSmartPropPulse_SmartProp
-{
-	// m_BaseClasses = ["CPulseCell_BaseFlow"]
-	// m_FriendlyName = "Smart Prop Reference"
-	// m_Variables[] = {"m_Name":"m_hSmartProp","m_FullType":"resource:vsmart","m_LongName":"Smart Prop","m_Description":"Name of the target smart prop resource (.vsmart) to evaluate.","m_bUsingLegacyDefault":false,"m_DefaultKV3":"","m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// __populated_from_schema_modules = ["resourcecompiler.dll"]
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 5
-	// is_state_cell = false
-	// supported_domains = {"SmartPropEval":true}
-	// pulse_inflows = {"name":"Run","friendly_name":"Run","description":"","yields":false,"terminates":false,"is_default_inflow":true}
-	// fingerprint = "@lib:resourcecompiler.dll!CSmartPropPulse_SmartProp"
-	// pulse_outflows = default {"allow_direct_return":true}
-	class CSmartPropPulse_SmartProp(null);
-}
-
-SmartPropEval
-{
-	// m_BaseClasses = ["BaseDomain"]
-	// m_FriendlyName = "Smart Prop"
-	// m_Description = "Experimental - please ignore"
-	// is_pulse_domain
-	// debugger_can_create_instance = false
-	// is_game_blackboard = false
-	// hidden_in_tool
-	// domain_scope = "resourcecompiler.dll"
-	// allowed_api_features = "AF_SELECTORS_WITHOUT_REQUIREMENTS"
-	class SmartPropEval;
-}
-
 // Fingerprints of libraries and types without bindings
+@lib:resourcecompiler.dll!CEntityComponent_API = 0
+@lib:resourcecompiler.dll!CPulseCell_FireCursors = 824535693
 @lib:resourcecompiler.dll!CPulseCell_Inflow_EntOutputHandler = 0
 @lib:resourcecompiler.dll!CPulseCell_Inflow_EventHandler = 0
 @lib:resourcecompiler.dll!CPulseCell_Inflow_GraphHook = 0
 @lib:resourcecompiler.dll!CPulseCell_Inflow_Method = 0
 @lib:resourcecompiler.dll!CPulseCell_Inflow_ObservableVariableListener = 0
+@lib:resourcecompiler.dll!CPulseCell_Inflow_Yield = 955696098
 @lib:resourcecompiler.dll!CPulseCell_IsRequirementValid = 931326599
+@lib:resourcecompiler.dll!CPulseCell_ObservableSwitchState = 3382071419
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleOrdered = 4001330057
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleRandom = 4259677353
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleShuffled = 2434550510
+@lib:resourcecompiler.dll!CPulseCell_RaceCursors = 3041539765
+@lib:resourcecompiler.dll!CPulseCell_ReturnValues = 2637216531
+@lib:resourcecompiler.dll!CPulseCell_Step_CallExternalMethod = 1549135810
 @lib:resourcecompiler.dll!CPulseCell_Step_DebugLog = 3575830881
 @lib:resourcecompiler.dll!CPulseCell_Step_PublicOutput = 861796290
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:ApplyColorMode_t = 2105434485
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:ConfigurationHandleShape_t = 1361074542
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:PickMode_t = 637956512
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t = 627611872
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:PulseCursorWakePriority_t = 2889899724
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:PulseDurationStringFormat_t = 1531666510
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:ScaleMode_t = 160415312
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropChoiceSelectionMode_t = 1594422340
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropColorSelectionMode_t = 2587002397
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropDetailFadeLevel_t = 1038923651
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropDirection_t = 1087466509
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropDistributionMode_t = 27231931
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropGridOriginBasis_t = 3238756410
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropGridPlacementMode_t = 3971003712
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropPathPositions_t = 162285291
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropPlaceMeshOrientationMode_t = 1128921260
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropRadiusPlacementMode_t = 1415308148
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:SmartPropSpace_t = 1968022276
-@type:resourcecompiler.dll!PVAL_SCHEMA_ENUM:TraceNoHitResult_t = 3636113325
+@lib:resourcecompiler.dll!CPulseCell_Timeline = 3988269055
+@type:resourcecompiler.dll!PVAL_ENUM:PulseCursorCancelPriority_t = 627611872
+@type:resourcecompiler.dll!PVAL_ENUM:PulseCursorWakePriority_t = 2889899724
+@type:resourcecompiler.dll!PVAL_ENUM:PulseDurationStringFormat_t = 1531666510

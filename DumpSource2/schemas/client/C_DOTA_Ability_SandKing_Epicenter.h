@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_SandKing_Epicenter : public C_DOTABaseAbility
 {
 	ParticleIndex_t m_nFXEpicenterIndex;

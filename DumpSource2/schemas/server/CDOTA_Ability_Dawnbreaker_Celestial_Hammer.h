@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Dawnbreaker_Celestial_Hammer : public CDOTABaseAbility
 {
 	int32 m_nProjectileIndex;

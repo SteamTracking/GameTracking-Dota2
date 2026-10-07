@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_TempTree : public CBaseAnimatingActivity
 {
 	GameTime_t m_fExpireTime;

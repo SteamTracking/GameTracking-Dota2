@@ -33,6 +33,7 @@ class CBaseModelEntity : public CBaseEntity
 	Color m_clrRender;
 	CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t > m_vecRenderAttributes;
 	bool m_bRenderToCubemaps;
+	bool m_bExpandRenderBoundsToIncludeCloth;
 	bool m_bNoInterpolate;
 	CCollisionProperty m_Collision;
 	CGlowProperty m_Glow;
@@ -42,6 +43,8 @@ class CBaseModelEntity : public CBaseEntity
 	float32 m_flFadeScale;
 	float32 m_flShadowStrength;
 	uint8 m_nObjectCulling;
+	uint32 m_bodyGroupTotalRequestCount;
+	CUtlVectorFixedGrowable< CBaseModelEntity::BodyGroupRequest_t, 8 > m_bodyGroupRequests;
 	CUtlOrderedMap< CGlobalSymbol, int32 > m_bodyGroupChoices;
 	CNetworkViewOffsetVector m_vecViewOffset;
 	// MKV3TransferSaveOpsForField = "GetHitgroupDisableListSaveRestoreOps"

@@ -8,7 +8,7 @@
 
 @BaseClass = IndoorOutdoorLevel
 [
-	indoor_outdoor_level(choices) : "Priority" : "0" : "If multiple volumes contain an object, the highest priority volume takes precedence." = 
+	indoor_outdoor_level(intchoices) : "Priority" : "0" : "If multiple volumes contain an object, the highest priority volume takes precedence." = 
 	[
 		"-2" : "Lowest"
 		"-1" : "Low"
@@ -29,7 +29,7 @@
 	lightprobetexture(resource:texture) [ group = "Lightprobes" ] : "Light Probe Texture" : "" : "Name of the light probe texture"
 	box_mins(vector) [ group = "Bounds" ] : "Box Mins" : "-72 -72 -72"
 	box_maxs(vector) [ group = "Bounds" ] : "Box Maxs" : "72 72 72"
-	voxel_size(choices) [ group = "Lightprobes" ] : "Voxel Size" : "48.0" : "" = 
+	voxel_size(floatchoices) [ group = "Lightprobes" ] : "Voxel Size" : "48.0" : "" = 
 	[
 		"12.0" : "Very High Resolution"
 		"24.0" : "High Resolution"
@@ -40,7 +40,7 @@
 	voxelize(boolean) [ group = "Lightprobes" ]  : "Ignore Voxelized Solid Space" : 1
 	light_probe_volume_from_cubemap(boolean) [ group = "Lightprobes" ] : "Calculate Diffuse Lighting Using Cubemap" : 0
 	moveable(boolean) [ group = "Lightprobes" ]  : "Moveable" : "0" : "Can be moved, parented, enabled, or disabled at runtime."
-	storage(choices) [ group = "Lightprobes" ] : "Storage" : "-1" : "" =
+	storage(intchoices) [ group = "Lightprobes" ] : "Storage" : "-1" : "" =
 	[
 		"-1" : "Default"
 		"0" : "AmbientCube RGBM8888 Uncompressed"
@@ -67,7 +67,7 @@
 		is_light_probe_volume = true
 		toggle_faces_with_selection_overlay = true
 	}
-	bakeresource( "lightprobetexture,lightprobetexture_dlshd", "vtex,vtex", "env_light_probe_volume,env_light_probe_volume_dlshd", "ToolObjects/LightProbeVolume" )
+	bakeresource( "lightprobetexture,lightprobetexture_dlshd,lightprobetexture_sh2_dc,lightprobetexture_sh2_l1", "vtex,vtex,vtex,vtex", "env_light_probe_volume,env_light_probe_volume_dlshd,env_light_probe_volume_sh2_dc,env_light_probe_volume_sh2_l1", "ToolObjects/LightProbeVolume" )
 = env_light_probe_volume : "A grid of precomputed light probes."
 [
 ]
@@ -127,7 +127,7 @@
 		edge_fades = "edge_fade_dists"
 		toggle_faces_with_selection_overlay = true
 	}
-	bakeresource( "lightprobetexture,lightprobetexture_dlshd", "vtex,vtex", "env_light_probe_volume,env_light_probe_volume_dlshd", "ToolObjects/LightProbeVolume" )
+	bakeresource( "lightprobetexture,lightprobetexture_dlshd,lightprobetexture_sh2_dc,lightprobetexture_sh2_l1", "vtex,vtex,vtex,vtex", "env_light_probe_volume,env_light_probe_volume_dlshd,env_light_probe_volume_sh2_dc,env_light_probe_volume_sh2_l1", "ToolObjects/LightProbeVolume" )
 	bakeresource( cubemaptexture, vtex, env_cubemap, "ToolObjects/CubeMap" )
 	cubemap()
 = env_combined_light_probe_volume : "Combination of an env_cubemap_box and an env_light_probe_volume"

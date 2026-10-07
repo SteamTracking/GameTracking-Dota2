@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Brewmaster_CinderBrew : public CDOTABaseAbility
 {
 	CUtlVector< CHandle< CBaseEntity > > m_hUnitsHit;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Creature_Ice_Breath : public C_DOTABaseAbility
 {
 	int32 speed;

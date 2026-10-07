@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_BaseNPC_Tinker_Turret : public CDOTA_BaseNPC_Additive
 {
 	QAngle m_angle;

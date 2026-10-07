@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_BaseNPC_Hero : public CDOTA_BaseNPC_Additive
 {
 	float32 m_flStrength;
@@ -52,7 +51,7 @@ class CDOTA_BaseNPC_Hero : public CDOTA_BaseNPC_Additive
 	int32 m_iMultipleKillCount;
 	float32 m_flKillStreakStartTime;
 	bool m_bDisableWearables;
-	CHandle< CDOTAWearableItem >[103] m_hTogglableWearable;
+	CHandle< CDOTAWearableItem >[112] m_hTogglableWearable;
 	CDOTA_BaseNPC_Hero::KillInfo_t m_KillInfo;
 	CountdownTimer m_DirectorAbilityActivity;
 	bool m_bReincarnating;

@@ -11,6 +11,6 @@ class ModelMeshBufferData_t
 	bool m_bCreateBufferUAV;
 	bool m_bCreateRawBuffer;
 	bool m_bCreatePooledBuffer;
-	uint8 m_nBufferUsage;
+	uint16 m_nBufferUsage;
 	CUtlVector< RenderInputLayoutField_t > m_inputLayoutFields;
 };

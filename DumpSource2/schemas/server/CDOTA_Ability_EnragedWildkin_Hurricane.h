@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_EnragedWildkin_Hurricane : public CDOTABaseAbility
 {
 	float32 distance;

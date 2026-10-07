@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_WitchDoctor_DeathWard : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hWard;

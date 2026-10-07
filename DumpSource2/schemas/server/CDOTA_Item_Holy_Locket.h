@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_Holy_Locket : public CDOTA_Item
 {
 	float32 charge_radius;

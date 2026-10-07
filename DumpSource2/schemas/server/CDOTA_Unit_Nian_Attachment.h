@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Unit_Nian_Attachment : public CDOTA_BaseNPC_Additive
 {
 	bool m_bAttachmentBroken;

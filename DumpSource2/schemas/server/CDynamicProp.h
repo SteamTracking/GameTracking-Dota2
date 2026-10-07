@@ -14,6 +14,7 @@ class CDynamicProp : public CBreakableProp
 	CEntityIOOutput m_pOutputAnimLoopCycleOver;
 	CEntityIOOutput m_OnAnimReachedStart;
 	CEntityIOOutput m_OnAnimReachedEnd;
+	CEntityIOOutput[5] m_OnScriptFireEvent;
 	CUtlSymbolLarge m_iszIdleAnim;
 	AnimLoopMode_t m_nIdleAnimLoopMode;
 	bool m_bRandomizeCycle;

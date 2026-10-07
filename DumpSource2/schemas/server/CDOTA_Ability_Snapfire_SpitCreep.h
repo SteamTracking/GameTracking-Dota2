@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Snapfire_SpitCreep : public CDOTABaseAbility
 {
 	int32 m_nDamagePerProjectile;

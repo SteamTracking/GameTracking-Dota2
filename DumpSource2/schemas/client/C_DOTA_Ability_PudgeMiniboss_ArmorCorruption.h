@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_PudgeMiniboss_ArmorCorruption : public C_DOTABaseAbility
 {
 };

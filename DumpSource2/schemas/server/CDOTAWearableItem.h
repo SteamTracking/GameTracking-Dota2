@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTAWearableItem : public CEconWearable
 {
 	bool m_bOwnerModelChanged;

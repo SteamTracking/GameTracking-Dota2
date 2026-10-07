@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_AghsFort_Creature_Phoenix_LaunchFireSpirit : public C_DOTABaseAbility
 {
 	int32 spirit_speed;

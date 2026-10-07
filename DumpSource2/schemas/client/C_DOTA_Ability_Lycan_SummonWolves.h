@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Lycan_SummonWolves : public C_DOTABaseAbility
 {
 	char[260] szUnitName;

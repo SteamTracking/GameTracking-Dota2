@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Brewmaster_PermanentImmolation : public C_DOTABaseAbility
 {
 };

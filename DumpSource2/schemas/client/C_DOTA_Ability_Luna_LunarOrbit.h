@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Luna_LunarOrbit : public C_DOTABaseAbility
 {
 };

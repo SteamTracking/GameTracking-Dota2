@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Lycan_SummonWolves : public CDOTABaseAbility
 {
 	char[260] szUnitName;

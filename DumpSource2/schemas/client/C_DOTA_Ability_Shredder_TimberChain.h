@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Shredder_TimberChain : public C_DOTABaseAbility
 {
 	int32 chain_radius;

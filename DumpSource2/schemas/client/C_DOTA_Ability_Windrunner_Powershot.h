@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Windrunner_Powershot : public C_DOTABaseAbility
 {
 	GameTime_t m_fStartTime;

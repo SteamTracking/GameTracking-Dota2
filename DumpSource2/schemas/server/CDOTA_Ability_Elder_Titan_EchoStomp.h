@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Elder_Titan_EchoStomp : public CDOTABaseAbility
 {
 	ParticleIndex_t m_nFXIndexTitan;

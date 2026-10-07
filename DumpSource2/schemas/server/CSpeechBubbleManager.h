@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CSpeechBubbleManager : public CBaseEntity
 {
 	CUtlVectorEmbeddedNetworkVar< CSpeechBubbleInfo > m_SpeechBubbles;

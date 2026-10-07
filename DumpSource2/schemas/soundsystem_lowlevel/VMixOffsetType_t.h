@@ -1,0 +1,16 @@
+enum VMixOffsetType_t : uint32_t
+{
+	VO_CHAR = 0,
+	VO_ARRAY = 1,
+	VO_BOOL = 2,
+	VO_FLOAT = 3,
+	VO_UINT32 = 4,
+	VO_INT32 = 5,
+	VO_VECTOR = 6,
+	VO_QUATERNION = 7,
+	VO_CUBIC_SPLINE = 8,
+	VO_VSND_INPUT = 9,
+	VO_FLOAT_UTLVECTOR = 10,
+	VO_SHAREDPTR_IR = 11,
+	VO_TYPE_COUNT = 12,
+};

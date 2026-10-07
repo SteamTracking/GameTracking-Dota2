@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTACheers : public C_BaseEntity
 {
 	int16 m_nRadiantCheers;

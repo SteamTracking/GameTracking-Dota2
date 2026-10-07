@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Tidehunter_DeadInTheWater : public C_DOTABaseAbility
 {
 	int32 radius;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Chaos_Knight_Phantasmagoria : public CDOTABaseAbility
 {
 };

@@ -34,7 +34,7 @@
 		{
 			// These are optional language paths. They must be mounted first, which is why there are first in the list.
 			// *LANGUAGE* will be replaced with the actual language name. If not running a specific language, these paths will not be mounted
-			Game_Language		dota_*LANGUAGE*
+			Game_AudioLanguage	dota_*LANGUAGE*
 
 			// These are optional low-violence paths. They will only get mounted if you're in a low-violence mode.
 			Game_LowViolence	dota_lv
@@ -48,7 +48,7 @@
 
 			// These are optional language paths. They must be mounted first, which is why there are first in the list.
 			// *LANGUAGE* will be replaced with the actual language name. If not running a specific language, these paths will not be mounted
-			AddonRoot_Language	dota_*LANGUAGE*_addons
+			AddonRoot_AudioLanguage	dota_*LANGUAGE*_addons
 
 			AddonRoot			dota_addons
 

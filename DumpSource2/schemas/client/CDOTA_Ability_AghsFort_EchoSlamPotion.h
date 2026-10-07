@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_AghsFort_EchoSlamPotion : public C_DOTA_Item
 {
 	int32 echo_slam_damage_range;

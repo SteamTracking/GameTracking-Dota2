@@ -14,6 +14,4 @@ class C_BasePropDoor : public C_DynamicProp
 	QAngle m_closedAngles;
 	// MNotSaved
 	CHandle< C_BasePropDoor > m_hMaster;
-	// MNotSaved
-	VectorWS m_vWhereToSetLightingOrigin;
 };

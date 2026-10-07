@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Largo_CatchyLick : public CDOTABaseAbility
 {
 	float32 damage;

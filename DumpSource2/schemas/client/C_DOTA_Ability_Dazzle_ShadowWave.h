@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Dazzle_ShadowWave : public C_DOTABaseAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > m_hHitEntities;

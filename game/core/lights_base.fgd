@@ -36,7 +36,7 @@
 	enabled(boolean) [ group = "Direct Light" ] : "Enabled" : 1
 	color(color255) [ group = "Direct Light" ] : "Color" : "255 255 255"
 	brightness(float) [ group = "Direct Light" ] : "Brightness" : "1.0"
-	directlight(choices) [ group="Direct Light" ] : "Direct Lighting Type" : "2" : "How direct lighting should be represented" =
+	directlight(intchoices) [ group="Direct Light" ] : "Direct Lighting Type" : "2" : "How direct lighting should be represented" =
 	[
 		"0" : "None"
 		"1" : "Baked"
@@ -57,7 +57,7 @@
     // Shadows
     //
 
-	castshadows(choices) [ group = "Shadows" ] : "Cast Shadows" : "1" : "Whether this light casts shadow" =
+	castshadows(intchoices) [ group = "Shadows" ] : "Cast Shadows" : "1" : "Whether this light casts shadow" =
 	[
 		"1" : "Dynamic & Baked"
 		"2" : "Baked"
@@ -66,7 +66,7 @@
 
 	angulardiameter(float) { group = "Shadows" min="0.1" } : "Shadow Softness / Sun Spread Angle" : "1.0" : "Defines the shadow softness. Higher numbers produce more diffuse/softer shadows. 1 is a good starting value."
 
-	shadowpriority(choices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" : "Priority for the lights shadowmap" =
+	shadowpriority(intchoices) { group="Shadows" enabled={ variable="castshadows" value="1" } } : "Shadow Priority" : "-1" : "Priority for the lights shadowmap" =
 	[
 		"100" : "Highest"
 		"10"  : "High"
@@ -141,7 +141,7 @@
 	input SetCustomAppearance(string) : "Set a custom pattern of light brightness for this light. Pattern format is a string of characters, where 'a' is total darkness, 'z' fully bright. i.e. 'aaggnnttzz' would be a steppy fade in from dark to light."
 	
 	// Style
-	style(Choices) [ group="Style" ] : "Appearance" : 0 =
+	style(intchoices) [ group="Style" ] : "Appearance" : 0 =
 	[
 		0 : "Normal"
 		10: "Fluorescent flicker"

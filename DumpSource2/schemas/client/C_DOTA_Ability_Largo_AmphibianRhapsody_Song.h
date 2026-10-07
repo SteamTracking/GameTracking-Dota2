@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Largo_AmphibianRhapsody_Song : public C_DOTABaseAbility
 {
 	int32 double_song;

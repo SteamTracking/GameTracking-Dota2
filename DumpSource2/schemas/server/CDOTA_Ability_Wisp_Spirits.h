@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Wisp_Spirits : public CDOTABaseAbility
 {
 	CUtlVector< sSpiritDef > m_SpiritDefs;

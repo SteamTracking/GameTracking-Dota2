@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_BountyHunter_ShurikenToss : public CDOTABaseAbility
 {
 	CHandle< CDOTABaseAbility > m_hSourceAbility;

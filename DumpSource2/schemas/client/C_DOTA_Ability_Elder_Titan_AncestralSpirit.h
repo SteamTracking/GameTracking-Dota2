@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Elder_Titan_AncestralSpirit : public C_DOTABaseAbility
 {
 	float32 speed;

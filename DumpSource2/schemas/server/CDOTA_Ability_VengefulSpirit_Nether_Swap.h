@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_VengefulSpirit_Nether_Swap : public CDOTABaseAbility
 {
 	int32 m_nFXIndex;

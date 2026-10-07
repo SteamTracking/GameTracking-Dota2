@@ -444,6 +444,9 @@ cl_break_on_missing_resource (developmentonly)
 cl_checkdeclareclasses (cheat)
 	Check game code serializers
 
+cl_cleardraw (clientdll cheat)
+	Clears all lines drawn by drawline and drawcross
+
 cl_debugoverlay_cycle_domain (clientdll cheat)
 	Toggles visibility of the debug overlay system.
 
@@ -923,6 +926,9 @@ clear (dontrecord release)
 clearall (dontrecord release)
 	Clear console output from all views.
 
+cleardraw (gamedll cheat)
+	Clears all lines drawn by drawline and drawcross
+
 cli_ent_attachments (clientdll cheat)
 	Displays the interpolated attachment points on an entity.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
@@ -1007,6 +1013,9 @@ crash_job (cheat)
 
 crash_thread (cheat)
 	Cause the engine to crash in a brand new non-main thread (Debug!!)
+
+create_explosion_damage (gamedll cheat)
+	Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage).
 
 create_radius_damage (gamedll cheat)
 	Causes radius damage where you're looking, at the passed in radius.
@@ -1246,16 +1255,16 @@ dota_bp_frontpage_takeover_test_live_matches (developmentonly clientdll defensiv
 	Setup the frontpage takeover with some match data things.
 
 dota_bp_override_action (developmentonly clientdll)
-	<event action> [action score] - Calls dota_event_override_action for the current event
+	<event action> [action score] - Calls event_override_action for the current event
 
 dota_bp_override_clear (developmentonly clientdll)
-	Calls dota_event_override_clear for the current event
+	Calls event_override_clear for the current event
 
 dota_bp_override_level (developmentonly clientdll)
-	[level] - Calls dota_event_override_level for the current event
+	[level] - Calls event_override_level for the current event
 
 dota_bp_override_owned (developmentonly clientdll)
-	[owned] - Calls dota_event_override_owned for the current event
+	[owned] - Calls event_override_owned for the current event
 
 dota_bp_override_points (developmentonly clientdll)
 	[points] - Calls dota_event_override_points for the current event
@@ -1563,24 +1572,6 @@ dota_dump_server_inventory (developmentonly gamedll defensive)
 dota_dynamic_weather_toggle (developmentonly clientdll client_can_execute)
 	Toggle dynamic weather on/off
 
-dota_event_override_action (developmentonly clientdll)
-	<event id> <action id> [action score] - Set a clientside override of an event action. -1 to remove the override.
-
-dota_event_override_clear (developmentonly clientdll)
-	<event id> - Clear any clientside overrides for an event
-
-dota_event_override_level (developmentonly clientdll)
-	<event id> [level] - Set a clientside override of the level value for an event. -1 to remove the override.
-
-dota_event_override_owned (developmentonly clientdll)
-	<event id> [owned] - Set a clientside override of whether an event is owned. -1 for not owned, 1 for owned, 0 for no override.
-
-dota_event_override_points (developmentonly clientdll)
-	<event id> [points] - Set a clientside override of the point value for an event
-
-dota_event_override_premium_points (developmentonly clientdll)
-	<event id> [premium points] - Set a clientside override of the premium points for an event. -1 to remove the override.
-
 dota_event_set_active_seasonid (developmentonly clientdll)
 	Sets the current season id for an event (zero will use current timestamp)
 
@@ -1655,9 +1646,6 @@ dota_grant_consumable_charges (developmentonly gamedll cheat)
 
 dota_grant_event_action (developmentonly clientdll)
 	Grant all event 
-
-dota_grant_event_points (developmentonly clientdll)
-	Reset all state on your account relating to the given event id
 
 dota_gridnav_perf_test (developmentonly gamedll defensive)
 	<no description>
@@ -1911,9 +1899,6 @@ dota_ref_winner_dire (developmentonly gamedll defensive)
 dota_ref_winner_radiant (developmentonly gamedll defensive)
 	Causes the radiant team to win
 
-dota_reload_event_schema (linked_concommand developmentonly gamedll clientdll defensive)
-	<no description>
-
 dota_reload_podseats (developmentonly clientdll defensive)
 	Reload ti_podseats.txt data
 
@@ -1931,9 +1916,6 @@ dota_reset_event_action (developmentonly clientdll)
 
 dota_reset_event_action_range (developmentonly clientdll)
 	<event id> <start action id> <end action id> [remove audit]
-
-dota_reset_event_state (developmentonly clientdll)
-	Reset all state on your account relating to the given event id
 
 dota_reset_muerta_ofrenda_state (developmentonly clientdll defensive)
 	<no description>
@@ -2074,6 +2056,9 @@ dota_show_item_reward_toast (developmentonly clientdll)
 	<no description>
 
 dota_show_killgraph (developmentonly clientdll defensive)
+	<no description>
+
+dota_show_offer_page (developmentonly clientdll)
 	<no description>
 
 dota_show_purchase_team_fan_content_popup (developmentonly clientdll)
@@ -2549,11 +2534,19 @@ ent_find_index (gamedll cheat)
 
 ent_fire (gamedll cheat vconsole_fuzzy_matching)
 	Usage:
-	   ent_fire <target> [action] [value] [delay]
+	   ent_fire <target> [action] [value0] [value1] ... [valueN]
+
+ent_fire_delay (gamedll cheat vconsole_fuzzy_matching)
+	Usage:
+	   ent_fire_delay <target> [action] [value0] [value1] ... [valueN] [delay]
 
 ent_fire_output (gamedll cheat vconsole_fuzzy_matching)
 	Usage:
-	   ent_fire_output <target> [output name] [value] [delay]
+	   ent_fire_output <target> [output name] [value0] [value1] ... [valueN]
+
+ent_fire_output_delay (gamedll cheat vconsole_fuzzy_matching)
+	Usage:
+	   ent_fire_output_delay <target> [output name] [value0] [value1] ... [valueN] [delay]
 
 ent_gib (gamedll cheat)
 	Gibs the given entity(s)
@@ -2729,6 +2722,33 @@ ents (developmentonly gamedll defensive)
 escape (release clientcmd_can_execute)
 	Escape key pressed.
 
+event_grant_points (developmentonly clientdll)
+	Reset all state on your account relating to the given event id
+
+event_override_action (developmentonly clientdll)
+	<event id> <action id> [action score] - Set a clientside override of an event action. -1 to remove the override.
+
+event_override_clear (developmentonly clientdll)
+	<event id> - Clear any clientside overrides for an event
+
+event_override_level (developmentonly clientdll)
+	<event id> [level] - Set a clientside override of the level value for an event. -1 to remove the override.
+
+event_override_owned (developmentonly clientdll)
+	<event id> [owned] - Set a clientside override of whether an event is owned. -1 for not owned, 1 for owned, 0 for no override.
+
+event_override_points (developmentonly clientdll)
+	<event id> [points] - Set a clientside override of the point value for an event
+
+event_override_premium_points (developmentonly clientdll)
+	<event id> [premium points] - Set a clientside override of the premium points for an event. -1 to remove the override.
+
+event_reload_schema (linked_concommand developmentonly gamedll clientdll defensive)
+	<no description>
+
+event_reset_state (developmentonly clientdll)
+	Reset all state on your account relating to the given event id
+
 exec (dontrecord release execute_immediately)
 	Execute a cfg file
 
@@ -2844,6 +2864,9 @@ func_mover_count (gamedll cheat)
 	<no description>
 
 func_mover_enable_debug_all (gamedll cheat)
+	<no description>
+
+func_mover_step_movement (gamedll cheat)
 	<no description>
 
 game_particle_manager_dump_requeue (developmentonly clientdll)
@@ -3367,6 +3390,12 @@ mat_print_materials_unused (developmentonly defensive)
 mat_print_modes (developmentonly defensive)
 	Print supported rendering modes.
 
+mat_print_non_virtual_textures (developmentonly defensive)
+	Print textures that are neither procedural nor virtual, i.e. the ones the mip streaming system manages, in alphabetical order. Takes an optional substring as an argument.
+
+mat_print_procedural_textures (developmentonly defensive)
+	Print procedural textures ( render targets, UAVs, atlases and other textures created by code ) in ascending in memory size order. Takes an optional substring as an argument.
+
 mat_print_shader_info (developmentonly defensive)
 	Print detailed info about a single shader. Takes a shader name (hero.vfx) as an argument.
 
@@ -3420,6 +3449,9 @@ memory (developmentonly defensive)
 
 memory_check_limit (developmentonly)
 	Assert if peak memory use is over the limit.
+
+mesh_trace_data_memory_report (developmentonly defensive)
+	Logs information about memory consumption by TraceDataForDraw_t/ToolsTraceData
 
 midi_connect_port (developmentonly clientdll defensive)
 	Attempt to open a connection on the passed port ( or 0 if not specfied ). Will close existing connection
@@ -3564,9 +3596,6 @@ nav_switch (developmentonly gamedll defensive)
 
 nav_test_level_hull (gamedll cheat)
 	Find entities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while.
-
-nav_test_level_hull_move (gamedll cheat)
-	<no description>
 
 nav_toggle_deselecting (gamedll cheat)
 	Start or stop continuously removing from the selected set.
@@ -3769,7 +3798,7 @@ particle_system_stop (developmentonly gamedll defensive)
 	stop the specified particle system
 
 particle_test_create (gamedll cheat)
-	Creates the named particle system where the player is looking.
+	Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 particle_test_destroy (gamedll cheat)
@@ -3969,6 +3998,9 @@ r_toggleviewportsize (developmentonly defensive)
 r_viewport (developmentonly defensive)
 	Slams viewport size to a specified value.
 
+r_vulkan_print_pipeline_compile_times (developmentonly defensive)
+	Prints out information on pipeline compile times.
+
 ragdoll_cleanup_all (linked_concommand gamedll clientdll cheat)
 	Cleans up all ragdolls.
 
@@ -4118,6 +4150,9 @@ say (gamedll client_can_execute)
 
 say_team (gamedll client_can_execute)
 	Display player message to team
+
+sc_cycleclassdebuglevel (cheat)
+	Increment the debug level associated with an object class. sc_CycleClassDebugLevel <classname> <optional: max level>
 
 sc_dumpworld (cheat)
 	Dump a list of the objects in a sceneworld (Usage: sc_dumpworld <world_index>)
@@ -4671,6 +4706,9 @@ spec_pos (clientdll cheat)
 
 spec_prev (clientdll clientcmd_can_execute)
 	Spectate previous player
+
+spec_stopsound (clientdll release)
+	(Spectators only) Stop all sounds
 
 spectator_lobby_create (developmentonly clientdll)
 	Create a dummy spectator lobby

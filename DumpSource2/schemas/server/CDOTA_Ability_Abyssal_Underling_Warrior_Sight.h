@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Abyssal_Underling_Warrior_Sight : public CDOTABaseAbility
 {
 };

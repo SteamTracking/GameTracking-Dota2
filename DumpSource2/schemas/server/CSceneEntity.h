@@ -27,6 +27,7 @@ class CSceneEntity : public CPointEntity
 	float32 m_flCurrentTime;
 	float32 m_flFrameTime;
 	bool m_bCancelAtNextInterrupt;
+	bool m_bRemoveOnCompletion;
 	float32 m_fPitch;
 	bool m_bAutomated;
 	int32 m_nAutomatedAction;
@@ -50,9 +51,16 @@ class CSceneEntity : public CPointEntity
 	CEntityIOOutput m_OnPaused;
 	CEntityIOOutput m_OnResumed;
 	CEntityIOOutput m_OnPulseRequirement;
+	CUtlDict< SceneLocatorSettings_t > m_LocatorSettingsMap;
+	CUtlDict< CUtlSymbolLarge > m_TargetNameMap;
+	CUtlDict< CUtlSymbolLarge > m_AnchorNameMap;
+	CUtlDict< CUtlSymbolLarge > m_ActorGraphMap;
+	CUtlDict< ActorClipEntry_t > m_ActorClipMap;
 	CUtlVector< ActorMapping_t > m_ActorMap;
 	CHandle< CSceneEntity > m_hInterruptScene;
 	int32 m_nInterruptCount;
+	CUtlString m_responseConcept;
+	CUtlString m_responseCriteria;
 	// MNotSaved
 	bool m_bSceneMissing;
 	bool m_bInterrupted;

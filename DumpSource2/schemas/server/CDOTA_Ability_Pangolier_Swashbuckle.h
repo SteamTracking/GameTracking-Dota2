@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Pangolier_Swashbuckle : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	float32 dash_speed;

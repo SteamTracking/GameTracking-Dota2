@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Shredder_WhirlingDeath : public C_DOTABaseAbility
 {
 	float32 whirling_radius;

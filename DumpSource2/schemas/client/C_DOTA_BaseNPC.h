@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_BaseNPC : public C_NextBotCombatCharacter
 {
 	bool m_bIsPhantom;
@@ -33,6 +32,7 @@ class C_DOTA_BaseNPC : public C_NextBotCombatCharacter
 	int32 m_iBaseAttackSpeed;
 	float32 m_flBaseAttackTime;
 	int32 m_iUnitNameIndex;
+	int32 m_iUnitNameStringTableIndex;
 	int32 m_iHealthBarOffset;
 	Color m_iHealthBarHighlightColor;
 	float32 m_flMana;

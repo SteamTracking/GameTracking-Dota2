@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Brewmaster_HurlBoulder : public C_DOTABaseAbility
 {
 	int32 m_iBounces;

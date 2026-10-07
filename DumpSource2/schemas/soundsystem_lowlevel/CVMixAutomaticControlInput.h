@@ -1,7 +1,6 @@
 class CVMixAutomaticControlInput
 {
-	CUtlString m_name; // = "play time"
-	int32 m_nControlInputIndex; // = -1
-	bool m_bIsTrackSend;
-	bool m_bIsStackVar;
+	CUtlString m_name;
+	int32 m_nGraphInputIndex; // = -1
+	VMixAutoControlType_t m_nControlType; // = "VMIX_AUTO_SEND_LEVEL"
 };

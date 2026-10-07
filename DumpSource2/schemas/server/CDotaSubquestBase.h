@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CDotaSubquestBase : public CBaseEntity
 {
 	char[256] m_pszSubquestText;

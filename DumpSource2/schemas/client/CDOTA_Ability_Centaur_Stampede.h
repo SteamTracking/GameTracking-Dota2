@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Centaur_Stampede : public C_DOTABaseAbility
 {
 	float32 duration;

@@ -12,4 +12,5 @@ class PGDInstruction_t
 	PulseRuntimeConstantIndex_t m_nConstIdx; // = -1
 	PulseRuntimeDomainValueIndex_t m_nDomainValueIdx; // = -1
 	PulseRuntimeBlackboardReferenceIndex_t m_nBlackboardReferenceIdx; // = -1
+	PulseRuntimeTempVarIndex_t m_nTempVarIdx; // = -1
 };

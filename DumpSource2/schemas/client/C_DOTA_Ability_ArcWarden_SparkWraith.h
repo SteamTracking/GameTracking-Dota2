@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_ArcWarden_SparkWraith : public C_DOTABaseAbility
 {
 	float32 duration;

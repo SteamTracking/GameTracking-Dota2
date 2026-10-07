@@ -6,8 +6,10 @@ class CNmSkeleton
 	CUtlVector< CTransform > m_parentSpaceReferencePose;
 	CUtlVector< CTransform > m_modelSpaceReferencePose;
 	int32 m_numBonesToSampleAtLowLOD;
+	bool m_bIsPropSkeleton;
 	CUtlLeanVector< NmBoneMaskSetDefinition_t > m_maskDefinitions;
 	CUtlLeanVector< CNmSkeleton::SecondarySkeleton_t > m_secondarySkeletons;
 	CUtlLeanVector< CNmFloatChannelSet_t > m_floatChannelSets;
-	bool m_bIsPropSkeleton;
+	CUtlVector< int32 > m_gameplayRelevantBoneIndices;
+	int64 m_nSpecialDependencyHash;
 };

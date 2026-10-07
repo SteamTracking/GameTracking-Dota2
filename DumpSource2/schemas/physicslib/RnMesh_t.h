@@ -11,4 +11,5 @@ class RnMesh_t
 	Vector m_vOrthographicAreas;
 	uint32 m_nFlags;
 	uint32 m_nDebugFlags;
+	float32 m_flSurfaceArea;
 };

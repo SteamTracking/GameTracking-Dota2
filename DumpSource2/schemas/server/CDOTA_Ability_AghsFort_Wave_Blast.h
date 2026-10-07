@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_AghsFort_Wave_Blast : public CDOTABaseAbility
 {
 	int32 damage;

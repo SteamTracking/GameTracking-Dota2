@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_EarthSpirit_RollingBoulder : public C_DOTABaseAbility
 {
 	int32 radius;

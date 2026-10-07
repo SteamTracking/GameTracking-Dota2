@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Invoker_IceWall : public CDOTA_Ability_Invoker_InvokedBase
 {
 	int32 num_wall_elements;

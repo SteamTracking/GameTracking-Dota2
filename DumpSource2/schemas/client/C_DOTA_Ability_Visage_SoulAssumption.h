@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Visage_SoulAssumption : public C_DOTABaseAbility
 {
 	float32 m_fDamage;

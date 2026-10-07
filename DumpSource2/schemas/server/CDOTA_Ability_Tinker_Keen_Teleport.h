@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Tinker_Keen_Teleport : public CDOTABaseAbility
 {
 	int32 creep_teleport_level;

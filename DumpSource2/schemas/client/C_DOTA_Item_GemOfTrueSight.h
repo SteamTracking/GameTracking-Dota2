@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Item_GemOfTrueSight : public C_DOTA_Item
 {
 	int32 m_iTempViewer;

@@ -14,4 +14,6 @@ class CModelConfigElement_AttachedModel : public CModelConfigElement
 	bool m_bUserSpecifiedMaterialGroup;
 	CUtlString m_BodygroupOnOtherModels;
 	CUtlString m_MaterialGroupOnOtherModels;
+	bool m_bCollideWithHierarchy;
+	bool m_bCollideOutsideHierarchy; // = true
 };

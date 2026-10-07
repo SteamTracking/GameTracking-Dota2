@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_GiantWolf_Intimidate : public CDOTABaseAbility
 {
 	float32 radius;

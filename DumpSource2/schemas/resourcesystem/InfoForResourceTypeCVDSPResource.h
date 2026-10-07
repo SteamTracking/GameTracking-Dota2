@@ -1,0 +1,4 @@
+// MResourceTypeForInfoType = "vdsp"
+class InfoForResourceTypeCVDSPResource
+{
+};

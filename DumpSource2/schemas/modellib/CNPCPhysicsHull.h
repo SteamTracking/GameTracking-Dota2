@@ -1,6 +1,7 @@
 // MModelGameData
 // MFgdHelper = "game_data_list{ key = 'CNPCPhysicsHull' }"
 // MFgdHelper = "npcphysicshull{}"
+// MCustomFGDMetadata = "{ node_name_key = 'm_sName' }"
 class CNPCPhysicsHull
 {
 	// MPropertyFriendlyName = "Name"

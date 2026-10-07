@@ -5,4 +5,6 @@ class ActiveModelConfig_t
 	CUtlSymbolLarge m_Name;
 	CNetworkUtlVectorBase< CHandle< CBaseModelEntity > > m_AssociatedEntities;
 	CNetworkUtlVectorBase< CUtlSymbolLarge > m_AssociatedEntityNames;
+	CUtlLeanVector< bool > m_vecAssociatedEntityCollidesWithHierarchy;
+	CUtlLeanVector< bool > m_vecAssociatedEntityCollidesOutsideHierarchy;
 };

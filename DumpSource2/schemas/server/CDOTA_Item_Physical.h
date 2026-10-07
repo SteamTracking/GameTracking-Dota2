@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_Physical : public CBaseAnimatingActivity
 {
 	int32 m_nFlags;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Unit_Scout : public C_DOTA_BaseNPC_Additive
 {
 	bool m_bUnitRespawned;

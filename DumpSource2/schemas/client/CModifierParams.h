@@ -56,6 +56,7 @@ class CModifierParams
 	bool bPhylacteryApplied;
 	bool bAllowZeroDamageFromPostReductionBlock;
 	bool bForceMagicStickProc;
+	bool bChannelledManaCost;
 	bool bIgnoreNegativeValuesIfDebuffImmune;
 	bool bIgnorePositiveValuesIfDebuffImmune;
 	bool bIgnoreAllIfDebuffImmune;
@@ -68,6 +69,7 @@ class CModifierParams
 	char* pszAbilitySpecialName;
 	int32 nAbilitySpecialLevel;
 	bool bAllowCopy;
+	CHandle< C_DOTA_TempTree > hTree;
 	CHandle< C_BaseEntity > hattacker;
 	CHandle< C_BaseEntity > htarget;
 	CHandle< C_BaseEntity > hunit;

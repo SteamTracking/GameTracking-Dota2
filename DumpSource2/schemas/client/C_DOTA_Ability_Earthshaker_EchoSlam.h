@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Earthshaker_EchoSlam : public C_DOTABaseAbility
 {
 	float32 echo_slam_damage_range;

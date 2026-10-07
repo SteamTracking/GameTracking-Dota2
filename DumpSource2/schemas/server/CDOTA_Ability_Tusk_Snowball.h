@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Tusk_Snowball : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	float32 snowball_windup_radius;

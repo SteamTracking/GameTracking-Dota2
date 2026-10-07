@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Enigma_Malefice : public CDOTABaseAbility
 {
 	float32 tick_rate;

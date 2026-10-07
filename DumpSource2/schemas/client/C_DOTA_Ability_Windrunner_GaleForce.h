@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Windrunner_GaleForce : public C_DOTABaseAbility
 {
 	VectorWS m_vEndpoint;

@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CDOTA_DataNonSpectator : public CBaseEntity
 {
 	CUtlVectorEmbeddedNetworkVar< DataTeamPlayer_t > m_vecDataTeam;

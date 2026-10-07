@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Rattletrap_Hookshot : public CDOTABaseAbility
 {
 	ParticleIndex_t m_nFXIndex;

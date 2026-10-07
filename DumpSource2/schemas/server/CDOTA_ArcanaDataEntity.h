@@ -1,7 +1,7 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_ArcanaDataEntity : public CBaseEntity
 {
 	CDOTA_ArcanaDataEntity_DrowRanger* m_pArcanaData_CDOTA_ArcanaDataEntity_DrowRanger;
 	CDOTA_ArcanaDataEntity_FacelessVoid* m_pArcanaData_CDOTA_ArcanaDataEntity_FacelessVoid;
 	CDOTA_ArcanaDataEntity_Razor* m_pArcanaData_CDOTA_ArcanaDataEntity_Razor;
+	CDOTA_ArcanaDataEntity_Tidehunter* m_pArcanaData_CDOTA_ArcanaDataEntity_Tidehunter;
 };

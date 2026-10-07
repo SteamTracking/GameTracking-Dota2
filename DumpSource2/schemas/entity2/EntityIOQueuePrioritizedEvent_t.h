@@ -9,4 +9,6 @@ class EntityIOQueuePrioritizedEvent_t
 	CEntityHandle m_hEntTarget;
 	// MKV3TransferSaveOpsForField = "GetVariantSaveDataOps"
 	CVariantBase< CVariantDefaultAllocator > m_variantValue;
+	CPulseArgumentPack m_PulseArguments;
+	CPulseInputParamMap m_paramMap;
 };

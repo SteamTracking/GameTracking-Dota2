@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_BaseNPC_Hero : public C_DOTA_BaseNPC_Additive
 {
 	bool m_bDisableWearables;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Phoenix_LaunchFireSpirit : public CDOTABaseAbility
 {
 	float32 spirit_speed;

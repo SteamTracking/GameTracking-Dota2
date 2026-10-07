@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Special_Bonus_Attack_Speed_140 : public CDOTABaseAbility
 {
 };

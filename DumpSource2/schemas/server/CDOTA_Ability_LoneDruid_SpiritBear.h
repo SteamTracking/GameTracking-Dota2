@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_LoneDruid_SpiritBear : public CDOTABaseAbility
 {
 	bool m_bLevelChanged;

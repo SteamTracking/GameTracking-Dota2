@@ -33,6 +33,8 @@ class CBasePlayerWeaponVData
 	// MPropertyDescription = "Barrel smoke decrement rate when not firing"
 	float32 m_flMuzzleSmokeDecrementRate; // = 1
 	bool m_bGenerateMuzzleLight; // = true
+	// MPropertyDescription = "Was the weapon was built right-handed?"
+	bool m_bShouldAnimateInWorld;
 	// MPropertyStartGroup = "Behavior"
 	// MPropertyDescription = "Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?"
 	bool m_bLinkedCooldowns;

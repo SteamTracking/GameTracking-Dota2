@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Meepo_MegaMeepo : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > hPreviousMeepo;

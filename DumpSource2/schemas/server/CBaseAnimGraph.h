@@ -20,5 +20,6 @@ class CBaseAnimGraph : public CBaseModelEntity
 	bool m_bRagdollEnabled;
 	// MNotSaved
 	bool m_bRagdollClientSide;
+	bool m_bShouldUpdateTransformations;
 	CTransform m_xParentedRagdollRootInEntitySpace;
 };

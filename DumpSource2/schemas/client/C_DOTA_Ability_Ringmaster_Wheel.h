@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTA_Ability_Ringmaster_Wheel : public C_DOTABaseAbility
 {
 	VectorWS m_vStartPos;

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Unit_Hero_Rubick : public CDOTA_BaseNPC_Hero
 {
 	Vector m_stolenAbilityColorHSV1;

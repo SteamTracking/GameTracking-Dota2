@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_AghsFort_BossPreview : public C_BaseEntity
 {
 	CUtlSymbolLarge m_strBossUnit;

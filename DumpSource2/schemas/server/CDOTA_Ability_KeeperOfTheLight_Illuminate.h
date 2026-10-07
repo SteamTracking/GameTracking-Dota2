@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_KeeperOfTheLight_Illuminate : public CDOTABaseAbility
 {
 	CHandle< CBaseEntity > m_hThinker;

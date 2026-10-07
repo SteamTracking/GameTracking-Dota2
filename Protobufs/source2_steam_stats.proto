@@ -130,18 +130,18 @@ message CMsgSource2NetworkFlowQuality {
 	optional uint32 queuedmsgs_max = 103;
 }
 
-message CMsgSource2PerfIntervalSample {
+message CMsgSource2FramePerfSample {
 	message Tag {
 		optional string tag = 1;
-		optional uint32 max_value = 2;
+
+		oneof value {
+			uint32 value_uint16 = 2;
+		}
 	}
 
-	optional float frame_time_max_ms = 1;
-	optional float frame_time_avg_ms = 2;
-	optional float frame_time_min_ms = 3;
-	optional int32 frame_count = 4;
-	optional float frame_time_total_ms = 5;
-	repeated .CMsgSource2PerfIntervalSample.Tag tags = 6;
+	optional float frame_time_ms = 1;
+	optional float gpu_time_ms = 2;
+	repeated .CMsgSource2FramePerfSample.Tag tags = 6;
 }
 
 message CSource2Metrics_MatchPerfSummary_Notification {
@@ -152,7 +152,7 @@ message CSource2Metrics_MatchPerfSummary_Notification {
 		optional .CMsgSource2NetworkFlowQuality downstream_flow = 4;
 		optional .CMsgSource2NetworkFlowQuality upstream_flow = 5;
 		optional fixed64 steamid = 10;
-		repeated .CMsgSource2PerfIntervalSample perf_samples = 11;
+		repeated .CMsgSource2FramePerfSample perf_samples = 12;
 	}
 
 	optional uint32 appid = 1;

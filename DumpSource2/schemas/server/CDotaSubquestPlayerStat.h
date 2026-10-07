@@ -1,5 +1,4 @@
 // MNetworkNoBase
-// MClassHasEntityLimitedDataDesc
 class CDotaSubquestPlayerStat : public CDotaSubquestBase
 {
 	subquest_player_stat_types_t m_ePlayerStatType;

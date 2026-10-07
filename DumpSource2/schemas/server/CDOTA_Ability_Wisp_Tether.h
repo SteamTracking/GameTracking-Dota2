@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Wisp_Tether : public CDOTABaseAbility, public CHorizontalMotionController
 {
 	CHandle< CBaseEntity > m_hTarget;

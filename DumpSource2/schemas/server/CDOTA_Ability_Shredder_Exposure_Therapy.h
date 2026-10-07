@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_Shredder_Exposure_Therapy : public CDOTABaseAbility
 {
 };

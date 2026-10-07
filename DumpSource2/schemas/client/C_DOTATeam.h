@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class C_DOTATeam : public C_Team
 {
 	int32 m_iHeroKills;

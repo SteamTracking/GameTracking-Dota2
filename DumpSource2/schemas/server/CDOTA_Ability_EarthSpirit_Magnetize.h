@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Ability_EarthSpirit_Magnetize : public CDOTABaseAbility
 {
 	int32 magnetize_self;

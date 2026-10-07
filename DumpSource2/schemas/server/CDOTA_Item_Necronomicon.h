@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CDOTA_Item_Necronomicon : public CDOTA_Item
 {
 	CHandle< CBaseEntity > m_hWarrior;

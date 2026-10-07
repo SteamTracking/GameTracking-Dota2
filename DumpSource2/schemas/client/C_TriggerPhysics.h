@@ -12,5 +12,6 @@ class C_TriggerPhysics : public C_BaseTrigger
 	bool m_bCollapseToForcePoint;
 	VectorWS m_vecLinearForcePointAtWorld;
 	Vector m_vecLinearForceDirection;
+	bool m_bForceDirectionIsInLocalSpace;
 	bool m_bConvertToDebrisWhenPossible;
 };
