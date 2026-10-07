@@ -1,0 +1,959 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_tinker"
+	{
+		"Model"		"models/heroes/tinker/tinker.vmdl"
+		"SoundSet"		"Hero_Tinker"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Nuker,Pusher"
+		"Rolelevels"	"1,3,2"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"34"
+		"HeroOrderID"	"40"
+		"ModelScale"		"0.800000"
+		"VersusScale"		"0.80"
+		"SpectatorLoadoutScale" "0.9"
+		"HeroGlowColor"		"220 194 8"
+		"CMEnabled"		"1"
+		"PickSound"		"tinker_tink_spawn_01"
+		"BanSound"		"tinker_tink_anger_10"
+		"workshop_guide_name"		"Tinker"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"39,13,74"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"Mask"			"1"
+			"Yellow"		"1"
+			"Brown"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_lina"
+		"HeroSelectSoundEffect"		"Hero_Tinker.Pick"
+		"GibType"		"motor"
+		"NameAliases"	"Boush"
+		"Ability1"		"tinker_laser"
+		"Ability2"		"tinker_march_of_the_machines"
+		"Ability3"		"tinker_deploy_turrets"
+		"Ability4"		"tinker_warp_grenade"
+		"Ability5"		"tinker_keen_teleport"
+		"Ability6"		"tinker_rearm"
+		"Ability7"		"tinker_eureka"		
+		"Ability8"		""
+		"Ability10"		"special_bonus_unique_tinker_march_duration"
+		"Ability11"		"special_bonus_mana_reduction_10"
+		"Ability12"		"special_bonus_unique_tinker_deploy_turrets_knockback" 
+		"Ability13"		"special_bonus_unique_tinker"
+		"Ability14"		"special_bonus_unique_tinker_deploy_turrets_missile_damage"
+		"Ability15"		"special_bonus_unique_tinker_5"
+		"Ability16"		"special_bonus_unique_tinker_4"
+		"Ability17"		"special_bonus_unique_tinker_rearm_channel_time"
+		
+		"Facets"
+		{
+			"tinker_repair_bots"
+			{
+				"Icon"				"healing"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"tinker_translocator"
+			{
+				"Icon"				"movement"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"tinker_laser"
+			"Ability2"		"tinker_march_of_the_machines"
+			"Ability3"		"tinker_deploy_turrets"
+			"Ability4"		"tinker_rearm"
+		}
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"28"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.400000"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"3.300000"
+		"MovementSpeed"		"305"
+		"StatusManaRegen"	"0.50"
+		"StatusHealthRegen"		"0.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_tinker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_tinker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_tinker/tinker_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_RightArm"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_LeftArm"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1200"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"5000"
+				"MaxPolygonsLOD1"		"3000"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				//do not enable misc for workshop, only Immortal uses this slot
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_1"
+				"SlotText" "tinker_laser"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_2"
+				"SlotText" "tinker_march_of_the_machines"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_5"
+				"SlotText" "tinker_keen_teleport"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_PUSH_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_tinker.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_tinker.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack1"	"2"
+			"attach_attack2"	"3"
+			"attach_attack3"	"4"
+			"attach_hand1"		"5"
+			"attach_hand2"		"6"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Tinker: Defense Matrix
+			//=================================================================================================================
+			"tinker_defense_matrix"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_absorb"
+					{
+						"value"							"240"
+					}
+					"status_resistance"
+					{
+						"value"															"30"
+					}
+					"barrier_duration"
+					{
+						"value"							"15"
+					}
+					"cooldown_reduction"
+					{
+						"value"						"0"
+					}
+
+					"flicker_range"
+					{
+						"value"								"0"
+					}
+					"flicker_angle"							"90"
+				}
+			}
+
+			//=================================================================================================================
+			// Tinker: Keen Teleport (Keen Conveyance)
+			//=================================================================================================================
+			"tinker_keen_teleport"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				// NOTE: AbilityBehavior is defined in code
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"MaxLevel"						"3"
+				"DependentOnAbility"			"tinker_rearm"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCooldown"				"50.0"
+				"AbilityCastPoint"				"0.0"
+		
+				// Item Info
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"minimun_distance"		"70"
+					"maximum_distance"		"800"
+					"vision_radius"
+					{
+						"value"						"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"AbilityChannelTime"
+					{
+						"value"							"3.0"
+						"special_bonus_unique_tinker_5" "-0.5"
+					}
+					"channel_time_tooltip"
+					{
+						"value"							"3.0"
+						"special_bonus_unique_tinker_5" "-0.5"
+					}
+					"additional_starting_cooldown"		"20.0"	// set this to the same value as the additional CD in GrantFreeTPScrolls
+					"creep_teleport_level"				"2"
+					"hero_teleport_level"				"3"
+
+					"outpost_channel_time"			// TELEPORT_OUTPOST_CHANNEL_TIME
+					{
+						"value"							"4.0"
+						"special_bonus_unique_tinker_5" "-0.5"
+					}
+					"jungle_outpost_channel_time"		// TELEPORT_JUNGLE_OUTPOST_CHANNEL_TIME
+					{
+						"value"							"4.0"
+						"special_bonus_unique_tinker_5" "-0.5"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Tinker Innate: Item CDR
+			//=================================================================================================================
+			"tinker_eureka"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"int_per_one_cdr"				"3"
+					"one_percent_tooltip"			"1"
+					"max_cdr"						"60"
+
+					"item_cooldown_tooltip"
+					{
+						"dynamic_value"				"true"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Tinker: Innate Keen Teleport - Gold on Death (instead of TP)
+			//=================================================================================================================
+			"tinker_innate_keen_teleport_gold_on_death"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"AbilityValues"
+				{
+					"gold_on_death"			"50"
+				}
+			}
+
+			//=================================================================================================================
+			// Tinker: Innate Keen Teleport - XP on Death (instead of TP)
+			//=================================================================================================================
+			"tinker_innate_keen_teleport_xp_on_death"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"AbilityValues"
+				{
+					"xp_on_death"			"50"
+				}
+			}	
+
+			//=================================================================================================================
+			// Tinker: Laser
+			//=================================================================================================================
+			"tinker_laser"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Hero_Tinker.Laser"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"19 18 17 16"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"95 105 115 125"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"miss_rate"				"100"
+						"duration"			
+						{	
+							"value"			"3.0 3.5 4.0 4.5"
+						}
+						"laser_damage"			
+						{
+							"value"							"75 150 225 300"
+							"special_bonus_unique_tinker"	"+50"
+						}	
+						"radius_explosion"
+						{
+							"value"			"0"
+							"special_bonus_unique_tinker_4"	"+250"
+							"affected_by_aoe_increase"	"1"
+						}
+						"splash_pct"		"100"
+						"scepter_bonus_cast_range"		
+						{
+							"special_bonus_scepter"		"0"
+						}
+						"scepter_reduction_pct"		
+						{
+							"special_bonus_scepter"		"13"
+						}						
+						"scepter_reduction_pierces_debuff_immunity"		"0"
+						"scepter_bounce_radius"		
+						{
+							//"special_bonus_scepter"		"700"
+							//"affected_by_aoe_increase"	"1"
+						}			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Tinker: Shrink Ray (scepter ability)
+			//=================================================================================================================
+			"tinker_shrink_ray"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+
+				"AbilitySound"					"Hero_Tinker.Laser"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityValues"
+				{
+					"scale_reduction"
+					{
+						"value" "15"
+					}
+					"health_reduction"
+					{
+						"value" "15"
+					}
+					"slow"
+					{
+						"value" "20"
+					}
+					"duration"
+					{
+						"value" "6"
+					}
+					"max_stacks"
+					{
+						"value" "4"
+					}
+					"radius_explosion"
+					{
+						"value" "250"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Tinker: Heat Seeking Missile
+			//=================================================================================================================
+			"tinker_heat_seeking_missile"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Tinker.Heat-Seeking_Missile"
+				"MaxLevel"						"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+				"AbilityCastRange"				"1500"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"18"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"105 115 125 135"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{ 
+						//"damage"			"120 200 280 360"
+						"damage"			"360"
+						"radius"			
+						{
+							"value"	"1500"
+							"affected_by_aoe_increase"	"1"
+						}
+						"targets"			
+						{
+							"value"	"2 2 2 2"
+						}
+						"speed"				"700"
+						"radius_explosion"				"0"
+						"splash_pct"		"0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Tinker: March of the Machines
+			//=================================================================================================================
+			"tinker_march_of_the_machines"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_Tinker.March_of_the_Machines"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"300"
+				"AbilityCastPoint"				"0.53"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"35.0 33.0 31.0 29.0"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 120 140 160"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"		"900"
+						"affected_by_aoe_increase"	"1"
+					}
+					"collision_radius"		"50"
+					"splash_radius"			"150"
+					"duration"
+					{
+						"value"											"6.0"
+						"special_bonus_unique_tinker_march_duration"	"+1.0"
+					}
+					"speed"					"400"
+					"machines_per_sec"		"24"
+					"distance"				"1800"
+					"damage"				"13 22 31 40"
+			
+					"heal_per_second"
+					{
+						"special_bonus_scepter"			"35"
+					}
+
+					"heal_duration"
+					{
+						"special_bonus_scepter"			"4"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Tinker: Rearm
+			//=================================================================================================================
+			"tinker_rearm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilitySound"					"Hero_Tinker.Rearm"
+				"AbilityDraftExtraAbilities"
+				{
+					"tinker_warp_grenade" "shard"
+					"tinker_keen_teleport" ""
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"		
+				"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"5.5 5 4.5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 150 200"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityChannelTime"
+					{ 
+						"value"							"2.75 2.0 1.25"
+						"special_bonus_unique_tinker_rearm_channel_time" "-0.25"
+					}
+					"magic_resistance"
+					{
+						"value"													"0"
+					}
+					"armor_duration"
+					{
+						"value"													"0"
+					}
+					"affects_items"
+					{
+						"value"									"0"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Tinker: Warp Grenade ( shard ability )
+			//=================================================================================================================
+			"tinker_warp_grenade"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"					"150"
+						"max_distance"				"2000"
+				
+						// Warp amount is scaled by proportion of cast range
+						"warp_distance_factor"		"0.6"
+						"warp_distance_pct_tooltip"	"60"
+
+						"range_reduction"		"40"
+						"debuff_duration"		"2"
+				}
+			}
+	
+			//=================================================================================================================
+			// Tinker: Deploy Turrets
+			//=================================================================================================================
+			"tinker_deploy_turrets"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_Tinker.Turret"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 120 140 160"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"drop_aoe_radius"
+					{
+						// "value"		"0"
+						"value"		"250"
+						"affected_by_aoe_increase"	"1"
+					}
+			
+					"turret_placement_radius"
+					{
+						// How far from the center of the drop impact to place turrets.
+						"value"		"70"	
+					}
+
+					"drop_delay"
+					{
+						"value"		"0.5"
+					}
+					"drop_knockback_duration"
+					{
+						"value"		"0.1"
+					}
+					"drop_knockback_duration_tinker"
+					{
+						"value"		"0.3"
+					}
+					"drop_knockback_distance"
+					{
+						"value"		"100"
+					}
+					"drop_knockback_distance_tinker"
+					{
+						"value"		"400"
+						"special_bonus_unique_tinker_deploy_turrets_knockback"	"+100"
+					}
+					// Distinct from turrets_per_drop
+					"drop_count"
+					{
+						"value"		"1"
+					}
+					"drop_interval"
+					{
+						"value"		"0.22"
+					}
+					"drop_spread_pct"
+					{
+						"value"		"100"
+					}
+					"turrets_per_drop"
+					{
+						"value"		"3"
+					}
+
+					"extra_turrets_per_drop"
+					{
+						"value"		"0"
+					}
+
+					"AbilityCooldown"
+					{
+						"value"			"24 22 20 18"
+					}
+			
+					// TODO: Combine this with missile damage
+					"drop_damage"
+					{
+						"value"			"40 80 120 160"
+					}
+					"missile_damage"
+					{
+						"value"			"20 40 60 80"
+						"special_bonus_unique_tinker_deploy_turrets_missile_damage"	"+60"
+					}
+					"missile_speed"
+					{
+						"value"		"1350"
+					}
+			
+					"turret_hp"
+					{
+						"value"			"40 80 120 160"
+					}
+
+					"missile_target_range"
+					{
+						"value"		"650 700 750 800"
+					}
+					"missile_range"
+					{
+						"value"		"750 800 850 900"
+					}
+			
+					"missile_width"
+					{
+						"value"			"70"
+					}
+			
+
+					"turret_duration"
+					{
+						"value"			"4.5"
+						"special_bonus_unique_tinker_deploy_turrets_turret_duration"	"+1.5"
+					}
+					"missile_spawn_interval"
+					{
+						"value"		"1.5"
+						"special_bonus_scepter"			"-0.3"
+					}
+
+					"missile_attack_rate_tooltip"
+					{
+						"value"			"20"
+					}
+			
+					// Missile explosion splash
+					"radius_explosion"
+					{
+						"value"			"200"
+						"affected_by_aoe_increase"	"1"
+						//"special_bonus_unique_tinker_deploy_turrets_splash_radius"	"+250"
+					}
+					"splash_pct"
+					{
+						"value"		"50"
+						//"special_bonus_unique_tinker_deploy_turrets_splash_radius"	"+50"
+					}
+
+					"activation_time"
+					{
+						"value"			"0.0"
+					}
+				}
+			}
+		}
+	}
+}

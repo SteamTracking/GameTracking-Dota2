@@ -1,0 +1,142 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CSurvivorsGameModeDefinition"
+	crownfall_act4 = 
+	{
+		m_unGameModeID = 1
+		m_vCameraOffset = [ 3300, -3300, 6600 ]
+		m_sLevelName = "skywrath"
+		m_sDifficultyName = "Default"
+		m_flEnemyDespawnTime = 2.0
+		m_flEnemyRadius = 1850
+		m_flEnemyRadiusVariance = 450
+		m_flEnemyDespawnBuffer = 150
+		m_nMaxActiveSlots = 5
+		m_nMaxPassiveSlots = 6
+		m_nLevelUpChoices = 3
+		m_nMaxXPPickupsInWorld = 400
+		m_flExistingItemGenerationWeight = 0.35
+		m_flNewItemGenerationWeight = 0.7
+		m_flPassiveItemGenerationWeight = 0.6
+		m_flSeperationVelocityInfluence = 0.55
+		m_flSeperationVelocityInterpolationSpeed = 25.0
+		m_flPlayerPositionHistoryBufferDuration = 0.3
+		m_flPlayerReviveTimer = 2.7
+		m_sReviveEffect = resource_name:"particles/events/crownfall/revive.vpcf"
+		m_flFirstFloorTimeLimit = 720
+		m_vecEliteRoomChoices = 
+		[
+			"elite_resurrecting_enemy",
+			"elite_turrets",
+			"elite_absorber",
+			"elite_granite_golem_large",
+		]
+		m_flEliteRoomTriggerChannelTime = 3
+		m_flEliteRoomTriggerRadius = 600
+		m_sEliteRoomChannelEffect = resource_name:"particles/events/crownfall/survivors/elite_timer.vpcf"
+		m_sEliteRoomDirectionalArrowEffect = resource_name:"particles/events/crownfall/survivors/arrow_enemy_direction.vpcf"
+		m_vecEliteRoomUnlockTimes = [ 180, 360, 540 ]
+		m_sAttackIndicatorParticleEffect = resource_name:"particles/events/crownfall/survivors/attack_indicator_circle.vpcf"
+		m_sCollisionIndicatorEffect = resource_name:"particles/events/crownfall/survivors/collision_indicator.vpcf"
+		m_vCollisionIndicatorColorPlayer = [ 0, 255, 0 ]
+		m_vCollisionIndicatorColorEnemy = [ 251, 210, 69 ]
+		m_sPhysicalWeaknessEffect = resource_name:"particles/events/crownfall/survivors/abilities/physical_weakness.vpcf"
+		m_sGenericStunEffect = resource_name:"particles/events/crownfall/survivors/abilities/generic_stunned.vpcf"
+		m_cEliteGlowColor = [ 0, 128, 255 ]
+		m_sDamageNumbersEffectEnemy = resource_name:"particles/events/crownfall/survivors/damage_numbers_glow.vpcf"
+		m_sDamageNumbersEffectPlayer = resource_name:"particles/events/crownfall/survivors/damage_numbers.vpcf"
+		m_sDamageNumbersEffectCriticalStrike = resource_name:"particles/events/crownfall/survivors/damage_numbers_crit.vpcf"
+		m_sHealthBarEffect = resource_name:"particles/events/crownfall/survivors/health_bar.vpcf"
+		m_flRequiredExperienceBase = 5.0
+		m_flRequiredExperienceExponent = 2.1
+		m_flLevelUpDelay = 0.5
+		m_flLevelUpKnockbackRadius = 500
+		m_flLevelUpKnockbackDistance = 60
+		m_nInitialItemSpawns = 2
+		m_nInitialMagnetSpawns = 1
+		m_sLevelUpEffect = resource_name:"particles/generic_hero_status/hero_levelup.vpcf"
+		m_sLevelUpKnockbackEffect = resource_name:"particles/events/crownfall/survivors/level_up_knockback.vpcf"
+		m_sPlayerHitEffect = resource_name:"particles/events/crownfall/survivors/status/status_effect_generic_hit.vpcf"
+		m_vecSeperationLayerData = 
+		[
+			{
+				m_eSeparationLayer = "SMALL"
+				m_flSeperationDistance = 230.0
+			},
+			{
+				m_eSeparationLayer = "LARGE"
+				m_flSeperationDistance = 320.0
+			},
+			{
+				m_eSeparationLayer = "ELITE"
+				m_flSeperationDistance = 360.0
+			},
+		]
+		m_TimeBasedLightingEnvironments = 
+		[
+			{
+				vecLightDirection = [ 0.321394, 0.55667, -0.766045 ]
+				flGlobalLightScale = 2.5
+				flPointLightScale = 2.0
+				cLightColor = [ 233, 194, 182 ]
+				cAmbientColor = [ 172, 163, 152 ]
+				cShadowColor = [ 135, 64, 72 ]
+				cShadowSecondaryColor = [ 93, 59, 73 ]
+				cSpecularColor = [ 154, 144, 126 ]
+			},
+			{
+				vecLightDirection = [ 0.321394, 0.55667, -0.766045 ]
+				flGlobalLightScale = 2.0
+				flPointLightScale = 1.6
+				cLightColor = [ 233, 171, 117 ]
+				cAmbientColor = [ 224, 181, 181 ]
+				cShadowColor = [ 68, 68, 75 ]
+				cShadowSecondaryColor = [ 46, 38, 39 ]
+				cSpecularColor = [ 250, 243, 181 ]
+			},
+			{
+				vecLightDirection = [ 0.321394, 0.55667, -0.766045 ]
+				flGlobalLightScale = 2.0
+				flPointLightScale = 1.8
+				cLightColor = [ 146, 119, 255 ]
+				cAmbientColor = [ 176, 186, 230 ]
+				cShadowColor = [ 72, 72, 152 ]
+				cShadowSecondaryColor = [ 33, 47, 71 ]
+				cSpecularColor = [ 80, 196, 233 ]
+			},
+		]
+		m_luckyLootTable = 
+		{
+			m_vecLootEntryCollections = 
+			[
+				{
+					m_flChance = 1
+					m_vecLootEntries = 
+					[
+						{
+							m_unPickupID = 6
+							m_nMinAmount = 1
+							m_nMaxAmount = 3
+						},
+					]
+				},
+				{
+					m_flChance = 0.2
+					m_vecLootEntries = 
+					[
+						{
+							m_unPickupID = 6
+							m_nMinAmount = 1
+							m_nMaxAmount = 3
+						},
+						{
+							m_unPickupID = 7
+							m_nMinAmount = 1
+							m_nMaxAmount = 2
+						},
+					]
+				},
+			]
+		}
+	}
+}

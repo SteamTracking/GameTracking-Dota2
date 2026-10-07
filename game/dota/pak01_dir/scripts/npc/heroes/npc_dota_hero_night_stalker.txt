@@ -1,0 +1,618 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_night_stalker"
+	{
+		"Model"		"models/heroes/nightstalker/nightstalker.vmdl"
+		"Model1"		"models/heroes/nightstalker/nightstalker_night.vmdl"
+		"SoundSet"		"Hero_NightStalker"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Initiator,Durable,Disabler,Nuker"
+		"Rolelevels"	"1,2,2,2,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"60"
+		"HeroOrderID"	"42"
+		"ModelScale"		"0.840000"
+		"VersusScale"		"0.84"
+		"LoadoutScale"		"0.840000"
+		"SpectatorLoadoutScale" "0.83"
+		"HeroGlowColor"		"70 105 255"
+		"PickSound"		"night_stalker_nstalk_spawn_01"
+		"BanSound"		"night_stalker_nstalk_anger_07"
+		"CMEnabled"		"1"
+		"NameAliases"		"ns;Balanar"
+		"workshop_guide_name"		"Night Stalker"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"104,59,4"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Nose"			"0"
+			"NicePecs"		"1"
+			"Flying"		"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_juggernaut"
+		"HeroSelectSoundEffect"		"Hero_NightStalker.Pick"
+		"GibType"		"default"
+		"Ability1"		"night_stalker_void"
+		"Ability2"		"night_stalker_crippling_fear"
+		"Ability3"		"night_stalker_midnight_feast"
+		"Ability4"		"night_stalker_hunter_in_the_night"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"night_stalker_darkness"
+		"Ability7"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"night_stalker_void"
+			"Ability2"	"night_stalker_crippling_fear"
+			"Ability3"	"night_stalker_midnight_feast"
+			"Ability4"	"night_stalker_darkness"
+		}
+
+		"Ability10"		"special_bonus_unique_night_stalker_4"
+		"Ability11"		"special_bonus_unique_night_stalker_crippling_fear_damage"
+		"Ability12"		"special_bonus_unique_night_stalker_3"
+		"Ability13"		"special_bonus_unique_night_stalker_hunter_status_resist"
+		"Ability14"		"special_bonus_unique_night_stalker_crippling_fear_radius"
+		"Ability15"		"special_bonus_strength_15"
+		"Ability16"		"special_bonus_unique_night_stalker_2"
+		"Ability17"		"special_bonus_unique_night_stalker"
+		"Facets"
+		{
+			"night_stalker_blinding_void" 
+			{
+				"Icon"				"no_vision"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"True"
+			}
+			"night_stalker_dayswap" 
+			{
+				"Icon"				"moon"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"True"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"night_stalker_night_reign"
+					}
+				}
+			}
+			"night_stalker_voidbringer" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"MaxHeroAttributeLevel"	"6"
+				"Deprecated"		"True"
+			}
+		}
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"44"
+		"BaseAttackSpeed"		"100"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.550000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.20000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.600000"
+		"StatusHealthRegen"		"0.25"
+		"StatusManaRegen"	"0.25"
+		"MovementSpeed"		"295"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"1800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_night_stalker.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_night_stalker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_night_stalker/nightstalker_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"0"
+				"TextureHeight"		"0"
+				"MaxPolygonsLOD0"		"0"
+				"MaxPolygonsLOD1"		"0"
+				"DisplayInLoadout" "0"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "night_stalker_crippling_fear"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "night_stalker_void"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/nightstalker/nightstalker_night.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_night_stalker.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_night_stalker.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_wing_R"				"1"
+			"attach_wing_L"				"2"
+			"attach_attack1"			"3"
+			"attach_attack2"			"4"
+			"attach_head"				"5"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Night Stalker: Void
+			//=================================================================================================================
+			"night_stalker_void"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilitySound"					"Hero_Nightstalker.Void"        
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				// "RestrictValuesToMaxLevel"		"1"
+				"HasShardUpgrade"				"1"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"525"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityManaCost"				"90 95 100 105"
+			
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"			"11 10 9 8"
+						"special_bonus_unique_night_stalker_4"	"-1"
+					}
+					"damage"			
+					{
+						"value"		"80 160 240 320"
+						"special_bonus_facet_night_stalker_voidbringer"	"+0"
+					}
+					"duration_day"			"1.25"
+					"duration_night"
+					{
+						"value"											"1.6 2.2 2.8 3.4"
+						"special_bonus_facet_night_stalker_voidbringer"	"+0"
+					}
+					"movespeed_slow"		
+					{
+						"value"					"50"
+						"special_bonus_facet_night_stalker_voidbringer" "=50 =50 =50 =50 =60"
+					}
+				
+					"attackspeed_slow"		
+					{
+						"value"					"50"
+						"special_bonus_facet_night_stalker_voidbringer" "=50 =50 =50 =50 =60"
+					}
+
+					"invisible_damage_pers"
+					{
+						"value"		"0"
+						"special_bonus_facet_night_stalker_blinding_void"	"50"
+					}
+
+					"invisible_damage_tickrate"	".1"
+					"max_level"
+					{
+						"value"					"4"
+						"special_bonus_facet_night_stalker_voidbringer" "+1"
+					}
+					"max_level_tooltip"
+					{
+						"special_bonus_facet_night_stalker_voidbringer" "=5"
+					}
+					"cast_radius"
+					{
+						"value"					"0"
+						"special_bonus_shard"	"400"
+						"affected_by_aoe_increase"			"1"
+					}
+					"cast_radius_tooltip"
+					{
+						"value"	"0"
+						"special_bonus_facet_night_stalker_voidbringer" "=350"
+						"affected_by_aoe_increase"			"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Night Stalker: Crippling Fear
+			//=================================================================================================================
+			"night_stalker_crippling_fear"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"		
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"		
+				"AbilityManaCost"				"50"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"				"30 25 20 15"
+					}
+
+					"duration_day"
+					{
+						"value"				"3.0"
+						//"special_bonus_scepter" "=0"
+					}
+
+					"duration_night"
+					{
+						"value"				"4.5 5 5.5 6.0"
+						//"special_bonus_scepter"	"=0"
+					}
+
+					"mana_pct_cost"
+					{
+						"value"			"0"
+						//"special_bonus_scepter" "6"
+					}
+
+					"mana_interval"		"1"
+
+					"toggled"
+					{
+						"value"			"0"
+						//"special_bonus_scepter"	"1"
+					}
+
+					"radius"	
+					{
+						"value"		"350"
+						"special_bonus_unique_night_stalker_crippling_fear_radius"	"+75"
+						"affected_by_aoe_increase"	"1"
+					}
+
+					"dps"			
+					{
+						"value"			"25 30 35 40"
+						"special_bonus_unique_night_stalker_crippling_fear_damage" 	"+10"
+					}
+					"tick_rate"	"0.1"
+
+					"death_refresh"
+					{
+						"value"			"0"
+					}
+				}
+		
+			}
+	
+			//=================================================================================================================
+			// Night Stalker: Hunter in the Night
+			//=================================================================================================================
+			"night_stalker_hunter_in_the_night"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"        
+				"IsBreakable"					"1"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"HasScepterUpgrade"				"1"  
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_movement_speed_pct_night"	
+					{
+						"value"			"24"
+						"special_bonus_scepter"	"+15"
+						"hero_levelup"	"2"
+						"levelup_interval" "3"
+				
+					}
+
+					"bonus_attack_speed_night"			
+					{
+						"value"			"38"
+						"special_bonus_scepter" "+50"
+						"hero_levelup"	"2"
+					
+					}
+
+					"reset_cooldowns"
+					{
+						"special_bonus_scepter"	"1"
+					}
+
+					"bonus_status_resist_night"
+					{
+						"special_bonus_unique_night_stalker_hunter_status_resist"	"+20"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+			}
+	
+			//=================================================================================================================
+			// Night Stalker: Darkness
+			//=================================================================================================================
+			"night_stalker_darkness"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Nightstalker.Darkness"		
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				"AbilityManaCost"				"125 175 225"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				
+					{
+						"value"			"30.0"				
+					}
+
+					"bonus_damage"			
+					{
+						"value"			"50 100 150"
+						"special_bonus_unique_night_stalker_3"	"+25"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"140 135 130"
+						"special_bonus_unique_night_stalker"	"-35"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Innate  hp regen bonus/penalty
+			//=================================================================================================================
+			"night_stalker_heart_of_darkness"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"Innate"						"1"
+				"MaxLevel"						"1"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"hp_regen_during_night_pct"
+					{
+						"value"								"20"
+					}
+
+					"hp_regen_during_day_pct"				"0"
+
+					"affects_mana_regen"
+					{
+						"special_bonus_shard"				"1"
+					}
+
+					"nighttime_increase"
+					{
+						"special_bonus_shard"				"45"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Night Stalker Day/Night Swap Facet Ability
+			//=================================================================================================================
+			"night_stalker_night_reign"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"daytime_start" 	".75"
+					"daytime_change"	"-15"
+					"roshan_initial_move_timer_override"	"1199" // Have Roshan start moving at 20 minutes instead of at 15.
+					"tooltip_nighttime_change"	"15" // Should match daytime_change, just so we can have different tooltips
+				}
+			}
+
+
+			//=================================================================================================================
+			// Ability: Midnight Feast
+			//=================================================================================================================
+			"night_stalker_midnight_feast"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"	
+				"IsBreakable"					"1"
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"			
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"		
+				"AbilityManaCost"				"0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCooldown"				"39 36 33 30"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"125"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attack_heal"
+					{
+						"value"				"12 16 20 24"
+						"special_bonus_unique_night_stalker_2"	"+100"
+					}
+
+					"hp_restore"			"10 15 20 25"
+					"mp_restore"			"10 12 14 16"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,157 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "ArtyWeaponInfo_t"
+	default = 
+	{
+		m_unID = 1
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_default_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_default_WeaponLocDesc"
+		m_sWeaponSwapSound = "crownfall.artillery.swap_weapon.default"
+		m_sWeaponFireSound = "crownfall.artillery.shoot.default"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/snapfire_mortimer_kisses.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "kiss"
+		m_flReloadTime = 0.5
+		m_flMaxSpeed = 1600
+		m_flManaCost = 0
+		m_flDamageRadius = 60.0
+		m_flTerrainCarveRadius = 60.0
+		m_nMaxReloads = 99
+		m_nWeaponPoints = 100
+		m_weaponAttackActivity = "ACT_DOTA_ATTACK"
+		m_flShotCreationTime = 0.13
+	}
+	grenade = 
+	{
+		m_unID = 2
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_grenade_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_grenade_WeaponLocDesc"
+		m_sWeaponSwapSound = "crownfall.artillery.swap_weapon.grenade"
+		m_sWeaponFireSound = "crownfall.artillery.shoot.grenade"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/sniper_concussive_grenade.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "grenade"
+		m_flReloadTime = 0.5
+		m_flMaxSpeed = 1500
+		m_flDamage = 2
+		m_flDamageRadius = 80
+		m_flTerrainCarveRadius = 80
+		m_bBounces = true
+		m_flFuseTime = 1.5
+		m_flBounceDrag = 0.5
+		m_bCollides = false
+		m_nMaxReloads = 99
+		m_nWeaponPoints = 100
+		m_bShowTrajectory = true
+		m_weaponAttackActivity = "ACT_DOTA_CAST_ABILITY_3"
+		m_flShotCreationTime = 0.17
+	}
+	plasma_beam = 
+	{
+		m_unID = 3
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_plasma_beam_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_plasma_beam_WeaponLocDesc"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/tinker_laser.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "kiss"
+		m_flReloadTime = 0.5
+		m_flMaxSpeed = 1200
+		m_flDamage = 0
+		m_flLockedPower = 1
+		m_bIsRay = true
+		m_flTerrainCarveRadius = 20
+		m_nMaxReloads = 99
+		m_nRayDigTimes = 10
+		m_nWeaponPoints = 100
+		m_strWeaponActivityModifier = "weapon_cannon"
+	}
+	tunneler = 
+	{
+		m_unID = 4
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_tunneler_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_tunneler_WeaponLocDesc"
+		m_sWeaponSwapSound = "crownfall.artillery.swap_weapon.tunneler"
+		m_sWeaponFireSound = "crownfall.artillery.shoot.tunneler"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/meepo_petrify.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "tunneler"
+		m_flReloadTime = 0.5
+		m_flMaxSpeed = 1600
+		m_nInitialShotCount = 1
+		m_nInitialShotAngleDispersionPer = 0
+		m_flTerrainCarveRadius = 65
+		m_flHitRadius = 1
+		m_flDamageRadius = 65
+		m_flGravityMult = 1
+		m_nMaxReloads = 99
+		m_nWeaponPoints = 100
+		m_flDamage = 0
+		m_weaponAttackActivity = "ACT_DOTA_CAST_ABILITY_1"
+		m_flShotCreationTime = 0.15
+		m_nExplodeTimes = 4
+		m_vVelocityMultOnExplode = [ 0.03, 0.4 ]
+		m_vVelocityOffsetOnExplode = [ 0, -100 ]
+		m_flRadiusChangePerExplode = 0
+	}
+	mirv = 
+	{
+		m_unID = 5
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_mirv_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_mirv_WeaponLocDesc"
+		m_sWeaponSwapSound = "crownfall.artillery.swap_weapon.mirv"
+		m_sWeaponFireSound = "crownfall.artillery.shoot.default"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/sniper_shrapnel_muh_keen_gun.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "kiss"
+		m_flMaxSpeed = 1400
+		m_nSplitCount = 4
+		m_bSplitAtTop = true
+		m_bZeroXOnSplit = true
+		m_flSplitDispersion = 500
+		m_szSplitWeapon = "bomblet"
+		m_flDamageRadius = 50
+		m_flTerrainCarveRadius = 50
+		m_flReloadTime = 0.5
+		m_nMaxReloads = 2
+		m_weaponAttackActivity = "ACT_DOTA_CAST_ABILITY_2"
+	}
+	bomblet = 
+	{
+		m_unID = 6
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_bomblet_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_bomblet_WeaponLocDesc"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/techies_land_mines.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "kiss"
+		m_flReloadTime = 0.6
+		m_flMaxSpeed = 1200
+		m_flDamage = 1.0
+		m_flDamageRadius = 50
+		m_flTerrainCarveRadius = 50
+		m_strWeaponActivityModifier = "weapon_cannon"
+	}
+	dropshot = 
+	{
+		m_unID = 7
+		m_sWeaponLocName = "#DOTA_VData_artillery_weapons_dropshot_WeaponLocName"
+		m_sWeaponLocDesc = "#DOTA_VData_artillery_weapons_dropshot_WeaponLocDesc"
+		m_sWeaponSwapSound = "crownfall.artillery.swap_weapon.dropshot"
+		m_sWeaponFireSound = "crownfall.artillery.shoot.default"
+		m_sWeaponImage = panorama:"file://{images}/spellicons/tinker_heat_seeking_missile.png"
+		m_bIsPlayerWeapon = true
+		m_strGraphicInfoName = "dropshot"
+		m_flReloadTime = 0.5
+		m_flMaxSpeed = 1600
+		m_flManaCost = 0
+		m_flDamageRadius = 60.0
+		m_flTerrainCarveRadius = 60.0
+		m_nMaxReloads = 99
+		m_nWeaponPoints = 100
+		m_bNoShootingWhileInAir = true
+		m_bListenForKeypress = true
+		m_vVelocityMultOnKeypress = [ 0.0, 0.0 ]
+		m_vVelocityOffsetOnKeypress = [ 0.0, 0.0 ]
+		m_flShotCreationTime = 0.13
+	}
+	_localization_path = "resource/localization/vdata/artillery_weapons/artillery_weapons_%language%.txt"
+}

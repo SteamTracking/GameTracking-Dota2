@@ -1,0 +1,641 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_sven"
+	{
+		"Model"		"models/heroes/sven/sven.vmdl"
+		"SoundSet"		"Hero_Sven"
+		"IdleSoundLoop"		"Hero_Sven.IdleLoop"
+		"PickSound"		"sven_sven_spawn_04"
+		"BanSound"		"sven_sven_anger_03"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Carry,Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"	"2,2,2,2,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"18"
+		"HeroOrderID"	"19"
+		"BotImplemented"		"1"
+		"ModelScale"		"0.840000"
+		"VersusScale"		"0.840000"
+		"LoadoutScale"		"0.840000"
+		"SpectatorLoadoutScale" "0.92"
+		"HeroGlowColor"		"0 50 247"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Sven"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"42,81,23"
+		"Adjectives"
+		{
+			"Blue"			"1"
+			"Red"			"1"
+			"NicePecs"		"1"
+			"Mask"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_omniknight"
+		"HeroSelectSoundEffect"		"Hero_Sven.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Rogue Knight"
+		"Ability1"		"sven_storm_bolt"
+		"Ability2"		"sven_great_cleave"
+		"Ability3"		"sven_warcry"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sven_gods_strength"
+		"Ability7"		"sven_wrath_of_god"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"sven_storm_bolt"
+			"Ability2"	"sven_great_cleave"
+			"Ability3"	"sven_warcry"
+			"Ability4"	"sven_gods_strength"
+		}
+
+		"Ability10"		"special_bonus_unique_sven_5"
+		"Ability11"		"special_bonus_unique_sven_gods_strength_slow_resist"
+		"Ability12"		"special_bonus_unique_sven_3"
+		"Ability13"		"special_bonus_unique_sven_8"
+		"Ability14"		"special_bonus_unique_sven_stormhammer_cooldown"
+		"Ability15"		"special_bonus_unique_sven_7"
+		"Ability16"		"special_bonus_unique_sven_2"
+		"Ability17"		"special_bonus_unique_sven_4"
+		"Facets"
+		{
+			"sven_heavy_plate"	
+			{
+				"Icon"				"armor"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+			}
+			"sven_strscaling"
+			{
+				"Icon"				"strength"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"sven_wrath_of_god"
+					}
+				}
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.900000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.5"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.20000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.500000"
+		"StatusHealthRegen"		"0.75"
+		"MovementSpeed"		"325"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_sven/sven_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"400"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Pet"
+				"ShowItemOnGeneratedUnits" "1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_companion"
+				}
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "sven_great_cleave"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "sven_gods_strength"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_3"
+				"SlotText" "sven_warcry"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_sven"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_sven.vsndevts"
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"			"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"			"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"			"ITEM_CORE | ITEM_SELLABLE"
+				"item_branches"			"ITEM_CORE | ITEM_SELLABLE"
+
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"			"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+				"item_quelling_blade"	"ITEM_CORE | ITEM_SELLABLE"
+
+				"item_belt_of_strength"	"ITEM_CORE"
+				"item_gloves"			"ITEM_CORE"
+				"item_power_treads"		"ITEM_DERIVED"
+				
+				"item_ogre_axe"			"ITEM_CORE"
+				"item_broadsword"		"ITEM_CORE"
+				"item_void_stone"		"ITEM_CORE"
+				"item_echo_sabre"		"ITEM_DERIVED"
+
+				"item_blink"		"ITEM_CORE"
+
+				"item_ogre_axe"					"ITEM_EXTENSION"
+				"item_mithril_hammer"			"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"			"ITEM_DERIVED"
+
+				"item_reaver"		"ITEM_LUXURY"
+				"item_claymore"		"ITEM_LUXURY"
+				"item_lifesteal"	"ITEM_LUXURY"
+				"item_recipe_satanic"	"ITEM_LUXURY"
+				"item_satanic"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"sven_storm_bolt"
+				"2"		"sven_warcry"
+				"3"		"sven_warcry"
+				"4"		"sven_great_cleave"
+				"5"		"sven_great_cleave"
+				"6"		"sven_gods_strength"
+				"7"		"sven_great_cleave"
+				"8"		"sven_great_cleave"
+				"9"		"sven_warcry"
+				"10"		"special_bonus_unique_sven_5"
+				"11"		"sven_warcry"
+				"12"		"sven_gods_strength"
+				"13"		"sven_storm_bolt"
+				"14"		"sven_storm_bolt"
+				"15"		"special_bonus_unique_sven_3"
+				"16"		"sven_storm_bolt"
+				"17"		""
+				"18"		"sven_gods_strength"
+				"19"		""
+				"20"		"special_bonus_unique_sven_7"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_sven_2"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_SEMI_CARRY | DOTA_BOT_STUN_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_sven.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_sven.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"		"1"
+			"attach_head"			"2"
+			"attach_sword"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Ability: Storm Bolt (Storm Hammer)
+			//=================================================================================================================
+			"sven_storm_bolt"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Sven.StormBoltImpact"
+
+				"HasScepterUpgrade"				"1"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"80 160 240 320"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCastRange"
+						{
+							"value"					"600"
+							"special_bonus_scepter" "+25%"
+						}
+						"AbilityCooldown"		
+						{
+							"value"						"21 18 15 12"
+							"special_bonus_unique_sven_stormhammer_cooldown"		"-25%"
+						}
+						"AbilityManaCost"				
+						{
+							"value"						"110"
+							"special_bonus_unique_sven_stormhammer_cooldown"		"-25%"
+						}
+
+						"bolt_speed"			
+						{
+							"value"			"1000"
+							"special_bonus_scepter" "+25%"
+						}
+
+						"bolt_stun_duration"	
+						{
+							"value"		"1.0 1.25 1.5 1.75"
+							"special_bonus_unique_sven_4" "+1"
+						}
+						"bolt_aoe"			
+						{
+							"value"			"250 270 290 310"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_radius"		
+						{
+							"value"		"225"
+							"affected_by_aoe_increase"	"1"
+						}
+						"scepter_bonus_damage"			"180"
+						"bonus_damage_pct"
+						{
+							"value"						"0"
+							"special_bonus_unique_sven"	"+20"
+						}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Great Cleave
+			//=================================================================================================================
+			"sven_great_cleave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"MaxLevel"						"4"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"cleave_starting_width"
+					{
+						"value"			"150"
+						// intentionally omitted affected_by_aoe_increase here because it warps the cleave box too much
+					}
+					"cleave_ending_width"
+					{
+						"value"			"270 300 330 360"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_distance"
+					{
+						"value"			"400 500 600 700"
+						"affected_by_aoe_increase"	"1"
+					}
+					"great_cleave_damage"
+					{
+						"value"				"60 70 80 90"
+						"special_bonus_unique_sven_8" "+25"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"strength_bonus"		"00"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Ability: Warcry
+			//=================================================================================================================
+			"sven_warcry"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilitySound"					"Hero_Sven.WarCry"
+		        "HasShardUpgrade"               "1"
+				"IsBreakable"					"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"36 32 28 24"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"30 35 40 45"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"movespeed"			
+						{
+							"value"		"6 9 12 15"
+							"special_bonus_shard"	"+3"
+						}
+						"bonus_armor"		
+						{
+							"value"		"5 8 11 14"		
+							"special_bonus_unique_sven_7"		"+8"
+						}
+						"radius"		
+						{
+							"value"			"700"
+							"special_bonus_shard"			"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"duration"		
+						{
+							"value"			"8"
+							"special_bonus_unique_sven_5"		"+5"
+						}
+						"shard_passive_armor"	
+						{
+							"special_bonus_shard"		"0"
+						}
+						"shard_passive_movespeed"	
+						{
+							"special_bonus_shard"		"0"
+						}
+						"undispellable"
+						{
+							"value"			"0"
+							"special_bonus_shard"		"1"
+						}
+						"shard_radius"			
+						{
+							"special_bonus_shard"		"0"
+							"affected_by_aoe_increase"	"1"
+						}
+						"base_barrier_amount"
+						{
+							"special_bonus_shard"		"300"
+							"RequiresShard"				"1"
+						}
+						"barrier_per_strength"
+						{
+							"special_bonus_shard"		"=0"
+						}
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: God's Strength
+			//=================================================================================================================
+			"sven_gods_strength"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Sven.GodsStrength"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"30.0"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"gods_strength_damage"
+					{
+						"value"		"110 150 190"	
+						"special_bonus_unique_sven_2"		"+50"
+
+						// "damage" in attribute name but it isn't really
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"bonus_slow_resistance"
+					{
+						"value"		"40"	
+						"special_bonus_unique_sven_gods_strength_slow_resist"		"+20"	
+					}
+					"AbilityCooldown"
+					{
+						"value"							"110 105 100"
+						"special_bonus_unique_sven_3"	"-12"
+					}
+				}	
+			}
+			//=================================================================================================================
+			// Ability: Subjugator (bonus damage to stunned enemies)
+			//=================================================================================================================
+			"sven_vanquisher"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_damage_pct"
+					{
+						"value"						"20"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Resolute variant
+			//=================================================================================================================
+			"sven_wrath_of_god"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_damage_per_str"
+					{
+						"value"				"0.08"
+						"hero_levelup"		"0.02"
+					}
+					"current_bonus_damage_tooltip"
+					{
+						"dynamic_value"				"true"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,605 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_vengefulspirit"
+	{
+		"Model"		"models/heroes/vengeful/vengeful.vmdl"
+		"IdleExpression"		"scenes/vengefulspirit/vengefulspirit_exp_idle_01.vcd"
+		"SoundSet"		"Hero_VengefulSpirit"
+		"PickSound"		"vengefulspirit_vng_spawn_01"
+		"BanSound"		"vengefulspirit_vng_anger_04"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroPool2"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Support,Initiator,Disabler,Nuker,Escape"
+		"Rolelevels"	"3,2,2,1,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"20"
+		"HeroOrderID"	"21"
+		"BotImplemented"		"1"
+		"ModelScale"		"0.980000"
+		"SpectatorLoadoutScale" "0.87"
+		"HeroGlowColor"		"133 113 164"
+		"CMEnabled"		"1"
+		"NameAliases"		"vs;Shendelzare"
+		"workshop_guide_name"		"Vengeful Spirit"
+		"NoCombine"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"79,111,3"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Spirit"		"1"
+			"Undead"		"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_death_prophet"
+		"HeroSelectSoundEffect"		"Hero_VengefulSpirit.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"87 129 242 255"
+		"Ability1"		"vengefulspirit_magic_missile"
+		"Ability2"		"vengefulspirit_wave_of_terror"
+		"Ability3"		"vengefulspirit_command_aura"
+		"Ability4"		"vengefulspirit_retribution"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"vengefulspirit_nether_swap"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"vengefulspirit_magic_missile"
+			"Ability2"	"vengefulspirit_wave_of_terror"
+			"Ability3"	"vengefulspirit_command_aura"
+			"Ability4"	"vengefulspirit_nether_swap"
+		}
+
+		"Ability10"		"special_bonus_unique_vengeful_spirit_swap_damage"
+		"Ability11"		"special_bonus_unique_vengeful_spirit_missile_castrange"
+		"Ability12"		"special_bonus_unique_vengeful_spirit_4"
+		"Ability13"		"special_bonus_unique_vengeful_spirit_1"
+		"Ability14"		"special_bonus_unique_vengeful_spirit_wave_of_terror_steal"
+		"Ability15"		"special_bonus_unique_vengeful_spirit_5"
+		"Ability16"		"special_bonus_unique_vengeful_spirit_2"
+		"Ability17"		"special_bonus_unique_vengeful_spirit_9"
+
+		"Facets"
+		{
+			"vengefulspirit_avenging_missile" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Purple"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"vvengefulspirit_melee"
+			{
+				"Icon"				"fist"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"vengefulspirit_soul_strike"
+					}
+				}
+				"KeyValueOverrides"
+				{
+					"AttackRate"		"1.5"
+				}
+			}
+		}
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"28"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.500000"
+		"BaseAttackSpeed"		"100"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"400"
+		"HasAggressiveStance"		"1"	
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+			//"faster"	"220"
+			//"fastest"	"280"
+			//"crazy_fast"	"340"			
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"1.2"
+				"aggressive"		"1.2"
+			}
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"1.2"
+				"aggressive"		"1.2"
+			}						
+		}		
+		"ProjectileModel"		"particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
+		"ProjectileSpeed"		"1500"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.0"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.5"
+		"StatusHealthRegen"		"0.75"
+		"ArmorPhysical"		"0"
+		"MovementSpeed"		"300"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_vengeful"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_vengefulspirit.vsndevts"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "vengefulspirit_magic_missile"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "vengefulspirit_wave_of_terror"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_vengeful/vengeful_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"			
+				"item_magic_stick"	"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"	"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"				
+				"item_belt_of_strength"	"ITEM_CORE"
+				"item_gloves"			"ITEM_CORE"
+				"item_power_treads"		"ITEM_DERIVED"
+
+				"item_staff_of_wizardry"	"ITEM_EXTENSION"
+				"item_fluffy_hat"		"ITEM_EXTENSION"
+				"item_recipe_force_staff"	"ITEM_EXTENSION"
+				"item_force_staff"			"ITEM_DERIVED"
+
+
+				"item_energy_booster"		"ITEM_EXTENSION"
+				"item_ring_of_protection"	"ITEM_EXTENSION"
+				"item_fluffy_hat"			"ITEM_EXTENSION"
+				"item_recipe_pavise"		"ITEM_EXTENSION"
+				"item_pavise"				"ITEM_DERIVED"
+
+				"item_crown"			"ITEM_EXTENSION"
+				"item_wind_lace"			"ITEM_EXTENSION"
+				"item_recipe_solar_crest"			"ITEM_EXTENSION"
+				"item_solar_crest"			"ITEM_DERIVED"
+
+
+			}
+			"Build"
+			{
+				"1"		"vengefulspirit_magic_missile"
+				"2"		"vengefulspirit_command_aura"
+				"3"		"vengefulspirit_magic_missile"
+				"4"		"vengefulspirit_command_aura"
+				"5"		"vengefulspirit_magic_missile"
+				"6"		"vengefulspirit_nether_swap"
+				"7"		"vengefulspirit_magic_missile"
+				"8"		"vengefulspirit_command_aura"
+				"9"		"vengefulspirit_command_aura"
+				"10"		"special_bonus_unique_vengeful_spirit_swap_damage"
+				"11"		"vengefulspirit_wave_of_terror"
+				"12"		"vengefulspirit_nether_swap"
+				"13"		"vengefulspirit_wave_of_terror"
+				"14"		"vengefulspirit_wave_of_terror"
+				"15"		"special_bonus_unique_vengeful_spirit_4"
+				"16"		"vengefulspirit_wave_of_terror"
+				"17"		""
+				"18"		"vengefulspirit_nether_swap"
+				"19"		""
+				"20"		"special_bonus_unique_vengeful_spirit_5"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_vengeful_spirit_9"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_STUN_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_vengefulspirit.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_vengefulspirit.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_hand1"			"1"
+			"attach_attack2"		"2"
+			"attach_head"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Ability: Vengeful Spirit Magic Missle
+			//=================================================================================================================
+			"vengefulspirit_magic_missile"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 95 100 105"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"magic_missile_speed"	"1350"
+					"magic_missile_stun"	
+					{
+						"value"			"1.2 1.4 1.6 1.8"
+						"special_bonus_unique_vengeful_spirit_1"	"+0.3"				
+					}
+					"magic_missile_damage"
+					{
+						"value"	"100 180 260 340"
+
+					}
+					"AbilityCastRange"
+					{
+						"value"						"650"
+						"special_bonus_unique_vengeful_spirit_missile_castrange"				"+100"
+					}
+					"bounce_range_pct"			"75"
+					"damage_per_lasthit"
+					{
+						"value"	"0"
+						"special_bonus_facet_vengefulspirit_avenging_missile"	"+0.75"
+					}
+					"AbilityCooldown"
+					{
+						"value"										"14 13 12 11"
+						"special_bonus_unique_vengeful_spirit_5"	"-2"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Ability: Vengefulspirit Command Aura
+			//=================================================================================================================
+			"vengefulspirit_command_aura"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"IsBreakable"					"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+		
+				"HasScepterUpgrade"			"1"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityValues"
+				{
+					"bonus_base_damage"
+					{
+						"value" "10 15 20 25"
+						"special_bonus_unique_vengeful_spirit_2" "+16"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"self_multiplier"				
+					{
+						"value"						"25"
+						"special_bonus_scepter"		"+10"
+					}
+					"aura_radius"
+					{
+						"value" "1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"scepter_illusion_damage_out_pct"
+					{
+						"special_bonus_scepter" "100"
+					}
+					"scepter_illusion_damage_in_pct"
+					{
+						"special_bonus_scepter" "100"
+					}
+					"scepter_illusion_ms_bonus_pct"
+					{
+						"special_bonus_scepter" "0"
+					}
+
+					"revival_time"
+					{
+						"value"	"0"
+						//"special_bonus_scepter" "3"
+					}
+					"restitution_time"
+					{
+						"value"	"0"
+						//"special_bonus_scepter"		"=10"
+					}
+					"AbilityCooldown"			
+					{
+						"value"									"0"
+						//"special_bonus_scepter"					"120"
+					}
+
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: Vengefulspirit Wave of Terror
+			//=================================================================================================================
+			"vengefulspirit_wave_of_terror"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_VengefulSpirit.WaveOfTerror"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1400"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16 14 12 10"
+				"AbilityDuration"				"8"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"			"60 80 100 120"
+						"wave_speed"		"2000.0"
+						"wave_width"		
+						{
+							"value"			"325"
+							"affected_by_aoe_increase"	"1"
+						}
+						"armor_reduction"	
+						{
+							"value"			"-3 -4 -5 -6"
+						"special_bonus_unique_vengeful_spirit_4" "+-3"
+						}
+						"attack_reduction"
+						{
+							"value"			"10 15 20 25"
+						}
+						"vision_aoe"		
+						{
+							"value"		"350"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_duration"	"4"
+						"steal_pct"
+						{
+							"value"				"0"
+							"special_bonus_unique_vengeful_spirit_wave_of_terror_steal"		"+25"
+						}
+			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Vengefulspirit Nether Swap
+			//=================================================================================================================
+			"vengefulspirit_nether_swap"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_VengefulSpirit.NetherSwap"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"850 975 1100"
+				"AbilityCastPoint"				"0.4"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 150 200"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_reduction"
+					{
+						"value"					"0"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					}
+					"damage_reduction_duration"	
+					{
+						"value"					"10"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					}
+					"damage"
+					{	
+						"value"							"150 300 450"
+						"special_bonus_unique_vengeful_spirit_swap_damage"			"+150"
+					}
+					"AbilityCooldown"
+					{
+						"value"										"46 38 30"
+						"special_bonus_unique_vengeful_spirit_9"	"-18"
+					}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Vengeful Soul Innate
+			//=================================================================================================================
+			"vengefulspirit_soul_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+				}
+			}	
+
+			//=================================================================================================================
+			// Vengeful Spirit Revenge Innate
+			//=================================================================================================================
+			"vengefulspirit_retribution"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilityValues"
+				{
+					"bonus_damage"			"20"
+				}
+			}
+		}
+	}
+}

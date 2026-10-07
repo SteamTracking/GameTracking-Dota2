@@ -1,0 +1,598 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_phantom_lancer"
+	{
+		"Model"		"models/heroes/phantom_lancer/phantom_lancer.vmdl"
+		"SoundSet"		"Hero_PhantomLancer"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Escape,Pusher,Nuker"
+		"Rolelevels"	"2,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"12"
+		"HeroOrderID"	"75"
+		"NameAliases"		"pl;Azwraith"
+		"PickSound"		"phantom_lancer_plance_spawn_01"
+		"BanSound"		"phantom_lancer_plance_anger_06"
+		"CMEnabled"		"1"
+		"ModelScale"		"0.840000"
+		"VersusScale"		"0.840000"
+		"LoadoutScale"		"0.840000"
+		"workshop_guide_name"		"Phantom Lancer"
+		"LastHitChallengeRival"		"npc_dota_hero_juggernaut"
+		"HeroSelectSoundEffect"		"Hero_PhantomLancer.Pick"
+		"GibType"		"default"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"109,67,89"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"Blue"			"1"
+		}
+		"Ability1"		"phantom_lancer_spirit_lance"
+		"Ability2"		"phantom_lancer_doppelwalk"
+		"Ability3"		"phantom_lancer_phantom_edge"
+		"Ability4"		"phantom_lancer_illusory_armaments"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"phantom_lancer_juxtapose"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"phantom_lancer_spirit_lance"
+			"Ability2"	"phantom_lancer_doppelwalk"
+			"Ability3"	"phantom_lancer_phantom_edge"
+			"Ability4"	"phantom_lancer_juxtapose"
+		}
+
+		"Ability10"		"special_bonus_unique_phantom_lancer_lance_slow_duration"
+		"Ability11"		"special_bonus_unique_phantom_lancer_juxtapose_illusio_proc_chance"
+		"Ability12"		"special_bonus_unique_phantom_lancer_illusion_lances"
+		"Ability13"		"special_bonus_unique_phantom_lancer_doppelwalk_cast_range"
+		"Ability14"		"special_bonus_unique_phantom_lancer_lance_damage"
+		"Ability15"		"special_bonus_unique_phantom_lancer_juxtapose_damage_in"
+		"Ability16"		"special_bonus_unique_phantom_lancer_4"
+		"Ability17"		"special_bonus_unique_phantom_lancer_illusory_armaments_duration"
+		"Facets"
+		{
+			"phantom_lancer_convergence" 
+			{
+				"Icon"				"illusion"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			} 
+			"phantom_lancer_divergence" 
+			{
+				"Icon"				"summons"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"phantom_lancer_lancelot"
+			{
+				"Icon"				"phantom_lance"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+
+			"phantom_lancer_lancer"
+			{
+				"Icon"				"phantom_lance"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"225"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseAgility"		"26"
+		"AttributeAgilityGain"		"3.4"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusHealthRegen"		"2.0"
+		"MovementSpeed"		"285"
+		"HasAggressiveStance"		"1"
+		"particle_folder"		"particles/units/heroes/hero_phantom_lancer"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_phantom_lancer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_phantom_lancer/phantom_lancer_spawn.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"3000"
+				"MaxPolygonsLOD1"	"1200"
+				"SlotText"		"#LoadoutSlot_Head"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "phantom_lancer_spirit_lance"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "phantom_lancer_doppelwalk"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_3"
+				"SlotText" "phantom_lancer_phantom_edge"
+				"DisplayInLoadout" "0"
+			}		
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_4"
+				"SlotText" "phantom_lancer_juxtapose"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PUSH_SUPPORT | DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_lancer.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_lancer.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_hand1"		"1"
+			"attach_hand2"		"2"
+			"attach_head"		"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Ability: Phantom Lancer's Spirit Lance
+			//=================================================================================================================
+			"phantom_lancer_spirit_lance"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_PhantomLancer.SpiritLance.Throw"
+
+		        "HasScepterUpgrade"               "0"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"		
+		
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600 650 700 750"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"lance_damage"
+					{
+						"value"				"100 160 220 280"
+						"special_bonus_unique_phantom_lancer_lance_damage"			"+100"
+				
+					}
+					"lance_speed"				"1000 1000 1000 1000"
+					"duration"			
+					{
+						"value"				"3.0"
+						"special_bonus_unique_phantom_lancer_lance_slow_duration"		"+1.0"
+					}
+
+					"movement_speed_pct"
+					{
+						"value"				"-14 -21 -28 -35"
+					}
+					"illusion_duration"			"3.5 5.0 6.5 8.0"
+					"illusion_damage_out_pct"	
+					{
+						"value"						"-85"
+					}
+					"tooltip_illusion_damage"	
+					{
+						"value"					"15"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"illusion_damage_in_pct"	"300 300 300 300"
+					"tooltip_illusion_total_damage_in_pct"	"400 400 400 400"
+					"fake_lance_distance"		"675"
+					"scepter_bounce_radius"
+					{
+						"special_bonus_scepter"						"0"
+						"affected_by_aoe_increase"	"1"
+					}
+					"scepter_bonus_illusion_damage"
+					{
+						"special_bonus_scepter"						"0"
+					}
+					"scepter_total_hits"
+					{
+						"special_bonus_scepter"						"0"
+					}
+					"illusion_lance_damage_pct"
+					{
+						"special_bonus_unique_phantom_lancer_illusion_lances"	"+50"
+					}
+					"AbilityCooldown"
+					{
+						"value"										"10 9 8 7"
+						"special_bonus_unique_phantom_lancer_5"		"-1"
+					}
+				}	
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Ability: Phantom Lancer's Doppelwalk
+			//=================================================================================================================
+			"phantom_lancer_doppelwalk"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"			"Hero_PhantomLancer.Doppelganger.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityCastPoint"				"0.1"
+			
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"illusion_1_damage_out_pct"	"-100"
+					"illusion_1_damage_in_pct"	"0"
+					"illusion_2_damage_out_pct"	"-80"
+					"illusion_2_damage_in_pct"	"500"
+					"target_aoe"
+					{
+						"value"						"325"
+						"affected_by_aoe_increase"	"1"
+					}
+					"search_radius"	
+					{
+						"value"		"900"
+						"affected_by_aoe_increase"	"1"
+					}
+					"delay"			"1"
+					"illusion_duration"			"8"
+					"illusion_extended_duration"			"2"
+					"illusion_2_amount"
+					{
+						"value"					"1"
+					}
+					"hp_missing_per_extra_illusion_pct"					
+					{
+						"value"					"0"
+						"special_bonus_facet_phantom_lancer_convergence"						"25"
+
+					}
+					"AbilityCooldown"
+					{
+						"value"										"22 18 14 10"
+						"special_bonus_unique_phantom_lancer_4"		"-4"
+					}
+
+					"AbilityCastRange"
+					{
+						"value"										"575"
+						"special_bonus_unique_phantom_lancer_doppelwalk_cast_range"	"+125"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Phantom Lancer's Juxtapose
+			//=================================================================================================================
+			"phantom_lancer_juxtapose"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				"HasShardUpgrade"				"1"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_illusions"
+					{
+						"value"						"6 8 10"
+					}
+
+					"proc_chance_pct"		"40 45 50"
+
+					"illusion_proc_chance_pct"
+					{
+						"value"				"9"
+						"special_bonus_unique_phantom_lancer_juxtapose_illusio_proc_chance" "+3"
+					}
+			
+					"illusion_duration"
+					{
+						"value"							"8"				
+						"special_bonus_unique_phantom_lancer_juxtapose_duration"	"+1"
+					}
+
+					"illusion_from_illusion_duration"
+					{
+						"value"							"4"
+						"special_bonus_unique_phantom_lancer_juxtapose_duration"	"+1"
+					}
+
+					"illusion_damage_out_pct"
+					{
+						"value"							"-85"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_facet_phantom_lancer_divergence"		"+2"				
+					}
+
+					"tooltip_illusion_damage"
+					{
+						"value"							"15"
+						"special_bonus_facet_phantom_lancer_divergence"		"+2"				
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+
+					"illusion_damage_in_pct"
+					{
+						"value"							"500"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_phantom_lancer_juxtapose_damage_in"	"-70"
+					}
+
+					"tooltip_total_illusion_damage_in_pct"
+					{
+						"value"							"600"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_phantom_lancer_juxtapose_damage_in"	"-70"
+					}
+			
+					"shard_bonus_illusions"	
+					{
+						"special_bonus_shard"			"0"
+					}
+					"invis_duration"
+					{
+						"special_bonus_shard"						"8"
+					}
+					"invis_movespeed"
+					{
+						"special_bonus_shard"						"15"
+					}
+
+					"AbilityManaCost"
+					{
+						"special_bonus_shard"						"75"
+					}
+
+					"AbilityCooldown"
+					{
+						"special_bonus_shard"						"18"
+					}
+
+					"uncontrollable_illusions"
+					{
+						"special_bonus_facet_phantom_lancer_divergence"	"+1"
+					}
+					"new_target_radius"
+					{
+						"special_bonus_facet_phantom_lancer_divergence"	"+700"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Phantom Lancer's Phantom Rush / Phantom Edge
+			//=================================================================================================================
+			"phantom_lancer_phantom_edge"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
+				"AbilitySound"					"Hero_PhantomLancer.PhantomEdge"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"HasScepterUpgrade"				"1"		
+				"MaxLevel"						"4"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------		
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"				"15 11 7 3"
+						"special_bonus_unique_phantom_lancer_phantom_rush_cooldown" "-2"
+					}
+
+					"min_distance"		"275"
+					"max_distance"				
+					{
+						"value"				"600 675 750 825"
+						"special_bonus_scepter"			"+575"
+					}
+					"bonus_speed"		"800"
+					"bonus_agility"		"0"
+					"agility_duration"	"0"
+
+					"illusion_spawn_radius"
+					{
+						"special_bonus_scepter"			"125"				
+					}
+					"illusion_spawn_travel_distance"				
+					{
+						"special_bonus_scepter"			"600"				
+					}
+					"evasion"							"20 30 40 50"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Ability: Illusory Armaments
+			//=================================================================================================================
+			"phantom_lancer_illusory_armaments"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"outgoing_floor"
+					{
+						"value"			"17"
+						"hero_levelup"	"2"	
+						"levelup_interval" "3"
+					}
+
+					"duration"
+					{
+						"value"			"3"
+						"special_bonus_unique_phantom_lancer_illusory_armaments_duration" "+2"
+					}
+				}
+			}
+		}
+	}
+}

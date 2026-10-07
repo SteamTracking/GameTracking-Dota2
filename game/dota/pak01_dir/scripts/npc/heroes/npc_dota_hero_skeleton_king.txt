@@ -1,0 +1,724 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_skeleton_king"
+	{
+		"Model"		"models/heroes/wraith_king/wraith_king.vmdl"
+		"IdleExpression"		"scenes/skeleton_king/skeleton_king_exp_idle_01.vcd"
+		"SoundSet"		"Hero_SkeletonKing"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroPool2"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Carry,Support,Durable,Disabler,Initiator"
+		"Rolelevels"	"2,1,3,2,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"42"
+		"HeroOrderID"	"52"
+		"ModelScale"		"0.940000"
+		"VersusScale"		"0.94"
+		"LoadoutScale"		"0.940000"
+		"HeroGlowColor"		"226 224 36"
+		"CMEnabled"		"1"
+		"BotImplemented"		"1"
+		"PickSound"		"skeleton_king_wraith_spawn_01"
+		"BanSound"		"skeleton_king_wraith_anger_04"
+		"NameAliases"		"sk;snk;wk;skeleton;one true king;Ostarion"
+		"workshop_guide_name"		"Wraith King"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"8,54,18"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"Undead"		"1"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_sand_king"
+		"HeroSelectSoundEffect"		"Hero_SkeletonKing.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"92 196 128 255"
+		"Ability1"		"skeleton_king_hellfire_blast"
+		"Ability2"		"skeleton_king_bone_guard"
+		"Ability3"		"skeleton_king_mortal_strike"
+		"Ability4"		"skeleton_king_vampiric_spirit"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"skeleton_king_reincarnation"
+		"Ability10"		"special_bonus_unique_wraith_king_2"
+		"Ability11"		"special_bonus_unique_wraith_king_facet_1"
+		"Ability12"		"special_bonus_unique_wraith_king_11"
+		"Ability13"		"special_bonus_hp_300"
+		"Ability14"		"special_bonus_attack_speed_50"
+		"Ability15"		"special_bonus_unique_wraith_king_facet_3"
+		"Ability16"		"special_bonus_unique_wraith_king_10"
+		"Ability17"		"special_bonus_unique_wraith_king_4"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"skeleton_king_hellfire_blast"
+			"Ability2"		"skeleton_king_bone_guard"
+			"Ability3"		"skeleton_king_mortal_strike"
+			"Ability4"		"skeleton_king_reincarnation"
+		}
+
+		"Facets"
+		{
+			"skeleton_king_facet_bone_guard" 
+			{
+				"Icon"				"summons"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"skeleton_king_bone_guard"
+						"AbilityIndex"	"1"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+
+			"skeleton_king_facet_cursed_blade"
+			{
+				"Icon"				"damage"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"skeleton_king_spectral_blade"
+						"AbilityIndex"	"1"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"42"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"22"
+		"AttributeStrengthGain"			"2.8"
+		"AttributeBaseAgility"			"16"
+		"AttributeAgilityGain"			"1.7"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.4"
+		"StatusHealthRegen"		"0.5"
+		"MovementSpeed"		"310"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"360"
+		}
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"175"
+			"faster"	"250"
+			"fastest"	"350"
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.300000"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.55000"
+			}
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_skeletonking"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_skeleton_king.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_skeletonking/wraith_king_new_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+				"LoadoutPreviewMode"		"hero"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_wraith_king_skeleton_warrior"
+				}
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "skeleton_king_hellfire_blast"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_3"
+				"SlotText" "skeleton_king_mortal_strike"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_2"
+				"SlotText" "skeleton_king_bone_guard"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+
+				"item_quelling_blade"	"ITEM_CORE | ITEM_SELLABLE"
+				"item_boots"			"ITEM_CORE"
+
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"			"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_belt_of_strength"		"ITEM_EXTENSION"
+				"item_gloves"				"ITEM_EXTENSION"
+				"item_power_treads"			"ITEM_DERIVED"
+
+				"item_helm_of_iron_will"	"ITEM_CORE"
+				"item_gloves"				"ITEM_CORE"
+				"item_blades_of_attack"		"ITEM_CORE"
+				"item_recipe_armlet"		"ITEM_CORE"
+				"item_armlet"				"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_blink"		"ITEM_CORE"
+
+				"item_recipe_blade_mail"					"ITEM_LUXURY"
+				"item_chainmail"			"ITEM_LUXURY"
+				"item_broadsword"			"ITEM_LUXURY"
+				"item_blade_mail" 			"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_ogre_axe"			"ITEM_CORE"
+				"item_broadsword"		"ITEM_CORE"
+				"item_void_stone"		"ITEM_CORE"
+				"item_echo_sabre"		"ITEM_DERIVED"
+
+				"item_demon_edge"		"ITEM_LUXURY"
+				"item_javelin"			"ITEM_LUXURY"
+				"item_blitz_knuckles"		 "ITEM_LUXURY"
+				"item_recipe_monkey_king_bar"		 "ITEM_LUXURY"
+				"item_monkey_king_bar"	  "ITEM_DERIVED"
+
+				"item_ogre_axe"					"ITEM_EXTENSION"
+				"item_mithril_hammer"			"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"skeleton_king_hellfire_blast"
+				"2"		""
+				"3"		"skeleton_king_hellfire_blast"
+				"4"		"skeleton_king_mortal_strike"
+				"5"		"skeleton_king_hellfire_blast"
+				"6"		"skeleton_king_reincarnation"
+				"7"		"skeleton_king_hellfire_blast"
+				"8"		"skeleton_king_mortal_strike"
+				"9"		"skeleton_king_mortal_strike"
+				"10"		"special_bonus_unique_wraith_king_2"
+				"11"		"skeleton_king_mortal_strike"
+				"12"		"skeleton_king_reincarnation"
+				"13"		""
+				"14"		""
+				"15"		"special_bonus_hp_300"
+				"16"		""
+				"17"		""
+				"18"		"skeleton_king_reincarnation"
+				"19"		""
+				"20"		"special_bonus_attack_speed_50"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_wraith_king_4"
+			}
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_skeleton_king.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_skeleton_king.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack1"	"2"
+			"attach_attack2"	"3"
+			"attach_right_hand" "4"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Ability: Skeleton King
+			//=================================================================================================================
+			"skeleton_king_hellfire_blast"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_SkeletonKing.Hellfire_Blast"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"525"
+				"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"14 12 10 8"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"95 110 125 140"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// Applies two modifiers
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityValues"
+				{
+					"blast_speed"				"1200"
+					"blast_stun_duration"
+					{
+						"value"					"1.0 1.2 1.4 1.6"
+						"special_bonus_unique_wraith_king_11" "+0.75"
+					}
+
+					"blast_dot_duration"
+					{
+						"value"					"2.0"
+						"special_bonus_unique_wraith_king_facet_1" "+2"
+					}
+
+					"blast_slow"				"-20"
+
+					"damage"					
+					{
+						"value"		"80 100 120 140"
+
+					}
+					"blast_dot_damage"
+					{
+						"value"					"20 40 60 80"
+					}
+				}
+
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Skeleton King Bone Guard
+			//=================================================================================================================
+			"skeleton_king_bone_guard"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"IsBreakable"					"1"
+			
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.1"
+				"AbilityManaCost"				"70 80 90 100"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------		
+				"AbilityValues"
+				{
+
+					"skeleton_duration"			
+					{
+						"value"					"40"
+					}
+
+					"AbilityCooldown"
+					{
+						"value"					"42"
+					}
+
+					"max_skeleton_charges"		"2 4 6 8"	
+					"min_skeleton_spawn"
+					{
+						"value"					"0"
+						"special_bonus_unique_wraith_king_facet_3" "+5"
+					}
+					"spawn_interval"			"0.25"
+					"reincarnate_time"			"3"
+					"gold_bounty"						"5"
+					"xp_bounty"						"5"
+
+					"skeleton_damage_tooltip"
+					{
+						"value"							"34 39 43 49"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+
+					"talent_skeleton_damage"	
+					{
+						"value"							"0 5 10 15"
+						//"special_bonus_unique_wraith_king_facet_2" "+23"
+					}
+			
+					"skeleton_building_damage_reduction"		"35"	
+					"skeleton_bonus_hero_damage"				"25"
+			
+					"skeleton_charges_per_hero_multiplier"					"4"			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Bone Guard Damage Tracker
+			//=================================================================================================================
+			"skeleton_king_bone_guard_damage_tracker"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			}
+
+			//=================================================================================================================
+			// Ability: Skeleton King Cursed Blade
+			//=================================================================================================================
+			"skeleton_king_spectral_blade"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"IsBreakable"					"1"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------		
+				"AbilityValues"
+				{			
+					"cursed_damage_pct"
+					{
+						"value"										"50"
+						"special_bonus_unique_wraith_king_facet_1"	"+15"
+					}
+					"cursed_damage"								
+					{
+						"value"									"10 25 40 55"
+						"DamageTypeTooltip"						"DAMAGE_TYPE_PURE"
+					}
+					"curse_cooldown"
+					{
+						"value"										"18 16 14 12"
+						"special_bonus_unique_wraith_king_facet_3"	"-25%"
+					}
+					"curse_cooldown_creep"
+					{
+						"value"										"6"
+						"special_bonus_unique_wraith_king_facet_3"	"-25%" 
+					}
+
+					"curse_delay"
+					{
+						"value"										"3"
+						//"special_bonus_unique_wraith_king_facet_2"	"-1"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Skeleton King Mortal Strike
+			//=================================================================================================================
+			"skeleton_king_mortal_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_SkeletonKing.CriticalStrike"
+				"HasShardUpgrade"				"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"crit_mult"					"160 200 240 280"
+					"wraith_cd_mult"
+					{
+						"value"					"1"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"5.0"
+						"special_bonus_unique_wraith_king_10"	"-2"
+					}
+
+					"curse_damage_pct"
+					{
+						"special_bonus_shard"					"75"				
+					}
+
+					"curse_delay"
+					{
+						"special_bonus_shard"					"3"
+					}
+
+					"curse_cooldown"
+					{
+						"special_bonus_shard"					"0"
+					}
+				}
+
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Ability: Skeleton King Reincarnation
+			//=================================================================================================================
+			"skeleton_king_reincarnation"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"2"
+		
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Hero_SkeletonKing.Reincarnate"
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
+
+				"AbilityValues"
+				{
+					"reincarnate_time"		"3.0 3.0 3.0"
+					"slow_radius"			
+					{
+						"value"		"600"
+							"affected_by_aoe_increase"	"1"
+					}
+					"movespeed"				"-75"
+					"attackslow"			"-75"
+					"slow_duration"			"4.0"
+					"AbilityManaCost"
+					{
+						"value"					"220 110 0"
+					}
+
+					"clear_curse"
+					{
+						"value"						"0"
+						"special_bonus_facet_skeleton_king_facet_cursed_blade"	"=1"
+					}
+
+					"shard_skeleton_count"		
+					{
+						"value"						"2 3 4"			
+					}
+
+					"AbilityCooldown"
+					{
+						"value"							"180 150 120"
+						"special_bonus_scepter"			"-10"
+					}
+					"trigger_wraithfire_blast"
+					{
+						"special_bonus_unique_wraith_king_4"				"=1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Skeleton King: Innate Vampiric Spirit
+			//=================================================================================================================
+			"skeleton_king_vampiric_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"HasScepterUpgrade"				"1"
+				"IsBreakable"					"1"
+				"AbilityValues"
+				{
+					"vampiric_aura"
+					{
+						"value"									"20"
+						"hero_levelup"							"+0.5"
+						"special_bonus_unique_wraith_king_2"	"+8"
+					}
+					"duration"
+					{
+						"value"							"4.25"
+						"hero_levelup"					"+0.25"
+						"levelup_interval"				"6"
+						"special_bonus_scepter"			"+1"
+					}
+					"scepter_attack_speed"
+					{
+						"value"							"55"
+					}
+					"scepter_move_speed_pct"
+					{
+						"value"							"20"
+					}
+					"scepter_aura_radius"
+					{
+						"special_bonus_scepter"			"+1200"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+			}
+		}
+	}
+}

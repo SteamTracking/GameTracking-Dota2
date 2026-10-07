@@ -1,0 +1,126 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CStickerGenerationOptionsDefinition"
+	m_strStickerSubPath = "crownfall"
+	m_strStickerName = "kez_portrait_idle"
+	m_strStickerDisplayName = "KezSticker"
+	m_strStickerSourcePath = "panorama/images/events/crownfall/stickers/input/%s.png"
+	m_strOutputResultPath = "materials/stickers/crownfall/textures/sticker_%sres.png"
+	m_strOutputMaskPath = "materials/stickers/crownfall/textures/sticker_%smask.png"
+	m_strBatchInputPath = "panorama/images/events/crownfall/stickers/input"
+	m_bEnableDebug = true
+	m_bDoCompositing = true
+	m_bGenerateMaps = true
+	m_bGenerateMaterials = true
+	m_bGenerateItems = true
+	m_bStompTextures = false
+	m_materialConfig = 
+	{
+		m_strImageFormatExtension = "psd"
+		m_strImageInventory = "res"
+		m_vecMasksToGenerate = 
+		[
+			"mask",
+		]
+		m_vecQualityBaseMaterials = 
+		[
+			"materials/stickers/sticker_basemat_basic.vmat",
+			"materials/stickers/sticker_basemat_glitter.vmat",
+			"materials/stickers/sticker_basemat_holo.vmat",
+			"materials/stickers/sticker_basemat_gold.vmat",
+		]
+		shader_keys_per_material = 
+		[
+			[
+				{
+					key_name = "TextureColor"
+					value_format = "materials/stickers/%s/textures/%s_res.psd"
+				},
+				{
+					key_name = "TextureEffectMask"
+					value_format = "materials/stickers/%s/textures/%s_mask.psd"
+				},
+			],
+			[
+				{
+					key_name = "TextureColor"
+					value_format = "materials/stickers/%s/textures/%s_res.psd"
+				},
+				{
+					key_name = "TextureEffectMask"
+					value_format = "materials/stickers/%s/textures/%s_mask.psd"
+				},
+			],
+			[
+				{
+					key_name = "TextureColor"
+					value_format = "materials/stickers/%s/textures/%s_res.psd"
+				},
+				{
+					key_name = "TextureEffectMask"
+					value_format = "materials/stickers/%s/textures/%s_inverted_mask.psd"
+				},
+				{
+					key_name = "TextureBackgroundEffectPattern"
+					value_format = "materials/stickers/%s/textures/%s_res.psd"
+				},
+			],
+			[
+				{
+					key_name = "TextureColor"
+					value_format = "materials/stickers/%s/textures/%s_bw.psd"
+				},
+				{
+					key_name = "TextureEffectMask"
+					value_format = "materials/stickers/%s/textures/%s_inverted_mask.psd"
+				},
+				{
+					key_name = "TextureNormal"
+					value_format = "materials/stickers/%s/textures/%s_normal.psd"
+				},
+				{
+					key_name = "TextureHeightMap"
+					value_format = "materials/stickers/%s/textures/%s_height.psd"
+				},
+			],
+		]
+	}
+	m_compositingRules = 
+	{
+		m_unWidth = 1024
+		m_unHeight = 1024
+		m_strImageMaskPath = "panorama/images/events/crownfall/stickers/character_mask.png"
+		m_vecOrderedLayers = 
+		[
+			{
+				m_strName = "diecut"
+				m_strImagePath = "panorama/images/events/crownfall/stickers/die_cut.png"
+			},
+			{
+				m_strName = "background"
+				m_strImagePath = "panorama/images/events/crownfall/stickers/character_background.png"
+				m_nOutputMask = 1
+			},
+			{
+				m_strName = "player border back"
+				m_strImagePath = "panorama/images/events/crownfall/stickers/character_border_back.png"
+			},
+			{
+				m_strName = "background border"
+				m_strImagePath = "panorama/images/events/crownfall/stickers/background_border.png"
+				m_nOutputMask = 1
+			},
+			{
+				m_strName = "masked crownfall character layer"
+				m_unWidth = 1024
+				m_unHeight = 1024
+				m_unOffsetX = 0
+				m_unOffsetY = 0
+			},
+			{
+				m_strName = "player border"
+				m_strImagePath = "panorama/images/events/crownfall/stickers/character_border.png"
+			},
+		]
+	}
+}

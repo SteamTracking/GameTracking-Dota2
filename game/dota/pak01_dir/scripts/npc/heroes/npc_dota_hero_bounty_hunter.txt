@@ -1,0 +1,681 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_bounty_hunter"
+	{
+		"Model"		"models/heroes/bounty_hunter/bounty_hunter.vmdl"
+		"IdleExpression"		"scenes/bounty_hunter/bounty_hunter_exp_idle_01.vcd"
+		"SoundSet"		"Hero_BountyHunter"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Escape,Nuker"
+		"Rolelevels"	"2,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"62"
+		"HeroOrderID"	"64"
+		"HeroGlowColor"		"221 201 63"
+		"ModelScale"		"0.840000"
+		"VersusScale"		"0.84"
+		"LoadoutScale"		"0.84"
+		"CMEnabled"		"1"
+		"NameAliases"		"bh"
+		"PickSound"		"bounty_hunter_bount_spawn_01"
+		"BanSound"		"bounty_hunter_bount_anger_04"
+		"workshop_guide_name"		"Bounty Hunter"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"28,88,32"
+		"Adjectives"
+		{
+			"BadTeeth"		"1"
+			"Mask"			"1"
+			"Yellow"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_skeleton_king"
+		"HeroSelectSoundEffect"		"Hero_BountyHunter.Pick"
+		"GibType"		"default"
+		"Ability1"		"bounty_hunter_shuriken_toss"
+		"Ability2"		"bounty_hunter_jinada"
+		"Ability3"		"bounty_hunter_wind_walk"
+		"Ability4"		"bounty_hunter_wind_walk_ally"
+		"Ability5"		"bounty_hunter_big_game_hunter"
+		"Ability6"		"bounty_hunter_track"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"bounty_hunter_shuriken_toss"
+			"Ability2"	"bounty_hunter_jinada"
+			"Ability3"	"bounty_hunter_wind_walk"
+			"Ability4"	"bounty_hunter_track"
+		}
+
+		"Ability10"		"special_bonus_unique_bounty_hunter_5"
+		"Ability11"		"special_bonus_attack_damage_30"
+		"Ability12"		"special_bonus_unique_bounty_hunter_9"
+		"Ability13"		"special_bonus_unique_bounty_hunter_3"
+		"Ability14"		"special_bonus_unique_bounty_hunter_2"
+		"Ability15"		"special_bonus_unique_bounty_hunter"
+		"Ability16"		"special_bonus_unique_bounty_hunter_8"
+		"Ability17"		"special_bonus_unique_bounty_hunter_jinada_no_cooldown"
+
+		"Facets"
+		{
+			"bounty_hunter_shuriken"
+			{
+				"Icon"				"nuke"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+
+			"bounty_hunter_mugging"
+			{
+				"Icon"				"gold"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"bounty_hunter_cutpurse"
+						"AutoLevelAbility" "false"
+					}
+				}
+				"Deprecated"		"true"
+			}
+		}
+
+		"ArmorPhysical"		"5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.590000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.600000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"1.900000"
+		"MovementSpeed"		"325"
+		"StatusHealthRegen"		"0.75"
+		"StatusManaRegen"	"0.5"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_bounty_hunter.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_bounty_hunter"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_bounty_hunter/bounty_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_OffHand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_ARMOR"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "bounty_hunter_shuriken_toss"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "bounty_hunter_jinada"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_3"
+				"SlotText" "bounty_hunter_wind_walk"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_4"
+				"SlotText" "bounty_hunter_track"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+				"item_chainmail"		"ITEM_EXTENSION"
+				"item_blades_of_attack"	"ITEM_EXTENSION"
+				"item_phase_boots"		"ITEM_DERIVED"
+
+				"item_energy_booster"		"ITEM_EXTENSION"
+				"item_ring_of_protection"	"ITEM_EXTENSION"
+				"item_fluffy_hat"			"ITEM_EXTENSION"
+				"item_recipe_pavise"		"ITEM_EXTENSION"
+				"item_pavise"				"ITEM_DERIVED"
+
+				"item_crown"			"ITEM_EXTENSION"
+				"item_wind_lace"			"ITEM_EXTENSION"
+				"item_recipe_solar_crest"			"ITEM_EXTENSION"
+				"item_solar_crest"			"ITEM_DERIVED"
+
+				"item_wind_lace"					"ITEM_EXTENSION"
+				"item_robe"						"ITEM_EXTENSION"
+				"item_belt_of_strength"			"ITEM_EXTENSION"
+				"item_recipe_ancient_janggo"	"ITEM_EXTENSION"
+				"item_ancient_janggo"			"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_blight_stone"		"ITEM_EXTENSION"
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_desolator"		"ITEM_DERIVED"
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_mithril_hammer"		"ITEM_LUXURY"
+				"item_recipe_black_king_bar"		"ITEM_LUXURY"
+				"item_black_king_bar"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"bounty_hunter_wind_walk"
+				"2"		"bounty_hunter_jinada"
+				"3"		"bounty_hunter_shuriken_toss"
+				"4"		"bounty_hunter_shuriken_toss"
+				"5"		"bounty_hunter_shuriken_toss"
+				"6"		"bounty_hunter_track"
+				"7"		"bounty_hunter_shuriken_toss"
+				"8"		"bounty_hunter_wind_walk"
+				"9"		"bounty_hunter_wind_walk"
+				"10"		"special_bonus_unique_bounty_hunter_5"
+				"11"		"bounty_hunter_wind_walk"
+				"12"		"bounty_hunter_track"
+				"13"		"bounty_hunter_jinada"
+				"14"		"bounty_hunter_jinada"
+				"15"		"special_bonus_unique_bounty_hunter_3"
+				"16"		"bounty_hunter_jinada"
+				"17"		""
+				"18"		"bounty_hunter_track"
+				"19"		""
+				"20"		"special_bonus_unique_bounty_hunter"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_bounty_hunter_jinada_no_cooldown"
+			}
+			"HeroType"		"DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_bounty_hunter.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_bounty_hunter.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_weapon1"		"1"
+			"attach_weapon2"		"2"
+			"attach_head"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Bounty Hunter: Shuriken Toss
+			//=================================================================================================================
+			"bounty_hunter_shuriken_toss"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_BountyHunter.Shuriken"
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCooldown"				"5"
+				"AbilityManaCost"				"75 85 95 105"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.1"	// just a mini stun
+
+				"HasScepterUpgrade"				"1"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_damage"			
+					{
+						"value"					"100 170 240 310"
+						"special_bonus_unique_bounty_hunter_2"	"+190"
+					}
+					"speed"					"1000 1000 1000 1000"
+					"bounce_aoe"			
+					{
+						"value"		"1200"
+					}
+					"slow_duration"			
+					{
+						"value"				"0.35"
+						"special_bonus_unique_bounty_hunter_5"		"+0.35"
+					}
+					"scepter_cooldown"
+					{
+						"special_bonus_scepter"				"6"
+					}
+
+					"passthrough_damage"
+					{				
+						"value"			"0"
+					}
+					"passthrough_width"
+					{
+						"value"				"175"
+						"affected_by_aoe_increase"	"1"
+					}
+			
+					"cast_range"			"375 425 475 525"
+					"slow"					"100"		
+			
+					"AbilityCastRange"
+					{
+						"value"				"375 425 475 525"
+						"special_bonus_scepter"	"=600"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Bounty Hunter: Jinada
+			//=================================================================================================================
+			"bounty_hunter_jinada"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_BountyHunter.Jinada"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+				"AbilityCastRange"				"150"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_damage"
+					{
+						"value"			"70 105 140 175"
+					}
+					"gold_steal"
+					{
+						"value"			"15 22 29 36"
+						"special_bonus_unique_bounty_hunter"		"+50"
+					}
+					"AbilityCooldown"				
+					{
+						"value"			"9 7 5 3"
+						"special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"-100%"
+					}
+			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}	
+
+			//=================================================================================================================
+			// Bounty Hunter: Wind Walk / Shadow Walk
+			//=================================================================================================================
+			"bounty_hunter_wind_walk"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilitySound"					"Hero_BountyHunter.WindWalk"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"bounty_hunter_wind_walk_ally" "shard"
+				}
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"					"20.0 25.0 30.0 35.0"
+						"fade_time"					"1.0 0.75 0.5 0.25"
+						"stun_duration"				
+						{
+							"value"										"1.0 1.2 1.4 1.6"
+						}
+						"AbilityCooldown"				
+						{
+							"value"		"18 17 16 15"
+							"special_bonus_shard" "-5"
+						}
+						"AbilityChargeRestoreTime"		
+						{
+							"special_bonus_shard"	"15 14 13 12"
+						}
+						"ally_fade_time"
+						{
+							"special_bonus_shard"	"0.5"
+						}
+						"damage_reduction_pct"
+						{
+							"value"										"0"
+							"special_bonus_unique_bounty_hunter_9"		"+30"
+						}
+						"bonus_move_speed_pct"	"11 14 17 20"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Bounty Hunter: Wind Walk / Shadow Walk
+			//=================================================================================================================
+			"bounty_hunter_wind_walk_ally"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilitySound"					"Hero_BountyHunter.WindWalk"
+				"IsGrantedByShard"				"1"
+				"MaxLevel"						"1"
+
+				"AbilityCastRange"				"650"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+				"AbilityCooldown"				"15"
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"fade_time"					"0.5"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+		
+			}
+
+			//=================================================================================================================
+			// Bounty Hunter: Track
+			//=================================================================================================================
+			"bounty_hunter_track"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_BountyHunter.Target"
+
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				"AbilityCooldown"				"6 5 4"
+				"AbilityManaCost"				"50"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"target_damage_amp"	"8 12 16"
+						"bonus_gold_radius"		
+						{
+							"value"		"1200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"bonus_gold_self"		
+						{
+							"value"		"80 160 240"
+							"special_bonus_unique_bounty_hunter_3"	"+50"
+						}
+						"bonus_gold"			
+						{
+							"value"		"40 80 120"
+							"special_bonus_unique_bounty_hunter_3"	"+50"
+						}
+						"duration"				"25"
+						"gold_steal"			"0.3 0.4 0.5"
+
+				}
+			}
+
+			//=================================================================================================================
+			// Bounty Hunter: Lookout
+			//=================================================================================================================
+			"bounty_hunter_lookout"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_TemplarAssassin.Trap"
+				"MaxLevel"						"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1800"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"18.0"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"30"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_lookouts"				"4"
+					"lookout_fade_time"			"2.25"
+					"radius"					"150"
+				}
+			}
+
+
+
+	
+			//=================================================================================================================
+			// Bounty Hunter: Innate Gold Steal (Mugging)
+			//=================================================================================================================
+			"bounty_hunter_cutpurse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"gold_steal"
+					{
+						"value"							"4"
+						"hero_levelup"					"+1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Big Game Hunter
+			//=================================================================================================================
+			"bounty_hunter_big_game_hunter"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"kill_assist_gold_bonus_percent"		"20"
+				}
+			}
+		}
+	}
+}

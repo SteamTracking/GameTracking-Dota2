@@ -1,0 +1,779 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Pangolier
+	//=================================================================================================================
+	"npc_dota_hero_pangolier"
+	{
+		"Model"						"models/heroes/pangolier/pangolier.vmdl"
+		"IdleExpression"			"scenes/pangolin/pangolin_exp_idle_01.vcd"
+		"SoundSet"					"Hero_Pangolier"
+		"Enabled"					"1"
+		"HeroUnlockOrder"			"3"
+		"Role"						"Carry,Nuker,Disabler,Durable,Escape,Initiator"
+		"Rolelevels"				"2,2,1,1,2,2"
+		"Complexity"				"2"
+		"Team"						"Good"
+		"HeroID"					"120"
+		"HeroOrderID"	"115"
+		"NameAliases"				"ar"
+		"ModelScale"				"0.9"
+		"VersusScale"				"0.9"
+		"LoadoutScale"				"0.9"
+		"HeroGlowColor"				"94 49 76"		
+		"CMEnabled"					"1"
+		"new_player_enable"			"1"
+		"SimilarHeroes"		"108,38,129"
+		"Adjectives"
+		{
+			"Fuzzy"			"1"
+			"Parent"		"1"
+			"Red"			"1"
+		}
+		"workshop_guide_name"		"Pangolier"
+		"LastHitChallengeRival"		"npc_dota_hero_sand_king"		
+		"Ability1"					"pangolier_swashbuckle"
+		"Ability2"					"pangolier_shield_crash"
+		"Ability3"					"pangolier_lucky_shot"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"pangolier_rollup"
+		"Ability6"					"pangolier_gyroshell"
+		"Ability7"					"pangolier_gyroshell_stop"
+		"Ability8"					"pangolier_rollup_stop"
+		"Ability9"					"pangolier_fortune_favors_the_bold"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"			"pangolier_swashbuckle"
+			"Ability2"			"pangolier_shield_crash"
+			"Ability3"			"pangolier_lucky_shot"
+			"Ability4"			"pangolier_gyroshell"
+		}
+
+		"Ability10"					"special_bonus_unique_pangolier_luckyshot_armor"
+		"Ability11"					"special_bonus_unique_pangolier"
+		"Ability12"					"special_bonus_unique_pangolier_4"
+		"Ability13"					"special_bonus_unique_pangolier_shield_crash_herostacks"
+		"Ability14"					"special_bonus_unique_pangolier_6"
+		"Ability15"					"special_bonus_unique_pangolier_shield_crash_cooldown"
+		"Ability16"					"special_bonus_unique_pangolier_3"
+		"Ability17"					"special_bonus_unique_pangolier_5"
+		"Facets"
+		{
+			"pangolier_double_jump" 
+			{
+				"Icon"				"double_bounce"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"pangolier_thunderbolt" 
+			{
+				"Icon"				"speed"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"pangolier_pangolier"
+			{
+				"Icon"				"cooldown"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+			}
+
+		}
+		"ArmorPhysical"				"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"26"
+		"AttackDamageMax"			"32"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.7"	
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"3.2"
+		"AttributeBaseIntelligence"	"16"
+		"AttributeIntelligenceGain"	"2.5"	
+		"StatusHealthRegen"			"0.25"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.900000"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"400"
+		}
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"180"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_pangolin.vsndevts"
+		"particle_folder"			"particles/units/heroes/hero_pangolier"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pangolier.vsndevts"
+		"PickSound"					"pangolin_pick"
+		"BanSound"					"pangolin_ban"
+		"HeroSelectSoundEffect"		"Hero_Pangolier.Pick"
+		"GibType"		"default"
+		"ReleaseTimestamp"			"1509390000"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_pangolier/pangolier_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"			"0"
+				"SlotName"			"weapon"
+				"SlotText"			"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"	"2500"
+				"MaxPolygonsLOD1"	"1000"
+			}
+			"1"
+			{
+				"SlotIndex"			"1"
+				"SlotName"			"head"
+				"SlotText"			"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"3000"
+				"MaxPolygonsLOD1"	"1200"
+			}
+			"2"
+			{
+				"SlotIndex"			"2"
+				"SlotName"			"armor"
+				"SlotText"			"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"5000"
+				"MaxPolygonsLOD1"	"2000"
+			}
+			"3"
+			{
+				"SlotIndex"			"3"
+				"SlotName"			"offhand_weapon"
+				"SlotText"			"#LoadoutSlot_Offhand_Weapon"
+				"TextureWidth"		"256"   
+				"TextureHeight"		"256"   
+				"MaxPolygonsLOD0"	"2500"  
+				"MaxPolygonsLOD1"	"1000"  
+			}
+			"4"
+			{
+				"SlotIndex"			"4"
+				"SlotName"			"taunt"
+				"SlotText"			"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "pangolier_swashbuckle"
+				"DisplayInLoadout" "0"
+			}	
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "pangolier_shield_crash"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"	"1"
+				"ProvidesBabysit"	"1"
+				"SurvivalRating"	"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pangolier.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pangolier.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+			"attach_attack2"		   "3"
+			"attach_weapon_tip"		   "4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Pangolier: Swashbuckle
+			//=================================================================================================================
+			"pangolier_swashbuckle"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.15"
+				"AbilityCastRange"				"575 650 725 800"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"85 90 95 100"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"				
+						{	
+							"value"				"19 16 13 10"
+							"special_bonus_unique_pangolier_4"	"-2"
+						}
+						"dash_range"			"575 650 725 800"
+						"range"					
+						{
+							"value"			"850"
+							"special_bonus_unique_pangolier"	"+200"
+						}
+						"damage"				
+						{
+							"value"		"35 65 95 125"
+							"CalculateSpellDamageTooltip"	"0"
+						}
+						"attack_damage"
+						{
+							"value"				"0"
+							"special_bonus_unique_pangolier_3"	"+20"
+						}
+						"dash_speed"			"2000"
+						"attack_interval"		"0.1 0.1 0.1 0.1"
+						"start_radius"
+						{
+							"value"		"155"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"end_radius"
+						{
+							"value"			"155"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"strikes"				
+						{
+							"value"			"3"				
+						}
+						"procs_onhit_effects"			"1"
+						"slow_duration"		"0.6"
+						"slow_percent"		"100"
+
+						"damage_penalty"	"25"	// If updating this, change scepter_damage_outgoing_tooltip in shield_crash
+
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Pangolier: Shield Crash
+			//=================================================================================================================
+			"pangolier_shield_crash"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+		        "HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"					"60 120 180 240"
+						"CalculateSpellDamageTooltip"	"1"
+
+					}
+					"base_shield"	"0"
+					"hero_shield"
+					{
+						"value"					"60 120 180 240"
+						"special_bonus_unique_pangolier_shield_crash_herostacks"		"+125"
+					}
+					"duration"					"6"
+					"radius"				
+					{
+						"value"					"500"
+
+						"affected_by_aoe_increase"	"1"		
+					}
+					"can_double_jump"
+					{
+						"value"				"0"
+						"special_bonus_facet_pangolier_double_jump"			"=1"
+					}
+					"AbilityCooldown"				
+					{
+						"value"													"15 12 9 6"
+						"special_bonus_unique_pangolier_shield_crash_cooldown"	"-1.5"
+					}
+					"min_damage_increase_pct"				
+					{
+						"value"					"0"
+						"special_bonus_facet_pangolier_double_jump"			"=30"
+					}
+					"max_damage_increase_pct"				
+					{
+						"value"					"0"
+						"special_bonus_facet_pangolier_double_jump"			"=40"
+					}
+
+					"min_barrier_increase_pct_tooltip"
+					{
+						"special_bonus_facet_pangolier_double_jump"			"=30"
+					}
+
+					"max_barrier_increase_pct_tooltip"
+					{
+						"value"					"0"
+					}
+					"jump_duration"			"0.4"
+					"jump_duration_gyroshell"	"0.75"
+					"jump_height"			"250"
+					"jump_height_gyroshell"	"350"
+					"jump_horizontal_distance"	"225"
+
+					"scepter_damage_outgoing_tooltip"	"75"	// If updating this, change damage_penalty in swashbuckle
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Pangolier: Heartpiercer
+			//=================================================================================================================
+			"pangolier_heartpiercer"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"IsBreakable"					"1"
+		
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Pangolier: Lucky Shot
+			//=================================================================================================================
+			"pangolier_lucky_shot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"chance_pct"			"17"
+					"duration"				"3.5 4 4.5 5"
+					"attack_slow"			"35 70 105 140"
+					"armor"			
+					{
+						"value"					"2 4 6 8"
+						"special_bonus_unique_pangolier_luckyshot_armor"			"+2"
+					}
+				}
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Pangolier: Gyroshell (Rolling Thunder)
+			//=================================================================================================================
+			"pangolier_gyroshell"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"FightRecapLevel"				"1"
+				"AbilityDraftExtraAbilities"
+				{
+					"pangolier_rollup" "shard"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"1.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"100 200 300"
+
+		        "precache"
+				{
+					"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
+				}
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_pct"				"80"
+					"AbilityCooldown"				
+					{	
+						"value"			"100 90 80"
+						"special_bonus_unique_pangolier_5"	"-15"
+					}
+					"cast_time_tooltip"		"1.2"
+					"tick_interval"			"0.05"
+					"forward_move_speed"	
+					{
+						"value"		"550"
+						"special_bonus_facet_pangolier_thunderbolt"	"+115"
+					}
+					"move_speed_ramp_up_time"	"1.0"		// 0 disables
+					"turn_rate_boosted"		
+					{
+						"value"			"165"
+						"special_bonus_facet_pangolier_thunderbolt"	"+40%"
+					}
+					"turn_rate"				
+					{
+						"value"		"120"
+						"special_bonus_facet_pangolier_thunderbolt"	"+40%"
+					}
+					"radius"				
+					{
+						"value"			"400"
+						"affected_by_aoe_increase"	"1"		
+					}			
+					"hit_radius"			
+					{
+						"value"		"150"
+						"affected_by_aoe_increase"	"1"		
+					}			
+					"bounce_duration"		"0.4"
+					"stun_duration"			"1.2"
+					"knockback_radius"		
+					{
+						"value"			"150"
+						"affected_by_aoe_increase"	"1"		
+					}			
+					"duration"				
+					{
+						"value"		"10 11 12"
+						"special_bonus_unique_pangolier_6"	"+2"
+						"special_bonus_facet_pangolier_thunderbolt"	"-1"
+					}
+					"jump_recover_time"		"0.25"
+					"magic_resistance"				"80"				
+				}
+			}
+
+			//=================================================================================================================
+			// Pangolier: Fortune Favors the Bold
+			//=================================================================================================================
+			"pangolier_fortune_favors_the_bold"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"aura_radius"				
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"chance_reduce"				"-50"			
+				}
+			}
+
+			//=================================================================================================================
+			// Pangolier: Gyroshell Stop
+			//=================================================================================================================
+			"pangolier_gyroshell_stop"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Pangolier: Rollup ( shard ability )
+			//=================================================================================================================
+			"pangolier_rollup"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET |  DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"40"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+
+
+		        "precache"
+				{
+					"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
+				}
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"cast_time_tooltip"		"0.5"
+						"tick_interval"			"0.05"
+						"forward_move_speed"	"600"
+						"turn_rate_boosted"		"275"
+						"turn_rate"				"275"
+						"radius"				
+						{
+							"value"			"400"
+							"affected_by_aoe_increase"	"1"		
+						}			
+						"hit_radius"			
+						{
+							"value"			"150"
+							"affected_by_aoe_increase"	"1"		
+						}			
+						"bounce_duration"		"0.4"
+						"stun_duration"			"1.0 1.25 1.5"
+						"knockback_radius"		
+						{
+							"value"			"150"
+							"affected_by_aoe_increase"	"1"		
+						}			
+						"duration"				"2.25"
+						"jump_recover_time"		"0.25"
+						"rollup_bounce_duration"				"0.75"
+						"magic_resistance"				"80"
+				}
+			}
+
+			//=================================================================================================================
+			// Pangolier: Gyroshell Stop
+			//=================================================================================================================
+			"pangolier_rollup_stop"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+	
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+		
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+		
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+	
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_shield_crash_herostacks"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+
+			"special_bonus_unique_pangolier_luckyshot_armor"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			"special_bonus_unique_pangolier_shield_crash_cooldown"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+
+	
+		}
+	}
+}

@@ -1,0 +1,674 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_undying"
+	{
+		"Model"		"models/heroes/undying/undying.vmdl"
+		"IdleExpression"		"scenes/undying/undying_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Undying"
+		"IdleSoundLoop"		"Hero_Undying.IdleLoop"
+		"Enabled"		"1"
+		"Role"			"Support,Durable,Disabler,Nuker"
+		"Rolelevels"	"2,2,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"85"
+		"HeroOrderID"	"84"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"LoadoutScale"		"0.93"
+		"SpectatorLoadoutScale" "0.88"
+		"TransformedLoadoutScale" "0.73"  //Golem scale
+		"workshop_guide_name"		"Undying"
+		"PickSound"		"undying_undying_spawn_01"
+		"BanSound"		"undying_undying_anger_02"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"83,102,84"
+		"Adjectives"
+		{
+			"BadTeeth"		"1"
+			"Undead"		"1"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_sand_king"
+		"HeroSelectSoundEffect"		"Hero_Undying.Pick"
+		"GibType"		"goo"
+		"GibTintColor"	"73 82 68 255"
+		"NameAliases"	"Dirge"
+		"Ability1"		"undying_decay"
+		"Ability2"		"undying_soul_rip"
+		"Ability3"		"undying_tombstone"
+		"Ability4"		"undying_ceaseless_dirge"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"undying_flesh_golem"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"undying_decay"
+			"Ability2"		"undying_soul_rip"
+			"Ability3"		"undying_tombstone"
+			"Ability4"		"undying_flesh_golem"
+		}
+
+		"Ability10"		"special_bonus_unique_undying_8"
+		"Ability11"		"special_bonus_unique_undying_7"
+		"Ability12"		"special_bonus_unique_undying_6"
+		"Ability13"		"special_bonus_unique_undying"
+		"Ability14"		"special_bonus_unique_undying_2"
+		"Ability15"		"special_bonus_unique_undying_5"
+		"Ability16"		"special_bonus_unique_undying_4"
+		"Ability17"		"special_bonus_unique_undying_3"
+		"Facets"
+		{
+			"undying_rotting_mitts" 
+			{
+				"Icon"				"summons"
+				"Color"				"Green"
+				"GradientID"		"4"
+				"Deprecated"		"true"
+			}			
+			"undying_ripped" 
+			{
+				"Icon"				"strength"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"13"
+		"AttributeAgilityGain"		"1.200000"
+		"AttributeBaseIntelligence"		"27"
+		"AttributeIntelligenceGain"		"2.800000"
+		"StatusHealthRegen"	"-0.5"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"295"
+		"particle_folder"		"particles/units/heroes/hero_undying"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_undying.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_undying/undying_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"ability3"
+				"SlotText"		"#LoadoutSlot_Undying_Tombstone"
+				"TextureWidth"		"0"
+				"TextureHeight"		"0"
+				"MaxPolygonsLOD0"	"0"
+				"MaxPolygonsLOD1"	"0"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_unit_tombstone"
+					"1" "npc_dota_unit_undying_zombie"
+				}
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ability4"
+				"SlotText"		"#LoadoutSlot_Undying_Flesh_Golem"
+				"no_import"		"1"
+				"LoadoutPreviewMode"		"transformation"
+				"TextureWidth"		"1024"
+				"TextureHeight"		"1024"
+				"MaxPolygonsLOD0"		"10000"
+				"MaxPolygonsLOD1"		"4000"
+				"MaxBonesLOD0"			"62"
+				"MaxBonesLOD1"			"62"
+				"DisplayInLoadout"		"1"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "undying_decay"
+				"DisplayInLoadout" "0"
+			}		
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "undying_soul_rip"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/undying/undying_flesh_golem.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_undying.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_undying.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+			"attach_attack2"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Undying: Decay
+			//=================================================================================================================
+			"undying_decay"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Undying.Decay.Cast"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_UNDYING_DECAY"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"650"
+				"AbilityCastPoint"				"0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"21.0 24.0 27.0 30.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"decay_damage"
+					{
+						"value"		"20 60 100 140"
+						"special_bonus_unique_undying_8" "+30"
+					}
+
+					"str_steal"
+					{
+						"value"		"4"
+						"special_bonus_scepter" "+4"
+					}
+
+					"decay_duration"
+					{
+						"value"		"35"
+					}
+
+					"radius"
+					{
+						"value"		"325"
+						"affected_by_aoe_increase"	"1"
+					}
+					"str_scale_up"	"2"
+					"creep_damage_multiplier"	"2.0"
+					"shard_buff_duration"		"40"
+					"AbilityCooldown"
+					{
+						"value"								"13 10 7 4"
+						"special_bonus_unique_undying_2"	"-2"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Soul Rip
+			//=================================================================================================================
+			"undying_soul_rip"
+			{
+			// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Undying.SoulRip.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_UNDYING_SOUL_RIP"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastRange"				"750"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"15 12 9 6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"		
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage/healing
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage_per_unit"			
+						{
+							"value"			"14 26 38 50"
+							"special_bonus_unique_undying_6" "+12"
+						}			
+						"max_units"					"10"
+						"radius"					
+						{
+							"value"			"1300"
+							"affected_by_aoe_increase"	"1"
+						}
+						"tombstone_heal"			"4 8 12 16"
+						"strength_share_percent"
+						{
+							"value"						"0"
+							"special_bonus_facet_undying_ripped"	"+10"
+						}
+						"strength_share_duration"
+						{
+							"value"						"0"
+							"special_bonus_facet_undying_ripped"	"+10"
+						}
+						"strength_share_model_scale"
+						{
+							"value"						"0"
+							"special_bonus_facet_undying_ripped"	"+15"
+						}
+				}
+			}	
+
+			//=================================================================================================================
+			// Undying: Tombstone
+			//=================================================================================================================
+			"undying_tombstone"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"FightRecapLevel"				"1"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_Undying.Tombstone"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_UNDYING_TOMBSTONE"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"500"
+				"AbilityCastPoint"				"0.6"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 150 175 200"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"					"80"
+						"special_bonus_unique_undying_7"	"-15" 
+					}
+					"tombstone_health"
+					{
+						"value"					"20 24 28 32"
+						"special_bonus_unique_undying_5"	"+16" 
+					}
+
+					"hits_to_destroy_tooltip"
+					{
+						"value"					"5 6 7 8"
+						"special_bonus_unique_undying_5"	"+4"
+					}
+
+					"duration"					"30.0"
+					"radius"					
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"health_threshold_pct_tooltip"	"40"
+					"zombie_interval"
+					{
+						"value"		"4.0 3.6 3.2 2.8"
+					}
+
+					"zombie_damage_tooltip"
+					{
+						"value"					"34"
+						"special_bonus_unique_undying" "+20"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"zombie_bonus_damage"
+					{
+						"special_bonus_unique_undying" "+20"
+					}
+					"zombie_health"				"2"
+
+					"bunker_units"				"1"
+					"bunker_heal_pct"			"0"
+					"tombstone_grab_radius"		
+					{
+						"value"	"350"
+						"affected_by_aoe_increase"	"1"
+					}
+					"tombstone_bunker_cd"		"2"
+					"tombstone_stun_penalty"	"2"
+					"zombie_damage_interval"
+					{
+						"value"					"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Tombstone Aura
+			//=================================================================================================================
+			"undying_tombstone_zombie_aura"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value" "600 800 1000 1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"health_threshold"
+					{
+						"value" "100 200 300 400"
+					}
+					"zombie_interval"
+					{
+						"value" "3"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Tombstone Zombie Deathlust
+			//=================================================================================================================
+			"undying_tombstone_zombie_deathstrike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"	"5"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityValues"
+				{
+					"slow"
+					{
+						"value" "-5"
+					}
+					"health_threshold_pct"
+					{
+						"value" "40"
+					}
+					"duration"
+					{
+						"value" "2.5"
+					}
+					"bonus_move_speed"
+					{
+						"value" "35 40 45 50"
+					}
+					"bonus_attack_speed"
+					{
+						"value" "50 60 70 80"
+					}
+					"radius"
+					{
+						"value" "1200"
+						"affected_by_aoe_increase"	"1"
+
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Flesh Golem
+			//=================================================================================================================
+			"undying_flesh_golem"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Undying.FleshGolem"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"					"140"
+					}
+
+					"slow"						"30 35 40"
+					"damage_amp"				
+					{
+						"value"					"25 30 35"
+						"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+					}
+					"slow_duration"					"3"
+					"str_percentage"			
+					{
+						"value"					"40 50 60"
+						"special_bonus_unique_undying_4" "+50"
+					}
+					"duration"					"40"
+					"movement_bonus"			"25"
+					"spawn_zombie_on_attack"
+					{
+						"value"						"1"
+					}
+					"zombie_duration"
+					{
+						"value"						"15"
+					}
+					"zombie_spawn_padding"			"36"			
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Tombstone Grab (for Undying)
+			//=================================================================================================================
+			"undying_tombstone_grab"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"3000"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"10"
+
+				"AbilityValues"
+				{
+					"grab_radius"				"400"
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Tombstone Grab (for Tombstone)
+			//=================================================================================================================
+			"undying_tombstone_unit_grab"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"10"
+			}
+
+			//=================================================================================================================
+			// Undying Relentless Return
+			//=================================================================================================================
+			"undying_ceaseless_dirge"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilityCooldown"				"480"
+
+				"AbilityValues"
+				{
+					"respawn_delay"				"2.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Tombstone On Death
+			//=================================================================================================================
+			"special_bonus_unique_undying_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			}
+		}
+	}
+}

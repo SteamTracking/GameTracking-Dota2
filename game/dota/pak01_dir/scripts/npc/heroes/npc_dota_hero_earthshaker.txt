@@ -1,0 +1,771 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_earthshaker"
+	{
+		"Model"		"models/heroes/earthshaker/earthshaker.vmdl"
+		"IdleExpression"		"scenes/earthshaker/earthshaker_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Earthshaker"
+		"PickSound"		"earthshaker_erth_spawn_01"
+		"BanSound"		"earthshaker_erth_anger_02"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"BotImplemented"		"1"
+		"Role"			"Support,Initiator,Disabler,Nuker"
+		"Rolelevels"	"1,3,2,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"7"
+		"HeroOrderID"	"6"
+		"NameAliases"		"es;Raigor"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"HeroGlowColor"		"255 160 0"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Earthshaker"
+		"NoCombine"		"0"
+		"LastHitChallengeRival"		"npc_dota_hero_tiny"
+		"HeroSelectSoundEffect"		"Hero_Earthshaker.Pick"
+		"GibType"		"default"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"29,16,97"
+		"Adjectives"
+		{
+			"Fuzzy"			"1"
+			"Brown"			"1"
+		}
+
+		"Ability1"		"earthshaker_fissure"
+		"Ability2"		"earthshaker_enchant_totem"
+		"Ability3"		"earthshaker_aftershock"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"earthshaker_echo_slam"
+		"Ability7"		"earthshaker_slugger"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"earthshaker_fissure"
+			"Ability2"	"earthshaker_enchant_totem"
+			"Ability3"	"earthshaker_aftershock"
+			"Ability4"	"earthshaker_echo_slam"
+		}
+
+		"Ability10"		"special_bonus_attack_base_damage_25"
+		"Ability11"		"special_bonus_unique_earthshaker_4"
+		"Ability12"		"special_bonus_unique_earthshaker_3"
+		"Ability13"		"special_bonus_unique_earthshaker_6"
+		"Ability14"		"special_bonus_unique_earthshaker_2"
+		"Ability15"		"special_bonus_unique_earthshaker_totem_damage"
+		"Ability16"		"special_bonus_unique_earthshaker_echo_cd"
+		"Ability17"		"special_bonus_unique_earthshaker"
+		"Facets"
+		{
+			"earthshaker_tectonic_buildup" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"earthshaker_slugger" 
+			{
+				"Icon"				"movement"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"earthshaker_slugger"
+					}
+				}
+			}
+
+			"earthshaker_reverberating_ridge"
+			{
+				"Icon"				"ricochet"
+				"Color"				"Gray"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.467000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"3.700000"
+		"AttributeBaseAgility"		"12"
+		"AttributeAgilityGain"		"1.400000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.100000"
+		"StatusHealthRegen"		"1.0"
+		"StatusManaRegen"		"0.25"
+		"MovementSpeed"		"315"
+		"MovementTurnRate"		"0.900000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_earthshaker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_earthshaker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_earthshaker/earthshaker_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"no_import"		"1" //imported using template
+				"SlotText"		"#LoadoutSlot_Earthshaker_Totem"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"no_import"		"1" //imported using template
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Pet"
+				"ShowItemOnGeneratedUnits" "1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_companion"
+				}
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "earthshaker_fissure"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "earthshaker_enchant_totem"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "earthshaker_aftershock"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "earthshaker_echo_slam"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Earthshaker_Base"
+			}		
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"	"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"	"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+
+				"item_sobi_mask"				"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_EXTENSION"
+				"item_ring_of_basilius"			"ITEM_DERIVED"
+
+				"item_recipe_arcane_boots"		"ITEM_EXTENSION"			
+				"item_arcane_boots"		"ITEM_DERIVED"
+
+				"item_blink"			"ITEM_CORE"
+
+				"item_point_booster"		"ITEM_CORE"
+				"item_ogre_axe"				"ITEM_CORE"
+				"item_blade_of_alacrity"	"ITEM_CORE"
+				"item_staff_of_wizardry"	"ITEM_CORE"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+
+				"item_staff_of_wizardry" 	"ITEM_EXTENSION"
+				"item_void_stone" 			"ITEM_EXTENSION"
+				"item_wind_lace"			"ITEM_EXTENSION"
+				"item_recipe_cyclone"		"ITEM_EXTENSION"
+				"item_cyclone"				"ITEM_DERIVED"
+
+				"item_ogre_axe"				"ITEM_EXTENSION"
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"		"ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"earthshaker_fissure"
+				"2"		"earthshaker_aftershock"
+				"3"		"earthshaker_fissure"
+				"4"		"earthshaker_enchant_totem"
+				"5"		"earthshaker_fissure"
+				"6"		"earthshaker_echo_slam"
+				"7"		"earthshaker_fissure"
+				"8"		"earthshaker_aftershock"
+				"9"		"earthshaker_aftershock"
+				"10"		"special_bonus_unique_earthshaker_4"
+				"11"		"earthshaker_aftershock"
+				"12"		"earthshaker_echo_slam"
+				"13"		"earthshaker_enchant_totem"
+				"14"		"earthshaker_enchant_totem"
+				"15"		"special_bonus_unique_earthshaker_3"
+				"16"		"earthshaker_enchant_totem"
+				"17"		""
+				"18"		"earthshaker_echo_slam"
+				"19"		""
+				"20"		"special_bonus_unique_earthshaker_2"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_earthshaker"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_STUN_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_earthshaker.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_earthshaker.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"	"1"
+			"attach_attack2"	"2"
+			"attach_head"		"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Earthshaker Fissure
+			//=================================================================================================================
+			"earthshaker_fissure"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_EarthShaker.Fissure"
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.69 0.69 0.69 0.69"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"115 120 125 130"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"
+					{
+						"value"				"1600"
+						"special_bonus_unique_earthshaker_3"		"+200"
+					}
+					"fissure_duration"			"6.5 7 7.5 8.0"
+					"fissure_radius"				"225"
+					"stun_duration"				"1.0 1.2 1.4 1.6"
+					"fissure_damage"
+					{
+						"value"				"100 160 220 280"
+						"special_bonus_unique_earthshaker_4"		"+75"
+					}
+					"AbilityCooldown"
+					{
+						"value"			"18 17 16 15"
+						"special_bonus_shard"		"-2"
+					}
+					"shard_aftershock_stun_duration_pct"
+					{
+						"special_bonus_shard"				"=50"
+					}
+					"free_pathing_linger_duration"
+					{
+						"special_bonus_shard"								"=1.0"
+					}
+					"free_pathing_application_radius"			"0"
+					"fissure_max_distance_moved"				"300"
+
+					"free_pathing_all_allies"					"0"
+
+					"echoes_radius"
+					{
+						"value" "0"
+						"special_bonus_facet_earthshaker_reverberating_ridge" "400"
+						"affected_by_aoe_increase"	"1"
+					}
+
+					"echoes_damage_multiplier"
+					{
+						"value" "0"
+						"special_bonus_facet_earthshaker_reverberating_ridge" "=60"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Ability: Earthshaker Totem
+			//=================================================================================================================
+			"earthshaker_enchant_totem"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_EarthShaker.Totem"
+
+				"HasScepterUpgrade"			"1"
+		
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.5"
+				"FightRecapLevel"				"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"14"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"0 0 0 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"45 55 65 75"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"totem_damage_percentage"	
+					{
+						"value"		"100 200 300 400"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_earthshaker_totem_damage"	"+65"
+					}
+					"distance_scepter"			
+					{
+						"special_bonus_scepter"		"950"
+					}
+					"AbilityCooldown"
+					{
+						"value"			"5.0"
+						"special_bonus_unique_earthshaker"			"-1.5"
+
+					}
+					"scepter_height"			"950"
+					"scepter_height_arcbuffer"	"100"
+					"scepter_acceleration_z"	"4000"
+					"scepter_acceleration_horizontal"	"3000"
+					"scepter_leap_duration"		"0.8"
+					"scepter_cleave_pct"
+					{
+						"special_bonus_scepter"					"40"
+					}
+					"scepter_cleave_starting_width"
+					{
+						"special_bonus_scepter"					"150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"scepter_cleave_ending_width"
+					{
+						"special_bonus_scepter"					"360"
+						"affected_by_aoe_increase"	"1"
+					}
+					"scepter_cleave_distance"
+					{
+						"special_bonus_scepter"					"650"
+						"affected_by_aoe_increase"	"1"
+					}
+					"bonus_attack_range"		"100"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Earthshaker Aftershock
+			//=================================================================================================================
+			"earthshaker_aftershock"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"1.0 1.1 1.2 1.3"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"	"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"aftershock_range"			
+						{
+							"value"		"350"
+							"affected_by_aoe_increase"	"1"
+						}
+						"aftershock_damage"			
+						{
+							"value"		"65 90 115 140"
+							"special_bonus_unique_earthshaker_6"		"+50"
+						}				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+	
+			//=================================================================================================================
+			// Ability: Earthshaker Echo Slam
+			//=================================================================================================================
+			"earthshaker_echo_slam"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_EarthShaker.EchoSlam"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 200 250"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"echo_slam_damage_range"	
+						{	
+							"value"		"700"
+							"CalculateSpellDamageTooltip"	"0"
+							"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+							"affected_by_aoe_increase"	"1"
+						}
+						"echo_slam_echo_search_range" 
+						{
+							"value"		"700"
+							"affected_by_aoe_increase"	"1"
+						}
+						"echo_slam_echo_range"		
+						{
+							"value"			"700"
+							"affected_by_aoe_increase"	"1"
+						}
+						"echo_slam_echo_damage"		
+						{
+							"value"				"70 90 110"
+							"special_bonus_unique_earthshaker_2" "+50"
+						}
+						"echo_slam_initial_damage"		"100 140 180"
+						"AbilityCooldown"
+						{
+							"value"										"130.0 120.0 110.0"
+							"special_bonus_unique_earthshaker_echo_cd"	"-50%"
+						}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Ability: Earthshaker Earth To Earth (Innate)
+			//=================================================================================================================
+			"earthshaker_spirit_cairn"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"fissure_radius"			"75"
+				}
+			}
+
+			//=================================================================================================================
+			// Earthshaker Slugger
+			//=================================================================================================================
+			"earthshaker_slugger"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"projectile_body_on_kill"
+					{
+						"value"		"1"
+					}
+					"projectile_body_initial_impact_radius"
+					{
+						"value"		"225"
+					}
+					"projectile_body_speed"
+					{
+						"value"		"1600"
+					}
+					"projectile_body_distance"
+					{
+						"value"		"1200"
+					}
+					"projectile_body_width_creep"
+					{
+						"value"		"175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"projectile_body_width_hero"
+					{
+						"value"		"175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"projectile_body_vision"
+					{
+						"value"		"175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"projectile_body_damage_creep"
+					{
+						"value"			"27"
+						"hero_levelup"	"3"
+					}
+					"projectile_body_damage_hero"
+					{
+						"value"			"135"
+						"hero_levelup"	"15"
+					}
+					"projectile_body_damage_additional_percent_health"
+					{
+						"value"		"7"
+					}
+				}
+			}	
+
+
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_totem_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earthshaker_echo_cd"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+		}
+	}
+}

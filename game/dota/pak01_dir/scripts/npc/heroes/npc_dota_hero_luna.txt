@@ -1,0 +1,662 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_luna"
+	{
+		"Model"		"models/heroes/luna/luna.vmdl"
+		"IdleExpression"		"scenes/luna/luna_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Luna"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Carry,Nuker,Pusher"
+		"Rolelevels"	"2,2,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"48"
+		"HeroOrderID"	"82"
+		"ModelScale"		"0.740000"
+		"VersusScale"		"0.74"
+		"SpectatorLoadoutScale" "0.82"
+		"PickSound"		"luna_luna_spawn_01"
+		"BanSound"		"luna_luna_anger_02"
+		"workshop_guide_name"		"Luna"
+		"CMEnabled"		"1"
+		"NoCombine"		"0"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"94,72,109"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"Female"		"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_lina"
+		"HeroSelectSoundEffect"		"Hero_Luna.Pick"
+		"NameAliases"	"Moon Rider"
+		"GibType"		"default"
+		"Ability1"		"luna_lucent_beam"
+		"Ability2"		"luna_lunar_orbit"
+		"Ability3"		"luna_moon_glaive"
+		"Ability4"		"luna_lunar_blessing"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"luna_eclipse"
+		"Ability7"		"generic_hidden"
+		"Ability10"		"special_bonus_unique_luna_7"
+		"Ability11"		"special_bonus_unique_luna_4"
+		"Ability12"		"special_bonus_unique_luna_lunar_orbit_glaive_count"
+		"Ability13"		"special_bonus_unique_luna_1"
+		"Ability14"		"special_bonus_unique_luna_6"
+		"Ability15"		"special_bonus_unique_luna_lunar_orbit_speed_damage"
+		"Ability16"		"special_bonus_unique_luna_3"
+		"Ability17"		"special_bonus_unique_luna_5"
+
+		"Facets"
+		{
+			"luna_lunar_orbit" 
+			{
+				"Icon"				"armor"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"luna_moonshield" 
+			{
+				"Icon"				"armor"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"luna_moonstorm" 
+			{
+				"Icon"				"damage"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+		}
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"luna_lucent_beam"
+			"Ability2"		"luna_moon_glaive"
+			"Ability3"		"luna_lunar_orbit"
+			"Ability4"		"luna_eclipse"
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.35000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"330"
+		"ProjectileModel"		"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.400000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"1.90000"
+		"StatusHealthRegen"		"0.5"
+		"MovementSpeed"		"325"
+		"VisionNighttimeRange"		"800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_luna"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_luna.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_luna/luna_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Shield"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"mount"
+				"SlotText"		"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "luna_moon_glaive"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "luna_lucent_beam"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_ring_of_protection"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_sobi_mask"		"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_CORE"
+				"item_ring_of_basilius"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_boots"		"ITEM_CORE"
+				"item_slippers"		"ITEM_CORE"
+				"item_circlet"		"ITEM_CORE"
+				"item_recipe_wraith_band"		"ITEM_CORE"
+				"item_wraith_band"			"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_boots_of_elves"		"ITEM_CORE"
+				"item_gloves"		   	"ITEM_CORE"
+				"item_power_treads"		"ITEM_DERIVED"
+				"item_blade_of_alacrity"		"ITEM_CORE"
+				"item_boots_of_elves"		"ITEM_CORE"
+				"item_recipe_yasha"		"ITEM_CORE"
+				"item_yasha"		"ITEM_DERIVED"
+				"item_diadem"			"ITEM_EXTENSION"
+				"item_recipe_manta"			"ITEM_EXTENSION"
+				"item_manta"				"ITEM_LUXURY | ITEM_DERIVED"
+				"item_ogre_axe"		"ITEM_EXTENSION"
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"		"ITEM_EXTENSION"
+				"item_black_king_bar"		"ITEM_DERIVED"
+				"item_eagle"		"ITEM_EXTENSION"
+				"item_claymore"		"ITEM_EXTENSION"
+				"item_talisman_of_evasion"		"ITEM_EXTENSION"
+				"item_butterfly"		"ITEM_DERIVED"
+				"item_ring_of_protection"   "ITEM_LUXURY"
+				"item_recipe_buckler"	"ITEM_LUXURY"
+				"item_buckler"			"ITEM_DERIVED"
+				"item_platemail"		"ITEM_LUXURY"
+				"item_hyperstone"		"ITEM_LUXURY"
+				"item_recipe_assault"	"ITEM_LUXURY"
+				"item_assault"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"luna_lunar_blessing"
+				"2"		"luna_lucent_beam"
+				"3"		"luna_lucent_beam"
+				"4"		"luna_lunar_blessing"
+				"5"		"luna_lucent_beam"
+				"6"		"luna_eclipse"
+				"7"		"luna_lucent_beam"
+				"8"		"luna_moon_glaive"
+				"9"		"luna_moon_glaive"
+				"10"		"special_bonus_unique_luna_7"
+				"11"		"luna_moon_glaive"
+				"12"		"luna_eclipse"
+				"13"		"luna_moon_glaive"
+				"14"		"luna_lunar_blessing"
+				"15"		"special_bonus_unique_luna_1"
+				"16"		"luna_lunar_blessing"
+				"17"		""
+				"18"		"luna_eclipse"
+				"19"		""
+				"20"		"special_bonus_unique_luna_6"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_luna_5"
+			}
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_luna.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_luna_mount.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_luna.vpcf"
+			"party_hat_effect_1"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_luna_mount.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_shield"		"2"
+			"attach_attack1"	"3"
+			"attach_head_mount"	"4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Luna: Lucent Beam
+			//=================================================================================================================
+			"luna_lucent_beam"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Luna.LucentBeam.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.4"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// Mostly about the damage
+		
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"9.0 8.0 7.0 6.0"
+						"special_bonus_unique_luna_2" "-2"
+					}
+					"AbilityManaCost"
+					{
+						"value"					"90 100 110 120"
+				
+					}
+					"beam_damage"
+					{
+						"value"					"75 150 225 300"
+						"special_bonus_unique_luna_1"	"+80"
+					}
+					"glaives_fired"
+					{
+						"value"			"0"
+						"special_bonus_unique_luna_8"	"+2"
+					}
+					"glaives_attack_radius"
+					{
+						"value"					"0"
+						"special_bonus_unique_luna_8"	"+500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"stun_duration"
+					{
+						"value"					"0.6"
+						"special_bonus_unique_luna_4"	"+0.5"
+					}
+					"damage_buff_duration"
+					{
+						"value"						"0"
+						"special_bonus_facet_luna_moonstorm"			"+15"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"damage_buff_per_beam"
+					{
+						"value"						"0"
+						"special_bonus_facet_luna_moonstorm"			"+4 7 10 13"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+					}
+					"lucent_beam_bounce_range"
+					{
+						"special_bonus_unique_luna_5"	"+500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"damage_buff_from_eclipse_pct"
+					{
+						"special_bonus_facet_luna_moonstorm"				"=50"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Luna: Lunar Orbit
+			//=================================================================================================================
+			"luna_lunar_orbit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Luna.MoonGlaive.Impact"
+				"HasShardUpgrade"				"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"rotating_glaives_duration"
+					{
+						"value"								"5 6 7 8"
+					}
+
+					"rotating_glaives"
+					{
+						"value"								"4"
+						"special_bonus_unique_luna_lunar_orbit_glaive_count"				"+1"
+					}
+
+					"rotating_glaives_movement_radius"
+					{
+						"value"								"225"
+					}
+
+					"rotating_glaives_movement_radius_expand_speed_scale"
+					{
+						"value"								"4"
+					}
+
+					"rotating_glaives_hit_radius"
+					{
+						"value"								"200"
+						"affected_by_aoe_increase"			"1"
+					}
+
+					"rotating_glaives_collision_damage"
+					{
+						"value"								"28 32 36 40"
+						"special_bonus_unique_luna_lunar_orbit_speed_damage"				"+50%"
+					}
+
+					"rotating_glaives_speed"
+					{
+						"value"								"160"
+						"special_bonus_unique_luna_lunar_orbit_speed_damage"				"+50%"	// also change tooltip value below
+					}
+					"rotating_glaive_collision_speed_damage_tooltip"
+					{
+						"value"																"0"
+						"special_bonus_unique_luna_lunar_orbit_speed_damage"				"+1.5"	// TOOLTIP ONLY, change value above too
+					}
+					"AbilityCooldown"
+					{
+						"value"			"40 35 30 25"
+					}
+
+					"AbilityManaCost"
+					{
+						"value"			"65 70 75 80"
+					}
+
+					"rotating_glaives_damage_reduction"
+					{
+						"value"									"8 12 16 20"
+						"special_bonus_shard"					"+10"
+					}
+
+					"bonus_movement_speed"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"+20"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Luna: Moon Glaives
+			//=================================================================================================================
+			"luna_moon_glaive"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Luna.MoonGlaive.Impact"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"range"								
+					{
+						"value"		"500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"bounces"							"3 4 5 6"
+					"damage_reduction_percent"
+					{
+						"value"							"50 45 40 35"
+						"special_bonus_unique_luna_7"	"-5"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Luna: Lunar Blessing
+			//=================================================================================================================
+			"luna_lunar_blessing"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"			
+						{
+							"value"						"1200"
+							"affected_by_aoe_increase"	"1"
+						}
+
+						"bonus_damage"			
+						{					
+							"hero_levelup"					"+1"
+							"special_bonus_unique_luna_3"	"+25"
+						}
+
+						"self_bonus_damage"
+						{					
+							"hero_levelup"					"+2"
+							"special_bonus_unique_luna_3"	"+50"
+						}
+
+						"bonus_night_vision"
+						{
+							"value"			"225"
+							"hero_levelup"  "+25"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Luna: Lunar Grace
+			//=================================================================================================================
+			"luna_lunar_grace"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30 25 20 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attack_speed"					"30 45 60 75"
+					"night_multiplier"				"2.0"
+					"duration"						"5.0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Luna: Eclipse
+			//=================================================================================================================
+			"luna_eclipse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Luna.Eclipse.Cast"
+		
+				"HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.5"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 200 250"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"beams"
+					{
+						"value"					"6 9 12"
+						"special_bonus_scepter"	"+0 +3 +6"
+					}
+					"beam_interval"
+					{
+						"value"					"0.6 0.6 0.6"
+						"special_bonus_scepter"	"-0.3"
+					}
+					"beam_interval_scepter"		"0.3" // purely for the tooltip Note, since the scepter tooltip doesn't show this.
+					"radius"					
+					{
+						"value"	"675"
+						"affected_by_aoe_increase"	"1"
+					}
+					"hit_count"
+					{
+						"value"					"5"
+						"special_bonus_scepter"	"+1 +7 +13"
+					}
+					"AbilityCastRange"
+					{
+						"value"					"0"
+						"special_bonus_scepter"	"+2500"
+					}
+					"AbilityDuration"
+					{
+						"value"					"2.4 4.2 6.0"
+						"special_bonus_scepter"	"-0.6"
+					}
+					"night_duration"	
+					{
+						"value"	"10.0"
+
+					}
+					"AbilityCooldown"
+					{
+						"value"							"105"
+						"special_bonus_unique_luna_6"	"-40.0"
+					}
+				}
+			}
+		}
+	}
+}

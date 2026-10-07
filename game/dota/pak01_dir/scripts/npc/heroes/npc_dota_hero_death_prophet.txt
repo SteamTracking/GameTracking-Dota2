@@ -1,0 +1,682 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_death_prophet"
+	{
+		"Model"		"models/heroes/death_prophet/death_prophet.vmdl"
+		"SoundSet"		"Hero_DeathProphet"
+		"IdleSoundLoop"		"Hero_DeathProphet.IdleLoop"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Pusher,Nuker,Disabler"
+		"Rolelevels"	"1,3,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"43"
+		"HeroOrderID"	"62"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"HeroGlowColor"		"15 241 28"
+		"CMEnabled"		"1"
+		"NameAliases"		"dp;Krobelus"
+		"PickSound"		"death_prophet_dpro_spawn_01"
+		"BanSound"		"death_prophet_dpro_anger_01"
+		"workshop_guide_name"		"Death Prophet"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"36,15,45"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Arachnophobic"	"1"
+			"Undead"		"1"
+			"Flying"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_dazzle"
+		"HeroSelectSoundEffect"		"Hero_DeathProphet.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"148 206 100 255"
+		"Ability1"		"death_prophet_carrion_swarm"
+		"Ability2"		"death_prophet_silence"
+		"Ability3"		"death_prophet_spirit_siphon"
+		"Ability4"		"death_prophet_witchcraft"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"death_prophet_exorcism"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"death_prophet_carrion_swarm"
+			"Ability2"	"death_prophet_silence"
+			"Ability3"	"death_prophet_spirit_siphon"
+			"Ability4"	"death_prophet_exorcism"
+		}
+
+		"Ability10"		"special_bonus_unique_death_prophet_silence_aoe"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_attack_speed_50"
+		"Ability13"		"special_bonus_unique_death_prophet_2"
+		"Ability14"		"special_bonus_unique_death_prophet"
+		"Ability15"		"special_bonus_unique_death_prophet_3"
+		"Ability16"		"special_bonus_unique_death_prophet_5"
+		"Ability17"		"special_bonus_unique_death_prophet_exorcism_duration_on_kill"
+		
+		"Facets"
+		{
+			
+			"death_prophet_suppress"
+			{
+				"Icon"				"slow"
+				"Color"				"Purple"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"death_prophet_ghosts"
+			{
+				"Icon"				"spirit"
+				"Color"				"Green"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"death_prophet_spirit_collector"
+					}
+				}
+			}
+			"death_prophet_delayed_damage"
+			{
+				"Icon"				"healing"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"death_prophet_mourning_ritual"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+
+		}
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"BaseAttackSpeed"		"100"
+		"ProjectileModel"		"particles/units/heroes/hero_death_prophet/death_prophet_base_attack.vpcf"
+		"ProjectileSpeed"		"1000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.900000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"2.3"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"3.000000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"290"
+		"MovementTurnRate"		"0.800000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_death_prophet"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_death_prophet.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_death_prophet/death_prophet_spawn.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"no_import"		"1"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"400"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ability_ultimate"
+				"SlotText"		"#LoadoutSlot_Death_Spirits"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "dota_death_prophet_exorcism_spirit"
+				}
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_1"
+				"SlotText" "death_prophet_carrion_swarm"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_2"
+				"SlotText" "death_prophet_silence"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_mantle"		"ITEM_CORE"
+				"item_circlet"		"ITEM_CORE"
+				"item_recipe_null_talisman"		"ITEM_CORE"
+				"item_null_talisman"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+				"item_chainmail"		"ITEM_EXTENSION"
+				"item_blades_of_attack"	"ITEM_EXTENSION"
+				"item_phase_boots"		"ITEM_DERIVED"
+
+				"item_helm_of_iron_will"	"ITEM_EXTENSION"
+				"item_crown"					"ITEM_EXTENSION"
+				"item_recipe_veil_of_discord"	"ITEM_EXTENSION"
+				"item_veil_of_discord"		"ITEM_DERIVED"
+
+				"item_wind_lace"		"ITEM_EXTENSION"
+				"item_void_stone"		"ITEM_EXTENSION"
+				"item_staff_of_wizardry"		"ITEM_EXTENSION"
+				"item_recipe_cyclone"		"ITEM_EXTENSION"
+				"item_cyclone"		"ITEM_DERIVED"
+				
+				"item_ogre_axe"		"ITEM_EXTENSION"
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"		"ITEM_EXTENSION"
+				"item_black_king_bar"		"ITEM_DERIVED"
+
+				"item_platemail"		"ITEM_LUXURY"
+				//"item_mystic_staff"		"ITEM_LUXURY"
+				"item_recipe_shivas_guard"		"ITEM_LUXURY"
+				"item_shivas_guard"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"death_prophet_spirit_siphon"
+				"2"		"death_prophet_carrion_swarm"
+				"3"		"death_prophet_spirit_siphon"
+				"4"		"death_prophet_carrion_swarm"
+				"5"		"death_prophet_spirit_siphon"
+				"6"		"death_prophet_exorcism"
+				"7"		"death_prophet_spirit_siphon"
+				"8"		"death_prophet_carrion_swarm"
+				"9"		"death_prophet_carrion_swarm"
+				"10"		"special_bonus_unique_death_prophet_silence_aoe"
+				"11"		"death_prophet_silence"
+				"12"		"death_prophet_exorcism"
+				"13"		"death_prophet_silence"
+				"14"		"death_prophet_silence"
+				"15"		"special_bonus_unique_death_prophet_2"
+				"16"		"death_prophet_silence"
+				"17"		""
+				"18"		"death_prophet_exorcism"
+				"19"		""
+				"20"		"special_bonus_unique_death_prophet_3"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_death_prophet_5"
+			}
+			"HeroType"		"DOTA_BOT_PUSH_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/death_prophet/death_prophet_ghost.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_death_prophet.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_death_prophet.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_hand_R"	"2"
+			"attach_hand_L"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Death Prophet: Carrion Swarm ( Crypt Swarm )
+			//=================================================================================================================
+			"death_prophet_carrion_swarm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_DeathProphet.CarrionSwarm"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.2"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"													"100 175 250 325"
+						"special_bonus_unique_death_prophet_crypt_swarm_damage"	"+50"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"9 8 7 6"
+						"special_bonus_unique_death_prophet_2"	"-2.5"
+					}
+					"start_radius"				
+					{
+						"value"			"110"
+						"affected_by_aoe_increase"	"1"
+					}
+					"end_radius"				
+					{
+						"value"			"300"
+						"affected_by_aoe_increase"	"1"
+					}
+					"range"						"900"
+					"speed"						"1100 1100 1100 1100"
+					"slow_percent"
+					{
+						"value"				"0"
+					}
+					"slow_duration"
+					{
+						"value"				"0"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Death Prophet: Silence
+			//=================================================================================================================
+			"death_prophet_silence"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_DeathProphet.Silence"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"15 14 13 12"
+				"AbilityDuration"				"3.5 4.0 4.5 5.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"					
+					{
+						"value"	"450"
+						"special_bonus_unique_death_prophet_silence_aoe"		"+75" 
+						"affected_by_aoe_increase"	"1"
+					}
+					"projectile_speed"					"1750"
+					"movement_slow"
+					{
+						"value"							"0"
+					}
+					"damage_per_second"
+					{
+						"value"						"0"
+					}
+					"tick_interval"
+					{
+						"value"						"0"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}	
+	
+			//=================================================================================================================
+			// Death Prophet: Witchcraft 
+			//=================================================================================================================
+			"death_prophet_witchcraft"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movement_speed_pct"
+					{
+						"value"				"0.5"
+						"hero_levelup"		"+0.75"
+					}
+					"cooldown_reduction_pct"
+					{				
+						"hero_levelup"		"+0.75"
+					}
+				}
+			}
+	 
+			//=================================================================================================================
+			// Death Prophet: Spirit Siphon
+			//=================================================================================================================
+			"death_prophet_spirit_siphon"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_DeathProphet.SpiritSiphon.Cast"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_DP_SPIRIT_SIPHON"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"500"
+				"AbilityCastPoint"				"0.1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+				"AbilityCharges"				"1 2 3 4"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"					
+						{
+							"value"				"25 50 75 100"
+							"special_bonus_unique_death_prophet_3"	"+30"
+						}
+
+						"damage_pct"				"0"
+						"haunt_duration"				"6"
+						"siphon_buffer"			"250"
+						"AbilityChargeRestoreTime"		
+						{
+							"value"					"40"
+							"special_bonus_unique_death_prophet_5" "-22"
+						}
+						"shard_bonus_charges"			
+						{
+							"special_bonus_shard"	"1"
+						}
+						"shard_fear_duration"			
+						{
+							"special_bonus_shard"		"1.0"
+						}
+						"shard_consecutive_siphon_duration"			
+						{
+							"special_bonus_shard"		"3"
+						}
+				}
+			}
+	
+			//=================================================================================================================
+			// Death Prophet: Exorcism
+			//=================================================================================================================
+			"death_prophet_exorcism"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
+		        "HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.5 0.5 0.5"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"150.0"
+				"AbilityDuration"				"40"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 300 400"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"	"700 700 700"
+						"affected_by_aoe_increase"	"1"
+					}
+					"spirits"				
+					{
+						"value"					"10 18 26"
+						"special_bonus_unique_death_prophet"	"+6"
+					}
+					"spirit_speed"			"525"
+					"max_distance"			"2000"
+					"give_up_distance"		"1200"
+					"min_damage"			"62 65 68"
+					"max_damage"			"68 71 74"
+					"heal_percent"			"25"
+					"average_damage"		"65 68 71"
+					"ghost_spawn_rate"	"0.25"
+					"scepter_spirit_life_duration"	
+					{
+						"special_bonus_scepter"				"20"
+					}
+					"scepter_spirit_bonus_damage"	
+					{	
+						"special_bonus_scepter"				"60"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"duration_increase_per_kill"
+					{
+						"value"			"0"
+						"special_bonus_unique_death_prophet_exorcism_duration_on_kill"			"+8"
+					}	
+					"movement_bonus"				"0"
+				}
+			}
+
+			//=================================================================================================================
+			// Death Prophet Innate Ghost Mastery
+			//=================================================================================================================
+			"death_prophet_spirit_collector"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"MaxLevel"						"1"
+				"DependentOnAbility"			"death_prophet_exorcism"
+			}
+
+			//=================================================================================================================
+			// Death Prophet Innate Healing Mastery
+			//=================================================================================================================
+			"death_prophet_innate_healing_mastery"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"AbilityValues"
+				{
+					"heal_amplify"			"20"
+				}
+			}
+	
+			//=================================================================================================================
+			// Death Prophet Unholy Vitality
+			//=================================================================================================================
+			"death_prophet_mourning_ritual"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"4"
+				"DependentOnAbility"			"death_prophet_exorcism"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"delay_pct"					"15 25 35 45"
+					"delay_time"				"5"
+					"damage_interval"			"1"
+				}
+			}
+		}
+	}
+}

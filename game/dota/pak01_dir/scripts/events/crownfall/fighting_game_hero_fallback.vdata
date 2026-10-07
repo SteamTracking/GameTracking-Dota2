@@ -1,0 +1,246 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CDOTAFightingGameHeroDefinition"
+	m_nHeroID = 0
+	m_pszHeroNameVO = "announcer_dota_fighter_dota_fighter_challenger_01"
+	m_vecActionDefinitions = 
+	[
+		{
+			m_nActionID = "IDLE_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_idle"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+			m_vecCancelOptions = 
+			[
+				{
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_eCancelInput = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "JAB_ACTION_DEFINITION"
+				},
+				{
+					m_eCancelInput = "kBUTTON_ATTACK_BIT|kBUTTON_DOWN_BIT"
+					m_nCancelActionID = "FINISHER_ACTION_DEFINITION"
+				},
+				{
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "SWEEP_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "BLOCKSTUN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_blockstun"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "HITSTUN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_hitstun"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "KNOCKED_DOWN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_knockdown"
+		},
+		{
+			m_nActionID = "DASH_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_dash_forward"
+			m_nDuration = 10
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "BACKDASH_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_dash_backward"
+			m_nDuration = 10
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "GUARDBREAK_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_hitstun"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "VICTORY_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_victory_start"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+			m_nDuration = 360
+		},
+		{
+			m_nActionID = "JAB_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_jab"
+			m_nDuration = 24
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 475, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -550, 0 ]
+				m_vMaxBounds = [ 450, -200, 1 ]
+			}
+			m_nHitBoxStart = 10
+			m_nHitBoxDuration = 2
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -2
+			m_flGuardDamage = 25.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 300.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 100
+			m_nHitStop = 4
+			m_nBlockStop = 4
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 12
+					m_nCancelDuration = 2
+					m_eCancelInput = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_eCancelInputBuffer = 6
+					m_nCancelActionID = "JAB_2_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "JAB_2_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_jab"
+			m_nDuration = 24
+			m_m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+			m_m_HitBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 120, 0, 1 ]
+			}
+			m_nHitBoxStart = 10
+			m_nHitBoxDuration = 2
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -2
+			m_flGuardDamage = 25.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 300.0
+			m_flPushbackOnHit = 50
+			m_flPushbackOnBlock = 150
+			m_nHitStop = 4
+			m_nBlockStop = 4
+		},
+		{
+			m_nActionID = "SWEEP_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_sweep"
+			m_nDuration = 40
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 900, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -450, 0 ]
+				m_vMaxBounds = [ 875, -150, 1 ]
+			}
+			m_nHitBoxStart = 17
+			m_nHitBoxDuration = 2
+			m_nOnHitFrames = 30
+			m_nOnBlockFrames = -11
+			m_flGuardDamage = 30.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 500.0
+			m_flPushbackOnHit = 150
+			m_flPushbackOnBlock = 300
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 2.0, 2.0 ]
+		},
+		{
+			m_nActionID = "FINISHER_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_combo_ender"
+			m_nDuration = 80
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -850, 0 ]
+				m_vMaxBounds = [ 575, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -825, 0 ]
+				m_vMaxBounds = [ 550, -100, 1 ]
+			}
+			m_nHitBoxStart = 16
+			m_nHitBoxDuration = 5
+			m_nOnHitFrames = 30
+			m_nOnBlockFrames = -11
+			m_flGuardDamage = 50.0
+			m_flChipDamage = 100.0
+			m_flHitDamage = 500.0
+			m_flPushbackOnHit = 100
+			m_flPushbackOnBlock = 250
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 2.0, 2.0 ]
+		},
+		{
+			m_nActionID = "PROJECTILE_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 60
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -550, 0 ]
+				m_vMaxBounds = [ 475, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -550, 0 ]
+				m_vMaxBounds = [ 450, 0, 1 ]
+			}
+			m_nHitBoxStart = 13
+			m_nHitBoxDuration = 2
+			m_nOnHitFrames = 30
+			m_nOnBlockFrames = -11
+			m_flGuardDamage = 50.0
+			m_flChipDamage = 100.0
+			m_flHitDamage = 500.0
+			m_flPushbackOnHit = 100
+			m_flPushbackOnBlock = 250
+			m_projectileParticle = resource_name:"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf"
+			m_flProjectileSpeed = 1000
+			m_flProjectileRange = 0
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 1.0, 1.0 ]
+		},
+	]
+}

@@ -1,0 +1,567 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_leshrac"
+	{
+		"Model"		"models/heroes/leshrac/leshrac.vmdl"
+		"SoundSet"		"Hero_Leshrac"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Support,Nuker,Pusher,Disabler"
+		"Rolelevels"	"1,1,3,3,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"52"
+		"HeroOrderID"	"38"
+		"ModelScale"		"0.840000"
+		"VersusScale"		"0.84"
+		"LoadoutScale"		"0.84"
+		"SpectatorLoadoutScale" "0.78"
+		"HeroGlowColor"		"12 157 179"
+		"PickSound"		"leshrac_lesh_spawn_01"
+		"BanSound"		"leshrac_lesh_anger_06"
+		"CMEnabled"		"1"
+		"Legs"	"4"
+		"workshop_guide_name"		"Leshrac"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"74,25,45"
+		"Adjectives"
+		{
+			"Legs"			"4"
+			"Horns"			"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_lion"
+		"HeroSelectSoundEffect"		"Hero_Leshrac.Pick"
+		"NameAliases"	"ts"
+		"Ability1"		"leshrac_split_earth"
+		"Ability2"		"leshrac_diabolic_edict"
+		"Ability3"		"leshrac_lightning_storm"
+		"Ability4"		"leshrac_greater_lightning_storm"
+		"Ability5"		"leshrac_defilement"
+		"Ability6"		"leshrac_pulse_nova"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"leshrac_split_earth"
+			"Ability2"	"leshrac_diabolic_edict"
+			"Ability3"	"leshrac_lightning_storm"
+			"Ability4"	"leshrac_pulse_nova"
+		}
+
+		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_unique_leshrac_6"
+		"Ability13"		"special_bonus_unique_leshrac_4"
+		"Ability14"		"special_bonus_unique_leshrac_7"
+		"Ability15"		"special_bonus_unique_leshrac_3"
+		"Ability16"		"special_bonus_unique_leshrac_1"
+		"Ability17"		"special_bonus_unique_leshrac_pulse_nova_lightning"
+		"Facets"
+		{
+			"leshrac_attacks_mana" 
+			{
+				"Icon"				"mana"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"leshrac_chronoptic_nourishment"
+					}
+				}
+			}
+			"leshrac_misanthropy" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Purple"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"ProjectileModel"		"particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"2.5"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.5"
+		"MovementSpeed"		"325"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_leshrac.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_leshrac"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_leshrac/leshrac_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"no_import"		"1"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "leshrac_split_earth"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "leshrac_diabolic_edict"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_PUSH_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_leshrac.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_leshrac.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack2"	"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Leshrac: Split Earth
+			//=================================================================================================================
+			"leshrac_split_earth"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Leshrac.Split_Earth"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"650"
+				"AbilityCastPoint"				"0.7 0.7 0.7 0.7"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"11"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 100 120 140"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"115 170 225 280"
+				"AbilityDuration"				"1.6"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"delay"				"0.35"
+						"radius"			
+						{
+							"value"	"150 170 190 210"
+							"affected_by_aoe_increase"	"1"
+						}
+						"duration"			"1.7"
+						"shard_radius_increase"
+						{
+							"special_bonus_shard"		"45"
+						}
+						"shard_max_count"
+						{
+							"special_bonus_shard"		"2"
+						}
+						"shard_secondary_delay"			
+						{
+							"special_bonus_shard"		"5"
+						}						
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Leshrac: Diabolic Edict
+			//=================================================================================================================
+			"leshrac_diabolic_edict"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Leshrac.Diabolic_Edict"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.5"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"22 21 20 19"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 120 150 180"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"num_explosions"		
+						{
+							"value"		"40"
+						"special_bonus_unique_leshrac_1" "+20"
+						}
+			
+						"radius"			
+						{
+							"value"			"450"
+							"affected_by_aoe_increase"	"1"
+						}
+						"tower_bonus"			"0"
+						"affects_buildings"
+						{
+							"value"						"1"
+						}
+						"damage"
+						{
+							"value"		"9 16 23 30"
+						}
+						"targets"
+						{
+							"value"								"1"
+							"special_bonus_unique_leshrac_7"	"+1"
+						}
+						"AbilityDuration"
+						{
+							"value"						"8"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Leshrac: Lightning Storm
+			//=================================================================================================================
+			"leshrac_lightning_storm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Leshrac.Lightning_Storm"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 100 120 140"
+		
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"			
+						{
+							"value"		"90 140 190 240"
+							"special_bonus_unique_leshrac_6"	"+80"
+						}			
+						"jump_count"			"5 7 9 11"
+						"radius"			
+						{
+							"value"			"450"
+							"affected_by_aoe_increase"	"1"
+						}
+						"jump_delay"			"0.25 0.25 0.25 0.25"
+						"movespeed_slow"			"75"			
+						"slow_duration"				"0.45 0.7 0.95 1.2"
+						"bounce_twice"	
+						{
+							"value"								"0"
+						}	
+						"pulse_nova_lightning_interval"			
+						{
+							"value"			"0"
+							"special_bonus_unique_leshrac_pulse_nova_lightning"		"+2"
+						}		
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Leshrac: Greater Lightning Storm (scepter ability) Nihilism
+			//=================================================================================================================
+			"leshrac_greater_lightning_storm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE| DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"		"4"
+					"magic_amp"		"30"
+					"slow"			"40"
+					"radius"
+					{
+						"value"		"500"
+						"affected_by_aoe_increase"		"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Leshrac: Pulse Nova
+			//=================================================================================================================
+			"leshrac_pulse_nova"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilityDraftExtraAbilities"
+				{
+					"leshrac_greater_lightning_storm" "scepter"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+				"AbilityCooldown"				"1.0 1.0 1.0 1.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50 60 70"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"mana_cost_per_second"	"20 40 60"
+						"radius"				
+						{
+							"value"		"500"
+							"affected_by_aoe_increase"	"1"
+						}
+						"damage"
+						{
+							"value"			"80 135 180"
+						"special_bonus_unique_leshrac_3" "+30"
+						}
+						"damage_resistance"
+						{
+							"value"			"0"
+							"special_bonus_unique_leshrac_4"	"+10"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Leshrac: Chronoptic Nourishment
+			//=================================================================================================================
+			"leshrac_chronoptic_nourishment"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"mana_pct_per_hit"				"25"
+					"creep_penalty_reduction_pct"	"50"
+				}		
+			}
+
+			//=================================================================================================================
+			// Ability: Leshrac Innate: AoE
+			//=================================================================================================================
+			"leshrac_defilement"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"aoe_per_int"				"0.7"
+					"current_aoe_bonus"
+					{
+						"dynamic_value"			"true"
+					}
+				}
+			}
+		}
+	}
+}

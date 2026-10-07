@@ -1,0 +1,829 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_morphling"
+	{
+		"Model"		"models/heroes/morphling/morphling.vmdl"
+		"SoundSet"		"Hero_Morphling"
+		"PickSound"		"morphling_mrph_spawn_01"
+		"BanSound"		"morphling_mrph_anger_07"
+		"IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Carry,Escape,Durable,Nuker,Disabler"
+		"Rolelevels"	"3,3,2,1,1"
+		"Complexity"	"3"
+		"Team"		"Good"
+		"HeroID"		"10"
+		"HeroOrderID"	"11"
+		"ModelScale"		"0.880000"
+		"VersusScale"		"0.88"
+		"LoadoutScale"		"0.88"
+		"SpectatorLoadoutScale" "1"
+		"HeroGlowColor"		"33 255 255"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Morphling"
+		"NoCombine"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_necrolyte"
+		"HeroSelectSoundEffect"		"Hero_Morphling.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"99 255 255 255"
+		"SimilarHeroes"	"113,109,94"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Nose"			"0"
+			"Aquatic"		"1"
+			"Blue"			"1"
+		}
+		"Ability1"		"morphling_waveform"
+		"Ability2"		"morphling_adaptive_strike_agi"
+		"Ability3"		"generic_hidden"
+		"Ability4"		"morphling_morph_agi"
+		"Ability5"		"morphling_morph_str"
+		"Ability6"		"morphling_replicate"
+		"Ability7"		"morphling_morph_replicate"
+		"Ability8"		"generic_hidden"
+		"Ability9"		"morphling_ebb_and_flow"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_unique_morphling_8"
+		"Ability17"		"special_bonus_unique_morphling_1"
+		"Ability18"		"special_bonus_attack_range_75"
+		"Ability19"		"special_bonus_unique_morphling_7"
+		"Ability20"		"special_bonus_agility_15"
+		"Ability21"		"special_bonus_unique_morphling_waveform_cooldown"
+		"Ability22"		"special_bonus_strength_35"
+		
+		"Facets"
+		{
+			"morphling_agi"
+			{
+				"Icon"				"agility"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"morphling_ebb"
+					}
+				}
+			}
+
+			"morphling_str"
+			{
+				"Icon"				"strength"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"morphling_flow"
+					}
+				}
+			}
+		}
+		
+		"AbilityTalentStart"		"15"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"morphling_waveform"
+			"Ability2"		"morphling_adaptive_strike_agi"
+		}
+
+		"ArmorPhysical"		"-1"
+		"StatusHealthRegen"		"0.5"
+		"StatusManaRegen"		"0.0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"12"
+		"AttackDamageMax"		"21"
+		"AttackRate"		"1.5000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"350"
+		"MovementTurnRate"		"0.700000"
+		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		"ProjectileSpeed"		"1300"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"16"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"33"
+		"AttributeAgilityGain"		"4.200000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.800000"
+		"MovementSpeed"		"285"
+		"particle_folder"		"particles/units/heroes/hero_morphling"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_morphling/morphling_loadout.vpcf"		"loadout"
+			}
+		}
+		"Persona"
+		{
+			"1"
+			{
+				"name"					"npc_dota_hero_morphling_carnival"
+				"token"					"#npc_dota_hero_morphling_carnival"
+				"token_english"			"#npc_dota_hero_morphling_carnival"
+				"cosmetic_group_name"	"#npc_dota_hero_morphling_carnival_cosmetic_group_name"
+				"Model"					"models/items/morphling/morphling_automaton/morphling_automaton.vmdl"	// For tools only
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+				"SlotText"		"#LoadoutSlot_Arms"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "morphling_waveform"
+				"DisplayInLoadout" "0"
+			}	
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "morphling_adaptive_strike_agi"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"arms_persona_1"
+				"SlotText"		"#LoadoutSlot_Arms_Pudge_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1250"
+				"DisplayInLoadout"		"0"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt"
+				"CanEquipFromSlotType"
+				{
+					"5" 
+					{
+						"SlotTypeName"	"taunt"
+						"ItemDefExclusions"	"0000"
+					}
+				}
+				"DisplayInLoadout"		"1"
+			}
+			"16"
+			{
+				"SlotIndex"		"16"
+				"SlotName"		"neck_persona_1"
+				"SlotText"		"#LoadoutSlot_Neck"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+				"DisplayInLoadout"		"0"
+			}
+			"17"
+			{
+				"SlotIndex"		"17"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			"18"
+			{
+				"SlotIndex"		"18"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_morphling.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_morphling.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"	"1"
+			"attach_attack2"	"2"
+			"attach_head"		"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Morphling: Waveform
+			//=================================================================================================================
+			"morphling_waveform"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Morphling.Waveform"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.25"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"75 150 225 300"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"115"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed"					"1250"
+					"width"					
+					{
+						"value"				"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"AbilityCharges"		
+					{
+						"value"	"0"
+					}
+					"AbilityCastRange"
+					{
+						"value"				"700 775 850 925"
+						"special_bonus_unique_morphling_1"	"+250"
+					}			
+					"AbilityCooldown"
+					{
+						"value"														"21 18 15 12"
+						"special_bonus_unique_morphling_waveform_cooldown"			"-40%"
+					}
+					"process_procs"
+					{
+						"value" "0"
+						"special_bonus_unique_morphling_4"			"+1"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Morphling: Adaptive Strike
+			//=================================================================================================================
+			"morphling_adaptive_strike_agi"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Morphling.AdaptiveStrike"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600 675 750 825"
+				"AbilityCastPoint"				"0.25"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40 50 60 70"		
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+				
+						"AbilityCooldown"
+						{
+							"value"								"17 14 11 8"
+							"special_bonus_unique_morphling_7"	"-3"
+						}
+						"damage_base"								
+						{
+							"value"								"50 70 90 110"
+							"CalculateSpellDamageTooltip"		"1"
+						}
+						"damage_min"					
+						{
+							"value"								"0.5"
+							"CalculateSpellDamageTooltip"		"0"
+						}
+						"damage_max"					
+						{
+							"value"								"1.0 1.5 2.0 2.5"
+							"CalculateSpellDamageTooltip"		"0"
+						}
+						"stun_min"						
+						{
+							"value"								"0.5"
+						}
+						"stun_max"						
+						{
+							"value"								"1.4 1.8 2.2 2.6"
+						}
+						"knockback_min"					
+						{
+							"value"								"50"
+						}
+						"knockback_max"					
+						{
+							"value"								"350"
+						}
+						"knockback_duration"
+						{
+							"value"								"0.5"
+						}
+						"projectile_speed"						"1150"
+						"extra_targets"
+						{
+							"value"								"0"					
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Morphling: Morph (Agility Gain)
+			//=================================================================================================================
+			"morphling_morph_agi"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+				"LinkedAbility"					"morphling_morph_str"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"HasShardUpgrade"               "1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"points_per_tick"		"1"
+					"morph_rate"
+					{
+						"value"				"4 8 12 16"
+					}
+					"mana_cost"				
+					{
+						"value"						"10"
+						"special_bonus_shard"		"-50%"
+					}
+					"castable_while_stunned"
+					{
+						"value"	"0"
+						"special_bonus_shard"	"+1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Morphling: Morph (Strength Gain)
+			//=================================================================================================================
+			"morphling_morph_str"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+				"LinkedAbility"					"morphling_morph_agi"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+				"HasShardUpgrade"               "1"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"points_per_tick"		"1"
+					"morph_rate"
+					{
+						"value"				"4 8 12 16"
+					}
+					"mana_cost"				
+					{
+						"value"						"10"
+						"special_bonus_shard"		"-50%"
+					}
+					"castable_while_stunned"
+					{
+						"value"	"0"
+						"special_bonus_shard"	"+1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Morphling: Syntropy
+			//=================================================================================================================
+			"morphling_syntropy"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"slow_duration"		"3"
+					"attack_range_bonus"		"75 125 175 225"
+					"movement_slow_max"			"20 25 30 35"
+					"movement_slow_min"			"10"
+					"attack_slow_max"			"35 45 55 65"
+					"attack_slow_min"			"10"		
+					"AbilityManaCost"		"10 12 14 16"
+				}
+			}
+
+
+
+
+			//=================================================================================================================
+			// Morphling: Innate - Become Agility
+			//=================================================================================================================
+			"morphling_ebb"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+			}
+
+			//=================================================================================================================
+			// Morphling: Innate - Become Strength
+			//=================================================================================================================
+			"morphling_flow"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"agi_per_one_spell_amp"			"4"
+					"one_percent_tooltip"			"1"
+					"spell_amp_tooltip"
+					{
+						"dynamic_value"				"true"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Morphling: Replicate
+			//=================================================================================================================
+			"morphling_replicate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Morphling.Replicate"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		        "HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700 850 1000"
+				"AbilityCastPoint"				"0.25"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"125 90 55"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"								"24"
+						"special_bonus_unique_morphling_8" "+12"
+					}
+		            "scepter_stat_steal"
+					{
+						"special_bonus_scepter"						"20"
+					}
+					"scepter_spell_amplify"	
+					{
+						"special_bonus_scepter"						"25"
+					}
+					"scepter_attack_speed"	
+					{
+						"special_bonus_scepter"						"70"
+					}
+					"scepter_status_resist"	
+					{
+						"special_bonus_scepter"						"40"
+					}
+					"scepter_additional_stats"
+					{
+						"special_bonus_scepter"						"20"
+					}
+					"scepter_illusion_outgoing"
+					{
+						"special_bonus_scepter"						"100"
+					}
+					"scepter_illusion_incoming"
+					{
+						"special_bonus_scepter"						"200"
+					}
+				}		
+			}
+	
+			//=================================================================================================================
+			// Morphling: Morph Replicate
+			//=================================================================================================================
+			"morphling_morph_replicate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+				"AbilityCastPoint"				"0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"2"
+			}
+
+			//=================================================================================================================
+			// Morphling: Hybrid ( scepter ability )
+			//=================================================================================================================
+			"morphling_hybrid"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.25"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"60"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200"
+				"AbilityValues"
+				{
+					"illusion_damage_out_pct"
+					{
+						"value" "-50 -50 -50"
+						"CalculateSpellDamageTooltip" "0"
+					}
+					"tooltip_illusion_damage_out_pct"
+					{
+						"value" "50 50 50"
+						"CalculateSpellDamageTooltip" "0"
+					}
+					"illusion_incoming_dmg_pct_tooltip"
+					{
+						"value" "100 100 100"
+					}
+					"illusion_damage_in_pct"
+					{
+						"value" "0 0 0"
+						"CalculateSpellDamageTooltip" "0"
+					}
+					"illusion_damage_out_pct_scepter"
+					{
+						"value" "-20"
+						"CalculateSpellDamageTooltip" "0"
+					}
+					"duration"
+					{
+						"value" "20"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Morphling: Innate Fluid Stats
+			//=================================================================================================================
+			"morphling_accumulation"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+				"MaxLevel"						"1"
+
+				"AbilityValues"
+				{
+					"percent_to_increment"							"50.0"
+					"bonus_primary_stat_per_level_of_attributes"	"3"
+					"bonus_int_per_level_of_attributes"				"0"
+				}
+			}
+
+
+	
+			//=================================================================================================================
+			// Morphling: Ebb and Flow
+			//=================================================================================================================
+			"morphling_ebb_and_flow"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"swell_up_duration"				"1.5"
+					"swell_down_duration"			"1.0"
+					"swell_duration"			
+					{
+						"value"						"5.2"
+						"hero_levelup"				"+0.3"
+					}
+					"max_swell_duration"			
+					{
+						"value"							"2.7"
+						"hero_levelup"					"+0.3"
+					}
+			
+					"model_scale"					"40"
+					"stats_pct"
+					{
+						"value"					"25"
+					}		
+
+					"attack_range_per_agi"			"25"
+					"move_speed_per_agi"			"15"
+					"cast_range_per_str"			"25"
+					"slow_resist_per_str"			"25"
+					"model_scale_min"				"0"
+					"model_scale_max"				"20"
+				}
+			}
+		}
+	}
+}

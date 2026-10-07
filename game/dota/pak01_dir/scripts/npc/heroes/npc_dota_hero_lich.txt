@@ -1,0 +1,824 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_lich"
+	{
+		"Model"		"models/heroes/lich/lich.vmdl"
+		"SoundSet"		"Hero_Lich"
+		"IdleSoundLoop"		"Hero_Lich.IdleLoop"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroPool2"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Support,Nuker"
+		"Rolelevels"	"3,2"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"31"
+		"HeroOrderID"	"7"
+		"ModelScale"		"0.790000"
+		"VersusScale"		"0.790000"
+		"SpectatorLoadoutScale" "0.84"
+		"HeroGlowColor"		"40 160 255"
+		"PickSound"		"lich_lich_spawn_01"
+		"BanSound"		"lich_lich_anger_03"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Lich"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"5,30,121"
+		"Adjectives"
+		{
+			"Undead"		"1"
+			"Flying"		"1"
+			"Icy"			"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_crystal_maiden"
+		"HeroSelectSoundEffect"		"Hero_Lich.Pick"
+		"HealthBarOffset"		"255"
+		"GibType"		"ice"
+		"NameAliases"	"Ethreain"
+		"Ability1"		"lich_frost_nova"
+		"Ability2"		"lich_frost_shield"
+		"Ability3"		"lich_sinister_gaze"
+		"Ability4"		"lich_ice_spire"
+		"Ability5"		"lich_death_charge"
+		"Ability6"		"lich_chain_frost"
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"lich_frost_nova"
+			"Ability2"	"lich_frost_shield"
+			"Ability3"	"lich_sinister_gaze"
+			"Ability4"	"lich_chain_frost"
+		}
+
+		"Ability10"		"special_bonus_unique_lich_8"
+		"Ability11"		"special_bonus_unique_lich_6"
+		"Ability12"		"special_bonus_unique_lich_2"
+		"Ability13"		"special_bonus_unique_lich_3"
+		"Ability14"		"special_bonus_unique_lich_4"
+		"Ability15"		"special_bonus_unique_lich_7"
+		"Ability16"		"special_bonus_unique_lich_1"
+		"Ability17"		"special_bonus_unique_lich_5"
+		
+		"Facets"
+		{
+			"lich_frostbound"		
+			{
+				"Icon"				"snowflake"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+			"lich_growing_cold" 	
+			{
+				"Icon"				"cooldown"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+			"lich_cryophobia"		
+			{
+				"Icon"				"vision"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+
+		}
+		
+		"StatusHealthRegen"		"0.5"
+		"StatusManaRegen"		"-1.0"
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.1"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"3.4"
+		"MovementTurnRate"		"0.700000"
+		"MovementSpeed"		"290"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"neck"
+				"SlotText"		"#LoadoutSlot_Neck"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "lich_frost_nova"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "lich_sinister_gaze"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "lich_chain_frost"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lich.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lich"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_lich/lich_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_wind_lace"	"ITEM_CORE"		
+
+				"item_boots"				"ITEM_CORE"
+				"item_ring_of_regen"		"ITEM_CORE"
+				"item_tranquil_boots"		"ITEM_DERIVED"
+
+				"item_blink"				"ITEM_CORE"
+			
+				"item_energy_booster"		"ITEM_EXTENSION"
+				"item_void_stone"			"ITEM_EXTENSION"
+				"item_recipe_aether_lens"	"ITEM_EXTENSION"
+				"item_aether_lens"			"ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+
+				"item_cloak"		"ITEM_EXTENSION"
+				"item_ring_of_tarrasque"		"ITEM_EXTENSION"
+				"item_ring_of_regen"		"ITEM_EXTENSION"
+				"item_recipe_headdress"		"ITEM_EXTENSION"
+				"item_headdress"		"ITEM_DERIVED"
+				"item_recipe_pipe"		"ITEM_EXTENSION"
+				"item_pipe"		"ITEM_DERIVED"
+
+				"item_point_booster"		"ITEM_LUXURY"
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_staff_of_wizardry"		"ITEM_LUXURY"
+				"item_blade_of_alacrity"		"ITEM_LUXURY"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"lich_frost_shield"
+				"2"		"lich_frost_nova"
+				"3"		"lich_frost_shield"
+				"4"		"lich_frost_nova"
+				"5"		"lich_sinister_gaze"
+				"6"		"lich_chain_frost"
+				"7"		"lich_frost_shield"
+				"8"		"lich_frost_nova"
+				"9"		"lich_frost_nova"
+				"10"		"special_bonus_unique_lich_8"
+				"11"		"lich_frost_shield"
+				"12"		"lich_chain_frost"
+				"13"		"lich_sinister_gaze"
+				"14"		"lich_sinister_gaze"
+				"15"		"special_bonus_unique_lich_3"
+				"16"		"lich_sinister_gaze"
+				"17"		""
+				"18"		"lich_chain_frost"
+				"19"		""
+				"20"		"special_bonus_unique_lich_7"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_lich_5"
+			}
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"model"	 "models/heroes/lich/ice_spire.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lich.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lich.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"		"2"
+			"attach_attack4"		"3"
+			"attach_head"			"4"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Lich: Frost Nova
+			//=================================================================================================================
+			"lich_frost_nova"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.FrostNova"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"575 600 625 650"
+				"AbilityCastPoint"				"0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"4.0"			
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110 120 130 140"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{	
+					"AbilityCooldown"
+					{
+						"value"		"7.0"
+						"special_bonus_unique_lich_3" "-3.5"
+					}
+					"radius"				
+					{
+						"value"		"200"
+						"special_bonus_unique_lich_6" "+125"
+							"affected_by_aoe_increase"	"1"
+					}
+					"slow_movement_speed"	"-25"
+					"slow_attack_speed_primary"		"-30 -40 -50 -60"
+					"damage"			"40 80 120 160"
+					"aoe_damage"			
+					{
+						"value"			"80 120 160 200"
+						"special_bonus_unique_lich_6" "+125"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Lich: Unholy Pact
+			//=================================================================================================================
+			"lich_dark_sorcery"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.DarkRitual"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25 20 15 10"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{			
+					"mana_drain"		"5 6 7 8"
+					"attack_count"		"5"
+					"attack_speed"		"100"
+					"health_cost"		"20"
+					"duration"			"15"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Ability: Lich Frost Aura
+			//=================================================================================================================
+			"lich_death_charge"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				"AbilitySound"					"Ability.DarkRitual"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.4"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"							"0.0"
+					}
+
+					"AbilityCharges"
+					{
+						"value"							"2"
+					}
+
+					"AbilityChargeRestoreTime"
+					{
+						"value"							"120"
+					}
+					"active_mana_restore_pct_of_health"
+					{
+						"value"							"42"
+						"hero_levelup"					"3"
+					}
+					"xp_pct"
+					{
+						"value"							"69"
+						"hero_levelup"					"6"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Lich: Sinister Gaze
+			//=================================================================================================================
+			"lich_sinister_gaze"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED "
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 22 20 18"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityManaCost"				
+					{
+						"value"			"25"
+					}
+		
+					"AbilityChannelTime"
+					{
+						"value" "1.10 1.4 1.7 2.0"
+						"special_bonus_unique_lich_2" "+0.3"
+					}
+					"channel_duration"
+					{
+						"value" "1.10 1.4 1.7 2.0"
+						"special_bonus_unique_lich_2" "+0.3"
+					}		
+					"destination"		"32 38 44 50"
+					"mana_drain"		"25"
+					"aoe_scepter"
+					{
+						"special_bonus_scepter" "+400"
+							"affected_by_aoe_increase"	"1"
+					}
+					"damage"
+					{
+						"value"										"0"
+						"CalculateSpellDamageTooltip"				"0"
+						"DamageTypeTooltip"							"DAMAGE_TYPE_MAGICAL"
+					}
+					"slow_resistance"
+					{
+						"value"										"0"
+					}
+					"post_gaze_debuff_duration_multiplier"
+					{
+						"value"										"0"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Ability: Lich Frost Aura
+			//=================================================================================================================
+			"lich_frost_aura"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movespeed_slow"	"7 14 21 28"
+					"aura_radius"		"1200"
+					"duration"		"1.0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Lich: Frost Armor
+			//=================================================================================================================
+			"lich_frost_armor"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"		
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Lich.FrostArmor"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"5.0 5.0 5.0 5.0"
+				"AbilityDuration"				"40.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50 50 50 50"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Easy to spam 
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"armor_bonus"			"4 6 8 10"
+					"slow_duration"			"2.0 2.0 2.0 2.0"
+					"slow_movement_speed"	"-8 -16 -24 -32"
+					"slow_attack_speed"		"-8 -16 -24 -32"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Lich: Frost Shield
+			//=================================================================================================================
+			"lich_frost_shield"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"		
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Lich.FrostArmor"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30 25 20 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 110 120 130"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_reduction"
+					{
+						"value"	"45 50 55 60"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_lich_8"	"+10"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					}
+					"movement_slow"			"20 25 30 35"
+					"slow_duration"			"0.5"
+					"damage"
+					{
+						"value"			"18 32 46 60"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"interval"				"1.0"
+					"radius"				
+					{
+						"value"			"600"
+							"affected_by_aoe_increase"	"1"
+					}
+					"duration"
+					{
+						"value"	"4 5 6 7"
+					}
+					"health_regen"
+					{
+						"special_bonus_unique_lich_1" "+50"
+					}
+					"bonus_duration_per_hero_killed"
+					{
+						"value"					"0"
+					}
+					"bonus_duration_per_creep_killed"
+					{
+						"value"				"0"
+					}
+					"AbilityCharges"
+					{
+						"value"							"0"
+						"special_bonus_unique_lich_4"	"+2"
+					}
+					"AbilityChargeRestoreTime"
+					{
+						"value"				"30 25 20 15"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Lich: Chain Frost
+			//=================================================================================================================
+			"lich_chain_frost"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Lich.ChainFrost"
+				"AbilityDraftExtraAbilities"
+				{
+					"lich_ice_spire" "shard"
+				}
+
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"750"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"100.0 80.0 60.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"180 300 420"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Primarily about the damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"		"250 400 550"
+					}
+					"bonus_jump_damage"		
+					{
+						"value"			"15 20 25"
+						"special_bonus_unique_lich_jump_damage"	"+100"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"jumps"					"10 10 10"
+					"jump_range"			
+					{
+						"value"			"550"
+						"affected_by_aoe_increase"	"1"
+					}
+					"slow_movement_speed"	"-65"
+					"slow_attack_speed"		"-65"
+					"slow_duration"			"2.5"
+					"initial_projectile_speed"		"1050"
+					"projectile_speed"		"850"
+					"vision_radius"			
+					{
+						"value"				"800"
+						"affected_by_aoe_increase"		"1"
+					}
+					"has_unlimited_jumps"
+					{
+						"value"							"0"
+						"special_bonus_unique_lich_5"		"=1"
+					}
+					"should_fire_chain_frost_on_death"
+					{
+						"special_bonus_unique_lich_7" "+1"
+					}
+					"bonus_jumps_per_hero_killed"
+					{
+						"value"					"0"
+					}
+					"bonus_jumps_per_creep_killed"
+					{
+						"value"											"0"
+					}
+					"frostbound_duration"						
+					{
+						"value"							"2"
+					}
+				}			
+			}
+
+
+			//=================================================================================================================
+			// Lich: Ice Spire
+			//=================================================================================================================
+			"lich_ice_spire"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Ability.FrostNova"
+				"MaxLevel"						"1"
+		
+				"IsShardUpgrade"				"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"750"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastGestureSlot"		"DEFAULT"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_movespeed"			"-25"
+					"aura_radius"				
+					{
+						"value"						"550"
+						"affected_by_aoe_increase"	"1"
+					}
+					"max_hero_attacks"			"4"
+					"max_creep_attacks"			"8"
+					"duration"					"15.0"
+					"slow_duration"				"0.5"				
+				}
+			}
+		}
+	}
+}

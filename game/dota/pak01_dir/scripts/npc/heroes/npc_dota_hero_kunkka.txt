@@ -1,0 +1,826 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_kunkka"
+	{
+		"Model"		"models/heroes/kunkka/kunkka.vmdl"
+		"IdleExpression"		"scenes/kunkka/kunkka_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Kunkka"
+		"PickSound"		"kunkka_kunk_spawn_11"
+		"BanSound"		"kunkka_kunk_anger_04"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"BotImplemented"		"1"
+		"Role"			"Carry,Support,Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"	"2,1,2,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"23"
+		"HeroOrderID"	"49"
+		"ModelScale"		"0.840000"
+		"LoadoutScale"		"0.840000"
+		"VersusScale"		"0.840000"
+		"SpectatorLoadoutScale" "0.94"
+		"HeroGlowColor"		"50 150 165"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Kunkka"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"19,129,18"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"Aquatic"		"1"
+			"Undead"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_tidehunter"
+		"HeroSelectSoundEffect"		"Hero_Kunkka.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Admiral"
+		"Ability1"		"kunkka_torrent"
+		"Ability2"		"kunkka_tidebringer"
+		"Ability3"		"kunkka_x_marks_the_spot"
+		"Ability4"		"kunkka_admirals_rum"
+		"Ability5"		"kunkka_tidal_wave"
+		"Ability6"		"kunkka_ghostship"
+		"Ability7"		"kunkka_return"
+
+		"Ability10"		"special_bonus_unique_kunkka_rum_duration"
+		"Ability11"		"special_bonus_unique_kunkka_tidebringer_slow"
+		"Ability12"		"special_bonus_unique_kunkka_7"
+		"Ability13"		"special_bonus_unique_kunkka_2"
+		"Ability14"		"special_bonus_unique_kunkka_torrent_cooldown"
+		"Ability15"		"special_bonus_unique_kunkka_4"
+		"Ability16"		"special_bonus_spell_aoe_100"
+		"Ability17"		"special_bonus_unique_kunkka_tidebringer_armor_pierce"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"kunkka_torrent"
+			"Ability2"	"kunkka_tidebringer"
+			"Ability3"	"kunkka_x_marks_the_spot"
+			"Ability4"	"kunkka_ghostship"
+		}
+		
+		"Facets"
+		{
+			"kunkka_high_tide"	
+			{
+				"Icon"				"cooldown"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"kunkka_grog"	
+			{
+				"Icon"				"armor"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.600000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.600000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusHealthRegen"		"0.75"
+		"MovementSpeed"		"315"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_kunkka/kunkka_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"gloves"
+				"SlotText"		"#LoadoutSlot_Gloves"
+				"TextureWidth"		"256"
+				"TextureHeight"		"128"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"neck"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"128"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"400"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_1"
+				"SlotText" "kunkka_torrent"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_4"
+				"SlotText" "kunkka_ghostship"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_2"
+				"SlotText" "kunkka_tidebringer"
+				"DisplayInLoadout" "0"
+			}			
+			"12"
+			{
+				"SlotIndex" "12"
+				"SlotName" "ability_effects_3"
+				"SlotText" "kunkka_x_marks_the_spot"
+				"DisplayInLoadout" "0"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_kunkka"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_kunkka.vsndevts"
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"	"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"	"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_wind_lace"					"ITEM_EXTENSION"
+				"item_robe"						"ITEM_EXTENSION"
+				"item_belt_of_strength"			"ITEM_EXTENSION"
+				"item_recipe_ancient_janggo"	"ITEM_EXTENSION"
+				"item_ancient_janggo"			"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+				"item_chainmail"		"ITEM_EXTENSION"
+				"item_blades_of_attack"	"ITEM_EXTENSION"
+				"item_phase_boots"		"ITEM_DERIVED"
+
+				"item_claymore"			"ITEM_EXTENSION"
+				"item_blades_of_attack"		"ITEM_EXTENSION"
+				"item_recipe_lesser_crit"		"ITEM_EXTENSION"
+				"item_lesser_crit"		"ITEM_DERIVED"
+				"item_demon_edge"			"ITEM_EXTENSION"
+				"item_recipe_greater_crit"	"ITEM_EXTENSION"
+				"item_greater_crit"			"ITEM_DERIVED"
+
+				"item_ogre_axe"					"ITEM_EXTENSION"
+				"item_mithril_hammer"			"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"kunkka_tidebringer"
+				"2"		"kunkka_torrent"
+				"3"		"kunkka_tidebringer"
+				"4"		"kunkka_torrent"
+				"5"		"kunkka_tidebringer"
+				"6"		"kunkka_ghostship"
+				"7"		"kunkka_tidebringer"
+				"8"		"kunkka_torrent"
+				"9"		"kunkka_torrent"
+				"10"		"special_bonus_unique_kunkka_tidebringer_slow"
+				"11"		"kunkka_x_marks_the_spot"
+				"12"		"kunkka_ghostship"
+				"13"		"kunkka_x_marks_the_spot"
+				"14"		"kunkka_x_marks_the_spot"
+				"15"		"special_bonus_unique_kunkka_7"
+				"16"		"kunkka_x_marks_the_spot"
+				"17"		""
+				"18"		"kunkka_ghostship"
+				"19"		""
+				"20"		"special_bonus_unique_kunkka_torrent_cooldown"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_kunkka_4"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_SEMI_CARRY | DOTA_BOT_PUSH_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_kunkka.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_kunkka.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_sword"			"2"
+			"attach_hand2"			"3"
+			"attach_head"			"4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Kunkka: Tidal Wave( shard ability )
+			//=================================================================================================================
+			"kunkka_tidal_wave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1050"	// if changing this, change wave_distance_tooltip
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"12"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"speed"		"700"
+						"radius"		
+						{
+							"value"		"750"
+							"affected_by_aoe_increase"	"1"
+						}
+						"damage"		"180"
+						"duration"		"1.0"
+						"wave_distance_tooltip"		"1800"
+						"knockback_distance"		"600"
+				}
+			}
+
+			//=================================================================================================================
+			// Kunkka: Torrent
+			//=================================================================================================================
+			"kunkka_torrent"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.Torrent"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1300"
+				"AbilityCastPoint"				"0.4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value"					"250"
+						"affected_by_aoe_increase"	"1"
+					}
+					"movespeed_bonus"			"-40"
+					"slow_duration"				"1 2 3 4"
+					"stun_duration"
+					{
+						"value"								"1.4"
+						"special_bonus_unique_kunkka_7"		"+25%"
+					}
+					"delay"						"1.6 1.6 1.6 1.6"
+					"torrent_damage"
+					{
+						"value"			"110 180 250 320"
+						"special_bonus_unique_kunkka_7"		"+25%"
+					}
+					"percent_instant"			"0"
+					"damage_tick_interval"				"0.2"
+					"AbilityCooldown"			
+					{
+						"value"						"16 14 12 10"
+						"special_bonus_unique_kunkka_torrent_cooldown"			"-4"
+					}	
+				}		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Kunkka: Torrent Storm ( scepter ability )
+			//=================================================================================================================
+			"kunkka_torrent_storm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"0"
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Ability.Torrent"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityCastRange"				"900"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"75"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"275"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"torrent_interval"		
+						{
+							"special_bonus_scepter"				"0.25"
+						}
+						"torrent_duration"
+						{
+							"special_bonus_scepter"				"4.0"
+						}
+						"torrent_min_distance"		
+						{
+							"special_bonus_scepter"				"115"
+						}
+						"torrent_max_distance"		
+						{
+							"special_bonus_scepter"				"1100"
+							"affected_by_aoe_increase"	"1"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Kunkka: Tidebringer
+			//=================================================================================================================
+			"kunkka_tidebringer"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilitySound"					"Hero_Kunkka.Tidebringer.Attack"
+				"IsBreakable"					"1"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityCastRange"				"150"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{		
+					"cleave_starting_width"			
+					{
+						"value"			"150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_ending_width"			
+					{	
+						"value"		"500 550 600 650"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_distance"			
+					{
+						"value"			"650 775 900 1025"
+						"affected_by_aoe_increase"	"1"
+					}
+					"damage_bonus"				
+					{
+						"value"			"35 70 105 140"
+						"special_bonus_unique_kunkka_2"		"+75"
+					}
+					"cleave_damage"				
+					{
+						"value"								"150"
+						"special_bonus_unique_kunkka_4"		"+80"
+					}
+					"movespeed_slow"
+					{
+						"value"					"0"
+						"special_bonus_unique_kunkka_tidebringer_slow"		"-60"	
+					}
+					"movespeed_slow_duration"
+					{
+						"value"					"0"
+						"special_bonus_unique_kunkka_tidebringer_slow"		"+1"	
+					}
+			
+					"cooldown_reduction_per_hero_hit"
+					{
+						"value"												"0.0"
+					}
+
+					"AbilityCooldown"				
+					{
+						"value"					"13.0 10.0 7.0 4.0"
+						"special_bonus_unique_kunkka_tidebringer_charges"	"=0.1"
+					}
+					"AbilityCharges"		
+					{
+						"value"	"0"
+						"special_bonus_unique_kunkka_tidebringer_charges"	"+2"
+					}
+
+					"AbilityChargeRestoreTime"		
+					{
+						"value"			"0"
+						"special_bonus_unique_kunkka_tidebringer_charges"	"=4"
+					}
+
+					"pierces_armor"
+					{
+						"value"		"0"
+						"special_bonus_unique_kunkka_tidebringer_armor_pierce"	"+25"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Kunkka: X Marks the Spot
+			//=================================================================================================================
+			"kunkka_x_marks_the_spot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.XMarksTheSpot.Target"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"550 700 850 1000"
+				"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 20 16 12"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"					"3.0"
+						"allied_duration"	"6.0"
+						"fow_range"				"400"
+						"fow_duration"				"5.94"
+						"ally_ms"	
+						{
+							"value"		"0"
+						}
+						"ally_armor"			"0"
+						"rum_allies_radius"
+						{
+							"value"						"0"
+							"special_bonus_facet_kunkka_grog"	"+400"
+							"affected_by_aoe_increase"	"1"
+						}
+						"buff_duration"					// rum buff, must be named buff_duration
+						{
+							"value"						"0"
+							"special_bonus_facet_kunkka_grog"	"+3"
+						}
+						"movespeed_bonus"				"15"
+						"ghostship_absorb"
+						{
+							"value"						"35"
+							"special_bonus_unique_kunkka_rum"	"+15"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Kunkka: Return
+			//=================================================================================================================
+			"kunkka_return"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Ability.XMarksTheSpot.Return"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+	
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1.0"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+			}
+
+			//=================================================================================================================
+			// Kunkka: Ghostship
+			//=================================================================================================================
+			"kunkka_ghostship"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Ability.Ghostship"
+				"AbilityDraftExtraAbilities"
+				{
+					"kunkka_tidal_wave" "shard"
+				}
+				"HasScepterUpgrade"				"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"350 475 600"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 175 225"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"tooltip_delay"				"3.1"
+					"ghostship_distance"		"2000"
+					"ghostship_width"			
+					{
+						"value"				"450"
+						"affected_by_aoe_increase"	"1"
+					}
+			
+					"stun_duration"				"1.2"
+					"ghostship_speed"			"650"
+					"rum_factor"				"2"
+					"AbilityCooldown"				
+					{
+						"value"					"90 80 70"
+					}
+
+					"fleet_interval"
+					{
+						"special_bonus_scepter"		"2.5"
+					}
+
+					"fleet_count"
+					{
+						"special_bonus_scepter"		"2"
+					}
+
+					"fire_cannons"
+					{
+						"special_bonus_scepter"	"1"
+					}
+
+					"cannon_ball_damage_pct"		
+					{
+						"special_bonus_scepter"	"40"
+					}
+
+					"cannon_ball_distance"			
+					{
+						"special_bonus_scepter"	"1200"
+					}
+
+					"cannon_ball_speed"				
+					{
+						"special_bonus_scepter"	"1400"
+					}
+
+					"cannon_count"					
+					{
+						"special_bonus_scepter"	"4"
+					}
+
+					"cannon_ball_radius"			
+					{
+						"special_bonus_scepter"	"100"
+					}
+
+					"num_cannon_volleys"		"3"
+					"cannon_fire_interval"			
+					{
+						"special_bonus_scepter"	"0.78"
+					}
+
+					"base_cannon_rotation"		"20"
+					"rotation_per_cannon"		"12"
+					"initial_cannon_offset"		"-150"
+					"distance_between_cannons"	"75"
+				}
+			}
+
+			//=================================================================================================================
+			// Kunkka: Stalwart
+			//=================================================================================================================
+			"kunkka_admirals_rum"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"damage_threshold"			"65"
+					"ghostship_absorb"
+					{
+						"value"					"18"
+						"special_bonus_unique_kunkka_rum" "+8"
+					}
+
+					"buff_duration"				
+					{
+						"value"					"5"
+						"special_bonus_unique_kunkka_rum_duration" "+1"
+					}
+					"movespeed_bonus"			
+					{
+						"value"					"7.75"
+						"hero_levelup"			"+0.25"
+					}
+					"AbilityCooldown"
+					{
+						"value"							"50.5"
+						"hero_levelup"					"-0.5"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,231 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "ArtyGameObjectDef_t"
+	explosion = 
+	{
+		_class = "ArtyGameObjectDef_t"
+		m_unID = 1
+		m_eType = "k_eTypeFX"
+		m_szGraphicsDef = "explosion"
+		m_eLayer = "k_eFX"
+		m_flLifetime = 0.45
+		m_flDieTime = 0
+		m_bCanCollide = false
+		m_bDestroyOnFallThrough = false
+		m_flFallDamagePerVelocity = 0
+	}
+	player_cannon = 
+	{
+		_class = "ArtyCannonDef_t"
+		m_unID = 2
+		m_eType = "k_eTypeCannon"
+		m_szGraphicsDef = "aim_arrow"
+		m_bCanCollide = false
+		m_bInheritTransform = true
+		m_bInheritVisibility = true
+		m_vecWeapons = 
+		[
+			"default",
+		]
+		m_vShotOffset = [ 70.0, 25.0 ]
+		m_vecChildren = 
+		[
+			{
+				m_szName = "PlayerAimPowerBar"
+				m_szGameObject = "player_aim_power_bar"
+				m_vPosition = [ 0, 0 ]
+			},
+			{
+				m_szName = "WeaponIcon"
+				m_szGameObject = "weapon_icon"
+				m_vPosition = [ 0, 0 ]
+			},
+		]
+		m_flDieTime = -1.0
+	}
+	player = 
+	{
+		_class = "ArtyPlayerDef_t"
+		m_unID = 3
+		m_eType = "k_eTypePlayer"
+		m_szGraphicsDef = "player"
+		m_flHealth = 1
+		m_flMaxHealth = 1
+		m_bDoPhysics = true
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -48, 0 ]
+		m_vHitboxMax = [ 48, 96 ]
+		m_bRotateReloadBar = true
+		m_vecChildren = 
+		[
+			{
+				m_szName = "UnitCanon"
+				m_szGameObject = "player_cannon"
+				m_vPosition = [ 25.0, 50.0 ]
+			},
+		]
+		m_flDieTime = 1.1
+	}
+	player_aim_power_bar = 
+	{
+		_class = "ArtyProgressBarDef_t"
+		m_unID = 4
+		m_eType = "k_eTypeUI"
+		m_szGraphicsDef = "aim_power_bar"
+		m_bCanCollide = false
+		m_bInheritTransform = true
+		m_bVisible = false
+		m_flNotchSize = 0
+	}
+	explosive_barrel = 
+	{
+		_class = "ArtyGameObjectDef_t"
+		m_unID = 5
+		m_eType = "k_eTypeObject"
+		m_bDoPhysics = true
+		m_szGraphicsDef = "explosive_barrel"
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -32, 0 ]
+		m_vHitboxMax = [ 32, 64 ]
+		m_bDeathCausesExplosion = true
+		m_flExplosionRadius = 200
+		m_flExplosionTerrainRadius = 200
+		m_flExplosionDamage = 1
+		m_flFallDamagePerVelocity = 0
+		m_flDeathMaxScaleFactor = 1.8
+		m_flDieTime = 0.3
+	}
+	ogre_med = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 6
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "ogre_med"
+		m_szDeathSound = "crownfall.artillery.ogre.death"
+		m_vecWeapons = 
+		[
+			"enemy_slow",
+		]
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_vecChildren = [  ]
+		m_flDieTime = 1.1
+		m_flFallDamagePerVelocity = 0
+		m_bDoPhysics = true
+	}
+	skeleton_melee = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 7
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "skeleton_melee"
+		m_szDeathSound = "crownfall.artillery.skeleton.death"
+		m_vecWeapons = 
+		[
+			"enemy_slow",
+		]
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_bDoPhysics = true
+		m_vecChildren = [  ]
+		m_flFallDamagePerVelocity = 0
+		m_flDieTime = 1.1
+	}
+	skywrath = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 8
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "skywrath_mage"
+		m_szDeathSound = "crownfall.artillery.skywrath.death"
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_bDoPhysics = true
+		m_flFallDamagePerVelocity = 0
+		m_flDieTime = 1.1
+	}
+	explosion_terrain_only = 
+	{
+		_class = "ArtyGameObjectDef_t"
+		m_unID = 9
+		m_eType = "k_eTypeFX"
+		m_szGraphicsDef = "explosion_terrain_only"
+		m_eLayer = "k_eFX"
+		m_flLifetime = 0.45
+		m_flDieTime = 0
+		m_bCanCollide = false
+		m_bDestroyOnFallThrough = false
+		m_flFallDamagePerVelocity = 0
+	}
+	weapon_icon = 
+	{
+		_class = "ArtyGameObjectDef_t"
+		m_unID = 10
+		m_eType = "k_eTypeUI"
+		m_szGraphicsDef = "weapon_icon"
+		m_bCanCollide = false
+		m_bInheritTransform = true
+		m_bVisible = true
+		m_bInheritRotation = false
+	}
+	crownfall_ranged = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 11
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "crownfall_ranged"
+		m_szDeathSound = "crownfall.artillery.creep.death"
+		m_vecWeapons = 
+		[
+			"enemy_slow",
+		]
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_vecChildren = [  ]
+		m_flDieTime = 1.1
+		m_flFallDamagePerVelocity = 0
+		m_bDoPhysics = true
+	}
+	crownfall_melee = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 12
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "crownfall_melee"
+		m_szDeathSound = "crownfall.artillery.creep.death"
+		m_vecWeapons = 
+		[
+			"enemy_slow",
+		]
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_bDoPhysics = true
+		m_vecChildren = [  ]
+		m_flFallDamagePerVelocity = 0
+		m_flDieTime = 1.1
+	}
+	undying_minion = 
+	{
+		_class = "ArtyEnemyDef_t"
+		m_unID = 13
+		m_eType = "k_eTypeEnemy"
+		m_szGraphicsDef = "undying_minion"
+		m_szDeathSound = "crownfall.artillery.zombie.death"
+		m_vecWeapons = 
+		[
+			"enemy_slow",
+		]
+		m_eHitboxType = "k_eAABB"
+		m_vHitboxMin = [ -30, 0 ]
+		m_vHitboxMax = [ 30, 90 ]
+		m_bDoPhysics = true
+		m_vecChildren = [  ]
+		m_flFallDamagePerVelocity = 0
+		m_flDieTime = 1.1
+	}
+}

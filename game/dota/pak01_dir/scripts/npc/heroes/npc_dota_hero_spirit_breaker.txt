@@ -1,0 +1,694 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_spirit_breaker"
+	{
+		"Model"		"models/heroes/spirit_breaker/spirit_breaker.vmdl"
+		"IdleExpression"		"scenes/spirit_breaker/spirit_breaker_exp_idle_01.vcd"
+		"SoundSet"		"Hero_spirit_breaker"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Initiator,Disabler,Durable,Escape"
+		"Rolelevels"	"1,2,2,2,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"CMEnabled"		"1"
+		"NameAliases"		"sb;Barathrum"
+		"workshop_guide_name"		"Spirit Breaker"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"106,126,107"
+		"Adjectives"
+		{
+			"Horns"			"1"
+			"Bearded"		"1"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_earthshaker"
+		"PickSound"		"spirit_breaker_spir_spawn_01"
+		"BanSound"		"spirit_breaker_spir_anger_05"
+		"HeroID"		"71"
+		"HeroOrderID"	"66"
+		"ModelScale"		"0.740000"
+		"VersusScale"		"0.74"
+		"HeroGlowColor"		"53 74 107"
+		"HeroSelectSoundEffect"		"Hero_SpiritBreaker.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"86 178 221 255"
+		"Ability1"		"spirit_breaker_charge_of_darkness"
+		"Ability2"		"spirit_breaker_bulldoze"
+		"Ability3"		"spirit_breaker_greater_bash"
+		"Ability4"		"spirit_breaker_planar_pocket"
+		"Ability5"		"spirit_breaker_bull_rush"
+		"Ability6"		"spirit_breaker_nether_strike"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"spirit_breaker_charge_of_darkness"
+			"Ability2"	"spirit_breaker_bulldoze"
+			"Ability3"	"spirit_breaker_greater_bash"
+			"Ability4"	"spirit_breaker_nether_strike"
+		}
+
+		"Ability10"		"special_bonus_night_vision_500"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_unique_spirit_breaker_2"
+		"Ability13"		"special_bonus_unique_spirit_breaker_increased_charge_speed"
+		"Ability14"		"special_bonus_unique_bull_rush_movement_increase"
+		"Ability15"		"special_bonus_unique_spirit_breaker_shield"
+		"Ability16"		"special_bonus_unique_spirit_breaker_3"
+		"Ability17"		"special_bonus_unique_spirit_breaker_4"
+		"Facets"
+		{
+			"spirit_breaker_bull_rush" 
+			{
+				"Icon"				"speed"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"spirit_breaker_imbalanced" 
+			{
+				"Icon"				"movement"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"spirit_breaker_bulls_hit"
+			{
+				"Icon"				"rng"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"34"
+		"AttackDamageMax"		"44"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"170"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"28"
+		"AttributeStrengthGain"		"3.300000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusHealthRegen"		"1.25"
+		"StatusManaRegen"		"0.5"
+		"MovementSpeed"		"295"
+		"particle_folder"		"particles/units/heroes/hero_spirit_breaker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_spirit_breaker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_spirit_breaker/spirit_breaker_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "spirit_breaker_greater_bash"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_1"
+				"SlotText" "spirit_breaker_charge_of_darkness"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_spirit_breaker.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_spirit_breaker.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_face"				"1"
+			"attach_attack1"		   "2"
+			"attach_attack2"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Spirit Breaker: Charge of Darkness
+			//=================================================================================================================
+			"spirit_breaker_charge_of_darkness"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+
+				"AbilitySound"					"Hero_Spirit_Breaker.ChargeOfDarkness"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastRange"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	".30" // applies multiple modifiers
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movement_speed"		
+					{
+						"value"			"275 325 375 425"
+						"special_bonus_unique_spirit_breaker_increased_charge_speed" "+60"
+					}
+					"stun_duration"			"1.3 1.6 1.9 2.2"
+					"bash_radius"			
+					{
+						"value"			"300 300 300 300"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vision_radius"			
+					{
+						"value"		"400 400 400 400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vision_duration"		"0.94 0.94 0.94 0.94"
+					"AbilityCooldown"				
+					{
+						"value"			"22 19 16 13"
+						"special_bonus_unique_spirit_breaker_4"		"-4"
+					}
+
+					"out_of_world_time"		"0"
+					"guaranteed_bash_time"	"0"
+					"reveal_charge"			"0"
+
+					"windup_time"				"1.5"
+					"min_movespeed_bonus_pct"	"25"
+
+					"linger_time_min"			"0" //"0.5"
+					"linger_time_max"			"0" //"2.5"
+					"charge_for_max_linger"		"0" //"5"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Bulldoze
+			//=================================================================================================================
+			"spirit_breaker_bulldoze"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Spirit_Breaker.EmpoweringHaste.Cast"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"30 40 50 60"
+
+		
+				"AbilityValues"
+				{
+					"movement_speed"				"8 12 16 20"
+					"status_resistance"				"40 50 60 70"
+					"duration"						"8"
+					"damage_barrier"
+					{
+						"value"						"0"
+						"special_bonus_unique_spirit_breaker_shield" "+375"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"22 20 18 16"
+						"special_bonus_unique_spirit_breaker_2"	"-3"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Empowering Haste
+			//=================================================================================================================
+			"spirit_breaker_empowering_haste"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Spirit_Breaker.EmpoweringHaste.Cast"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityValues"
+				{
+					"bonus_movespeed_pct_self"
+					{
+						"value" "8 12 16 20"
+					}
+					"bonus_movespeed_pct_allies"
+					{
+						"value" "4 6 8 10"
+					}
+					"aura_radius"
+					{
+						"value" "1200"
+					}
+					"bonus_movespeed_pct_extra"
+					{
+						"value" "3 4 5 6"
+					}
+					"duration"
+					{
+						"value" "6"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Greater Bash
+			//=================================================================================================================
+			"spirit_breaker_greater_bash"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilitySound"					"Hero_Spirit_Breaker.GreaterBash"
+				"IsBreakable"					"1"
+				"HasScepterUpgrade"				"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"	"40"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"									"1.2"
+						"special_bonus_unique_spirit_breaker_1" "-0.3"
+					}
+					"chance_pct"			
+					{
+						"value"	"17"
+					}
+					"bonus_chance_pct"
+					{
+						"value"											"0"
+						"special_bonus_facet_spirit_breaker_bulls_hit" "+17"
+					}
+					"bonus_chance_duration"
+					{
+						"value"											"0"
+						"special_bonus_facet_spirit_breaker_bulls_hit"	"10.0"
+					}
+					"damage"				
+					{
+						"value"	"25 30 35 40"
+						"special_bonus_unique_spirit_breaker_3" "+20"
+					}
+					"duration"				"0.9 1.1 1.3 1.5"
+
+					"knockback_duration"
+					{
+						"value" "0.5"
+					}
+
+					"cascading_bash_cooldown"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "0.6"
+					}
+			
+					"cascading_bashes_damage_multiplier"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "25"
+					}
+
+					"cascading_bashes_creep_penalty"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "20"
+					}
+
+					"cascading_bashes_nether_strike_additional_cooldown"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "0.6"
+					}
+
+					"cascading_bashes_hero_hitbox"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "185"
+					}
+
+					"cascading_bashes_creep_hitbox"
+					{
+						"value"	"0"
+						"special_bonus_scepter" "100"		
+					}
+
+					"knockback_distance"	
+					{
+						"value" "143 152 158 162"
+						"special_bonus_scepter"		"+50"
+					}
+
+					"knockback_height"
+					{
+						"value" "50"
+						"special_bonus_scepter"		"+30"
+					}
+
+					"bonus_knockback_multiplier"
+					{
+						"value" "2.0"
+						"special_bonus_scepter"		"+1.0"
+					}
+
+					"bonus_movespeed_pct"	"17"
+					"movespeed_duration"	"3"
+					"creep_multiplier"		"1"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Nether Strike
+			//=================================================================================================================
+			"spirit_breaker_nether_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Spirit_Breaker.NetherStrike.Begin"
+				"HasScepterUpgrade"				"1"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"spirit_breaker_planar_pocket" "shard"
+				}
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"1.0"
+				"AbilityCastRange"				"700"
+				"AbilityCastRangeBuffer"		"500"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time			
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"75 55 35"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 150 175"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"				
+					{
+						"value"					"150 250 350"
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"fade_time"				"1.0 1.0 1.0"
+					"shard_bonus_damage"	
+					{
+						"special_bonus_shard"				"0"
+					}
+					"shard_break_duration"
+					{
+						"special_bonus_shard"				"0.0"
+					}
+					"shard_spell_immune_duration"
+					{
+						"special_bonus_shard"				"0.0"
+					}
+
+					"knockback_amp"
+					{
+						"special_bonus_facet_spirit_breaker_imbalanced" "+100"
+					}
+
+					"knockback_amp_duration"
+					{
+						"special_bonus_facet_spirit_breaker_imbalanced"	"+6"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Spirit Magnet
+			//=================================================================================================================
+			"spirit_breaker_planar_pocket"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_DoomBringer.ScorchedEarthAura"
+				"MaxLevel"						"1"
+				"IsGrantedByShard"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCooldown"				"30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"		"900"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"				"6"
+					"magic_resistance"		"40"
+					"break_distance"		"900"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastGestureSlot"		"DEFAULT"
+			}
+
+			//=================================================================================================================
+			// Ability: Global Knockback Amplification
+			//=================================================================================================================
+			"spirit_breaker_knockback_amp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"knockback_amp"			"20"
+				}
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Catch Up
+			//=================================================================================================================
+			"spirit_breaker_herd_mentality"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"		
+				"AbilityValues"
+				{
+					"xp_gain_rate"				"50"
+				}
+			}
+
+			//=================================================================================================================
+			// Spirit Breaker: Bull Rush
+			//=================================================================================================================
+			"spirit_breaker_bull_rush"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"	
+
+				"AbilityValues"
+				{
+					"hero_duration"					"2.0"
+					"creep_duration"				"1.0"
+					"hero_movespeed_percent"		
+					{
+						"value"		"8"	
+						"special_bonus_unique_bull_rush_movement_increase"		"+8"	
+					}
+					"creep_movespeed_percent"		
+					{
+						"value" "2"
+						"special_bonus_unique_bull_rush_movement_increase"		"+2"	
+					}
+				}
+			}
+		}
+	}
+}

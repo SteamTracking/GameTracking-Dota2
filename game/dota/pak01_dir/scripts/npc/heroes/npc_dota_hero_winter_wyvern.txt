@@ -1,0 +1,684 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_winter_wyvern"
+	{
+		"Model"		"models/heroes/winterwyvern/winterwyvern.vmdl"
+		"IdleExpression"		"scenes/winter_wyvern/winter_wyvern_exp_idle_01.vcd"
+		"ModelScale"		"1.000000"
+		"VersusScale"		"1.000000"
+		"LoadoutScale"		"1.000000"
+		"SoundSet"		"Hero_Winter_Wyvern"
+		"Enabled"		"1"
+		"workshop_guide_name"		"Winter Wyvern"
+		"Role"			"Support,Disabler,Nuker"
+		"Rolelevels"	"3,2,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"NewHero"		"0"
+		"HeroPool1"		"0"
+		"HeroOrderID"	"110"
+		"HeroUnlockOrder"		"1"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"30,64,55"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Female"		"1"
+			"Flying"		"1"
+			"Icy"			"1"
+			"Blue"			"1"
+		}
+		"NoCombine"		"0"
+		"HeroID"		"112"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_winter_wyvern.vsndevts"
+		"PickSound"		"winter_wyvern_winwyv_spawn_01"
+		"BanSound"		"winter_wyvern_winwyv_anger_07"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"HeroSelectSoundEffect"		"Hero_Winter_Wyvern.Pick"
+		"GibType"		"ice"
+		"NameAliases"	"ww;Auroth"
+		"Ability1"		"winter_wyvern_arctic_burn"
+		"Ability2"		"winter_wyvern_splinter_blast"
+		"Ability3"		"winter_wyvern_cold_embrace"
+		"Ability4"		"winter_wyvern_eldwurms_edda"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"winter_wyvern_winters_curse"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"winter_wyvern_arctic_burn"
+			"Ability2"		"winter_wyvern_splinter_blast"
+			"Ability3"		"winter_wyvern_cold_embrace"
+			"Ability4"		"winter_wyvern_winters_curse"
+		}
+
+		"Ability10"		"special_bonus_unique_winter_wyvern_5"
+		"Ability11"		"special_bonus_attack_damage_30"
+		"Ability12"		"special_bonus_unique_winter_wyvern_6"
+		"Ability13"		"special_bonus_unique_winter_wyvern_2"
+		"Ability14"		"special_bonus_unique_winter_wyvern_1"
+		"Ability15"		"special_bonus_unique_winter_wyvern_7"
+		"Ability16"		"special_bonus_unique_winter_wyvern_3"
+		"Ability17"		"special_bonus_unique_winter_wyvern_4"
+		"Facets"
+		{
+			"winter_wyvern_heal_mana"
+			{
+				"Icon"				"mana"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"True"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"winter_wyvern_essence_of_the_blueheart"
+					}
+				}
+			}
+
+			"winter_wyvern_atk_range"
+			{
+				"Icon"				"damage"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"True"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"winter_wyvern_dragon_sight"
+					}
+				}
+			}
+
+			"winter_wyvern_winterproof"
+			{
+				"Icon"				"tower"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"True"
+			}
+
+			"winter_wyvern_recursive"
+			{
+				"Icon"				"ricochet"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"True"
+			}
+		}
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"16"
+		"AttackDamageMax"		"23"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.250000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"155"
+			"faster"	"205"
+			"fastest"	"300"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/units/heroes/hero_winter_wyvern/winter_wyvern_base_attack.vpcf"
+		"ProjectileSpeed"		"700"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeBaseIntelligence"	"26"
+		"AttributeIntelligenceGain"	"3.6"
+		"VisionNighttimeRange"		"1200"
+		"BaseAttackSpeed"		"100"
+		"StatusManaRegen"	"0.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_winter_wyvern"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_winter_wyvern/wyvern_loadout.vpcf"		"loadout"
+			}
+		}
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"285"
+		"HasAggressiveStance"		"0"
+		"particle_folder"		"particles/units/heroes/hero_winter_wyvern"
+		"TeamName"		"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		"VisionDaytimeRange"		"1800"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"DisplayInLoadout" "0"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"8000"
+				"MaxPolygonsLOD1"		"3200"
+				"MaxBonesLOD0"			"80"
+				"MaxBonesLOD1"			"80"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_3"
+				"SlotText" "winter_wyvern_cold_embrace"
+				"DisplayInLoadout" "0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"7"
+			{
+				"SlotIndex"	"7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "winter_wyvern_splinter_blast"
+				"DisplayInLoadout" "0"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_winter_wyvern.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_winter_wyvern.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		 "1"
+			"attach_wing_barb_l" "2"
+			"attach_wing_barb_r" "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Winter Wyvern: Arctic Burn
+			//=================================================================================================================
+			"winter_wyvern_arctic_burn"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_WinterWyvern.ArcticBurn.Cast"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		        "HasScepterUpgrade"             "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"29 26 23 20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"				"7 8 9 10"
+						"attack_range_bonus"	"250 275 300 325"
+						"percent_damage"		"4 6 8 10"
+						"tick_rate"				"0.5"
+						"damage_duration"		
+						{
+							"value"			"3.0"
+							"CalculateSpellDamageTooltip"	"0"
+							"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+						"special_bonus_unique_winter_wyvern_6" "+3"
+						}
+						"move_slow"				
+						{
+							"value"			"15 20 25 30"
+						"special_bonus_unique_winter_wyvern_1" "+10"
+						}
+						"projectile_speed_bonus"	"500"
+						"tree_destruction_radius"
+						{
+							"value"						"175"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"attack_point"			"0.1"
+						"max_attacks"			"5"
+						"mana_cost_scepter"		
+						{
+							"special_bonus_scepter"		"20"
+						}
+						"movement_scepter"		
+						{
+							"special_bonus_scepter"		"25"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Winter Wyvern: Splinter Blast
+			//=================================================================================================================
+			"winter_wyvern_splinter_blast"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1150"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"105 115 125 135"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"projectile_speed"		"1200"
+					"projectile_max_time"	"1.0"
+					"split_radius"			
+					{
+						"value"		"500"
+						"affected_by_aoe_increase"	"1"	
+						"special_bonus_unique_winter_wyvern_2" "+175"
+					}
+					"bonus_movespeed"		"-27 -30 -33 -36"
+					"movespeed_slow_tooltip"		"27 30 33 36"
+					"slow_duration"				"4.0"
+					"secondary_projectile_speed"		"1000"
+					"damage"				
+					{
+						"value"		"80 160 240 320"
+						"special_bonus_unique_winter_wyvern_7" "+100"
+					}
+					"stun_duration"				
+					{
+						"value"		"0"
+						"special_bonus_unique_winter_wyvern_4" "+1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Winter Wyvern: Cold Embrace
+			//=================================================================================================================
+			"winter_wyvern_cold_embrace"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Winter_Wyvern.ColdEmbrace"
+
+		        "HasShardUpgrade"             "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"850 900 950 1000"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 21 18 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50 60 70 80"
+				
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"			"4.0"
+						"heal_additive"		
+						{
+							"value"		"40 45 50 55"
+							"special_bonus_unique_winter_wyvern_5" "+15"
+						}
+						"heal_percentage"	"1.5 2.5 3.5 4.5"
+						"shard_cooldown_reduction"
+						{
+							"special_bonus_shard"		"4.0"
+						}
+						"shard_splinter_range"
+						{
+							"value"						"0"
+						}
+						"tick_interval"					"0.25"
+						"can_target_buildings"
+						{
+							"special_bonus_facet_winter_wyvern_winterproof"	"=1"
+						}
+						"damage_buff_pct"
+						{
+							"special_bonus_shard"	"=60"
+						}
+						"damage_buff_duration"
+						{
+							"special_bonus_shard"	"=6.0"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Winter Wyvern: Winter's Curse
+			//=================================================================================================================
+			"winter_wyvern_winters_curse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_WinterWyvern.WintersCurse.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"100 90 80"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 200 250"
+				
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"			
+						{
+							"value"	"525"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"damage_reduction"	"100"
+						"bonus_attack_speed"	
+						{
+							"value"		"50 65 80"
+							"special_bonus_unique_winter_wyvern_3"	"+60"
+						}
+						"duration"	"2"
+						"max_duration"	"6"
+						"bonus_duration_per_hero"	"1.5"
+						"bonus_duration_per_creep"	"0.5"
+						"transfer_on_death"
+						{
+							"value"											"0"
+						}
+						"transfer_duration_pct"
+						{
+							"value"											"0"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Winter Wyvern: Innate Scholar
+			//=================================================================================================================
+			"winter_wyvern_eldwurm_scholar"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"share_percentage"			"0"
+					"three_tooltip"				"0"
+					"mana_to_xp_percentage"		"25"
+					"xp_gain_range"				"1200"
+				}
+			}
+
+				//=================================================================================================================
+			// Manuscript
+			//=================================================================================================================
+			"winter_wyvern_eldwurms_edda"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+						"Innate"						"1"
+
+				"AbilityValues"
+				{	
+					// purely for tooltips on variant selection, actual KV's are on the item
+					"tooltip_seconds"			"420"
+					"tooltip_int_pct"			"25"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_winter_wyvern_7"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+			//=================================================================================================================
+			// Frozen Blood (Convert overheal into mana)
+			//=================================================================================================================
+			"winter_wyvern_essence_of_the_blueheart"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"AbilityValues"
+				{
+					"restore_pct"			"24"
+				}
+			}	
+			//=================================================================================================================
+			// Bookwyrm
+			//=================================================================================================================
+			"winter_wyvern_dragon_sight"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"4"
+				"DependentOnAbility"			"winter_wyvern_winters_curse"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"attack_range_per_damage"			"40 30 20 10"
+					"damage_per_ten_attack_range_tooltip"	"0.25 0.33 0.5 1.0"
+					"attack_range_min"					"400"
+				}
+			}	
+
+			"winter_wyvern_accelerated_learning"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"MaxLevel"						"4"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"levels_between_upgrades"
+					{
+						"value"				"5"
+					}
+				}
+			}
+		}
+	}
+}

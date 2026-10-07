@@ -1,0 +1,683 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_batrider"
+	{
+		"Model"		"models/heroes/batrider/batrider.vmdl"
+		"IdleExpression"		"scenes/batrider/batrider_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Batrider"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Initiator,Disabler,Escape"
+		"Rolelevels"	"3,2,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"65"
+		"HeroOrderID"	"56"
+		"ModelScale"		"0.740000"
+		"VersusScale"		"0.74"
+		"SpectatorLoadoutScale" "0.74"
+		"HeroGlowColor"		"107 74 53"
+		"CMEnabled"		"1"
+		"PickSound"		"batrider_bat_spawn_01"
+		"BanSound"		"batrider_bat_anger_02"
+		"NameAliases"		"br"
+		"workshop_guide_name"		"Batrider"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"20,19,123"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"Cape"			"1"
+			"Arachnophobic"	"1"
+			"Flying"		"1"
+			"Fiery"			"1"
+			"Red"			"1"	
+			"Yellow"		"1"	
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_lina"
+		"HeroSelectSoundEffect"		"Hero_Batrider.Pick"
+		"GibType"		"default"
+		"Ability1"		"batrider_sticky_napalm"
+		"Ability2"		"batrider_flamebreak"
+		"Ability3"		"batrider_firefly"
+		"Ability4"		"batrider_sticky_napalm_application_damage"
+		"Ability5"		"batrider_smoldering_resin"
+		"Ability6"		"batrider_flaming_lasso"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"batrider_sticky_napalm"
+			"Ability2"	"batrider_flamebreak"
+			"Ability3"	"batrider_firefly"
+			"Ability4"	"batrider_flaming_lasso"
+		}
+
+		"Ability10"		"special_bonus_unique_batrider_3"
+		"Ability11"		"special_bonus_unique_batrider_smoldering_resin_ticks"
+		"Ability12"		"special_bonus_unique_batrider_4"
+		"Ability13"		"special_bonus_unique_batrider_7"
+		"Ability14"		"special_bonus_unique_batrider_6"
+		"Ability15"		"special_bonus_unique_batrider_5"
+		"Ability16"		"special_bonus_unique_batrider_1"
+		"Ability17"		"special_bonus_unique_batrider_2"
+		"Facets"
+		{
+			"batrider_buff_on_displacement"
+			{
+				"Icon"				"nuke"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"batrider_arsonist" 
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"MaxHeroAttributeLevel"	"6"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"12"
+		"AttackDamageMax"		"16"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"400"
+		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.9"
+		"AttributeBaseAgility"		"13"
+		"AttributeAgilityGain"		"2.0"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.2"
+		"StatusHealthRegen"		"1.25"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.900000"
+		"VisionDaytimeRange"		"1800"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"DisplayInLoadout" "0"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"mount"
+				"SlotText"		"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_3"
+				"SlotText" "batrider_firefly"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_batrider"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_batrider.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_batrider/batrider_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_STUN_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_batrider.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_batrider_mount.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_batrider.vpcf"
+			"party_hat_effect_1"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_batrider_mount.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head_bat"		"2"
+			"attach_head"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Batrider: Sticky Napalm
+			//=================================================================================================================
+			"batrider_sticky_napalm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+				"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"HasShardUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"22"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_level"
+					{
+						"value"									"4"
+						"special_bonus_facet_batrider_arsonist" "+1"
+					}
+					"max_level_tooltip"
+					{
+						"special_bonus_facet_batrider_arsonist" "=5"
+					}
+					"AbilityCooldown"
+					{
+						"value"			"3.0"
+					}
+					"AbilityCastRange"
+					{
+						"value"				"600"
+					}
+					"stacks_per_cast"
+					{
+						"value"								"2"
+					}
+					"damage"
+					{
+						"value"								"2.5 5 7.5 10"
+						"CalculateSpellDamageTooltip"		"1"
+					}
+					"radius"
+					{
+						"value"								"375"
+						"affected_by_aoe_increase"	"1"				
+					}
+					"duration"					"6"
+					"movement_speed_pct"
+					{
+						"value"								"-.75 -1.5 -2.25 -3"
+						"special_bonus_unique_batrider_7"	"-0.75"
+					}
+					"turn_rate_pct"				"-10 -30 -50 -70"
+					"max_stacks"				"20"
+					"unlimited_stacks"
+					{
+						"value"					"0"
+						"special_bonus_shard"	"1"
+					}
+					"creep_damage_pct"			"20"
+					"application_damage"		"5 10 15 20"
+					"building_damage_pct"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"+20"
+					}
+					"napalm_stacks_on_attack"
+					{
+						"value"								"0"
+						"special_bonus_unique_batrider_6"	"+1"
+					}
+					"napalm_stacks_on_attack_tooltip"
+					{
+						"special_bonus_facet_batrider_arsonist"	"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Batrider: Slow Burn
+			//=================================================================================================================
+			"batrider_smoldering_resin"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"total_ticks"			
+					{
+						"value"		"2"
+						"special_bonus_unique_batrider_smoldering_resin_ticks"	"+1"
+					}
+					"tick_rate"				"1"
+					"tick_attack_damage_pct"		"20"
+				}
+
+			}
+
+
+			//=================================================================================================================
+			// Batrider: Variant Displacement Buff
+			//=================================================================================================================
+			"batrider_stoked"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"4"
+				"DependentOnAbility"			"batrider_flaming_lasso"
+
+				"AbilityValues"
+				{
+					"duration"					"7.0"
+					"movement_speed_pct"		"4 6 8 10"
+					"spell_amplification"		"2 4 6 8"
+				}
+
+			}
+	
+			//=================================================================================================================
+			// Batrider: Sticky Napalm
+			//=================================================================================================================
+			"batrider_sticky_napalm_application_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+				"MaxLevel"						"1"
+
+			}	
+
+			//=================================================================================================================
+			// Batrider: Flamebreak
+			//=================================================================================================================
+			"batrider_flamebreak"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Batrider.Flamebreak"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1300"
+				"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"1.0"
+
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+
+					"damage_impact"		
+					{
+						"value"			"25 50 75 100"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"damage_per_second"		
+					{
+						"value"			"25 30 35 40"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"damage_duration"		
+					{
+						"value"		"2 3 4 5"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+						"CalculateSpellDamageTooltip" "0"
+					}
+					"explosion_radius"		
+					{
+						"value"		"400"
+							"affected_by_aoe_increase"	"1"
+					}
+					"collision_radius"		
+					{
+						"value"		"100 100 100 100"
+							"affected_by_aoe_increase"	"1"
+					}
+					"stun_duration"			"0.5 0.5 0.5 0.5"
+					"speed"					"1700"
+					"knockback_distance"	
+					{
+						"value"				"250"
+						"affected_by_aoe_increase"	"1"
+					}
+					"knockback_height"		"100 100 100 100"
+					"knockback_duration"	"0.35"
+					"napalm_stacks"
+					{
+						"value"				"0"
+						"special_bonus_unique_batrider_2"	"+4"
+					}
+					"AbilityCooldown"		
+					{
+						"value"	 "22 19 16 13"
+						"special_bonus_unique_batrider_5"	"-6"
+					}
+					"slow"	"6 12 18 24"		
+
+						
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Batrider: Firefly
+			//=================================================================================================================
+			"batrider_firefly"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"48 42 36 30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_per_second"
+					{
+						"value"			"20 40 60 80"
+						"CalculateSpellDamageTooltip" "1"
+						"special_bonus_unique_batrider_4"	"+30"
+					}
+					"radius"				
+					{
+						"value"		"250"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"				
+					{
+						"value"					"15"
+					}
+					"tick_interval"			"0.5"
+					"tree_radius"			
+					{
+						"value"			"100"
+						"affected_by_aoe_increase"	"1"
+					}
+					"movement_speed_pct_total"
+					{
+						"value"								"12 18 24 30"
+						"special_bonus_unique_batrider_3"	"+5"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Batrider: Flaming Lasso
+			//=================================================================================================================
+			"batrider_flaming_lasso"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Batrider.FlamingLasso.Cast"
+
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"200"
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 150 175"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"								"2.25 2.75 3.25"
+						"special_bonus_unique_batrider_1"	"+0.75"
+					}
+					"drag_distance"			"300 300 300"
+					"break_distance"		"425"
+					"damage"
+					{
+						"value"			"125 250 375"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"grab_radius_scepter"
+					{
+						"special_bonus_scepter"		"+650"
+						"affected_by_aoe_increase"	"1"
+					}
+					"AbilityCooldown"				
+					{
+						"value"				"90 75 60"
+					}
+					"tick_rate"			"0.5"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"	
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+				
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_7"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+		
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_batrider_smoldering_resin_ticks"
+			{
+						// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+		}
+	}
+}

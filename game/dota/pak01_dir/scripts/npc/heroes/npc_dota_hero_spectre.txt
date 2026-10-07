@@ -1,0 +1,620 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_spectre"
+	{
+		"Model"		"models/heroes/spectre/spectre.vmdl"
+		"IdleExpression"		"scenes/spectre/spectre_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Spectre"
+		"IdleSoundLoop"		"Hero_Spectre.IdleLoop"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Durable,Escape"
+		"Rolelevels"	"3,1,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"67"
+		"HeroOrderID"	"44"
+		"ModelScale"		"0.670000"
+		"VersusScale"		"0.67"
+		"SpectatorLoadoutScale" "0.8"
+		"LoadoutScale"		"0.67"
+		"HeroGlowColor"		"107 74 53"
+		"PickSound"		"spectre_spec_spawn_01"
+		"BanSound"		"spectre_spec_anger_02"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Spectre"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"12,89,109"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Nose"			"0"
+			"Female"		"1"
+			"Undead"		"1"
+			"Purple"		"1"
+		}
+
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_Spectre.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"115 47 94 255"
+		"NameAliases"	"Mercurial"
+		"Ability1"		"spectre_spectral_dagger"
+		"Ability2"		"spectre_shadow_step"
+		"Ability3"		"spectre_dispersion"
+		"Ability4"		"spectre_reality"
+		"Ability5"		"spectre_desolate"
+		"Ability6"		"spectre_haunt"
+		"Ability10"		"special_bonus_unique_spectre"
+		"Ability11"		"special_bonus_unique_spectre_2"
+		"Ability12"		"special_bonus_unique_spectre_shadow_step_duration"
+		"Ability13"		"special_bonus_unique_spectre_6"
+		"Ability14"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_unique_spectre_3"
+		"Ability16"		"special_bonus_unique_spectre_4"
+		"Ability17"		"special_bonus_unique_spectre_5"
+		"Facets"
+		{
+			"spectre_forsaken" 
+			{
+				"Icon"				"spectre"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"spectre_twist_the_knife" 	
+			{
+				"Icon"				"nuke"
+				"Color"				"Purple"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"spectre_spectre"
+			{
+				"Icon"				"spirit"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"spectre_spectral_dagger"
+			"Ability2"		"spectre_shadow_step"
+			"Ability3"		"spectre_dispersion"
+			"Ability4"		"spectre_haunt"
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"BaseAttackSpeed"		"110"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"130"
+			"faster"	"200"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.3"
+		"AttributeBaseAgility"		"29"
+		"AttributeAgilityGain"		"2.3"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.7"
+		"StatusHealthRegen"		"1.5"
+		"MovementSpeed"		"295"
+		"particle_folder"		"particles/units/heroes/hero_spectre"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_spectre.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"voice"
+				"SlotText"		"#LoadoutSlot_Voice"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "spectre_spectral_dagger"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_spectre.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_spectre.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		   "1"
+			"attach_attack1"	   "2"
+			"attach_hand_l"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Spectre: Spectral Dagger
+			//=================================================================================================================
+			"spectre_spectral_dagger"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Spectre.DaggerCast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1800"
+				"AbilityCastPoint"				"0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 110 120 130"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Modifier has no support value
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"				
+						{
+							"value"			"80 120 160 200"
+							"special_bonus_unique_spectre_6" "+80"
+						}
+						"bonus_movespeed"		
+						{
+							"value"			"14 16 18 20"
+							"special_bonus_unique_spectre_3"  	"+15"
+						}
+						"dagger_path_duration"	"12.0"
+						"hero_path_duration"	"7.0"
+						"buff_persistence"		"4.0"
+						"dagger_radius"			
+						{
+							"value"			"125"
+							"affected_by_aoe_increase"	"1"
+						}
+						"path_radius"			
+						{
+							"value"	"175"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_radius"			
+						{
+							"value"			"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"speed"					"800"
+						"dagger_grace_period"	"1.0"
+						"applies_desolate"
+						{
+							"value"				"0"					
+						}
+						"AbilityCooldown"
+						{
+							"value"				"22 20 18 16"
+							"special_bonus_unique_spectre" "-3"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Spectre: Desolate
+			//=================================================================================================================
+			"spectre_desolate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Spectre.Desolate"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+	
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+
+					"bonus_damage"
+					{
+						"value"									"23.5"
+						"hero_levelup"							"+1.5"
+						"special_bonus_unique_spectre_2"		"+12"
+					}
+					"radius"						"350"
+			
+					"illusion_damage_outgoing"
+					{
+						"special_bonus_unique_spectre_4"	"+12"	//Note: This is adjusting all outgoing illusion damage that have the Desolate ability 
+	
+					}
+
+			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Spectre: Dispersion
+			//=================================================================================================================
+			"spectre_dispersion"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		        "HasShardUpgrade"				"1"
+				"IsBreakable"					"1"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_reflection_pct"
+					{
+						"value"		"9 12 15 18"
+						"special_bonus_unique_spectre_5"		"+4"
+					}
+					"min_radius"			
+					{
+						"value"		"350"
+						"affected_by_aoe_increase"	"1"
+					}
+					"max_radius"			
+					{
+						"value"		"700"
+						"affected_by_aoe_increase"	"1"
+					}
+						"activation_cooldown"
+					{
+						"value"				"0"
+						"special_bonus_shard"				"+25"
+					}
+					"activation_manacost"
+					{
+						"value"				"0"
+						"special_bonus_shard"				"+50"
+					}
+					"activation_bonus_pct"
+					{
+						"value"				"0"
+						"special_bonus_shard"				"+50"
+					}
+					"activation_duration"
+					{
+						"value"				"0"
+						"special_bonus_shard"				"+5"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Spectre: Haunt
+			//=================================================================================================================
+			"spectre_haunt"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Spectre.Haunt"
+				"HasScepterUpgrade"				"1"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"spectre_reality"	""
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 175 225"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"											"160 150 140"
+						"special_bonus_scepter"							"-20"
+					}
+					"scepter_cooldown_reduction_tooltip"				"20"
+					"duration"					"6.0"
+					"illusion_damage_outgoing"
+					{
+						"value"					"-65 -50 -35"
+					}
+					"tooltip_outgoing"			
+					{
+						"value"				"35 50 65"
+					}
+					"illusion_damage_incoming"	"100 100 100"
+					"tooltip_illusion_total_damage_incoming"
+					{
+						"value"					"200 200 200"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"attack_delay"				"0"
+					"destroy_if_target_is_dead"
+					{
+						"value"										"1"
+						"special_bonus_facet_spectre_twist_the_knife"	"=0"
+					}
+
+					"fear_duration"		
+					{
+						"value"			"0"
+						"special_bonus_scepter"		"=2.0"
+					}
+					"fear_aoe"
+					{
+						"value"			"0"
+						"special_bonus_scepter"		"=400"
+					}
+					"fear_movespeed_slow"
+					{
+						"value"			"0"
+						"special_bonus_scepter"		"50"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Spectre: Shadow Step
+			//=================================================================================================================
+			"spectre_shadow_step"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"2"
+				"LinkedAbility"					"spectre_reality"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityCastPoint"				"0.3"
+				"AbilityCooldown"				"24 21 18 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60 65 70 75"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"				
+					{
+						"value"					"1000"
+					}
+					"duration"					
+					{
+						"value"							"3.5 4.0 4.5 5.0"
+						"special_bonus_unique_spectre_shadow_step_duration"	"+1.0"
+					}	
+					"illusion_damage_incoming"	"75"
+					"tooltip_illusion_total_damage_incoming"
+					{
+						"value"					"175"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"illusion_outgoing_damage"	
+					{
+						"value" 							"35 40 45 50"
+						"CalculateSpellDamageTooltip"		"0"
+						"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
+					}
+			
+					"move_speed"						"900"
+					"bonus_move_speed_illusion_pct"		"35"
+				}
+			}
+
+			//=================================================================================================================
+			// Spectre: Reality
+			//=================================================================================================================
+			"spectre_reality"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"MaxLevel"						"1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"25"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityValues"
+				{
+					"cast_dagger_on_target"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"0"
+					}
+					"may_target_shadow_step"
+					{
+						"value"						"1"
+					}
+					"AbilityCooldown"
+					{
+						"value"										"1.5"
+					}
+					"travel_time"					"0.2"
+					"min_speed"						"1500"
+				}
+			}
+
+			//=================================================================================================================
+			// Spectre: Innate No Collision
+			//=================================================================================================================
+			"spectre_spectral"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{	
+					"radius"					"40"
+					"linger_time"				"0.3"
+					"speed_bonus"	
+					{
+						"value"		"40"
+						"hero_levelup"	"10"
+					}
+				}
+			}
+		}
+	}
+}

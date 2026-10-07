@@ -1,0 +1,641 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_chaos_knight"
+	{
+		"Model"		"models/heroes/chaos_knight/chaos_knight.vmdl"
+		"SoundSet"		"Hero_ChaosKnight"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Carry,Disabler,Durable,Pusher,Initiator"
+		"Rolelevels"	"3,2,2,2,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"81"
+		"HeroOrderID"	"79"
+		"ModelScale"		"0.790000"
+		"VersusScale"		"0.79"
+		"LoadoutScale"		"0.79"
+		"PickSound"		"chaos_knight_chaknight_spawn_02"
+		"BanSound"		"chaos_knight_chaknight_anger_06"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"54,42,18"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"Red"			"1"
+			"Mask"			"1"
+		}
+		"BotImplemented"		"1"
+		"workshop_guide_name"		"Chaos Knight"
+		"LastHitChallengeRival"		"npc_dota_hero_omniknight"
+		"HeroSelectSoundEffect"		"Hero_ChaosKnight.Pick"
+		"GibType"		"ethereal"
+		"HealthBarOffset"		"260"	
+		"GibTintColor"	"166 29 17 255"
+		"NameAliases"		"ck"
+		"Ability1"		"chaos_knight_chaos_bolt"
+		"Ability2"		"chaos_knight_reality_rift"
+		"Ability3"		"chaos_knight_chaos_strike"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"chaos_knight_fundamental_forging"
+		"Ability6"		"chaos_knight_phantasm"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"chaos_knight_chaos_bolt"
+			"Ability2"	"chaos_knight_reality_rift"
+			"Ability3"	"chaos_knight_chaos_strike"
+			"Ability4"	"chaos_knight_phantasm"
+		}
+
+		"Ability10"		"special_bonus_unique_chaos_knight_6"
+		"Ability11"		"special_bonus_unique_chaos_knight_2"
+		"Ability12"		"special_bonus_unique_chaos_knight_8"
+		"Ability13"		"special_bonus_strength_10"
+		"Ability14"		"special_bonus_unique_chaos_knight_3"
+		"Ability15"		"special_bonus_unique_chaos_knight"
+		"Ability16"		"special_bonus_unique_chaos_knight_5"
+		"Ability17"		"special_bonus_unique_chaos_knight_7"
+
+		"Facets"
+		{
+			"chaos_knight_strong_illusions"
+			{
+				"Icon"				"illusion"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"1"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"chaos_knight_phantasmagoria"
+					}
+				}
+			}
+
+			"chaos_knight_irrationality" 
+			{
+				"Icon"				"rng"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+
+			"chaos_knight_facet_fundamental_forging"
+			{
+				"Icon"				"item"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"chaos_knight_fundamental_forging"
+					}
+				}
+			}
+			"chaos_knight_cloven_chaos" 
+			{
+				"Icon"				"ricochet"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"32"
+		"AttackDamageMax"		"52"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.100000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.8"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.200000"
+		"MovementSpeed"		"325"
+		"particle_folder"		"particles/units/heroes/hero_chaos_knight"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_chaos_knight.vsndevts"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Shield"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"mount"
+				"SlotText"		"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_3"
+				"SlotText" "chaos_knight_chaos_strike"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "chaos_knight_reality_rift"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_boots"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_EXTENSION"
+				"item_crown"		"ITEM_EXTENSION"
+				"item_recipe_magic_wand"		"ITEM_EXTENSION"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_belt_of_strength"	"ITEM_EXTENSION"
+				"item_gloves"			"ITEM_EXTENSION"
+				"item_power_treads"		"ITEM_DERIVED"
+				"item_wind_lace"					"ITEM_EXTENSION"
+				"item_robe"						"ITEM_EXTENSION"
+				"item_belt_of_strength"			"ITEM_EXTENSION"
+				"item_recipe_ancient_janggo"	"ITEM_EXTENSION"
+				"item_ancient_janggo"			"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_ring_of_health"		"ITEM_CORE"
+				"item_vitality_booster"		"ITEM_EXTENSION"
+				"item_recipe_vanguard"	  "ITEM_EXTENSION"
+				"item_vanguard"				"ITEM_DERIVED"
+				"item_crown"			"ITEM_EXTENSION"
+				"item_recipe_heavens_halberd"		"ITEM_EXTENSION"
+				"item_heavens_halberd"		"ITEM_DERIVED"
+				"item_blade_of_alacrity"		"ITEM_EXTENSION"
+				"item_boots_of_elves"		"ITEM_EXTENSION"
+				"item_recipe_yasha"		"ITEM_EXTENSION"
+				"item_yasha"		"ITEM_DERIVED"
+				"item_diadem"			"ITEM_EXTENSION"
+				"item_recipe_manta"			"ITEM_EXTENSION"
+				"item_manta"				"ITEM_LUXURY | ITEM_DERIVED"
+				
+				"item_ring_of_tarrasque"		"ITEM_LUXURY"
+				"item_reaver"		"ITEM_LUXURY"
+				"item_recipe_heart" "ITEM_LUXURY"
+				"item_heart"		"ITEM_DERIVED"
+
+				"item_ring_of_protection"   "ITEM_LUXURY"
+				"item_recipe_buckler"	"ITEM_LUXURY"
+				"item_buckler"			"ITEM_DERIVED"
+				"item_platemail"		"ITEM_LUXURY"
+				"item_hyperstone"		"ITEM_LUXURY"
+				"item_recipe_assault"	"ITEM_LUXURY"
+				"item_assault"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"chaos_knight_chaos_bolt"
+				"2"		"chaos_knight_reality_rift"
+				"3"		"chaos_knight_chaos_bolt"
+				"4"		"chaos_knight_reality_rift"
+				"5"		"chaos_knight_chaos_bolt"
+				"6"		"chaos_knight_reality_rift"
+				"7"		"chaos_knight_chaos_bolt"
+				"8"		"chaos_knight_reality_rift"
+				"9"		"chaos_knight_chaos_strike"
+				"10"		"special_bonus_unique_chaos_knight_6"
+				"11"		"chaos_knight_phantasm"
+				"12"		"chaos_knight_phantasm"
+				"13"		"chaos_knight_chaos_strike"
+				"14"		"chaos_knight_chaos_strike"
+				"15"		"special_bonus_unique_chaos_knight_8"
+				"16"		"chaos_knight_chaos_strike"
+				"17"		""
+				"18"		"chaos_knight_phantasm"
+				"19"		""
+				"20"		"special_bonus_unique_chaos_knight"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_chaos_knight_5"
+			}
+			"HeroType"		"DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER | DOTA_BOT_TANK"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chaos_knight.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chaos_knight_mount.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chaos_knight.vpcf"
+			"party_hat_effect_1"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chaos_knight_mount.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_weapon"		"2"
+			"attach_attack1"	"3"
+			"attach_tail"		"4"
+			"attach_head_horse"	"5"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Chaos Knight: Chaos Bolt
+			//=================================================================================================================
+			"chaos_knight_chaos_bolt"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_ChaosKnight.ChaosBolt.Cast"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"chaos_bolt_speed"		"900"
+					"stun_min"
+					{
+						"value"					"1.25 1.5 1.75 2"
+						"special_bonus_unique_chaos_knight_3"	"+0.6"
+					}
+					"stun_max"
+					{
+						"value"					"1.75 2.25 2.75 3.25"
+						"special_bonus_unique_chaos_knight_3"	"+0.6"
+					}
+
+					"damage_min"				
+					{
+						"value"					"90 120 150 180"
+					}
+					"damage_max"				
+					{
+						"value"					"155 240 325 410"		
+					}
+
+					"fake_bolt_distance"		"675"
+
+					"AbilityCastRange"				
+					{
+						"value"							"600"
+						"special_bonus_shard"			"+0"
+					}
+					"AbilityCooldown"				
+					{
+						"value"				"13 12 11 10"
+						"special_bonus_unique_chaos_knight_8"			"-3"
+					}
+					"illusion_duration"
+					{
+						"value"					"0"
+						"special_bonus_shard"			"=6.0"
+					}
+					"illusion_damage_reduction_pct"
+					{
+						"value"							"0"
+						"special_bonus_shard"			"=15"
+					}
+					"bounce_range_pct"	
+					{
+		
+						"value"							"0"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Reality Rift
+			//=================================================================================================================
+			"chaos_knight_reality_rift"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_ChaosKnight.RealityRift"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.25"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"15 12 9 6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"				"600 650 700 750"
+					"pull_distance"
+					{
+						"value"										"300 350 400 450"
+						"special_bonus_unique_chaos_knight_2"		"+225"
+					}
+					"armor_reduction"			"4 5 6 7"
+					"duration"					"6"					// if changing this, change additional_debuff_duration_tooltip
+					"pierces_immunity"
+					{
+						"value"						"0"
+						"special_bonus_unique_chaos_knight"			"=1"
+					}
+					"additional_debuff_duration_percent"			// if changing this, change additional_debuff_duration_tooltip
+					{
+						"value"						"0"
+					}
+					"additional_debuff_duration_tooltip"			"0"
+				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Chaos Strike
+			//=================================================================================================================
+			"chaos_knight_chaos_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilitySound"					"Hero_ChaosKnight.ChaosStrike"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"IsBreakable"					"1"
+		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"chance"				
+					{
+							"value"				"33.33"
+							"special_bonus_unique_chaos_knight_5"		"+10"
+					}
+					"crit_min"				"120"
+					"crit_max"				"150 190 230 270"
+					"lifesteal"					
+					{
+						"value"					"30 40 50 60"
+						"special_bonus_unique_chaos_knight_6"		"+30"
+					}
+
+					"creep_multiplier"					"1.0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Chaos Knight: Phantasm
+			//=================================================================================================================
+			"chaos_knight_phantasm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"FightRecapLevel"				"2"
+
+		        "HasScepterUpgrade"			"1"
+
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"AbilitySound"					"Hero_ChaosKnight.Phantasm"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4 0.4 0.4"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"85 80 75"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 200 300"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"images_count"				"3"
+					"illusion_duration"
+					{
+						"value"						"30.0"
+					}	
+					"outgoing_damage"				"-40 -20 0"
+					"outgoing_damage_tooltip"
+					{
+						"value"						"60 80 100"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"incoming_damage"
+					{
+						"value"						"250"
+						"special_bonus_unique_chaos_knight_7"		"-125"
+
+
+					}
+					"incoming_damage_tooltip"
+					{
+						"value"						"350"
+						"special_bonus_unique_chaos_knight_7"		"-125"
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}		
+					"invuln_duration"				"0.5"
+					"vision_radius"					
+					{
+						"value"			"400"	
+						"affected_by_aoe_increase"	"1"
+					}
+					"magic_resistance"				"0"
+					"bonus_illusion_chance"		
+					{
+						"value"							"0"
+						"special_bonus_scepter"			"50"
+					}
+					"bonus_illusion_count"		
+					{
+						"value"							"0"
+						"special_bonus_scepter"			"1"
+					}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Chaos Knight: Innate Strong Illusions
+			//=================================================================================================================
+			"chaos_knight_phantasmagoria"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"aura_radius"
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"damage_reduction_pct"	"20"
+				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Innate Infinite Chaos (create bonus illusions)
+			//=================================================================================================================
+			"chaos_knight_reins_of_chaos"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"bonus_illusion_chance"		"50"
+					"bonus_illusion_count"		"1"
+				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Fundamental Forging
+			//=================================================================================================================
+			"chaos_knight_fundamental_forging"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+				}
+			}
+		}
+	}
+}

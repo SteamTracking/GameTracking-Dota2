@@ -1,0 +1,752 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Underlord
+	//=================================================================================================================
+	"npc_dota_hero_abyssal_underlord"
+	{
+		"Model"		"models/heroes/abyssal_underlord/abyssal_underlord_v2.vmdl"
+		"IdleExpression"		"scenes/abyssal_underlord/abyssal_underlord_exp_idle_01.vcd"
+		"SoundSet"		"Hero_AbyssalUnderlord"
+		"PickSound"		"abyssal_underlord_abys_spawn_01"
+		"BanSound"		"abyssal_underlord_abys_anger_01"
+		"HeroSelectSoundEffect"		"Hero_Underlord.Pick"
+		"GibType"		"default"
+		"Enabled"		"1"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"29,98,43"
+		"Adjectives"
+		{
+			"Horns"			"1"
+			"Nose"			"0"
+			"Potbelly"		"1"
+			"Demon"			"1"
+			"Green"			"1"
+		}
+		"Team"		"Bad"
+		"HeroID"		"108"
+		"HeroOrderID"	"112"
+		"Role"			"Support,Nuker,Disabler,Durable,Escape"
+		"Rolelevels"	"1,1,1,1,2"
+		"Complexity"	"2"
+		"ModelScale"		"0.85"
+		"VersusScale"		"0.85"
+		"LoadoutScale"		"0.85"
+		"SpectatorLoadoutScale" "0.785"
+		"NameAliases"		"PitLord,Azgalor,ul"
+		"workshop_guide_name"		"Underlord"
+		"Ability1"		"abyssal_underlord_firestorm"
+		"Ability2"		"abyssal_underlord_pit_of_malice"
+		"Ability3"		"abyssal_underlord_atrophy_aura"
+		"Ability4"		"abyssal_underlord_raid_boss"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"abyssal_underlord_dark_portal"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"abyssal_underlord_firestorm"
+			"Ability2"		"abyssal_underlord_pit_of_malice"
+			"Ability3"		"abyssal_underlord_atrophy_aura"
+			"Ability4"		"abyssal_underlord_dark_portal"
+		}
+
+		"Ability10"		"special_bonus_unique_underlord_7"
+		"Ability11"		"special_bonus_unique_underlord_8"
+		"Ability12"		"special_bonus_unique_underlord_6"
+		"Ability13"		"special_bonus_unique_underlord_5"
+		"Ability14"		"special_bonus_unique_underlord_4"
+		"Ability15"		"special_bonus_unique_underlord_3"
+		"Ability16"		"special_bonus_unique_underlord"
+		"Ability17"		"special_bonus_unique_underlord_9"
+		"Facets"
+		{
+			"abyssal_underlord_demons_reach" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+
+			"abyssal_underlord_summons"
+			{
+				"Icon"				"summons"
+				"Color"				"Yellow"
+				"GradientID"		"3"
+				"Deprecated"		"True"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"abyssal_underlord_abyssal_horde"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+		}
+		"ArmorPhysical"		"3.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.450000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.2"
+		"AttributeBaseAgility"		"12"
+		"AttributeAgilityGain"		"1.600000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.300000"
+		"MovementSpeed"		"290"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"395"
+		}
+		"particle_folder"		"particles/units/heroes/hero_abyssal_underlord"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_abyssal_underlord.vsndevts"
+		"VisionDaytimeRange"		"1800"
+		"particle_folder"		"particles/units/heroes/heroes_underlord"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"	"2500"
+				"MaxPolygonsLOD1"	"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"3000"
+				"MaxPolygonsLOD1"	"1200"
+			}
+
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"6000"
+				"MaxPolygonsLOD1"	"2400"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"	"0"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" 	"0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ability_effects_1"
+				"SlotText"		"abyssal_underlord_firestorm"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ability_effects_2"
+				"SlotText"		"abyssal_underlord_pit_of_malice"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ability_effects_3"
+				"SlotText"		"abyssal_underlord_atrophy_aura"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"ability_effects_4"
+				"SlotText"		"abyssal_underlord_dark_portal"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_PUSH_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_abyssal_underlord.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_abyssal_underlord.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		 "1"
+			"attach_hand_l"     "2"
+			"attach_weapon"     "3"
+			"attach_face"      "4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Abyssal Underlord: Firestorm
+			//=================================================================================================================
+			"abyssal_underlord_firestorm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+				"AbilityCastRange"				"675"
+				"AbilityCastPoint"				"0.5"
+				"FightRecapLevel"				"1"
+				"HasShardUpgrade"				"1"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110 125 140 155"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"
+						{
+							"value"	"16 15 14 13"
+							"special_bonus_unique_underlord_5"	"-5"
+						}
+						"radius"					
+						{
+							"value"					"425"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"wave_duration"					
+						{
+							"value"	"7.0"
+						}
+						"wave_count"					"6"
+						"wave_damage"								
+						{
+							"value"					"30 55 80 105"
+							"CalculateSpellDamageTooltip"	"1"
+						}
+						"wave_interval"					"1.0"
+						"burn_damage"					
+						{
+							"value"					"1.5 2 2.5 3"
+							"special_bonus_unique_underlord_4"	"+0.6"
+						}
+						"burn_interval"					"1.0"
+						"burn_duration"					"2.0"
+						"can_target_units"
+						{
+							"special_bonus_shard"	"+1"
+						}
+						"shard_wave_count_bonus"	
+						{
+							"special_bonus_shard"	"+3"
+						}
+						"shard_wave_interval_reduction"	
+						{
+							"special_bonus_shard"	"+25"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Abyssal Underlord: Pit of Malice
+			//=================================================================================================================
+			"abyssal_underlord_pit_of_malice"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_AbyssalUnderlord.PitOfMalice"
+
+				"AbilityCastRange"				"675"
+				"AbilityCastPoint"				"0.25"
+				"FightRecapLevel"				"1"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30 25 20 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110 120 130 140"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value"					"400"
+						"affected_by_aoe_increase"	"1"		
+					}
+
+					"pit_duration"					"12.0"
+					"pit_interval"					"3.6"
+					"pit_damage"					"20 30 40 50"
+					"ensnare_duration"
+					{
+						"value"	"1.5 1.6 1.7 1.8"
+						"special_bonus_unique_underlord" "+0.4"
+					}
+					"speed_bonus"
+					{
+						"value"						"0"
+						"special_bonus_unique_underlord_6" "+20"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Abyssal Underlord: Atrophy Aura
+			//=================================================================================================================
+			"abyssal_underlord_atrophy_aura"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"IsBreakable"					"1"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"						
+					{
+						"value"				"900"
+						"affected_by_aoe_increase"	"1"		
+					}
+
+					"damage_reduction_pct"
+					{
+						"value"		"8 16 24 32"
+						"special_bonus_unique_underlord_3"	"+10"
+						"CalculateSpellDamageTooltip"		"0"
+						"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
+					}
+					"bonus_damage_from_creep"
+					{
+						"value"							"2 4 6 8"
+						"special_bonus_unique_underlord_3"	"+10%"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"bonus_damage_from_hero"
+					{
+						"value"							"30 35 40 45"
+						"special_bonus_unique_underlord_3"	"+10%"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"bonus_damage_duration"
+					{
+						"value"							"30 40 50 60"
+						"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_underlord_8"	"+15"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"bonus_shared_by_allies_pct"
+					{
+						"value"							"0"
+					}
+					"cleave_damage_pct"
+					{
+						"value"				"0"
+					}
+					"cleave_starting_width"
+					{
+						"value"					"0"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_angle"
+					{
+						"value"					"0"
+					}
+					"cleave_distance_base"
+					{
+						"value"					"0"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_distance_per_stack"
+					{
+						"value"					"0"
+					}
+
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Abyssal Underlord: Dark Rift
+			//=================================================================================================================
+			"abyssal_underlord_dark_rift"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilitySound"					"Hero_AbyssalUnderlord.DarkRift.Cast"
+				"AbilityDraftExtraAbilities"
+				{
+					"abyssal_underlord_dark_portal" "scepter"
+				}
+
+
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.6"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"110 100 90"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 200 300"
+			
+				"AbilityValues"
+				{
+
+					"radius"						"600"
+					"teleport_delay"				"6.0 5.0 4.0"
+					"scepter_health_bonus" 
+					{
+						"special_bonus_scepter"	"+1000 +1500 +2000"
+					}			
+				}
+			}
+
+			//=================================================================================================================
+			// Abyssal Underlord: Cancel Dark Rift
+			//=================================================================================================================
+			"abyssal_underlord_cancel_dark_rift"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityType"						"ABILITY_TYPE_ULTIMATE"
+				"MaxLevel"							"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+				"AbilityCastGestureSlot"		"DEFAULT"
+			}
+
+			//=================================================================================================================
+			// Abyssal Underlord: Fiend's Gate
+			//=================================================================================================================
+			"abyssal_underlord_dark_portal"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
+				"AbilityType"						"ABILITY_TYPE_ULTIMATE"
+				"FightRecapLevel"				"1"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Undying.Tombstone"
+				"MaxLevel"						"3"
+				"HasScepterUpgrade"				"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"175"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"			"110 105 100"
+						"special_bonus_scepter"	"-20"
+					}
+					"duration"				"20.0"
+					"minimum_distance"		"1500"
+					"spawn_pit_on_cast"
+					{
+						"special_bonus_scepter"	"+1"
+					}
+					"warp_channel_duration"			"3.5"
+					"distance_from_fountain"		"1425"
+					"dps"							
+					{
+						"value"								"0"
+						"special_bonus_unique_underlord_9"	"+160"
+					}	
+					"radius"
+					{
+						"value"								"0"
+						"special_bonus_unique_underlord_9"	"+700"					
+						"affected_by_aoe_increase"	"1"
+					}
+		
+					"cast_firestorm"
+					{
+						"special_bonus_unique_underlord_9"	"0"	
+					}
+			
+
+					"hull_radius"				"8"
+					"gold_bounty"				"20 30 40"
+					"xp_bounty"					"20 30 40"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Underlord Portal Warp
+			//=================================================================================================================
+			"abyssal_underlord_portal_warp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"IsCastableWhileHidden"			"1"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+				"AbilityChannelTime"			"3.5"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"300"
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+
+					"animation_rate"		"0.8"
+					"stop_distance"			"100"
+				}
+			}
+
+			//=================================================================================================================
+			// Underlord: Innate Conqueror
+			//=================================================================================================================
+			"abyssal_underlord_raid_boss"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"damage_reduction"		
+					{
+						"value"								"3.7"
+						"hero_levelup"						"+0.3"
+						"special_bonus_unique_underlord_7"	"+5"
+					}
+					"bonus_ms"				
+					{
+						"value"								"9.5"
+						"hero_levelup"						"+0.5"
+						"special_bonus_unique_underlord_7"	"+5"
+					}
+					"dark_portal_multiplier"				"2"
+					"buff_duration"							"5.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Abyssal Underlings
+			//=================================================================================================================
+			"abyssal_underlord_abyssal_horde"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"3"
+				"DependentOnAbility"			"abyssal_underlord_dark_portal"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"warrior_health"	"400 600 800"	
+					"warrior_damage"	"20 30 40"
+
+					"warrior_mana_feedback"	"10 20 30"
+					"warrior_mana_break_tooltip"	"10 20 30"
+			
+					"explosion"				"200 300 400"
+
+					"archer_health"			"400 600 800"
+					"archer_damage"			"25 40 55"
+
+					"archer_aura_radius_tooltip"	"1200"
+					"archer_move_speed"	"5"
+
+
+					"underling_spawn_interval"		"2"
+					"underling_search_radius"		
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+			
+
+					"hull_radius"				"8"
+					"gold_bounty"				"20 30 40"
+					"xp_bounty"					"20 30 40"
+
+				}
+			}
+
+			//=================================================================================================================
+			// Ability:  Abyssal Underling last will
+			//=================================================================================================================
+			"abyssal_underling_warrior_last_will"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"explosion"				"200 300 400"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Necronomicon Warrior's Mana Burn
+			//=================================================================================================================
+			"abyssal_underling_warrior_mana_burn"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"burn_amount"			"10 20 30"
+					"burn_damage_conversion"	"50"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+			//=================================================================================================================
+			// Ability: Necronomicon Archer's AoE
+			//=================================================================================================================
+			"abyssal_underling_archer_aoe"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"ms_bonus"			"5"
+					"as_bonus"			"10 15 20"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+		}
+	}
+}

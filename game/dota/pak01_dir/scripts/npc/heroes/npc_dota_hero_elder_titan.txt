@@ -1,0 +1,771 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_elder_titan"
+	{
+		"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
+		"IdleExpression"		"scenes/elder_titan/elder_titan_exp_idle_01.vcd"
+		"SoundSet"		"Hero_ElderTitan"
+		"Enabled"		"1"
+		"Role"			"Initiator,Disabler,Nuker,Durable"
+		"Rolelevels"	"2,1,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"103"
+		"HeroOrderID"	"101"
+		"ModelScale"		"0.750000"
+		"VersusScale"		"0.75"
+		"LoadoutScale"		"0.75"
+		"SpectatorLoadoutScale" "0.70"
+		"NameAliases"		"TC,Cairne,et"
+		"workshop_guide_name"		"Elder Titan"
+		"NoCombine"		"1"
+		"PickSound"		"elder_titan_elder_spawn_01"
+		"BanSound"		"elder_titan_elder_anger_03"
+		"LastHitChallengeRival"		"npc_dota_hero_earthshaker"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"55,16,114"
+		"Adjectives"
+		{
+			"Horns"			"1"
+			"NicePecs"		"1"
+			"Parent"		"1"
+			"Yellow"		"1"
+		}
+		"HeroSelectSoundEffect"		"Hero_ElderTitan.Pick"
+		"GibType"		"default"
+		"Ability1"		"elder_titan_echo_stomp"
+		"Ability2"		"elder_titan_ancestral_spirit"
+		"Ability3"		"elder_titan_natural_order"
+		"Ability4"		"elder_titan_move_spirit"
+		"Ability5"		"elder_titan_momentum"
+		"Ability6"		"elder_titan_earth_splitter"
+		"Ability7"		"elder_titan_return_spirit"
+		"Ability10"		"special_bonus_unique_elder_titan_bonus_spirit_speed"
+		"Ability11"		"special_bonus_unique_elder_titan_4"
+		"Ability12"		"special_bonus_unique_elder_titan_2"
+		"Ability13"		"special_bonus_unique_elder_titan_momentum_attack_speed"
+		"Ability14"		"special_bonus_unique_elder_titan"
+		"Ability15"		"special_bonus_unique_elder_titan_5"
+		"Ability16"		"special_bonus_unique_elder_titan_3"
+		"Ability17"		"special_bonus_cleave_100"
+
+		"Facets"
+		{
+			"elder_titan_deconstruction" 
+			{
+				"Icon"				"armor_broken"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"elder_titan_boost_atkspd" 
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"elder_titan_momentum"
+					}
+				}
+			}
+		}
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"elder_titan_echo_stomp"
+			"Ability2"		"elder_titan_ancestral_spirit"
+			"Ability3"		"elder_titan_natural_order"
+			"Ability4"		"elder_titan_earth_splitter"
+		}
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"26"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.800000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"1.600000"
+				"StatusHealthRegen"		"0.75"
+		"StatusManaRegen"	"0.25"
+		"MovementSpeed"		"305"
+		"particle_folder"		"particles/units/heroes/hero_elder_titan"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_elder_titan.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_elder_titan/elder_titan_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_ElderTitan_AstralSpirit"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "elder_titan_echo_stomp"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "elder_titan_earth_splitter"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_TANK"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_elder_titan.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_elder_titan.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack2"	"2"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Elder Titan: Echo Stomp
+			//=================================================================================================================
+			"elder_titan_echo_stomp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_ElderTitan.EchoStomp"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+				"AbilityCastPoint"				"0.4"
+		 		"AbilityCastRange"				"500"
+				"AbilityChannelTime"			"1.3"
+				"HasShardUpgrade"					"1"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"cast_time"						"1.7"
+					"radius"						
+					{
+						"value"		"475"
+						"affected_by_aoe_increase"	"1"
+					}
+					"sleep_duration"				"2 2.8 3.6 4.4"
+					"stomp_damage"
+					{
+						"value"					"65 110 155 200"
+						"special_bonus_unique_elder_titan_2"			"+75"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"initial_stun_duration"					"0.2"
+					"animation_rate"					"0.0"
+					"wake_damage_limit"
+					{
+						"value"				"100 150 200 250"
+						"special_bonus_unique_elder_titan_4"			"+150"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+						"CalculateSpellDamageTooltip"				"0"
+					}
+					"AbilityCooldown"				
+					{
+						"value"				"14 13 12 11"
+						"special_bonus_shard"				"-2"
+					}
+					"can_swap_places"
+					{
+						"value"			"0"
+						"special_bonus_shard"		"1"
+					}			
+				}
+			}
+			//=================================================================================================================
+			// Elder Titan: Echo Stomp (Spirit Version)
+			//=================================================================================================================
+			"elder_titan_echo_stomp_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"FightRecapLevel"				"1"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"AbilityCastPoint"				"0.0"
+				"AbilityChannelTime"			"1.3"
+				"AbilityManaCost"				"0 0 0 0"
+				"AbilityCastRange"				"500"
+				"HasShardUpgrade"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"cast_time"						"1.7"
+					"radius"						
+					{
+						"value"			"475"
+						"affected_by_aoe_increase"	"1"
+					}
+					"sleep_duration"				"2 3 4 5"
+					"stomp_damage"
+					{
+						"value"					"60 100 140 180"
+						"special_bonus_unique_elder_titan_2"			"+75"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"wake_damage_limit"
+					{
+						"value"				"100 150 200 250"
+						"special_bonus_unique_elder_titan_4"			"+150"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"animation_rate"					"0.0"
+					"AbilityCooldown"				
+					{
+						"value"				"14 13 12 11"
+						"special_bonus_shard"				"-2"
+					}
+					"can_swap_places"
+					{
+						"value"			"0"
+						"special_bonus_shard"		"1"
+					}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Elder Titan: Ancestral Spirit
+			//=================================================================================================================
+			"elder_titan_ancestral_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_ElderTitan.AncestralSpirit.Cast"
+				"HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_ANCESTRAL_SPIRIT"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"23 21 19 17"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"
+					{
+						"value"						"1200"
+					}
+					"radius"						
+					{
+						"value"			"275"
+						"affected_by_aoe_increase"	"1"
+					}
+					"pass_damage"								
+					{
+						"value"	"50"
+						"CalculateSpellDamageTooltip"		"1"
+					}
+					"spirit_duration"
+					{
+						"value"								"10.0"
+					}
+					"buff_duration"
+					{
+						"value"								"10.0"
+					}
+					"speed"							"900"
+					"controllable"
+					{
+						"value"						"1"
+					}
+					"move_pct_creeps"				"1.5"
+					"move_pct_heroes"				
+					{
+						"value"		"4 5 6 7"
+						"special_bonus_unique_elder_titan_bonus_spirit_speed"	"+2.5"
+					}
+					"damage_creeps"					
+					{
+						"value"	"3 7 11 15"
+						"CalculateSpellDamageTooltip"				"0"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					}
+					"damage_heroes"
+					{
+						"value"		"17 38 59 80"
+						"special_bonus_unique_elder_titan"	"+30"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"armor_creeps"					"0"
+					"armor_heroes"					"0"
+
+					//"armor_creeps"					"0.5"
+					//"armor_heroes"					"1.5 3 4.5 6"
+					"move_pct_cap"					"40"
+					"scepter_magic_immune_per_hero"	
+					{
+						"special_bonus_scepter"		"2"
+					}
+
+					"immunity_resist"				"50"
+
+				}
+			}
+
+
+			//=================================================================================================================
+			// Elder Titan: Fundamental Fury
+			//=================================================================================================================
+			"elder_titan_fundamental_fury"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_ANCESTRAL_SPIRIT"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30 28 26 24"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50 65 80 95"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"						
+					{
+						"value"			"475"
+						"affected_by_aoe_increase"	"1"
+					}
+					"buff_duration"
+					{
+						"value"								"16.0"
+					}
+					"move_pct_creeps"				"1"
+					"move_pct_heroes"				
+					{
+						"value"		"3 5 7 9"
+					}
+
+					"armor_creeps"					"1"
+					"armor_heroes"					"3 5 7 9"
+					"move_pct_cap"					"40"
+				}
+			}
+
+			//=================================================================================================================
+			// Elder Titan: Fundamental Fury (Spirit)
+			//=================================================================================================================
+			"elder_titan_fundamental_fury_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_ANCESTRAL_SPIRIT"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30 28 26 24"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"						
+					{
+						"value"			"475"
+						"affected_by_aoe_increase"	"1"
+					}
+					"buff_duration"
+					{
+						"value"								"16.0"
+					}
+					"move_pct_creeps"				"1"
+					"move_pct_heroes"				
+					{
+						"value"		"3 5 7 9"
+					}
+
+					"armor_creeps"					"1"
+					"armor_heroes"					"3 5 7 9"
+					"move_pct_cap"					"40"
+				}
+			}
+
+
+
+
+			//=================================================================================================================
+			// Elder Titan: Return Spirit
+			//=================================================================================================================
+			"elder_titan_return_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE" 
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0 0.0 0.0"
+			}
+
+			//=================================================================================================================
+			// Elder Titan: Return Spirit
+			//=================================================================================================================
+			"elder_titan_move_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0 0.0 0.0"
+			}
+
+			//=================================================================================================================
+			// Elder Titan: Natural Order
+			//=================================================================================================================
+			"elder_titan_natural_order"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+				"IsBreakable"					"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"					
+						{
+							"value"		"375"
+							"special_bonus_unique_elder_titan_5"	"+150"
+							"affected_by_aoe_increase"	"1"
+						}
+						"armor_reduction_pct"	    "40 60 80 100"
+						"magic_resistance_pct"		"40 60 80 100"
+				}
+			}
+
+			//=================================================================================================================
+			// Elder Titan: Natural Order Spirit
+			//=================================================================================================================
+			"elder_titan_natural_order_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"					
+						{
+							"value"		"375"
+							"special_bonus_unique_elder_titan_5"	"+150"
+							"affected_by_aoe_increase"	"1"
+						}
+						"armor_reduction_pct"	    "40 60 80 100"
+						"magic_resistance_pct"		"40 60 80 100"
+				}
+			}
+
+			//=================================================================================================================
+			// Elder Titan: Earth Splitter
+			//=================================================================================================================
+			"elder_titan_earth_splitter"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_ElderTitan.EarthSplitter.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"2400"
+				"AbilityCastPoint"				"0.4 0.4 0.4"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 175 225"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"
+						{
+							"value"				"100 95 90"
+							"special_bonus_unique_elder_titan_3"			"-60"
+						}
+
+						"crack_time"				"2.7182"
+						"crack_width"				
+						{
+							"value"	"315"
+							"affected_by_aoe_increase"	"1"
+						}
+						"crack_distance"			
+						{
+							"value"		"2400"
+						}
+						"slow_pct"					"40 45 50"
+						"slow_duration"				"3.0 4.0 5.0"
+						"speed"						"1100"
+						"damage_pct"				
+						{
+							"value"			"34 42 50"
+							"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+						}
+						"vision_width"				
+						{
+							"value"		"500"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_interval"			"0.22"
+						"vision_duration"			"4.0"
+						"vision_step"				"200"
+						"total_steps"				"12"
+				}
+			}
+
+			//=================================================================================================================
+			// Elder Titan Momentum
+			//=================================================================================================================
+			"elder_titan_momentum"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilityValues"
+				{
+					"armor_from_movespeed"		
+			
+					{
+						"value"				"7.0"
+						"hero_levelup"		"+0.5"
+					}
+					"attack_speed_from_movespeed"
+					{
+						"special_bonus_unique_elder_titan_momentum_attack_speed"			"20"
+					}
+				
+				}
+			}	
+			//=================================================================================================================
+			// Constructor Innate
+			//=================================================================================================================
+			"elder_titan_tip_the_scales"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage_bonus"			"100"
+				}
+			}
+		}
+	}
+}

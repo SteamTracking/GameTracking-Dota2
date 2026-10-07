@@ -1,0 +1,789 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_earth_spirit"
+	{
+		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"IdleExpression"		"scenes/earth_spirit/earth_spirit_exp_idle_01.vcd"
+		"SoundSet"		"Hero_EarthSpirit"
+		"Enabled"		"1"
+		"CMEnabled"		"1"
+		"Role"			"Nuker,Escape,Disabler,Initiator,Durable"
+		"Rolelevels"	"2,2,1,1,1"
+		"Complexity"	"3"
+		"Team"		"Good"
+		"HeroID"		"107"
+		"HeroOrderID"	"104"
+		"ModelScale"		"0.950000"
+		"VersusScale"		"0.950000"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevts"
+		"workshop_guide_name"		"Earth Spirit"
+		"NoCombine"		"0"
+		"HeroSelectSoundEffect"		"Hero_EarthSpirit.Pick"
+		"GibType"		"stone"
+		"SimilarHeroes"		"126,106,17"
+		"Adjectives"
+		{
+			"Nose"			"0"
+			"NicePecs"		"1"
+			"Spirit"		"1"
+			"Green"			"1"
+		}
+		"PickSound"		"earth_spirit_earthspi_spawn_02"
+		"BanSound"		"earth_spirit_earthspi_anger_08"
+		"NameAliases"	"es;Kaolin;Earth"
+		"Ability1"		"earth_spirit_boulder_smash"
+		"Ability2"		"earth_spirit_rolling_boulder"
+		"Ability3"		"earth_spirit_geomagnetic_grip"
+		"Ability4"		"earth_spirit_stone_caller"
+		"Ability5"		"earth_spirit_petrify"
+		"Ability6"		"earth_spirit_magnetize"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"earth_spirit_boulder_smash"
+			"Ability2"		"earth_spirit_rolling_boulder"
+			"Ability3"		"earth_spirit_geomagnetic_grip"
+			"Ability4"		"earth_spirit_magnetize"
+		}
+
+		"Ability10"		"special_bonus_unique_earth_spirit_7"
+		"Ability11"		"special_bonus_unique_earth_spirit_4"
+		"Ability12"		"special_bonus_unique_earth_spirit_rolling_boulder_stun"
+		"Ability13"		"special_bonus_unique_earth_spirit_6"
+		"Ability14"		"special_bonus_unique_earth_spirit_8"
+		"Ability15"		"special_bonus_unique_earth_spirit_5"
+		"Ability16"		"special_bonus_unique_earth_spirit_2"
+		"Ability17"		"special_bonus_unique_earth_spirit"
+		"Facets"
+		{
+			"earth_spirit_resonance" 
+			{
+				"Icon"				"damage"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"earth_spirit_stepping_stone" 
+			{
+				"Icon"				"cooldown"
+				"Color"				"Gray"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"earth_spirit_ready_to_roll"
+			{
+				"Icon"				"spinning"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"earth_spirit_earth_spirit"
+			{
+				"Icon"				"spinning"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"0.00000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"29"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"BaseAttackSpeed"		"95"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.800000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"2.400000"
+		"AttributeBaseIntelligence"		"17"
+		"AttributeIntelligenceGain"		"2.100000"
+		"StatusHealthRegen"		"1"
+		"MovementSpeed"		"290"
+		"HasAggressiveStance"		"1"
+		"particle_folder"		"particles/units/heroes/hero_earth_spirit"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_earth_spirit/earth_spirit_loadout.vpcf"		"loadout"
+			}
+		}
+		"VisionDaytimeRange"		"1800"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"neck"
+				"SlotText"		"#LoadoutSlot_neck"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ability4"
+				"SlotText"		"#LoadoutSlot_EarthSpirit_StoneRemnant"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"3000"
+				"LoadoutPreviewMode"		"particle"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "earth_spirit_rolling_boulder"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}	
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_earth_spirit.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_earth_spirit.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_hand2"		"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Earth Spirit: Boulder Smash
+			//=================================================================================================================
+			"earth_spirit_boulder_smash"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_EarthSpirit.BoulderSmash.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"150"
+				"AbilityCastPoint"				"0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"
+						{
+							"value"									"20.0 17.0 14.0 11.0"
+							"special_bonus_unique_earth_spirit_7"	"-2.0"
+						}
+						"radius"				
+						{
+							"value"	"180"	// NOTE: This radius must match the radius for geomagnetic grip
+							"affected_by_aoe_increase"	"1"
+						}
+						"rock_search_aoe"				
+						{
+							"value"	"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"rock_damage"			
+						{
+							"value"			"110 180 250 320"
+							"special_bonus_unique_earth_spirit_6"	"+80"
+						}	
+						"move_slow"				"50"
+						"duration"			"1.75 2.5 3.25 4"
+						"speed"					"900"
+						"unit_distance"			
+						{
+							"value"		"500.0 600.0 700.0 800.0"
+						}
+						"rock_distance"			
+						{
+							"value"		"2000.0"
+						}			
+						"remnant_smash_radius_tooltip"			
+						{
+							"value"					"200"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"stun_duration"
+						{
+							"value"				"0"
+							//"special_bonus_unique_earth_spirit_3"		"+2.0"
+						}
+				
+				
+						"creep_multiplier"		"1.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Earth Spirit: Rolling Boulder
+			//=================================================================================================================
+			"earth_spirit_rolling_boulder"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilitySound"					"Hero_EarthSpirit.RollingBoulder.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"3000"
+				"AbilityCastPoint"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"				
+						{
+							"value"		"160"
+						}
+						"speed"					"1000"
+						"rock_speed"			"1600"
+						"distance"				
+						{
+							"value"									"800"
+							"special_bonus_unique_earth_spirit_4"	"+150"
+						}
+						"rock_distance_multiplier"					"2"
+						"delay"					"0.6"
+						"damage"				"60 70 80 90"		
+						"stun_duration"			
+						{
+							"value"				"0.3 0.5 0.7 0.9"	
+							"special_bonus_unique_earth_spirit_rolling_boulder_stun"		"+0.3"
+						}
+						"rock_bonus_duration"	
+						{
+							"value"				"0.3 0.5 0.7 0.9"	
+					
+						}
+						"damage_str"			
+						{
+							"value"								"100"
+							"special_bonus_unique_earth_spirit" "+250"
+						}
+						"AbilityCooldown"		"16.0 12.0 8.0 4.0"			
+						"destroy_stone"
+						{
+							"value"						"1"
+						}
+						"can_roll_over_allied_heroes"			"0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Earth Spirit: Geomagnetic Grip
+			//=================================================================================================================
+			"earth_spirit_geomagnetic_grip"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_EarthSpirit.GeomagneticGrip.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"1000 1100 1200 1300"
+				"AbilityCastPoint"				"0.1"
+				"HasShardUpgrade"				"1"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"				
+						{
+							"value"		"180"	// NOTE: This radius must match the radius for boulder smash
+							"affected_by_aoe_increase"	"1"		
+						}
+						"rock_damage"			
+						{
+							"value"						"75 150 225 300"
+							"special_bonus_unique_earth_spirit_5"				"+200"
+						}
+						"pull_units_per_second"		"900"
+						"duration"				"2.3 2.7 3.1 3.5"
+						"pull_units_per_second_heroes"		
+						{
+							"value"									"600"
+							"special_bonus_shard"					"+50%"
+						}
+						"cast_range_heroes"			
+						{
+							"value"									"550 600 650 700"
+							"special_bonus_shard"					"+50%"
+						}
+						"speed"						"800"
+						"total_pull_distance"		"1400"
+						"AbilityCooldown"				
+						{
+							"value"					"13"
+							"special_bonus_shard"					"-3"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Earth Spirit: Stone Caller
+			//=================================================================================================================
+			"earth_spirit_stone_caller"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				"AbilitySound"					"Hero_EarthSpirit.StoneRemnant.Impact"
+				"RequiredLevel" 				"0"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_ES_STONE_CALLER"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"1100"
+				"AbilityCastPoint"				"0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"						"60.0"
+					}
+					"polarization_distance"
+					{
+						"value"			"0"
+				
+					}
+					"vision_radius"				
+					{
+						"value"							"0"
+					}		
+					"AbilityCharges"
+					{
+						"value"							"7"
+						"hero_levelup"					"+1"
+						"levelup_interval"				"5"
+					}
+					"rolling_offset_distance"			"150"
+					"AbilityManaCost"
+					{
+						"value"							"0"
+					}
+					"AbilityCooldown"
+					{
+						"value"							"0.0"
+					}
+					"AbilityChargeRestoreTime"
+					{
+						"value"							"18"
+					}
+					"is_stepping_stone"
+					{
+						"value"							"=0"
+					}
+
+					"attack_damage_per_stone"			"3.0"
+					"attack_damage_per_stone_used"		"7.5"
+					"buff_duration"						"10"
+				}
+			}
+
+			//=================================================================================================================
+			// Earth Spirit: Petrify ( Enchant Remnant scepter ability )
+			//=================================================================================================================
+			"earth_spirit_petrify"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET |  DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"AbilitySound"					"Hero_EarthSpirit.Petrify"
+
+				"HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"175"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"45"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"		"2.4"
+						"damage"
+						{
+							"value"			"450"
+							"CalculateSpellDamageTooltip" "1"
+						}
+						"aoe"		
+						{
+							"value"		"450"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"ally_cast_range"	"500"
+				}
+			}
+
+			//=================================================================================================================
+			// Earth Spirit: Magnetize
+			//=================================================================================================================
+			"earth_spirit_magnetize"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_EarthSpirit.Magnetize.Cast"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"earth_spirit_stone_caller" ""
+					"earth_spirit_petrify" "scepter"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"350"
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"100 90 80"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"cast_radius"			
+					{
+						"value"	"350"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"damage_per_second"	
+					{
+						"value"									"45 90 135"
+						"special_bonus_unique_earth_spirit_8"			"+35"
+					}		
+			
+					"damage_duration"
+					{
+						"value"			"6.0"
+						//"special_bonus_unique_earth_spirit_8"			"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"rock_search_radius"			
+					{
+						"value"	"600"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"rock_explosion_radius"			
+					{
+						"value"	"600"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"damage_interval"			"1.0"
+					"rock_explosion_delay"			"8.0"
+					"silence_duration"			"5.0"
+					"slow_duration"			"2.0"
+
+					"magnetized_rocks_buff_self"
+					{
+						"value"									"0"
+					}
+					"magnetized_rocks_buff_self_duration"
+					{
+						"value"									"0"
+					}
+					"magnetized_rocks_bonus_self_damage"
+					{
+						"value"									"0"
+					}
+
+					"magnetize_self"		
+					{
+						"value"							"0"
+						"special_bonus_unique_earth_spirit_2"			"1"
+					}
+				}
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"	
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"	
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"	
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_7"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"	
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_earth_spirit_8"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"		
+			}
+		}
+	}
+}

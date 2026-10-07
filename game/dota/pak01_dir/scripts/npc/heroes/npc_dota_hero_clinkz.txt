@@ -1,0 +1,776 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_clinkz"
+	{
+		"Model"		"models/heroes/clinkz/clinkz.vmdl"
+		"IdleExpression"		"scenes/clinkz/clinkz_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Clinkz"
+		"IdleSoundLoop"		"Hero_Clinkz.IdleLoop"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Escape,Pusher"
+		"Rolelevels"	"2,3,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"56"
+		"HeroOrderID"	"68"
+		"ModelScale"		"0.650000"
+		"VersusScale"		"0.65"
+		"LoadoutScale"		"0.65"
+		"HeroGlowColor"		"205 58 0"
+		"CMEnabled"		"1"
+		"PickSound"		"clinkz_clinkz_spawn_01"
+		"BanSound"		"clinkz_clinkz_anger_08"
+		"workshop_guide_name"		"Clinkz"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"32,44,46"
+		"Adjectives"
+		{
+			"Horns"			"1"
+			"Undead"		"1"
+			"Fiery"			"1"
+			"Yellow"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_windrunner"
+		"HeroSelectSoundEffect"		"Hero_Clinkz.Pick"
+		"GibType"		"default"
+		"Ability1"		"clinkz_strafe"
+		"Ability2"		"clinkz_searing_arrows"
+		"Ability3"		"clinkz_death_pact"
+		"Ability4"		"clinkz_burning_barrage"
+		"Ability5"		"clinkz_burning_army"
+		"Ability6"		"clinkz_wind_walk"
+		"Ability7"		"clinkz_infernal_shred"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"clinkz_strafe"
+			"Ability2"	"clinkz_searing_arrows"
+			"Ability3"	"clinkz_death_pact"
+			"Ability4"	"clinkz_wind_walk"
+		}
+
+		"Ability10"		"special_bonus_unique_clinkz_1"
+		"Ability11"		"special_bonus_unique_clinkz_10"
+		"Ability12"		"special_bonus_attack_range_50"
+		"Ability13"		"special_bonus_unique_clinkz_9"
+		"Ability14"		"special_bonus_unique_clinkz_7"
+		"Ability15"		"special_bonus_unique_clinkz_8"
+		"Ability16"		"special_bonus_unique_clinkz_4"
+		"Ability17"		"special_bonus_unique_clinkz_3"
+		"Facets"
+		{
+			"clinkz_suppressive_fire" 
+			{
+				"Icon"				"no_vision"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"clinkz_engulfing_step" 
+			{
+				"Icon"				"teleport"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"clinkz_clinkz"
+			{
+				"Icon"				"nuke"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"19"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.0"
+		"AttributeBaseAgility"		"25"
+		"AttributeAgilityGain"		"2.7"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"2.2"
+		"StatusHealthRegen"		"0.25"
+		"StatusManaRegen"	"0"
+		"MovementSpeed"		"285"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"170"		
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_clinkz.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_clinkz/clinkz_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"gloves"
+				"SlotText"		"#LoadoutSlot_Gloves"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Clinkz_Army"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"2000"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_clinkz_skeleton_archer"
+				}
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "clinkz_burning_army"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_2"
+				"SlotText" "clinkz_searing_arrows"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_clinkz.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_clinkz.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack2"	"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Clinkz: Strafe
+			//=================================================================================================================
+			"clinkz_strafe"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Ability.Focusfire"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+	
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60 70 80 90"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attack_speed_bonus"			
+					{
+						"value"									"120 160 200 240"
+						"special_bonus_unique_clinkz_7"			"+40"
+					}
+	
+					"duration"						
+					{
+						"value"									"3.5"
+						"special_bonus_unique_clinkz_1"			"+1.0"
+
+					}
+					"attack_range_bonus"			
+					{
+						"value"												"200"
+					}
+					"AbilityCooldown"				
+					{
+						"value"												"30 25 20 15"
+						"special_bonus_unique_clinkz_4"						"-9"
+					}
+					"strafe_skeleton_radius"					
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"archer_attack_speed_pct"					"40"
+					"debuff_duration"					
+					{
+						"value"							"0"
+						"special_bonus_facet_clinkz_suppressive_fire"			"=2.0"
+					}
+					"blind_pct"
+					{
+						"value"							"0"
+						"special_bonus_facet_clinkz_suppressive_fire"			"=30"
+					}
+
+			
+				}
+			}
+	
+			//=================================================================================================================
+			// Clinkz: Burning Barrage
+			//=================================================================================================================
+			"clinkz_burning_barrage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+				"MaxLevel"						"1"
+	
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityChannelTime"			"2.0"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"17"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"wave_count"			"6"
+					"range"					"850"				
+					"damage_pct"			"75"
+					"projectile_width"		
+					{
+						"value"		"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"archers_use_barrage"		"0"
+
+				}
+			}
+
+			//=================================================================================================================
+			// Clinkz: Searing Arrows
+			//=================================================================================================================
+			"clinkz_searing_arrows"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilitySound"					"Hero_Clinkz.SearingArrows.Impact"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"10"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityValues"
+				{
+					"damage_bonus"
+					{
+						"value" "20 35 50 65"
+					}
+					"has_multishot"	
+					{
+						"special_bonus_unique_clinkz_3"		"1"
+					}
+					"skeleton_damage_pct"				"50"
+					"AbilityCastRange"				
+					{
+						"value"								"600"
+						"special_bonus_attack_range_50"		"+50"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Clinkz: Wind Walk
+			//=================================================================================================================
+			"clinkz_wind_walk"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Clinkz.WindWalk"
+				"AbilityDraftExtraAbilities"
+				{
+					"clinkz_burning_barrage" "shard"
+				}
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 105 130"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"					"35 40 45"
+					"fade_time"					"0.6 0.6 0.6"
+					"move_speed_bonus_pct"		"25 35 45"
+					"skeleton_count"			
+					{
+						"value"								"2 3 4"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"24 21 18"
+						"special_bonus_unique_clinkz_10"		"-4"
+					}
+					"skeleton_offset"				"250"
+					"skeleton_offset_min"				"150"
+
+					"skeleton_duration"					
+					{
+						"value"						"20 25 30"
+					}
+			
+					"skeleton_health"
+					{
+						"value"					"8"
+					}
+
+					"skeleton_health_tooltip"
+					{
+						"value"					"2"
+
+					}
+					"skeleton_building_damage_reduction"			"75"
+					"attack_rate"			"1.6"
+					"damage_percent"		
+					{
+						"value"					"20"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Ability: Clinkz Burning Army
+			//=================================================================================================================
+			"clinkz_burning_army"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"		
+				"AbilitySound"					"Hero_Clinkz.DeathPact"		
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"70"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"range"			"900"
+					"count"			"6"
+					"spawn_interval"			"0.1"
+				}
+			}	
+
+			//=================================================================================================================
+			// Clinkz Scepter
+			//=================================================================================================================
+			"clinkz_scepter"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST  | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"			"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"7"
+			}
+	
+	
+			//=================================================================================================================
+			// Clinkz: Death Pact
+			//=================================================================================================================
+			"clinkz_death_pact"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Clinkz.DeathPact"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				"45"
+					"AbilityCharges"				
+					{
+						"value"								"1 1 2 2"
+					}
+					"AbilityChargeRestoreTime"
+					{
+						"value"				"40"
+						"special_bonus_facet_clinkz_engulfing_step"				"-10"
+						"special_bonus_unique_clinkz_9"		"-10"
+					}
+					"health_gain"			
+					{
+						"value"				"175 250 325 400"
+						"special_bonus_unique_clinkz_8"		"+400"
+					}		
+					"skeletons_spawned"			
+					{
+						"value"				"0"
+					}	
+					"spawn_skeleton_on_origin"
+					{
+						"value"				"0"
+						"special_bonus_facet_clinkz_engulfing_step"				"1"
+					}
+					"creep_level"			"4 5 6 6"
+				}
+			}
+
+			//=================================================================================================================
+			// Clinkz: Create Skeleton Archer Innate
+			//=================================================================================================================
+			"clinkz_bone_and_arrow"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Clinkz.DeathPact"
+				"AbilityDraftExtraAbilities"
+				{
+					"clinkz_burning_army" "scepter"
+				}
+				"MaxLevel"						"4"
+				"Innate"						"1"
+		
+
+				"DependentOnAbility"			"clinkz_wind_walk"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0"
+				"AbilityChargeRestoreTime"		"0"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{						
+					"skeleton_duration"					
+					{
+						"value"						"15 20 25 30"
+					}
+			
+					"skeleton_health"
+					{
+						"value"					"8"
+					}
+
+					"skeleton_health_tooltip"
+					{
+						"value"					"2"
+
+					}
+					"skeleton_building_damage_reduction"			"75"
+					"attack_rate"			"1.6"
+					"damage_percent"		
+					{
+						"value"					"20"
+					}
+				}
+			}
+			//=================================================================================================================
+			// Clinkz: Tar Bomb
+			//=================================================================================================================
+			"clinkz_tar_bomb"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Batrider.Flamebreak"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"7 6 5 4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"45 50 55 60"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"1.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+
+					"radius"		
+					{
+						"value"		"325"
+						"affected_by_aoe_increase"	"1"
+					}
+					"projectile_speed"					"2000"
+					"damage_bonus"					
+					{
+						"value"					"15 25 35 45"		
+					}
+					"ground_duration"				"5"				
+					"slow_movement_speed"			"-16 -19 -22 -25"
+					"slow_duration"					"2.5"
+					"has_multishot"	
+					{
+						"special_bonus_unique_clinkz_3"		"1"
+					}
+					"impact_damage"					
+					{
+						"value"				"40 60 80 100"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+					}
+			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+			//=================================================================================================================
+			// Doom Bringer: Empty 1
+			//=================================================================================================================
+			"clinkz_empty1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+			}
+
+			//=================================================================================================================
+			// Clinkz: Infernal Shred
+			//=================================================================================================================
+			"clinkz_infernal_shred"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Clinkz.DeathPact"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{						
+					"duration"					"5"
+					"hero_stacks"				"3"
+					"skeleton_stacks"			"1"
+					"max_armor_piercing_pct"	"20"
+				}
+			}
+		}
+	}
+}

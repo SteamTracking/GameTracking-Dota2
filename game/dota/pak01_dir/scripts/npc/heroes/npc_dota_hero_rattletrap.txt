@@ -1,0 +1,743 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_rattletrap"
+	{
+		"Model"		"models/heroes/rattletrap/rattletrap.vmdl"
+		"SoundSet"		"Hero_Rattletrap"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Initiator,Disabler,Durable,Nuker"
+		"Rolelevels"	"3,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"51"
+		"HeroOrderID"	"31"
+		"ModelScale"		"0.880000"
+		"VersusScale"		"0.88"
+		"SpectatorLoadoutScale" "1"
+		"LoadoutScale"		"0.88"
+		"HeroGlowColor"		"252 220 64"
+		"PickSound"		"rattletrap_ratt_spawn_05"
+		"BanSound"		"rattletrap_ratt_anger_06"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Clockwerk"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"17,71,100"
+		"Adjectives"
+		{
+			"Arachnophobic"	"1"
+			"Red"			"1"
+			"Mask"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_sand_king"
+		"HeroSelectSoundEffect"		"Hero_Rattletrap.Pick"
+		"GibType"		"motor"
+		"NameAliases"	"Rattletrap;cw"
+		"Ability1"		"rattletrap_battery_assault"
+		"Ability2"		"rattletrap_power_cogs"
+		"Ability3"		"rattletrap_rocket_flare"
+		"Ability4"		"rattletrap_overclocking"
+		"Ability5"		"rattletrap_jetpack"
+		"Ability6"		"rattletrap_hookshot"
+		"Ability7"		"rattletrap_armor_power"
+		"Ability8"		"rattletrap_jetpack_toggle"
+
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"rattletrap_battery_assault"
+			"Ability2"	"rattletrap_power_cogs"
+			"Ability3"	"rattletrap_rocket_flare"
+			"Ability4"	"rattletrap_hookshot"
+		}
+
+		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability11"		"special_bonus_unique_clockwerk_hookshot_damage"
+		"Ability12"		"special_bonus_unique_clockwerk_5"
+		"Ability13"		"special_bonus_unique_clockwerk_3"
+		"Ability14"		"special_bonus_unique_clockwerk_4"
+		"Ability15"		"special_bonus_unique_clockwerk_2"
+		"Ability16"		"special_bonus_unique_clockwerk_rocket_flare_charges"
+		"Ability17"		"special_bonus_unique_clockwerk"
+		
+		"Facets"
+		{
+			"rattletrap_hookup" 
+			{
+				"Icon"				"cooldown"
+				"Color"				"Gray"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"rattletrap_expanded_armature" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"rattletrap_junk_mail"
+			{
+				"Icon"				"armor"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+		}
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"StatusHealthRegen"		"0.5"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"26"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"100"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"26"
+		"AttributeStrengthGain"		"3.2"
+		"AttributeBaseAgility"		"13"
+		"AttributeAgilityGain"		"2.3"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.7"
+		"MovementSpeed"		"310"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_rattletrap.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_rattletrap"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_rattletrap/clock_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Clockwerk_Rocket"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"400"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ability2"
+				"SlotText"		"#LoadoutSlot_Clockwerk_Cogs"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_rattletrap_cog"
+				}
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_3"
+				"SlotText" "rattletrap_rocket_flare"
+				"DisplayInLoadout" "0"
+			}		
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_4"
+				"SlotText" "rattletrap_hookshot"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/rattletrap/rattletrap_cog.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_rattletrap.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_rattletrap.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_rocket"		"2"
+			"attach_attack1"	"3"
+			"attach_hand2"		"4"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Rattletrap: Jetpack (Shard ability)
+			//=================================================================================================================
+			"rattletrap_jetpack"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"  			"1"
+				"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+				"AbilityValues"
+				{
+					"bonus_speed"
+					{
+						"value" "20"
+					}
+					"turn_rate"
+					{
+						"value" "75"
+					}
+					"height"
+					{
+						"value" "250"
+					}
+					"duration"
+					{
+						"value" "6"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Rattletrap: Jetpack Toggle
+			//=================================================================================================================
+			"rattletrap_jetpack_toggle"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"MaxLevel"						"1"
+				//"IsGrantedByShard"				"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1.0 1.0 1.0"
+			}
+
+			//=================================================================================================================
+			// Rattletrap: Jetpack Toggle
+			//=================================================================================================================
+			"rattletrap_jetpack_toggle"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"MaxLevel"						"1"
+				//"IsGrantedByShard"				"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1.0 1.0 1.0"
+			}
+
+			//=================================================================================================================
+			// Rattletrap: Overclocking (scepter ability)
+			//=================================================================================================================
+			"rattletrap_overclocking"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityCastGestureSlot"		"DEFAULT"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"50"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"buff_duration"					"18"
+					"bonus_movement_speed"			"0"
+					"bonus_attack_speed"			"0"
+					"debuff_duration"				"3"
+					"bonus_armor_pct"				"25"
+					"battery_assault_radius"		"330"			//note - currently implemented as tooltip only, change in actual ability
+					"cogs_radius"					"330"			//note - currently implemented as tooltip only, change in actual ability
+
+					"hookshot_damage_bonus_pct"		"0"
+					"hookshot_radius_bonus_pct"		"50"
+					"hookshot_duration_bonus_pct"	"50"
+					"rocket_flare_interval"				"0.15"
+					"rocket_flare_offset_pct"		"125"
+					"rocket_flare_rockets"				"2"
+					//"rocket_flare_cooldown"				"4.0"
+					"rocket_flare_duration_pct"			"35"
+					"rocket_flare_damage_pct"			"35"
+			
+					"jetpack_bonus_speed"			"40"
+					"jetpack_turn_rate"				"75"
+
+
+
+				}
+			}
+
+			//=================================================================================================================
+			// Rattletrap: Battery Assault
+			//=================================================================================================================
+			"rattletrap_battery_assault"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 22 20 18"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75 80 85 90"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				//"AbilityDamage"					"20 45 70 95"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.2"	// applies many mini-stuns
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"			
+					{
+						"value"		"275 275 275 275"
+						"affected_by_aoe_increase"	"1"
+					}
+					"overclocking_radius"
+					{
+						"value"		"330 330 330 330"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"					"10.5 10.5 10.5 10.5"
+					"interval"
+					{	
+						"value"								"0.7 0.7 0.7 0.7"
+						"special_bonus_unique_clockwerk"		"-0.25"
+					}
+					"damage"
+					{	
+						"value"									"20 45 70 95"
+						"special_bonus_unique_clockwerk_3"		"+25"
+					}
+					"creep_damage_multiplier"					"1.0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+		
+			//=================================================================================================================
+			// Rattletrap: Power Cogs
+			//=================================================================================================================
+			"rattletrap_power_cogs"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Rattletrap.Power_Cogs"
+				//"HasShardUpgrade"     			"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"			"5.0 6.0 7.0 8.0"
+					"damage"
+					{
+						"value"			"55 110 165 220"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"mana_burn"		
+					{
+						"value"								"40 75 110 145"
+						"special_bonus_unique_clockwerk_2"	"+80"
+					}
+					"mana_burn_as_damage_pct"				"50"
+					"magic_barrier"
+					{
+						"value"				"0"
+					}
+					"attacks_to_destroy"	
+					{
+						"value"					"2"
+						//"special_bonus_shard"		"+2"
+					}
+					"push_length"					"300"
+					"push_duration"					"0.7"
+					"cogs_radius"					"215"
+					"trigger_distance"				"185"
+					"inside_cogs_distance_reduction"		"50"
+
+					"extra_pull_buffer"			"-10"
+					"bonus_armor"		"0"
+					"AbilityCooldown"				
+					{
+						"value"			"21 19 17 15"
+						"special_bonus_unique_clockwerk_9"		"-2"
+					}
+	
+					"projectile_distance"						"850 900 950 1000"
+					"projectile_speed"							"1000"
+
+					"debuff_immune_inside_cogs"
+					{
+						"special_bonus_unique_clockwerk_6"		"1"
+					}
+
+					"push_duration_overclock"		"0.6"	
+					"cogs_radius_overclock"			"330"
+					"trigger_distance_overclock"			"115"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Rattletrap: Rocket Flare
+			//=================================================================================================================
+			"rattletrap_rocket_flare"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Rattletrap.Rocket_Flare.Fire"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastRange"				"0"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"ABSOLUTE"
+		
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"35 40 45 50"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				//"AbilityDamage"					"80 120 160 200"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"			
+					{
+						"value"		"600"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"			"6.0"
+					"speed"				"2250"
+					"damage"
+					{
+						"value"			"80 120 160 200"
+						"CalculateSpellDamageTooltip" "1"
+					}
+
+					"slow_pct"		"100"
+					"slow_duration"	
+					{
+						"value"											"0.4"
+						"special_bonus_unique_clockwerk_7" 				"+0.4"
+
+					}
+					"projectile_vision_radius"		"250"
+					"projectile_vision_duration"	"1.0"
+					"projectile_vision_tick_rate"	"0.15"
+					"true_sight"
+					{
+						"special_bonus_unique_clockwerk_4"		"1"
+					}
+					"AbilityCooldown"				
+					{
+						"value"		"20.0 18.0 16.0 14.0"
+					}
+
+					"AbilityCharges"		
+					{
+						"value"	"0"
+						"special_bonus_unique_clockwerk_rocket_flare_charges"	"+3"
+					}
+
+					"AbilityChargeRestoreTime"		
+					{
+						"value"		"20.0 18.0 16.0 14.0"
+					}
+
+
+
+
+				}	
+			}
+	
+			//=================================================================================================================
+			// Rattletrap: Hookshot
+			//=================================================================================================================
+			"rattletrap_hookshot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Rattletrap.Hookshot.Fire"
+				"AbilityDraftExtraAbilities"
+				{
+					"rattletrap_overclocking" "scepter"
+					"rattletrap_jetpack" "shard"
+				}
+				"AbilityDraftUltShardAbility"		"rattletrap_jetpack"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastRange"				"2000 2500 3000"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"latch_radius"		"125 125 125"
+						"stun_radius"		
+						{
+							"value"		"175"
+							"affected_by_aoe_increase"	"1"
+						}
+						"radius_ally"
+						{
+							"value"	"175"
+							"affected_by_aoe_increase"	"1"
+						}
+						"cooldown_refund_ally"
+						{
+							"value"		"0"
+						}
+						"ally_shield_duration"
+						{
+							"value"		"0"
+						}
+						"allied_armor_bonus"
+						{
+							"value"		"0"
+						}
+
+						"duration"			"1.2 1.4 1.6"
+						"speed"				"4000 5000 6000"
+						"damage"			
+						{
+							"value"		"75 175 275"
+							"special_bonus_unique_clockwerk_hookshot_damage"		"+75"
+							"CalculateSpellDamageTooltip" "1"
+						}
+						"AbilityCooldown"		
+						{	
+							"value"											"60.0 45.0 30.0"
+							"special_bonus_unique_clockwerk_5"				"-8"
+						}
+
+				}
+			}
+
+			//=================================================================================================================
+			// Clockwerk: Innate Armor Power
+			//=================================================================================================================
+			"rattletrap_armor_power"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"damage_per_armor"			"0.25"
+					"damage_tooltip"
+					{
+						"dynamic_value"						"true"
+					}
+			
+					"can_consume_chainmail"
+					{
+						"value"								"1"
+					}
+
+					"armor_per_chainmail"
+					{
+						"value"								"4"
+					}
+
+					"model_scale_per_chainmail"
+					{
+						"value"								"5"
+					}
+
+					"model_scale_maximum"
+					{
+						"value"								"125"
+					}
+
+					"health_bar_offset_per_stack"
+					{
+						"value"								"6"
+					}
+				}
+			}
+		}
+	}
+}

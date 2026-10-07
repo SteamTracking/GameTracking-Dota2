@@ -1,0 +1,785 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_venomancer"
+	{
+		"Model"		"models/heroes/venomancer/venomancer.vmdl"
+		"IdleExpression"		"scenes/venomancer/venomancer_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Venomancer"
+		"IdleSoundLoop"		"Hero_Venomancer.IdleLoop"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Support,Nuker,Initiator,Pusher,Disabler"
+		"Rolelevels"	"2,1,1,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"40"
+		"HeroOrderID"	"30"
+		"ModelScale"		"0.700000"
+		"VersusScale"		"0.70"
+		"HeroGlowColor"		"252 172 18"
+		"PickSound"		"venomancer_venm_spawn_01"
+		"BanSound"		"venomancer_venm_anger_01"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Venomancer"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"47,64,15"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Nose"			"0"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_viper"
+		"HeroSelectSoundEffect"		"Hero_Venomancer.Pick"
+		"GibType"		"goo"
+		"GibTintColor"	"180 227 54 255"
+		"NameAliases"	"Lesale"
+		"Ability1"		"venomancer_venomous_gale"
+		"Ability2"		"venomancer_snakebite"
+		"Ability3"		"venomancer_plague_ward"
+		"Ability4"		"venomancer_poison_sting"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"venomancer_noxious_plague"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"venomancer_venomous_gale"
+			"Ability2"	"venomancer_snakebite"
+			"Ability3"	"venomancer_plague_ward"
+			"Ability4"	"venomancer_noxious_plague"
+		}
+
+		"Ability10"		"special_bonus_unique_venomancer_3"
+		"Ability11"		"special_bonus_unique_venomancer_poisonsting_regen_reduction"
+		"Ability12"		"special_bonus_unique_venomancer_plague_spread"
+		"Ability13"		"special_bonus_unique_venomancer_2"
+		"Ability14"		"special_bonus_unique_venomancer_4"
+		"Ability15"		"special_bonus_unique_venomancer_8"
+		"Ability16"		"special_bonus_unique_venomancer_5"
+		"Ability17"		"special_bonus_unique_venomancer"
+		
+		"Facets"
+		{
+			"venomancer_patient_zero" 	
+			{
+				"Icon"				"snot"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"venomancer_plague_carrier" 	
+			{
+				"Icon"				"summons"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"18"
+		"AttackDamageMax"		"21"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"115"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.1"
+		"AttributeBaseAgility"		"25"
+		"AttributeAgilityGain"		"2.8"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.9"
+		"MovementSpeed"		"280"
+		"particle_folder"		"particles/units/heroes/hero_venomancer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_venomancer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_venomancer/venomancer_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4500"
+				"MaxPolygonsLOD1"		"1800"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1800"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Venomancer_StingerLimbs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3200"
+				"MaxPolygonsLOD1"		"1280"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"DisplayInLoadout" "0"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ability3"
+				"SlotText"		"#LoadoutSlot_Venomancer_PlagueWard"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3200"
+				"MaxPolygonsLOD1"		"1280"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_venomancer_plague_ward"
+				}
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "venomancer_venomous_gale"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "venomancer_poison_sting"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_4"
+				"SlotText" "venomancer_poison_nova"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_5"
+				"SlotText" "venomancer_poison_nova"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+
+			"HeroType"		"DOTA_BOT_PUSH_SUPPORT | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/venomancer/venomancer_ward.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_venomancer.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_venomancer.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_mouth"		 "1"
+			"attach_attack1"     "2"
+			"attach_attack2"     "3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Venomancer Scepter
+			//=================================================================================================================
+			"venomancer_area_poison"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"MaxLevel"						"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"60"
+				"AbilityCastRange"				"900"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value" "15"
+					}
+					"radius"
+					{
+						"value" "650"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Venomancer: Venomous Gale
+			//=================================================================================================================
+			"venomancer_venomous_gale"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Venomancer.VenomousGale"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityCastGestureSlot"		"DEFAULT"		
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"95 105 115 125"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"
+					{
+						"value"				"800"
+						"special_bonus_shard"	"200"
+					}
+
+					"duration"				"15"
+					"strike_damage"			
+					{
+						"value"					"25 50 75 100"
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"tick_damage"			
+					{
+						"value"					"10 40 70 100"
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"tick_interval"			"3.0 3.0 3.0 3.0"
+					"movement_slow"			"-35 -40 -45 -50"
+					"radius"				
+					{
+						"value"		"125"
+						"affected_by_aoe_increase"	"1"
+					}
+					"speed"
+					{
+						"value"		"1200"
+						"special_bonus_shard" "+300"
+					}
+					"create_wards"
+					{
+						"value"												"0"
+						"special_bonus_shard"		"+1"	// NOTE: boolean, not a uint that is the number of wards created
+					}
+					"shard_travel_tooltip"
+					{
+						"special_bonus_shard"				"25"
+					}
+					"num_created_wards_tooltip"
+					{
+						"value"												"0"
+						"special_bonus_shard"		"+2"	// NOTE: tooltip only
+					}
+					"ward_hp_dmg_pct"
+					{
+						"value"				"0"
+						"special_bonus_shard"		"=100"
+					}
+					"AbilityCooldown"
+					{
+						"value"												"21 20 19 18"
+						"special_bonus_unique_venomancer_3"					"-5"
+					}
+					"explosion_damage"		
+					{
+						"value"	"0"
+					}
+					"explosion_stun_duration"	
+					{
+						"value"					"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Venomancer: Poison Sting
+			//=================================================================================================================
+			"venomancer_poison_sting"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"IsBreakable"					"1"
+				"MaxLevel"						"1"
+				"Innate"						"1"		
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value" 			"4.5"
+						"hero_levelup"		"+0.5"
+					}
+
+					"damage"
+					{
+						"value"				"9"
+						"hero_levelup"		"+1"
+						"CalculateSpellDamageTooltip"	"1"
+					}
+
+					"movement_speed"
+					{
+						"value"			"8"
+						"special_bonus_unique_venomancer_2"		"10"
+					}	
+
+					"hp_regen_reduction"
+					{
+						"value"				"0"
+						"special_bonus_unique_venomancer_poisonsting_regen_reduction"	"+15"
+					}
+
+					"debuff_dmg"			"0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Venomancer: Plague Ward
+			//=================================================================================================================
+			"venomancer_plague_ward"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Venomancer.Plague_Ward"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"850"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"24 26 28 30"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"			"5.0"
+						"special_bonus_unique_venomancer_8"			"-2"
+					}
+					"can_target"
+					{
+						"value"			"0"
+					}
+					"gold_bounty_pct"
+					{
+						"value"			"100"
+					}
+
+					"max_charges"
+					{
+						"value"			"0"
+					}
+
+					"duration"
+					{
+						"value"			"40.0"
+					}
+
+					"ward_model_scale"
+					{
+						"value"								"1.0"
+						"special_bonus_unique_venomancer"	"x1.5"
+					}
+
+					"ward_base_damage"
+					{
+						"value"							"16 24 32 40"
+						"special_bonus_unique_venomancer" "x2.5"
+					}
+
+					"ward_damage_spread"
+					{
+						"value"							"2"
+					}
+
+					"ward_max_health"
+					{
+						"value"							"150 250 350 450"
+						"special_bonus_unique_venomancer" "x2.5"
+					}
+
+					"ward_gold_bounty_min"				"10 14 18 22"
+					"ward_gold_bounty_max"				"10 14 18 22"
+
+					"magic_immune"						"1"
+				}
+
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Venomancer: Noxious Plague
+			//=================================================================================================================
+			"venomancer_noxious_plague"
+			{
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"		
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------	
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.15"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 250 300"
+
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"100 90 80"
+						"special_bonus_scepter"	"-35"
+					}
+
+					"debuff_duration"			"4"
+					"impact_damage"				"150 200 250"
+					"damage_per_second"			"2 3 4"
+					"damage_tick_rate"			".25"
+
+					"debuff_time_transfer"		"100"
+			
+					"movement_slow"				"50"
+
+					"debuff_radius"				
+					{
+						"value"		"700"
+						"special_bonus_unique_venomancer_plague_spread"	"+75"
+						"affected_by_aoe_increase"	"1"
+					}
+
+					"spread_count"
+					{
+						"value"					"2"				
+					}
+
+					"mres_reduce"
+					{
+						"special_bonus_scepter"	"20"
+					}
+
+					"impact_damage_reduce"
+					{
+						"value"					"100"
+						"special_bonus_scepter"	"=0"
+					}
+
+					"projectile_speed"			"1200"		
+				}
+			}
+
+			//=================================================================================================================
+			// Venomancer: Snakebite
+			//=================================================================================================================
+			"venomancer_snakebite"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_QueenOfPain.ShadowStrike"		
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 18 16 14"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70 80 90 100"
+	
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"base_damage" 
+					{
+						"value"						"40 70 100 130"
+						"special_bonus_unique_venomancer_4"	"+100"
+					}
+
+					"tick_damage"
+					{
+						"value"						"10 20 30 40"
+					}
+
+					"duration"						"6"
+					"damage_interval"				"0.5"
+
+					"undispellable"
+					{
+						"value"						"0"
+						"special_bonus_unique_venomancer_5" "=1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+			}
+
+			//=================================================================================================================
+			// Venomancer: Poison Nova
+			//=================================================================================================================
+			"venomancer_poison_nova"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Venomancer.PoisonNova"
+
+				"AbilityCooldown"				"120 110 100"
+				"AbilityManaCost"				"200 300 400"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"					
+					{
+						"value"		"950"
+						"affected_by_aoe_increase"	"1"
+					}
+
+					"start_radius"				"255"
+			
+					"damage_base"				"35 50 65"
+			
+					"hp_damage"
+					{	
+						"value"					"3 3.5 4"
+					}
+
+					"magic_resist_reduce"		"0"
+
+					"duration"					"12"
+			
+					"speed"						"550"
+
+					"attack_slow"
+					{
+						"value"					"0"
+						"special_bonus_unique_venomancer_5"	"+100"
+					}
+				}
+			}
+		
+			//=================================================================================================================
+			// Venomancer: Latent Toxicity
+			//=================================================================================================================
+			"venomancer_latent_poison"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_QueenOfPain.ShadowStrike"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+	
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration_damage"				
+						{
+							"value"					"20"
+							"CalculateSpellDamageTooltip"	"1"
+						}
+						"movement_slow"			"-10"
+						"projectile_speed"		"1800"
+						"damage_interval"		"1.0"
+						"duration"				"7"
+						"explosion_damage"		"300"
+						"explosion_stun_duration"	"1.6"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+			}
+
+			//=================================================================================================================
+			// Ability: Venomancer: Sepsis
+			//=================================================================================================================
+			"venomancer_sepsis"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"HasScepterUpgrade"				"1"
+				"HasShardUpgrade"				"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"bonus_dmg_per_debuff_pct"
+					{
+						"value"						"8"
+						"special_bonus_scepter"		"+15"
+						"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
+					}
+					"apply_from_ward_attacks"
+					{
+						"value"												"0"
+						"special_bonus_shard"		"=1"
+					}
+				}
+			}
+		}
+	}
+}

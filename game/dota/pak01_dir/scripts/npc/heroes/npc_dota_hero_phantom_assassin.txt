@@ -1,0 +1,763 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_phantom_assassin"
+	{
+		"Model"		"models/heroes/phantom_assassin/phantom_assassin.vmdl"
+		"IdleExpression"		"scenes/phantom_assassin/phantom_assassin_exp_idle_01.vcd"
+		"SoundSet"		"Hero_PhantomAssassin"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"1"
+		"HeroPool1"				"1"
+		"HeroPool2"				"1"
+		"Role"			"Carry,Escape"
+		"Rolelevels"	"3,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"44"
+		"HeroOrderID"	"80"
+		"ModelScale"		"0.860000"
+		"VersusScale"		"0.86"
+		"LoadoutScale"		"0.86"
+		"SpectatorLoadoutScale" "0.95"
+		"HeroGlowColor"		"154 97 133"
+		"PickSound"		"phantom_assassin_phass_spawn_01"
+		"BanSound"		"phantom_assassin_phass_anger_08"
+		"NameAliases"		"pa;mortred"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Phantom Assassin"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"41,114,93"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Cape"			"1"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_PhantomAssassin.Pick"
+		"GibType"		"default"
+		"Ability1"		"phantom_assassin_stifling_dagger"
+		"Ability2"		"phantom_assassin_phantom_strike"
+		"Ability3"		"phantom_assassin_blur"
+		"Ability4"		"phantom_assassin_fan_of_knives"
+		"Ability5"		"phantom_assassin_immaterial"
+		"Ability6"		"phantom_assassin_coup_de_grace"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"phantom_assassin_stifling_dagger"
+			"Ability2"	"phantom_assassin_phantom_strike"
+			"Ability3"	"phantom_assassin_immaterial"
+			"Ability4"	"phantom_assassin_coup_de_grace"
+		}
+
+		"Ability10"		"special_bonus_unique_phantom_assassin_4"
+		"Ability11"		"special_bonus_unique_phantom_assassin_7"
+		"Ability12"		"special_bonus_unique_phantom_assassin_3"
+		"Ability13"		"special_bonus_unique_phantom_assassin_5"
+		"Ability14"		"special_bonus_unique_phantom_assassin_6"
+		"Ability15"		"special_bonus_unique_phantom_assassin_strike_aspd"
+		"Ability16"		"special_bonus_unique_phantom_assassin_2"
+		"Ability17"		"special_bonus_unique_phantom_assassin"
+		"Facets"
+		{
+			"phantom_assassin_veiled_one" 
+			{
+				"Icon"				"mana"
+				"Color"				"Blue"
+				"GradientID"		"3"
+				"Deprecated"		"1"
+			}
+
+			"phantom_assassin_methodical" 
+			{
+				"Icon"				"skull"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+
+			"phantom_assassin_sweet_release"
+			{
+				"Icon"				"phantom_ass_dagger"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+
+		}
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"110"
+		"StatusHealthRegen"		"1.0"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170" //"249"
+			"faster"	"275" //"350"
+			"fastest"	"350" //"450"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19" 
+		"AttributeStrengthGain"		"2.2"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"3.40000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.700000"
+		"MovementSpeed"		"310"
+		"HasAggressiveStance"		"1"
+		"MovementTurnRate"		"0.800000"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_phantom_assassin/phantom_assassin_loadout.vpcf"		"loadout"
+			}
+		}
+		"Persona"
+			{
+				"1"
+				{
+					"name"					"npc_dota_hero_phantom_assassin_persona1"
+					"token"					"#npc_dota_hero_phantom_assassin_persona1"
+					"token_english"			"#npc_dota_hero_phantom_assassin_persona1__en"
+					"cosmetic_group_name"	"#npc_dota_hero_phantom_assassin_persona1_cosmetic_group_name"
+					"Model"					"models/heroes/phantom_assassin_persona/phantom_assassin_persona.vmdl"	// For tools only
+					"mvp_map_override"		"maps/scenes/mvp/mvp_phantom_assassin_persona.vmap"
+				}
+			}
+		"animation_transitions"
+		{
+			"ACT_DOTA_IDLE"
+			{
+		 		"regular"	"0.9"
+				"aggressive"	"0.9"	
+			}
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"1"
+				"aggressive"		"1"
+			}
+		}
+		"MovementSpeedActivityModifiers"
+		{
+			"run"		"345"
+			"run_fast"	"400"
+		}
+
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+				"SlotText"		"#LoadoutSlot_Back"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "phantom_assassin_stifling_dagger"
+				"DisplayInLoadout" "0"
+			}	
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_3"
+				"SlotText" "phantom_assassin_blur"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"head_persona_1"
+				"SlotText"		"#LoadoutSlot_Head_Phantom_Assassin_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1200"
+			}
+		   	"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"armor_persona_1"
+				"SlotText"		"#LoadoutSlot_Armor_Phantom_Assassin_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2800"
+				"MaxPolygonsLOD1"		"1400"
+			}
+		   	"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"legs_persona_1"
+				"SlotText"		"#LoadoutSlot_Legs_Phantom_Assassin_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2800"
+				"MaxPolygonsLOD1"		"1400"
+			}
+		"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"weapon_persona_1"
+				"SlotText"		"#LoadoutSlot_Weapon_Phantom_Assassin_Persona"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"1000"
+			}
+		"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt"
+				"DisplayInLoadout" "1"
+			}
+
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_phantom_assassin"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_phantom_assassin.vsndevts"
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"			"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"			"ITEM_CONSUMABLE | ITEM_SELLABLE"
+
+				"item_branches"			"ITEM_CORE"
+				"item_branches"			"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+
+				"item_boots"			"ITEM_CORE"
+
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"	"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_gloves"			"ITEM_CORE"
+				"item_boots_of_elves"	"ITEM_CORE"
+				"item_power_treads"		"ITEM_DERIVED"
+
+				"item_ogre_axe"					"ITEM_LUXURY"
+				"item_mithril_hammer"			"ITEM_LUXURY"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"			"ITEM_DERIVED"
+
+				"item_mithril_hammer"		"ITEM_LUXURY"
+				"item_belt_of_strength"		"ITEM_LUXURY"
+				"item_recipe_basher"		"ITEM_LUXURY"
+				"item_basher"				"ITEM_DERIVED"
+
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_belt_of_strength"		"ITEM_LUXURY"
+				"item_recipe_sange"		"ITEM_LUXURY"
+				"item_sange"		"ITEM_DERIVED"
+				"item_recipe_abyssal_blade"	"ITEM_LUXURY"
+				"item_abyssal_blade"		"ITEM_DERIVED"
+
+				"item_lifesteal"		"ITEM_LUXURY"
+				"item_reaver"			"ITEM_LUXURY"
+				"item_claymore"			"ITEM_LUXURY"
+				"item_recipe_satanic"	"ITEM_LUXURY"
+				"item_satanic"			"ITEM_DERIVED"
+
+				"item_ring_of_protection"   "ITEM_LUXURY"
+				"item_recipe_buckler"	"ITEM_LUXURY"
+				"item_buckler"			"ITEM_DERIVED"
+				"item_platemail"		"ITEM_LUXURY"
+				"item_hyperstone"		"ITEM_LUXURY"
+				"item_recipe_assault"	"ITEM_LUXURY"
+				"item_assault"			"ITEM_DERIVED"
+
+				"item_demon_edge"		"ITEM_LUXURY"
+				"item_javelin"			"ITEM_LUXURY"
+				"item_blitz_knuckles"		 "ITEM_LUXURY"
+				"item_recipe_monkey_king_bar"		 "ITEM_LUXURY"
+				"item_monkey_king_bar"	  "ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"phantom_assassin_stifling_dagger"
+				"2"		"phantom_assassin_phantom_strike"
+				"3"		"phantom_assassin_stifling_dagger"
+				"4"		"phantom_assassin_blur"
+				"5"		"phantom_assassin_stifling_dagger"
+				"6"		"phantom_assassin_coup_de_grace"
+				"7"		"phantom_assassin_stifling_dagger"
+				"8"		"phantom_assassin_phantom_strike"
+				"9"		"phantom_assassin_phantom_strike"
+				"10"		"special_bonus_unique_phantom_assassin_7"
+				"11"		"phantom_assassin_phantom_strike"
+				"12"		"phantom_assassin_coup_de_grace"
+				"13"		"phantom_assassin_blur"
+				"14"		"phantom_assassin_blur"
+				"15"		"special_bonus_unique_phantom_assassin_5"
+				"16"		"phantom_assassin_blur"
+				"17"		""
+				"18"		"phantom_assassin_coup_de_grace"
+				"19"		""
+				"20"		"special_bonus_unique_phantom_assassin_strike_aspd"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_phantom_assassin"
+			}
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_assassin.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_assassin_persona_1.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_assassin.vpcf"
+			"party_hat_effect_persona_0"	"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phantom_assassin_persona_1.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+			"attach_attack2"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Phantom Assassin: Fan of Knives ( shard ability )
+			//=================================================================================================================
+			"phantom_assassin_fan_of_knives"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"AbilitySound"					"Ability.Torrent"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.15"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"14"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"pct_health_damage_initial"			"30"
+						"pct_health_damage"			"2"
+						"degen"			"-50"
+						"duration"		"4"
+						"radius"			
+						{
+							"value"			"550"
+							"affected_by_aoe_increase"	"1"
+						}
+						"projectile_speed"			"1000"
+						"max_damage_initial"	"-1"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Phantom Assassin's Stifling Dagger
+			//=================================================================================================================
+			"phantom_assassin_stifling_dagger"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_PhantomAssassin.Dagger.Cast"
+       
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700 850 1000 1150"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"30"
+
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"				"6"
+						"special_bonus_unique_phantom_assassin_7"	"-2.0"
+
+					}
+					"move_slow"					"-50"
+					"dagger_speed"			"1200"
+					"duration"			"2.1 2.4 2.7 3"
+					"base_damage"			"65 70 75 80"
+					"attack_factor"
+					{
+						"value"				"-70 -55 -40 -25"
+						"special_bonus_unique_phantom_assassin_5"	"+15"
+					}
+
+					"attack_factor_tooltip"	
+					{
+						"value"				"30 45 60 75"
+						"special_bonus_unique_phantom_assassin_5"	"+15"
+						"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+					}
+
+					"dagger_recast_time"
+					{
+						"special_bonus_shard"	"0"
+					}
+
+					"dagger_secondary_reduce"
+					{
+						"special_bonus_shard" "0"
+					}
+
+					"extra_daggers"
+					{
+						"special_bonus_unique_phantom_assassin"				"2"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Phantom Assassin's Phantom Strike
+			//=================================================================================================================
+			"phantom_assassin_phantom_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_PhantomAssassin.Strike.Start"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.25"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.1"
+				"AbilityCharges"				"2"
+				"AbilityChargeRestoreTime"		"21 18 15 12"
+		
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"35 40 45 50"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_attack_speed"	
+					{
+						"value"													"80 120 160 200"
+						"special_bonus_unique_phantom_assassin_strike_aspd"		"+60"
+					}
+
+					"duration"				
+					{
+						"value"											"3.0"
+						"special_bonus_unique_phantom_assassin_4"		"+0.8"
+					}
+					"AbilityCastRange"
+					{
+						"value"											"650 750 850 950"
+						"special_bonus_unique_phantom_assassin_6"		"+200"				
+					}
+			
+					"creep_lifesteal_penalty"			"40"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+
+
+			//=================================================================================================================
+			// Ability: Phantom Assassin: Immaterial
+			//=================================================================================================================
+			"phantom_assassin_immaterial"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"MaxLevel"						"4"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"evasion"		
+					{	
+						"value"				"25 35 45 55"
+						"special_bonus_unique_phantom_assassin_3"	"+20"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+
+			//=================================================================================================================
+			// Ability: Phantom Assassin's Blur
+			//=================================================================================================================
+			"phantom_assassin_blur"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"	
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"Innate"						"1"
+				"HasShardUpgrade" 		 	    "1"
+				"MaxLevel"						"1"
+
+
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"500"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+	
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"duration"				"30"
+					"radius"				"500"
+					"fade_duration"			"0.8"
+					"break_on_attack"							"0"
+					"manacost_reduction_during_blur_pct"
+					{
+						"value"									"0"
+					}
+					"buff_duration_after_break"
+					{
+						"value"									"0"
+					}
+					"manacost_reduction_after_blur_pct"
+					{
+						"value"									"0"
+					}
+					"active_movespeed_bonus"
+					{
+						"value"								"9.5"
+						"hero_levelup"						"+0.5"
+					}
+					"immediate_cast"
+					{
+						"special_bonus_shard"				"0"
+					}
+					"purge_on_cast"
+					{
+						"special_bonus_shard"				"0"
+					}			
+					"cooldown_refund_pct"
+					{
+						"special_bonus_shard"				"60"
+					}
+					"AbilityCooldown"				
+					{
+						"value"						"45"
+						"special_bonus_shard"		"-10"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Ability: Phantom Coup de Grace
+			//=================================================================================================================
+			"phantom_assassin_coup_de_grace"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
+				"IsBreakable"					"1"
+
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityDraftExtraAbilities"
+				{
+					"phantom_assassin_blur"				""
+					"phantom_assassin_fan_of_knives"	"scepter"
+				}
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"crit_chance"				
+					{
+						"value"			"17"
+						"special_bonus_unique_phantom_assassin_2"	"+10"
+						"special_bonus_facet_phantom_assassin_methodical"		"=0"
+					}
+					"dagger_crit_chance"
+					{
+						"value"			"34"
+						"special_bonus_unique_phantom_assassin_2"	"+10"
+						"special_bonus_facet_phantom_assassin_methodical"		"=0"
+					}
+
+					"crit_bonus"				
+					{
+						"value"													"200 325 450"
+						"special_bonus_facet_phantom_assassin_methodical"		"+100"
+					}
+					"attacks_to_proc"
+					{
+						"special_bonus_facet_phantom_assassin_methodical"
+						{
+							"value"										"6"
+							"special_bonus_unique_phantom_assassin_2"	"-1"
+						}
+					}
+					"attacks_to_proc_creeps"
+					{
+						"special_bonus_facet_phantom_assassin_methodical"
+						{
+							"value"										"4"
+							"special_bonus_unique_phantom_assassin_2"	"-1"
+						}
+					}
+					"duration"				"6 8 10"
+					"two_tooltip"
+					{
+						"special_bonus_facet_phantom_assassin_methodical"		"+2"
+					}
+				}
+			}
+		}
+	}
+}

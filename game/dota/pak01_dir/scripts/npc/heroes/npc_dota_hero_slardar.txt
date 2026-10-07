@@ -1,0 +1,543 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_slardar"
+	{
+		"Model"		"models/heroes/slardar/slardar.vmdl"
+		"IdleExpression"		"scenes/default_idle.vcd"
+		"SoundSet"		"Hero_Slardar"
+		"HeroID"		"28"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Durable,Initiator,Disabler,Escape"
+		"Rolelevels"	"2,2,2,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroOrderID"	"25"
+		"ModelScale"		"0.880000"
+		"VersusScale"		"0.88"
+		"SpectatorLoadoutScale" "0.94"
+		"HeroGlowColor"		"78 127 208"
+		"PickSound"		"slardar_slar_spawn_01"
+		"BanSound"		"slardar_slar_anger_04"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Slardar"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"114,95,93"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Aquatic"		"1"
+			"Purple"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_tidehunter"
+		"HeroSelectSoundEffect"		"Hero_Slardar.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Slithereen Guard"
+		"Ability1"		"slardar_sprint"
+		"Ability2"		"slardar_slithereen_crush"
+		"Ability3"		"slardar_bash"
+		"Ability4"		"slardar_seaborn_sentinel"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"slardar_amplify_damage"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"slardar_sprint"
+			"Ability2"	"slardar_slithereen_crush"
+			"Ability3"	"slardar_bash"
+			"Ability4"	"slardar_amplify_damage"
+		}
+
+		"Ability10"		"special_bonus_unique_slardar_7"
+		"Ability11"		"special_bonus_unique_slardar_2"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_unique_slardar_5"
+		"Ability14"		"special_bonus_unique_slardar"
+		"Ability15"		"special_bonus_unique_slardar_6"
+		"Ability16"		"special_bonus_unique_slardar_4"
+		"Ability17"		"special_bonus_unique_slardar_3"
+		"Facets"
+		{
+			"slardar_leg_day"
+			{
+				"Icon"				"speed"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"slardar_brineguard"
+			{
+				"Icon"				"armor"
+				"Color"				"Purple"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+		}		
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"38"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.360000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"MovementSpeed"		"300"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"3.400000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"2.100000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.500000"
+		"StatusHealthRegen"		"0.25"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_slardar.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_slardar"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+		"Model"		"models/heroes/slardar/slardar.vmdl"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"DisplayInLoadout" "0"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "slardar_sprint"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "slardar_slithereen_crush"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_4"
+				"SlotText" "slardar_amplify_damage"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_slardar/slardar_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_GANKER | DOTA_BOT_STUN_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_slardar.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_slardar.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_light"		"1"
+			"attach_hand1"		"2"
+			"attach_hand2"		"3"
+			"attach_attack1"	"4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Slardar River Warden
+			//=================================================================================================================
+			"slardar_seaborn_sentinel"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"HasScepterUpgrade"				"1"		
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{			
+					"river_speed"					"18"
+					"puddle_regen"				
+					{
+						"value"						"1.75"
+						"hero_levelup"				"+0.25"
+						"special_bonus_scepter"		"+20"
+					}
+					"puddle_armor"				
+					{
+						"value"						"1.8"
+						"hero_levelup"				"+0.2"
+						"special_bonus_scepter"		"+8"
+					}
+					"puddle_status_resistance"			
+					{
+						"special_bonus_scepter"		"40"
+					}
+					"river_damage_pct"
+					{
+						"value"								"11.4"
+						"hero_levelup"						"+0.6"
+						"special_bonus_unique_slardar_6"	"+16"
+					}
+					"scepter_puddle_radius_tooltip"				"75"
+					"scepter_puddle_duration_increase_tooltip"	"5"
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: Slardar Guardian Sprint
+			//=================================================================================================================
+			"slardar_sprint"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Slardar.Sprint"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"25"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityValues"
+				{			
+					"AbilityCooldown"
+					{
+						"value"									"33 28 23 18"
+				
+					}	
+					"bonus_speed"								"10 18 26 34"
+					"duration"						
+					{
+						"value"						"10"
+						"special_bonus_unique_slardar_7"		"+2"
+					}
+			
+					"speed_burst_max_duration"					"2.5"
+					"slow_resistance_tooltip"					"100"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}	
+
+			//=================================================================================================================
+			// Slardar Scepter
+			//=================================================================================================================
+			"slardar_scepter"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"20"
+			}
+	
+			//=================================================================================================================
+			// Ability: Slardar Slithereen Crush
+			//=================================================================================================================
+			"slardar_slithereen_crush"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Slardar.Slithereen_Crush"
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.25"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
+
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"crush_radius"				
+						{
+							"value"			"325"
+							"affected_by_aoe_increase"	"1"
+						}
+						"crush_extra_slow"				
+						{
+							"value"	"-20 -25 -30 -35"
+						}
+						"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
+						"crush_extra_slow_duration"		"3 4 5 6"
+						"stun_duration"					
+						{
+							"value"															"0.8"
+							"special_bonus_unique_slardar_slithereen_crush_stun"			"+0.2"
+						}
+						"puddle_duration"		
+						{
+							"value"					"7"
+							"special_bonus_scepter"	"+5"
+						}
+						"puddle_radius"		
+						{
+							"value"					"325"
+							"special_bonus_scepter"	"+75"		// if updating this, update scepter_puddle_radius_tooltip
+							"affected_by_aoe_increase"	"1"
+						}
+						"crush_damage"			
+						{
+							"value"					"60 140 220 300"
+							"special_bonus_unique_slardar"	"+125"
+						}
+						"shard_amp_duration"			
+						{
+							"special_bonus_shard"			"5.0"
+						}
+						"shard_bonus_radius"			
+						{
+							"special_bonus_shard"			"0"
+							// "affected_by_aoe_increase" explicitly removed here so shard aoe increase doesn't double dip with base radius increase
+						}
+						"AbilityCooldown"
+						{
+							"value"								"8.5 8 7.5 7"
+							"special_bonus_unique_slardar_4"	"-3"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Ability: Slardar Bash of the Deep
+			//=================================================================================================================
+			"slardar_bash"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilitySound"					"Hero_Slardar.Bash"
+				"IsBreakable"					"1"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"25"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_damage"			
+					{
+						"value"		"35 90 145 200"
+						"special_bonus_unique_slardar_2"	"+30"
+					}
+					"duration"				"1.0"
+					"attack_count"			"3"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Ability: Slardar Amplify Damage (corrosive haze)
+			//=================================================================================================================
+			"slardar_amplify_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Slardar.Amplify_Damage"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"25"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"6.0"	// Very valuable compared to cost.
+
+		
+				"AbilityValues"
+				{
+					"armor_reduction"		
+					{ 
+						"value"				"-8 -14 -20"
+						"special_bonus_unique_slardar_5"	"-3"
+					}
+					"duration"
+					{
+						"value"			"18"
+					}
+					"undispellable"
+					{
+						"value"			"0"
+						"special_bonus_unique_slardar_3"	"+1"
+					}
+					"puddle_radius"
+					{
+						"value"						"100"
+						"special_bonus_scepter"		"x1.8"
+						"affected_by_aoe_increase"	"1"
+					}
+					"puddle_duration"
+					{
+						"value"						"7"
+						"special_bonus_scepter"		"+5"
+					}
+					"has_self_buff"
+					{
+						"value"			"0"
+						"special_bonus_facet_slardar_brineguard"		"+1"
+					}
+					"armor_pct"
+					{
+						"value"			"0"
+						"special_bonus_facet_slardar_brineguard"		"+50"
+					}
+				}
+			}
+		}
+	}
+}

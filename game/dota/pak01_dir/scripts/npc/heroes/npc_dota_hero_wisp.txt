@@ -1,0 +1,570 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_wisp"
+	{
+		"Model"		"models/heroes/wisp/wisp.vmdl"
+		"SoundSet"		"Hero_Wisp"
+		"IdleSoundLoop"		"Hero_Wisp.IdleLoop"
+		"Enabled"		"1"
+		"Role"			"Support,Escape,Nuker"
+		"Rolelevels"	"3,2,1"
+		"Complexity"	"3"
+		"Team"		"Good"
+		"HeroID"		"91"
+		"HeroOrderID"	"83"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"workshop_guide_name"		"Io"
+		"PickSound"		"wisp_move03"
+		"BanSound"		"wisp_shitty_crummy_wizard"
+		"CMEnabled"		"1"
+		"SimilarHeroes"		"50,57,111"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Nose"			"0"
+			"Flying"		"1"
+			"Blue"			"1"
+		}
+		"NameAliases"		"wisp"
+		"NoCombine"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_zuus"
+		"HeroSelectSoundEffect"		"Hero_Wisp.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"171 230 255 255"
+		"Ability1"		"wisp_tether"
+		"Ability2"		"wisp_spirits"		
+		"Ability3"		"wisp_overcharge"
+		"Ability4"		"wisp_spirits_in"
+		"Ability5"		"wisp_spirits_out"
+		"Ability6"		"wisp_relocate"
+		"Ability7"		"wisp_tether_break"
+		"Ability8"		"wisp_equilibrium"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"wisp_tether"
+			"Ability2"		"wisp_spirits"
+			"Ability3"		"wisp_overcharge"
+			"Ability4"		"wisp_relocate"
+		}
+
+		"Ability10"		"special_bonus_unique_wisp_overcharge_duration"
+		"Ability11"		"special_bonus_strength_8"
+		"Ability12"		"special_bonus_unique_wisp_3"
+		"Ability13"		"special_bonus_unique_wisp"
+		"Ability14"		"special_bonus_unique_wisp_10"
+		"Ability15"		"special_bonus_unique_wisp_6"
+		"Ability16"		"special_bonus_unique_wisp_relocate_delay"
+		"Ability17"		"special_bonus_unique_wisp_4"
+		
+		"Facets"
+		{
+			"wisp_kritzkrieg" 
+			{
+				"Icon"				"damage"
+				"Color"				"Blue"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"wisp_medigun" 
+			{
+				"Icon"				"armor"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+		}
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"21"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.30000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"3.0"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.6"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"1.7"
+		"MovementSpeed"		"320"
+		"MovementTurnRate"		"0.700000"
+		"particle_folder"		"particles/units/heroes/hero_wisp"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_wisp.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"	"2300"
+				"MaxPolygonsLOD1"	"2300"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"3"
+			{
+				"SlotIndex" "3"
+				"SlotName" "ability_effects_1"
+				"SlotText" "wisp_tether"
+				"DisplayInLoadout" "0"
+			}
+			"4"
+			{
+				"SlotIndex" "4"
+				"SlotName" "ability_effects_2"
+				"SlotText" "wisp_spirits"
+				"DisplayInLoadout" "0"
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_6"
+				"SlotText" "wisp_relocate"
+				"DisplayInLoadout" "0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/development/invisiblebox.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_wisp.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_wisp.vpcf"
+		}
+		
+		"showcase_attachments"
+		{
+			"attach_hitloc"		"1"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Wisp: Tether
+			//=================================================================================================================
+			"wisp_tether"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"LinkedAbility"					"wisp_tether_break"
+				"HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"12"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40 40 40 40"
+		
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1600"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"					
+						{
+							"value"		"1000"
+							"affected_by_aoe_increase"	"1"
+						}
+						"movespeed"					
+						{
+							"value"				"6 8 10 12"
+							"special_bonus_unique_wisp_3"	"+5"
+						}
+						"latch_distance"			
+						{
+							"value"		"700"
+						}
+						"latch_speed"				"1000"
+						"tether_heal_amp"			"55 75 95 115"
+						"tether_mana_amp"			"55 75 95 115"
+						"self_bonus"				"0"
+						"slow"				
+						{
+							"value"			"15 30 45 60"
+							//"special_bonus_unique_wisp_11"			"+15"
+						}
+						"slow_duration"				"0.2"
+						"damage"
+						{
+							"value"					"0"
+							"special_bonus_shard"	"+120"
+						}
+						"damage_to_heal"
+						{
+							"value"					"0"
+							"special_bonus_shard"	"50"
+						}
+						"tick_rate"			"0.5"
+						"tether_attack_damage_pct"
+						{
+							"special_bonus_unique_wisp_4" "=50"
+						}
+						"tethered_unit_damage"
+						{
+							"value"					"0"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Wisp: Spirits
+			//=================================================================================================================
+			"wisp_spirits"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Wisp.Spirits.Cast"
+		        "HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+		  		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"creep_damage"				
+					{
+						"value"					"12 18 24 30"
+						"special_bonus_unique_wisp"		"+40%"
+					}
+					"hero_damage"
+					{
+						"value"					"30 50 70 90"
+						"special_bonus_unique_wisp"		"+40%"
+					}
+					"revolution_time"			"5.0 5.0 5.0 5.0"
+					"min_range"					"200"
+					"default_radius"			"425"
+					"max_range"					
+					{
+							"value"		"650"
+							"affected_by_aoe_increase"	"1"
+					}
+					"hero_hit_radius"			"110"
+					"explode_radius"			
+					{
+						"value"		"360"
+						"affected_by_aoe_increase"	"1"
+					}
+					"hit_radius"				
+					{
+						"value"		"150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"spirit_movement_rate"		"250"
+					"spirit_duration"			"15"
+					"spirit_amount"			"5"
+					"scepter_slow_pct"
+					{
+						"value"			"0"
+						"special_bonus_scepter"			"+25"
+					}
+					"scepter_slow_duration"
+					{
+						"value"			"0"
+						"special_bonus_scepter"			"+0.3"
+					}
+					"AbilityManaCost"				
+					{
+						"value"							"90 100 110 120"
+					}
+					"AbilityCooldown"				
+					{
+						"value"				"15"
+						"special_bonus_scepter"			"-50%"
+					}
+					"spirit_spawn_time"					"1.0"
+				}
+			}	
+
+			//=================================================================================================================
+			// Wisp: Overcharge
+			//=================================================================================================================
+			"wisp_overcharge"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+		   		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25 22 19 16"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40 60 80 100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"bonus_attack_speed"		
+						{
+							"value"							"35 60 85 110"
+							"special_bonus_unique_wisp_8"	"+40"
+						}
+						"bonus_spell_amp"		
+						{
+							"value"				"8 10 12 14"
+						}
+						"bonus_armor"
+						{
+							"value"				"0"
+						}
+						"bonus_mres"
+						{
+							"value"				"0"
+						}
+						"hp_regen"			
+						{
+							"value"			"0.5 0.6 0.7 0.8"
+							"special_bonus_unique_wisp_10"	"+0.2"
+						}
+						"duration"		
+						{
+							"value"			"8"
+							"special_bonus_unique_wisp_overcharge_duration"		"+1.5"
+						}
+						"spell_lifesteal"
+						{
+							"value"			"0"
+						}
+						"unslowable"
+						{
+							"value"							"0"
+							"special_bonus_unique_wisp_9"	"+1"
+						}
+				}
+			}	
+
+			//=================================================================================================================
+			// Wisp: Relocate
+			//=================================================================================================================
+			"wisp_relocate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Wisp.Relocate"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"175"
+				"AbilityValues"
+				{
+					"cast_delay"
+					{
+						"value" 										"3.5 3.25 3.0"
+						"special_bonus_unique_wisp_relocate_delay"		"-2.0"
+					}
+					"return_time"
+					{
+						"value" "12.0 12.0 12.0"
+					}
+					"AbilityCooldown"
+					{
+						"value"							"90 80 70"
+						"special_bonus_unique_wisp_6"	"-30"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Wisp: Tether
+			//=================================================================================================================
+			"wisp_tether_break"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"LinkedAbility"					"wisp_tether"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0 0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1.0 1.0 1.0 1.0 1.0"
+			}
+
+			//=================================================================================================================
+			// Wisp: Spirits In
+			//=================================================================================================================
+			"wisp_spirits_in"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
+				"MaxLevel"						"4"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+			}
+
+			//=================================================================================================================
+			// Wisp: Spirits Out
+			//=================================================================================================================
+			"wisp_spirits_out"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
+				"MaxLevel"						"4"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			"wisp_essence_conduction"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"		
+
+				"AbilityValues"
+				{
+						"consume_speed"	"2"
+				}
+			}
+
+
+			//=================================================================================================================
+			// Io: Equilibrium
+			//=================================================================================================================
+			"wisp_equilibrium"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"		
+
+				"AbilityValues"
+				{
+					"damage_amplification"	
+					{
+						"value"				"4"
+						"hero_levelup"		"+0.4"
+					}
+					"heal_amplification"	
+					{
+						"value"				"4"
+						"hero_levelup"		"+0.4"
+					}
+					"current_damage_amp"
+					{
+						"dynamic_value"		"true"
+					}
+					"current_heal_amp"
+					{
+						"dynamic_value"		"true"
+					}
+				}
+			}
+		}
+	}
+}

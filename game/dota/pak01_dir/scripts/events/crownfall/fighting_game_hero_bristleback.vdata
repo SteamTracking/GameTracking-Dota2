@@ -1,0 +1,726 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CDOTAFightingGameHeroDefinition"
+	m_nHeroID = 99
+	m_flHeroWidth = 200
+	m_pszBasicSwingSound = "Hero_Bristleback.PreAttack"
+	m_pszBasicHitSound = "Hero_Bristleback.Attack"
+	m_nVictoryDuration = 180
+	m_pszHeroNameVO = "announcer_dota_fighter_dota_fighter_hero_013_bristleback"
+	m_HeroPick_HeightOffset = 5
+	m_HeroPick_XOffset_Right = 40
+	m_HeroPick_Angle_Right = -35
+	m_HeroPick_XOffset_Left = 0
+	m_HeroPick_Angle_Left = 10
+	m_HeroPick_Scale = 0.9
+	m_vecHeroStyles = 
+	[
+		{
+			m_strLocName = "#DOTA_FightingGame_Style_Default"
+			m_bUseDefault = true
+		},
+		{
+			m_strLocName = "#DOTA_Item_Surly_Bogstomper"
+			m_vecItems = 
+			[
+				18223, 18224, 18225, 18226,
+				18248,
+			]
+		},
+		{
+			m_strLocName = "#DOTA_Item_Debts_of_the_Nightwatchman"
+			m_vecItems = 
+			[
+				6492, 6489, 6493, 6490,
+				6491,
+			]
+		},
+		{
+			m_strLocName = "#DOTA_FightingGame_Style_Custom"
+			m_bUseEquipped = true
+		},
+	]
+	m_vecActionDefinitions = 
+	[
+		{
+			m_nActionID = "IDLE_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_idle"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+			m_vecCancelOptions = 
+			[
+				{
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_Quillspray"
+				},
+				{
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_Quillspray"
+				},
+				{
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_NasalGoo"
+				},
+				{
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_NasalGoo"
+				},
+				{
+					m_eCancelInput = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "SWEEP_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_HeavyAttack"
+				},
+				{
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "JAB_ACTION_DEFINITION"
+					m_strCancelActionName = "#DOTA_FightingGame_Bristleback_LightAttack"
+				},
+			]
+		},
+		{
+			m_nActionID = "BLOCKSTUN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_blockstun"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "HITSTUN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_hitstun"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "KNOCKED_DOWN_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_knockdown"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "DEFEAT_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_defeat_start"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -90, -550, 0 ]
+				m_vMaxBounds = [ 90, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "DASH_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_dash_forward"
+			m_nDuration = 15
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+			m_nInvulnerabilityFlags = "FG_INVULNERABILITY_PROJECTILE"
+			m_nInvulnerabilityStart = 0
+			m_nInvulnerabilityDuration = 15
+			m_flDashSpeedMultiplier = 4.5
+		},
+		{
+			m_nActionID = "BACKDASH_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_dash_backward"
+			m_nDuration = 15
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+			m_nInvulnerabilityFlags = "FG_INVULNERABILITY_PROJECTILE"
+			m_nInvulnerabilityStart = 0
+			m_nInvulnerabilityDuration = 15
+			m_flDashSpeedMultiplier = 4.5
+		},
+		{
+			m_nActionID = "GUARDBREAK_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_hitstun"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "VICTORY_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_victory_start"
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 100, 0, 1 ]
+			}
+		},
+		{
+			m_nActionID = "JAB_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_jab"
+			m_nDuration = 25
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 450, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -550, 0 ]
+				m_vMaxBounds = [ 450, -200, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 5
+			m_nOnBlockFrames = -1
+			m_flGuardDamage = 10.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 100.0
+			m_flPushbackOnHit = 15
+			m_flPushbackOnBlock = 100
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.1, 0.1 ]
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "JAB_2_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "JAB_2_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_cross"
+			m_nDuration = 33
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 450, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -550, 0 ]
+				m_vMaxBounds = [ 475, -200, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 5
+			m_nOnBlockFrames = -1
+			m_flGuardDamage = 10.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 100.0
+			m_flPushbackOnHit = 15
+			m_flPushbackOnBlock = 100
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 12
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "FINISHER_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "FINISHER_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_combo_ender_B"
+			m_nDuration = 50
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -120, -850, 0 ]
+				m_vMaxBounds = [ 525, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -825, 0 ]
+				m_vMaxBounds = [ 500, -100, 1 ]
+			}
+			m_nHitBoxStart = 19
+			m_nHitBoxDuration = 5
+			m_nOnHitFrames = 5
+			m_nOnBlockFrames = -10
+			m_flGuardDamage = 30.0
+			m_flChipDamage = 50.0
+			m_flHitDamage = 375.0
+			m_flPushbackOnHit = 350
+			m_flPushbackOnBlock = 200
+			m_nHitStop = 15
+			m_nBlockStop = 15
+			m_vCameraShakeScale = [ 2.0, 2.0 ]
+		},
+		{
+			m_nActionID = "CROSS_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_sweep"
+			m_nDuration = 32
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 675, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -550, 0 ]
+				m_vMaxBounds = [ 850, -200, 1 ]
+			}
+			m_nHitBoxStart = 14
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 12
+			m_nOnBlockFrames = -4
+			m_flGuardDamage = 10.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 125.0
+			m_flPushbackOnHit = -100
+			m_flPushbackOnBlock = -25
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.1, 0.1 ]
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 21
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 21
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 21
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_ATTACK_BIT|kBUTTON_FORWARD_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 21
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "PROJECTILE_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 21
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_eCancelInputBuffer = 6
+					m_nCancelActionID = "SWEEP_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "SWEEP_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_sweep"
+			m_nDuration = 40
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 450, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 150, -450, 0 ]
+				m_vMaxBounds = [ 675, -150, 1 ]
+			}
+			m_nHitBoxStart = 20
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 7
+			m_nOnBlockFrames = 1
+			m_flGuardDamage = 20.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 250.0
+			m_flPushbackOnHit = -200
+			m_flPushbackOnBlock = -100
+			m_nHitStop = 10
+			m_nBlockStop = 10
+			m_vCameraShakeScale = [ 2.0, 2.0 ]
+		},
+		{
+			m_nActionID = "PROJECTILE_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_combo_ender"
+			m_nDuration = 45
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -100, -550, 0 ]
+				m_vMaxBounds = [ 475, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ 0, -550, 0 ]
+				m_vMaxBounds = [ 300, 0, 1 ]
+			}
+			m_nHitBoxStart = 20
+			m_nHitBoxDuration = 2
+			m_nOnHitFrames = 25
+			m_nOnBlockFrames = 15
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0
+			m_flHitDamage = 0.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 25
+			m_nDamageAmpFrames = 480
+			m_fDamageAmpPercent = 25
+			m_damageAmpParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_viscous_nasal_goo_debuff.vpcf"
+			m_projectileParticle = resource_name:"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
+			m_flProjectileSpeed = 1200
+			m_flProjectileRange = 0
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.0, 0.0 ]
+			m_pszSwingSound = "Hero_Bristleback.ViscousGoo.Cast"
+			m_pszHitSound = "Hero_Bristleback.ViscousGoo.Target"
+			m_bIsSpecialMove = true
+		},
+		{
+			m_nActionID = "QUILLSPRAY_START_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -250, -550, 0 ]
+				m_vMaxBounds = [ 250, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ -400, -825, 0 ]
+				m_vMaxBounds = [ 400, -100, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -8
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 30.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 50
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_actionParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_quill_spray.vpcf"
+			m_nActionParticleStart = 4
+			m_vActionParticleOffset = [ 0.0, -100.0 ]
+			m_pszSwingSound = "Hero_Bristleback.QuillSpray.Cast"
+			m_pszHitSound = "Hero_Bristleback.QuillSpray.Target"
+			m_bIsSpecialMove = true
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_2_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_2_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_2_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 6
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_2_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "QUILLSPRAY_2_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -250, -550, 0 ]
+				m_vMaxBounds = [ 250, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ -450, -825, 0 ]
+				m_vMaxBounds = [ 450, -100, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -8
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 60.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 50
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_actionParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_quill_spray.vpcf"
+			m_nActionParticleStart = 4
+			m_vActionParticleOffset = [ 0.0, -100.0 ]
+			m_pszSwingSound = "Hero_Bristleback.QuillSpray.Cast"
+			m_pszHitSound = "Hero_Bristleback.QuillSpray.Target"
+			m_bIsSpecialMove = true
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_3_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_3_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_3_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_3_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "QUILLSPRAY_3_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -250, -550, 0 ]
+				m_vMaxBounds = [ 250, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ -465, -825, 0 ]
+				m_vMaxBounds = [ 465, -100, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -8
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 80.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 50
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_actionParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_quill_spray.vpcf"
+			m_nActionParticleStart = 4
+			m_vActionParticleOffset = [ 0.0, -100.0 ]
+			m_pszSwingSound = "Hero_Bristleback.QuillSpray.Cast"
+			m_pszHitSound = "Hero_Bristleback.QuillSpray.Target"
+			m_bIsSpecialMove = true
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_4_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_4_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_4_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_4_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "QUILLSPRAY_4_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -250, -550, 0 ]
+				m_vMaxBounds = [ 250, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ -475, -825, 0 ]
+				m_vMaxBounds = [ 475, -100, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -8
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 110.0
+			m_flPushbackOnHit = 25
+			m_flPushbackOnBlock = 50
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_actionParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_quill_spray.vpcf"
+			m_nActionParticleStart = 4
+			m_vActionParticleOffset = [ 0.0, -100.0 ]
+			m_pszSwingSound = "Hero_Bristleback.QuillSpray.Cast"
+			m_pszHitSound = "Hero_Bristleback.QuillSpray.Target"
+			m_bIsSpecialMove = true
+			m_vecCancelOptions = 
+			[
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT"
+					m_eCancelInput2 = "kBUTTON_BACK_BIT|kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_FINISH_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_DOWN_BIT|kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_FINISH_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_SPECIAL_BIT"
+					m_nCancelActionID = "QUILLSPRAY_FINISH_ACTION_DEFINITION"
+				},
+				{
+					m_nCancelStart = 10
+					m_eCancelInputBuffer = 4
+					m_eCancelInput = "kBUTTON_ATTACK_BIT"
+					m_nCancelActionID = "QUILLSPRAY_FINISH_ACTION_DEFINITION"
+				},
+			]
+		},
+		{
+			m_nActionID = "QUILLSPRAY_FINISH_ACTION_DEFINITION"
+			m_pszSequenceName = "fighting_projectile"
+			m_nDuration = 30
+			m_HurtBox = 
+			{
+				m_vMinBounds = [ -250, -550, 0 ]
+				m_vMaxBounds = [ 250, 0, 1 ]
+			}
+			m_HitBox = 
+			{
+				m_vMinBounds = [ -500, -825, 0 ]
+				m_vMaxBounds = [ 500, -100, 1 ]
+			}
+			m_nHitBoxStart = 8
+			m_nHitBoxDuration = 3
+			m_nOnHitFrames = 10
+			m_nOnBlockFrames = -15
+			m_flGuardDamage = 5.0
+			m_flChipDamage = 0.0
+			m_flHitDamage = 120.0
+			m_flPushbackOnHit = 250
+			m_flPushbackOnBlock = 50
+			m_nHitStop = 6
+			m_nBlockStop = 6
+			m_vCameraShakeScale = [ 0.2, 0.2 ]
+			m_bIsSpecialMove = true
+			m_actionParticle = resource_name:"particles/events/crownfall/fighting_game/fighting_game_bristleback_quill_spray.vpcf"
+			m_nActionParticleStart = 4
+			m_vActionParticleOffset = [ 0.0, -100.0 ]
+			m_pszSwingSound = "Hero_Bristleback.QuillSpray.Cast"
+			m_pszHitSound = "Hero_Bristleback.QuillSpray.Target"
+		},
+	]
+}

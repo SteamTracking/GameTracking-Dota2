@@ -1,0 +1,635 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_medusa"
+	{
+		"Model"		"models/heroes/medusa/medusa.vmdl"
+		"SoundSet"		"Hero_Medusa"
+		"IdleExpression"		"scenes/medusa/medusa_exp_idle_01.vcd"
+		"HeroID"		"94"
+		"HeroOrderID"	"96"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Carry,Disabler,Durable"
+		"Rolelevels"	"3,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"ModelScale"		"0.850000"
+		"VersusScale"		"0.85"
+		"NameAliases"		"medusa,gorgon"
+		"workshop_guide_name"		"Medusa"
+		"PickSound"		"medusa_medus_spawn_01"
+		"BanSound"		"medusa_medus_anger_13"
+		"NoCombine"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_zuus"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"1,73,89"
+		"Adjectives"
+		{
+			"Legs"			"0"
+			"Female"		"1"
+			"Green"			"1"
+		}
+		"HeroSelectSoundEffect"		"Hero_Medusa.Pick"
+		"GibType"		"default"
+		"Ability1"		"medusa_split_shot"
+		"Ability2"		"medusa_mystic_snake"
+		"Ability3"		"medusa_gorgon_grasp"
+		"Ability4"		"medusa_cold_blooded"
+		"Ability5"		"medusa_mana_shield"
+		"Ability6"		"medusa_stone_gaze"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"medusa_split_shot"
+			"Ability2"		"medusa_mystic_snake"
+			"Ability3"		"medusa_gorgon_grasp"
+			"Ability4"		"medusa_stone_gaze"
+		}
+
+		"Ability10"		"special_bonus_unique_medusa_gorgons_grasp_radius"
+		"Ability11"		"special_bonus_unique_medusa_8"
+		"Ability12"		"special_bonus_unique_medusa_gorgons_grasp_volleys"
+		"Ability13"		"special_bonus_unique_medusa_5"
+		"Ability14"		"special_bonus_unique_medusa_snake_damage"
+		"Ability15"		"special_bonus_unique_medusa_2"
+		"Ability16"		"special_bonus_unique_medusa"
+		"Ability17"		"special_bonus_intelligence_40"
+		"Facets"
+		{
+			"medusa_engorged" 
+			{
+				"Icon"				"snake"
+				"Color"				"Green"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"medusa_mana_pact" 
+			{
+				"Icon"				"mana"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"medusa_slow_attacks"
+			{
+				"Icon"				"slow"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"medusa_undulation"
+			{
+				"Icon"				"speed"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"medusa_undulation"
+					}
+				}
+			}
+		}
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"BaseAttackSpeed"		"100"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"3.6"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.6"
+		"StatusHealthRegen"		"0.25"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"275"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_medusa"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_medusa.vsndevts"
+		"HasAggressiveStance"		"1"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_medusa/medusa_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "medusa_mystic_snake"
+				"DisplayInLoadout" "0"
+			}	
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "medusa_mana_shield"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_medusa.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_medusa.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Medusa: Cold Blooded ( shard ability )
+			//=================================================================================================================
+			"medusa_cold_blooded"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"12"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"								"0"
+					"stone_form_scepter_base_tooltip"		"1"		//taken from stone_form_scepter_base
+				}
+			}
+
+			//=================================================================================================================
+			// Medusa: Split Shot
+			//=================================================================================================================
+			"medusa_split_shot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"HasScepterUpgrade"				"1"
+				"IsBreakable"					"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_modifier"		
+					{
+						"value"		"-50 -40 -30 -20"
+						"special_bonus_unique_medusa_2"	"+12"
+					}
+					"damage_modifier_tooltip"		
+					{	
+						"value"			"50 60 70 80"
+						"special_bonus_unique_medusa_2"	"+12"
+					}		
+					"arrow_count"
+					{
+						"value"						"4"
+						"special_bonus_scepter"		"+1"
+					}	
+					"process_procs"
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"+1"
+					}
+					"split_shot_bonus_range"		"150"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Medusa: Mystic Snake
+			//=================================================================================================================
+			"medusa_mystic_snake"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Medusa.MysticSnake.Cast"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"medusa_cold_blooded" "shard"
+				}
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"					"750"
+					"AbilityCastPoint"					"0.2"
+					"AbilityCooldown"					
+					{
+						"value"				"15 14 13 12"
+						"special_bonus_unique_medusa_5"					"-4"
+					}
+					"AbilityManaCost"					"80 100 120 140"
+					"radius"							
+					{
+						"value"		"450"
+						"affected_by_aoe_increase"	"1"
+					}
+					"snake_jumps"			
+					{
+						"value"							"3 4 5 6"
+						"special_bonus_unique_medusa_3"	"+3"
+					}
+					"jump_delay"						"0.25 0.25 0.25 0.25"
+					"snake_damage"		
+					{
+						"value"			"90 140 190 240"
+						"special_bonus_unique_medusa_snake_damage"			"+40%"
+						"CalculateSpellDamageTooltip" "1"
+					}
+					"snake_damage_pct"					"0"
+					"snake_mana_steal"					
+					{
+						"value"										"15"
+						"special_bonus_unique_medusa_snake_damage" 	"+40%"
+					}
+					"snake_scale"						"25"
+					"initial_speed"						"800"
+					"return_speed"						"800"
+					"stone_form_scepter_base"		
+					{
+						"special_bonus_shard"							"1.0"
+					}
+					"stone_form_scepter_increment"		
+					{
+						"special_bonus_scepter"							"0.2"
+					}
+					"movement_slow"						
+					{	
+						"value"			"30"
+					}
+			
+					"slow_duration"						"0"
+
+
+					"max_attacks"					
+					{
+						"special_bonus_facet_medusa_engorged"			"+3"
+					}
+					"mana_per_damage"					
+					{
+						"special_bonus_facet_medusa_engorged"			"+6"
+					}
+					"attack_buff_duration"	
+					{
+						"special_bonus_facet_medusa_engorged"			"+5"
+					}
+			
+			
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Medusa: Mana Shield
+			//=================================================================================================================
+			"medusa_mana_shield"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
+				"AbilitySound"					"Hero_Medusa.ManaShield.On"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_per_mana"
+					{
+						"value"								"2"
+						"hero_levelup"						"+0.1"
+					}
+					"illusion_percentage"					"60"
+
+					"absorption_pct"						"98"
+
+					// for the Toggle facet
+					"aspd_increase_smoothness"						"0.015"
+					"aspd_increase_rate_pct"					
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=3.5"
+
+					}
+					"aspd_increase_max_tooltip"
+					{
+						"value"													"0"
+						"special_bonus_facet_medusa_mana_pact"		"=35"
+					}
+					"aspd_increase_buff_duration"			
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=15"
+
+					}			
+					"aspd_increase_mana_cost_pct"							
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=3"
+
+					}			
+					"aspd_increase_max_aspd_time"						
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=10"
+
+					}			
+					"attack_buff_cooldown"					
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=35"
+
+					}			
+					"min_duration"							
+					{
+						"value"						"0"
+						"special_bonus_facet_medusa_mana_pact"		"=3"
+
+					}			
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Medusa: Stone Gaze
+			//=================================================================================================================
+			"medusa_stone_gaze"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				//"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Medusa.StoneGaze.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------		
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"					"1200"
+					"AbilityCooldown"					
+					{
+						"value"							"90"
+						"special_bonus_unique_medusa_stone_gaze_cooldown"							"-50%"
+					}
+					"AbilityManaCost"				
+					{
+						"value"							"250"
+						"special_bonus_unique_medusa_stone_gaze_cooldown"							"-50%"
+					}
+					"radius"							
+					{
+						"value"			"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"
+					{
+						"value"							"5 5.5 6"
+						"special_bonus_unique_medusa"	"+2.5"
+					}
+					"slow"								"35"
+					"stone_duration"					"2 2.2 2.4"
+					"face_duration"						"2.0"
+					"vision_cone"						"0.08715"		// 85 degree cone
+					"bonus_physical_damage"
+					{
+						"value"							"35 45 55"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+						"special_bonus_unique_medusa_8"	"+12"
+					}
+					"speed_boost"						"50"			// NOTE: if changing this, please update stone_gaze_ms_tooltip_only
+				}
+			}
+
+			//=================================================================================================================
+			// Medusa: Gorgon's Grasp
+			//=================================================================================================================
+			"medusa_gorgon_grasp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.Torrent"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"625"
+				"AbilityCastPoint"				"0.4"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"65 85 105 125"
+				"AbilityCooldown"				"30 26 22 18"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value"					"150"
+						"special_bonus_unique_medusa_gorgons_grasp_radius"		"+20%"
+						"affected_by_aoe_increase"	"1"
+					}
+
+					"radius_grow"
+					{
+						"value"					"50"
+						"special_bonus_unique_medusa_gorgons_grasp_radius"		"+20%"
+					}
+
+					"delay"						"1"
+					"volley_interval"			".25"
+					"volley_spread_pct"			"170"
+					"volley_count"				
+					{
+						"value"					"3"
+						"special_bonus_unique_medusa_gorgons_grasp_volleys"			"1"
+					}
+
+					"duration"					"0.8 1.2 1.6 2.0"
+					"damage"					"30 70 110 150"
+					"damage_pers"				"100"
+					"damage_interval"			".2"
+				}		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Medusa: Fixed Movespeed Passive
+			//=================================================================================================================
+			"medusa_undulation"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"fixed_movespeed"				"310"
+					"stone_gaze_ms_tooltip_only"	"465"
+				}
+			}
+		}
+	}
+}

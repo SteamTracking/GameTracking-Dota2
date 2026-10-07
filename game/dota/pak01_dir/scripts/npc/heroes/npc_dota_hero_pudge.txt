@@ -1,0 +1,783 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_pudge"
+	{
+		"Model"		"models/heroes/pudge/pudge.vmdl"
+		"IdleExpression"		"scenes/pudge/pudge_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Pudge"
+		"PickSound"		"pudge_pud_spawn_10"
+		"BanSound"		"pudge_pud_anger_01"
+		"IdleSoundLoop"		"Hero_Pudge.IdleLoop"
+		"Enabled"		"1"
+		"HeroPool1"				"1"
+		"HeroPool2"				"1"
+
+		"Persona"
+		{
+			"1"
+			{
+				"name"					"npc_dota_hero_pudge_persona1"
+				"token"					"#npc_dota_hero_pudge_persona1"
+				"token_english"			"#npc_dota_hero_pudge_persona1__en"
+				"cosmetic_group_name"	"#npc_dota_hero_pudge_persona1_cosmetic_group_name"
+				"Model"					"models/heroes/pudge_cute/pudge_cute.vmdl"	// For tools only
+				"mvp_map_override"		"maps/scenes/mvp/mvp_pudge_persona.vmap"
+			}
+		}
+		"HeroUnlockOrder"		"3"
+		"Role"			"Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"	"2,2,2,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"14"
+		"HeroOrderID"	"14"
+		"BotImplemented"		"1"
+		"ModelScale"		"0.980000"
+		"VersusScale"		"0.980000"
+		"LoadoutScale"		"0.980000"
+		"HeroGlowColor"		"178 128 114"
+		"CMEnabled"		"1"
+		"NameAliases"		"Toy Butcher"
+		"workshop_guide_name"		"Pudge"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"9,21,51"
+		"Adjectives"
+		{
+			"BadTeeth"		"1"
+			"NicePecs"		"1"
+			"Potbelly"		"1"
+			"Undead"		"1"
+			"Red"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_skeleton_king"
+		"HeroSelectSoundEffect"		"Hero_Pudge.Pick"
+		"GibType"		"default"
+		"Ability1"		"pudge_meat_hook"
+		"Ability2"		"pudge_rot"
+		"Ability3"		"pudge_flesh_heap"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"pudge_innate_graft_flesh"
+		"Ability6"		"pudge_dismember"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"pudge_meat_hook"
+			"Ability2"	"pudge_rot"
+			"Ability3"	"pudge_flesh_heap"
+			"Ability4"	"pudge_dismember"
+		}
+
+		"Ability10"		"special_bonus_armor_5"
+		"Ability11"		"special_bonus_unique_pudge_4"
+		"Ability12"		"special_bonus_spell_lifesteal_8"
+		"Ability13"		"special_bonus_unique_pudge_7"
+		"Ability14"		"special_bonus_unique_pudge_6"
+		"Ability15"		"special_bonus_unique_pudge_5"
+		"Ability16"		"special_bonus_unique_pudge_3"
+		"Ability17"		"special_bonus_unique_pudge_1"
+		"Facets"
+		{
+			"pudge_fresh_meat" 
+			{
+				"Icon"				"meat"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+				
+			}
+			"pudge_flayers_hook" 
+			{
+				"Icon"				"pudge_hook"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"pudge_rotten_core"
+			{
+				"Icon"				"fist"
+				"Color"				"Green"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"45"
+		"AttackDamageMax"		"51"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"175"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.0"
+		"AttributeBaseAgility"		"13"
+		"AttributeAgilityGain"		"1.400000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusHealthRegen"		"2.5"
+		"MovementSpeed"		"280"
+		"MovementTurnRate"		"0.700000"
+		"particle_folder"		"particles/units/heroes/hero_pudge"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_pudge.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_pudge/pudge_loadout.vpcf"		"loadout"
+			}
+		}
+		"AbilityPreview"
+		{
+			"resource"		"resource/UI/Heroes/default.res"
+			"movie"		"media/heroes/default"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_offhand_weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_LeftArm"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"weapon_persona_1"
+				"SlotText"		"#LoadoutSlot_Weapon_Pudge_Persona"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+				"no_import"		 "1"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"offhand_weapon_persona_1"
+				"SlotText"		"#LoadoutSlot_Offhand_Weapon_Pudge_Persona"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+				"no_import"		 "1"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"head_persona_1"
+				"SlotText"		"#LoadoutSlot_Head_Pudge_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1250"
+				"no_import"		 "1"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"armor_persona_1"
+				"SlotText"		"#LoadoutSlot_Armor_Pudge_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"2000"
+				"no_import"		 "1"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"arms_persona_1"
+				"SlotText"		"#LoadoutSlot_Arms_Pudge_Persona"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1250"
+				"no_import"		 "1"
+			}
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"ambient_effects_persona_1"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt_Pudge_Persona"
+			}
+			"16"
+			{
+				"SlotIndex"		"16"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"17"
+			{
+				"SlotIndex" "17"
+				"SlotName" "ability_effects_1"
+				"SlotText" "pudge_meat_hook"
+				"DisplayInLoadout" "0"
+			}	
+			"18"
+			{
+				"SlotIndex" "18"
+				"SlotName" "ability_effects_2"
+				"SlotText" "pudge_rot"
+				"DisplayInLoadout" "0"
+			}
+			"19"
+			{
+				"SlotIndex" "19"
+				"SlotName" "ability_effects_3"
+				"SlotText" "pudge_flesh_heap"
+				"DisplayInLoadout" "0"
+			}	
+			"20"
+			{
+				"SlotIndex" "20"
+				"SlotName" "ability_effects_4"
+				"SlotText" "pudge_dismember"
+				"DisplayInLoadout" "0"
+			}
+			"21"
+			{
+				"SlotIndex" "21"
+				"SlotName" "ability_effects_1_persona_1"
+				"SlotText" "pudge_meat_hook"
+				"DisplayInLoadout" "0"
+			}	
+			"22"
+			{
+				"SlotIndex" "22"
+				"SlotName" "ability_effects_2_persona_1"
+				"SlotText" "pudge_rot"
+				"DisplayInLoadout" "0"
+			}
+			"23"
+			{
+				"SlotIndex" "23"
+				"SlotName" "ability_effects_3_persona_1"
+				"SlotText" "pudge_flesh_heap"
+				"DisplayInLoadout" "0"
+			}	
+			"24"
+			{
+				"SlotIndex" "24"
+				"SlotName" "ability_effects_4_persona_1"
+				"SlotText" "pudge_dismember"
+				"DisplayInLoadout" "0"
+			}						
+			"25"
+			{
+				"SlotIndex"		"25"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Pudge_Base"
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
+			"26"
+			{
+				"SlotIndex"		"26"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+			"27"
+			{
+				"SlotIndex"		"27"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"28"
+			{
+				"SlotIndex"		"28"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_gauntlets"		"ITEM_CORE"
+				"item_circlet"		"ITEM_CORE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_bottle"		"ITEM_CORE | ITEM_SELLABLE"
+				"item_boots"		"ITEM_CORE"
+				"item_recipe_bracer"		"ITEM_CORE"
+				"item_bracer"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_branches"		"ITEM_EXTENSION"
+				"item_branches"		"ITEM_EXTENSION"
+				"item_recipe_magic_wand"		"ITEM_EXTENSION"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_ring_of_regen"		"ITEM_EXTENSION"
+				"item_wind_lace"		"ITEM_EXTENSION"
+				"item_tranquil_boots"		"ITEM_DERIVED"
+				"item_blink"		"ITEM_EXTENSION"
+				"item_ring_of_tarrasque"		"ITEM_LUXURY"
+				"item_reaver"		"ITEM_LUXURY"
+				//"item_vitality_booster"		"ITEM_LUXURY"
+				"item_recipe_heart" "ITEM_LUXURY"
+				"item_heart"		"ITEM_DERIVED"
+
+
+
+				"item_helm_of_iron_will"	"ITEM_EXTENSION"
+				"item_crown"					"ITEM_EXTENSION"
+				"item_recipe_veil_of_discord"	"ITEM_EXTENSION"
+				"item_veil_of_discord"		"ITEM_DERIVED"
+				"item_platemail"		"ITEM_LUXURY"
+				//"item_mystic_staff"		"ITEM_LUXURY"
+				"item_recipe_shivas_guard"		"ITEM_LUXURY"
+				"item_shivas_guard"				"ITEM_DERIVED"
+
+
+
+				"item_point_booster"		"ITEM_LUXURY"
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_blade_of_alacrity"		"ITEM_LUXURY"
+				"item_staff_of_wizardry"		"ITEM_LUXURY"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"pudge_meat_hook"
+				"2"		"pudge_rot"
+				"3"		"pudge_meat_hook"
+				"4"		"pudge_rot"
+				"5"		"pudge_meat_hook"
+				"6"		"pudge_dismember"
+				"7"		"pudge_meat_hook"
+				"8"		"pudge_rot"
+				"9"		"pudge_rot"
+				"10"		"special_bonus_unique_pudge_4"
+				"11"		"pudge_flesh_heap"
+				"12"		"pudge_dismember"
+				"13"		"pudge_flesh_heap"
+				"14"		"pudge_flesh_heap"
+				"15"		"special_bonus_spell_lifesteal_8"
+				"16"		"pudge_flesh_heap"
+				"17"		""
+				"18"		"pudge_dismember"
+				"19"		""
+				"20"		"special_bonus_unique_pudge_5"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_pudge_1"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_TANK"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pudge.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pudge_persona_1.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pudge.vpcf"
+			"party_hat_effect_persona_0"	"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_pudge_persona_1.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_hook"		"1"
+			"attach_attack2"		"2"
+			"attach_head"		"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Pudge Flesh Heap
+			//=================================================================================================================
+			"pudge_flesh_heap"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 19 18 17"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"65 70 75 80"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_block"					
+					{
+						"value"			"8 14 20 26"
+						"special_bonus_unique_pudge_1"	"x1.5"
+					}			
+					"duration"	"4 5 6 7"
+
+				}
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Ability: Pudge Meat Hook
+			//=================================================================================================================
+			"pudge_meat_hook"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Pudge.AttackHookExtend"
+				"HasShardUpgrade"			"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"									"150 220 290 360"
+						"special_bonus_facet_pudge_flayers_hook"	"=80 =120 =160 =200"
+						"special_bonus_unique_pudge_7"			"+150"
+					}
+					"hook_speed"								
+					{
+						"value"						"1600.0"
+						"special_bonus_facet_pudge_flayers_hook"	"+0"
+					}
+
+					"hook_width"								"100"
+					"AbilityCastRange"								
+					{
+						"value"						"1300"
+						"special_bonus_facet_pudge_flayers_hook"	"+15%"
+					}
+			
+					"vision_radius"		"500 500 500 500"
+					"vision_duration"	"4.0 4.0 4.0 4.0"
+					"reveal_duration"	"00"
+					"AbilityCooldown"				
+					{
+						"value"								"18 16 14 12"
+						"special_bonus_unique_pudge_5"		"-4"
+					}
+					"vector_target_distance"
+					{
+						"value"								"0"
+				
+					}
+
+					"distance_to_damage"
+					{
+						"special_bonus_shard"	 "20"				
+					}
+
+					"min_distance_damage"
+					{
+						"special_bonus_shard"	"10"
+					}
+			
+					"cooldown_reduction_pct_allied_hook"
+					{
+						"special_bonus_shard"	"50"
+					}
+
+					"self_stun_duration_percent"
+					{
+						"value"									"65"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Pudge Rot
+			//=================================================================================================================
+			"pudge_rot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"rot_radius"			
+						{
+							"value"	"250"
+							"special_bonus_scepter"			"+200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"rot_tick"				"0.2"
+						"rot_slow"				
+						{
+							"value"				"-14 -20 -26 -32"
+							"special_bonus_unique_pudge_4" "+-10"
+						}
+						"rot_damage"			
+						{
+							"value"			"30 60 90 120"
+							"special_bonus_scepter"		"+90"
+						}
+						"scepter_rot_regen_reduction_pct"			
+						{
+							"special_bonus_scepter"			"20"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Pudge: Eject
+			//=================================================================================================================
+			"pudge_eject"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Enchantress.EnchantCreep"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Pudge Dismember
+			//=================================================================================================================
+			"pudge_dismember"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"2"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"200"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 130 170"
+		
+				"AbilityValues"
+				{
+					"dismember_damage"		
+					{
+						"value"					"80 100 120"
+						"special_bonus_unique_pudge_3"	"x1.5"	
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"strength_damage"		
+					{
+						"value"				"0.3 0.6 0.9"
+						"special_bonus_unique_pudge_3"	"x1.8"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"ticks"		
+					{
+						"value"						"6"
+						"special_bonus_unique_pudge_6"	"+2"
+					}
+					"pull_units_per_second"		"75"
+					"pull_distance_limit"		"125"
+					"animation_rate"		"1.5"
+					"AbilityChannelTime"			
+					{
+						"value"				"2.75 2.75 2.75"
+						"special_bonus_unique_pudge_6"	"+0.75"
+					}
+			
+					"AbilityCooldown"				
+					{
+						"value"							"30 25 20"
+					}
+					"shard_regen_pct"			
+					{
+						"special_bonus_shard"			"5"
+					}
+					"order_lock_duration"		
+					{
+						"special_bonus_shard"			"2.75"
+					}
+					"shard_cast_range"		
+					{
+						"special_bonus_shard"			"300"
+					}
+					"gluttony_strength_bonus"
+					{
+						"value"							"0"				
+					}
+					"glutton_strength_stack_duration"
+					{
+						"value"							"0"				
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Pudge: Graft Flesh (Innate)
+			//=================================================================================================================
+			"pudge_innate_graft_flesh"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"flesh_heap_strength_buff_amount"
+					{
+						"value"							"2.0"
+						"special_bonus_unique_pudge_1"	"x1.5"
+					}
+					"flesh_heap_range"		
+					{
+						"value"		"450"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+		}
+	}
+}

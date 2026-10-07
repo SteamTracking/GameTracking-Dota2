@@ -1,0 +1,757 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_magnataur"
+	{
+		"Model"		"models/heroes/magnataur/magnataur.vmdl"
+		"SoundSet"		"Hero_Magnataur"
+		"HeroID"		"97"
+		"HeroOrderID"	"92"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Initiator,Disabler,Nuker,Escape"
+		"Rolelevels"	"3,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"ModelScale"		"0.920000"
+		"VersusScale"		"0.92"
+		"LoadoutScale"		"0.92"
+		"NameAliases"		"magnataur, magnus"
+		"workshop_guide_name"		"Magnus"
+		"PickSound"		"magnataur_magn_spawn_06"
+		"BanSound"		"magnataur_magn_anger_07"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"23,129,18"
+		"Adjectives"
+		{
+			"Horns"			"1"
+			"Legs"			"4"
+			"Fuzzy"			"1"
+			"Brown"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_tidehunter"
+		"HeroSelectSoundEffect"		"Hero_Magnataur.Pick"
+		"GibType"		"default"
+		"Ability1"		"magnataur_shockwave"
+		"Ability2"		"magnataur_empower"
+		"Ability3"		"magnataur_skewer"
+		"Ability4"		"magnataur_horn_toss"
+		"Ability5"		"magnataur_solid_core"
+		"Ability6"		"magnataur_reverse_polarity"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"magnataur_shockwave"
+			"Ability2"		"magnataur_empower"
+			"Ability3"		"magnataur_skewer"
+			"Ability4"		"magnataur_reverse_polarity"
+		}
+
+		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability11"		"special_bonus_unique_magnus_6"
+		"Ability12"		"special_bonus_unique_magnus_reverse_polarity_stats"
+		"Ability13"		"special_bonus_unique_magnus_7"
+		"Ability14"		"special_bonus_unique_magnus"
+		"Ability15"		"special_bonus_unique_magnus_skewer_damage_distance"
+		"Ability16"		"special_bonus_unique_magnus_2"
+		"Ability17"		"special_bonus_unique_magnus_5"
+		"Facets"
+		{
+			"magnataur_run_through" 
+			{
+				"Icon"				"movement"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"	
+			}
+			"magnataur_reverse_polarity" 
+			{
+				"Icon"				"vortex_in"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"	
+			}
+			"magnataur_eternal_empowerment"
+			{
+				"Icon"				"empower"
+				"Color"				"Gray"
+				"GradientID"		"1"
+				"Deprecated"		"true"	
+			}
+			"magnataur_diminishing_return"
+			{
+				"Icon"				"ricochet"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"MaxHeroAttributeLevel"	"6"
+				"Deprecated"		"true"	
+			}
+			"magnataur_reverse_reverse_polarity" 
+			{
+				"Icon"				"vortex_out"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+				"AbilityIconReplacements"
+				{
+					"magnataur_reverse_polarity"	"magnataur_reversed_reverse_polarity"
+				}
+			}
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.1"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"2.2"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.1"
+		"StatusHealthRegen"		"0.5"
+		"StatusManaRegen"	"0.5"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"305"
+		"MovementTurnRate"		"0.800000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_magnataur"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_magnataur.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_magnataur/magnus_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_4"
+				"SlotText" "magnataur_reverse_polarity"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "magnataur_shockwave"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_STUN_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_magnataur.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_magnataur.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_horn"		"1"
+			"attach_attack1"	"2"
+			"attach_head"		"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Magnataur: Horn Toss ( shard ability )
+			//=================================================================================================================
+			"magnataur_horn_toss"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"		"325"
+						"radius"		
+						{
+							"value"			"325"
+							"affected_by_aoe_increase"	"1"
+						}
+						"air_duration"		"0.6"
+						"air_height"		"300"
+						"slow_duration"		"2"
+						"pull_offset"		"75"
+						"destination_offset"		"175"
+						"pull_angle"				"230"
+						"horn_toss_slow_pct"		"100"
+						"stun_duration"		"0.75"
+				}
+			}
+
+			//=================================================================================================================
+			// Magnataur: Shockwave
+			//=================================================================================================================
+			"magnataur_shockwave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+		        "HasShardUpgrade"				"0"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"13 12 11 10"
+				"AbilityDuration"				"0.6875 0.6875 0.6875 0.6875"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"85 90 95 100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"shock_speed"				
+					{
+						"value"					"1200"
+
+					}
+					"shock_width"				
+					{
+						"value"	"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"shock_damage"				
+					{
+						"value"			"75 150 225 300"				
+						"special_bonus_unique_magnus"	"+125"
+					}
+					"movement_slow"				"75"
+					"slow_duration"				"2"
+					"pull_duration"				"0.2"
+					"pull_distance"		"150"
+					"max_level"
+					{
+						"value"												"4"
+					}
+					"basic_slow_duration"		
+					{
+						"value"					"0.55 0.7 0.85 1.0"
+
+					}
+					"return_damage_pct"
+					{
+						"value"								"0"
+						"special_bonus_unique_magnus_2"		"+100"
+					}
+					"AbilityCastRange"
+					{
+						"value"					"1200"
+					}
+					"return_shockwave_bonus_distance"
+					{
+						"value"								"0"
+						"special_bonus_unique_magnus_2"		"+200"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Magnataur: Greater Shockwave (scepter ability)
+			//=================================================================================================================
+			"magnataur_greater_shockwave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT  | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1500"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+				"AbilityValues"
+				{
+					"length"
+					{
+						"value" "1200"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Magnataur: Empower
+			//=================================================================================================================
+			"magnataur_empower"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Magnataur.Empower.Cast"
+				//"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"8"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"45 55 65 75"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.3"	// Easy to spam 
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"				
+					{
+						"value"								"800"
+						//"special_bonus_shard"				"+99999"
+					}
+					"should_self_cast"
+					{
+						"value"								"0"
+						//"special_bonus_shard"				"+1"
+					}
+					"empower_duration"
+					{
+						"value"		"30 33 36 39"
+						"special_bonus_unique_magnus_4"	"+10"
+					}
+					"bonus_damage_pct"
+					{
+						"value"							"16 24 32 40"
+					}
+					"cleave_damage_pct"
+					{
+						"value"							"16 24 32 40"
+					}			
+					"cleave_starting_width"
+					{
+						"value"			"150"
+						"affected_by_aoe_increase"	"1"
+					}			
+					"cleave_ending_width"
+					{
+						"value"			"360"
+						"affected_by_aoe_increase"	"1"
+
+					}			
+					"cleave_distance"			
+					{
+						"value"		"650"
+						"affected_by_aoe_increase"	"1"
+					}
+					"secondary_cleave_distance"	
+					{
+						"value"			"0"
+						//"special_bonus_shard"	"+400"
+					}
+					"self_multiplier"		"30"
+			
+					"always_on"			"1"
+					"self_multiplier_bonus_stack_duration"								"0"
+					"self_multiplier_bonus_max_stacks"									"25 30 35 40"
+					"self_multiplier_bonus_per_stack"									"5 6 7 8"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Magnataur: Skewer
+			//=================================================================================================================
+			"magnataur_skewer"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Magnataur.Skewer.Cast"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 80 80 80"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"
+						{
+							"value"					"22 20 18 16"
+							"special_bonus_unique_magnus_7"		"-5"
+						}
+						"skewer_speed"					"900"
+						"range"					
+						{
+							"value"			"800 900 1000 1100"
+							"special_bonus_shard" 			"+300"
+						}
+						"slow_pct"				
+						{
+							"value"			"20 30 40 50"
+						}
+						"skewer_radius"				
+						{
+							"value"		"145"
+							"affected_by_aoe_increase"	"1"
+						}
+						"slow_duration"			
+						{
+							"value"										"3.25"
+							"special_bonus_unique_magnus_6"				"+1.25"
+						}
+						"skewer_damage"			"80 160 240 320"
+						"damage_distance_pct"			
+						{		
+							"value"			"6 9 12 15" 
+							"special_bonus_unique_magnus_skewer_damage_distance"		"+15"
+						}
+						"tree_radius"				
+						{
+							"value"			"200"
+							"affected_by_aoe_increase"	"1"
+						}			
+						"tree_hit_damage"
+						{
+							"value"							"0"
+							"special_bonus_shard"			"40"
+						
+						}
+						"cliff_hit_damage"
+						{
+							"value"			"0"
+							"special_bonus_shard"			"150"
+
+						}				
+						"terrain_hit_cooldown"
+						{
+							"value"			"0.5"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Magnataur: Reverse Polarity
+			//=================================================================================================================
+			"magnataur_reverse_polarity"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Magnataur.ReversePolarity.Cast"
+				"AbilityDraftExtraAbilities"
+				{
+					"magnataur_horn_toss" "scepter"
+				}
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				"AbilityManaCost"				"150 225 300"
+				"AbilityCastRange"				"410 410 410"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"						"115"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"=100"				
+					}
+
+					"pull_radius"					
+					{
+						"value"							"430"
+						"affected_by_aoe_increase"		"1"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"-100%"				
+					}
+					"push_radius"					
+					{
+						"value"							"0"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+700"				
+						"affected_by_aoe_increase"		"1"
+					}
+					"max_knockback_distance"	
+					{
+						"value"							"0"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+850"				
+						"affected_by_aoe_increase"		"1"
+					}	
+					"knockback_height"
+					{
+						"value"							"0"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+100"
+					}
+					"polarity_damage"				
+					{
+						"value"							"100 200 300"
+						"CalculateSpellDamageTooltip" 	"1"
+					}
+					"hero_stun_duration"
+					{
+						"value"					"2.5 3.0 3.5"
+						"special_bonus_unique_magnus_5"	"+0.8"
+					}
+					"pull_duration"		
+					{
+						"value"							"0.0"
+						"special_bonus_facet_magnataur_reverse_reverse_polarity"		"+0.2"
+					}
+			
+					"stat_buff_duration"
+					{
+						"value"					"0"
+						"special_bonus_unique_magnus_reverse_polarity_stats"			"+20"
+					}
+					"stats_per_stack"
+					{
+						"value"					"0"
+						"special_bonus_unique_magnus_reverse_polarity_stats"			"+14"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Magnus: Magnetic Horn
+			//=================================================================================================================
+			"magnus_magnetic_horn"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+				"MaxLevel"						"1"
+
+				"AbilityValues"
+				{
+					"pull_duration"		"0.2"
+					"pull_distance"		"150"
+					"pull_radius"		"200"
+				}		
+			}
+
+			//=================================================================================================================
+			// Magnus: Solid Core
+			//=================================================================================================================
+			"magnataur_solid_core"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+				"Innate"						"1"
+				"MaxLevel"						"1"	
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"knockback_reduction"			"50"
+					"slow_resistance"
+					{
+						"value"						"24"
+						"hero_levelup"				"1"
+					}
+				}		
+			}
+			//=================================================================================================================
+			// Ability: Magnus Strength of Joelrak (scepter)
+			//=================================================================================================================
+			"magnus_strength_of_joelrak"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"IsGrantedByShard"				"1"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"strength_per_stack"				"6"
+					"max_stacks"						"10"
+					"stack_duration"					"12"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+		}
+	}
+}

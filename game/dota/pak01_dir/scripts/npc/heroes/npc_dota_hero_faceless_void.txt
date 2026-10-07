@@ -1,0 +1,664 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_faceless_void"
+	{
+		"Model"		"models/heroes/faceless_void/faceless_void.vmdl"
+		"IdleExpression"		"scenes/faceless_void/faceless_void_exp_idle_01.vcd"
+		"SoundSet"		"Hero_FacelessVoid"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Carry,Initiator,Disabler,Escape,Durable"
+		"Rolelevels"	"2,3,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"41"
+		"HeroOrderID"	"27"
+		"ModelScale"		"0.900000"
+		"VersusScale"		"0.90"
+		"SpectatorLoadoutScale" "0.95"
+		"LoadoutScale"		"0.900000"
+		"HeroGlowColor"		"217 160 255"
+		"PickSound"		"faceless_void_face_spawn_01"
+		"BanSound"		"faceless_void_face_anger_02"
+		"CMEnabled"		"1"
+		"NameAliases"		"fv"
+		"workshop_guide_name"		"Faceless Void"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"1,44,8"
+		"Adjectives"
+		{
+			"Nose"			"0"
+			"NicePecs"		"1"
+			"Purple"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_FacelessVoid.Pick"
+		"GibType"		"default"
+		"Ability1"		"faceless_void_time_walk"
+		"Ability2"		"faceless_void_time_dilation"	
+		"Ability3"		"faceless_void_time_lock"
+		"Ability4"		"faceless_void_time_walk_reverse"
+		"Ability5"		"faceless_void_distortion_field"
+		"Ability6"		"faceless_void_chronosphere"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"faceless_void_time_walk"
+			"Ability2"	"faceless_void_time_dilation"
+			"Ability3"	"faceless_void_time_lock"
+			"Ability4"	"faceless_void_chronosphere"
+		}
+
+		"Ability10"		"special_bonus_unique_faceless_void_6"
+		"Ability11"		"special_bonus_unique_faceless_void_7"
+		"Ability12"		"special_bonus_unique_faceless_void_3"
+		"Ability13"		"special_bonus_unique_faceless_void_8"
+		"Ability14"		"special_bonus_unique_faceless_void"
+		"Ability15"		"special_bonus_unique_faceless_void_5"
+		"Ability16"		"special_bonus_unique_faceless_void_4"
+		"Ability17"		"special_bonus_unique_faceless_void_2"
+
+		"Facets"
+		{
+			"faceless_void_temporal_impunity"
+			{
+				"Icon"				"armor"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"faceless_void_chronosphere"
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"faceless_void_chronosphere"
+						"AbilityIndex"	"5"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+
+			"faceless_void_time_zone"
+			{
+				"Icon"				"chrono_cube"
+				"Color"				"Purple"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"		"faceless_void_time_zone"
+						"AbilityIndex"	"5"
+						"AutoLevelAbility" 	"false"
+					}
+				}
+			}
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"34"
+		"AttackDamageMax"		"40"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.600000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.3"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.500000"
+		"StatusHealthRegen"		"1"
+		"MovementSpeed"		"300"
+		"MovementTurnRate"		"0.900000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HasAggressiveStance"		"1"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+			"faster"	"250"
+			"fastest"	"350"
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_2"
+				"SlotText" "faceless_void_time_dilation"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_4"
+				"SlotText" "faceless_void_chronosphere"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "faceless_void_time_walk"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_faceless_void"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_faceless_void.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_faceless_void/faceless_void_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_faceless_void.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_faceless_void.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			"1"
+			"attach_weapon_glow"	"2"
+			"attach_hand2"			"6"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Faceless Void: Time Walk
+			//=================================================================================================================
+			"faceless_void_time_walk"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
+				"HasScepterUpgrade"			"1"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed"					"3000"
+					"range"					
+					{
+						"value"				"650 700 750 800"
+						"special_bonus_unique_faceless_void_8"		"+125"
+					}
+					"AbilityCooldown"
+					{
+						"value"										"21 16 11 6"
+						"special_bonus_unique_faceless_void_5"		"-1.0"
+					}
+					"backtrack_duration"
+					{
+						"value"										"2.0"
+						"special_bonus_unique_faceless_void_7"		"+0.5"
+					}
+					"backtrack_time_walk_duration"
+					{
+						"value"						"0"
+						"special_bonus_facet_faceless_void_temporal_impunity"	"+1"				
+					}
+					"dodge_chance_pct"			"100"			
+					"radius"
+					{
+						"special_bonus_scepter"				"+325"
+						"affected_by_aoe_increase"			"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Faceless Void: Innate Distortion Field
+			//=================================================================================================================
+			"faceless_void_distortion_field"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"attack_projectile_slow"		"40"
+					"slow_distance_max"				
+					{
+						"value"			"500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"friendly_hero_distance"			"1200"
+				}
+			}
+
+			//=================================================================================================================
+			// Faceless Void: Innate Time Walk - Range
+			//=================================================================================================================
+			"faceless_void_backtrack"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"AbilityValues"
+				{
+					"dodge_chance_pct"		"20"
+				}
+			}
+
+			//=================================================================================================================
+			// Faceless Void: Time Walk Reverse (Shard)
+			//=================================================================================================================
+			"faceless_void_time_walk_reverse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"buff_duration"			"3000"
+						"speed"					"3000"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+	
+
+			//=================================================================================================================
+			// Faceless Void: Time Lock
+			//=================================================================================================================
+			"faceless_void_time_lock"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilitySound"					"Hero_FacelessVoid.TimeLockImpact"
+				"IsBreakable"					"1"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"25"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"				"0.5"	
+						"duration_creep"		"0.5"
+						"chance_pct"			"12 16 20 24"
+						"bonus_damage"			
+						{
+							"value"				"18 22 26 30"
+							"special_bonus_unique_faceless_void_3" "+35"
+						}
+						"delay"			"0.4"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Faceless Void: Time Dilation
+			//=================================================================================================================
+			"faceless_void_time_dilation"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_FacelessVoid.TimeDilation.Cast"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCooldown"				"28 24 20 16"
+				"AbilityManaCost"				"90"
+				"HasShardUpgrade"				"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"		"700"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"				"7 8 9 10"
+					"slow"						
+					{	
+						"value"								"4 5 6 7"	// if changing this, also updated attack_slow_tooltip_only
+						"special_bonus_shard"					"+5"
+					}
+					"attack_slow_tooltip_only"
+					{
+						"value"								"4 5 6 7"
+						"special_bonus_shard"					"+5"
+					}
+					"cooldown_percentage"	"30 40 50 60"
+					"base_damage"			"0"
+					"damage_per_stack"		
+					{
+						"value"				"4 6 8 10"
+						"special_bonus_unique_faceless_void_6" "+6"
+					}
+					"self_movespeed_tooltip"						//tooltip only. actual value is in "slow"
+					{	
+						"value"								"0"
+						"special_bonus_shard"					"=9 =10 =11 =12"
+					}	
+					"self_attackspeed_tooltip"						//tooltip only. actual value is in "slow"
+					{	
+						"value"								"0"
+						"special_bonus_shard"					"=9 =10 =11 =12"
+					}	
+					"self_buff"
+					{
+						"special_bonus_shard"				"+1"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Faceless Void: Chronosphere
+			//=================================================================================================================
+			"faceless_void_chronosphere"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"500"
+				"AbilityCastPoint"				"0.35 0.35 0.35"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"155 145 135"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 200 275"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"50"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"				
+						{
+							"value"		"500"
+							"affected_by_aoe_increase"	"1"
+							"special_bonus_unique_faceless_void_2" "+140"
+						}
+						"duration"				
+						{
+							"value"			"3.75 4.25 4.75"
+						}
+						"vision_radius"			
+						{
+							"value"	"475"
+							"affected_by_aoe_increase"	"1"
+						}
+						"bonus_attack_speed"
+						{					
+							"value" "0"
+							"special_bonus_unique_faceless_void" "+80"
+						}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Faceless Void: Time Zone
+			//=================================================================================================================
+			"faceless_void_time_zone"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
+				"MaxLevel" 						"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.35 0.35 0.35"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"50"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"				
+					{
+						"value"		"350"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"				
+					{
+						"value"			"3.5"
+					}
+					"vision_radius"			
+					{
+						"value"	"350"				
+						"affected_by_aoe_increase"	"1"
+					}
+					"bonus_attack_speed"
+					{					
+						"value"									"0"				
+					}
+					"bonus_move_speed"
+					{					
+						"value" "50"				
+					}
+					"bonus_cast_speed"
+					{					
+						"value" "50"
+					}
+					"bonus_turn_speed"
+					{					
+						"value" "50"
+					}
+					"bonus_projectile_speed"
+					{					
+						"value" "40"
+					}
+					"yaw"				"45"
+					"cooldown_acceleration"						// base is 100% = 1x = normal cooldown progression. 400 = 4x = +300% cooldown acceleration
+					{
+						"value"				"200"				// values <= 100 will do nothing currently and progress cooldowns normally
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_faceless_void_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityValues"
+				{
+					"dodge_chance_pct"
+					{
+						"value" "20"
+					}
+				}
+			}
+		}
+	}
+}

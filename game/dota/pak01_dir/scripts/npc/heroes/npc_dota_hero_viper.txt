@@ -1,0 +1,692 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_viper"
+	{
+		"Model"		"models/heroes/viper/viper.vmdl"
+		"IdleExpression"		"scenes/viper/viper_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Viper"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroPool2"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Durable,Initiator,Disabler"
+		"Rolelevels"	"1,2,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"47"
+		"HeroOrderID"	"29"
+		"ModelScale"		"0.740000"
+		"VersusScale"		"0.74"
+		"SpectatorLoadoutScale" "0.65"
+		"HeroGlowColor"		"160 229 81"
+		"PickSound"		"viper_vipe_spawn_01"
+		"BanSound"		"viper_vipe_anger_06"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Viper"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"15,59,40"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Legs"			"0"
+			"Arachnophobic"	"1"
+			"Flying"		"1"
+			"Green"			"1"
+		}
+		"NoCombine"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_jakiro"
+		"HeroSelectSoundEffect"		"Hero_Viper.Pick"
+		"GibType"		"goo"
+		"GibTintColor"	"188 255 57 255"
+		"NameAliases"	"Netherdrake"
+		"Ability1"		"viper_poison_attack"
+		"Ability2"		"viper_nethertoxin"
+		"Ability3"		"viper_corrosive_skin"
+		"Ability4"		"viper_nose_dive"
+		"Ability5"		"viper_predator"
+		"Ability6"		"viper_viper_strike"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"viper_poison_attack"
+			"Ability2"	"viper_nethertoxin"
+			"Ability3"	"viper_corrosive_skin"
+			"Ability4"	"viper_viper_strike"
+		}
+
+		"Ability10"		"special_bonus_unique_viper_4"
+		"Ability11"		"special_bonus_unique_viper_1"
+		"Ability12"		"special_bonus_unique_viper_3"
+		"Ability13"		"special_bonus_unique_viper_7"
+		"Ability14"		"special_bonus_unique_viper_2"
+		"Ability15"		"special_bonus_unique_viper_predator_damage"
+		"Ability16"		"special_bonus_unique_viper_nethertoxin_radius"
+		"Ability17"		"special_bonus_unique_viper_8"
+		"Facets"		
+		{
+			"viper_poison_burst"			
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"1"
+			}
+			"viper_caustic_bath"	
+			{
+				"Icon"				"armor"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"1"
+			}
+		}
+		//"VariantAbility1"	"viper_innate_corrosive_skin_vile"
+		//"VariantAbility2"	"viper_innate_corrosive_skin_virulent"
+		"ArmorPhysical"		"-2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"29"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.330000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"142"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.9"
+		"AttributeBaseIntelligence"		"17"
+		"AttributeIntelligenceGain"		"2.0"
+		"MovementSpeed"		"275"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"375"
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_viper"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_viper.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_viper/viper_loadout.vpcf"		"loadout"
+			}
+		}
+		
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"				
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"				
+			}
+
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"	"0"
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_1"
+				"SlotText" "viper_poison_attack"
+				"DisplayInLoadout" "0"
+			}		
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_2"
+				"SlotText" "viper_nethertoxin"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_faerie_fire"	"ITEM_CORE | ITEM_SELLABLE"
+				"item_slippers"		"ITEM_CORE"
+				"item_circlet"				"ITEM_CORE"
+				"item_recipe_wraith_band"	"ITEM_CORE"
+				"item_wraith_band"			"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"			"ITEM_CORE"
+				"item_boots_of_elves"	"ITEM_CORE"
+				"item_gloves"			"ITEM_CORE"
+				"item_power_treads"		"ITEM_DERIVED"
+
+				"item_sobi_mask"			"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_CORE"
+				"item_ring_of_basilius"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_blade_of_alacrity"	"ITEM_CORE"
+				"item_belt_of_strength"			"ITEM_CORE"
+				"item_recipe_dragon_lance"		"ITEM_CORE"
+				"item_dragon_lance"		"ITEM_DERIVED"
+
+				"item_mithril_hammer"		"ITEM_EXTENSION"
+				"item_ogre_axe"				"ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"		"ITEM_DERIVED"
+
+				"item_staff_of_wizardry"	"ITEM_EXTENSION"
+				"item_fluffy_hat"		"ITEM_EXTENSION"
+				"item_recipe_force_staff"	"ITEM_EXTENSION"
+				"item_force_staff"			"ITEM_DERIVED"
+
+				"item_recipe_hurricane_pike"	"ITEM_EXTENSION"
+				"item_hurricane_pike"		"ITEM_DERIVED"
+
+				"item_point_booster"		"ITEM_LUXURY"
+				"item_staff_of_wizardry"		"ITEM_LUXURY"
+				"item_blade_of_alacrity"		"ITEM_LUXURY"
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+
+				"item_demon_edge"		"ITEM_LUXURY"
+				"item_javelin"			"ITEM_LUXURY"
+				"item_blitz_knuckles"		 "ITEM_LUXURY"
+				"item_recipe_monkey_king_bar"		 "ITEM_LUXURY"
+				"item_monkey_king_bar"	  "ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"viper_poison_attack"
+				"2"		"viper_nethertoxin"
+				"3"		"viper_poison_attack"
+				"4"		"viper_corrosive_skin"
+				"5"		"viper_corrosive_skin"
+				"6"		"viper_viper_strike"
+				"7"		"viper_corrosive_skin"
+				"8"		"viper_corrosive_skin"
+				"9"		"viper_poison_attack"
+				"10"		"special_bonus_unique_viper_4"
+				"11"		"viper_nethertoxin"
+				"12"		"viper_viper_strike"
+				"13"		"viper_poison_attack"
+				"14"		"viper_nethertoxin"
+				"15"		"special_bonus_unique_viper_7"
+				"16"		"viper_nethertoxin"
+				"17"		""
+				"18"		"viper_viper_strike"
+				"19"		""
+				"20"		"special_bonus_unique_viper_predator_damage"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_viper_nethertoxin_radius"
+			}
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_viper.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_viper.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_wing_barb_1"	"1"
+			"attach_wing_barb_2"	"2"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Viper: Poison Attack
+			//=================================================================================================================
+			"viper_poison_attack"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"hero_viper.poisonAttack.Cast"
+				"TooltipSummaryProperties"		"#DOTA_Tooltip_AttributeSummary__DPS;movement_speed;magic_resistance"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"0 0 0 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"20"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"
+						{
+							"value"					"4"
+						}
+						"damage"					
+						{
+							"value"					"4 8 12 16"
+							"special_bonus_unique_viper_7"	"+15%"
+						}	
+
+						"movement_speed"			
+						{
+							"value"					"3 6 9 12"
+							"special_bonus_unique_viper_7"	"+15%"
+							"display_type"			"kDebuffPercentage"
+						}
+						"magic_resistance"			
+						{
+							"value"			"4 6 8 10"
+							"display_type"			"kDebuffPercentage"
+						}
+						"max_stacks"
+						{
+							"value"							"6"
+							"special_bonus_shard"			"+2"
+						}
+						"bonus_range"			"25"
+						"shard_armor_reduction"
+						{
+							"special_bonus_shard"			"1"
+						}
+						"shard_building_dmg_pct"
+						{
+							"special_bonus_shard"			"40"
+							"display_type"					"kMagicalDamagePercentage"
+						}
+						"expiration_damage_radius"	
+						{
+							"value"						"0"
+							"affected_by_aoe_increase"	"1"
+						}			
+						"accumulated_damage_explosion_pct"		
+						{
+							"value"						"0"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Viper: Nethertoxin
+			//=================================================================================================================
+			"viper_nethertoxin"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"TooltipSummaryProperties"		"#DOTA_Tooltip_ability_viper_nethertoxin___damage;duration;attack_slow"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastRange"				"900"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"14.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70"
+		
+	
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"min_damage"			
+						{
+							"value"		"15 25 35 45"
+							"special_bonus_unique_viper_3"	"+20"
+						}
+						"max_damage"
+						{
+							"value"			"35 65 95 125"
+							"special_bonus_unique_viper_3"	"+40"
+						}
+						"max_duration"			
+						{
+							"value"						"4"
+						}
+						"radius"		
+						{
+							"value"		"400"
+							"affected_by_aoe_increase"	"1"
+						}
+						"attack_slow"		"30 40 50 60"
+						"duration"
+						{
+							"value"				"6.5 7 7.5 8"
+						}
+						"projectile_speed"	"2400"
+						"radius_increase"			
+						{
+							"value"					"0"
+							"special_bonus_unique_viper_nethertoxin_radius"						"+25"
+						}		
+						"expand_interval"			
+						{
+							"value"					"0"
+							"special_bonus_unique_viper_nethertoxin_radius"						"+0.5"
+						}
+				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Viper: Corrosive Skin
+			//=================================================================================================================
+			"viper_corrosive_skin"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"hero_viper.CorrosiveSkin"
+				"TooltipSummaryProperties"		"bonus_magic_resistance;#DOTA_Tooltip_AttributeSummary__DPS;bonus_attack_speed"
+				"HasScepterUpgrade"				"1"
+				"IsBreakable"					"1"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"10"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"								"4.0"
+					}
+					"bonus_attack_speed"
+					{
+						"value"								"9 18 27 36"
+						"display_type"						"kDebuffValue"
+					}
+					"bonus_magic_resistance"	
+					{
+						"value"								"10 15 20 25"
+						"display_type"						"kBuffPercentage"
+					}
+					"damage"
+					{
+						"value"							"10 15 20 25"
+						"special_bonus_unique_viper_1"	"+15"
+					}
+					"max_range"
+					{
+						"value"						"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"effect_multiplier_distance"
+					{
+						"special_bonus_scepter"		"500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"effect_multiplier"
+					{
+						"special_bonus_scepter"		"4"
+						"display_type"				"kBuffPercentage"
+					}
+					"nethertoxin_bonus_pct"		
+					{
+						"special_bonus_scepter"					"=50"
+					}
+					"nethertoxin_bonus_pct_max_duration_tooltip"
+					{
+						"special_bonus_scepter"					"=4.0"
+					}		
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Viper: Innate Corrosive Skin - Vile
+			//=================================================================================================================
+			"viper_predator"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"damage"				
+					{
+						"value"					"0.25"
+						"hero_levelup"			"+0.05"
+						"special_bonus_unique_viper_predator_damage"		"+0.35"
+					}
+				}
+			}	
+
+			//=================================================================================================================
+			// Viper: Viper Strike
+			//=================================================================================================================
+			"viper_viper_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"hero_viper.viperStrike"
+				"TooltipSummaryProperties"		"#DOTA_Tooltip_AttributeSummary__DPS;bonus_movement_speed;bonus_attack_speed"
+				"AbilityDraftExtraAbilities"
+				{
+					"viper_nose_dive" "scepter"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"750"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+		
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"			
+					{
+						"value"								"6"
+						"special_bonus_unique_viper_4"		"+1"
+					}
+					"damage"
+					{
+						"value"							"70 110 150"
+						"special_bonus_unique_viper_2"	"+70"
+					}
+					"bonus_movement_speed"
+					{
+						"value"				"60 70 80"
+						"display_type"		"kDebuffPercentage"
+					}
+					"bonus_attack_speed"
+					{
+						"value"				"100 140 180"
+						"display_type"		"kDebuffValue"
+					}
+
+					"AbilityCooldown"
+					{
+						"value"				"50 40 30"
+						"special_bonus_unique_viper_8"		"-50%"
+					}
+					"AbilityManaCost"
+					{
+						"value"				"100 150 200"
+						"special_bonus_unique_viper_8"		"-50%"
+					}
+					"projectile_speed"	"1500"
+					"max_charges"			"2"
+					"charge_restore_time"	"30.0"
+					"does_break"
+					{
+						"value"				"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Viper: Nose Dive
+			//=================================================================================================================
+			"viper_nose_dive"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"IsGrantedByScepter"			"1"
+				"MaxLevel"						"1"
+				"SubAbilityNames"				"viper_nethertoxin;viper_corrosive_skin"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastRange"				"700"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75"
+		
+	
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"corrosive_radius"					
+					{
+						"value"			"500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"							"0.1"
+					"effect_duration"						"4"
+					"dive_speed"						
+					{
+						"value"			"700"
+					}
+					"start_height"						"100"
+					"movespeed_slow"					"0"
+
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_VIPER_DIVE"
+				"AbilityCastGestureSlot"	"DEFAULT"
+			}
+		}
+	}
+}

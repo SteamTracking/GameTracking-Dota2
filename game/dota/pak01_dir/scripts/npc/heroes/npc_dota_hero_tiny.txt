@@ -1,0 +1,776 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_tiny"
+	{
+		"Model"			"models/heroes/tiny/tiny_01/tiny_01.vmdl"
+		"Model1"		"models/heroes/tiny/tiny_02/tiny_02.vmdl"
+		"Model2"		"models/heroes/tiny/tiny_03/tiny_03.vmdl"
+		"Model3"		"models/heroes/tiny/tiny_04/tiny_04.vmdl"
+		"SoundSet"		"Hero_Tiny"
+		"PickSound"		"tiny_tiny_spawn_09"
+		"BanSound"		"tiny_tiny_anger_01"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Nuker,Pusher,Initiator,Durable,Disabler"
+		"Rolelevels"	"3,2,2,2,2,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"19"
+		"HeroOrderID"	"28"
+		"BotImplemented"		"1"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"LoadoutScale"		"0.93"
+		"HeroGlowColor"		"254 242 200"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Tiny"
+		"NoCombine"		"0"
+		"new_player_enable"		"1"
+		"LastHitChallengeRival"		"npc_dota_hero_earthshaker"
+		"HeroSelectSoundEffect"		"Hero_Tiny.Pick"
+		"SimilarHeroes"	"23,97,18"
+		"Adjectives"
+		{
+			"Nose"			"0"
+			"Brown"			"1"
+		}
+		"GibType"		"stone"
+		"NameAliases"	"Stone Giant"
+		"Ability1"		"tiny_avalanche"
+		"Ability2"		"tiny_toss"
+		"Ability3"		"tiny_tree_grab"
+		"Ability4"		"tiny_tree_channel"
+		"Ability5"		"tiny_insurmountable"
+		"Ability6"		"tiny_grow"
+		"Ability7"		"tiny_toss_tree"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"tiny_avalanche"
+			"Ability2"	"tiny_toss"
+			"Ability3"	"tiny_tree_grab"
+			"Ability4"	"tiny_grow"
+		}
+
+		"Ability10"		"special_bonus_unique_tiny_4"
+		"Ability11"		"special_bonus_unique_tiny_6"
+		"Ability12"		"special_bonus_strength_10"
+		"Ability13"		"special_bonus_unique_tiny"
+		"Ability14"		"special_bonus_unique_tiny_7"
+		"Ability15"		"special_bonus_unique_tiny_5"
+		"Ability16"		"special_bonus_unique_tiny_3"
+		"Ability17"		"special_bonus_unique_tiny_2"
+
+		"Facets"
+		{
+			"tiny_crash_landing" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Gray"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"tiny_insurmountable" 
+			{
+				"Icon"				"armor"
+				"Color"				"Green"
+				"GradientID"		"4"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"tiny_insurmountable"
+					}
+				}
+			}
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.7"
+		"BaseAttackSpeed"		"85"
+		"AttackAnimationPoint"		"0.40000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"30"
+		"AttributeStrengthGain"		"4.200000"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0.00000"
+		"AttributeBaseIntelligence"		"17"
+		"AttributeIntelligenceGain"		"2.4"
+		"StatusHealthRegen"		"1"
+		"MovementSpeed"		"275"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_tiny"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_tiny/tiny_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Tiny_Body_0"
+				"LoadoutPreviewMode"		"hero_model_override"
+				"TextureWidth"		"1024"
+				"TextureHeight"		"1024"
+				"MaxPolygonsLOD0"		"7000"
+				"MaxPolygonsLOD1"		"5000"
+				"no_import"		"1"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Tiny_Body_1"
+				"LoadoutPreviewMode"		"hero_model_override"
+				"TextureWidth"		"1024"
+				"TextureHeight"		"1024"
+				"MaxPolygonsLOD0"		"8000"
+				"MaxPolygonsLOD1"		"6000"
+				"no_import"		"1"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"neck"
+				"SlotText"		"#LoadoutSlot_Tiny_Body_2"
+				"LoadoutPreviewMode"		"hero_model_override"
+				"TextureWidth"		"2048"
+				"TextureHeight"		"2048"
+				"MaxPolygonsLOD0"		"12000"
+				"MaxPolygonsLOD1"		"7000"
+				"no_import"		"1"
+			}		
+			"4"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Tiny_Body_3"
+				"LoadoutPreviewMode"		"hero_model_override"
+				"TextureWidth"		"2048"
+				"TextureHeight"		"2048"
+				"MaxPolygonsLOD0"		"15000"
+				"MaxPolygonsLOD1"		"8000"
+				"no_import"		"1"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "tiny_avalanche"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "tiny_toss"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_3"
+				"SlotText" "tiny_tree_grab"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_4"
+				"SlotText" "tiny_grow"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_boots"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_bottle"		"ITEM_CORE | ITEM_SELLABLE"
+				"item_sobi_mask"				"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_EXTENSION"
+				"item_ring_of_basilius"			"ITEM_DERIVED"
+				"item_recipe_arcane_boots"		"ITEM_EXTENSION"	
+				"item_arcane_boots"		"ITEM_DERIVED"
+
+				"item_blink"			"ITEM_CORE"
+
+				"item_ogre_axe"			"ITEM_CORE"
+				"item_broadsword"		"ITEM_CORE"
+				"item_void_stone"		"ITEM_CORE"
+				"item_echo_sabre"		"ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+
+				"item_ring_of_tarrasque"		"ITEM_LUXURY"
+				"item_reaver"			"ITEM_LUXURY"
+				//"item_vitality_booster"	"ITEM_LUXURY"
+				"item_recipe_heart"	 "ITEM_LUXURY"
+				"item_heart"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"tiny_avalanche"
+				"2"		"tiny_toss"
+				"3"		"tiny_avalanche"
+				"4"		"tiny_toss"
+				"5"		"tiny_toss"
+				"6"		"tiny_grow"
+				"7"		"tiny_toss"
+				"8"		"tiny_avalanche"
+				"9"		"tiny_avalanche"
+				"10"		"special_bonus_unique_tiny_4"
+				"11"		"tiny_tree_grab"
+				"12"		"tiny_grow"
+				"13"		"tiny_tree_grab"
+				"14"		"tiny_tree_grab"
+				"15"		"special_bonus_unique_tiny"
+				"16"		"tiny_tree_grab"
+				"17"		""
+				"18"		"tiny_grow"
+				"19"		""
+				"20"		"special_bonus_unique_tiny_5"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_tiny_3"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_TANK | DOTA_BOT_STUN_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_tiny.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_tiny.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"		"1"
+			"attach_attack2"		"2"
+			"attach_head"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Tiny: Avalanche
+			//=================================================================================================================
+			"tiny_avalanche"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.Avalanche"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"105 120 135 150"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCastRange"				
+						{
+							"value"		"600"
+							"special_bonus_unique_tiny_4" "+150"
+						}
+						"radius"
+						{
+							"value"			"325 340 355 370"
+							"affected_by_aoe_increase"	"1"
+						}
+						"tick_interval"				"0.3"
+						"total_duration"			"1.5"
+						"tick_count"			"5"
+						"stun_duration"				"0.3"
+						"projectile_speed"		"1200"
+						"avalanche_damage"			
+						{
+							"value"				"90 180 270 360"
+							"special_bonus_unique_tiny"			"+90"
+						}
+				
+						"AbilityCooldown"
+						{
+							"value"							"23 20 17 14"
+							"special_bonus_unique_tiny_3"	"-8"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Tiny: Toss
+			//=================================================================================================================
+			"tiny_toss"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_RUNE_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"1"
+				//"HasShardUpgrade"				"1"
+		
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800 900 1000 1100"
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 17 14 11"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.25"	// generally used for damage only
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"				"1.1"
+						"grab_radius"			
+						{
+							"value"			"300"
+						}
+						"radius"				
+						{
+							"value"		"275"
+							"special_bonus_shard"				"=400"
+							"affected_by_aoe_increase"	"1"
+						}
+						"toss_damage"	
+						{
+							"value"				"90 180 270 360"
+							"CalculateSpellDamageTooltip"	"1"
+						}
+						"toss_land_damage_pct"
+						{	
+							"value"							"0"
+							"RequiresShard"						"1"
+							"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+							"special_bonus_shard"				"20"
+						}
+						"AbilityCharges"		
+						{
+							"value"				""
+							"special_bonus_unique_tiny_2" "+2"
+						}
+
+				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Tiny: Craggy Exterior
+			//=================================================================================================================
+			"tiny_craggy_exterior"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE "
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"AbilitySound"					"Hero_Tiny.CraggyExterior.Stun"
+
+				"MaxLevel"						"4"
+				"FightRecapLevel"				"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+				"DependentOnAbility"			"tiny_grow"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"35"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"debuff_duration"						"5"
+					"damage"								"0"
+					"max_stacks"							"10"
+					"damage_reduction_per_stack"					"2 3 4 5"
+				}
+			}
+
+			//=================================================================================================================
+			// Tiny: Tree Grab
+			//=================================================================================================================
+			"tiny_tree_grab"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Tiny.CraggyExterior.Stun"
+				"LinkedAbility"					"tiny_toss_tree"        
+				"MaxLevel"						"4"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"tiny_tree_channel" "scepter"
+				}
+
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"200"
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16 13 10 7"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40 35 30 25"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"		"35"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attack_count"				
+					{
+						"value" 								"5 6 7 8"
+						"special_bonus_unique_tiny_6" "+2"
+
+					}
+
+					"bonus_damage"
+					{
+						"value"							"10 20 30 40"				
+						"special_bonus_unique_tiny_7"		"+60"
+					}
+					"bonus_damage_buildings"
+					{
+						"value"							"30 40 50 60"
+					}
+					"attack_range"				"300"
+					"splash_width"
+					{
+						"value"				"200"
+					}
+					"splash_range"
+					{
+						"value"				"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"splash_pct"				"70 80 90 100"
+					"bat_increase"			"0.0"
+					"speed_reduction"			"0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Ability: Tiny Toss Tree
+			//=================================================================================================================
+			"tiny_toss_tree"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"LinkedAbility"					"tiny_tree_grab"
+				"MaxLevel"						"4"
+				//"HasShardUpgrade"				"1"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.2"
+		 		"AbilityCastAnimation"		"ACT_INVALID"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed"		"900.0"
+					"range"		"1000"
+					"bonus_damage"				
+					{
+						"value"							"10 20 30 40"				
+						"special_bonus_unique_tiny_7"		"+60"
+						"special_bonus_shard"			"+50"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"splash_radius"				
+					{
+						"value"					"275"
+						"special_bonus_shard"	"=400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"movement_slow"				"0"
+					"slow_duration"				"0"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Tiny Tree Channel (Scepter)
+			//=================================================================================================================
+			"tiny_tree_channel"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED  | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"1"
+				"MaxLevel"						"1"
+		        "HasScepterUpgrade"				"1"
+		        "IsGrantedByScepter"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityChannelTime"			"2.5"
+				"AbilityCastRange"				"1200"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityChannelAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"17"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed"		"1000.0"
+					"range"		"1200"
+					"splash_radius"				
+					{
+						"value"		"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"tree_grab_radius"		
+					{
+						"value"		"700"
+						"affected_by_aoe_increase"	"1"
+					}
+					"interval"		"0.5"
+				}
+			}
+	
+			//=================================================================================================================
+			// Tiny: Grow
+			//=================================================================================================================
+			"tiny_grow"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilitySound"					"Tiny.Grow"
+				"AbilityCastAnimation"		"ACT_INVALID"
+
+				"HasShardUpgrade"               "1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_armor"				"5 10 15"
+					"bonus_damage"			
+					{
+						"value"					"60 120 180"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"attack_speed_reduction"	
+					{
+						"value"		"-35"
+					}
+					"toss_bonus_damage"
+					{
+						"value"					"50 200 350"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+					}
+					"move_speed"		"10 20 30"
+
+					"land_movement_slow"
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"35"
+					}
+					"land_attack_slow"
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"45"
+					}
+			
+			
+					"land_debuff_duration"
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"=3.0"
+					}
+
+					"land_radius_tooltip"	
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"125"
+					}
+					"land_toss_damage_tooltip"	
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"20"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+					}
+					"land_tree_damage_tooltip"	
+					{
+						"RequiresShard"						"1"
+						"special_bonus_shard"				"50"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Rocksteady
+			//=================================================================================================================
+			"tiny_rocksteady"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"Innate"			"1"
+				"MaxLevel"			"1"
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_attack_speed"			"100"
+					"attack_speed_to_damage"	"60"
+				}
+			}
+			//=================================================================================================================
+			// Insurmountable
+			//=================================================================================================================
+			"tiny_insurmountable"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"AbilityTextureName"			"tiny_craggy_exterior"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"str_to_slow_resist_pct"			"15"
+					"str_to_status_resist_pct"			"10"
+				}
+			}
+		}
+	}
+}

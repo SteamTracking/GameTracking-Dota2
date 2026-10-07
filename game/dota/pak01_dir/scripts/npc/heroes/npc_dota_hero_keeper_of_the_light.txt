@@ -1,0 +1,816 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_keeper_of_the_light"
+	{
+		"Model"		"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+		"IdleExpression"		"scenes/keeper_of_the_light/keeper_of_the_light_exp_idle_01.vcd"
+		"SoundSet"		"Hero_KeeperOfTheLight"
+		"Enabled"		"1"
+		"Role"			"Support,Nuker,Disabler"
+		"Rolelevels"	"3,2,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"90"
+		"HeroOrderID"	"89"
+		"ModelScale"		"0.800000"
+		"VersusScale"		"0.80"
+		"LoadoutScale"		"0.80"
+		"NameAliases"		"keeper;ezalor;kotl"
+		"workshop_guide_name"		"Keeper of the Light"
+		"PickSound"		"keeper_of_the_light_keep_spawn_01"
+		"BanSound"		"keeper_of_the_light_keep_anger_05"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"64,5,31"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"Bearded"		"1"
+			"Parent"		"1"
+			"Yellow"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_chaos_knight"
+		"HeroSelectSoundEffect"		"Hero_KeeperOfTheLight.Pick"
+		"GibType"		"default"
+		"Ability1"		"keeper_of_the_light_illuminate"
+		"Ability2"		"keeper_of_the_light_blinding_light"
+		"Ability3"		"keeper_of_the_light_chakra_magic"
+		"Ability4"		"keeper_of_the_light_radiant_bind"
+		"Ability5"		"keeper_of_the_light_will_o_wisp"
+		"Ability6"		"keeper_of_the_light_spirit_form"
+		"Ability7"		"keeper_of_the_light_illuminate_end"
+		"Ability8"		"keeper_of_the_light_bright_speed"
+		"Ability9"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"keeper_of_the_light_illuminate"
+			"Ability2"		"keeper_of_the_light_blinding_light"
+			"Ability3"		"keeper_of_the_light_chakra_magic"
+			"Ability4"		"keeper_of_the_light_spirit_form"
+		}
+
+		"Ability11"		"special_bonus_unique_keeper_of_the_light_8"
+		"Ability12"		"special_bonus_unique_keeper_of_the_light_illuminate_cooldown"
+		"Ability13"		"special_bonus_unique_keeper_of_the_light_11"
+		"Ability14"		"special_bonus_unique_keeper_of_the_light_5"
+		"Ability15"		"special_bonus_unique_keeper_of_the_light_2"
+		"Ability16"		"special_bonus_unique_keeper_of_the_light_3"
+		"Ability17"		"special_bonus_unique_keeper_of_the_light_14"
+		"Ability18"		"special_bonus_unique_keeper_of_the_light"
+		
+		"Facets"
+		{
+			"keeper_of_the_light_facet_solar_bind"
+			{
+				"Icon"				"slow"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"keeper_of_the_light_radiant_bind"
+						"AbilityIndex"	"3"
+						"AutoLevelAbility"	"true"						
+					}
+				}
+				"Deprecated"		"true"
+			}
+
+			"keeper_of_the_light_facet_recall"
+			{
+				"Icon"				"teleport"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"keeper_of_the_light_recall"
+						"AbilityIndex"	"3"
+						"AutoLevelAbility"	"true"						
+					}
+				}
+				"Deprecated"		"true"
+			}
+		}		
+		"AbilityTalentStart" "11"
+
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"BaseAttackSpeed"		"90"
+		"StatusHealthRegen"		"0.25"
+		"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.600000"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"3.3"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.70000"
+		"particle_folder"		"particles/units/heroes/hero_keeper_of_the_light"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_keeper_of_the_light/keeper_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"mount"
+				"SlotText"		"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "keeper_of_the_light_illuminate"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "keeper_of_the_light_blinding_light"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PUSH_SUPPORT | DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_keeper_of_the_light.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_keeper_of_the_light_mount.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_keeper_of_the_light.vpcf"
+			"party_hat_effect_1"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_keeper_of_the_light_mount.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_head_mount"	"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Keeper of the Light: Illuminate
+			//=================================================================================================================
+			"keeper_of_the_light_illuminate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_KeeperOfTheLight.Illuminate.Discharge"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1800"
+				"AbilityCastPoint"				"0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityChannelTime"			"3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150 175"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"total_damage"
+					{
+						"value"				"185 290 395 500"
+						"special_bonus_unique_keeper_of_the_light"		"+200"
+					}
+					"max_channel_time"		"3"
+					"radius"				
+					{
+						"value"		"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"range"					"1550"
+					"speed"					"900"
+					"vision_radius"			
+					{
+						"value"		"800 800 800 800"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vision_duration"		"3.34 3.34 3.34 3.34"
+					"AbilityCooldown"				
+					{
+						"value"					"13"
+						"special_bonus_unique_keeper_of_the_light_illuminate_cooldown"			"-2"
+					}
+					"channel_vision_radius"
+					{
+						"value"	"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"channel_vision_interval"	"0.5"
+					"channel_vision_duration"	"10.34"
+					"channel_vision_step"		"150 180 210 240"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Mana Leak
+			//=================================================================================================================
+			"keeper_of_the_light_mana_leak"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"13 12 11"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"160"		
+
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"650"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value" "5.0 5.5 6.0"
+					}
+					"mana_leak_pct"
+					{
+						"value" "6"
+					}
+					"stun_duration"
+					{
+						"value" "2 2.25 2.5"
+					}
+				}
+			}	
+
+			//=================================================================================================================
+			// Keeper of the Light: Radiant Bind // Solar Bind
+			//=================================================================================================================
+			"keeper_of_the_light_radiant_bind"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"		
+
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"750"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"					"6"
+						"slow"						"10"
+						"magic_resistance"			
+						{
+							"value"				"20 30 40"
+							"special_bonus_unique_keeper_of_the_light_3"			"+10"
+						}
+						"stun_duration"			
+						{
+							"value"			"0"
+						}
+						"AbilityCooldown"			
+						{
+							"value"					"14"
+							"special_bonus_shard"		"=0"
+						}
+						"AbilityChargeRestoreTime"			
+						{
+							"value"					"0"
+							"special_bonus_shard"		"=14"
+						}
+						"AbilityCharges"
+						{
+							"value"					"0"
+							"special_bonus_shard"		"=2"
+						}
+					
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}	
+
+			//=================================================================================================================
+			// Keeper of the Light: Will-O-Wisp
+			//=================================================================================================================
+			"keeper_of_the_light_will_o_wisp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
+
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"60"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"		
+
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"on_count"					"5"
+						"radius"					
+						{
+							"value"					"725"
+							"affected_by_aoe_increase"	"1"
+						}
+						"hit_count"					"7"
+						"wisp_damage"				"85"
+						"off_duration"				"1.85"
+						"on_duration"				"1.0"
+						"off_duration_initial"		"1.0"
+						"fixed_movement_speed"		"60"
+						"wisp_duration_tooltip"		"13.4" //off_duration_initial + on_count * (on_duration + off_duration) - off_duration;
+
+						"bounty"		"100"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}	
+
+			//=================================================================================================================
+			// Keeper of the Light: Chakra Magic
+			//=================================================================================================================
+			"keeper_of_the_light_chakra_magic"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilitySound"					"Hero_KeeperOfTheLight.ChakraMagic.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900 900 900 900"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"mana_restore"
+					{
+						"value"			"105 170 235 300"
+					}						
+					"cooldown_reduction"	"2.5 3.5 4.5 5.5"
+					"mana_leak_pct"	"4.5 5 5.5 6.0"
+					"duration"	"5"
+					"AbilityCooldown"
+					{
+						"value"			"20 17 14 11"
+						//"special_bonus_unique_keeper_of_the_light_7"	"-2"
+					}	
+					"self_bonus"				"30"
+					"strong_dispel"
+					{
+						"special_bonus_unique_keeper_of_the_light_14"	"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Empty 1
+			//=================================================================================================================
+			"keeper_of_the_light_empty1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"0"
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Empty 2
+			//=================================================================================================================
+			"keeper_of_the_light_empty2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"0"
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Spirit Form
+			//=================================================================================================================
+			"keeper_of_the_light_spirit_form"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_KeeperOfTheLight.SpiritForm"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"keeper_of_the_light_radiant_bind" ""
+					"keeper_of_the_light_will_o_wisp" "scepter"
+				}
+
+				"HasShardUpgrade"				"1"				
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"85 80 75"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75 125 175"		
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.35"	// Attacks are primarily about the damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"				"40.0 45.0 50.0"
+						"special_bonus_unique_keeper_of_the_light_2"	"+15"
+					}
+					"movement_speed"
+					{
+						"value"				"50"
+						"special_bonus_unique_keeper_of_the_light_11"	"+25"
+					}
+					"cast_range"			"100 175 250"
+					"illuminate_heal"			
+					{
+						"value"						"60" 
+						"special_bonus_shard"		"+40"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Recall
+			//=================================================================================================================
+			"keeper_of_the_light_recall"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"3"
+				"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"teleport_delay"	
+					{
+						"value"							"6 5 4"
+					}
+					"movespeed_bonus_duration"			"4"
+					"ally_movespeed_pct"
+					{
+						"value"							"12 16 20"	
+					}
+					"AbilityCooldown"			
+					{
+						"value"							"30"
+					}
+					"AbilityChargeRestoreTime"			
+					{
+						"value"							"0 0 0"
+					}
+					"AbilityCharges"
+					{
+						"value"							"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Blinding Light
+			//=================================================================================================================
+			"keeper_of_the_light_blinding_light"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_KeeperOfTheLight.BlindingLight"
+				"MaxLevel"						"4"
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"500 575 650 725"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120 130 140 150"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"1.0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"miss_rate"				
+						{
+							"value"				"45"
+							"special_bonus_unique_keeper_of_the_light_8" "+40"
+						}
+						"duration"				"4"
+						"radius"				
+						{
+							"value"			"425 450 475 500"
+							"affected_by_aoe_increase"	"1"
+						}
+						"knockback_duration"	"0.6"
+						"knockback_distance"	
+						{
+							"value"		"175"
+							"affected_by_aoe_increase"	"1"
+						}
+						"damage"				
+						{
+							"value"											"90 140 190 240"
+							"special_bonus_unique_keeper_of_the_light_5"	"+90"
+
+						}
+
+						"AbilityCooldown"
+						{
+							"value"											"24 21 18 15"
+						}
+			
+				}
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Illuminate End
+			//=================================================================================================================
+			"keeper_of_the_light_illuminate_end"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+	
+			//=================================================================================================================
+			// Keeper of the Light: Illuminate End
+			//=================================================================================================================
+			"keeper_of_the_light_mana_magnifier"
+			{
+		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"aura_radius"	
+					{
+						"value"		"900"
+						"affected_by_aoe_increase"	"1"
+					}
+					"bonus_mana_pct"	"15"
+				}
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Special Reserve
+			//=================================================================================================================
+			"keeper_of_the_light_special_reserve"
+			{
+		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"minimum_mana"				"75"
+				}
+			}
+
+			//=================================================================================================================
+			// Keeper of the Light: Bright Speed
+			//=================================================================================================================
+			"keeper_of_the_light_bright_speed"
+			{
+		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"intelligence_per_speed"				"3.0"
+					"movement_per_vision"					"300"
+					"vision_radius"							"400"
+					"vision_duration"						"3.0"
+					"current_speed"
+					{
+						"dynamic_value"		"true"
+					}
+				}
+			}
+		}
+	}
+}

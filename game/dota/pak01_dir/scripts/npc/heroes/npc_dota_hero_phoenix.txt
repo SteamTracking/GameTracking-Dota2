@@ -1,0 +1,751 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_phoenix"
+	{
+		"Model"		"models/heroes/phoenix/phoenix_bird.vmdl"
+		"SoundSet"		"Hero_Phoenix"
+		"IdleSoundLoop"		"Hero_Phoenix.IdleLoop"
+		"IdleExpression"		"scenes/phoenix/phoenix/phoenix_phoenix_bird_exp_idle_01.vcd"
+		"HeroID"		"110"
+		"HeroOrderID"	"106"
+		"Enabled"		"1"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Support,Nuker,Initiator,Escape,Disabler"
+		"Rolelevels"	"2,3,2,2,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"ModelScale"		"0.950000"
+		"VersusScale"		"0.950000"
+		"NameAliases"		"ph"
+		"workshop_guide_name"		"Phoenix"
+		"NoCombine"		"1"
+		"SimilarHeroes"		"85,83,64"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Nose"			"0"
+			"Flying"		"1"
+			"Red"			"1"
+			"Fiery"			"1"
+			"Yellow"		"1"
+		}
+		"PickSound"		"phoenix_phoenix_bird_respawn"
+		"BanSound"		"phoenix_phoenix_bird_moving01"
+		"HeroSelectSoundEffect"		"Hero_Phoenix.Pick"
+		"GibType"		"fire"
+		"Ability1"		"phoenix_icarus_dive"
+		"Ability2"		"phoenix_fire_spirits"
+		"Ability3"		"phoenix_sun_ray"
+		"Ability4"		"phoenix_sun_ray_toggle_move"
+		"Ability5"		"phoenix_dying_light"
+		"Ability6"		"phoenix_supernova"
+		"Ability7"		"phoenix_launch_fire_spirit"
+		"Ability8"		"phoenix_icarus_dive_stop"
+		"Ability9"		"phoenix_sun_ray_stop"
+		"Ability10"		"special_bonus_unique_phoenix_6"
+		"Ability11"		"special_bonus_unique_phoenix_dying_light_damage"
+		"Ability12"		"special_bonus_unique_phoenix_3"
+		"Ability13"		"special_bonus_hp_regen_25"
+		"Ability14"		"special_bonus_unique_phoenix_5"
+		"Ability15"		"special_bonus_unique_phoenix_2"
+		"Ability16"		"special_bonus_unique_phoenix_1"
+		"Ability17"		"special_bonus_unique_phoenix_4"
+		
+		"Facets"
+		{
+			"phoenix_facet_immolate"
+			{
+				"Icon"				"barrier"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"phoenix_dying_light"
+					}
+				}
+			}
+
+			"phoenix_hotspot" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+			}
+		}
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"phoenix_icarus_dive"
+			"Ability2"		"phoenix_fire_spirits"
+			"Ability3"		"phoenix_sun_ray"
+			"Ability4"		"phoenix_supernova"
+		}
+
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"21"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.3"
+		"AttributeBaseAgility"		"12"
+		"AttributeAgilityGain"		"1.5"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.8"
+		"StatusHealthRegen"		"2.0"
+		"MovementSpeed"		"280"
+		"MovementTurnRate"		"0.900000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"250"
+		"particle_folder"		"particles/units/heroes/hero_phoenix"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_phoenix.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Wings"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"10000"
+				"MaxPolygonsLOD1"		"4000"
+				"no_import"		"1" //imported using template
+			}
+
+			"2"	
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"ability_ultimate"
+				"SlotText"		"#LoadoutSlot_Phoenix_Supernova"
+//				"LoadoutPreviewMode"		"transformation"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"5000"
+				"MaxPolygonsLOD1"		"2000"
+				"no_import"		"1" //imported using template
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_phoenix_sun"
+				}
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_1"
+				"SlotText" "phoenix_icarus_dive"
+				"DisplayInLoadout" "0"
+			}	
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_2"
+				"SlotText" "phoenix_fire_spirits"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_3"
+				"SlotText" "phoenix_sun_ray"
+				"DisplayInLoadout" "0"
+			}	
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_4"
+				"SlotText" "phoenix_supernova"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"0"
+			}
+
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phoenix.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_phoenix.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_wingtipR"		   "2"
+			"attach_wingtipL"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Phoenix: Icarus Dive
+			//=================================================================================================================
+			"phoenix_icarus_dive"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Phoenix.IcarusDive.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"40 35 30 25"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+		
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"hp_cost_perc"			"15"
+						"dash_length"			
+						{
+							"value"	"1100 1200 1300 1400" 
+							"special_bonus_unique_phoenix_4" "+1000"
+						}
+						"dash_width"			
+						{
+							"value"	"500"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"hit_radius"			
+						{
+							"value"			"200"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"burn_duration"			"4"
+						"damage_per_second"		
+						{
+							"value"				"20 40 60 80"
+
+						}
+				
+						"burn_tick_interval"	"0.2"
+						"slow_movement_speed_pct"	
+						{
+							"value"		"10 15 20 25"
+						"special_bonus_unique_phoenix_6" "+25"
+						}
+						"dive_duration"			"2.0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Phoenix: Icarus Dive Stop
+			//=================================================================================================================
+			"phoenix_icarus_dive_stop"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Phoenix: Fire Spirits
+			//=================================================================================================================
+			"phoenix_fire_spirits"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Phoenix.FireSpirits.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"1400"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"50 40 30 20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"hp_cost_perc"		"20"
+						"spirit_duration"	"20"
+						"spirit_speed"		"1000"
+						"radius"			
+						{
+							"value"		"200"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"duration"			"4.0"
+						"attackspeed_slow"	"-35 -70 -105 -140"			// NOTE: also update phoenix_launch_fire_spirit attackspeed_slow
+						"damage_per_second"				
+						{
+							"value"		"20 40 60 80"
+						"special_bonus_unique_phoenix_3" "+20"
+						}
+						"spirit_count"		"5"
+						"tick_interval"		"0.2"
+				}
+			}
+
+			//=================================================================================================================
+			// Phoenix: Sun Ray
+			//=================================================================================================================
+			"phoenix_sun_ray"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Phoenix.SunRay.Cast"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				// ---------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"			// if changing this, update focal_point_full_length_tooltip_only
+				"AbilityCastPoint"				"0.01"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30"
+				"AbilityDuration"				"6.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 110 120 130"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"hp_cost_perc_per_second"		"5"
+						"base_damage"			"15 20 25 30"
+						"hp_perc_damage"		
+						{
+							"value"			"1.5 3 4.5 6.0"
+						"special_bonus_unique_phoenix_5" "+1.25"
+						}
+						"base_heal"			"7 10 13 16"
+						"hp_perc_heal"			"0.4 0.8 1.2 1.6"
+						"radius"			
+						{
+							"value"	"130"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"tick_interval"		"0.2"
+						"forward_move_speed"	"250"
+						"turn_rate_initial"			"250"
+						"turn_rate"					"25"
+						"shard_move_slow_pct"			
+						{
+							"value"					"0"
+						}
+						"focal_point_max_multiplier"					// 0 disables
+						{
+							"value"										"0"
+						}
+						"focal_point_start_length_pct"
+						{
+							"value"										"0"
+						}
+						"focal_point_full_length_tooltip_only"
+						{
+							"value"										"0"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Phoenix: Sun Ray Stop
+			//=================================================================================================================
+			"phoenix_sun_ray_stop"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Phoenix: Sun Ray Toggle Move
+			//=================================================================================================================
+			"phoenix_sun_ray_toggle_move"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"MaxLevel"						"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Phoenix: Supernova
+			//=================================================================================================================
+			"phoenix_supernova"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"HasScepterUpgrade"			"1"
+				"AbilitySound"					"Hero_Phoenix.SuperNova.Begin"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"450"
+				"AbilityCastPoint"				"0.01"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"120"
+				"AbilityDuration"				"6.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 200 250"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"aura_radius"		
+						{
+							"value"	"1200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"damage_per_sec"	"50 80 110"
+						"tick_interval"		"0.2"
+						"stun_duration"		
+						{
+							"value"			"1.6 2 2.4"
+							"special_bonus_unique_phoenix_2" "+0.6"
+						}
+						"max_hero_attacks"	
+						{
+							"value"			"6 8 10"
+							"special_bonus_unique_phoenix_1" "+2"
+						}
+						"max_hero_attacks_scepter"	
+						{
+							"special_bonus_scepter"	"7 10 13"
+							"special_bonus_unique_phoenix_1" "+2"
+						}
+						"cast_range_tooltip_scepter"
+						{
+							"special_bonus_scepter"			"500"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Phoenix: Launch Fire Spirit
+			//=================================================================================================================
+			"phoenix_launch_fire_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_Phoenix.FireSpirits.Launch"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1400"
+				"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0 0 0 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0 0 0 0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"hp_cost_perc"		"20"
+						"spirit_duration"	"20.0 20.0 20.0 20.0"
+						"spirit_speed"		"1000 1000 1000 1000"
+						"radius"			
+						{
+							"value"	"200"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"duration"			"4.0"
+						"attackspeed_slow"	"-35 -70 -105 -140"					// NOTE: also update phoenix_fire_spirits attackspeed_slow
+						"damage_per_second"				
+						{
+							"value"			"20 40 60 80"
+						"special_bonus_unique_phoenix_3" "+20"
+						}
+						"spirit_count"		"5"
+						"tick_interval"		"0.2"
+				}
+			}
+
+
+			//=================================================================================================================
+			// Phoenix Innate Outburst
+			//=================================================================================================================
+			"phoenix_dying_light"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"radius"					
+					{
+						"value"			"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"damage_pct"				
+					{
+						"value"			"3.5"
+						"special_bonus_unique_phoenix_dying_light_damage"			"+1"
+					}
+					"tick_interval"		"0.2"
+				}
+			}
+			//=================================================================================================================
+			// Phoenix Innate Blinding Sun
+			//=================================================================================================================
+			"phoenix_blinding_sun"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"blind_per_second"	
+					{
+						"value"				"0"
+						"special_bonus_unique_phoenix_blinding_sun_misschance"		"+0"
+					}
+					"blind_duration"	"0"	
+				}
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_dive_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_blinding_sun_misschance"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_phoenix_dying_light_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+	
+		}
+	}
+}

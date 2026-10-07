@@ -1,0 +1,729 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_monkey_king"
+	{
+		"Model"		"models/heroes/monkey_king/monkey_king.vmdl"
+		"IdleExpression"		"scenes/monkey_king/monkey_king_exp_idle_01.vcd"
+		"SoundSet"		"Hero_MonkeyKing"
+		"PickSound"		"monkey_king_monkey_spawn_17"
+		"BanSound"		"monkey_king_monkey_anger_12"
+		"HeroSelectSoundEffect"		"Hero_MonkeyKing.Pick"
+		"GibType"		"default"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Escape,Disabler,Initiator"
+		"Rolelevels"	"2,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"114"
+		"HeroOrderID"	"113"
+		"NameAliases"		"mk;Sun Wukong"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"95,44,70"
+		"Adjectives"
+		{
+			"Fuzzy"			"1"
+			"Cape"			"1"
+			"Green"			"1"
+		}
+		"ModelScale"		"0.8100"
+		"VersusScale"		"0.81"
+		"LoadoutScale"		"0.8100"
+		"workshop_guide_name"		"Monkey King"
+		"Ability1"		"monkey_king_boundless_strike"
+		"Ability2"		"monkey_king_tree_dance"
+		"Ability3"		"monkey_king_primal_spring"
+		"Ability4"		"monkey_king_jingu_mastery"
+		"Ability5"		"monkey_king_mischief"
+		"Ability6"		"monkey_king_wukongs_command"
+		"Ability7"		"monkey_king_primal_spring_early"
+		"Ability8"		"monkey_king_untransform"
+		"Ability9"		"monkey_king_transfiguration"
+		"Ability10"		"special_bonus_unique_monkey_king_7"
+		"Ability11"		"special_bonus_unique_monkey_king_9"
+		"Ability12"		"special_bonus_unique_monkey_king_8"
+		"Ability13"		"special_bonus_unique_monkey_king_2"
+		"Ability14"		"special_bonus_unique_monkey_king_3"
+		"Ability15"		"special_bonus_unique_monkey_king_10"
+		"Ability16"		"special_bonus_unique_monkey_king_11"
+		"Ability17"		"special_bonus_unique_monkey_king_6"
+		"Facets"
+		{
+			"monkey_king_wukongs_faithful"
+			{
+				"Icon"				"summons"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"monkey_king_simian_stride" 
+			{
+				"Icon"				"tree"
+				"Color"				"Green"
+				"GradientID"		"4"
+				"MaxHeroAttributeLevel"	"6"
+				"Deprecated"		"true"
+			}
+			"monkey_king_transfiguration"
+			{
+				"Icon"				"summons"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"monkey_king_transfiguration"
+						"AbilityIndex"	"9"
+					}
+				}
+			}
+
+
+			
+		}
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"monkey_king_boundless_strike"
+			"Ability2"		"monkey_king_tree_dance"
+			"Ability3"		"monkey_king_jingu_mastery"
+			"Ability4"		"monkey_king_wukongs_command"
+		}
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.600000"
+		"BaseAttackSpeed"		"95"
+		"AttackAnimationPoint"		"0.45"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"300"
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.8"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.700000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"1.8"
+		"StatusHealthRegen"		"1.0"
+		"MovementSpeed"			"300"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"HasAggressiveStance"	"0"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"particle_folder"		"particles/units/heroes/hero_monkey_king"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_monkey_king.vsndevts"
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_1"
+				"SlotText" "monkey_king_boundless_strike"
+				"DisplayInLoadout" "0"
+			}	
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_4"
+				"SlotText" "monkey_king_wukongs_command"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "hero_base"
+				"SlotText"		"#LoadoutSlot_Monkey_King_Base"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_monkey_king.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_monkey_king.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_hand_l"				"1"
+			"attach_weapon_bot"			"2"
+			"attach_weapon_top"			"3"
+			"attach_head"				"4"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Monkey King: Boundless Strike
+			//=================================================================================================================
+			"monkey_king_boundless_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_MK_STRIKE"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.4"
+				"HasShardUpgrade"				"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"85 90 95 100"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"stun_duration"
+					{
+						"value"										"0.7 0.9 1.1 1.3"
+						"special_bonus_unique_monkey_king_9"		"+0.2"
+					}
+					"strike_crit_mult"
+					{
+						"value"						"120 140 160 180"	
+						"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+						"special_bonus_unique_monkey_king_10"			"+60"
+					}
+					"strike_flat_damage"	"20 40 60 80"
+			
+					"AbilityCooldown"				
+					{
+						"value"					"24 21 18 15"	
+					}
+					"strike_radius"				
+					{
+						"value"	"150"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"AbilityCastRange"
+					{
+						"value"									"1100"
+					}
+					"strike_cast_range"
+					{
+						"value"									"1100"
+					}
+					"soldier_spawn_duration"		"0"
+					"acceleration_z"					"5000"
+					"min_height_above_lowest"			"100"
+					"min_height_above_highest"			"150"
+					"max_horizontal_acceleration"		"30000"
+					"duration"							"0.2"
+					"spring_channel_pct"				"35"
+
+				}
+			}
+
+			//=================================================================================================================
+			// Monkey King: Mischief
+			//=================================================================================================================
+			"monkey_king_mischief"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"FightRecapLevel"				"2"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilitySound"					"Hero_MonkeyKing.Transform.On"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0 0 0 0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movespeed"					"8"
+					"reveal_radius"				"200"
+
+					"AbilityCooldown"
+					{
+						"value"					"24.5"
+						"hero_levelup"			"-0.5"
+					}
+			
+					"invul_duration"			
+					{
+						"value"										"0.1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Monkey King: Un-Transform
+			//=================================================================================================================
+			"monkey_king_untransform"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilitySound"					"Hero_MonkeyKing.Transform.Off"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				"MaxLevel"						"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1"
+				"AbilityDuration"				"10.0 10.0 10.0 10.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0 0 0 0"
+			}
+
+			//=================================================================================================================
+			// Monkey King: Tree Dance
+			//=================================================================================================================
+			"monkey_king_tree_dance"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilitySound"					"Hero_MonkeyKing.TreeJump.Cast"
+
+				"FightRecapLevel"				"1"
+		        "RestrictValuesToMaxLevel"		"1"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"monkey_king_primal_spring" "hidden"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.2"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.9 0.6 0.3 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"leap_speed"				"600"
+
+					// this should belong to Spring ability but for how it gets called it's simpler to have Tree Jump own it
+					"spring_leap_speed"			"1300"
+
+					"give_up_distance"				"1850"
+					"ground_jump_distance"
+					{
+						"value"									"900"
+						"special_bonus_unique_monkey_king_7"	"+300"
+					}
+					"perched_jump_distance"
+					{
+						"value"						"900"
+						"special_bonus_unique_monkey_king_7"	"+300"
+					}
+					"jump_damage_cooldown"
+					{
+						"value"						"3.0"
+
+						// "damage" in attribute name but it isn't really
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"perched_day_vision"			"700"
+					"perched_night_vision"			"500"
+					"perched_spot_height"			"192.0"
+					"unperched_stunned_duration"	"3.0"
+					"top_level_height"				"500"
+					"impact_damage_tooltip"
+					{
+						"value"						"140 210 280 350"
+					}
+					"impact_movement_slow_tooltip"	"20 40 60 80"
+					"range"				"900"
+					"max_level"
+					{
+						"value"				"4"
+						"special_bonus_facet_monkey_king_simian_stride"				"+1"
+					}
+					"max_level_tooltip"
+					{
+						"special_bonus_facet_monkey_king_simian_stride"				"=5"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Primal Spring
+			//=================================================================================================================
+			"monkey_king_primal_spring"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_MonkeyKing.Spring.Channel"
+				"DependentOnAbility"			"monkey_king_tree_dance"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+				"AbilityCastRange"				"800"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityChannelTime"			"1.75"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value" "18 16 14 12"
+						"special_bonus_unique_monkey_king_8" "=0"
+					}
+
+					"impact_damage"			
+					{
+						"value"		"110 200 290 380"
+					}
+					"impact_movement_slow"	"30 40 50 60"
+					"impact_slow_duration"	"4.0"
+					"impact_radius"			
+					{
+						"value"		"375"
+						"affected_by_aoe_increase"	"1"		
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Monkey King: Primal Spring (Early)
+			//=================================================================================================================
+			"monkey_king_primal_spring_early"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+				"AbilityTextureName"		"monkey_king_primal_spring"
+				"DependentOnAbility"		"monkey_king_primal_spring"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Monkey King: Wukong's Command
+			//=================================================================================================================
+			"monkey_king_wukongs_command"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_MonkeyKing.FurArmy"
+		        "HasScepterUpgrade"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"1.0"
+				"AbilityCastRange"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"100 90 80"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"first_radius"						
+						{
+							"value"		"300"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"second_radius"						
+						{
+							"value"		"750"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"third_radius"
+						{
+							"special_bonus_unique_monkey_king_6"	"=1100"
+							"affected_by_aoe_increase"	"1"
+						}
+						"num_first_soldiers"				"5"
+						"num_second_soldiers"				"9"
+						"num_third_soldiers"
+						{
+							"special_bonus_unique_monkey_king_6"	"=7"
+						}
+						"move_speed"						"700"
+						"bonus_armor"						
+						{
+							"value"			"15 20 25"
+						}
+						"attack_speed"						"1.1"
+						"attack_speed_pct"					"0"
+						"damage_pct"						"0"
+						"duration"							
+						{
+							"value"								"14"
+							"special_bonus_facet_monkey_king_wukongs_faithful"	"+3.0"
+						}
+						"leadership_time_buffer"
+						{
+							"value"								"0"
+							"special_bonus_facet_monkey_king_wukongs_faithful"	"+4.0"
+						}
+						"cast_range"					
+						{
+							"value"						"625"
+							"special_bonus_unique_monkey_king_6"			"+350"
+
+						}
+						"cast_range_scepter"						
+						{
+							"special_bonus_scepter"			"1550"
+						}
+						"outer_attack_buffer"				"0"
+						"cooldown_scepter"				
+						{
+							"special_bonus_scepter"		"90 70 50"
+						}
+						"scepter_spawn_interval"
+						{
+							"special_bonus_scepter"			"4"
+						}
+						"scepter_spawn_duration"			
+						{
+							"special_bonus_scepter"		"15"
+						}
+				}
+			}
+	
+			//=================================================================================================================
+			// Monkey King: Jingu Mastery
+			//=================================================================================================================
+			"monkey_king_jingu_mastery"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_MonkeyKing.IronCudgel"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"required_hits"				
+						{
+							"value"			"4"
+							"special_bonus_unique_monkey_king_11"	"-1"
+						}
+						"counter_duration"			"5.5 7.0 8.5 10.0"
+						"charges"	"4"
+						"bonus_damage"
+						{
+							"value"						"30 80 130 180"
+							"CalculateSpellDamageTooltip"	"0"
+						"special_bonus_unique_monkey_king_2" "+110"
+						}
+						"lifesteal"					"20 40 60 80"
+						"max_duration"				"35"
+						"buff_is_undispellable"
+						{
+							"value"									"0"
+							"special_bonus_unique_monkey_king_3"	"+1"
+						}
+				}
+			}
+
+
+
+			//=================================================================================================================
+			// Monkey King: Transfiguration (Fur army transform, Changing of the Guard)
+			//=================================================================================================================
+			"monkey_king_transfiguration"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES "
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.3"
+				"MaxLevel"						"1"
+				"DependentOnAbility"			"monkey_king_wukongs_command"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityCooldown"				"5"
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"transfiguration_duration"			"1.5"
+					"initial_cooldown"					"1.0"
+				}
+			}
+		}
+	}
+}

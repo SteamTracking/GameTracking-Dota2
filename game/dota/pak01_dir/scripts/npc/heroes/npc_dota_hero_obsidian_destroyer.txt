@@ -1,0 +1,553 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_obsidian_destroyer"
+	{
+		"Model"		"models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+		"IdleExpression"		"scenes/outworld_destroyer/outworld_destroyer_exp_idle_01.vcd"
+		"SoundSet"		"Hero_ObsidianDestroyer"
+		"IdleSoundLoop"		"Hero_ObsidianDestroyer.IdleLoop"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Nuker,Disabler"
+		"Rolelevels"	"2,2,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"76"
+		"HeroOrderID"	"69"
+		"ModelScale"		"0.700000"
+		"VersusScale"		"0.70"
+		"CMEnabled"		"1"
+		"NameAliases"		"od;Harbinger"
+		"PickSound"		"outworld_destroyer_odest_spawn_02"
+		"BanSound"		"outworld_destroyer_odest_anger_02"
+		"workshop_guide_name"		"Outworld Devourer"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"79,36,43"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Legs"			"4"
+			"Nose"			"0"
+			"Arachnophobic"	"1"
+			"Flying"		"1"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_death_prophet"
+		"HeroSelectSoundEffect"		"Hero_OD.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"37 18 13 255"
+		"Ability1"		"obsidian_destroyer_arcane_orb"
+		"Ability2"		"obsidian_destroyer_astral_imprisonment"
+		"Ability3"		"obsidian_destroyer_objurgation"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"obsidian_destroyer_equilibrium"
+		"Ability6"		"obsidian_destroyer_sanity_eclipse"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"obsidian_destroyer_arcane_orb"
+			"Ability2"	"obsidian_destroyer_astral_imprisonment"
+			"Ability3"	"obsidian_destroyer_objurgation"
+			"Ability4"	"obsidian_destroyer_sanity_eclipse"
+		}
+
+		"Ability10"		"special_bonus_unique_outworld_devourer_astral_castrange"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_unique_outworld_devourer_flux_restore"
+		"Ability13"		"special_bonus_unique_outworld_devourer_3"
+		"Ability14"		"special_bonus_unique_outworld_devourer_barrier"
+		"Ability15"		"special_bonus_unique_outworld_devourer_4"
+		"Ability16"		"special_bonus_unique_outworld_devourer"
+		"Ability17"		"special_bonus_unique_outworld_devourer_5"
+		"Facets"
+		{
+			"obsidian_destroyer_obsidian_decimator"	
+			{
+				"Icon"				"mana"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+
+			"obsidian_destroyer_overwhelming_devourer"
+			{
+				"Icon"				"healing"
+				"Color"				"Blue"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.90000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.60000"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"4.200000"
+		"MovementSpeed"		"315"
+		"StatusHealthRegen"		"1"
+		"HealthBarOffset"		"300"
+		"particle_folder"		"particles/units/heroes/hero_obsidian_destroyer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_outworld_destroyer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Wings"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "obsidian_destroyer_astral_imprisonment"
+				"DisplayInLoadout" "0"
+			}	
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_4"
+				"SlotText" "obsidian_destroyer_sanity_eclipse"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_obsidian_destroyer.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_obsidian_destroyer.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+			"attach_foot_l"			   "3"
+			"attach_foot_r"			   "4"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Obsidian Destroyer: Arcane Orb
+			//=================================================================================================================
+			"obsidian_destroyer_arcane_orb"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_ObsidianDestroyer.ArcaneOrb"		
+		
+				"AbilityCastRange"				"450"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+				"AbilityCooldown"				"4.5 3 1.5 0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"mana_pool_damage_pct"	
+					{
+						"value"										"10 11 12 13"
+						"special_bonus_unique_outworld_devourer"	"+1.5"
+					}
+					"mana_cost_percentage"							"20"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}	
+
+
+			//=================================================================================================================
+			// Skywrath: Innate Max Mana Per Int
+			//=================================================================================================================
+			"obsidian_destroyer_ominous_discernment"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"bonus_max_mana_per_int"			
+					{
+						"value"						"2.5"
+					}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Obsidian Destroyer: Astral Imprisonment
+			//=================================================================================================================
+			"obsidian_destroyer_astral_imprisonment"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_ObsidianDestroyer.AstralImprisonment"
+				"HasShardUpgrade"               "1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.5" // applies multiple modifiers
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"				"18 16 14 12"				
+					}
+					"prison_duration"		
+					{
+						"value"				"1.75 2.5 3.25 4"
+					}
+					"damage"				
+					{
+						"value"				"90 180 270 360"
+					}
+					"has_mana_steal"
+					{
+						"value"				"1"
+					}
+					"mana_capacity_steal"	
+					{
+						"value"				"16 19 22 25"
+						"special_bonus_unique_outworld_devourer_4" "+12"
+					}
+			
+					"mana_capacity_duration"	
+					{
+						"value"						"30 40 50 60"
+					}
+			
+					"allied_movement_speed_pct"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"+70"
+					}								
+					"damage_radius"		
+					{
+						"affected_by_aoe_increase"	"1"
+						"special_bonus_shard"		"+300"
+					}
+					"AbilityCastRange"
+					{
+						"value"						"650"
+						"special_bonus_unique_outworld_devourer_astral_castrange"	"+100"
+					}
+
+					"debuff_duration"	
+					{
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"+5"				
+					}
+					"percentage_damage"
+					{
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"0"				
+					}				
+					"percentage_heal"
+					{
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"+100"				
+					}				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}	
+
+			//=================================================================================================================
+			// Obsidian Destroyer: Essence Aura
+			//=================================================================================================================
+			"obsidian_destroyer_essence_aura"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilitySound"					"Hero_ObsidianDestroyer.EssenceAura"
+				"IsBreakable"					"1"
+
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Obsidian Destroyer: Equilibrium (Essence Flux)
+			//=================================================================================================================
+			"obsidian_destroyer_equilibrium"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"		
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+				"MaxLevel"						"1"		
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.75"
+						
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"proc_chance"	"30"
+
+					"mana_restore"
+					{
+						"value"		"40"
+						"hero_levelup"	"+5"
+						"levelup_interval" "5"
+						"special_bonus_unique_outworld_devourer_flux_restore" "+5"
+					}
+
+					"mana_restore_attack"
+					{
+						"value"		"25"
+						"hero_levelup"	"+5"
+						"levelup_interval" "5"
+						"special_bonus_unique_outworld_devourer_flux_restore" "+5"
+					}
+		
+					"mana_as_ms"
+					{
+						"special_bonus_unique_outworld_devourer_3"	"=0.8"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Obsidian Destroyer: Sanity's Eclipse
+			//=================================================================================================================
+			"obsidian_destroyer_sanity_eclipse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.25 0.25 0.25"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_ObsidianDestroyer.SanityEclipse"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 300 400"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"base_damage"				"200 300 400"
+					"radius"					
+					{
+						"value"			"500 525 550"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cast_range"					"700"
+					"damage_multiplier"
+					{
+						"value"					"0.4"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"				
+					}
+
+					"illusion_bonus_damage"	"0"
+					"debuff_duration"	
+					{
+						"value"				"0"
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"+7"					
+					}
+					"percentage_damage"
+					{
+						"value"							"0"
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"0"					
+					}				
+					"percentage_heal"
+					{
+						"value"				"0"
+						"special_bonus_facet_obsidian_destroyer_overwhelming_devourer"		"+100"					
+					}
+					"AbilityCooldown"
+					{
+						"value"										"140 130 120"
+						"special_bonus_unique_outworld_devourer_5"	"-60"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Obsidian Destroyer: Objurgation
+			//=================================================================================================================
+			"obsidian_destroyer_objurgation"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"IsBreakable"					"1"
+
+				"AbilityCastPoint"				"0.0"
+				"AbilityManaCost"				"175"
+				"HasScepterUpgrade"				"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"36 33 30 27"
+						"special_bonus_unique_outworld_devourer_barrier" "-10"
+					}
+
+					"barrier_flat"				"150 200 250 300"
+					"mana_to_barrier"
+					{
+						"value"					"12"
+						"special_bonus_scepter"	"+4"
+					}
+					"bonus_mana"				"80 160 240 320"
+					"barrier_duration"			"10"
+
+					"automatic_trigger_threshold"
+					{
+						"special_bonus_scepter"	"20"
+					}
+
+					"automatic_trigger_cd"
+					{
+						"special_bonus_scepter"	"80"
+					}
+				}
+			}
+		}
+	}
+}

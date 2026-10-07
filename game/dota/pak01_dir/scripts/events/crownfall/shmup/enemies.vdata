@@ -1,0 +1,448 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CShmupEnemyDefinition"
+	enemy_basic = 
+	{
+		m_nHealth = 2
+		m_flHitboxRadius = 30
+		m_vHitboxOffsetWS = [ 0, 0, 75 ]
+		m_strNameInMap = "enemy_basic"
+		m_nKillScore = 500
+		m_flModelScale = 1
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_Player"
+				m_nCount = 1
+				m_flSpeed = 500
+				m_flDrag = 0
+				m_flRadius = 10
+			},
+		]
+	}
+	enemy_familiar = 
+	{
+		m_nHealth = 8
+		m_flHitboxRadius = 35
+		m_vHitboxOffsetWS = [ 0, 0, 70 ]
+		m_strNameInMap = "enemy_familiar"
+		m_nKillScore = 10000
+		m_flModelScale = 1
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 10
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 15
+				m_nBulletsPerWave = 5
+				m_flAngleWidth = 0.15
+			},
+		]
+	}
+	enemy_fei_lian = 
+	{
+		m_nHealth = 40
+		m_flHitboxRadius = 80
+		m_vHitboxOffsetWS = [ 0, 0, 325 ]
+		m_strNameInMap = "enemy_fei_lian"
+		m_nKillScore = 25000
+		m_flModelScale = 3
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 30
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 14
+				m_nBulletsPerWave = 30
+				m_flAngleWidth = 0.2
+				m_flAngleOffset = 0.0
+				m_flSpeedPerBullet = 12.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 30
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 14
+				m_nBulletsPerWave = 30
+				m_flAngleWidth = 0.2
+				m_flAngleOffset = 1.0
+				m_flSpeedPerBullet = 12.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 30
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 14
+				m_nBulletsPerWave = 30
+				m_flAngleWidth = 0.2
+				m_flAngleOffset = -1.0
+				m_flSpeedPerBullet = 12.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 30
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 14
+				m_nBulletsPerWave = 30
+				m_flAngleWidth = 0.2
+				m_flAngleOffset = -1.5
+				m_flSpeedPerBullet = 12.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 30
+				m_flSpeed = 300
+				m_flInterval = 0.1
+				m_flRadius = 14
+				m_nBulletsPerWave = 30
+				m_flAngleWidth = 0.2
+				m_flAngleOffset = 1.5
+				m_flSpeedPerBullet = 12.0
+			},
+		]
+	}
+	enemy_wisp = 
+	{
+		m_nHealth = 100
+		m_flHitboxRadius = 70
+		m_vHitboxOffsetWS = [ 0, 0, 70 ]
+		m_strNameInMap = "enemy_wisp"
+		m_nKillScore = 50000
+		m_flModelScale = 4.5
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadRandom"
+				m_nCount = 50
+				m_flSpeed = 500
+				m_flRadius = 12
+				m_flInterval = 0.03
+				m_flAngleWidth = 0.03
+				m_flRadiusPerBullet = 0.25
+				m_flSpeedPerBullet = 12
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 5
+				m_flSpeed = 400
+				m_flInterval = 0.0
+				m_flRadius = 15
+				m_nBulletsPerWave = 5
+				m_flAngleWidth = 0.03
+				m_flAngleOffset = 0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 5
+				m_flSpeed = 400
+				m_flInterval = 0.0
+				m_flRadius = 15
+				m_nBulletsPerWave = 5
+				m_flAngleWidth = 0.03
+				m_flAngleOffset = 0.25
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 5
+				m_flSpeed = 400
+				m_flInterval = 0.0
+				m_flRadius = 15
+				m_nBulletsPerWave = 5
+				m_flAngleWidth = 0.03
+				m_flAngleOffset = -0.25
+			},
+		]
+		m_vecSelfDestroyBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 60
+				m_flSpeed = 250
+				m_flInterval = 0
+				m_flRadius = 20
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 45
+				m_flSpeed = 220
+				m_flInterval = 0
+				m_flRadius = 25
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 30
+				m_flSpeed = 190
+				m_flInterval = 0
+				m_flRadius = 30
+			},
+		]
+	}
+	enemy_harpy = 
+	{
+		m_nHealth = 8
+		m_flHitboxRadius = 30
+		m_vHitboxOffsetWS = [ 0, 0, 75 ]
+		m_strNameInMap = "enemy_harpy"
+		m_nKillScore = 8000
+		m_flModelScale = 1.0
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadRandom"
+				m_nCount = 10
+				m_flSpeed = 400
+				m_flRadius = 10
+				m_flInterval = 0.03
+				m_flAngleWidth = 0.02
+			},
+		]
+	}
+	enemy_pterodactyl = 
+	{
+		m_nHealth = 30
+		m_flHitboxRadius = 50
+		m_vHitboxOffsetWS = [ 0, 0, 200 ]
+		m_strNameInMap = "enemy_pterodactyl"
+		m_nKillScore = 15000
+		m_flModelScale = 2.0
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_FixedDirection"
+				m_nCount = 9
+				m_flSpeed = 100
+				m_flRadius = 25
+				m_flInterval = 0.0
+				m_vFixedDirection = [ 0.0, 1.0 ]
+				m_flSpeedPerBullet = 20.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_FixedDirection"
+				m_nCount = 9
+				m_flSpeed = 100
+				m_flRadius = 25
+				m_flInterval = 0.0
+				m_vFixedDirection = [ 0.0, -1.0 ]
+				m_flSpeedPerBullet = 20.0
+			},
+		]
+	}
+	enemy_bird = 
+	{
+		m_nHealth = 4
+		m_flHitboxRadius = 30
+		m_vHitboxOffsetWS = [ 0, 0, 150 ]
+		m_strNameInMap = "enemy_bird"
+		m_nKillScore = 3000
+		m_flModelScale = 0.8
+	}
+	enemy_minion_dragon = 
+	{
+		m_nHealth = 30
+		m_flHitboxRadius = 50
+		m_vHitboxOffsetWS = [ 0, 0, 200 ]
+		m_strNameInMap = "enemy_dragon"
+		m_nKillScore = 0
+		m_flModelScale = 0.9
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_Player"
+				m_nCount = 1
+				m_flSpeed = 240
+				m_flRadius = 12
+			},
+		]
+	}
+	enemy_boss = 
+	{
+		m_bIsBoss = true
+		m_nHealth = 1000
+		m_nKillScore = 500000
+		m_flHitboxRadius = 1.0
+		m_vHitboxOffsetWS = [ 200.0, 0.0, 600 ]
+		m_strNameInMap = "enemy_boss"
+		m_flModelScale = 6
+		m_vecBulletPatterns = 
+		[
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_nCount = 144
+				m_flSpeed = 150
+				m_flInterval = 0.02
+				m_flRadius = 10
+				m_nBulletsPerWave = 12
+				m_flAngleWidth = 0.36
+				m_flSpeedPerBullet = 0.001
+				m_flAngleStaggerPerWave = 0.105
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 60
+				m_flSpeed = 120
+				m_flRadius = 20
+				m_flInterval = 0.008
+				m_nBulletsPerWave = 6
+				m_flAngleWidth = 0.36
+				m_flSpeedPerBullet = 4.0
+				m_flRadiusPerBullet = -0.16
+				m_flAngleStaggerPerWave = 0.24
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadRandom"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 60
+				m_flSpeed = 200
+				m_flRadius = 16
+				m_flInterval = 0.01
+				m_flAngleWidth = 0.14
+				m_flAngleOffset = -0.4
+				m_flAngleOffsetPerBullet = 0.01
+				m_flSpeedPerBullet = 5.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadRandom"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 60
+				m_flSpeed = 200
+				m_flRadius = 16
+				m_flInterval = 0.01
+				m_flAngleWidth = 0.14
+				m_flAngleOffset = 0.4
+				m_flAngleOffsetPerBullet = -0.01
+				m_flSpeedPerBullet = 5.0
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 36
+				m_flSpeed = 300
+				m_flRadius = 16
+				m_flInterval = 0.01
+				m_flAngleWidth = 0.08
+				m_flSpeedPerBullet = -1.0
+				m_flAngleStaggerPerWave = 0.08
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 60
+				m_flSpeed = 110
+				m_flInterval = 0
+				m_flRadius = 10
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 50
+				m_flSpeed = 250
+				m_flInterval = 0
+				m_flRadius = 24
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 55
+				m_flSpeed = 300
+				m_flInterval = 0
+				m_flRadius = 16
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_Radial"
+				m_nCount = 60
+				m_flSpeed = 350
+				m_flInterval = 0
+				m_flRadius = 12
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 210
+				m_flSpeed = 200
+				m_flRadius = 8
+				m_flInterval = 0.02
+				m_flAngleWidth = 0.1
+				m_nBulletsPerWave = 7
+				m_flAngleSinWaveOffset = 0.4
+				m_bSwapColorPerBullet = true
+				m_flAngleOffset = 0.5
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 210
+				m_flSpeed = 230
+				m_flRadius = 8
+				m_flInterval = 0.02
+				m_flAngleWidth = 0.1
+				m_nBulletsPerWave = 7
+				m_flAngleSinWaveOffset = 0.4
+				m_bSwapColorPerBullet = true
+				m_flAngleOffset = -0.5
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 80
+				m_flSpeed = 230
+				m_flRadius = 8
+				m_flInterval = 0.1
+				m_flAngleWidth = 0.05
+				m_nBulletsPerWave = 1
+				m_flAngleSinWaveOffset = 0.4
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 210
+				m_flSpeed = 200
+				m_flRadius = 8
+				m_flInterval = 0.02
+				m_flAngleWidth = 0.1
+				m_nBulletsPerWave = 7
+				m_flAngleSinWaveOffset = -0.4
+				m_bSwapColorPerBullet = true
+				m_flAngleOffset = 0.5
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 210
+				m_flSpeed = 230
+				m_flRadius = 8
+				m_flInterval = 0.02
+				m_flAngleWidth = 0.1
+				m_nBulletsPerWave = 7
+				m_flAngleSinWaveOffset = -0.4
+				m_bSwapColorPerBullet = true
+				m_flAngleOffset = -0.5
+			},
+			{
+				m_pattern = "k_eShmupBulletPattern_PlayerSpreadEven"
+				m_bUseStoredPlayerLocation = true
+				m_nCount = 30
+				m_flSpeed = 230
+				m_flRadius = 8
+				m_flInterval = 0.14
+				m_flAngleWidth = 0.1
+				m_nBulletsPerWave = 7
+				m_flAngleSinWaveOffset = -0.4
+			},
+		]
+	}
+	enemy_splinter_blast = 
+	{
+		m_strNameInMap = "enemy_splinter_blast"
+		m_flModelScale = 0.7
+		m_flHitboxRadius = 30.0
+		m_nHealth = 60
+	}
+}

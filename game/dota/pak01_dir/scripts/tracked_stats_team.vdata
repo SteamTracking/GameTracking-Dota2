@@ -1,0 +1,983 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CTeamTrackedStatDefinition"
+	team_kills = 
+	{
+		m_unStatID = 1
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_roshan_kills = 
+	{
+		m_unStatID = 2
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "roshan_kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_legs = 
+	{
+		m_unStatID = 3
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_legs"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_meteor_hammers = 
+	{
+		m_unStatID = 4
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "meteor_hammer_purchases"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_legs_15_or_more = 
+	{
+		m_unStatID = 5
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_legs' ) >= 15"
+		}
+	}
+	team_legs_5_or_less = 
+	{
+		m_unStatID = 6
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_legs' ) <= 5"
+		}
+	}
+	team_wings = 
+	{
+		m_unStatID = 7
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_wings"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_wings_2_or_more = 
+	{
+		m_unStatID = 8
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_wings' ) >= 2"
+		}
+	}
+	team_wings_3_or_more = 
+	{
+		m_unStatID = 9
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_wings' ) >= 3"
+		}
+	}
+	team_horns = 
+	{
+		m_unStatID = 10
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_horns"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_horns_2_or_more = 
+	{
+		m_unStatID = 11
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_horns' ) >= 2"
+		}
+	}
+	team_horns_3_or_more = 
+	{
+		m_unStatID = 12
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_horns' ) >= 3"
+		}
+	}
+	team_steeds = 
+	{
+		m_unStatID = 13
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_steed"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_steeds_2_or_more = 
+	{
+		m_unStatID = 14
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_steeds' ) >= 2"
+		}
+	}
+	team_steeds_3_or_more = 
+	{
+		m_unStatID = 15
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_steeds' ) >= 3"
+		}
+	}
+	team_noses = 
+	{
+		m_unStatID = 16
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_nose"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_noses_2_or_less = 
+	{
+		m_unStatID = 17
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_noses' ) <= 2"
+		}
+	}
+	team_noses_3_or_less = 
+	{
+		m_unStatID = 18
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_noses' ) <= 3"
+		}
+	}
+	team_fuzzy = 
+	{
+		m_unStatID = 19
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_fuzzy"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_fuzzy_2_or_more = 
+	{
+		m_unStatID = 20
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_fuzzy' ) >= 2"
+		}
+	}
+	team_fuzzy_3_or_more = 
+	{
+		m_unStatID = 21
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_fuzzy' ) >= 3"
+		}
+	}
+	team_bearded = 
+	{
+		m_unStatID = 22
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_bearded"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_bearded_2_or_more = 
+	{
+		m_unStatID = 23
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_bearded' ) >= 2"
+		}
+	}
+	team_bearded_3_or_more = 
+	{
+		m_unStatID = 24
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_bearded' ) >= 3"
+		}
+	}
+	team_female = 
+	{
+		m_unStatID = 25
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_female"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_female_2_or_more = 
+	{
+		m_unStatID = 26
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_female' ) >= 2"
+		}
+	}
+	team_female_3_or_more = 
+	{
+		m_unStatID = 27
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_female' ) >= 3"
+		}
+	}
+	team_bad_teeth = 
+	{
+		m_unStatID = 28
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_bad_teeth"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_bad_teeth_2_or_more = 
+	{
+		m_unStatID = 29
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_bad_teeth' ) >= 2"
+		}
+	}
+	team_bad_teeth_3_or_more = 
+	{
+		m_unStatID = 30
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_bad_teeth' ) >= 3"
+		}
+	}
+	team_capes = 
+	{
+		m_unStatID = 31
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_cape"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_capes_2_or_more = 
+	{
+		m_unStatID = 32
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_capes' ) >= 2"
+		}
+	}
+	team_capes_3_or_more = 
+	{
+		m_unStatID = 33
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_capes' ) >= 3"
+		}
+	}
+	team_nice_pecs = 
+	{
+		m_unStatID = 34
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_nice_pecs"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_nice_pecs_2_or_more = 
+	{
+		m_unStatID = 35
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_nice_pecs' ) >= 2"
+		}
+	}
+	team_nice_pecs_3_or_more = 
+	{
+		m_unStatID = 36
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_nice_pecs' ) >= 3"
+		}
+	}
+	team_potbelly = 
+	{
+		m_unStatID = 37
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_potbelly"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_potbelly_2_or_more = 
+	{
+		m_unStatID = 38
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_potbelly' ) >= 2"
+		}
+	}
+	team_potbelly_3_or_more = 
+	{
+		m_unStatID = 39
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_potbelly' ) >= 3"
+		}
+	}
+	team_parent = 
+	{
+		m_unStatID = 40
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_parent"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_parent_2_or_more = 
+	{
+		m_unStatID = 41
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_parent' ) >= 2"
+		}
+	}
+	team_parent_3_or_more = 
+	{
+		m_unStatID = 42
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_parent' ) >= 3"
+		}
+	}
+	team_arachnophobic = 
+	{
+		m_unStatID = 43
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_arachnophobic"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_arachnophobic_2_or_more = 
+	{
+		m_unStatID = 44
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_arachnophobic' ) >= 2"
+		}
+	}
+	team_arachnophobic_3_or_more = 
+	{
+		m_unStatID = 45
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_arachnophobic' ) >= 3"
+		}
+	}
+	team_undead = 
+	{
+		m_unStatID = 46
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_undead"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_undead_2_or_more = 
+	{
+		m_unStatID = 47
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_undead' ) >= 2"
+		}
+	}
+	team_undead_3_or_more = 
+	{
+		m_unStatID = 48
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_undead' ) >= 3"
+		}
+	}
+	team_aquatic = 
+	{
+		m_unStatID = 49
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_aquatic"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_aquatic_2_or_more = 
+	{
+		m_unStatID = 50
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_aquatic' ) >= 2"
+		}
+	}
+	team_aquatic_3_or_more = 
+	{
+		m_unStatID = 51
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_aquatic' ) >= 3"
+		}
+	}
+	team_demon = 
+	{
+		m_unStatID = 52
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_demon"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_demon_2_or_more = 
+	{
+		m_unStatID = 53
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_demon' ) >= 2"
+		}
+	}
+	team_demon_3_or_more = 
+	{
+		m_unStatID = 54
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_demon' ) >= 3"
+		}
+	}
+	team_spirit = 
+	{
+		m_unStatID = 55
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_spirit"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_spirit_2_or_more = 
+	{
+		m_unStatID = 56
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_spirit' ) >= 2"
+		}
+	}
+	team_spirit_3_or_more = 
+	{
+		m_unStatID = 57
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_spirit' ) >= 3"
+		}
+	}
+	team_flying = 
+	{
+		m_unStatID = 58
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_flying"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_flying_2_or_more = 
+	{
+		m_unStatID = 59
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_flying' ) >= 2"
+		}
+	}
+	team_flying_3_or_more = 
+	{
+		m_unStatID = 60
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_flying' ) >= 3"
+		}
+	}
+	team_cute = 
+	{
+		m_unStatID = 61
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_cute"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_cute_2_or_more = 
+	{
+		m_unStatID = 62
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_cute' ) >= 2"
+		}
+	}
+	team_cute_3_or_more = 
+	{
+		m_unStatID = 63
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_cute' ) >= 3"
+		}
+	}
+	team_fiery = 
+	{
+		m_unStatID = 64
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_fiery"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_fiery_2_or_more = 
+	{
+		m_unStatID = 65
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_fiery' ) >= 2"
+		}
+	}
+	team_fiery_3_or_more = 
+	{
+		m_unStatID = 66
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_fiery' ) >= 3"
+		}
+	}
+	team_icy = 
+	{
+		m_unStatID = 67
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "hero_icy"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_icy_2_or_more = 
+	{
+		m_unStatID = 68
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_icy' ) >= 2"
+		}
+	}
+	team_icy_3_or_more = 
+	{
+		m_unStatID = 69
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_icy' ) >= 3"
+		}
+	}
+	team_wipes = 
+	{
+		m_unStatID = 70
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Direct"
+	}
+	team_courier_kills = 
+	{
+		m_unStatID = 71
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "courier_kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_aegises_snatched = 
+	{
+		m_unStatID = 72
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "aegises_snatched"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_cheeses_eaten = 
+	{
+		m_unStatID = 73
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "cheeses_eaten"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_observer_wards_placed = 
+	{
+		m_unStatID = 74
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "observer_wards_placed"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_observer_wards_destroyed = 
+	{
+		m_unStatID = 75
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "observer_wards_destroyed"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_kills_with_dd_rune = 
+	{
+		m_unStatID = 76
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills_with_dd_rune"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_kills_with_arcane_rune = 
+	{
+		m_unStatID = 77
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills_with_arcane_rune"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_kills_with_haste_rune = 
+	{
+		m_unStatID = 78
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills_with_haste_rune"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_kills_with_shield_rune = 
+	{
+		m_unStatID = 79
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills_with_shield_rune"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_trees_cut = 
+	{
+		m_unStatID = 80
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "trees_cut"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_twin_gate_kills = 
+	{
+		m_unStatID = 81
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "twin_gate_kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_shards_acquired = 
+	{
+		m_unStatID = 82
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "shard_acquired"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_scepter_purchases = 
+	{
+		m_unStatID = 83
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "scepter_purchased"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_blink_dagger_purchases = 
+	{
+		m_unStatID = 84
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "blink_dagger_purchases"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_moonshard_purchases = 
+	{
+		m_unStatID = 85
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "moonshard_purchases"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_bkb_purchases = 
+	{
+		m_unStatID = 86
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "bkb_purchases"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_midas_purchases = 
+	{
+		m_unStatID = 87
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "midas_purchases"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_smoke_kills = 
+	{
+		m_unStatID = 88
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "smoke_kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_heroes_denied = 
+	{
+		m_unStatID = 89
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "heroes_denied"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_runes_denied = 
+	{
+		m_unStatID = 90
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "runes_denied"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_towers_denied = 
+	{
+		m_unStatID = 91
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "towers_denied"
+			m_eAggregate = "k_eTrackedStatAggregate_Sum"
+		}
+	}
+	team_all_have_shards = 
+	{
+		m_unStatID = 92
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_shards_acquired' ) >= 5"
+		}
+	}
+	team_all_have_scepters = 
+	{
+		m_unStatID = 93
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_scepter_purchases' ) >= 5"
+		}
+	}
+	team_win = 
+	{
+		m_unStatID = 94
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Direct"
+	}
+	team_max_kills = 
+	{
+		m_unStatID = 95
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Max"
+		}
+	}
+	team_min_kills = 
+	{
+		m_unStatID = 96
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "kills"
+			m_eAggregate = "k_eTrackedStatAggregate_Min"
+		}
+	}
+	team_max_deaths = 
+	{
+		m_unStatID = 97
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "deaths"
+			m_eAggregate = "k_eTrackedStatAggregate_Max"
+		}
+	}
+	team_min_deaths = 
+	{
+		m_unStatID = 98
+		m_eStatImpl = "k_eTeamTrackedStatImpl_PlayerAggregate"
+		m_aggregateData = 
+		{
+			m_strIndividualStat = "deaths"
+			m_eAggregate = "k_eTrackedStatAggregate_Min"
+		}
+	}
+	team_player_wins_with_0_kills = 
+	{
+		m_unStatID = 99
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "( team_stat( 'team_min_kills' ) == 0 ) && ( team_stat( 'team_win' ) >= 1 )"
+		}
+	}
+	team_player_wins_with_0_deaths = 
+	{
+		m_unStatID = 100
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "( team_stat( 'team_min_deaths' ) == 0 ) && ( team_stat( 'team_win' ) >= 1 )"
+		}
+	}
+	team_player_wins_with_20_deaths = 
+	{
+		m_unStatID = 101
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "( team_stat( 'team_max_deaths' ) >= 20 ) && ( team_stat( 'team_win' ) >= 1 )"
+		}
+	}
+	team_legs_14_or_more = 
+	{
+		m_unStatID = 102
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_legs' ) >= 14"
+		}
+	}
+	team_legs_6_or_less = 
+	{
+		m_unStatID = 103
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Expression"
+		m_expressionData = 
+		{
+			strExpression = "team_stat( 'team_legs' ) <= 6"
+		}
+	}
+	team_win_max_net_worth_deficit = 
+	{
+		m_unStatID = 104
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Direct"
+	}
+	team_lose = 
+	{
+		m_unStatID = 105
+		m_eStatImpl = "k_eTeamTrackedStatImpl_Direct"
+	}
+}

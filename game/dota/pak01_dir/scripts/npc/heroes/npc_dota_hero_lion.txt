@@ -1,0 +1,634 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_lion"
+	{
+		"Model"		"models/heroes/lion/lion.vmdl"
+		"IdleExpression"		"scenes/lion/lion_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Lion"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroPool1"		"1"
+		"HeroPool2"		"1"
+		"HeroUnlockOrder"		"0"
+		"Role"			"Support,Disabler,Nuker,Initiator"
+		"Rolelevels"	"2,3,3,2"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"26"
+		"HeroOrderID"	"9"
+		"ModelScale"		"0.700000"
+		"LoadoutScale"		"0.700000"
+		"VersusScale"		"0.70000"
+		"SpectatorLoadoutScale" "0.8"
+		"HeroGlowColor"		"110 50 165"
+		"PickSound"		"lion_lion_spawn_01"
+		"BanSound"		"lion_lion_anger_03"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Lion"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"27,79,31"
+		"Adjectives"
+		{
+			"Cape"			"1"
+			"Demon"			"1"
+			"Purple"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_witch_doctor"
+		"HeroSelectSoundEffect"		"Hero_Lion.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Demon Witch"
+		"Ability1"		"lion_impale"
+		"Ability2"		"lion_voodoo"
+		"Ability3"		"lion_mana_drain"
+		"Ability4"		"lion_to_hell_and_back"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"lion_finger_of_death"
+		"Ability7"		""
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"lion_impale"
+			"Ability2"	"lion_voodoo"
+			"Ability3"	"lion_mana_drain"
+			"Ability4"	"lion_finger_of_death"
+		}
+		
+		"AbilityTalentStart" "10"
+		"Ability10"		"special_bonus_unique_lion_6"
+		"Ability11"		"special_bonus_movement_speed_20"
+		"Ability12"		"special_bonus_unique_lion_5"
+		"Ability13"		"special_bonus_unique_lion_11"
+		"Ability14"		"special_bonus_unique_lion_8"
+		"Ability15"		"special_bonus_unique_lion_10"
+		"Ability16"		"special_bonus_unique_lion_4"
+		"Ability17"		"special_bonus_unique_lion_2"
+		"Facets"
+		{
+			"lion_essence_eater" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Purple"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"lion_fist_of_death" 
+			{
+				"Icon"				"fist"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+		}
+		"StatusHealthRegen"		"0.5"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"TurnRate"			"0.8"
+		"BaseAttackSpeed"		"115"
+		"AttackAnimationPoint"		"0.430000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_lion/lion_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.4"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeIntelligenceGain"		"3.500000"
+		"MovementSpeed"		"290"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lion.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lion"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_lion/lion_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_LeftArm"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ability_effects_1"
+				"SlotText"		"lion_impale"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ability_effects_2"
+				"SlotText"		"lion_voodoo"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ability_effects_3"
+				"SlotText"		"lion_mana_drain"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"ability_effects_4"
+				"SlotText"		"lion_finger_of_death"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"				"ITEM_CORE"
+				"item_wind_lace"			"ITEM_CORE"
+				"item_ring_of_regen"		"ITEM_CORE"
+				"item_tranquil_boots"		"ITEM_DERIVED"		
+
+				"item_blink"		"ITEM_CORE"
+			
+				"item_point_booster"		"ITEM_EXTENSION"
+				"item_ogre_axe"				"ITEM_EXTENSION"
+				"item_staff_of_wizardry"	"ITEM_EXTENSION"
+				"item_blade_of_alacrity"	"ITEM_EXTENSION"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+
+				"item_energy_booster"		"ITEM_EXTENSION"
+				"item_void_stone"			"ITEM_EXTENSION"
+				"item_recipe_aether_lens"	"ITEM_EXTENSION"
+				"item_aether_lens"			"ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+
+				"item_voodoo_mask"		"ITEM_LUXURY"
+				"item_diadem"			"ITEM_LUXURY"
+				"item_recipe_dagon"		"ITEM_LUXURY"
+				"item_dagon"			"ITEM_DERIVED"
+				"item_recipe_dagon"		"ITEM_LUXURY"
+				"item_dagon_2"			"ITEM_DERIVED"
+				"item_recipe_dagon"		"ITEM_LUXURY"
+				"item_dagon_3"			"ITEM_DERIVED"
+				"item_recipe_dagon"		"ITEM_LUXURY"
+				"item_dagon_4"			"ITEM_DERIVED"
+				"item_recipe_dagon"		"ITEM_LUXURY"
+				"item_dagon_5"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"lion_impale"
+				"2"		"lion_voodoo"
+				"3"		"lion_impale"
+				"4"		"lion_mana_drain"
+				"5"		"lion_impale"
+				"6"		"lion_finger_of_death"
+				"7"		"lion_impale"
+				"8"		"lion_mana_drain"
+				"9"		"lion_mana_drain"
+				"10"		"special_bonus_movement_speed_20"
+				"11"		"lion_mana_drain"
+				"12"		"lion_finger_of_death"
+				"13"		"lion_voodoo"
+				"14"		"lion_voodoo"
+				"15"		"special_bonus_unique_lion_5"
+				"16"		"lion_voodoo"
+				"17"		""
+				"18"		"lion_finger_of_death"
+				"19"		""
+				"20"		"special_bonus_unique_lion_8"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_lion_2"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_STUN_SUPPORT | DOTA_BOT_NUKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/props_gameplay/frog.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lion.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lion.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_weapon"		"2"
+			"attach_mouth"		"3"
+			"attach_attack1"	"4"
+			"attach_attack2"	"5"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Lion: Impale
+			//=================================================================================================================
+			"lion_impale"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Lion.Impale"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 110 130 150"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"	"14 13 12 11"
+					"AbilityCastRange"
+					{
+						"value"			"650"
+						"special_bonus_unique_lion_2"	"+600"
+					}
+
+					"damage"			
+					{
+						"value"			"105 170 235 300"
+					}
+					"width"				
+					{
+						"value"			"140"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"			"1.3 1.6 1.9 2.2"
+					"length_buffer"		"275"
+					"speed"				"2800"
+					"pierces_immunity"
+					{
+						"value"			"0"
+					}
+					"cone_shaped"
+					{
+						"value"	"0"
+						"special_bonus_unique_lion_10" "+1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Lion: Voodoo
+			//=================================================================================================================
+			"lion_voodoo"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Lion.Voodoo"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"575 600 625 650"
+				"AbilityCastPoint"				"0 0 0 0"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110 140 170 200"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"				"24 20 16 12"
+						"special_bonus_unique_lion_5"	"-2.0"
+					}
+					"duration"					"2 2.4 2.8 3.2"
+					"movespeed"					"120"
+					"radius"
+					{
+						"value"									"0"
+						"special_bonus_unique_lion_4"			"+250"
+						"affected_by_aoe_increase"				"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Lion: Mana Drain
+			//=================================================================================================================
+			"lion_mana_drain"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"850"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityChannelTime"				"5.1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"15 12 9 6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"5.0"	// better then the mana cost implies
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"					"5.0"
+						"mana_per_second"			
+						{
+							"value"		"20 40 60 120"
+						}
+						"break_distance"			
+						{
+							"value"	"1100"
+							"special_bonus_shard"		"+200"	
+						}
+						"tick_interval"				"0.1"
+						"movespeed"			
+						{
+							"value"				"15 20 25 30"
+							"special_bonus_unique_lion_6"	"+10"
+						}
+						"movespeed_bonus_when_empty_pct"			"15"
+						"shard_bonus_targets"			
+						{
+							"special_bonus_shard"		"2"
+						}		
+						"damage_pct"					
+						{
+							"value"	"0"
+						}
+						"magic_resist"
+						{
+							"special_bonus_shard"		"+60"
+						}
+						"ally_pct"				"50"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Lion: Finger of Death
+			//=================================================================================================================
+			"lion_finger_of_death"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Lion.FingerOfDeath"
+				"HasScepterUpgrade"				"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"110 70 30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 400 600"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"							
+					{
+						"value"						"600 725 850"	
+						"special_bonus_scepter"		"+100"
+					}
+			
+			
+
+					"damage_per_kill"			
+					{
+						"value"							"25"
+						"special_bonus_unique_lion_8"	"+20"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"grace_period"						"3"
+					"damage_delay"				
+					{
+						"value"				"0.25"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+
+					"punch_duration"				
+					{
+						"value"						"20"
+						"special_bonus_scepter"		"+10"
+					}
+					"punch_bonus_movespeed"			"30"
+			
+					"punch_attack_range"			"250"
+					"punch_bonus_damage_base"		
+					{
+						"value"							"20 30 40"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+					}
+					"cleave_damage"
+					{
+						"value"							"25"
+						"special_bonus_scepter"			"+25"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+					}
+					"cleave_starting_width"
+					{
+						"value"						"150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_ending_width"	 
+					{
+						"value"						"350"
+						"affected_by_aoe_increase"	"1"
+					}
+					"cleave_distance"
+					{
+						"value"						"650"
+						"affected_by_aoe_increase"	"1"
+					}
+			
+					"splash_radius"		
+					{
+						"special_bonus_scepter"		"325"
+						"affected_by_aoe_increase"	"1"
+					}
+
+				}
+			}
+
+			//=================================================================================================================
+			// Lion Innate To Hell and Back
+			//=================================================================================================================
+			"lion_to_hell_and_back"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilityValues"
+				{
+					"duration"					"90"
+					"damage_window"				"3.0"
+					"spell_amp"
+					{
+						"value"							"20"
+						"special_bonus_unique_lion_11"	"+15"
+					}
+					"debuff_amp"
+					{
+						"value"							"20"
+						"special_bonus_unique_lion_11"	"+15"
+					}
+				}
+			}
+		}
+	}
+}

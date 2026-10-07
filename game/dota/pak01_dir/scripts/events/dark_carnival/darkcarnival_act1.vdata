@@ -1,0 +1,6298 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CDOTAOverworldDefinition"
+	m_unID = 11
+	m_sKey = "darkcarnival_act1"
+	m_eAssociatedEvent = "EVENT_ID_DARK_CARNIVAL"
+	m_eProgressionType = "k_eOverworldProgressionType_NodesPathsAndRooms"
+	m_unOverworldVersion = 3
+	m_sTokenTraderEncounterName = "dark_carnival_token_trader"
+	m_sNodeUnlockEventAction = "nodes_unlocked_act_1"
+	m_vGridOffset = [ 0.0, 0.0 ]
+	m_unGridSize = 16
+	m_unNodeGridSize = 16
+	m_unMapWidth = 7680
+	m_unMapHeight = 2160
+	m_vecCameraDistances = [ -180.0, -50.0, 0.0 ]
+	m_flMinCameraDistance = -100.0
+	m_flMaxCameraDistance = 1632.0
+	m_flInnerCameraDistanceThreshold = 370.0
+	m_vMinCameraBounds = [ -1850.0, 320.0 ]
+	m_vMaxCameraBounds = [ 2110.0, 1050.0 ]
+	m_sMapVisualsXmlPath = "file://{resources}/layout/events/dark_carnival/map_dark_carnival_act1.xml"
+	m_vecReleaseSchedule = 
+	[
+		{
+			m_strLocName = "#DOTA_DarkCarnival_Chapter1"
+			m_strVisualNovelName = "darkcarnival_act1_part1"
+			m_strRingmasterVisualNovelName = "darkcarnival_ringmaster_part1"
+			m_unReleaseTime = 0
+			m_unGroupID = 1
+		},
+		{
+			m_strLocName = "#DOTA_DarkCarnival_Chapter2"
+			m_strVisualNovelName = "darkcarnival_act1_part2"
+			m_strRingmasterVisualNovelName = "darkcarnival_ringmaster_part2"
+			m_unReleaseTime = 1783634400
+			m_unGroupID = 3
+		},
+		{
+			m_strLocName = "#DOTA_DarkCarnival_Chapter3"
+			m_strVisualNovelName = "darkcarnival_act1_part3"
+			m_strRingmasterVisualNovelName = "darkcarnival_ringmaster_part3"
+			m_unReleaseTime = 1784844000
+			m_unGroupID = 5
+		},
+	]
+	m_vecStartNodeIds = [ 1 ]
+	m_unEndNodeID = 85
+	m_sVisualNovelName = "darkcarnival_act1_part1"
+	m_sTokenLocStringPrefix = "DOTA_DarkCarnival_Token_"
+	m_sActNumberLocString = ""
+	m_sActTitleLocString = ""
+	m_unPremiumItemDef = 34452
+	m_unFullCompletionItemDef = 0
+	m_unScrapTokenID = 18
+	m_unFortuneDuration = 72000
+	m_unPathUnlockerTokenID = 16
+	m_unFortuneCountForPermanentReward = 3
+	m_unTimesFortuneCanBeSeenBeforeRepeats = 3
+	m_vecFortuneWeightForUnseenAmount = [ 0, 1, 3, 10 ]
+	m_nMaxTokenCap = 99
+	m_vecEventActionTriggers = [  ]
+	m_vecEventActionGrantAndClaimPairTriggers = 
+	[
+		{
+			m_sMapClassToAdd = "GiftFromFriendAvailable"
+			m_vecGrantAndClaimActionPairs = 
+			[
+				{
+					m_sEventActionGrant = "encounter_gifting_thefool"
+					m_sEventActionClaim = "encounter_gifting_thefool_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_themagician"
+					m_sEventActionClaim = "encounter_gifting_themagician_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_thehighpriestess"
+					m_sEventActionClaim = "encounter_gifting_thehighpriestess_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_thedevil"
+					m_sEventActionClaim = "encounter_gifting_thedevil_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_theemperor"
+					m_sEventActionClaim = "encounter_gifting_theemperor_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_thelovers"
+					m_sEventActionClaim = "encounter_gifting_thelovers_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_strength"
+					m_sEventActionClaim = "encounter_gifting_strength_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_thehermit"
+					m_sEventActionClaim = "encounter_gifting_thehermit_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_thestar"
+					m_sEventActionClaim = "encounter_gifting_thestar_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_wheeloffortune"
+					m_sEventActionClaim = "encounter_gifting_wheeloffortune_claim"
+				},
+				{
+					m_sEventActionGrant = "encounter_gifting_death"
+					m_sEventActionClaim = "encounter_gifting_death_claim"
+				},
+			]
+		},
+	]
+	m_vecPathColorRules = 
+	[
+		{
+			m_eNodeFlags = "Premium"
+			m_cLockedColor = [ 156, 128, 40 ]
+			m_cCompleteColor = [ 236, 158, 110 ]
+			m_cActiveColor = [ 235, 210, 171 ]
+			m_unLockedThickness = 3
+			m_unCompleteThickness = 3
+			m_unRoomConnectionThickness = 3
+			m_flRoomConnectionBrightness = 0.7
+		},
+		{
+			m_eNodeFlags = "SideQuest"
+			m_cLockedColor = [ 120, 120, 120 ]
+			m_cCompleteColor = [ 235, 210, 171 ]
+			m_cActiveColor = [ 215, 190, 151 ]
+			m_unLockedThickness = 3
+			m_unCompleteThickness = 3
+			m_unRoomConnectionThickness = 3
+			m_flRoomConnectionBrightness = 0.7
+		},
+		{
+			m_eNodeFlags = ""
+			m_cLockedColor = [ 120, 120, 120 ]
+			m_cCompleteColor = [ 235, 210, 171 ]
+			m_cActiveColor = [ 215, 190, 151 ]
+			m_unLockedThickness = 3
+			m_unCompleteThickness = 3
+			m_unRoomConnectionThickness = 3
+			m_flRoomConnectionBrightness = 0.7
+		},
+	]
+	m_strNarrationVisualNovel = "darkcarnival_ringmaster_part1"
+	m_mapNarrationDialogues = 
+	{
+		"blimp-07" = "blimp-after"
+		"cauldron-02" = "cauldron"
+		"cauldron-12" = "engine-start"
+		"main-19" = "smelter-before"
+		"main-2" = "prison-1"
+		"smelter-01" = "smelter-escape"
+		"smelter-10" = "blimp-before"
+		"storage-02" = "tresdin-ganked"
+		"workshop-09" = "workshop"
+	}
+	m_Theme = 
+	{
+		m_sButtonType = "DOTADarkCarnivalButton"
+		m_sTokenType = "DOTADarkCarnivalToken"
+		m_sTokenReceivedPopupLayout = "file://{resources}/layout/events/dark_carnival/popup_dark_carnival_tokens_received.xml"
+		m_sTokenTraderEncounterLayout = "file://{resources}/layout/events/dark_carnival/popup_dark_carnival_token_trader.xml"
+		m_sTokenTraderVisualNovelStyle = "file://{resources}/styles/events/dark_carnival/popup_dark_carnival_token_trader_visual_novel.css"
+		m_sInventoryPickerLayout = "file://{resources}/layout/events/dark_carnival/ui_dark_carnival_inventory_picker.xml"
+		m_sTextPrefix = "Dark_Carnival"
+	}
+	m_vecTokenTypes = 
+	[
+		{
+			m_unID = 1
+			m_sName = "TheFool"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 2
+			m_sName = "TheMagician"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 3
+			m_sName = "TheHighPriestess"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 4
+			m_sName = "TheDevil"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 5
+			m_sName = "TheEmperor"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 6
+			m_sName = "TheLovers"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 7
+			m_sName = "Strength"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 8
+			m_sName = "TheHermit"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 9
+			m_sName = "TheStar"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 10
+			m_sName = "WheelOfFortune"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 11
+			m_sName = "Death"
+			m_eTokenType = "k_eOverworldTokenType_Generic"
+		},
+		{
+			m_unID = 12
+			m_sName = "Premium"
+			m_eTokenType = "k_eOverworldTokenType_Premium"
+		},
+		{
+			m_unID = 13
+			m_sName = "CandyShopUnlock"
+			m_eTokenType = "k_eOverworldTokenType_Internal"
+		},
+		{
+			m_unID = 15
+			m_sName = "FortuneTellerUnlock"
+			m_eTokenType = "k_eOverworldTokenType_Internal"
+		},
+		{
+			m_unID = 16
+			m_sName = "NodeUnlock"
+			m_eTokenType = "k_eOverworldTokenType_Hidden"
+		},
+		{
+			m_unID = 17
+			m_sName = "MinigameUnlock"
+			m_eTokenType = "k_eOverworldTokenType_Hidden"
+		},
+		{
+			m_unID = 18
+			m_sName = "CarnivalScrap"
+			m_eTokenType = "k_eOverworldTokenType_Scrap"
+		},
+	]
+	m_vecTarotCards = 
+	[
+		{
+			m_unID = 1
+			m_sName = "CardBack"
+			m_bIsCardBack = true
+			m_eFortuneReward = "k_eOverworldFortuneReward_Invalid"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_Invalid"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_Invalid"
+			m_sFortunePosition1 = ""
+			m_sFortunePosition2 = ""
+			m_sFortunePosition3 = ""
+			m_sSoundEventName = ""
+			m_vecSoundEventOptions = [  ]
+			m_unUnlockReward = 0
+		},
+		{
+			m_unID = 2
+			m_sName = "TheFool"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_PieCharges"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGame"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_NoModifier"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheFool_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheFool_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheFool_3"
+			m_sSoundEventName = "fool"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"23",
+				"24",
+				"25",
+				"26",
+				"27",
+				"28",
+				"29",
+				"30",
+				"31",
+				"32",
+				"33",
+			]
+			m_unUnlockReward = 2509
+		},
+		{
+			m_unID = 3
+			m_sName = "TheMagician"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_BalloonCharges"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGameIntelligenceHero"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_ImmediatelyReceiveReward"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheMagician_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheMagician_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheMagician_3"
+			m_sSoundEventName = "magician"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"23",
+				"24",
+				"25",
+				"26",
+				"27",
+				"28",
+				"29",
+				"30",
+				"31",
+				"32",
+				"33",
+			]
+			m_unUnlockReward = 2510
+		},
+		{
+			m_unID = 4
+			m_sName = "TheHighPriestess"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_CandyBagLarge"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGame"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_ReceiveAdditionalRandomToken"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheHighPriestess_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheHighPriestess_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheHighPriestess_3"
+			m_sSoundEventName = "priestess"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"23",
+				"24",
+				"25",
+				"26",
+				"27",
+				"28",
+				"29",
+				"30",
+				"31",
+				"32",
+				"33",
+			]
+			m_unUnlockReward = 2511
+		},
+		{
+			m_unID = 5
+			m_sName = "TheEmperor"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_LastHeroPlayedTokens"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_KillRoshan"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_RerollFortune"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheEmperor_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheEmperor_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheEmperor_3"
+			m_sSoundEventName = "emperor"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"25",
+				"30",
+			]
+			m_unUnlockReward = 2512
+		},
+		{
+			m_unID = 6
+			m_sName = "TheLovers"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_TwoLeastTokens"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGameWithScepterShard"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_EarnRewardTwice"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheLovers_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheLovers_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheLovers_3"
+			m_sSoundEventName = "lovers"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"29",
+			]
+			m_unUnlockReward = 2513
+		},
+		{
+			m_unID = 7
+			m_sName = "Strength"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_OneNodeUnlock"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGameStrengthHero"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_DoubleReward"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_Strength_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_Strength_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_Strength_3"
+			m_sSoundEventName = "strength"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"23",
+				"28",
+			]
+			m_unUnlockReward = 2514
+		},
+		{
+			m_unID = 8
+			m_sName = "TheStar"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_FireworksCharges"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGameAgilityHero"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_ReceiveAdditionalRandomToken"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheStar_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheStar_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheStar_3"
+			m_sSoundEventName = "star"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16",
+				"17",
+				"18",
+				"19",
+				"20",
+				"21",
+				"22",
+				"29",
+			]
+			m_unUnlockReward = 2519
+		},
+		{
+			m_unID = 9
+			m_sName = "TheHermit"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_CandyBagSmall"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGame"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_NoModifier"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheHermit_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheHermit_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheHermit_3"
+			m_sSoundEventName = "hermit"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"15",
+				"22",
+			]
+			m_unUnlockReward = 2515
+		},
+		{
+			m_unID = 10
+			m_sName = "WheelOfFortune"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_Rerolls"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGameUniversalHero"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_DoubleReward"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_WheelOfFortune_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_WheelOfFortune_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_WheelOfFortune_3"
+			m_sSoundEventName = "wheel_of_fortune"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"27",
+				"29",
+			]
+			m_unUnlockReward = 2516
+		},
+		{
+			m_unID = 11
+			m_sName = "Death"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_ThreeRandomTokens"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_GetMultipleKills"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_OneAttempt"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_Death_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_Death_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_Death_3"
+			m_sSoundEventName = "death"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"16_02",
+				"25",
+				"26",
+			]
+			m_unUnlockReward = 2517
+		},
+		{
+			m_unID = 12
+			m_sName = "TheDevil"
+			m_bIsCardBack = false
+			m_eFortuneReward = "k_eOverworldFortuneReward_ThreeMostTokens"
+			m_eFortuneRequirement = "k_eOverworldFortuneRequirement_WinGame"
+			m_eFortuneModifier = "k_eOverworldFortuneModifier_OneAttempt"
+			m_sFortunePosition1 = "#DOTA_TarotCard_Fortune_TheDevil_1"
+			m_sFortunePosition2 = "#DOTA_TarotCard_Fortune_TheDevil_2"
+			m_sFortunePosition3 = "#DOTA_TarotCard_Fortune_TheDevil_3"
+			m_sSoundEventName = "devil"
+			m_vecSoundEventOptions = 
+			[
+				"01",
+				"02",
+				"03",
+				"04",
+				"05",
+				"06",
+				"07",
+				"08",
+				"09",
+				"10",
+				"11",
+				"21",
+				"27",
+				"29",
+			]
+			m_unUnlockReward = 2518
+		},
+	]
+	m_vecFortuneTellerRewards = 
+	[
+		{
+			m_eReward = "k_eOverworldFortuneReward_CandyBagSmall"
+			m_flWeight = 0.0
+			m_unEventActionID = 2500
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_CandyBagLarge"
+			m_flWeight = 0.0
+			m_unEventActionID = 2501
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_Rerolls"
+			m_flWeight = 0.0
+			m_unEventActionID = 2502
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_BalloonCharges"
+			m_flWeight = 0.0
+			m_unEventActionID = 2504
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_FireworksCharges"
+			m_flWeight = 0.0
+			m_unEventActionID = 2505
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_OracleCoin"
+			m_flWeight = 0.0
+			m_unEventActionID = 2506
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_OneNodeUnlock"
+			m_flWeight = 0.0
+			m_unEventActionID = 2507
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_TwoNodeUnlocks"
+			m_flWeight = 0.0
+			m_unEventActionID = 2508
+		},
+		{
+			m_eReward = "k_eOverworldFortuneReward_PieCharges"
+			m_flWeight = 0.0
+			m_unEventActionID = 2527
+		},
+	]
+	m_vecFortuneForcedReveals = 
+	[
+		{
+			m_unID = 2
+			m_nForcedRevealCount = 2
+		},
+		{
+			m_unID = 3
+			m_nForcedRevealCount = 5
+		},
+		{
+			m_unID = 8
+			m_nForcedRevealCount = 8
+		},
+	]
+	m_vecFortuneTellerFixedReward = [  ]
+	m_vecFortuneTellerStoryNodes = 
+	[
+		{
+			m_unID = 1
+			m_nFortuneRequestCount = 2
+			m_sDialogueName = "oracle-02"
+			m_sRewardEventAction = "fortune_teller_reward_story_1"
+		},
+		{
+			m_unID = 2
+			m_nFortuneRequestCount = 5
+			m_sDialogueName = "oracle-03"
+			m_sRewardEventAction = "fortune_teller_reward_story_2"
+		},
+		{
+			m_unID = 3
+			m_nFortuneRequestCount = 10
+			m_sDialogueName = "oracle-04"
+			m_sRewardEventAction = "fortune_teller_reward_story_3"
+		},
+		{
+			m_unID = 4
+			m_nFortuneRequestCount = 15
+			m_sDialogueName = "oracle-05"
+			m_sRewardEventAction = "fortune_teller_reward_story_4"
+		},
+		{
+			m_unID = 5
+			m_nFortuneRequestCount = 20
+			m_sDialogueName = "oracle-06"
+			m_sRewardEventAction = "fortune_teller_reward_story_5"
+		},
+		{
+			m_unID = 6
+			m_nFortuneRequestCount = 25
+			m_sDialogueName = "oracle-07"
+			m_sRewardEventAction = "fortune_teller_reward_story_6"
+		},
+		{
+			m_unID = 7
+			m_nFortuneRequestCount = 30
+			m_sDialogueName = "oracle-08"
+			m_sRewardEventAction = "fortune_teller_reward_story_7"
+		},
+	]
+	m_vecHeroRewards = 
+	[
+		{
+			m_unHeroID = 1
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheHighPriestess",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 2
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 3
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheHighPriestess",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 4
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"WheelOfFortune",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 5
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheFool",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 6
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheHermit",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 7
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 8
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 9
+			m_vecTokenNames = 
+			[
+				"TheStar",
+				"TheEmperor",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 10
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"WheelOfFortune",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 11
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 12
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheLovers",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 13
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheFool",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 14
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 15
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheEmperor",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 16
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 17
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheDevil",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 18
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 19
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 20
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheLovers",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 21
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"Strength",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 22
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheFool",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 23
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"TheEmperor",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 25
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheMagician",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 26
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 27
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheHighPriestess",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 28
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 29
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheEmperor",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 30
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheHermit",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 31
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"Death",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 32
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheDevil",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 33
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 34
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 35
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 36
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Death",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 37
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheDevil",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 38
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheDevil",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 39
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheDevil",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 40
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Death",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 41
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"Strength",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 42
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheEmperor",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 43
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheStar",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 44
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"WheelOfFortune",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 45
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"Death",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 46
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheHermit",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 47
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 48
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheLovers",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 49
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 50
+			m_vecTokenNames = 
+			[
+				"TheStar",
+				"TheLovers",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 51
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 52
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheDevil",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 53
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheHighPriestess",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 54
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 55
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheHighPriestess",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 56
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"Death",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 57
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheHighPriestess",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 58
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheStar",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 59
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheDevil",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 60
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"WheelOfFortune",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 61
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"WheelOfFortune",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 62
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 63
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"WheelOfFortune",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 64
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheLovers",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 65
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"WheelOfFortune",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 66
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheEmperor",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 67
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 68
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Death",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 69
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 70
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheStar",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 71
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"Strength",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 72
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"Strength",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 73
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheStar",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 74
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheMagician",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 75
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheEmperor",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 76
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheHighPriestess",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 77
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 78
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"WheelOfFortune",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 79
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheDevil",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 80
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheHermit",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 81
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"WheelOfFortune",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 82
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheLovers",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 83
+			m_vecTokenNames = 
+			[
+				"TheStar",
+				"TheDevil",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 84
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"WheelOfFortune",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 85
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Death",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 86
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheMagician",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 87
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 88
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 89
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheHighPriestess",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 90
+			m_vecTokenNames = 
+			[
+				"TheStar",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 91
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheFool",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 92
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"Death",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 93
+			m_vecTokenNames = 
+			[
+				"WheelOfFortune",
+				"TheDevil",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 94
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheDevil",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 95
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"TheEmperor",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 96
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 97
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 98
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"WheelOfFortune",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 99
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 100
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"TheHermit",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 101
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheMagician",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 102
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHermit",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 103
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 104
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheEmperor",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 105
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheFool",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 106
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheLovers",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 107
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheEmperor",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 108
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 109
+			m_vecTokenNames = 
+			[
+				"Death",
+				"TheDevil",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 110
+			m_vecTokenNames = 
+			[
+				"Death",
+				"WheelOfFortune",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 111
+			m_vecTokenNames = 
+			[
+				"TheHighPriestess",
+				"TheHighPriestess",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 112
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheStar",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 113
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheStar",
+				"TheLovers",
+			]
+		},
+		{
+			m_unHeroID = 114
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheHermit",
+				"TheHermit",
+			]
+		},
+		{
+			m_unHeroID = 119
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheDevil",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 120
+			m_vecTokenNames = 
+			[
+				"TheDevil",
+				"WheelOfFortune",
+				"WheelOfFortune",
+			]
+		},
+		{
+			m_unHeroID = 121
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheDevil",
+				"TheDevil",
+			]
+		},
+		{
+			m_unHeroID = 123
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"TheLovers",
+				"TheMagician",
+			]
+		},
+		{
+			m_unHeroID = 126
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"TheHighPriestess",
+				"TheHighPriestess",
+			]
+		},
+		{
+			m_unHeroID = 128
+			m_vecTokenNames = 
+			[
+				"TheLovers",
+				"TheStar",
+				"TheFool",
+			]
+		},
+		{
+			m_unHeroID = 129
+			m_vecTokenNames = 
+			[
+				"TheEmperor",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 135
+			m_vecTokenNames = 
+			[
+				"TheFool",
+				"Strength",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 136
+			m_vecTokenNames = 
+			[
+				"TheHermit",
+				"Strength",
+				"Strength",
+			]
+		},
+		{
+			m_unHeroID = 137
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+		{
+			m_unHeroID = 138
+			m_vecTokenNames = 
+			[
+				"Death",
+				"Death",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 155
+			m_vecTokenNames = 
+			[
+				"TheStar",
+				"TheHighPriestess",
+				"TheStar",
+			]
+		},
+		{
+			m_unHeroID = 131
+			m_vecTokenNames = 
+			[
+				"TheMagician",
+				"TheFool",
+				"Death",
+			]
+		},
+		{
+			m_unHeroID = 145
+			m_vecTokenNames = 
+			[
+				"Strength",
+				"Strength",
+				"TheEmperor",
+			]
+		},
+	]
+	m_vecNodes = 
+	[
+		{
+			m_unID = 1
+			m_sDialogueName = "main-1"
+			m_sEncounterName = ""
+			m_sRewardEventAction = ""
+			m_vPos = [ 506.0, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = true
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 2
+			m_sDialogueName = "main-2"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "tutorial_first_node_reward"
+			m_vPos = [ 594.8, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 3
+			m_sDialogueName = "main-3"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1a_emoticon"
+			m_vPos = [ 683.6, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 4
+			m_sDialogueName = "main-4"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 772.39996, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 5
+			m_sDialogueName = "main-5"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 861.19995, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 6
+			m_sDialogueName = ""
+			m_sEncounterName = "candy_shop"
+			m_sRewardEventAction = "candy_shop_upgrade_tracker"
+			m_vPos = [ 949.99994, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 7
+			m_sDialogueName = "main-6"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1162.0, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 8
+			m_sDialogueName = "main-7"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 1250.8, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 9
+			m_sDialogueName = "main-8"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1339.6001, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 10
+			m_sDialogueName = "main-9"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1a_emoticon"
+			m_vPos = [ 1428.4001, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 11
+			m_sDialogueName = ""
+			m_sEncounterName = "lockpicking"
+			m_sRewardEventAction = ""
+			m_vPos = [ 1517.2002, 1070.0 ]
+			m_eNodeFlags = "Shortcut"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 12
+			m_sDialogueName = "main-10"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_loading_screen_oracle"
+			m_vPos = [ 1606.0002, 1070.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 13
+			m_sDialogueName = "main-11"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 676.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 14
+			m_sDialogueName = "main-12"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_1"
+			m_vPos = [ 776.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 15
+			m_sDialogueName = "main-13"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 876.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 16
+			m_sDialogueName = ""
+			m_sEncounterName = "slark_jailbreak"
+			m_sRewardEventAction = ""
+			m_vPos = [ 976.0, 619.0 ]
+			m_eNodeFlags = "Shortcut"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 17
+			m_sDialogueName = "main-14"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 1076.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 18
+			m_sDialogueName = "main-15"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_hoodwink_1"
+			m_vPos = [ 1176.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 19
+			m_sDialogueName = "main-16"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "voiceline_act1_1"
+			m_vPos = [ 1451.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 20
+			m_sDialogueName = "main-17"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1561.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 21
+			m_sDialogueName = "main-18"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1a_emoticon"
+			m_vPos = [ 1671.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 22
+			m_sDialogueName = "main-19"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_act1_car1"
+			m_vPos = [ 1781.0, 619.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 23
+			m_sDialogueName = "smelter-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 522.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 24
+			m_sDialogueName = "smelter-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_tresdin_1"
+			m_vPos = [ 614.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 25
+			m_sDialogueName = "smelter-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 706.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 26
+			m_sDialogueName = "smelter-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_2"
+			m_vPos = [ 798.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 27
+			m_sDialogueName = "smelter-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 890.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 28
+			m_sDialogueName = "smelter-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "voiceline_act1_2"
+			m_vPos = [ 982.0, 651.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 29
+			m_sDialogueName = "smelter-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_slark_1"
+			m_vPos = [ 306.0, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 30
+			m_sDialogueName = "smelter-08"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 416.0, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 31
+			m_sDialogueName = "smelter-09"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 526.0, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 32
+			m_sDialogueName = "smelter-10"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1a_emoticon"
+			m_vPos = [ 746.0, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 33
+			m_sDialogueName = "smelter-11"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 847.6, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 34
+			m_sDialogueName = "smelter-12"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 949.19995, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 35
+			m_sDialogueName = "smelter-13"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1050.7999, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 36
+			m_sDialogueName = ""
+			m_sEncounterName = "ticket_smelter"
+			m_sRewardEventAction = "encounter_reward_ticket_smelter"
+			m_vPos = [ 1152.3999, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 37
+			m_sDialogueName = "smelter-14"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_act1_car2"
+			m_vPos = [ 1253.9999, 1102.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 38
+			m_sDialogueName = ""
+			m_sEncounterName = "blimp_jump"
+			m_sRewardEventAction = ""
+			m_vPos = [ 265.0, 1156.0 ]
+			m_eNodeFlags = "Shortcut"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 39
+			m_sDialogueName = "blimp-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_3"
+			m_vPos = [ 550.0, 1156.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 40
+			m_sDialogueName = "blimp-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 675.0, 1156.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 41
+			m_sDialogueName = "blimp-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "bex_showcase_decoration_1"
+			m_vPos = [ 800.0, 1156.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 42
+			m_sDialogueName = "blimp-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1a_emoticon"
+			m_vPos = [ 512.0, 740.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 43
+			m_sDialogueName = "blimp-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 613.0, 740.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 44
+			m_sDialogueName = "blimp-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 714.0, 740.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 45
+			m_sDialogueName = "blimp-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_treasure_1"
+			m_vPos = [ 816.0, 740.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 46
+			m_sDialogueName = "storage-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_7"
+			m_vPos = [ 122.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 47
+			m_sDialogueName = "storage-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "ezzelweth_and_agnes_decoration_1"
+			m_vPos = [ 209.33334, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 48
+			m_sDialogueName = "storage-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_loading_screen_legioncommander"
+			m_vPos = [ 296.6667, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 49
+			m_sDialogueName = "storage-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 384.00003, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 50
+			m_sDialogueName = "storage-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "voiceline_act1_3"
+			m_vPos = [ 471.33337, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 51
+			m_sDialogueName = "storage-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 558.6667, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 52
+			m_sDialogueName = "storage-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 646.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 53
+			m_sDialogueName = "workshop-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 858.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 54
+			m_sDialogueName = "workshop-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 934.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 55
+			m_sDialogueName = "workshop-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1b_emoticon"
+			m_vPos = [ 1010.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 56
+			m_sDialogueName = "workshop-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1086.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 57
+			m_sDialogueName = ""
+			m_sEncounterName = "crate_drop"
+			m_sRewardEventAction = ""
+			m_vPos = [ 1162.0, 1438.0 ]
+			m_eNodeFlags = "Shortcut"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 58
+			m_sDialogueName = "workshop-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_6"
+			m_vPos = [ 1238.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 59
+			m_sDialogueName = ""
+			m_sEncounterName = "secret_admirer"
+			m_sRewardEventAction = ""
+			m_vPos = [ 1450.0, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 60
+			m_sDialogueName = "workshop-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "voiceline_act1_4"
+			m_vPos = [ 1532.4, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 61
+			m_sDialogueName = "workshop-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 1614.8, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 62
+			m_sDialogueName = "workshop-08"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_hoodwink_2"
+			m_vPos = [ 1697.2001, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 63
+			m_sDialogueName = "workshop-09"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 1779.6001, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 64
+			m_sDialogueName = "workshop-10"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_act1_car3"
+			m_vPos = [ 1862.0001, 1438.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 65
+			m_sDialogueName = "cauldron-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 124.99999, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 66
+			m_sDialogueName = "cauldron-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_loading_screen_axe"
+			m_vPos = [ 235.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 67
+			m_sDialogueName = "cauldron-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 345.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 68
+			m_sDialogueName = "cauldron-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 455.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 69
+			m_sDialogueName = "cauldron-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 565.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 70
+			m_sDialogueName = "cauldron-05-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_5"
+			m_vPos = [ 675.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 71
+			m_sDialogueName = "cauldron-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1b_emoticon"
+			m_vPos = [ 890.0, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 72
+			m_sDialogueName = "cauldron-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_hoodwink_grabbed"
+			m_vPos = [ 994.8, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 73
+			m_sDialogueName = "cauldron-08"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 1099.6, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 74
+			m_sDialogueName = "cauldron-09"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 1204.4, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 75
+			m_sDialogueName = "cauldron-10"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "showcase_decoration_axe_1"
+			m_vPos = [ 1309.2001, 686.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 76
+			m_sDialogueName = ""
+			m_sEncounterName = "whack_a_mole"
+			m_sRewardEventAction = ""
+			m_vPos = [ 1414.0001, 686.0 ]
+			m_eNodeFlags = "Shortcut"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 77
+			m_sDialogueName = "cauldron-11"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1b_emoticon"
+			m_vPos = [ 630.0, 1134.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 78
+			m_sDialogueName = "cauldron-12"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_cauldron_final"
+			m_vPos = [ 830.0, 1134.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 79
+			m_sDialogueName = "engine-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_medium"
+			m_vPos = [ 518.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 80
+			m_sDialogueName = "engine-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "voiceline_act1_5"
+			m_vPos = [ 628.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 81
+			m_sDialogueName = "engine-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 738.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 82
+			m_sDialogueName = "engine-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_ringmaster_announcer"
+			m_vPos = [ 848.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 83
+			m_sDialogueName = "engine-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins"
+			m_vPos = [ 958.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 84
+			m_sDialogueName = "engine-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_small"
+			m_vPos = [ 1068.0, 846.0 ]
+			m_eNodeFlags = ""
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 85
+			m_sDialogueName = "engine-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_act1_final"
+			m_vPos = [ 1178.0, 846.0 ]
+			m_eNodeFlags = "FinalNode"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 77.0
+			m_vModelOffset = [ 0.0, 19.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 86
+			m_sDialogueName = "workshop-hidden-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_candy_bag_huge"
+			m_vPos = [ 506.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 87
+			m_sDialogueName = "workshop-hidden-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins_big"
+			m_vPos = [ 609.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 88
+			m_sDialogueName = "workshop-hidden-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_medium"
+			m_vPos = [ 712.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 89
+			m_sDialogueName = "workshop-hidden-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1b_emoticon"
+			m_vPos = [ 815.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 90
+			m_sDialogueName = "workshop-hidden-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_loading_screen_morphling"
+			m_vPos = [ 918.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 91
+			m_sDialogueName = "workshop-hidden-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "lorenzo_decoration_and_coins_secret_2"
+			m_vPos = [ 1209.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 92
+			m_sDialogueName = "workshop-hidden-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "tinker_and_treasure_decoration_secret_2"
+			m_vPos = [ 1319.0, 1886.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 93
+			m_sDialogueName = "smelter-hidden-01"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_small"
+			m_vPos = [ 330.0, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 94
+			m_sDialogueName = "smelter-hidden-02"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_loading_screen_bristleback"
+			m_vPos = [ 418.8, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 95
+			m_sDialogueName = "smelter-hidden-03"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_dark_carnival_act1b_emoticon"
+			m_vPos = [ 507.59998, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 96
+			m_sDialogueName = "smelter-hidden-04"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_oracle_coins_big"
+			m_vPos = [ 596.39996, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 97
+			m_sDialogueName = "smelter-hidden-05"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "spray_act1_4"
+			m_vPos = [ 685.19995, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 98
+			m_sDialogueName = "smelter-hidden-06"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_treasure_1"
+			m_vPos = [ 773.99994, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 99
+			m_sDialogueName = "smelter-hidden-07"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "candy_and_showcase_decoration_secret_room_1"
+			m_vPos = [ 986.0, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 100
+			m_sDialogueName = "smelter-hidden-08"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "map_reward_store_coins_big"
+			m_vPos = [ 1080.0, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 101
+			m_sDialogueName = "smelter-hidden-09"
+			m_sEncounterName = ""
+			m_sRewardEventAction = "bristleback_decoration_and_treasure_secret_1"
+			m_vPos = [ 1174.0, 1550.0 ]
+			m_eNodeFlags = "Premium|SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 102
+			m_sDialogueName = "fortune_teller-01"
+			m_sEncounterName = "fortune_teller"
+			m_sRewardEventAction = "fortune_teller_unlock"
+			m_vPos = [ 1015.0, 1510.0 ]
+			m_eNodeFlags = "SideQuest"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+		{
+			m_unID = 103
+			m_sDialogueName = ""
+			m_sEncounterName = "dark_carnival_token_trader"
+			m_sRewardEventAction = ""
+			m_vPos = [ 608.0, 944.0 ]
+			m_eNodeFlags = "Invisible"
+			m_bSkipGrantingRewardOnUnlock = false
+			m_sHiddenWithoutEventAction = ""
+			m_sJSEvent = ""
+			m_sCustomClass = ""
+			m_flUnlockDelay = 0.0
+			m_flModelRotation = 0.0
+			m_flModelScalePercentage = 100.0
+			m_vModelOffset = [ 0.0, 0.0 ]
+			m_vecUnlockMapClasses = [  ]
+			m_vecVisitMapClasses = [  ]
+		},
+	]
+	m_vecPaths = 
+	[
+		{
+			m_unID = 1
+			m_unNodeStart = 1
+			m_unNodeEnd = 2
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"TheFool",
+			]
+		},
+		{
+			m_unID = 2
+			m_unNodeStart = 2
+			m_unNodeEnd = 3
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 41.212112
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 3
+			m_unNodeStart = 3
+			m_unNodeEnd = 4
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = -54.54544
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 4
+			m_unNodeStart = 4
+			m_unNodeEnd = 5
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 118.78792
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 5
+			m_unNodeStart = 5
+			m_unNodeEnd = 6
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"CandyShopUnlock",
+			]
+		},
+		{
+			m_unID = 6
+			m_unNodeStart = 6
+			m_unNodeEnd = 7
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.56391
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = -20.606064
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 7
+			m_unNodeStart = 7
+			m_unNodeEnd = 8
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 8
+			m_unNodeStart = 8
+			m_unNodeEnd = 9
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 9
+			m_unNodeStart = 9
+			m_unNodeEnd = 10
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 10
+			m_unNodeStart = 10
+			m_unNodeEnd = 11
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 11
+			m_unNodeStart = 11
+			m_unNodeEnd = 12
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"MinigameUnlock",
+			]
+		},
+		{
+			m_unID = 12
+			m_unNodeStart = 12
+			m_unNodeEnd = 13
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.616541
+				m_flEndTangent = 0.318714
+				m_flStartOffset = 0.606913
+				m_flEndOffset = 0.23663
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 13
+			m_unNodeStart = 13
+			m_unNodeEnd = 14
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = -40.601517
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 14
+			m_unNodeStart = 14
+			m_unNodeEnd = 15
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 15
+			m_unNodeStart = 15
+			m_unNodeEnd = 16
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 16
+			m_unNodeStart = 16
+			m_unNodeEnd = 17
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"MinigameUnlock",
+			]
+		},
+		{
+			m_unID = 17
+			m_unNodeStart = 17
+			m_unNodeEnd = 18
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 18
+			m_unNodeStart = 18
+			m_unNodeEnd = 19
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 19
+			m_unNodeStart = 19
+			m_unNodeEnd = 20
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 20
+			m_unNodeStart = 20
+			m_unNodeEnd = 21
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 21
+			m_unNodeStart = 21
+			m_unNodeEnd = 22
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 22
+			m_unNodeStart = 22
+			m_unNodeEnd = 23
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 23
+			m_unNodeStart = 23
+			m_unNodeEnd = 24
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 24
+			m_unNodeStart = 24
+			m_unNodeEnd = 25
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 25
+			m_unNodeStart = 25
+			m_unNodeEnd = 26
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 26
+			m_unNodeStart = 26
+			m_unNodeEnd = 27
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 27
+			m_unNodeStart = 27
+			m_unNodeEnd = 28
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 28
+			m_unNodeStart = 28
+			m_unNodeEnd = 29
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 29
+			m_unNodeStart = 29
+			m_unNodeEnd = 30
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 30
+			m_unNodeStart = 30
+			m_unNodeEnd = 31
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 31
+			m_unNodeStart = 31
+			m_unNodeEnd = 32
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 32
+			m_unNodeStart = 32
+			m_unNodeEnd = 33
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 33
+			m_unNodeStart = 33
+			m_unNodeEnd = 34
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 34
+			m_unNodeStart = 34
+			m_unNodeEnd = 35
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 35
+			m_unNodeStart = 35
+			m_unNodeEnd = 36
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 36
+			m_unNodeStart = 36
+			m_unNodeEnd = 37
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 0
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 37
+			m_unNodeStart = 37
+			m_unNodeEnd = 38
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 38
+			m_unNodeStart = 38
+			m_unNodeEnd = 39
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"MinigameUnlock",
+			]
+		},
+		{
+			m_unID = 39
+			m_unNodeStart = 39
+			m_unNodeEnd = 40
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 40
+			m_unNodeStart = 40
+			m_unNodeEnd = 41
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 41
+			m_unNodeStart = 41
+			m_unNodeEnd = 42
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 42
+			m_unNodeStart = 42
+			m_unNodeEnd = 43
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 43
+			m_unNodeStart = 43
+			m_unNodeEnd = 44
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 44
+			m_unNodeStart = 44
+			m_unNodeEnd = 45
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 45
+			m_unNodeStart = 45
+			m_unNodeEnd = 46
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 46
+			m_unNodeStart = 46
+			m_unNodeEnd = 47
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 47
+			m_unNodeStart = 47
+			m_unNodeEnd = 48
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 48
+			m_unNodeStart = 48
+			m_unNodeEnd = 49
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 49
+			m_unNodeStart = 49
+			m_unNodeEnd = 50
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 50
+			m_unNodeStart = 50
+			m_unNodeEnd = 51
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 51
+			m_unNodeStart = 51
+			m_unNodeEnd = 52
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 52
+			m_unNodeStart = 52
+			m_unNodeEnd = 53
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 53
+			m_unNodeStart = 53
+			m_unNodeEnd = 54
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 54
+			m_unNodeStart = 54
+			m_unNodeEnd = 55
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 55
+			m_unNodeStart = 55
+			m_unNodeEnd = 56
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.0
+				m_flEndTangent = 0.0
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 56
+			m_unNodeStart = 56
+			m_unNodeEnd = 57
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 57
+			m_unNodeStart = 57
+			m_unNodeEnd = 58
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"MinigameUnlock",
+			]
+		},
+		{
+			m_unID = 58
+			m_unNodeStart = 58
+			m_unNodeEnd = 59
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 59
+			m_unNodeStart = 59
+			m_unNodeEnd = 60
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.537594
+				m_flEndTangent = 0.424812
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 60
+			m_unNodeStart = 60
+			m_unNodeEnd = 61
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 61
+			m_unNodeStart = 61
+			m_unNodeEnd = 62
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 62
+			m_unNodeStart = 62
+			m_unNodeEnd = 63
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 63
+			m_unNodeStart = 63
+			m_unNodeEnd = 64
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 64
+			m_unNodeStart = 64
+			m_unNodeEnd = 65
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 65
+			m_unNodeStart = 65
+			m_unNodeEnd = 66
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 66
+			m_unNodeStart = 66
+			m_unNodeEnd = 67
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 67
+			m_unNodeStart = 67
+			m_unNodeEnd = 68
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 68
+			m_unNodeStart = 68
+			m_unNodeEnd = 69
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 69
+			m_unNodeStart = 69
+			m_unNodeEnd = 70
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 70
+			m_unNodeStart = 70
+			m_unNodeEnd = 71
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 71
+			m_unNodeStart = 71
+			m_unNodeEnd = 72
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 72
+			m_unNodeStart = 72
+			m_unNodeEnd = 73
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 73
+			m_unNodeStart = 73
+			m_unNodeEnd = 74
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 74
+			m_unNodeStart = 74
+			m_unNodeEnd = 75
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 75
+			m_unNodeStart = 75
+			m_unNodeEnd = 76
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 76
+			m_unNodeStart = 76
+			m_unNodeEnd = 77
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"MinigameUnlock",
+			]
+		},
+		{
+			m_unID = 77
+			m_unNodeStart = 77
+			m_unNodeEnd = 78
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 78
+			m_unNodeStart = 78
+			m_unNodeEnd = 79
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 79
+			m_unNodeStart = 79
+			m_unNodeEnd = 80
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 80
+			m_unNodeStart = 80
+			m_unNodeEnd = 81
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 81
+			m_unNodeStart = 81
+			m_unNodeEnd = 82
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 5
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 82
+			m_unNodeStart = 82
+			m_unNodeEnd = 83
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 83
+			m_unNodeStart = 83
+			m_unNodeEnd = 84
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 4
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 84
+			m_unNodeStart = 84
+			m_unNodeEnd = 85
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 5
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 85
+			m_unNodeStart = 52
+			m_unNodeEnd = 86
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.650376
+				m_flEndTangent = 0.372181
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"Premium",
+			]
+		},
+		{
+			m_unID = 86
+			m_unNodeStart = 86
+			m_unNodeEnd = 87
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 87
+			m_unNodeStart = 87
+			m_unNodeEnd = 88
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 88
+			m_unNodeStart = 88
+			m_unNodeEnd = 89
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 89
+			m_unNodeStart = 89
+			m_unNodeEnd = 90
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 3
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 90
+			m_unNodeStart = 90
+			m_unNodeEnd = 91
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 91
+			m_unNodeStart = 91
+			m_unNodeEnd = 92
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 92
+			m_unNodeStart = 37
+			m_unNodeEnd = 93
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"Premium",
+			]
+		},
+		{
+			m_unID = 93
+			m_unNodeStart = 93
+			m_unNodeEnd = 94
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 94
+			m_unNodeStart = 94
+			m_unNodeEnd = 95
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 95
+			m_unNodeStart = 95
+			m_unNodeEnd = 96
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 96
+			m_unNodeStart = 96
+			m_unNodeEnd = 97
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 97
+			m_unNodeStart = 97
+			m_unNodeEnd = 98
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 98
+			m_unNodeStart = 98
+			m_unNodeEnd = 99
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 99
+			m_unNodeStart = 99
+			m_unNodeEnd = 100
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 100
+			m_unNodeStart = 100
+			m_unNodeEnd = 101
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 2
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.5
+				m_flEndTangent = 0.5
+				m_flStartOffset = 0.0
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = [  ]
+		},
+		{
+			m_unID = 101
+			m_unNodeStart = 3
+			m_unNodeEnd = 102
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 1
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.703008
+				m_flEndTangent = 0.289474
+				m_flStartOffset = -0.117293
+				m_flEndOffset = 0.0
+			}
+			m_flCurveAngle = 0.0
+			m_vecRequiredTokenNames = 
+			[
+				"FortuneTellerUnlock",
+			]
+		},
+		{
+			m_unID = 102
+			m_unNodeStart = 2
+			m_unNodeEnd = 103
+			m_strPathHiddenUntilEventAction = ""
+			m_unCost = 0
+			m_splineInfo = 
+			{
+				m_flStartTangent = 0.337229
+				m_flEndTangent = 0.067971
+				m_flStartOffset = -0.207017
+				m_flEndOffset = 0.023408
+			}
+			m_flCurveAngle = -25.71431
+			m_vecRequiredTokenNames = [  ]
+		},
+	]
+	m_vecRooms = 
+	[
+		{
+			m_unRoomID = 1
+			m_vPos = [ 416.0, 880.0 ]
+			m_vSize = [ 624.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/prison_room1.psd"
+			m_vecNodes = 
+			[
+				1, 2, 3, 4,
+				5, 6, 103,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 2
+			m_vPos = [ 1072.0, 880.0 ]
+			m_vSize = [ 624.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/prison_room3.psd"
+			m_vecNodes = 
+			[
+				7, 8, 9, 10,
+				11, 12,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 3
+			m_vPos = [ 1344.0, 432.0 ]
+			m_vSize = [ 544.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/prison_room2.psd"
+			m_vecNodes = [ 19, 20, 21, 22 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 4
+			m_vPos = [ 540.0, 432.0 ]
+			m_vSize = [ 772.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/prison_room5.psd"
+			m_vecNodes = 
+			[
+				13, 14, 15, 16,
+				17, 18,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 5
+			m_vPos = [ 432.0, 464.0 ]
+			m_vSize = [ 640.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/smelting_room3.psd"
+			m_vecNodes = 
+			[
+				23, 24, 25, 26,
+				27, 28,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 7
+			m_vPos = [ 208.0, 912.0 ]
+			m_vSize = [ 416.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/smelting_room1.psd"
+			m_vecNodes = [ 29, 30, 31 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 8
+			m_vPos = [ 656.0, 912.0 ]
+			m_vSize = [ 688.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/smelting_room2.psd"
+			m_vecNodes = 
+			[
+				32, 33, 34, 35,
+				36, 37,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 10
+			m_vPos = [ 416.0, 960.0 ]
+			m_vSize = [ 512.0, 480.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/blimp2.psd"
+			m_vecNodes = [ 39, 40, 41 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 12
+			m_vPos = [ 768.0, 1248.0 ]
+			m_vSize = [ 560.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/storage_room1.psd"
+			m_vecNodes = 
+			[
+				53, 54, 55, 56,
+				57, 58,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 13
+			m_vPos = [ 240.0, 1360.0 ]
+			m_vSize = [ 624.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/smelting_room4.psd"
+			m_vecNodes = 
+			[
+				93, 94, 95, 96,
+				97, 98,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 14
+			m_vPos = [ 896.0, 1360.0 ]
+			m_vSize = [ 368.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/smelting_room5.psd"
+			m_vecNodes = [ 99, 100, 101 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 15
+			m_vPos = [ 32.0, 496.0 ]
+			m_vSize = [ 736.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/cauldron_room2.psd"
+			m_vecNodes = 
+			[
+				65, 66, 67, 68,
+				69, 70,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 16
+			m_vPos = [ 800.0, 496.0 ]
+			m_vSize = [ 704.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/cauldron_room3.psd"
+			m_vecNodes = 
+			[
+				71, 72, 73, 74,
+				75, 76,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 17
+			m_vPos = [ 426.0, 944.0 ]
+			m_vSize = [ 624.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/cauldron_room1.psd"
+			m_vecNodes = [ 77, 78 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 18
+			m_vPos = [ 368.0, 608.0 ]
+			m_vSize = [ 960.0, 512.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/the_head1.psd"
+			m_vecNodes = 
+			[
+				79, 80, 81, 82,
+				83, 84, 85,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 20
+			m_vPos = [ 416.0, 1696.0 ]
+			m_vSize = [ 592.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/storage_room5.psd"
+			m_vecNodes = 
+			[
+				86, 87, 88, 89,
+				90,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 21
+			m_vPos = [ 416.0, 560.0 ]
+			m_vSize = [ 512.0, 384.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/blimp1.psd"
+			m_vecNodes = [ 42, 43, 44, 45 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 22
+			m_vPos = [ 640.0, 1328.0 ]
+			m_vSize = [ 640.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/prison_room6.psd"
+			m_vecNodes = [ 102 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 23
+			m_vPos = [ 32.0, 1248.0 ]
+			m_vSize = [ 704.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/storage_room2.psd"
+			m_vecNodes = 
+			[
+				46, 47, 48, 49,
+				50, 51, 52,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 24
+			m_vPos = [ 1360.0, 1248.0 ]
+			m_vSize = [ 592.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/storage_room3.psd"
+			m_vecNodes = 
+			[
+				59, 60, 61, 62,
+				63, 64,
+			]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 25
+			m_vPos = [ 1040.0, 1696.0 ]
+			m_vSize = [ 448.0, 416.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/storage_room4.psd"
+			m_vecNodes = [ 91, 92 ]
+			m_unUnlockedByNodeID = 0
+		},
+		{
+			m_unRoomID = 27
+			m_vPos = [ 144.0, 960.0 ]
+			m_vSize = [ 224.0, 464.0 ]
+			m_strBackgroundImage = panorama:"file://{images}/events/dark_carnival/overworld/act1/blimp3.psd"
+			m_vecNodes = [ 38 ]
+			m_unUnlockedByNodeID = 0
+		},
+	]
+	m_vecEncounters = 
+	[
+		{
+			m_sName = "fortune_teller"
+			m_sTemplate = "fortune_teller"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_Oracle"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_Oracle_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/oracle/hand_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_Invalid"
+			m_vecRewards = [  ]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "blimp_jump"
+			m_sTemplate = "blimp_jump"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_BlimpJump"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_BlimpJump_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/minigames/encounter_blimp_jump_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_HighScore"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 1
+					m_sEventAction = "encounter_act1_reward_blimpjump_1"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = "#DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle"
+				},
+				{
+					m_unRewardData = 10000
+					m_sEventAction = "encounter_act1_reward_blimpjump_2"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 20000
+					m_sEventAction = "encounter_act1_reward_blimpjump_3"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 30000
+					m_sEventAction = "encounter_act1_reward_blimpjump_4"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = false
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "whack_a_mole"
+			m_sTemplate = "whack_a_mole"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_BotAttack"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_BotAttack_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/minigames/encounter_whack_a_mole_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_HighScore"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 0
+					m_sEventAction = "encounter_act1_reward_whack_a_mole_1"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 1000
+					m_sEventAction = "encounter_act1_reward_whack_a_mole_2"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 2500
+					m_sEventAction = "encounter_act1_reward_whack_a_mole_3"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "crate_drop"
+			m_sTemplate = "crate_drop"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_CrateDrop"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_CrateDrop_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/minigames/encounter_assembly_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_HighScore"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 1500
+					m_sEventAction = "encounter_act1_reward_crate_drop_1"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 8000
+					m_sEventAction = "encounter_act1_reward_crate_drop_2"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 25000
+					m_sEventAction = "encounter_act1_reward_crate_drop_3"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "dark_carnival_token_trader"
+			m_sTemplate = "dark_carnival_token_trader"
+			m_sLocName = "UNUSED_STRING"
+			m_sLocDescription = "UNUSED_STRING"
+			m_sImage = panorama:""
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_Invalid"
+			m_vecRewards = [  ]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = 
+			{
+				m_vecRecipes = 
+				[
+					{
+						m_unID = 1
+						m_vecOffer = 
+						[
+							"#",
+							"#",
+							"#",
+						]
+						m_vecRequest = 
+						[
+							"*",
+						]
+						m_sTradeName = "#DOTA_Dark_Carnival_Encounter_TokenTrader_Trade3Title"
+					},
+					{
+						m_unID = 2
+						m_vecOffer = 
+						[
+							"*",
+							"*",
+							"*",
+							"*",
+						]
+						m_vecRequest = 
+						[
+							"*",
+						]
+						m_sTradeName = "#DOTA_Dark_Carnival_Encounter_TokenTrader_Trade4Title"
+					},
+					{
+						m_unID = 3
+						m_vecOffer = 
+						[
+							"18",
+							"18",
+							"18",
+							"18",
+							"18",
+							"18",
+						]
+						m_vecRequest = 
+						[
+							"*",
+						]
+						m_sTradeName = "#DOTA_Dark_Carnival_Encounter_TokenTrader_TradeSixScrapTitle"
+					},
+				]
+			}
+			m_bRequiresNodeToBeUnlockedToClaimRewards = false
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "candy_shop"
+			m_sTemplate = "candy_shop"
+			m_sLocName = "#DOTA_Dark_Carnival_EncounterName_CandyShop"
+			m_sLocDescription = "#DOTA_Dark_Carnival_EncounterDesc_CandyShop"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/nodes/node_candy_store.psd"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_Invalid"
+			m_vecRewards = [  ]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "lockpicking"
+			m_sTemplate = "lockpicking"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_PickLock"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_PickLock_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/minigames/encounter_pick_the_lock_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_HighScore"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 6000
+					m_sEventAction = "encounter_act1_reward_lockpicking_1"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 12000
+					m_sEventAction = "encounter_act1_reward_lockpicking_2"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 18000
+					m_sEventAction = "encounter_act1_reward_lockpicking_3"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 24000
+					m_sEventAction = "encounter_act1_reward_lockpicking_4"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "slark_jailbreak"
+			m_sTemplate = "slark_jailbreak"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_SlarkJailbreak"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_SlarkJailbreak_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/minigames/encounter_jail_break_icon.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_HighScore"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 1000
+					m_sEventAction = "encounter_act1_reward_slark_jailbreak_1"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 10000
+					m_sEventAction = "encounter_act1_reward_slark_jailbreak_2"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 20000
+					m_sEventAction = "encounter_act1_reward_slark_jailbreak_3"
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = false
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "secret_admirer"
+			m_sTemplate = "secret_admirer"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_FriendGifting"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_FriendGifting_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/gift_icon_large.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_ClaimCreditsRange"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 1200
+					m_sEventAction = ""
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 1210
+					m_sEventAction = ""
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 1300
+					m_sEventAction = ""
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 1310
+					m_sEventAction = ""
+					m_kvRewardExtraData = null
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = null
+			m_bRequiresNodeToBeUnlockedToClaimRewards = false
+			m_nLeaderboardCount = 1
+		},
+		{
+			m_sName = "ticket_smelter"
+			m_sTemplate = "token_quest"
+			m_sLocName = "#DOTA_DarkCarnival_Encounter_TicketSmelter"
+			m_sLocDescription = "#DOTA_DarkCarnival_Encounter_TicketSmelter_Description"
+			m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/encounter_smelter.png"
+			m_eRewardStyle = "k_eOverworldEncounterRewardStyle_Quest"
+			m_vecRewards = 
+			[
+				{
+					m_unRewardData = 0
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = [ 255, 255, 255, 255 ]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 1
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 2
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 3
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 4
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 5
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 6
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+				{
+					m_unRewardData = 7
+					m_sEventAction = ""
+					m_kvRewardExtraData = 
+					{
+						m_unCostTokenIds = 
+						[
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+							255, 255, 255, 255,
+						]
+					}
+					m_sRewardTitle = ""
+				},
+			]
+			m_sDefaultDialogue = ""
+			m_kvCustomData = 
+			{
+				sClaimRewardText = "DOTA_DarkCarnival_Encounter_TicketSmelter_SmeltButton"
+			}
+			m_bRequiresNodeToBeUnlockedToClaimRewards = true
+			m_nLeaderboardCount = 1
+		},
+	]
+	m_vecHeroes = 
+	[
+		{
+			m_unID = 1
+			m_unStartNodeID = 1
+			m_vecBlockedNodes = [  ]
+			m_baseAppearance = 
+			{
+				m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/hero_icons/hoodwink.png"
+				m_sClassName = "Hoodwink"
+				m_vSize = [ 0.0, 0.0 ]
+				m_vOffset = [ 0.0, 0.0 ]
+				m_unFrameWidth = 0
+				m_unFrameTime = 100
+				m_bUse3dPreview = false
+				m_nPreviewHeroID = 123
+			}
+			m_vecOverrides = [  ]
+		},
+	]
+	m_vecCharacters = 
+	[
+		{
+			m_appearance = 
+			{
+				m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/hero_icons/legion_commander.png"
+				m_sClassName = "LegionCommander"
+				m_vSize = [ 0.0, 0.0 ]
+				m_vOffset = [ 0.0, 0.0 ]
+				m_unFrameWidth = 0
+				m_unFrameTime = 100
+				m_bUse3dPreview = false
+				m_nPreviewHeroID = 104
+			}
+			m_conditions = 
+			{
+				m_eConditionFlags = "CompleteNode|ActiveNode"
+				m_vecNodes = [  ]
+			}
+			m_unHeroPartyID = 1
+			m_partyConditions = 
+			{
+				m_eConditionFlags = "CompleteNode"
+				m_vecNodes = [ 1 ]
+			}
+		},
+		{
+			m_appearance = 
+			{
+				m_sImage = panorama:"file://{images}/events/dark_carnival/overworld/hero_icons/slark.png"
+				m_sClassName = "CharacterSlark"
+				m_vSize = [ 0.0, 0.0 ]
+				m_vOffset = [ 0.0, 0.0 ]
+				m_unFrameWidth = 32
+				m_unFrameTime = 100
+				m_bUse3dPreview = false
+				m_nPreviewHeroID = 0
+			}
+			m_conditions = 
+			{
+				m_eConditionFlags = "CompleteNode|ActiveNode"
+				m_vecNodes = [  ]
+			}
+			m_unHeroPartyID = 1
+			m_partyConditions = 
+			{
+				m_eConditionFlags = "CompleteNode"
+				m_vecNodes = [ 5 ]
+			}
+		},
+	]
+	m_vecClickables = [  ]
+	m_vecRoomGroups = 
+	[
+		{
+			m_unGroupID = 1
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_PrisonCar"
+			m_strEntityParentName = "prison"
+			m_vPosition = [ 0.0, 0.0 ]
+			m_vSize = [ 2000.0, 2160.0 ]
+			m_vecRooms = 
+			[
+				1, 2, 3, 4,
+				22,
+			]
+			m_flTrainCarViewDistance = 800.0
+			m_flTrainCarViewOffset = [ 0.0, 80.0 ]
+			m_nNavPosX = 0
+		},
+		{
+			m_unGroupID = 2
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_SmeltingCar"
+			m_strEntityParentName = "smelting"
+			m_vPosition = [ 1420.0, 0.0 ]
+			m_vSize = [ 1600.0, 1960.0 ]
+			m_vecRooms = 
+			[
+				5, 7, 8, 13,
+				14,
+			]
+			m_flTrainCarViewDistance = 900.0
+			m_flTrainCarViewOffset = [ 0.0, 40.0 ]
+			m_nNavPosX = 1
+		},
+		{
+			m_unGroupID = 3
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_Blimp"
+			m_strEntityParentName = "blimp"
+			m_vPosition = [ 2840.0, 0.0 ]
+			m_vSize = [ 1500.0, 1500.0 ]
+			m_vecRooms = [ 27, 10, 21 ]
+			m_flTrainCarViewDistance = 450.0
+			m_flTrainCarViewOffset = [ 0.0, 0.0 ]
+			m_nNavPosX = 2
+		},
+		{
+			m_unGroupID = 4
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_StorageCar"
+			m_strEntityParentName = "storage"
+			m_vPosition = [ 2840.0, 0.0 ]
+			m_vSize = [ 2000.0, 2160.0 ]
+			m_vecRooms = 
+			[
+				23, 12, 20, 24,
+				25,
+			]
+			m_flTrainCarViewDistance = 880.0
+			m_flTrainCarViewOffset = [ 0.0, 150.0 ]
+			m_nNavPosX = 3
+		},
+		{
+			m_unGroupID = 5
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_CauldronCar"
+			m_strEntityParentName = "cauldron"
+			m_vPosition = [ 2840.0, 0.0 ]
+			m_vSize = [ 1600.0, 1600.0 ]
+			m_vecRooms = [ 15, 16, 17 ]
+			m_flTrainCarViewDistance = 800.0
+			m_flTrainCarViewOffset = [ 0.0, 100.0 ]
+			m_nNavPosX = 4
+		},
+		{
+			m_unGroupID = 6
+			m_strLocName = "#DOTA_DarkCarnival_Overworld_EngineCar"
+			m_strEntityParentName = "main"
+			m_vPosition = [ 2840.0, 0.0 ]
+			m_vSize = [ 1600.0, 1600.0 ]
+			m_vecRooms = [ 18 ]
+			m_flTrainCarViewDistance = 900.0
+			m_flTrainCarViewOffset = [ 0.0, 140.0 ]
+			m_nNavPosX = 5
+		},
+	]
+}

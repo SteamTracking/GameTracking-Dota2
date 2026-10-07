@@ -1,0 +1,697 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Axe
+	//=================================================================================================================
+	"npc_dota_hero_axe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------	
+		"Model"		"models/heroes/axe/axe.vmdl"
+		"SoundSet"		"Hero_Axe"
+		"IdleSoundLoop"		"Hero_Axe.IdleLoop"
+		"PickSound"		"axe_axe_spawn_01"
+		"BanSound"		"axe_axe_anger_01"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"2"
+		"HeroPool1"				"1"
+		"HeroPool2"				"1"
+		"Role"			"Initiator,Durable,Disabler,Carry"
+		"Rolelevels"	"3,3,2,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"2"
+		"HeroOrderID"	"2"
+		"BotImplemented"		"1"
+		"ModelScale"		"1.000000"
+		"VersusScale"		"1"
+		"LoadoutScale"		"1"
+		"SpectatorLoadoutScale" "0.85"
+		"HeroGlowColor"		"222 60 36"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Axe"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"96,16,104"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"NicePecs"		"1"
+			"Red"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_juggernaut"
+		"HeroSelectSoundEffect"		"Hero_Axe.Pick"
+		"GibType"		"default"
+		"Ability1"		"axe_berserkers_call"
+		"Ability2"		"axe_battle_hunger"
+		"Ability3"		"axe_counter_helix"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"axe_culling_blade"
+		"Ability7"		"axe_one_man_army"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"axe_berserkers_call"
+			"Ability2"	"axe_battle_hunger"
+			"Ability3"	"axe_counter_helix"
+			"Ability4"	"axe_culling_blade"
+		}
+
+		"Ability10"		"special_bonus_unique_axe_culling_blade_speed_duration"
+		"Ability11"		"special_bonus_unique_axe_8"
+		"Ability12"		"special_bonus_unique_axe"
+		"Ability13"		"special_bonus_unique_axe_7"
+		"Ability14"		"special_bonus_strength_15"
+		"Ability15"		"special_bonus_unique_axe_4"
+		"Ability16"		"special_bonus_unique_axe_2"
+		"Ability17"		"special_bonus_unique_axe_5"
+		
+		"Facets"
+		{
+			"axe_one_man_army"
+			{
+				"Icon"				"strength"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"axe_call_out"
+			{
+				"Icon"				"armor"
+				"Color"				"Red"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+		}
+		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.7"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.6"
+		"StatusHealthRegen"		"2.0"
+		"MovementSpeed"		"315"
+		"MovementSpeedActivityModifiers"
+		{
+			"jog"		"0"
+			"run"		"340"
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"Persona"
+			{
+				"1"
+				{
+					"name"					"npc_dota_hero_axe_carnival"
+					"token"					"#npc_dota_hero_axe_carnival"
+					"token_english"			"#npc_dota_hero_axe_carnival_en"
+					"cosmetic_group_name"	"#npc_dota_hero_axe_carnival_cosmetic_group_name"
+					"Model"					"models/items/axe/axe_carnival/axe_carnival_base.vmdl"	// For tools only
+				}
+			}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Pet"
+				"ShowItemOnGeneratedUnits" "1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_companion"
+				}
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_1"
+				"SlotText" "axe_berserkers_call"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "axe_battle_hunger"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_3"
+				"SlotText" "axe_counter_helix"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_4"
+				"SlotText" "axe_culling_blade"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"weapon_persona_1"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+				"DisplayInLoadout"		"0"
+			}
+			"17"
+			{
+				"SlotIndex"		"17"
+				"SlotName"		"back_persona_1"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+				"DisplayInLoadout"		"0"
+			}
+			"19"
+			{
+				"SlotIndex"		"19"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt"
+				"CanEquipFromSlotType"
+				{
+					"4" 
+					{
+						"SlotTypeName"	"taunt"
+						"ItemDefExclusions"	"0000"
+					}
+				}
+				"DisplayInLoadout"		"1"
+			}
+			"20"
+			{
+				"SlotIndex"		"20"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			"21"
+			{
+				"SlotIndex"		"21"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_axe"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_axe/axe_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"SupportsEasyMode"	"1"
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_flask"		"ITEM_CONSUMABLE | ITEM_SELLABLE"	
+				"item_branches"		"ITEM_CORE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE | ITEM_SELLABLE"
+				
+				"item_boots"					"ITEM_CORE"
+				"item_wind_lace" 		"ITEM_CORE"
+				"item_ring_of_regen" 			"ITEM_CORE"
+				"item_recipe_tranquil_boots" 	"ITEM_DERIVED"
+				"item_tranquil_boots"			"ITEM_DERIVED"
+
+				"item_blink"	"ITEM_CORE"
+
+				"item_recipe_blade_mail"					"ITEM_CORE"
+				"item_chainmail"			"ITEM_CORE"
+				"item_broadsword"			"ITEM_CORE"
+				"item_blade_mail" 			"ITEM_CORE | ITEM_DERIVED"
+
+				"item_mithril_hammer"		"ITEM_LUXURY"
+				"item_ogre_axe"		"ITEM_LUXURY"
+				"item_recipe_black_king_bar"		"ITEM_LUXURY"
+				"item_black_king_bar"		"ITEM_LUXURY | ITEM_DERIVED"
+
+				"item_ring_of_tarrasque"		"ITEM_LUXURY"
+				"item_reaver"		"ITEM_LUXURY"
+				//"item_vitality_booster"		"ITEM_LUXURY"
+				"item_recipe_heart"		"ITEM_LUXURY"
+				"item_heart"		"ITEM_DERIVED"
+
+				"item_helm_of_iron_will"	"ITEM_EXTENSION"
+				"item_crown"					"ITEM_EXTENSION"
+				"item_recipe_veil_of_discord"	"ITEM_EXTENSION"
+				"item_veil_of_discord"		"ITEM_DERIVED"
+				"item_platemail"		"ITEM_LUXURY"
+				//"item_mystic_staff"		"ITEM_LUXURY"
+				"item_recipe_shivas_guard"		"ITEM_LUXURY"
+				"item_shivas_guard"		"ITEM_LUXURY | ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"			"axe_counter_helix"
+				"2"			"axe_berserkers_call"
+				"3"			"axe_counter_helix"
+				"4"			"axe_berserkers_call"
+				"5"			"axe_counter_helix"
+				"6"			"axe_culling_blade"
+				"7"			"axe_counter_helix"
+				"8"			"axe_berserkers_call"
+				"9"			"axe_berserkers_call"
+				"10"		"special_bonus_unique_axe_8"
+				"11"		"axe_battle_hunger"
+				"12"		"axe_culling_blade"
+				"13"		"axe_battle_hunger"
+				"14"		"axe_battle_hunger"
+				"15"		"special_bonus_unique_axe_7"
+				"16"		"axe_battle_hunger"
+				"17"		""
+				"18"		"axe_culling_blade"
+				"19"		""
+				"20"		"special_bonus_unique_axe_5"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_axe"
+			}
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_STUN_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"	"0"
+				"ProvidesBabysit"	"1"
+				"SurvivalRating"	"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_axe.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_axe.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_mouth"		"1"
+			"attach_attack1"	"2"
+			"attach_attack2"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Axe Berserker's Call
+			//=================================================================================================================
+			"axe_berserkers_call"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Axe.Berserkers_Call"
+				"TooltipSummaryProperties"		"duration;bonus_armor"
+
+				"HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+		 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
+				"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"18 16 14 12"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"0 0 0 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 100 110 120"	
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value"							"315"
+						"special_bonus_unique_axe_2"	"+85"
+						"affected_by_aoe_increase"	"1"
+					}
+					"bonus_armor"	
+					{
+						"value"							"12 13 14 15"
+						"special_bonus_unique_axe_7"	"+10"
+					}
+					"duration"
+					{
+						"value"							"2.1 2.4 2.7 3.0"
+					}
+					"applies_battle_hunger"
+					{
+						"special_bonus_shard" "+1"
+					}
+					"bonus_attack_speed"
+					{
+						"value"					"0"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: Axe Battle Hunger
+			//=================================================================================================================
+			"axe_battle_hunger"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Axe.Battle_Hunger"
+				"TooltipSummaryProperties"		"#DOTA_Tooltip_AttributeSummary__DPS_Pure;slow"
+				"HasShardUpgrade"               "1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+		 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 15 10 5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50 60 70 80"		
+		
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600 700 800 900"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"duration"
+						{
+							"value"							"12.0"
+						}
+						"slow"
+						{
+							"value"			"18 22 26 30"
+							"display_type"	"kDebuffPercentage"
+						}
+						"damage_per_second"	
+						{
+							"value"			"12 16 20 24"
+							"special_bonus_unique_axe"	"+8"
+							"CalculateSpellDamageTooltip" "1"
+						}
+						"speed_bonus"
+						{
+							"value"			"0"
+							"special_bonus_unique_axe_8"	"+8"
+						}
+						"should_stack"
+						{
+							"special_bonus_shard"	"1"
+						}
+				}		
+			}
+	
+			//=================================================================================================================
+			// Ability: Axe Counter Helix
+			//=================================================================================================================
+			"axe_counter_helix"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Axe.CounterHelix"
+		        "HasScepterUpgrade"               "1"
+				"TooltipSummaryProperties"		"damage;trigger_attacks"
+				"IsBreakable"					"1"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"				"100 120 140 160"
+						"special_bonus_unique_axe_4" "+40"
+					}
+					"radius"					
+					{
+						"value"						"275"
+						"affected_by_aoe_increase"	"1"
+					}
+					"trigger_attacks"
+					{
+						"value"							"7 6 5 4"
+					}
+
+					"AbilityCooldown"
+					{
+						"value"					"0.3"
+						"special_bonus_scepter"	"-0.3"
+					}
+			
+					"debuff_duration"
+					{
+						"special_bonus_scepter"		"+6.0"
+					}
+					"damage_reduction"
+					{
+						"special_bonus_scepter"		"+12"
+						"display_type"	"kDebuffPercentage"
+					}
+					"max_stacks"
+					{
+						"special_bonus_scepter"		"+5"	
+					}
+					"attacks_increase_counter"
+					{
+						"special_bonus_scepter"		"1"
+					}
+					"helix_lifesteal"
+					{
+						"value"									"0"
+						"special_bonus_unique_axe_helix_lifesteal"	"+30"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Ability: Axe Culling Blade
+			//=================================================================================================================
+			"axe_culling_blade"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"TooltipSummaryProperties"		"damage;armor_per_stack;#DOTA_Tooltip_ability_axe_culling_blade___buff"
+
+				"FightRecapLevel"				"2"
+
+
+				"AbilitySound"					"Hero_Axe.Culling_Blade_Success"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"80 75 70"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 125 150"		
+		
+				// Cast Range
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"175"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"					
+					{	
+						"value"			"275 375 475"
+						"special_bonus_unique_axe_5"	"+150"
+					}
+					"speed_bonus"
+					{
+						"value"			"20 25 30"
+						"display_type"	"kBuffPercentage"
+					}
+					"armor_bonus"				"10 15 20"
+					"speed_duration"			
+					{
+						"value"					"6"
+						"special_bonus_unique_axe_culling_blade_speed_duration"		"+3"
+					}
+			
+					"speed_aoe"						
+					{
+						"value"						"900"
+						"affected_by_aoe_increase"	"1"
+					}
+					"charge_speed"				"1200"
+					"armor_per_stack"			
+					{
+						"value"					"1 1.5 2"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Axe: One Man Army
+			//=================================================================================================================
+			"axe_one_man_army"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"armor_pct_as_strength"			"50"
+					"current_max_str_bonus"
+					{	
+						"dynamic_value"			"true"
+					}
+					"radius"					"700"
+					"bonus_linger_duration"		"3"
+				}
+
+			}
+		}
+	}
+}

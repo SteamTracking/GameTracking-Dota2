@@ -1,0 +1,715 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_chen"
+	{
+		"Model"		"models/heroes/chen/chen.vmdl"
+		"SoundSet"		"Hero_Chen"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Support,Pusher"
+		"Rolelevels"	"2,2"
+		"Complexity"	"3"
+		"Team"		"Good"
+		"HeroID"		"66"
+		"HeroOrderID"	"50"
+		"ModelScale"		"0.930000"
+		"VersusScale"		"0.93"
+		"LoadoutScale"		"0.93"
+		"HeroGlowColor"		"107 74 53"
+		"PickSound"		"chen_chen_spawn_01"
+		"BanSound"		"chen_chen_anger_04"
+		"CMEnabled"		"1"
+		"SimilarHeroes"		"58,53,33"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"Arachnophobic"	"1"
+			"Yellow"		"1"
+		}
+		"workshop_guide_name"		"Chen"
+		"LastHitChallengeRival"		"npc_dota_hero_sven"
+		"HeroSelectSoundEffect"		"Hero_Chen.Pick"
+		"GibType"		"default"
+		"NameAliases"	"Holy Knight"
+		"Ability1"		"chen_penitence"
+		"Ability2"		"chen_holy_persuasion"
+		"Ability3"		"chen_divine_favor"
+		"Ability4"		"chen_zealot"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"chen_hand_of_god"
+		"Ability10"		"special_bonus_unique_chen_11"
+		"Ability11"		"special_bonus_unique_chen_zealot"
+		"Ability12"		"special_bonus_unique_chen_5"
+		"Ability13"		"special_bonus_unique_chen_8"
+		"Ability14"		"special_bonus_unique_chen_divine_favor_healing"
+		"Ability15"		"special_bonus_unique_chen_4"
+		"Ability16"		"special_bonus_unique_chen_12"
+		"Ability17"		"special_bonus_unique_chen_2"
+		
+		"Facets"
+		{
+			"chen_centaur_convert" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Yellow"
+				"GradientID"		"3"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_centaur"
+				}
+				"Deprecated"		"true"
+
+			}
+			"chen_wolf_convert" 
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_wolf"
+				}
+				"Deprecated"		"true"
+			}
+			"chen_hellbear_convert" 
+			{
+				"Icon"				"slow"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_hellbear"
+				}
+				"Deprecated"		"true"
+			}
+			"chen_troll_convert" 
+			{
+				"Icon"				"summons"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_troll"
+				}
+				"Deprecated"		"true"
+			}
+			"chen_satyr_convert" 
+			{
+				"Icon"				"mana"
+				"Color"				"Purple"
+				"GradientID"		"1"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_satyr"
+				}
+				"Deprecated"		"true"
+			}
+			"chen_frog_convert" 
+			{
+				"Icon"				"bubbles"
+				"Color"				"Blue"
+				"GradientID"		"3"
+				"AbilityIconReplacements"
+				{
+					"chen_summon_convert"	"chen_summon_convert_frog"
+				}
+				"Deprecated"		"true"
+			}
+		}
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"chen_penitence"
+			"Ability2"		"chen_divine_favor"
+			"Ability3"		"chen_holy_persuasion"
+			"Ability4"		"chen_hand_of_god"
+		}
+
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"650"
+		"ProjectileModel"		"particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.2"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.100000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"3.200000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"305"
+		"particle_folder"		"particles/units/heroes/hero_chen"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_chen.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_chen/chen_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"mount"
+				"SlotText"		"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"6000"
+				"MaxPolygonsLOD1"		"2400"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc" //slot retired from workshop, only used for 2 items
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chen.vpcf"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chen_mount.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chen.vpcf"
+			"party_hat_effect_1"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_chen_mount.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			"1"
+			"attach_head_mount"		"2"
+			"attach_hand2"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Chen: Penitence
+			//=================================================================================================================
+			"chen_penitence"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"AbilitySound"					"Hero_Chen.PenitenceCast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCooldown"				"20 17 14 11"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				"5 6 7 8"
+					"speed"					"1400"
+					"bonus_movement_speed"
+					{
+						"value"	"-12 -18 -24 -30"
+						"special_bonus_unique_chen_8"	"-15"
+					}
+					"bonus_attack_speed"	"20 40 60 80"
+					"damage"
+					{
+						"value"					"50 100 150 200"
+						"special_bonus_unique_chen_11"		"+75"
+					}
+					"self_attack_range_bonus"			"0"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Chen: Test of Faith
+			//=================================================================================================================
+			"chen_test_of_faith"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Chen.TestOfFaith.Target"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600 600 600 600"
+				"AbilityCooldown"				"16"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60 80 100 120"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityValues"
+				{
+					"damage_min"
+					{
+						"value" "50 100 150 200"
+					}
+					"damage_max"
+					{
+						"value" "100 200 300 400"
+					}
+					"heal_min"
+					{
+						"value" "25 50 75 100"
+					}
+					"heal_max"
+					{
+						"value" "50 100 150 200"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Chen: Divine Favor
+			//=================================================================================================================
+			"chen_divine_favor"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Chen.TestOfFaith.Target"
+				"IsBreakable"					"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCooldown"				"20 18 16 14 "
+				"AbilityManaCost"				"75"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"armor"					"0"
+					"heal_rate"					"1.5 3 4.5 6"
+					"aura_radius"		
+					{
+						"value"	"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"AbilityCastRange"				"1200"
+					"duration"				"6"
+			
+					"bonus_armor"			"5 10 15 20"
+					"heal_amp"
+					{
+						"value"				"5 10 15 20"
+						"special_bonus_unique_chen_divine_favor_healing" "+15"
+					}
+					"creep_bonus"			"1"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+			//=================================================================================================================
+			// Chen: Test of Faith Teleport
+			//=================================================================================================================
+			"chen_test_of_faith_teleport"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"LinkedAbility"					"chen_test_of_faith"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600 600 600 600"
+				"AbilityCooldown"				"24.0 24.0 24.0 24.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 200 200 200"
+				"AbilityValues"
+				{
+					"hero_teleport_delay"
+					{
+						"value" "6.0 5.0 4.0 3.0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Chen: Holy Persuasion
+			//=================================================================================================================
+			"chen_holy_persuasion"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
+				"HasShardUpgrade"				"1"		
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCooldown"				"15"
+			
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"110 130 150 170"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+			
+					"max_units"				
+					{		
+						"value"				"1 2 3 4"
+					}
+					"level_req"				"3 4 5 6"
+					"health_min"			
+					{
+						"value"						"400"
+						"hero_levelup"				"+50"
+						"special_bonus_unique_chen_4"	"+1300"
+					}
+					"gold_pct"			"25 50 75 100"
+					"movement_speed_bonus"	"5 10 20 30"
+					"damage_bonus"	
+					{
+						"value"					"5 10 15 20"
+						"special_bonus_unique_chen_5"		"+12"
+					}
+					"is_martyr"
+					{
+						"value"							"0"
+					}
+					"current_hp_pct_tooltip"
+					{
+						"value"							"0"
+					}
+					"creep_ability_level"
+					{
+						"value"			"0"
+						"special_bonus_shard"			"=2"
+					}
+
+			
+
+					"unsummon_time"				"3.0"
+					"unsummon_cooldown_reduction"		"12.0"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Chen: Martyrdom
+			//=================================================================================================================
+			"chen_martyrdom"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Chen.HandOfGodHealHero"
+				"MaxLevel"						"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+				"AbilityCastRange"				"500"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed"						"1000"
+					"current_hp_pct"			"20.0"
+					"base_value"				"25"
+					"heal_factor"				"50"
+				}
+			}
+
+			//=================================================================================================================
+			// Chen: Hand of God
+			//=================================================================================================================
+			"chen_hand_of_god"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Chen.HandOfGodHealHero"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityChannelAnimation"       "ACT_DOTA_CHANNEL_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"200 300 400"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"							"150 130 110"
+						"special_bonus_scepter"			"-40"
+					}
+
+					"heal_amount"
+					{
+						"value"							"200 300 400"
+					}
+					"hot_duration"	"10"
+					"heal_per_second"
+					{
+						"value"							"20 30 40"
+					}
+					"ancient_creeps_scepter"		
+					{
+						"special_bonus_shard"	"1 2 3"
+					}
+					"does_purge"
+					{
+						"special_bonus_unique_chen_12"		"+1"
+					}
+					"full_heal_on_chen_and_creeps"
+					{
+						"special_bonus_unique_chen_2"	"=1"
+					}
+
+					"AbilityChannelTime"
+					{
+						"special_bonus_scepter"			"=6"
+					}
+
+					"debuff_immune_radius"
+					{
+						"special_bonus_scepter"			"=800"
+						"affected_by_aoe_increase"		"1"
+					}
+
+					"debuff_immune_resist"
+					{
+						"special_bonus_scepter"			"60"
+					}
+
+					"nearby_hot_boost"
+					{
+						"special_bonus_scepter"			"200"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Chen: Zealot
+			//=================================================================================================================
+			"chen_zealot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCooldown"				"10"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilityValues"
+				{
+					"zealots"					"1"
+					"zealot_respawn_time"
+					{
+						"value"					"60"
+						"hero_levelup"			"-1"
+					}
+			
+					"damage"
+					{				
+						"hero_levelup"		"2"
+						"special_bonus_unique_chen_zealot"		"+25%"
+					}
+					"bonus_hp"
+					{
+						"value"				"0"
+						"special_bonus_unique_chen_zealot"		"+25"
+					}
+
+					"teleport_delay"		"6"
+				}
+			}
+
+			"chen_innate_check_for_team_change"
+			{
+				"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+			}
+		}
+	}
+}

@@ -1,0 +1,788 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_windrunner"
+	{
+		"Model"		"models/heroes/windrunner/windrunner.vmdl"
+		"IdleExpression"		"scenes/windrunner/windrunner_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Windrunner"
+		"PickSound"		"windrunner_wind_spawn_01"
+		"BanSound"		"windrunner_wind_anger_01"
+		"Enabled"		"1"
+		"HeroPool1"				"1"
+		"HeroPool2"				"1"
+		"HeroUnlockOrder"		"2"
+		"Role"			"Carry,Support,Disabler,Escape,Nuker"
+		"Rolelevels"	"1,1,1,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"21"
+		"HeroOrderID"	"22"
+		"BotImplemented"		"1"
+		"ModelScale"		"0.980000"
+		"LoadoutScale"		"0.980000"
+		"SpectatorLoadoutScale" "1.1"
+		"HeroGlowColor"		"185 220 20"
+		"CMEnabled"		"1"
+		"NameAliases"		"wr;Lyralei"
+		"workshop_guide_name"		"Windranger"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"128,123,9"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Cape"			"1"
+			"Cute"			"1"
+			"Green"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+		"HeroSelectSoundEffect"		"Hero_Windrunner.Pick"
+		"GibType"		"default"
+		"Ability1"		"windrunner_shackleshot"
+		"Ability2"		"windrunner_powershot"
+		"Ability3"		"windrunner_windrun"
+		"Ability4"		"windrunner_gale_force"
+		"Ability5"		"windrunner_focusfire_cancel"
+		"Ability6"		"windrunner_focusfire"
+		"Ability7"		"windrunner_tailwind"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"windrunner_shackleshot"
+			"Ability2"	"windrunner_powershot"
+			"Ability3"	"windrunner_windrun"
+			"Ability4"	"windrunner_focusfire"
+		}
+
+		"Ability10"		"special_bonus_unique_windranger_powershot_slow"
+		"Ability11"		"special_bonus_unique_windranger_4"
+		"Ability12"		"special_bonus_unique_windranger_5"
+		"Ability13"		"special_bonus_unique_windranger_3"
+		"Ability14"		"special_bonus_unique_windranger_6"
+		"Ability15"		"special_bonus_unique_windranger_8"
+		"Ability16"		"special_bonus_unique_windranger_7"
+		"Ability17"		"special_bonus_unique_windranger_2"
+		"Facets"
+		{
+			"windrunner_tailwind" 
+			{
+				"Icon"				"speed"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"windrunner_focusfire" 
+			{
+				"Icon"				"focus_fire"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"windrunner_whirlwind" 
+			{
+				"Icon"				"multi_arrow"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+				"AbilityIconReplacements"
+				{
+					"windrunner_focusfire"	"windrunner_whirlwind"
+					"windrunner_focusfire_cancel"	"windrunner_whirlwind_stop"
+				}
+			}
+			"windrunner_tangled"
+			{
+				"Icon"				"tree"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+
+			"windrunner_killshot"
+			{
+				"Icon"				"execute"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"HasAggressiveStance"		"1"
+		"BaseAttackSpeed"		"90"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+		}
+		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+		"ProjectileSpeed"		"1250"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"2.1"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"3.2"
+		"StatusHealthRegen"	"0.75"
+		"StatusManaRegen"	"0.25"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"		"285"
+		"MovementTurnRate"		"0.800000"
+		"particle_folder"		"particles/units/heroes/hero_windrunner"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_windrunner.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_windrunner/windrunner_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_Quiver"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "windrunner_shackleshot"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "windrunner_powershot"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "windrunner_windrun"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Windrunner_Base"
+			}		
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_boots"		"ITEM_CORE"
+				
+				"item_circlet"		  "ITEM_CORE"
+				"item_mantle"		   "ITEM_CORE"
+				"item_recipe_null_talisman" "ITEM_CORE"
+				"item_null_talisman"	"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_chainmail"		"ITEM_EXTENSION"
+				"item_blades_of_attack"	"ITEM_EXTENSION"
+				"item_phase_boots"		"ITEM_DERIVED"
+
+				"item_gloves"   		"ITEM_EXTENSION"
+				"item_mithril_hammer"   "ITEM_EXTENSION"
+				"item_javelin"		  "ITEM_EXTENSION"
+				"item_gloves"   		"ITEM_EXTENSION"
+				"item_maelstrom"		"ITEM_DERIVED"
+
+				"item_ogre_axe"		 "ITEM_EXTENSION"
+				"item_mithril_hammer"   "ITEM_EXTENSION"
+				"item_recipe_black_king_bar"	"ITEM_EXTENSION"
+				"item_black_king_bar"	   "ITEM_DERIVED"
+
+				"item_point_booster"		"ITEM_EXTENSION"
+				"item_blade_of_alacrity"	"ITEM_EXTENSION"
+				"item_ogre_axe"				"ITEM_EXTENSION"
+				"item_staff_of_wizardry"	"ITEM_EXTENSION"
+				"item_ultimate_scepter"		"ITEM_DERIVED"
+
+				"item_demon_edge"		   "ITEM_LUXURY"
+				"item_javelin"			  "ITEM_LUXURY"
+				"item_blitz_knuckles"		 "ITEM_LUXURY"
+				"item_recipe_monkey_king_bar"		 "ITEM_LUXURY"
+				"item_monkey_king_bar"	  "ITEM_DERIVED"
+
+				"item_hyperstone"		   "ITEM_LUXURY"
+				"item_recipe_mjollnir"	  "ITEM_LUXURY"
+				"item_mjollnir"			 "ITEM_DERIVED"   
+			}
+			"Build"
+			{
+				"1"		"windrunner_windrun"
+				"2"		"windrunner_powershot"
+				"3"		"windrunner_powershot"
+				"4"		"windrunner_shackleshot"
+				"5"		"windrunner_powershot"
+				"6"		"windrunner_focusfire"
+				"7"		"windrunner_powershot"
+				"8"		"windrunner_shackleshot"
+				"9"		"windrunner_shackleshot"
+				"10"		"special_bonus_unique_windranger_powershot_slow"
+				"11"		"windrunner_shackleshot"
+				"12"		"windrunner_focusfire"
+				"13"		"windrunner_windrun"
+				"14"		"windrunner_windrun"
+				"15"		"special_bonus_unique_windranger_5"
+				"16"		"windrunner_windrun"
+				"17"		""
+				"18"		"windrunner_focusfire"
+				"19"		""
+				"20"		"special_bonus_unique_windranger_8"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_windranger_2"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_STUN_SUPPORT"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_windrunner.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_windrunner.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"		"1"
+			"bow_mid1"				"2"
+			"attach_head"			"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Windrunner: Gale Force (shard)
+			//=================================================================================================================
+			"windrunner_gale_force"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT |  DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"		
+
+				"MaxLevel"						"1"
+				"IsShardUpgrade"				"1"
+				"IsGrantedByShard"				"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastRange"				"1200"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"			"3.0"
+					"wind_strength"		"240"
+					"radius"			
+					{
+						"value"		"900"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Windrunner: Shackleshot
+			//=================================================================================================================
+			"windrunner_shackleshot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Windrunner.ShackleshotCast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.15"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"0 0 0 0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70 80 90 100"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"											"16 14 12 10"
+					}
+					"fail_stun_duration"
+					{
+						"value" "0.6"
+					}
+					"stun_duration"
+					{
+						"value" "1.75 2.25 2.75 3.25"
+						"special_bonus_unique_windranger_6" "+0.75"
+					}
+					"shackle_distance"
+					{
+						"value" "575"
+					}
+					"arrow_speed"
+					{
+						"value" "1650"
+					}
+					"shackle_count"
+					{
+						"value" 									"1"
+						"special_bonus_facet_windrunner_tangled"	"=0"
+					}
+					"shackle_angle"
+					{
+						"value" "23"
+					}
+
+					"bonus_damage_per_hero"
+					{
+						"special_bonus_facet_windrunner_tangled"	"35"
+					}
+					"bonus_damage_per_other_pct"
+					{
+						"special_bonus_facet_windrunner_tangled"	"50"
+					}
+					"damage_buff_duration"
+					{
+						"special_bonus_facet_windrunner_tangled"	"3 4 5 6"
+					}
+		
+				}
+			}
+
+			//=================================================================================================================
+			// Windrunner: Powershot
+			//=================================================================================================================
+			"windrunner_powershot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.Powershot"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"3000"
+				"AbilityCastPoint"				"0.0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"12 11 10 9"
+				"AbilityChannelTime"			"1.0"
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 100 110 120"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"powershot_damage"			
+						{
+							"value"					"170 270 370 470"
+							"CalculateSpellDamageTooltip"	"1"
+						}
+						"slow"	
+						{
+							"value"	"22 28 34 40"
+						}
+						"slow_duration"	
+						{
+							"value"															"3"
+							"special_bonus_unique_windranger_powershot_slow"				"+1"
+						}
+						"damage_reduction"		
+						{
+							"value"				"15"
+							"special_bonus_unique_windranger_3"		"-15"
+							"CalculateSpellDamageTooltip"	"0"
+							"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+						}
+						"arrow_width"			
+						{
+							"value"		"125 125 125 125"
+							"affected_by_aoe_increase"	"1"
+						}
+						"arrow_range"			
+						{
+							"value"		"3000"
+						}
+
+						"arrow_speed"			"3000"
+						"tree_width"
+						{
+							"value"						"50.0"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_radius"			
+						{
+							"value"			"400"
+							"affected_by_aoe_increase"	"1"
+						}
+
+						"vision_duration"		"3.34 3.34 3.34 3.34"
+
+						"min_execute_threshold"
+						{
+							"value"								"0"
+							"special_bonus_unique_windranger_7"	"+10"
+						}
+
+						"max_execute_threshold"
+						{
+							"value"								"0"
+							"special_bonus_unique_windranger_7"	"+16"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Windrunner: Windrun
+			//=================================================================================================================
+			"windrunner_windrun"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Ability.Windrun"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.1"	// Mostly about dodging all attacks
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movespeed_bonus_pct"	"50"
+					"evasion_pct_tooltip"	"100"
+					"cannot_be_dispelled"
+					{
+						"value"				"+0"
+					}
+					"AbilityDuration"
+					{
+						"value"									"3 4 5 6"
+						"special_bonus_unique_windranger_4"		"+0.75"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"14 13 12 11"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+		
+			//=================================================================================================================
+			// Windrunner: Focus Fire
+			//=================================================================================================================
+			"windrunner_focusfire"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Ability.Focusfire"
+				"AbilityDraftExtraAbilities"
+				{
+					"windrunner_gale_force" "shard"
+				}
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"75 100 125"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"			"50 40 30"
+						"special_bonus_facet_windrunner_whirlwind" "=70 =60 =50"
+					}
+
+					"AbilityDuration"				
+					{
+						"value"		"20.0 20.0 20.0"
+						"special_bonus_facet_windrunner_whirlwind"	"=8.0"			
+					}
+					"bonus_attack_speed"			
+					{
+						"value"		"350 425 500"
+						"special_bonus_facet_windrunner_whirlwind" "=0"				
+					}
+					"attacks_per_second"
+					{
+						"special_bonus_facet_windrunner_whirlwind" 				"7 9 11"				
+					}
+					"focusfire_damage_reduction"	
+					{
+						"value"						"-25"
+						"special_bonus_facet_windrunner_whirlwind" "-5"
+						"special_bonus_unique_windranger_8"		"+10"
+
+						// "damage" in attribute name but it's a percentage-based effect
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
+					}
+					"focusfire_fire_on_the_move"	"1"
+					"process_procs"
+					{
+						"value"						"1"
+					}
+					"is_unfocused"
+					{
+						"value"		"0"
+						"special_bonus_facet_windrunner_whirlwind"			"=1"
+					}
+					"duration_increase_per_kill"
+					{
+						"special_bonus_facet_windrunner_whirlwind"
+						{
+							"special_bonus_unique_windranger_2"		"+2"
+						}
+					}
+					"cooldown_reduction_per_kill"
+					{
+						"special_bonus_unique_windranger_2"		"+16"
+					}
+					"bonus_range"
+					{
+						"value"				"0"
+						"special_bonus_facet_windrunner_whirlwind"		"+125"
+					}
+			
+					"unfocused_cancel_initial_cooldown"		"0.5"
+				}
+			}
+	
+			//=================================================================================================================
+			// Puck: Focus Fire Cancel
+			//=================================================================================================================
+			"windrunner_focusfire_cancel"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"MaxLevel"						"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Ability: Innate Like The Wind (min movespeed)
+			//=================================================================================================================
+			"windrunner_easy_breezy"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"min_movespeed"		
+					{
+						"value"						"240"
+					}
+					"max_movespeed"		
+					{
+						"value"						"600"
+					}			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+
+			//=================================================================================================================
+			// Ability: Tailwind
+			//=================================================================================================================
+			"windrunner_tailwind"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+				"HasScepterUpgrade"				"1"
+				
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"movespeed_bonus"		
+					{
+						"value"						"35"
+					}
+					"duration"		
+					{
+						"value"						"2.5"
+						"special_bonus_scepter"		"+1.0"
+					}
+					"max_movespeed"
+					{
+						"value"								"600"
+						"special_bonus_unique_windranger_5"	"+40"
+					}
+					"applies_on_attack"
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"+1"
+					}
+					"undispellable"
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"+1"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,892 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_dazzle"
+	{
+		"Model"		"models/heroes/dazzle/dazzle.vmdl"
+		"IdleExpression"		"scenes/dazzle/dazzle_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Dazzle"
+		"Enabled"		"1"
+		"BotImplemented"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Support,Nuker,Disabler"
+		"Rolelevels"	"3,1,1"
+		"Complexity"	"1"
+		"Team"		"Bad"
+		"HeroID"		"50"
+		"HeroOrderID"	"4"
+		"ModelScale"		"0.790000"
+		"VersusScale"		"0.790000"
+		"LoadoutScale"		"0.79"
+		"HeroGlowColor"		"222 60 236"
+		"PickSound"		"dazzle_dazz_spawn_01"
+		"BanSound"		"dazzle_dazz_anger_05"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Dazzle"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"57,37,111"
+		"Adjectives"
+		{
+			"Purple"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_witch_doctor"
+		"HeroSelectSoundEffect"		"Hero_Dazzle.Pick"
+		"GibType"		"default"
+		"Ability1"		"dazzle_poison_touch"
+		"Ability2"		"dazzle_shallow_grave"
+		"Ability3"		"dazzle_shadow_wave"
+		"Ability4"		"dazzle_innate_weave"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dazzle_nothl_projection"
+		"Ability7"		"dazzle_nothl_projection_end"
+		"Ability10"		"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"
+		"Ability11"		"special_bonus_mp_regen_175"
+		"Ability12"		"special_bonus_unique_dazzle_2"
+		"Ability13"		"special_bonus_unique_dazzle_nothl_projection_duration"
+		"Ability14"		"special_bonus_unique_dazzle_shallow_grave_cooldown"
+		"Ability15"		"special_bonus_unique_dazzle_3"
+		"Ability16"		"special_bonus_unique_dazzle_1"
+		"Ability17"		"special_bonus_unique_dazzle_4"
+		"Facets"
+		{
+			"dazzle_facet_nothl_boon"
+			{
+				"Icon"				"armor"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"dazzle_nothl_boon"
+					}
+				}
+			}
+			"dazzle_poison_bloom" 
+			{
+				"Icon"				"ricochet"
+				"Color"				"Purple"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"dazzle_poison_touch"
+			"Ability2"		"dazzle_shallow_grave"
+			"Ability3"		"dazzle_shadow_wave"
+			"Ability4"		"dazzle_nothl_projection"
+		}
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"19"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"ProjectileModel"		"particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"StatusManaRegen"		"0.3"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.3"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.5"
+		"MovementSpeed"		"305"
+		"MovementTurnRate"		"0.700000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "dazzle_poison_touch"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_2"
+				"SlotText" "dazzle_shallow_grave"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_3"
+				"SlotText" "dazzle_shadow_wave"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_dazzle"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_dazzle/dazzle_loadout.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+
+				"item_boots"		"ITEM_CORE"
+
+
+				"item_sobi_mask"				"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_EXTENSION"
+				"item_ring_of_basilius"			"ITEM_DERIVED"
+
+				"item_recipe_arcane_boots"		"ITEM_EXTENSION"				
+				"item_arcane_boots"		"ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"dazzle_poison_touch"
+				"2"		"dazzle_shadow_wave"
+				"3"		"dazzle_shadow_wave"
+				"4"		"dazzle_shallow_grave"
+				"5"		"dazzle_shadow_wave"
+				"6"		"dazzle_nothl_projection"
+				"7"		"dazzle_shadow_wave"
+				"8"		"dazzle_shallow_grave"
+				"9"		"dazzle_shallow_grave"
+				"10"		"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"
+				"11"		"dazzle_shallow_grave"
+				"12"		"dazzle_nothl_projection"
+				"13"		"dazzle_poison_touch"
+				"14"		"dazzle_poison_touch"
+				"15"		"special_bonus_unique_dazzle_2"
+				"16"		"dazzle_poison_touch"
+				"17"		""
+				"18"		"dazzle_nothl_projection"
+				"19"		""
+				"20"		"special_bonus_unique_dazzle_3"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_dazzle_4"
+			}
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"0"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dazzle.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dazzle.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Dazzle: Rain of Vermin (scepter ability)
+			//=================================================================================================================
+			"dazzle_rain_of_vermin"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value" "7"
+					}
+					"interval"
+					{
+						"value" "0.5"
+					}
+					"radius"
+					{
+						"value" "650"
+					}
+					"hex_chance"
+					{
+						"value" "12"
+					}
+					"hex_duration"
+					{
+						"value" "1"
+					}
+					"damage"
+					{
+						"value" "125"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Dazzle: Poison Touch
+			//=================================================================================================================
+			"dazzle_poison_touch"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Dazzle.Poison_Touch"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"500 600 700 800"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 21 18 15"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 130 135 140"
+				
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.35"	// Can apply multiple modifiers
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"start_radius"				
+					{
+						"value"		"200 200 200 200"
+							"affected_by_aoe_increase"	"1"
+					}
+					"end_radius"				
+					{
+						"value"		"300 300 300 300"
+						"affected_by_aoe_increase"	"1"
+					}
+					"end_distance"				
+					{
+						"value"		"600 700 800 900"
+					}
+					"targets"					"2 4 6 8"
+					"damage"
+					{	
+						"value"			"16 28 40 52"
+						"special_bonus_unique_dazzle_3"	"+75"
+					}
+					"slow"
+					{	
+						"value"							"-13 -16 -19 -22"
+						"special_bonus_unique_dazzle_1"	"-40"
+					}
+					"projectile_speed"	"1300"
+					"duration"		"3.5 5 6.5 8"
+					"bonus_damage"			"0"
+					"bonus_slow"			"-2.5 -3 -3.5 -4.0"
+					"attack_range_bonus"		
+					{
+						"value"							"0"
+						"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"			"+200"
+					}	
+
+					"split_radius"			
+					{				
+						"value"							"0"
+						"affected_by_aoe_increase"		"1"
+					}
+					"split_damage"				
+					{
+						"value"							"0"
+					}
+					"attacks_to_split"	
+					{
+						"value"							"0"
+					}			
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Dazzle: Shallow Grave
+			//=================================================================================================================
+			"dazzle_shallow_grave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Dazzle.Shallow_Grave"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_SHALLOW_GRAVE"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				"AbilityCastRange"				"900"
+				"AbilityCastPoint"				"0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 100 110 120"
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value" "4 4.5 5.0 5.5"
+					}
+					"fx_halo_height"
+					{
+						"value" "190 240 300 350"
+					}
+					"heal_amplify"
+					{
+						"value" "3 5 7 9"
+					}
+					"AbilityCooldown"			
+					{
+						"value"				"30 26 22 18"
+						"special_bonus_unique_dazzle_shallow_grave_cooldown"			"-3"
+					}
+				
+				}
+			}
+	
+			//=================================================================================================================
+			// Dazzle: Shadow Wave
+			//=================================================================================================================
+			"dazzle_shadow_wave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilitySound"					"Hero_Dazzle.Shadow_Wave"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"10 9 8 7"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90"
+		
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCastRange"
+					{
+						"value"				"800"
+					}
+
+					"bounce_radius"			
+					{
+						"value"		"475"
+						"affected_by_aoe_increase"	"1"
+					}
+					"damage_radius"			
+					{
+						"value"		"185"
+						"affected_by_aoe_increase"	"1"
+					}
+					"max_targets"			"3 4 5 6"
+					"tooltip_max_targets_inc_dazzle"	"4 5 6 7"
+					"damage"
+					{
+						"value"					"85 105 125 145"
+						"special_bonus_unique_dazzle_2" "+45"
+					}
+
+					"scepter_heal_pct"			"100"
+					"scepter_cd_increase"		"2"
+				}
+
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+	
+			//=================================================================================================================
+			// Dazzle: Weave
+			//=================================================================================================================
+			"dazzle_weave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Dazzle.Weave"
+
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"2000"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"40 40 40"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 100 100"
+				"AbilityValues"
+				{
+					"radius"
+					{
+						"value" "575 575 575"
+					}
+					"vision"
+					{
+						"value" "800"
+					}
+					"armor_per_second"
+					{
+						"value" "0.75 1 1.25"
+					}
+					"duration"
+					{
+						"value" "24"
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Dazzle: Bad Juju
+			//=================================================================================================================
+			"dazzle_bad_juju"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Dazzle.Weave"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastPoint"				"0.2"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------	
+				"AbilityCooldown"				"3"
+				"AbilityHealthCost"				"75"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{	
+					"cooldown_reduction"			"4 5 6"
+					"cooldown_reduction_items" 		"0"
+					"mana_cost_increase_pct"		"40"
+					"mana_cost_increase_duration"	"20"
+					"max_stacks"					"15"
+				}
+			}
+			//=================================================================================================================
+			// Dazzle: Good Juju
+			//=================================================================================================================
+			"dazzle_good_juju"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"LinkedAbility"					"dazzle_bad_juju"
+				"HasScepterUpgrade"				"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastRange"				"250"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"cooldown_reduction"		"1 1.5 2"
+						"item_cooldown_reduction"		
+						{
+							"special_bonus_scepter"		"50"
+						}
+						"scepter_mana_cost"			"250"
+						"scepter_cooldown"			"180"
+				}
+			}
+
+			//=================================================================================================================
+			// Dazzle: Nothl Projection
+			//=================================================================================================================
+			"dazzle_nothl_projection"
+			{		
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"		
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Dazzle.Weave"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------	
+				"AbilityCooldown"				"70 60 50"
+				"AbilityManaCost"				"100 150 200"
+				"AbilityCastRange"				"450"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{	
+					"min_duration"				"5"
+					"max_duration"
+					{
+						"value"					"12"
+						"special_bonus_unique_dazzle_nothl_projection_duration" "+5"
+					}
+					"initial_travel_speed"		"1200"
+					"soul_return_time"			"0.75"
+					"soul_return_min_speed"		"500"
+					"leash_start"				"1600"
+					"base_leash_pull"			"50"
+					"leash_increase"			"1.5"
+					"poison_touch_hex"			"1.4 1.6 1.8"
+					"shallow_grave_heal"		"225 300 375"
+					"shadow_wave_cdr"			"30 40 50"
+				}
+			}
+
+			"dazzle_nothl_projection_end"
+			{
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"					"3"
+				"DependentOnAbility"		"dazzle_nothl_projection"
+			}
+
+			//=================================================================================================================
+			// Dazzle: Innate Weave
+			//=================================================================================================================
+			"dazzle_innate_weave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"HasShardUpgrade"				"1"
+
+				// Special	
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"armor_change"			
+					{
+						"value"									"1"
+						"special_bonus_unique_dazzle_4"			"+1"
+					}
+					"duration"
+					{
+						"value"						"6.9"
+						"hero_levelup"				"+0.1"
+					}
+					"affects_allies"			"1"
+					"affects_enemies"			"1"
+					"heal_amplification_pct"
+					{
+						"value"											"0"
+						"special_bonus_facet_dazzle_facet_nothl_boon"	"=7.5"
+					}
+					"ultimate_always_applies"	"0"
+			
+					"ally_multiplier"
+					{
+						"value"											"0"
+						"special_bonus_facet_dazzle_facet_nothl_boon"	"=2"
+					}
+					"enemy_multiplier"
+					{
+						"value"										"0"
+						"special_bonus_facet_dazzle_poison_bloom"	"=2"
+					}
+
+					"ally_heal"
+					{
+						"special_bonus_shard"						"60"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Dazzle Facet: Nothl Boon
+			//=================================================================================================================
+			"dazzle_nothl_boon"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"	"12"							
+					}
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_5"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityValues"
+				{
+					"value"
+					{
+						"value" "200"
+					}
+				}
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_dazzle_shallow_grave_cooldown"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+
+
+	
+		}
+	}
+}

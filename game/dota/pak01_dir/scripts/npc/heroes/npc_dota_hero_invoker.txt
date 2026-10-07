@@ -1,0 +1,1867 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_invoker"
+	{
+		"Model"		"models/heroes/invoker/invoker.vmdl"
+		"IdleExpression"		"scenes/invoker/invoker_exp_idle_01.vcd"
+		"Persona"
+		{
+			"1"
+			{
+				"name"					"npc_dota_hero_invoker_persona1"
+				"token"					"#npc_dota_hero_invoker_persona1"
+				"token_english"			"#npc_dota_hero_invoker_persona1__en"
+				"cosmetic_group_name"	"#npc_dota_hero_invoker_persona1_cosmetic_group_name"
+				"Model"					"models/heroes/invoker_kid/invoker_kid.vmdl"	// For tools only
+				"mvp_map_override"		"maps/scenes/mvp/mvp_invoker_kid.vmap"
+			}
+		}
+		"SoundSet"		"Hero_Invoker"
+		"IdleSoundLoop"		"0"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Carry,Nuker,Disabler,Escape,Pusher"
+		"Rolelevels"	"1,3,2,1,1"
+		"Complexity"	"3"
+		"Team"		"Bad"
+		"HeroID"		"74"
+		"HeroOrderID"	"67"
+		"ModelScale"		"0.740000"
+		"LoadoutScale"		"0.74"
+		"CMEnabled"		"1"
+		"NameAliases"		"kid"
+		"SimilarHeroes"		"34,22,45"
+		"Adjectives"
+		{
+			"Cape"			"1"
+			"Parent"		"1"
+			"Fiery"			"1"
+			"Icy"			"1"
+		}
+		"PickSound"		"invoker_invo_spawn_02"
+		"BanSound"		"invoker_invo_anger_04"
+		"workshop_guide_name"		"Invoker"
+		"LastHitChallengeRival"		"npc_dota_hero_lina"
+		"ARDMDisabled"		"1"
+		"HeroSelectSoundEffect"		"Hero_Invoker.Pick"
+		"GibType"		"default"
+		"Ability1"		"invoker_quas"
+		"Ability2"		"invoker_wex"
+		"Ability3"		"invoker_exort"
+		"Ability4"		"invoker_empty1"
+		"Ability5"		"invoker_empty2"
+		"Ability6"		"invoker_invoke"
+		"Ability7"		"invoker_cold_snap"
+		"Ability8"		"invoker_ghost_walk"
+		"Ability9"		"invoker_tornado"
+		"Ability10"		"invoker_emp"
+		"Ability11"		"invoker_alacrity"
+		"Ability12"		"invoker_chaos_meteor"
+		"Ability13"		"invoker_sun_strike"
+		"Ability14"		"invoker_forge_spirit"
+		"Ability15"		"invoker_ice_wall"
+		"Ability16"		"invoker_deafening_blast"
+
+		"Facets"
+		{
+			"invoker_quas_focus"
+			{
+				"Icon"				"invoker_quas"
+				"Color"				"Blue"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}			
+			"invoker_wex_focus"
+			{
+				"Icon"				"invoker_wex"
+				"Color"				"Purple"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"invoker_exort_focus"
+			{
+				"Icon"				"invoker_exort"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"invoker_chaos_meteor_ad"
+			"Ability2"		"invoker_deafening_blast_ad"
+			"Ability3"		"invoker_tornado_ad"
+			"Ability4"		"invoker_emp_ad"
+			"Ability5"		"invoker_alacrity_ad"
+			"Ability6"		"invoker_cold_snap_ad"
+			"Ability7"		"invoker_sun_strike_ad"
+			"Ability8"		"invoker_forge_spirit_ad"
+			"Ability9"		"invoker_ice_wall_ad"
+			"Ability10"		"invoker_ghost_walk_ad"
+		}
+
+		"AbilityTalentStart" "17"
+
+		"Ability17"		"special_bonus_unique_invoker_ice_wall_dps"
+		"Ability18"		"special_bonus_unique_invoker_3"
+		"Ability19"		"special_bonus_unique_invoker_5"
+		"Ability20"		"special_bonus_unique_invoker_9"
+		"Ability21"		"special_bonus_unique_invoker_additional_chaos_meteors"
+		"Ability22"		"special_bonus_unique_invoker_forged_spirit_armor_reduction"
+		"Ability23"		"special_bonus_unique_invoker_2"
+		"Ability24"		"special_bonus_unique_invoker_13"
+		"Ability25"		""
+		"ArmorPhysical"		"-1"
+		"StatusHealthRegen"		"0.25"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"19"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"2.0"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"4.0"
+		"MovementSpeed"		"280"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_invoker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_invoker_kid/invoker_kid_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"body_head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"DisplayInLoadout" "0"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Invoker_ForgeSpirit"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1800"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_invoker_forged_spirit"
+				}
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"head_persona_1"
+				"SlotText"		"#LoadoutSlot_Head_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1500"
+				"no_import"		 "1"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"shoulder_persona_1"
+				"SlotText"		"#LoadoutSlot_Shoulder_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1800"
+				"no_import"		 "1"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"back_persona_1"
+				"SlotText"		"#LoadoutSlot_Back_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"600"
+				"no_import"		 "1"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"arms_persona_1"
+				"SlotText"		"#LoadoutSlot_Arms_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"900"
+				"no_import"		 "1"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"summon_persona_1"
+				"SlotText"		"#LoadoutSlot_Invoker_ForgeSpirit_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"1800"
+				"MaxPolygonsLOD1"		"1800"
+				"no_import"		"1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_invoker_forged_spirit"
+				}
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"armor_persona_1"
+				"SlotText"		"#LoadoutSlot_Armor_Invoker_Kid"
+
+				//
+				// NOTE: this slot's budget is overridden via a workshop template!
+				//
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1800"
+				"no_import"		 "1"
+			}
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt_Invoker_Kid"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"voice_persona_1"
+				"SlotText"		"#LoadoutSlot_Voice_Invoker_Kid"
+			}
+
+			"16"
+			{
+				"SlotIndex" "16"
+				"SlotName" "ability_effects_1"
+				"SlotText" "invoker_quas"
+				"DisplayInLoadout" "0"
+			}
+			"17"
+			{
+				"SlotIndex" "17"
+				"SlotName" "ability_effects_2"
+				"SlotText" "invoker_wex"
+				"DisplayInLoadout" "0"
+			}
+			"18"
+			{
+				"SlotIndex" "18"
+				"SlotName" "ability_effects_3"
+				"SlotText" "invoker_exort"
+				"DisplayInLoadout" "0"
+			}
+			"19"
+			{
+				"SlotIndex" "19"
+				"SlotName" "ability_effects_4"
+				"SlotText" "invoker_ghost_walk"
+				"DisplayInLoadout" "0"
+			}			
+			"20"
+			{
+				"SlotIndex" "20"
+				"SlotName" "ability_effects_5"
+				"SlotText" "invoker_tornado"
+				"DisplayInLoadout" "0"
+			}
+			"21"
+			{
+				"SlotIndex" "21"
+				"SlotName" "ability_effects_6"
+				"SlotText" "invoker_alacrity"
+				"DisplayInLoadout" "0"
+			}
+			"22"
+			{
+				"SlotIndex" "22"
+				"SlotName" "ability_effects_7"
+				"SlotText" "invoker_sun_strike"
+				"DisplayInLoadout" "0"
+			}
+			"23"
+			{
+				"SlotIndex" "23"
+				"SlotName" "ability_effects_8"
+				"SlotText" "invoker_forge_spirit"
+				"DisplayInLoadout" "0"
+			}			
+			"24"
+			{
+				"SlotIndex" "24"
+				"SlotName" "ability_effects_9"
+				"SlotText" "invoker_deafening_blast"
+				"DisplayInLoadout" "0"
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
+			"25"
+			{
+				"SlotIndex"		"25"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+			"26"
+			{
+				"SlotIndex"		"26"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"27"
+			{
+				"SlotIndex"		"27"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_SEMI_CARRY | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/invoker/forge_spirit.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_invoker.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_invoker.vpcf"
+			"party_hat_effect_persona_0"	"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_invoker_persona_1.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"	"1"
+			"attach_attack2"	"2"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Invoker: Quas
+			//=================================================================================================================
+			"invoker_quas"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+				"AbilityManaCost"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"1"
+				"MaxLevel"						"8"
+				"RestrictValuesToMaxLevel"		"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_level"						
+					{
+						"value"										"8"
+						"special_bonus_scepter_1"					"+1"
+						//"special_bonus_unique_invoker_orb_levels"	"+1"
+					}
+					"hp_regen_per_instance"
+					{
+						"value"	"1 2 3 4 5 6 7 8 9"
+						"special_bonus_unique_invoker_13"	"x2"	
+					}
+
+					"upgrade_at_level"
+					{
+						"value"										"0"
+						"special_bonus_facet_invoker_quas_focus"	"6"
+					}
+		
+					"strength_bonus"				"1"
+			
+					"scepter_bonus_levels"
+					{
+						"value"										"0"
+						"special_bonus_scepter_1"					"1"
+					}
+
+					"facet_bonus_levels"
+					{
+						"value" "0"
+				
+						"special_bonus_facet_invoker_quas_focus"
+						{
+							"value"					"0"
+							"special_bonus_unique_invoker_facet_orb_level"	"+1"
+						}
+				
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Wex
+			//=================================================================================================================
+			"invoker_wex"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+				"AbilityManaCost"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"2"
+				"MaxLevel"						"8"
+				"RestrictValuesToMaxLevel"		"1"
+			
+				// Special
+				"AbilityValues"
+				{
+					"max_level"						
+					{
+						"value"										"8"
+						"special_bonus_scepter_2"					"+1"
+						//"special_bonus_unique_invoker_orb_levels"	"+1"
+					}
+					"move_speed_per_instance"
+					{
+						"value"								"0.6 1.2 1.8 2.4 3.0 3.6 4.2 4.8 5.4"			
+						"special_bonus_unique_invoker_13"	"x2"				
+					}
+					"attack_speed_per_instance"
+					{
+						"value"								"1 2 3 4 5 6 7 8 9"
+						"special_bonus_unique_invoker_13"	"x2"
+					}	
+					"upgrade_at_level"
+					{
+						"value"										"0"
+						"special_bonus_facet_invoker_wex_focus"		"6"
+					}		
+					"agility_bonus"					"1"
+			
+					"scepter_bonus_levels"
+					{
+						"value"										"0"
+						"special_bonus_scepter_2"					"1"
+					}
+
+					"facet_bonus_levels"
+					{
+						"value" "0"
+				
+						"special_bonus_facet_invoker_wex_focus"
+						{
+							"value"					"0"
+							"special_bonus_unique_invoker_facet_orb_level"	"+1"
+						}
+				
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Exort
+			//=================================================================================================================
+			"invoker_exort"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+				"AbilityManaCost"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"3"
+				"MaxLevel"						"8"
+				"RestrictValuesToMaxLevel"		"1"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_level"						
+					{
+						"value"										"8"
+						"special_bonus_scepter_3"						"+1"
+						//"special_bonus_unique_invoker_orb_levels"	"+1"
+					}
+					"bonus_damage_per_instance"
+					{
+						"value"								"2 4 6 8 10 12 14 16 18"
+						"special_bonus_unique_invoker_13"	"x2"
+
+						// "damage" in attribute name, want to show as physical
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"	"DAMAGE_TYPE_PHYSICAL"
+					}
+					"upgrade_at_level"
+					{
+						"value"											"0"
+						"special_bonus_facet_invoker_exort_focus"		"6"
+					}	
+					"intelligence_bonus"			"1"
+
+					"scepter_bonus_levels"
+					{
+						"value"										"0"
+						"special_bonus_scepter_3"					"1"
+					}
+					"facet_bonus_levels"
+					{
+						"value" "0"
+				
+						"special_bonus_facet_invoker_exort_focus"
+						{
+							"value"					"0"
+							"special_bonus_unique_invoker_facet_orb_level"	"+1"
+						}
+				
+					}
+
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Empty 1
+			//=================================================================================================================
+			"invoker_empty1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Invoker: Empty 2
+			//=================================================================================================================
+			"invoker_empty2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+			}
+
+			//=================================================================================================================
+			// Invoker: Invoke
+			//=================================================================================================================
+			"invoker_invoke"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				"AbilitySound"					"Hero_Invoker.Invoke"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"7"
+				"AbilityManaCost"				"0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_invoked_spells"			"2"
+					"cooldown_reduction_per_orb"	"0.3"
+					"first_ability_level"			"6"
+					"second_ability_level"			"12"
+					"third_ability_level"			"18"
+				}
+			}
+	
+			//=================================================================================================================
+			// Ability: Attribute Bonus
+			//=================================================================================================================
+			"invoker_attribute_bonus"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"MaxLevel"						"1"
+				"LevelsBetweenUpgrades"			"1"
+				"RequiredLevel"					"25"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attribute_bonus_per_level"		"6"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Cold Snap
+			//=================================================================================================================
+			"invoker_cold_snap"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"Y"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Invoker.ColdSnap"
+		
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"AbilityManaCost"				"100"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.15"	// Applies multiple modifiers
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"19"
+						"special_bonus_unique_invoker_9"	"-6"
+					}
+					"duration"
+					{
+						"value"					"3.0 3.4 3.8 4.2 4.6 5.0 5.4 5.8 6.2"
+						"levelkey"				"quaslevel"	
+					}
+					"freeze_duration"			"0.4"
+					"freeze_cooldown"
+					{
+						"value"					"0.80 0.77 0.74 0.71 0.68 0.65 0.62 0.59 0.56"
+						"levelkey"				"quaslevel"	
+					}
+					"freeze_damage"
+					{
+						"value"					"28 36 44 52 60 68 76 84 92"
+						"levelkey"				"quaslevel"	
+					}
+					"freeze_heal"
+					{
+						"value"										"0"
+						"special_bonus_unique_invoker_cold_snap_heal"	"1"
+					}
+					"damage_trigger"			"10.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Cold Snap (AD)
+			//=================================================================================================================
+			"invoker_cold_snap_ad"
+			{
+				"_base"							"invoker_cold_snap"
+				"BaseClass"						"invoker_cold_snap"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"					"4"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				"3.4 4.2 5 5.8"
+					"freeze_cooldown"		"0.77 0.71 0.65 0.59"
+					"freeze_damage"			"36 52 68 84"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Ghost Walk
+			//=================================================================================================================
+			"invoker_ghost_walk"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"V"
+				"AbilitySound"					"Hero_Invoker.GhostWalk"
+				"HasShardUpgrade"				"1"
+				"ShardUpgradeID"				"1"
+		
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"175"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"40"
+					}
+					"duration"					"50"
+					"area_of_effect"		
+					{
+						"value"		"450"
+					}
+					"enemy_slow"
+					{
+						"value"					"-20 -25 -30 -35 -40 -45 -50 -55 -60"
+						"levelkey"				"quaslevel"
+					}
+					"self_slow"
+					{
+						"value"					"-20 -15 -10 -5 0 5 10 15 20"
+						"levelkey"				"wexlevel"
+						"show_absolute_values"	"0"
+					}		
+					"aura_fade_time"			"2.0"
+					"health_regen"				
+					{
+						"value"					"2 4 6 8 10 12 14 16 18"
+						"levelkey"				"quaslevel"
+					}
+					"mana_regen"			
+					{
+						"value"					"2 4 6 8 10 12 14 16 18"
+						"levelkey"				"wexlevel"
+					}
+					"apply_ice_wall_debuff"
+					{
+						"value"						"0"
+						"special_bonus_shard_1"		"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Ghost Walk (AD) 
+			//=================================================================================================================
+			"invoker_ghost_walk_ad"
+			{
+				"_base"							"invoker_ghost_walk"
+				"BaseClass"						"invoker_ghost_walk"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"MaxLevel"						"4"
+				"ShardUpgradeID"				"0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"enemy_slow"	"-25 -35 -45 -55"
+					"self_slow"		"-15 -5 5 15"
+					"health_regen"	"4 8 12 16"
+					"mana_regen"	"4 8 12 16"
+					"apply_ice_wall_debuff"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Tornado
+			//=================================================================================================================
+			"invoker_tornado"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"X"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"AbilitySound"					"Hero_Invoker.Tornado"
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"2"
+	
+
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"2000"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"AbilityManaCost"				"140"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"27"
+						"special_bonus_unique_invoker_3" "-5"
+					}
+					"travel_distance"
+					{
+						"value"					"1500 1800 2100 2400 2700 3000 3300 3600 3900"
+						"levelkey"				"wexlevel"
+					}
+					"travel_speed"			"1000"
+					"area_of_effect"		
+					{
+						"value"			"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vision_distance"		
+					{
+						"value"		"200"
+							"affected_by_aoe_increase"	"1"
+					}
+					"end_vision_duration"	"1.75"
+					"lift_duration"
+					{
+						"value"				"1.2 1.4 1.6 1.8 2 2.2 2.4 2.6 2.8"
+						"levelkey"			"quaslevel"
+					}
+					"base_damage"			
+					{
+						"value"							"50"			
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"quas_damage"
+					{
+						"value"				"0 0 0 0 0 0 0 0 0"
+						"levelkey"			"quaslevel"
+					}
+					"wex_damage"
+					{
+						"value"				"45 90 135 180 225 270 315 360 405"
+						"levelkey"			"wexlevel"
+					}
+					"twister_distance_interval"
+					{
+						"value"				"0"
+						"special_bonus_scepter_2"		"+300"
+					}
+					"twister_radius"
+					{
+						"value" "150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"twister_damage"
+					{
+						"value" "0"
+						"levelkey"					"wexlevel"
+						"special_bonus_scepter_2"		"50 60 70 80 90 100 110 120 130"
+					}
+			
+					"twister_duration"
+					{
+						"value"	"0"
+						"levelkey"					"quaslevel"
+		
+						"special_bonus_scepter_2"		"2.7 2.9 3.1 3.3 3.5 3.7 3.9 4.1 4.3"
+					}
+					"twister_tick_rate"
+					{
+						"value" "0.25"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Tornado (AD)
+			//=================================================================================================================
+			"invoker_tornado_ad"
+			{
+				"_base"							"invoker_tornado"
+				"BaseClass"						"invoker_tornado"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+				"ScepterUpgradeID"				"0"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"travel_distance"		"1800 2400 3000 3600"
+					"lift_duration"			"1.4 1.8 2.2 2.6"
+					"quas_damage"			"0 0 0 0"
+					"wex_damage"			"90 180 270 360"
+					"twister_distance_interval"
+					{
+						"value"				"0"
+						"special_bonus_scepter"		"+300"
+					}
+					"twister_damage"
+					{
+						"value" "0"
+						"special_bonus_scepter"		"60 80 100 120"
+					}
+					"twister_duration"
+					{
+						"value"	"0"
+						"special_bonus_scepter"		"2.9 3.3 3.7 4.1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: EMP
+			//=================================================================================================================
+			"invoker_emp"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"C"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"AbilitySound"					"Hero_Invoker.EMP.Charge"
+		
+				"HasShardUpgrade"				"1"
+				"ShardUpgradeID"				"2"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"950"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				"AbilityCooldown"				"27"
+				"AbilityManaCost"				"125"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"delay"
+					{
+						"value"					"2.9"
+						"levelkey"				"wexlevel"
+					}
+					"area_of_effect"		
+					{
+						"value"			"675"
+						"affected_by_aoe_increase"	"1"
+					}
+					"mana_burned"
+					{
+						"value"			"100 175 250 325 400 475 550 625 700"
+						"levelkey"				"wexlevel"
+					}
+					"damage_per_mana_pct"					
+					{
+						"value"			"60"
+						"special_bonus_shard_2"	"+50%"
+					}
+			
+					"drag_speed"
+					{
+						"value"					"0"
+						"special_bonus_shard_2"		"+125"
+					}
+					"self_mana_restore_pct"			"25"
+
+					"damage_barriers"
+					{
+						"value"											"0"
+						//"special_bonus_facet_invoker_wex_focus"			"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: EMP (AD)
+			//=================================================================================================================
+			"invoker_emp_ad"
+			{
+				"_base"							"invoker_emp"
+				"BaseClass"						"invoker_emp"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+				"ShardUpgradeID"				"0"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"delay"						"2.9"
+					"mana_burned"				"175 325 475 625"
+					"damage_per_mana_pct"					
+					{
+						"value"			"60"
+						"special_bonus_shard"	"+50%"
+					}
+					"drag_speed"
+					{
+						"value"					"0"
+						"special_bonus_shard"	"+125"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Alacrity
+			//=================================================================================================================
+			"invoker_alacrity"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"Z"
+				"AbilitySound"					"Hero_Invoker.Alacrity"
+
+				// Unit Targeting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				"AbilityCooldown"				"15"
+				"AbilityManaCost"				"75"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_attack_speed"
+					{
+						"value"					"10 22 34 46 58 70 82 94 106"
+						"levelkey"				"wexlevel"
+						"special_bonus_unique_invoker_5"	"+25"
+					}
+					"bonus_damage"
+					{
+						"value"					"10 22 34 46 58 70 82 94 106"
+						"levelkey"				"exortlevel"
+						"special_bonus_unique_invoker_5"	"+25"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"bonus_attack_range"
+					{
+						"value"							"0"
+						"levelkey"									"wexlevel"	
+						//"special_bonus_facet_invoker_wex_focus"		"+60 70 80 90 100 110 120 130 140 150"
+					}
+					"duration"					"9"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Alacrity (AD)
+			//=================================================================================================================
+			"invoker_alacrity_ad"
+			{
+				"_base"							"invoker_alacrity"
+				"BaseClass"						"invoker_alacrity"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"					"4"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_attack_speed"
+					{
+						"value"					"22 46 70 94"
+						"special_bonus_unique_invoker_5"	"+25"
+					}
+					"bonus_damage"
+					{
+						"value"					"22 42 62 82"
+						"special_bonus_unique_invoker_5"	"+25"
+						"CalculateSpellDamageTooltip"	"0"
+					}
+					"bonus_attack_range"		"0"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Chaos Meteor
+			//=================================================================================================================
+			"invoker_chaos_meteor"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"D"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Invoker.ChaosMeteor.Impact"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+				"AbilityManaCost"				"200"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Mainly about damage
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"50"
+					}
+					"land_time"					"1.3"
+					"area_of_effect"			
+					{
+						"value"		"275"
+						"affected_by_aoe_increase"	"1"
+						"special_bonus_unique_invoker_chaos_meteor_size"  "+25"
+					}
+					"travel_distance"
+					{
+						"value"					"465 615 780 930 1095 1245 1410 1575 1725"
+						"levelkey"				"wexlevel"
+						//"special_bonus_unique_invoker_chaos_meteor_size"
+						//{
+						//	"value"						"+200"
+						//}
+					}
+					"travel_speed"				
+					{	
+						"value"			"300"
+					}
+					"damage_interval"
+					{
+						"value"					"0.5"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+					}
+					"vision_distance"			
+					{
+						"value"			"500"
+						"affected_by_aoe_increase"	"1"
+					}
+					"end_vision_duration"		"3.0"
+					"main_damage"
+					{
+						"value"					"55 75 95 115 135 155 175 195 215"
+						"levelkey"				"exortlevel"
+					}
+					"burn_duration"				"3.0"
+					"burn_dps"
+					{
+						"value"					"10 15 20 25 30 35 40 45 50"
+						"levelkey"				"exortlevel"
+						"CalculateSpellDamageTooltip"	"1"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+					}
+					"meteor_count"
+					{
+						"value"					"1"
+						"special_bonus_unique_invoker_additional_chaos_meteors"	"+2"
+					}
+					"stun_duration"
+					{
+						"value"			"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Chaos Meteor (AD)
+			//=================================================================================================================
+			"invoker_chaos_meteor_ad"
+			{
+				"_base"							"invoker_chaos_meteor"
+				"BaseClass"						"invoker_chaos_meteor"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"travel_distance"			"615 930 1245 1575"
+					"main_damage"				"75 115 155 195"
+					"burn_duration"				"3.0"
+					"burn_dps"
+					{
+						"value"					"15 25 35 45"
+						"CalculateSpellDamageTooltip"	"1"
+						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Sun Strike
+			//=================================================================================================================
+			"invoker_sun_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"T"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Invoker.SunStrike.Charge"
+
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"3"
+				"HasShardUpgrade"				"1"
+				"ShardUpgradeID"				"3"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				"AbilityManaCost"				"175"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"delay"						"1.7"
+					"area_of_effect"			
+					{
+							"value"			"175"
+							"affected_by_aoe_increase"	"1"
+					}
+					"AbilityCooldown"
+					{
+						"value"				"23"
+						"special_bonus_unique_invoker_11" "-4"
+					}
+					"damage"
+					{
+						"value"					"175 225 275 325 375 425 475 525 575"
+						"levelkey"				"exortlevel"
+					}
+					"vision_distance"			
+					{
+						"value"		"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vision_duration"			"4.0"
+					"cataclysm_count"
+					{
+						"value"					"0"
+						"special_bonus_scepter_3"	"+2"
+					}
+					"cataclysm_cooldown"
+					{
+						"value"					"90"
+					}
+					"cataclysm_min_range"
+					{
+						"value"					"90"
+					}
+					"cataclysm_max_range"
+					{
+						"value"					"180"
+					}
+					"cataclysm_damage_pct"
+					{
+						"value"					"75"
+					}
+					"create_forged_spirit_on_hero_damage"
+					{
+						"value"											"0"
+						"special_bonus_shard_3"							"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Sun Strike (AD)
+			//=================================================================================================================
+			"invoker_sun_strike_ad"
+			{
+				"_base"							"invoker_sun_strike"
+				"BaseClass"						"invoker_sun_strike"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+				"ScepterUpgradeID"				"0"
+				"ShardUpgradeID"				"0"
+			
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"					"225 325 425 525"
+					"cataclysm_count"
+					{
+						"special_bonus_scepter"	"+2"
+					}
+					"create_forged_spirit_on_hero_damage"
+					{
+						"value"											"0"
+						"special_bonus_shard"							"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Forge Spirit
+			//=================================================================================================================
+			"invoker_forge_spirit"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"F"
+				"AbilitySound"					"Hero_Invoker.ForgeSpirit"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"27"
+				"AbilityManaCost"				"75"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Special
+				"AbilityValues"
+				{
+					"spirit_damage"			
+					{
+						"value"			"20 30 40 50 60 70 80 90 100"
+						"levelkey"		"exortlevel"
+					}
+					"spirit_mana"			
+					{	
+						"value"			"100 150 200 250 300 350 400 450 500"
+						"levelkey"		"exortlevel"
+					}
+					"spirit_armor"
+					{
+						"value"			"0 1 2 3 4 5 6 7 8"
+						"levelkey"		"exortlevel"
+					}
+					"spirit_attack_range"	
+					{
+						"value"			"305 360 415 470 525 580 635 690 745"
+						"levelkey"		"quaslevel"
+					}
+					"spirit_hp"				
+					{	"value"			"300 400 500 600 700 800 900 1000 1100"
+						"levelkey"		"quaslevel"
+					}
+					"spirit_duration"
+					{
+						"value"			"24 30 36 42 48 54 60 66 72"
+						"levelkey"		"quaslevel"
+					}
+					"armor_per_attack"
+					{
+						"value"			"0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6"
+						"special_bonus_unique_invoker_forged_spirit_armor_reduction"	"+50%"
+						"levelkey"		"exortlevel"
+					}
+					"extra_spirit_count_quas"	
+					{
+						"value" 				"1 1 1 2 2 2 2 3 3"
+						"levelkey"		"quaslevel"
+					}
+					"extra_spirit_count_exort"
+					{
+						"value" 				"1 1 1 2 2 2 2 3 3"
+						"levelkey"		"exortlevel"
+					}
+				}		
+			}
+
+			//=================================================================================================================
+			// Invoker: Forge Spirit (AD)
+			//=================================================================================================================
+			"invoker_forge_spirit_ad"
+			{
+				"_base"							"invoker_forge_spirit"
+				"BaseClass"						"invoker_forge_spirit"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"spirit_damage"		"30 50 70 90"
+					"spirit_mana"		"150 250 350 450"	
+					"spirit_armor"		"1 3 5 7"
+					"spirit_attack_range"	"360 470 580 690"	
+					"spirit_hp"			"400 600 800 1000"	
+					"spirit_duration"	"30 42 54 66"
+					"armor_per_attack"	"0.9 1.1 1.3 1.5"
+
+					"extra_spirit_count_quas"	
+					{
+						"value" 				"0"
+					}
+					"extra_spirit_count_exort"
+					{
+						"value" 				"0"
+					}
+					"spirit_count_ad"
+					{
+						"value"					"1 1 2 2"
+					}
+				}
+			}
+
+
+			//=================================================================================================================
+			// Invoker: Forged Spirit: Melting Strike
+			//=================================================================================================================
+			"forged_spirit_melting_strike"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"8"
+		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"armor_removed"			
+					{
+						"value"				"0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6"
+						"special_bonus_unique_invoker_forged_spirit_armor_reduction"		"+50%"
+					}
+					"max_armor_removed"		"20"
+					"duration"				"5"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Invoker: Ice Wall
+			//=================================================================================================================
+			"invoker_ice_wall"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"G"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Invoker.IceWall.Cast"
+				"HasScepterUpgrade"				"1"
+				"ScepterUpgradeID"				"1"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"23"
+				"AbilityManaCost"				"125"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"
+					{
+						"value"				"3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0"
+						"levelkey"			"quaslevel"
+					}
+					"slow"
+					{
+						"value"				"-30 -45 -60 -75 -90 -105 -120 -135 -150"
+						"levelkey"			"quaslevel"
+					}
+					"slow_duration"			"2.0"
+					"damage_per_second"
+					{
+						"value"				"30 36 42 48 54 60 66 72 78"
+						"levelkey"			"exortlevel"
+						"special_bonus_unique_invoker_ice_wall_dps" "+50"
+					}
+					"tick_interval"			"0.5"
+					"wall_place_distance"	"200"
+					"wall_total_length"	
+					{
+						"value"						"1200"
+						"affected_by_aoe_increase"	"1"		
+
+					}
+					"wall_width"
+					{
+						"value"										"105"
+						"special_bonus_scepter_1"					"+45"
+						"affected_by_aoe_increase"	"1"		
+
+					}
+					"vector_cast_range"
+					{
+						"value"				"0"
+						"special_bonus_scepter_1" 	"600"
+					}
+
+					"glacier_formation_delay"			"1.3"
+					"glacier_formation_speed"			"600"
+					"root_delay"		
+					{
+						"value"			"0"
+						"special_bonus_scepter_1"		"2.5"
+					}
+					"root_duration"
+					{
+						"value"			"0"
+						"levelkey"					"quaslevel"
+						"special_bonus_scepter_1"		"+2.5"
+					}
+					"root_damage"
+					{
+						"value"			"0"
+						"levelkey"					"quaslevel"
+						"special_bonus_scepter_1" 	"+325"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Ice Wall
+			//=================================================================================================================
+			"invoker_ice_wall_ad"
+			{
+				"_base"							"invoker_ice_wall"
+				"BaseClass"						"invoker_ice_wall"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"4"
+				"ScepterUpgradeID"				"0"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				"4 6 8 10"
+					"slow"					"-45 -75 -105 -135"
+					"damage_per_second"
+					{
+						"value"				"36 48 60 72"
+						"special_bonus_unique_invoker_ice_wall_dps" "+50"
+					}
+					"wall_width"
+					{
+						"value"						"105"
+						"special_bonus_scepter"		"+45"
+						"affected_by_aoe_increase"	"1"
+					}
+					"vector_cast_range"
+					{
+						"value"				"0"
+						"special_bonus_scepter" 	"600"
+					}
+					"root_delay"		
+					{
+						"value"			"0"
+						"special_bonus_scepter"		"2.5"
+					}
+					"root_duration"
+					{
+						"value"			"0"
+						"special_bonus_scepter"		"+2.5"
+					}
+					"root_damage"
+					{
+						"value"			"0"
+						"special_bonus_scepter" 	"+325"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Deafening Blast
+			//=================================================================================================================
+			"invoker_deafening_blast"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"HotKeyOverride"				"B"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Invoker.DeafeningBlast"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.05"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				"AbilityCooldown"				"36"
+				"AbilityManaCost"				"250"
+				"AbilityModifierSupportValue"	"0.5"	// Applies 2 modifiers
+
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"travel_distance"			
+					{
+						"value"			"1000"
+						"affected_by_aoe_increase"	"1"
+					}
+					"travel_speed"				"1100"
+					"radius_start"				
+					{
+						"value"				"175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"radius_end"				
+					{
+						"value"			"225"
+						"affected_by_aoe_increase"	"1"
+					}
+					"end_vision_duration"		"1.75"
+					"damage"
+					{
+						"value"					"70 110 150 190 230 270 310 350 390"
+						"levelkey"				"exortlevel"
+					}
+					"knockback_duration"
+					{
+						"value"					"1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9"
+						"levelkey"				"quaslevel"
+					}
+					"disarm_duration"
+					{
+						"value"					"1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5"
+						"levelkey"				"wexlevel"
+					}
+					"radial_count"
+					{
+						"value"					"1"
+						"special_bonus_unique_invoker_2"	"+11"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Deafening Blast (AD)
+			//=================================================================================================================
+			"invoker_deafening_blast_ad"
+			{
+				"_base"							"invoker_deafening_blast"
+				"BaseClass"						"invoker_deafening_blast"
+
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"					"4"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"				"110 190 270 350"
+					"knockback_duration"	"1.2 1.4 1.6 1.8"
+					"disarm_duration"		"2 3 4 5"
+				}
+			}
+
+			//=================================================================================================================
+			// Invoker: Innate XP on Deny
+			//=================================================================================================================
+			"invoker_mastermind"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"AbilityValues"
+				{
+					"xp_on_deny_percent"		"25"
+				}
+			}
+		}
+	}
+}

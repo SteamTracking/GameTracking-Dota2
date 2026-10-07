@@ -1,0 +1,672 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_legion_commander"
+	{
+		"Model"		"models/heroes/legion_commander/legion_commander.vmdl"
+		"IdleExpression"		"scenes/legion_commander/legion_commander_exp_idle_01.vcd"
+		"SoundSet"		"Hero_LegionCommander"
+		"IdleSoundLoop"		"Hero_LegionCommander.IdleLoop"
+		"Enabled"		"1"
+		"CMEnabled"		"1"
+		"Role"			"Carry,Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"	"1,2,1,1,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"104"
+		"HeroOrderID"	"105"
+		"ModelScale"		"1.025000"
+		"VersusScale"		"1.025"
+		"NameAliases"		"Tresdin,Legion,lc"
+		"PickSound"		"legion_commander_legcom_spawn_01"
+		"BanSound"		"legion_commander_legcom_anger_07"
+		"workshop_guide_name"		"Legion Commander"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"2,60,93"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Red"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_kunkka"
+		"HeroSelectSoundEffect"		"Hero_LegionCommander.Pick"
+		"GibType"		"default"
+		"Ability1"		"legion_commander_overwhelming_odds"
+		"Ability2"		"legion_commander_press_the_attack"
+		"Ability3"		"legion_commander_moment_of_courage"
+		"Ability4"		"legion_commander_outfight_them"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"legion_commander_duel"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"legion_commander_overwhelming_odds"
+			"Ability2"		"legion_commander_press_the_attack"
+			"Ability3"		"legion_commander_moment_of_courage"
+			"Ability4"		"legion_commander_duel"
+		}
+
+		"Ability10"		"special_bonus_unique_legion_commander_9"
+		"Ability11"		"special_bonus_unique_legion_commander_outfight_them_armor"
+		"Ability12"		"special_bonus_unique_legion_commander_6"
+		"Ability13"		"special_bonus_unique_legion_commander_4"
+		"Ability14"		"special_bonus_unique_legion_commander_duel_duration"
+		"Ability15"		"special_bonus_unique_legion_commander_3"
+		"Ability16"		"special_bonus_unique_legion_commander_7"
+		"Ability17"		"special_bonus_unique_legion_commander_duel_refresh_on_victory"
+		"Facets"
+		{
+			"legion_commander_stonehall_plate" 
+			{
+				"Icon"				"armor"
+				"Color"				"Yellow"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"legion_commander_spoils_of_war" 
+			{
+				"Icon"				"damage"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+		"ArmorPhysical"		"-1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"105"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.200000"
+		"MovementSpeed"		"325"
+		"particle_folder"		"particles/units/heroes/hero_legion_commander"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_legion_commander.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_legion_commander/legion_loadout.vpcf"		"loadout"
+			}
+		}
+		"Persona"
+		{
+			"1"
+			{
+				"name"					"npc_dota_hero_legion_commander_carnival"
+				"token"					"#npc_dota_hero_legion_commander_carnival"
+				"token_english"			"#npc_dota_hero_legion_commander_carnival__en"
+				"cosmetic_group_name"	"#npc_dota_hero_legion_commander_carnival_cosmetic_group_name"
+				"Model"					"models/items/legion_commander/dark_carnival_legion_commander/dark_carnival_legion_commander_base.vmdl"	// For tools only
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_LegionCommander_Banners"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Pet"
+				"ShowItemOnGeneratedUnits" "1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_companion"
+				}
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_1"
+				"SlotText" "legion_commander_overwhelming_odds"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_2"
+				"SlotText" "legion_commander_press_the_attack"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"weapon_persona_1"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				//"TextureWidth"		"256"
+				//"TextureHeight"		"256"
+				//"MaxPolygonsLOD0"		"800"
+				//"MaxPolygonsLOD1"		"600"
+				"DisplayInLoadout"		"0"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"back_persona_1"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+				"DisplayInLoadout"		"0"
+			}
+			"19"
+			{
+				"SlotIndex"		"19"
+				"SlotName"		"misc_persona_1"
+				"SlotText"		"#LoadoutSlot_Misc_Persona_1"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2800"
+				"MaxPolygonsLOD1"		"1400"
+				"DisplayInLoadout"		"0"
+			}
+			"20"
+			{
+				"SlotIndex"		"20"
+				"SlotName"		"taunt_persona_1"
+				"SlotText"		"#LoadoutSlot_Taunt"
+				"CanEquipFromSlotType"
+				{
+					"6" 
+					{
+						"SlotTypeName"	"taunt"
+						"ItemDefExclusions"	"0000"
+					}
+				}
+				"DisplayInLoadout"		"1"
+			}
+			"21"
+			{
+				"SlotIndex"		"21"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"22"
+			{
+				"SlotIndex"		"22"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Legion_Commander_Base"
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
+			"23"
+			{
+				"SlotIndex"		"23"
+				"SlotName"		"persona_selector"
+				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_TANK | DOTA_BOT_GANKER | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_legion_commander.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_legion_commander.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack2"	"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Legion Commander: Overwhelming Odds
+			//=================================================================================================================
+			"legion_commander_overwhelming_odds"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_LegionCommander.Overwhelming.Location"
+				"HasShardUpgrade"				"1"
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 105 120 135"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{		
+					"radius"				
+					{
+						"value"		"600"
+						"special_bonus_shard"		"+100"
+						"affected_by_aoe_increase"	"1"
+					}	
+					"damage"				"40 70 100 130"
+					"damage_per_hero"		
+					{
+						"value"				"40 70 100 130"
+						"special_bonus_unique_legion_commander_4"	"+35"
+					}
+					"damage_per_unit"		"14 16 18 20"
+			
+					"bonus_armor_heroes"		"0"
+					"bonus_armor_creeps"		"0"
+					"bonus_attack_speed_creeps"		"0"
+					"bonus_attack_speed"		"50 75 100 125"
+					"duration"					"6.0"
+
+					"slow_duration"				"0.3"
+					"movement_slow"				"100"
+
+			
+					"AbilityCooldown"
+					{
+						"value"						"18"
+						"special_bonus_unique_legion_commander_9"		"-2"
+					}
+
+					"shield_counts_non_hero_damage"		"0"
+
+					"shield_per_damage_pct"
+					{
+						"special_bonus_shard"	"+50"			
+						"RequiresShard"		"1"		
+					}
+					"shield_duration"
+					{
+						"special_bonus_shard"	"+6"					
+						"RequiresShard"		"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Legion Commander: Press the Attack
+			//=================================================================================================================
+			"legion_commander_press_the_attack"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_LegionCommander.PressTheAttack"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16.0 15.0 14.0 13.0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+
+
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"				
+					{
+						"value"				"5.0"
+					}
+					"move_speed"
+					{
+						"value"			"13 16 19 22"
+						"special_bonus_scepter"	"+12"
+					}
+					"hp_regen"
+					{
+						"value"				"24 36 48 60"
+						"special_bonus_unique_legion_commander_6"	"+40"
+					}
+					"radius"
+					{
+						"value"												"0"
+						"special_bonus_scepter"								"+500"
+						"affected_by_aoe_increase"							"1"
+					}
+					"immunity_duration"
+					{
+						"special_bonus_unique_legion_commander_8"			"1.5"
+					}
+					"immunity_resist"
+					{
+						"special_bonus_unique_legion_commander_8"			"40"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Legion Commander: Moment of Courage
+			//=================================================================================================================
+			"legion_commander_moment_of_courage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilitySound"					"Hero_LegionCommander.Courage"
+				"IsBreakable"					"1"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.3"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"trigger_attacks"			
+					{
+						"value"					"7 6 5 4"	
+						"special_bonus_unique_legion_commander_3" "-1"
+					}
+					"buff_duration"				"1.0"
+					"secondary_attack_damage"	"100"
+					"hp_leech_percent"			
+					{
+						"value"		"55 65 75 85"
+						"special_bonus_unique_legion_commander_7" "+100"
+					}
+			
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Legion Commander: Duel
+			//=================================================================================================================
+			"legion_commander_duel"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_LegionCommander.Duel"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 100 120"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"					
+					{
+						"value"					"4.0 4.5 5.0"
+						"special_bonus_unique_legion_commander_duel_duration"	"+0.75"
+					}
+					"AbilityCastRange"			"200"
+					"reward_damage"				"10 20 30"	
+					"trigger_pta_on_victory"
+					{
+						"value"					"0"
+						"special_bonus_scepter"	"+1"
+					}
+					"duel_refresh_on_victory"	
+					{
+						"value"					"0"
+						"special_bonus_unique_legion_commander_duel_refresh_on_victory"		"+30"
+					}
+					"damage_reduction_pct"			
+					{
+						"value"					"0"
+					}
+					"AbilityCooldown"			"60 55 50"
+
+					"team_duel"
+					{
+						"value"		"0"
+						"special_bonus_scepter"		"0"
+					}
+					"team_duel_damage_pct"
+					{
+						"value"		"0"
+						"special_bonus_scepter"		"0"
+					}
+					"team_duel_radius"
+					{
+						"value"		"0"
+						"special_bonus_scepter"		"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Legion Commander: Outfight Them!
+			//=================================================================================================================
+			"legion_commander_outfight_them"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"radius"					"1200"	
+					"duration"					"6.0"
+					"armor"		
+					{
+						"value"					"1"
+						"hero_levelup"			"+0.1"
+						"special_bonus_unique_legion_commander_outfight_them_armor"		"+1"	
+					}
+					"ally_factor"				"50"
+				}
+			}
+
+			//=================================================================================================================
+			// Legion Commander: Intimidate
+			//=================================================================================================================
+			"legion_commander_intimidate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Mars.Shield.Cast"
+				"Innate"						"1"
+				"HasScepterUpgrade"				"0"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastPoint"				"0.2"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"0"
+				"AbilityCooldown"				"15"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"hp_cost_perc"				"0"
+					"angle"						"120"
+					"radius"					
+					{
+						"value"							"600"
+						"affected_by_aoe_increase"		"1"		
+
+					}
+					"slow_duration"				"1.0"
+					"damage"					"0"
+					"movement_slow"				"100"		
+					"debuff_duration"			
+					{
+						"value"					"4"
+						"hero_levelup"			"+0.1"
+					}
+					"reduction"					
+					{
+						"value"					"20"
+						"hero_levelup"			"+1"
+					}
+
+					"stuns"		
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"0"
+					}
+
+					"grants_restore_amp"		
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"0"
+					}
+				}
+			}
+		}
+	}
+}

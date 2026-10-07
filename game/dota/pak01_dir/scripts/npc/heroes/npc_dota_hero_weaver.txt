@@ -1,0 +1,497 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_weaver"
+	{
+		"Model"		"models/heroes/weaver/weaver.vmdl"
+		"SoundSet"		"Hero_Weaver"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Carry,Escape"
+		"Rolelevels"	"2,3"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"63"
+		"HeroOrderID"	"41"
+		"NewHero"		"1"
+		"ModelScale"		"0.740000"
+		"VersusScale"		"0.74"
+		"SpectatorLoadoutScale" "0.9"
+		"LoadoutScale"		"0.74"
+		"PickSound"		"weaver_weav_spawn_01"
+		"BanSound"		"weaver_weav_anger_01"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Weaver"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"62,32,44"
+		"Adjectives"
+		{
+			"Legs"			"4"
+			"Nose"			"0"
+			"Blue"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_viper"
+		"HeroSelectSoundEffect"		"Hero_Weaver.Pick"
+		"GibType"		"goo"
+		"GibTintColor"	"98 124 97 255"
+		"NameAliases"	"nw;Skitskurr"
+		"Ability1"		"weaver_the_swarm"
+		"Ability2"		"weaver_shukuchi"
+		"Ability3"		"weaver_geminate_attack"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"weaver_time_lapse"
+		"Ability7"		"weaver_threads_of_fate"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"weaver_the_swarm"
+			"Ability2"	"weaver_shukuchi"
+			"Ability3"	"weaver_geminate_attack"
+			"Ability4"	"weaver_time_lapse"
+		}
+
+		"Ability10"		"special_bonus_unique_weaver_shukuchi_movespeed"
+		"Ability11"		"special_bonus_strength_7"
+		"Ability12"		"special_bonus_unique_weaver_1"
+		"Ability13"		"special_bonus_unique_weaver_4"
+		"Ability14"		"special_bonus_unique_weaver_2"
+		"Ability15"		"special_bonus_unique_weaver_3"
+		"Ability16"		"special_bonus_unique_weaver_6"
+		"Ability17"		"special_bonus_unique_weaver_5"
+
+		"Facets"
+		{
+			"weaver_skitterstep"
+			{
+				"Icon"				"speed"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}			
+			"weaver_hivemind"
+			{
+				"Icon"				"xp"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.800000"
+		"BaseAttackSpeed"		"120"
+		"AttackAnimationPoint"		"0.550000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"425"
+		"ProjectileModel"		"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"16"
+		"AttributeStrengthGain"		"2.0000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"3.3"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.00000"
+		"StatusHealthRegen"		"1.25"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"275"
+		"particle_folder"		"particles/units/heroes/hero_weaver"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_weaver.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_weaver/weaver_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Weaver_Antennae"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_weaver_swarm"
+				}
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"legs"
+				"SlotText"		"#LoadoutSlot_Legs"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "weaver_the_swarm"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "weaver_shukuchi"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/weaver/weaver_bug.vmdl"
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_weaver.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_weaver.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		 "1"
+			"attach_attack1"     "2"
+			"attach_attack2"     "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Weaver: The Swarm
+			//=================================================================================================================
+			"weaver_the_swarm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Weaver.Swarm.Cast"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastRange"				"3000"
+				"AbilityCooldown"				"44 36 28 20"
+				"AbilityManaCost"				"110 105 100 95"
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.2"	// Primarily about the damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"			"18 23 28 33"
+						"attack_rate"		"1.2 1.05 0.9 0.75"
+						"count"				"12 12 12 12"
+						"armor_reduction"	
+						{
+							"value"		"1 1 1 1"
+							"special_bonus_unique_weaver_3"				"+0.5"
+						}
+						"duration"			"16"
+						"destroy_attacks"	
+						{
+							"value"			"6 7 8 9"
+							"special_bonus_unique_weaver_4"	"+2"
+						}
+						"radius"			
+						{
+							"value"		"100 100 100 100"
+							"affected_by_aoe_increase"	"1"
+						}
+						"speed"				"750 750 750 750"
+						"spawn_radius"		
+						{
+							"value"		"300 300 300 300"
+							"affected_by_aoe_increase"	"1"
+						}
+						"shard_cooldown_reduction"		
+						{
+							"special_bonus_shard"		"2"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Weaver: Shukuchi
+			//=================================================================================================================
+			"weaver_shukuchi"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_Weaver.Shukuchi"
+				"HasShardUpgrade"				"1"
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"65"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"				
+					{
+						"value"										"100 130 160 190"
+						"special_bonus_unique_weaver_1"				"+90"
+					}
+					"speed"				
+					{
+						"value"										"200 230 260 290"
+
+					}
+				
+					"radius"				
+					{
+						"value"		"175 175 175 175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"fade_time"				"0.25"
+					"duration"				"4.0 4.0 4.0 4.0"
+					"AbilityCooldown"
+					{
+						"value"								"15 12 9 6"
+						"special_bonus_unique_weaver_6"		"-3"
+					}
+					"geminate_attack_mark_duration"
+					{
+						"value"									"0"
+						"special_bonus_shard"					"+4.6"
+					}
+					"min_movespeed_override"
+					{
+						"value"										"550"
+						"special_bonus_unique_weaver_shukuchi_movespeed"				"+50"
+
+					}
+					"shukuchi_attack_mark_radius"
+					{
+						"value"									"0"
+						"affected_by_aoe_increase"				"1"
+						"special_bonus_shard"					"+1200"
+					}
+					"shukuchi_attack_delay"
+					{
+						"value"									"0"
+						"special_bonus_shard"					"+0.2"
+					}
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Ability: Weaver's Geminate Attack
+			//=================================================================================================================
+			"weaver_geminate_attack"
+			{
+				// General
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"AbilityCooldown"				"9.0 7.0 5.0 3.0"
+
+				"AbilityCastRange"				"425"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"delay"
+					{
+						"value" "0.25"
+					}
+					"extra_attack"
+					{
+						"value" "1"
+						"special_bonus_unique_weaver_5" "+1"
+					}
+					"bonus_damage"
+					{
+						"value" "20 35 50 65"
+						"special_bonus_unique_weaver_2" "+60"
+					}
+					"shard_beetle_search_range"
+					{
+						"special_bonus_shard"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Weaver's Time Lapse
+			//=================================================================================================================
+			"weaver_time_lapse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"		
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"AbilityCastRange"				"500"
+				"AbilitySound"					"Hero_Weaver.TimeLapse"
+
+				"FightRecapLevel"				"2"
+
+				"HasScepterUpgrade"			"1"
+
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		
+				"AbilityManaCost"				"150 75 0"	
+				"AbilityValues"
+				{
+					"AbilityCooldown"				
+					{
+						"value"						"70 55 40"
+						"special_bonus_scepter"		"-10"
+					}
+					"targets_allies"				
+					{
+						"value"				"0"
+						"special_bonus_scepter"		"+1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Weaver: Skitskurr's Loom
+			//=================================================================================================================
+			"weaver_rewoven"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"experience_gain"			"6"
+				}
+			}
+			//=================================================================================================================
+			// Weaver: Skitskurr's Loom
+			//=================================================================================================================
+			"weaver_threads_of_fate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+				"AbilityValues"
+				{
+					"thread_setup_distance"							"700"
+					"thread_setup_time"								"1.5"
+					"established_thread_duration"					"6"
+					"established_thread_break_distance"				
+					{
+						"value"			"890"
+						"hero_levelup"	"10"
+					}
+
+					"damage_per_thread_hero"						"10"
+					"damage_per_thread_creep"						"0"
+					"death_linger_duration"							"5"
+					"slow_duration"									"0.4"
+					"slow_percent"
+					{
+						"value"												"100"
+					}
+				}
+			}
+		}
+	}
+}

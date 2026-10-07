@@ -1,0 +1,626 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Dark Willow
+	//=================================================================================================================
+	"npc_dota_hero_dark_willow"
+	{
+		"Model"				"models/heroes/dark_willow/dark_willow.vmdl"
+		"IdleExpression"	"scenes/sylph/sylph_exp_idle_01.vcd"
+		"SoundSet"			"Hero_DarkWillow"
+		"IdleSoundLoop"		"Hero_DarkWillow.IdleLoop"		
+		"Enabled"			"1"
+		"Role"				"Support,Nuker,Disabler,Escape"
+		"Rolelevels"		"2,2,1,2"
+		"Complexity"		"2"
+		"Team"				"Good"
+		"HeroID"			"119"
+		"HeroOrderID"	"114"
+		"ModelScale"		"1"
+		"VersusScale"		"1"
+		"LoadoutScale"		"1"
+		"SpectatorLoadoutScale" "0.8"
+		"HeroGlowColor"		"117 240 255"
+		"CMEnabled"			"1"
+		"new_player_enable"			"1"
+		"SimilarHeroes"		"21,128,9"
+		"Adjectives"
+		{
+			"Wings"			"1"
+			"Female"		"1"
+			"Flying"		"1"
+			"Cute"			"1"
+			"Green"			"1"
+			"Purple"		"1"
+		}
+		"workshop_guide_name"				"Dark Willow"
+		"LastHitChallengeRival"		"npc_dota_hero_jakiro"
+		
+		"NameAliases"	"dw;Mireska"
+		"Ability1"		"dark_willow_bramble_maze"
+		"Ability2"		"dark_willow_shadow_realm"
+		"Ability3"		"dark_willow_cursed_crown"
+		"Ability4"		"dark_willow_bedlam"
+		"Ability5"		"dark_willow_pixie_dust"
+		"Ability6"		"dark_willow_terrorize"
+		"Ability10"		"special_bonus_unique_dark_willow_6"
+		"Ability11"		"special_bonus_intelligence_12"
+		"Ability12"		"special_bonus_unique_dark_willow_4"
+		"Ability13"		"special_bonus_unique_dark_willow_7"
+		"Ability14"		"special_bonus_unique_dark_willow_1"
+		"Ability15"		"special_bonus_unique_dark_willow_3"
+		"Ability16"		"special_bonus_unique_dark_willow_bedlam_targets"
+		"Ability17"		"special_bonus_unique_dark_willow_2"
+		"Facets"
+		{
+			"dark_willow_throwing_shade" 
+			{
+				"Icon"				"damage"
+				"Color"				"Purple"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"dark_willow_thorny_thicket" 
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"4"
+				"Deprecated"		"true"
+			}
+			"dark_willow_shattering_crown" 
+			{
+				"Icon"				"barrier"
+				"Color"				"Green"
+				"GradientID"		"4"
+				"Deprecated"		"true"
+			}
+		}
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"dark_willow_bramble_maze"
+			"Ability2"		"dark_willow_shadow_realm"
+			"Ability3"		"dark_willow_cursed_crown"
+			"Ability4"		"dark_willow_terrorize"
+		}
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.500000"
+		"BaseAttackSpeed"		"115"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+			"faster"	"300"
+		}
+		"ArmorPhysical"		"0"
+		"AttackAnimationPoint"		"0.30000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"475"
+		"ProjectileModel"		"particles/units/heroes/hero_dark_willow/dark_willow_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.0"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.6"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.5"
+		"StatusHealthRegen"		"0.75"
+		"MovementSpeed"		"290"
+		"MovementTurnRate"		"0.700000"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"340"
+		}
+		"VisionNighttimeRange"		"800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"230"
+		"particle_folder"		"particles/units/heroes/hero_dark_willow"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_dark_willow.vsndevts"
+		"PickSound"			"dark_willow_pick"
+		"BanSound"			"dark_willow_ban"
+		"HeroSelectSoundEffect"		"Hero_DarkWillow.Pick"
+		"GibType"		"default"
+		"ReleaseTimestamp"		"1509390000"
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_dark_willow/dark_willow_loadout.vpcf"		"loadout"
+			}
+		}
+		"AbilityPreview"
+		{
+			"resource"		"resource/UI/Heroes/default.res"
+			"movie"		"media/heroes/default"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+		}
+		"ItemSlots"
+		{
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1500"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Wings"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_offhand_weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_dark_willow_creature"
+				}
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"750"
+			}
+
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"costume"
+				"SlotText"		"#LoadoutSlot_Costume"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_1"
+				"SlotText" "dark_willow_bramble_maze"
+				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_2"
+				"SlotText" "dark_willow_shadow_realm"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex" "11"
+				"SlotName" "ability_effects_3"
+				"SlotText" "dark_willow_cursed_crown"
+				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex" "12"
+				"SlotName" "ability_effects_4"
+				"SlotText" "dark_willow_terrorize"
+				"DisplayInLoadout" "0"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dark_willow.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dark_willow.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_lantern"	"2"
+			"attach_attack1"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Dark Willow: Bramble Maze
+			//=================================================================================================================
+			"dark_willow_bramble_maze"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_BASIC"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000 1100 1200 1300"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 120 140 160"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"placement_range"		
+					{
+						"value"		"500"
+					}
+					"placement_count"		
+					{
+						"value"				"8"
+					}
+					"placement_duration"		"12"
+					"extra_brambles_placement_duration"		"4.0"
+					"latch_duration"		"1.0 1.5 2.0 2.5"
+					"latch_range"		
+					{
+						"value"		"90"
+					}
+					"damage_per_tick"		"50 55 60 65"
+					"spell_amp"
+					{
+						"value"					"0"		
+					}
+					"latch_creation_interval"		"0.075"
+					"latch_creation_delay"		"0.1"
+					"initial_creation_delay"		"0.3"
+
+					"AbilityCooldown"				
+					{
+						"value"					"22"
+						"special_bonus_unique_dark_willow_3"			"-7"
+					}
+
+				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Dark Willow: Bedlam
+			//=================================================================================================================
+			"dark_willow_bedlam"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"3"
+				"FightRecapLevel"				"1"
+				"LinkedAbility"					"dark_willow_terrorize"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------		
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastGestureSlot"		"ABSOLUTE"
+				"AbilityCooldown"				"30"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 150 200"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"attack_damage"			
+					{
+						"value"						"70 120 170"
+						"special_bonus_unique_dark_willow_4"		"+30"
+					}
+					"attack_interval"		"0.25"
+					"attack_radius"			
+					{
+						"value"		"300"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"attack_targets"			"1"
+					"roaming_radius"			
+					{
+						"value"		"200"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"roaming_seconds_per_rotation"				"1.5"
+					"roaming_duration"	
+					{
+						"value"											"5.5"
+						"special_bonus_unique_dark_willow_6" 			"+1.0"
+
+					}
+					"target_count"
+					{
+						"value"		"1"
+						"special_bonus_unique_dark_willow_bedlam_targets" "+2"	
+					}
+					"travel_speed"		"1800"
+					"unit_targetable"
+					{
+						"value"							"0"
+					}
+					"damage_reduction_pct"
+					{
+						"value"							"0"				
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Dark Willow: Terrorize
+			//=================================================================================================================
+			"dark_willow_terrorize"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"LinkedAbility"					"dark_willow_bedlam"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"dark_willow_bedlam" ""
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+				"AbilityCastPoint"				"1.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"destination_travel_speed"	"2000"
+						"destination_radius"		
+						{
+							"value"		"450 500 550"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"destination_status_duration"	"2.8 3.0 3.2"
+						"return_travel_speed"	"800"
+						"starting_height"		"300"
+						"telegraph_to_enemies"		"0"
+						"AbilityCooldown"				
+						{
+							"value"												"100 90 80"
+							"special_bonus_unique_dark_willow_7" 				"-20"
+						}
+						"impact_damage"
+						{
+							"special_bonus_unique_dark_willow_2"	"+500"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Dark Willow: Shadow Realm
+			//=================================================================================================================
+			"dark_willow_shadow_realm"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCastGestureSlot"		"ABSOLUTE"
+				"HasScepterUpgrade"			"1"
+	
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"21 19 17 15"
+						"special_bonus_unique_dark_willow_5"		"-2"
+					}
+			
+					"duration"
+					{
+						"value"						"5"
+						"special_bonus_unique_dark_willow_1"			"+1.5"
+					}
+					"fade_time"					"0.3"			
+					"damage"						"120 200 280 360"
+					"attack_range_bonus"			"600"
+					"max_damage_duration"
+					{
+						"value"							"3.0"
+						"CalculateSpellDamageTooltip"	"0"
+						"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+					}
+					"aura_radius"
+					{
+						"value"					"0"
+						"affected_by_aoe_increase"	"1"
+					}
+					"aura_linger"
+					{
+						"value"					"0"
+					}
+					"aura_damage_pct"
+					{
+						"value"					"0"
+					}
+				}
+			}
+			//=================================================================================================================
+			// Dark Willow: Cursed Crown
+			//=================================================================================================================
+			"dark_willow_cursed_crown"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		        "HasShardUpgrade"               "1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.2"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 90 100 110"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"delay"			"4"
+						"stun_duration"			
+						{
+							"value"			"1.5 1.8 2.1 2.4"
+						}
+						"stun_radius"			
+						{
+							"value"			"360"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"shard_delay_reduction"			
+						{
+							"special_bonus_shard"			"0"
+						}			
+						"shard_bramble_amount"			
+						{
+							"special_bonus_shard"			"4"
+						}
+						"shard_spawn_radius"
+						{
+							"special_bonus_shard"			"175"
+						}	
+						"accumulated_damage_pct"
+						{
+							"value"							"0"
+						}
+						"accumulated_damage_pct_ally"
+						{
+							"value"							"0"
+						}
+						"AbilityCooldown"
+						{
+							"value"				"17 15 13 11"
+							"special_bonus_shard"				"-1.5"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Dark Willow: Cursed Crown
+			//=================================================================================================================
+			"dark_willow_pixie_dust"
+			{
+			// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"hp_regen_amp"					"20"
+					"mana_regen_amp"				"20"
+
+					"hp_regen_amp_out_of_world"		"100"
+					"mana_regen_amp_out_of_world"	"100"
+				}
+			}
+		}
+	}
+}

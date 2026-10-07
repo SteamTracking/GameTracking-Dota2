@@ -1,0 +1,736 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_lina"
+	{
+		"Model"		"models/heroes/lina/lina.vmdl"
+		"IdleExpression"		"scenes/lina/lina_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Lina"
+		"IdleSoundLoop"		"Hero_Lina.IdleLoop"
+		"PickSound"		"lina_lina_spawn_01"
+		"BanSound"		"lina_lina_anger_02"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"0"
+		"BotImplemented"		"1"
+		"BotForceSelection"		"0"
+		"Role"			"Support,Carry,Nuker,Disabler"
+		"Rolelevels"	"1,1,3,1"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"HeroID"		"25"
+		"HeroOrderID"	"8"
+		"ModelScale"		"0.810000"
+		"VersusScale"		"0.810000"
+		"HeroGlowColor"		"254 90 5"
+		"CMEnabled"		"1"
+		"workshop_guide_name"		"Lina"
+		"new_player_enable"		"1"
+		"SimilarHeroes"	"39,43,11"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Flying"		"1"
+			"Fiery"			"1"
+			"Red"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_crystal_maiden"
+		"HeroSelectSoundEffect"		"Hero_Lina.Pick"
+		"GibType"		"fire"
+		"NameAliases"	"slayer"
+		"Ability1"		"lina_dragon_slave"
+		"Ability2"		"lina_light_strike_array"
+		"Ability3"		"lina_fiery_soul"
+		"Ability4"		"lina_flame_cloak"
+		"Ability5"		"lina_slow_burn"
+		"Ability6"		"lina_laguna_blade"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"lina_dragon_slave"
+			"Ability2"		"lina_light_strike_array"
+			"Ability3"		"lina_fiery_soul"
+			"Ability6"		"lina_laguna_blade"
+		}
+
+		"Ability10"		"special_bonus_attack_damage_25"
+		"Ability11"		"special_bonus_unique_lina_1"
+		"Ability12"		"special_bonus_unique_lina_4"
+		"Ability13"		"special_bonus_unique_lina_3"
+		"Ability14"		"special_bonus_unique_lina_6"
+		"Ability15"		"special_bonus_unique_lina_2"
+		"Ability16"		"special_bonus_unique_lina_7"
+		"Ability17"		"special_bonus_unique_lina_crit_debuff"
+		
+		"Facets"
+		{
+			"lina_supercharge"
+			{
+				// no burn
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"lina_dot"
+			{
+				"Icon"				"nuke"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"lina_slow_burn"
+					}
+				}
+			}
+		}
+		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"21"
+		"AttackDamageMax"		"29"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.650000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"670"
+		"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		"ProjectileSpeed"		"1000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.400000"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"4.000000"
+		"MovementSpeed"		"290"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lina"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_lina/lina_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"neck"
+				"SlotText"		"#LoadoutSlot_Neck"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_2"
+				"SlotText" "lina_light_strike_array"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_4"
+				"SlotText" "lina_laguna_blade"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"Loadout"
+			{
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_tango"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_clarity"		"ITEM_CONSUMABLE | ITEM_SELLABLE"
+				"item_branches"		"ITEM_CORE"
+				"item_branches"		"ITEM_CORE"
+				"item_magic_stick"		"ITEM_CORE"
+				"item_recipe_magic_wand"		"ITEM_CORE"
+				"item_magic_wand"		"ITEM_DERIVED | ITEM_SELLABLE"
+				"item_boots"		"ITEM_CORE"
+				"item_sobi_mask"				"ITEM_CORE"
+				"item_recipe_ring_of_basilius"  "ITEM_EXTENSION"
+				"item_ring_of_basilius"			"ITEM_DERIVED"
+
+				"item_recipe_arcane_boots"		"ITEM_EXTENSION"
+				
+				"item_arcane_boots"		"ITEM_DERIVED"
+				"item_staff_of_wizardry"		"ITEM_EXTENSION"
+				"item_fluffy_hat"		"ITEM_EXTENSION"
+				"item_recipe_force_staff"		"ITEM_EXTENSION"
+				"item_force_staff"		"ITEM_DERIVED"
+				"item_point_booster"		"ITEM_EXTENSION"
+				"item_staff_of_wizardry"		"ITEM_EXTENSION"
+				"item_ogre_axe"		"ITEM_EXTENSION"
+				"item_blade_of_alacrity"		"ITEM_EXTENSION"
+				"item_recipe_ultimate_scepter"		"ITEM_EXTENSION"
+				"item_ultimate_scepter" "ITEM_DERIVED"
+
+				"item_tiara_of_selemene"	"ITEM_EXTENSION"
+				"item_mystic_staff"			"ITEM_LUXURY"
+				"item_recipe_sheepstick"	"ITEM_EXTENSION"
+				"item_sheepstick"			"ITEM_DERIVED"
+
+				"item_staff_of_wizardry"		"ITEM_LUXURY"
+				"item_wind_lace"		"ITEM_LUXURY"
+				"item_void_stone"		"ITEM_LUXURY"
+				"item_recipe_cyclone"		"ITEM_LUXURY"
+				"item_cyclone"		"ITEM_DERIVED"
+			}
+			"Build"
+			{
+				"1"		"lina_light_strike_array"
+				"2"		"lina_dragon_slave"
+				"3"		"lina_dragon_slave"
+				"4"		"lina_fiery_soul"
+				"5"		"lina_dragon_slave"
+				"6"		"lina_laguna_blade"
+				"7"		"lina_dragon_slave"
+				"8"		"lina_light_strike_array"
+				"9"		"lina_light_strike_array"
+				"10"		"special_bonus_unique_lina_1"
+				"11"		"lina_light_strike_array"
+				"12"		"lina_laguna_blade"
+				"13"		"lina_fiery_soul"
+				"14"		"lina_fiery_soul"
+				"15"		"special_bonus_unique_lina_3"
+				"16"		"lina_fiery_soul"
+				"17"		""
+				"18"		"lina_laguna_blade"
+				"19"		""
+				"20"		"special_bonus_unique_lina_2"
+				"21"		""
+				"22"		""
+				"23"		""
+				"24"		""
+				"25"		"special_bonus_unique_lina_crit_debuff"
+			}
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"0"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_NUKER"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lina.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lina.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"		"1"
+			"attach_attack1"	"2"
+			"attach_attack2"	"3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Lina Dragon Slave
+			//=================================================================================================================
+			"lina_dragon_slave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Lina.DragonSlave"
+				"TooltipSummaryProperties"		"dragon_slave_damage"
+	
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1075"
+				"AbilityCastPoint"				"0.35"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+		
+				"AbilityDuration"				"0.6875 0.6875 0.6875 0.6875"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 100 110 120"
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+
+					"dragon_slave_damage"
+					{
+						"value"							"65 125 185 245"				
+					}
+					"dragon_slave_speed"		"1200"
+					"dragon_slave_width_initial"	
+					{
+						"value"		"275"
+						"affected_by_aoe_increase"	"1"
+					}
+					"dragon_slave_width_end"		
+					{
+						"value"			"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"dragon_slave_distance"			"1075"
+
+					"AbilityCooldown"				
+					{ 
+						"value"						"11 10 9 8"
+						"special_bonus_unique_lina_1"		"-3"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+	
+			//=================================================================================================================
+			// Ability: Lina Light Strike Array
+			//=================================================================================================================
+			"lina_light_strike_array"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Ability.LightStrikeArray"
+				"TooltipSummaryProperties"		"light_strike_array_delay_time;light_strike_array_damage;light_strike_array_stun_duration"
+
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"13 11 9 7"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 110 120 130"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"light_strike_array_aoe"	
+						{
+							"value" "250"
+							"affected_by_aoe_increase"	"1"
+						}
+						"light_strike_array_delay_time"
+						{
+							"value"					"0.5"
+							"display_type"			"kDuration"
+						}
+						"light_strike_array_stun_duration"	"1.2 1.6 2.0 2.4"
+						"light_strike_array_damage"	
+						{
+							"value"							"80 125 170 215"
+							"special_bonus_unique_lina_3"	"+110"					
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+	
+			//=================================================================================================================
+			// Ability: Lina's Fiery Soul
+			//=================================================================================================================
+			"lina_fiery_soul"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"IsBreakable"					"1"
+				"TooltipSummaryProperties"		"fiery_soul_attack_speed_bonus;fiery_soul_move_speed_bonus;fiery_soul_stack_duration"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"fiery_soul_attack_speed_bonus"	
+					{
+						"value"								"7 14 21 28"
+						"special_bonus_unique_lina_2"		"+10"
+					}
+					"fiery_soul_move_speed_bonus"	
+					{
+						"value"								"1.0 1.5 2 2.5"
+						"special_bonus_unique_lina_2"		"+1"
+						"display_type"						"kBuffPercentage"
+					}
+					"fiery_soul_magic_resist"
+					{
+						"special_bonus_unique_lina_4"		"+5"
+					}
+					"fiery_soul_max_stacks"				"7"
+					"fiery_soul_stack_duration"			"16"		
+					"bonus_spell_damage"
+					{
+						"value"								"0"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+		
+			//=================================================================================================================
+			// Ability: Lina Flame Cloak
+			//=================================================================================================================
+			"lina_flame_cloak"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"IsGrantedByScepter"				"1"
+				"MaxLevel"						"1"
+				"TooltipSummaryProperties"		"flame_cloak_duration;spell_amp;magic_resistance"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"25"
+				"AbilityCastPoint"				"0.0"
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"flame_cloak_duration"				"7"
+					"magic_resistance"
+					{
+						"value"							"35"
+						"display_type"					"kBuffPercentage"
+					}
+					"spell_amp"
+					{
+						"value"							"35"
+						"display_type"					"kBuffPercentage"
+					}
+					"visualzdelta"							"100"
+					"zchangespeed"							"350"					
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+			}
+	
+			//=================================================================================================================
+			// Ability: Lina Laguna Blade
+			//=================================================================================================================
+			"lina_laguna_blade"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter	
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Ability.LagunaBladeImpact"
+				 "HasShardUpgrade"				"1"
+				"TooltipSummaryProperties"		"damage"
+				"AbilityDraftExtraAbilities"
+				{
+					"lina_flame_cloak" "scepter"
+				}
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"750"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 300 450"
+			
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage"
+					{
+						"value"							"400 580 760"				
+					}
+					"damage_delay"				"0.25"
+					"AbilityCooldown"
+					{
+						"value"								"70 60 50"
+						"special_bonus_unique_lina_6"		"-20"
+					}
+					"pierce_immunity"
+					{
+						"value"								"0"
+					}
+					"supercharge_duration"
+					{
+						"value"								"0"
+						"special_bonus_shard"				"+5"
+					}
+					"supercharge_stacks"	
+					{
+						"value"								"0"
+						"special_bonus_shard"				"+12"
+					}
+					"barrier_pct"
+					{
+						"value"								"0"
+					}
+					"barrier_duration"
+					{
+						"value"								"0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Lina Innate: Burn
+			//=================================================================================================================
+			"lina_slow_burn"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"impact_damage_pct"						"100"
+					"burn_damage_pct"
+					{
+						"value"								"64"
+						"special_bonus_unique_lina_7"		"+16"
+					}
+					"burn_duration"							
+					{
+						"value"								"4"
+						"special_bonus_unique_lina_7"		"+1"
+					}
+					"additional_tick_total_damage_tooltip"	// = total burn_damage_pct including talent
+					{
+						"value"								"0"
+						"special_bonus_unique_lina_7"		"+80"
+					}
+					"target_crit_multiplier"
+					{
+						"value"												"0"
+						"special_bonus_unique_lina_crit_debuff"				"+150"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Lina Combustion
+			//=================================================================================================================
+			"lina_combustion"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"MaxLevel"						"4"
+				"DependentOnAbility"			"lina_laguna_blade"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"damage_threshold"			"175"
+					"damage"
+					{
+						"value"							"15 35 55 75"
+						"special_bonus_unique_lina_7"	"+60%"
+					}
+					"damage_illusions"
+					{
+						"value"							"10 15 20 25"
+						"special_bonus_unique_lina_7"	"+60%"
+					}
+					"damage_aoe"
+					{
+						"value"					"400"
+						"affected_by_aoe_increase"	"1"
+					}
+					"duration"					"6"
+				}
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_1"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_3"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_6"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_7"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+				//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_lina_dragon_slave_crits"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			"special_bonus_unique_lina_crit_debuff"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+		}
+	}
+}

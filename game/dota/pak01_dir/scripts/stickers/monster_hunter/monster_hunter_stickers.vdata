@@ -1,0 +1,115 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CStickerGenerationOptionsDefinition"
+	m_strStickerSubPath = "monster_hunter"
+	m_strStickerSourcePath = "panorama/images/events/monster_hunter/heroes_icons/pngs/%s.png"
+	m_strOutputResultPath = "materials/stickers/monster_hunter/textures/sticker_%sres.png"
+	m_strOutputMaskPath = "materials/stickers/monster_hunter/textures/sticker_%smask.png"
+	m_strEconItemImagePath = "econ/stickers/monster_hunter/%s.png"
+	m_strOutputNormalPath = "materials/stickers/monster_hunter/textures/sticker_%snormal.png"
+	m_strStickerBackMaterialPath = "materials/stickers/monster_hunter/monster_hunter_sticker_card_back.vmat"
+	m_strItemDefPath = "items/item_definitions/sticker/%s/monster_hunter_sticker_%s.item"
+	m_eEvent = "EVENT_ID_MONSTER_HUNTER"
+	m_strCreationDate = "2025-11-10"
+	m_strBatchDisplayNamePrefix = "Monster Hunter Sticker - "
+	m_bEnableDebug = false
+	m_bDoCompositing = false
+	m_bGenerateMaps = false
+	m_bGenerateMaterials = true
+	m_bGenerateItems = true
+	m_bIsCommodity = false
+	m_bStompTextures = false
+	m_bOffsetOnlyIfOutputFits = true
+	m_nOutputOffsetX = 0
+	m_nOutputOffsetY = -100
+	m_bGenerateFromMonsterHunterCodex = true
+	m_nStickerCapsuleDefIndex = 35534
+	m_vecBatchItems = 
+	[
+		{
+			m_strStickerName = "npc_dota_hero_antimage_persona"
+			m_strDisplayName = "Anti-Mage (Wei)"
+		},
+		{
+			m_strStickerName = "npc_dota_hero_crystal_maiden_persona"
+			m_strDisplayName = "Crystal Maiden (Wolf)"
+		},
+		{
+			m_strStickerName = "npc_dota_hero_invoker_persona"
+			m_strDisplayName = "Invoker (Kid)"
+		},
+		{
+			m_strStickerName = "npc_dota_hero_phantom_assassin_persona"
+			m_strDisplayName = "Phantom Assassin (Asan)"
+		},
+		{
+			m_strStickerName = "npc_dota_hero_pudge_persona"
+			m_strDisplayName = "Pudge (Toy Butcher)"
+		},
+	]
+	m_materialConfig = 
+	{
+		m_strImageFormatExtension = "psd"
+		m_strImageInventory = "res"
+		m_vecMasksToGenerate = 
+		[
+			"mask",
+		]
+		m_vecQualityBaseMaterials = 
+		[
+			"materials/stickers/monster_hunter/generated_sticker_basemat_basic.vmat",
+			"materials/stickers/monster_hunter/generated_sticker_basemat_glitter.vmat",
+			"materials/stickers/monster_hunter/generated_sticker_basemat_holo.vmat",
+			"materials/stickers/monster_hunter/generated_sticker_basemat_gold.vmat",
+		]
+		m_vecShaderKeysPerMaterial = 
+		[
+			[
+				{
+					m_strShaderKey = "TextureColor"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_basic_color.psd"
+				},
+			],
+			[
+				{
+					m_strShaderKey = "TextureColor"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_glitter_color.psd"
+				},
+				{
+					m_strShaderKey = "TextureEffectMask"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_glitter_mask.psd"
+				},
+			],
+			[
+				{
+					m_strShaderKey = "TextureColor"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_holo_color.psd"
+				},
+				{
+					m_strShaderKey = "TextureEffectMask"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_holo_mask.psd"
+				},
+			],
+			[
+				{
+					m_strShaderKey = "TextureColor"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_gold_color.psd"
+				},
+				{
+					m_strShaderKey = "TextureEffectMask"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_gold_mask.psd"
+				},
+				{
+					m_strShaderKey = "TextureNormal"
+					m_strValueFileFormat = "materials/stickers/%s/textures/sticker_%s_gold_normal.psd"
+				},
+			],
+		]
+	}
+	m_compositingRules = 
+	{
+		m_unWidth = 1024
+		m_unHeight = 1024
+		m_vecLayers = [  ]
+	}
+}

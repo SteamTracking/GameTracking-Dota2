@@ -1,0 +1,165 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Base 
+	// Note: This is loaded and overriden/added to by values in the specific heroes chunks.
+	//=================================================================================================================
+	"npc_dota_hero_base"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"		"models/dev/error.vmdl"
+		"SoundSet"		"0"
+		"Enabled"		"0"
+		"Level"		"1"
+		"BotImplemented"		"0"
+		"NewHero"		"0"
+		"HeroPool1"		"0"
+		"HeroUnlockOrder"		"1"
+		"CMEnabled"		"0"
+		"new_player_enable"		"0"
+		"Adjectives"
+		{
+			"Wings"			"0"
+			"Horns"			"0"
+			"Legs"			"2"
+			"Steed"			"0"
+			"Nose"			"1"
+			"Fuzzy"			"0"
+			"Bearded"		"0"
+			"Female"		"0"
+			"BadTeeth"		"0"
+			"Cape"			"0"
+			"NicePecs"		"0"
+			"Potbelly"		"0"
+			"Parent"		"0"
+			"Arachnophobic"	"0"
+			"Undead"		"0"
+			"Aquatic"		"0"
+			"Demon"			"0"
+			"Spirit"		"0"
+			"Flying"		"0"
+			"Cute"			"0"
+			"Fiery"			"0"
+			"Icy"			"0"
+			"Blue"			"0"
+			"Red"			"0"
+			"Green"			"0"
+		}
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"					""										// Ability 1.
+		"Ability2"					""										// Ability 2.
+		"Ability3"					""										// Ability 3.
+		"Ability4"					""										// Ability 4.
+		"Ability5"					""
+		"Ability6"					""										// Ability 6 - Extra.
+		"Ability7"					""										// Ability 7 - Extra.
+		"Ability8"					""										// Ability 8 - Extra.
+		"Ability9"					""
+		"Ability25"		"special_bonus_attributes"
+
+		"AbilityTalentStart"		"10"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-1"
+		"MagicalResistance"		"25"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"BaseAttackSpeed"		"100"
+		"AttackDamageMin"		"1"
+		"AttackDamageMax"		"1"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.750000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/base_attacks/ranged_hero.vpcf"
+		"ProjectileSpeed"		"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+
+		// Bounty
+		//-------------------------------------------------------------------------------------------------------------
+		"BountyXP"		"62"
+		"BountyGoldMin"		"0"
+		"BountyGoldMax"		"0"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RingRadius"		"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"MovementTurnRate"		"0.600000"
+		"HasAggressiveStance"		"0"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"		"120"
+		"StatusMana"		"75"
+		"StatusManaRegen"	"0"
+		"StatusHealthRegen"		"0.25"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"		"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+
+		//Inventory
+		"HasInventory"		"1"
+
+		//Voice
+		"VoiceBackgroundSound"		""
+		"HealthBarOffset"		"200" 		
+		"IdleExpression"		"scenes/default_idle.vcd"
+		"IdleSoundLoop"				""
+		"ARDMDisabled"		"0"
+		"HUD"
+		{
+			"StatusHUD"
+			{
+				"StatusStrength"
+				{
+					"LocalizeToken"		"#DOTA_StrengthStatus"
+					"Parameters"		"Traits:Strength"
+					"HUDName"		"unitstrength"
+				}
+				"StatusAgility"
+				{
+					"LocalizeToken"		"#DOTA_AgilityStatus"
+					"Parameters"		"Traits:Agility"
+					"HUDName"		"unitagility"
+				}
+				"StatusIntellect"
+				{
+					"LocalizeToken"		"#DOTA_IntellectStatus"
+					"Parameters"		"Traits:Intellect"
+					"HUDName"		"unitintellect"
+				}
+			}
+		}
+	}
+}

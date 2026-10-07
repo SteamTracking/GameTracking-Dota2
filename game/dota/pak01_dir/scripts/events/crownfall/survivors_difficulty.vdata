@@ -1,0 +1,71 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CSurvivorsDifficultyDefinition"
+	story = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_story_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_story_LocDifficultyDescription"
+		m_flEnemyHealthMultiplier = -0.1
+	}
+	harder_punches = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_harder_punches_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_harder_punches_LocDifficultyDescription"
+		m_flEnemyHealthMultiplier = 0.2
+		m_flEnemyDamageMultiplier = 0.2
+	}
+	sticky_situation = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_sticky_situation_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_sticky_situation_LocDifficultyDescription"
+		m_flEnemyTouchMovementSlowDuration = 0.7
+	}
+	footmen_frenzy = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_footmen_frenzy_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_footmen_frenzy_LocDifficultyDescription"
+		m_flEnemyMovementSpeedMultiplier = 0.3
+		m_flEnemyTurnRateMultiplier = 0.3
+		m_flEnemyHealthMultiplier = 0.3
+	}
+	spooky_follower = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_spooky_follower_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_spooky_follower_LocDifficultyDescription"
+		m_vecAdditionalEnemyEvents = 
+		[
+			{
+				m_sSpawnerName = "death"
+				m_nMinimumEnemyCountOverride = 1
+				m_flStartTime = 1
+			},
+		]
+	}
+	endurance_run = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_endurance_run_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_endurance_run_LocDifficultyDescription"
+		m_flEnemyHealthMultiplier = 0.3
+		m_flEnemyDamageMultiplier = 0.3
+		m_flAdditionalFirstFloorTime = 60.0
+		m_vecOverrideImperiaEnrageHealthThresholds = [ 0.75, 0.5, 0.25 ]
+	}
+	meteor_mayhem = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_meteor_mayhem_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_meteor_mayhem_LocDifficultyDescription"
+		m_flEnemyHealthMultiplier = 0.5
+		m_flEnemyDamageMultiplier = 0.3
+		m_bEnableMeteorModifier = true
+	}
+	echelon_mastery = 
+	{
+		m_sLocDifficultyName = "#DOTA_VData_survivors_difficulty_echelon_mastery_LocDifficultyName"
+		m_sLocDifficultyDescription = "#DOTA_VData_survivors_difficulty_echelon_mastery_LocDifficultyDescription"
+		m_flEnemyHealthMultiplier = 0.5
+		m_flEnemyDamageMultiplier = 0.5
+		m_flEnemySpawnCountMuliplier = 0.5
+		m_flXPDropChanceMultiplier = -0.25
+	}
+	_localization_path = "resource/localization/vdata/survivors_difficulty/survivors_difficulty_%language%.txt"
+}

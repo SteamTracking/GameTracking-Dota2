@@ -1,0 +1,740 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_snapfire"
+	{
+		"Model"					"models/heroes/snapfire/snapfire.vmdl"
+		"IdleExpression"		"scenes/snapfire/snapfire_portrait_idle.vcd"
+		"SoundSet"				"Hero_Snapfire"
+		"Enabled"				"1"
+		"CMEnabled"				"1"
+		"HeroUnlockOrder"		"3"
+		"Role"					"Support,Nuker,Disabler,Escape"
+		"Rolelevels"			"1,3,1,1"
+		"Complexity"			"1"
+		"Team"					"Good"
+		"HeroID"				"128"
+		"HeroOrderID"	"118"
+		"ModelScale"			"0.58"
+		"LoadoutScale"			"0.58"
+		"VersusScale"			"0.58"
+		"SpectatorLoadoutScale" "0.75"
+		"HeroGlowColor"			"242 200 198"
+		"NameAliases"			"snap,mortimer"
+		"PickSound"				"snapfire_snapfire_spawn_25"
+		"BanSound"				"snapfire_snapfire_curse_07"
+		"workshop_guide_name"	"Snapfire"
+		"LastHitChallengeRival"	"npc_dota_hero_kunkka"
+		"HeroSelectSoundEffect"	"Hero_Snapfire.Pick"
+		"GibType"				"default"
+		"Adjectives"
+		{
+			"Red"		"1"
+			"Steed"		"1"
+			"Female"	"1"
+		}
+		"SimilarHeroes"		"68,120,100"
+		"Ability1"				"snapfire_scatterblast"
+		"Ability2"				"snapfire_firesnap_cookie"
+		"Ability3"				"snapfire_lil_shredder"
+		"Ability4"				"snapfire_gobble_up"
+		"Ability5"				"snapfire_spit_creep"
+		"Ability6"				"snapfire_mortimer_kisses"
+		"Ability7"				"snapfire_boomstick"
+		"Ability10"				"special_bonus_unique_snapfire_7"
+		"Ability11"				"special_bonus_unique_snapfire_5"
+		"Ability12"				"special_bonus_unique_snapfire_2"
+		"Ability13"				"special_bonus_cast_range_125"
+		"Ability14"				"special_bonus_unique_snapfire_8"
+		"Ability15"				"special_bonus_unique_snapfire_firesnap_cookie_additional_charge"
+		"Ability16"				"special_bonus_unique_snapfire_6"
+		"Ability17"				"special_bonus_unique_snapfire_1"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"				"snapfire_scatterblast"
+			"Ability2"				"snapfire_firesnap_cookie"
+			"Ability3"				"snapfire_lil_shredder"
+			"Ability4"				"snapfire_mortimer_kisses"
+		}
+		
+		"Facets"
+		{
+			"snapfire_ricochet_ii" 
+			{
+				"Icon"				"ricochet"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"snapfire_full_bore" 
+			{
+				"Icon"				"range"
+				"Color"				"Red"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+		}
+
+		"ArmorPhysical"				"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"27"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.8"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"320"
+		}
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"400"
+		"ProjectileModel"			"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+		"ProjectileSpeed"			"1800"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"3.5"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.9"
+		"AttributeBaseIntelligence"	"21"
+		"AttributeIntelligenceGain"	"2.2"
+		"MovementSpeed"				"300"
+		"StatusHealthRegen"			"0.75"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"350"
+			"run_fast"	"440"
+			"run_haste"	"540"
+		}
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"220"
+
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_snapfire.vsndevts"
+	
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"			"0"
+				"SlotName"			"head"
+				"SlotText"			"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"2500"
+				"MaxPolygonsLOD1"	"1000"
+			}
+			"1"
+			{
+				"SlotIndex"			"1"
+				"SlotName"			"costume"
+				"SlotText"			"#LoadoutSlot_Costume"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"	"3500"
+				"MaxPolygonsLOD1"	"1400"
+			}
+			"2"
+			{
+				"SlotIndex"			"2"
+				"SlotName"			"armor"
+				"SlotText"			"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"5000"
+				"MaxPolygonsLOD1"	"2000"
+			}
+			"3"
+			{
+				"SlotIndex"			"3"
+				"SlotName"			"mount"
+				"SlotText"			"#LoadoutSlot_Mount"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"6000"
+				"MaxPolygonsLOD1"	"2400"
+			}
+			"4"
+			{
+				"SlotIndex"			"4"
+				"SlotName"			"weapon"
+				"SlotText"			"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"	"2500"
+				"MaxPolygonsLOD1"	"1000"
+			}
+			"5"
+			{
+				"SlotIndex"			"5"
+				"SlotName"			"taunt"
+				"SlotText"			"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"			"6"
+				"SlotName"			"ambient_effects"
+				"SlotText"			"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"	"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_3"
+				"SlotText" "snapfire_lil_shredder"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_4"
+				"SlotText" "snapfire_mortimer_kisses"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_STUN_SUPPORT | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"	"0"
+				"ProvidesBabysit"	"2"
+				"SurvivalRating"	"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"showcase_attachments"
+		{
+			"attach_hand_1"		"1"
+			"attach_hand_2"		"2"
+			"attach_mouth"		"3"
+			"attach_attack1"		"4"
+			"attach_attack2"		"5"
+			"attach_bolt_fx"		"6"
+			"attach_handr_fx"		"7"
+			"attach_handl_fx"		"8"
+			"attach_ankler_fx"		"9"
+			"attach_anklel_fx"		"10"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_snapfire.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_snapfire.vpcf"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Ability: Snapfire Scatterblast
+			//=================================================================================================================
+			"snapfire_scatterblast"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Snapfire.Shotgun.Fire"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.4"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+				"AnimationPlaybackRate"			"1.2" // 1.0 corresponds to cast point of 0.45 or so
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"17 14 11 8"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"85 90 95 100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCastRange"				
+						{
+							"value"		"800"
+							"special_bonus_facet_snapfire_full_bore"	"=1200"
+						}
+						"damage"					
+						{
+							"value"		"100 160 220 280"
+							"special_bonus_unique_snapfire_7" "+70"
+						}
+						"blast_speed"				"3000"
+						"blast_width_initial"		
+						{
+							"value"		"250"
+							"special_bonus_facet_snapfire_full_bore"	"=75"
+						}
+						"blast_width_end"
+						{
+							"value"		"400"
+							"special_bonus_facet_snapfire_full_bore"	"=270"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"debuff_duration"			"1.0"
+						"movement_slow_pct"			"100"
+						"attack_slow_pct"			"100"
+						"point_blank_range"			
+						{
+							"value" "450"
+							"special_bonus_facet_snapfire_full_bore"	"=650"
+						}
+						"point_blank_dmg_bonus_pct"				"25"
+						"point_blank_debuff_duration_pct"				"50"
+
+						"bonus_applies_at_long_range"
+						{
+							"value"			"0"
+							"special_bonus_facet_snapfire_full_bore"	"=1"
+						}
+						"shard_knockback_distance"			
+						{
+							"special_bonus_shard"		"250"
+							"affected_by_aoe_increase"	"1"		
+						}
+						"shard_knockback_duration"			
+						{
+							"special_bonus_shard"		"0.3"
+						}
+						"shard_stun_duration"			
+						{
+							"special_bonus_shard"		"1.4"
+						}
+						"shard_bonus_point_blank_dmg_pct"			
+						{
+							"special_bonus_shard"		"85.0"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Snapfire Mortimer Kisses
+			//=================================================================================================================
+			"snapfire_mortimer_kisses"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_Snapfire.MortimerBlob.Launch"
+
+				// Gobble up scepter ability not tied to any spell in regular game, for AD, associating it here.
+				"AbilityDraftExtraAbilities"
+				{
+					"snapfire_gobble_up" "scepter"
+					"snapfire_spit_creep" "scepter"
+				}
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"3000"
+				"AbilityCastPoint"				"0.5"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Damage
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"120 110 100"
+				"AbilityDuration"				"5.5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"125 150 175"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"projectile_count"
+					{
+						"value"		"8"
+						"special_bonus_unique_snapfire_1"	"+6"
+					}
+					"has_bonus_projectile"
+					{
+						"special_bonus_unique_snapfire_1"	"1"
+					}
+					"projectile_speed"		"1300"
+					"projectile_width"		
+					{
+						"value"	"130"
+						"affected_by_aoe_increase"	"1"		
+					}
+					"impact_radius"			
+					{
+						"value" "275"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"damage_per_impact"
+					{
+						"value"		"170 250 330"
+					}
+					"duration_tooltip"		"5.5"
+					"projectile_vision"
+					{
+						"value" "500"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"turn_rate"				"75"
+					"burn_interval"			"0.5"
+					"burn_damage"					
+					{
+						"value"					"60 80 100"
+						"special_bonus_unique_snapfire_5"	"+30"
+						"CalculateSpellDamageTooltip"	"1"
+					}
+					"move_slow_pct"
+					{
+						"value"			"15 20 25"
+					}
+					"burn_ground_duration"	"3.5"
+					"dist_change_speed"		"75"
+					"min_range"				"600"
+					"min_lob_travel_time"	"0.8"
+					"max_lob_travel_time"	"2.0"
+					"delay_after_last_projectile"	"0.5"
+					"burn_linger_duration"	"1.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Snapfire: Gobble Up
+			//=================================================================================================================
+			"snapfire_gobble_up"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Hero_Snapfire.GobbleUp.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"150"
+				"AbilityCooldown"				"40"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+				"AbilityValues"
+				{
+					"max_time_in_belly"
+					{
+						"special_bonus_scepter" "3"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Snapfire Spit Creep
+			//=================================================================================================================
+			"snapfire_spit_creep"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+				"AbilitySound"					"Hero_Snapfire.MortimerBlob.Launch"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"3000"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Damage
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"projectile_speed"		"1400"
+					"projectile_width"		
+					{
+						"value"	"130"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"impact_radius"			
+					{
+						"value"	"400"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"projectile_vision"
+					{
+						"value" "500"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"burn_interval"			"0.5"
+					"burn_damage"			"100"
+					"move_slow_pct"
+					{
+						"value"			"25"
+					}
+					"burn_ground_duration"	"3.0"
+					"min_lob_travel_time"	"0.1"
+					"max_lob_travel_time"	"2.0"
+					"burn_linger_duration"	"1.0"
+					"stun_duration"			"1.2"
+					"min_height_above_lowest"	"150.0"
+					"min_height_above_highest"	"100.0"
+					"min_acceleration"		"1000.0"
+					"max_acceleration"		"2000.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Snapfire Firesnap Cookie
+			//=================================================================================================================
+			"snapfire_firesnap_cookie"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Snapfire.FeedCookie.Cast"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"650"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"105"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"				
+						{
+							"value"		"18 17 16 15"
+							//"special_bonus_unique_snapfire_3"	"-3"
+						}
+
+						"AbilityCharges"		
+						{
+							"value"	"0"
+							"special_bonus_unique_snapfire_firesnap_cookie_additional_charge"	"+2"
+						}
+
+						"AbilityChargeRestoreTime"		
+						{
+							"value"		"21 19 17 15"
+							//"special_bonus_unique_snapfire_3"	"-3"
+						}
+
+						"projectile_speed"		"1200"
+						"pre_hop_duration"		"0.0"
+						"jump_duration"			
+						{
+							"value"	"0.484" //"0.431 0.484 0.538 0.592" // proportional to horizontal distance
+						}
+						"jump_height"			
+						{
+							"value"						"257" //"228 257 285 314" // proportional to horizontal distance
+						}
+						"jump_horizontal_distance"	
+						{
+							"value"						"425" //"400 450 500 550"
+						}
+						"pre_land_anim_time"	"0.14"
+						"landing_gesture_duration"	"0.6"
+						"impact_radius"			
+						{
+							"value"	"300"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"impact_damage"			
+						{
+							"value"					"60 130 200 270"
+							"CalculateSpellDamageTooltip"	"1"
+						}
+						"impact_stun_duration"	
+						{
+							"value"		"1.0 1.4 1.8 2.2"
+						}
+						"self_cast_delay"		"0.3"
+						"target_heal"			
+						{
+							"value"			"0"
+							"special_bonus_shard"	"+175"
+						}
+
+						"shard_damage_multiplier_tooltip" "40"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Snapfire: Short Sighted (Innate)
+			//=================================================================================================================
+			"snapfire_buckshot"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+			
+				"AbilityValues"
+				{
+					"miss_chance" 				"25" 
+					"damage_amp"				"30"
+					"split_shot"				"0"
+					"split_shot_damage_pct"		"0"
+					"glancing_shot_damage_pct"	"60"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Ability: Snapfire Lil Shredder
+			//=================================================================================================================
+			"snapfire_lil_shredder"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Snapfire.ExplosiveShells.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0"
+				"AbilityCastRange"				"800"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"24 20 16 12"
+				"AbilityDuration"				"6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70 80 90 100"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage"					"20 35 50 65"
+						"buffed_attacks"			
+						{
+							"value"		"5"
+							"special_bonus_unique_snapfire_2"	"+2"
+						}
+						"damage_pct"
+						{
+							"value"	"35"
+							"special_bonus_unique_snapfire_6"	"+60"
+						}
+						"attack_speed_bonus"		"300"
+						"attack_range_bonus"		"160 240 320 400"
+						"buff_duration_tooltip"		"6"
+						"base_attack_time"			"1.0"
+						"armor_reduction_per_attack"	"0.5"
+						"armor_duration"				"5.0"
+						"extra_targets"
+						{
+							"special_bonus_unique_snapfire_8"	"=2"
+						}
+				}
+			}
+
+
+
+			//=================================================================================================================
+			// Ability: Snapfire: Boomstick
+			//=================================================================================================================
+			"snapfire_boomstick"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+			
+				"AbilityValues"
+				{
+					"damage_amp_min"
+					{
+						"value"								"0"
+						"dynamic_value"						"true"	// just so we can force show a zero value
+					}
+					"damage_amp_max"						"35"
+					"distance_threshold_max"				
+					{
+						"value"									"495"
+						"hero_levelup"							"5"
+					}
+					"distance_threshold_min"						
+					{
+						"value"									"50"
+						"hero_levelup"							"5"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+		}
+	}
+}

@@ -1,0 +1,563 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_storm_spirit"
+	{
+		"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
+		"IdleExpression"		"scenes/stormspirit/stormspirit_exp_idle_01.vcd"
+		"SoundSet"		"Hero_StormSpirit"
+		"PickSound"		"stormspirit_ss_spawn_09"
+		"BanSound"		"stormspirit_ss_anger_03"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Escape,Nuker,Initiator,Disabler"
+		"Rolelevels"	"2,3,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"17"
+		"HeroOrderID"	"18"
+		"ModelScale"		"1.150000"
+		"SpectatorLoadoutScale" "1"
+		"HeroGlowColor"		"0 250 227"
+		"CMEnabled"		"1"
+		"SimilarHeroes"	"106,126,107"
+		"Adjectives"
+		{
+			"Bearded"		"1"
+			"Spirit"		"1"
+			"Blue"			"1"
+		}
+		"NameAliases"		"ss;raijin;thunderkeg"
+		"workshop_guide_name"		"Storm Spirit"
+		"LastHitChallengeRival"		"npc_dota_hero_kunkka"
+		"HeroSelectSoundEffect"		"Hero_StormSpirit.Pick"
+		"GibType"		"electric"
+		"Ability1"		"storm_spirit_static_remnant"
+		"Ability2"		"storm_spirit_electric_vortex"
+		"Ability3"		"storm_spirit_overload"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"storm_spirit_ball_lightning"
+		"Ability7"		"storm_spirit_galvanized"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"storm_spirit_static_remnant"
+			"Ability2"	"storm_spirit_electric_vortex"
+			"Ability3"	"storm_spirit_overload"
+			"Ability4"	"storm_spirit_ball_lightning"
+		}
+
+		"Ability10"		"special_bonus_unique_storm_spirit_overload_aspd"
+		"Ability11"		"special_bonus_mp_regen_150"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_unique_storm_spirit_5"
+		"Ability14"		"special_bonus_unique_storm_spirit"
+		"Ability15"		"special_bonus_unique_storm_spirit_8"
+		"Ability16"		"special_bonus_unique_storm_spirit_7"
+		"Ability17"		"special_bonus_unique_storm_spirit_4"
+		"Facets"
+		{
+			"storm_spirit_shock_collar"
+			{
+				"Icon"				"nuke"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"1"
+			}
+
+			"storm_spirit_static_slide"	
+			{
+				"Icon"				"movement"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"1"
+			}
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"34"
+		"BaseAttackSpeed"		"110"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"480"
+		"ProjectileModel"		"particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.000000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.600000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"3.7"
+		"StatusHealthRegen"	"0.5"
+		"MovementSpeed"		"285"
+		"MovementTurnRate"		"0.800000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_stormspirit"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+		"AbilityPreview"
+		{
+			"resource"		"resource/UI/Heroes/default.res"
+			"movie"		"media/heroes/default"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_stormspirit/storm_spirit_loadout.vpcf"		"loadout"
+				"particles/units/heroes/hero_stormspirit/storm_spirit_new_loadout.vpcf"		"loadout"
+				"particles/units/heroes/hero_stormspirit/storm_spirit_loadout_hand.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"7500"
+				"MaxPolygonsLOD1"		"3000"
+			}
+			"2"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3500"
+				"MaxPolygonsLOD1"		"1400"
+			}
+			"3"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"misc"
+				"SlotText"		"#LoadoutSlot_Misc"
+				"DisplayInLoadout" "0"
+			}
+			"4"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex" "5"
+				"SlotName" "ability_effects_3"
+				"SlotText" "storm_spirit_overload"
+				"DisplayInLoadout" "0"
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_4"
+				"SlotText" "storm_spirit_ball_lightning"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"2"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"1"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_storm_spirit.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_storm_spirit.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_attack1"		"2"
+			"attach_hand2"			"3"
+			"attach_head"			"4"
+		}
+
+		"AbilityDefinitions"
+		{
+	
+			//=================================================================================================================
+			// Storm Spirit Electric rave
+			//=================================================================================================================
+			"storm_spirit_electric_rave"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Ability.FrostNova"
+				"MaxLevel"						"1"
+		
+				"IsShardUpgrade"				"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastGestureSlot"		"DEFAULT"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"radius"				
+						{
+							"value"		"750"
+							"affected_by_aoe_increase"	"1"
+						}
+						"charges"				"3"
+						"duration"				"12"
+				}
+			}
+
+			//=================================================================================================================
+			// Ability: Static Remnant
+			//=================================================================================================================
+			"storm_spirit_static_remnant"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_StormSpirit.StaticRemnantPlant"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0 0 0 0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"12.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70 80 90 100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"static_remnant_radius"
+						{
+							"value" "235"
+							"affected_by_aoe_increase"	"1"	
+						}	
+						"static_remnant_damage_radius"	
+						{
+							"value"			"300"
+							"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+							"affected_by_aoe_increase"	"1"
+						}
+						"static_remnant_delay"		"0.75"
+						"AbilityCooldown"
+						{
+							"value"					"3.5"
+							"special_bonus_unique_storm_spirit_8"		"-1.25"
+						}
+
+						"static_remnant_damage"			
+						{
+							"value"		"100 160 220 280"
+							"special_bonus_unique_storm_spirit_5"	"+60"
+						}
+						"is_point_targeted"
+						{
+							"value"													"+1"
+						}
+						"AbilityCastRange"
+						{
+							"value"													"800"
+						}
+						"static_remnant_travel_speed"
+						{
+							"value"													"300"
+						}
+						"static_remnant_vision_radius_day"
+						{
+							"value"													"100"
+							"affected_by_aoe_increase"	"1"
+						}
+						"static_remnant_vision_radius_night"
+						{
+							"value"													"100"
+							"affected_by_aoe_increase"	"1"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Ability: Electric Vortex
+			//=================================================================================================================
+			"storm_spirit_electric_vortex"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"			"1"
+				"AbilitySound"					"Hero_StormSpirit.ElectricVortex"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+				"AbilityCastRange"				"300"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 18 16 14"
+	
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60 70 80 90"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"electric_vortex_pull_distance"		"180 220 260 300"		
+						"electric_vortex_pull_tether_range"			"1200.0"		
+						"electric_vortex_self_slow"	"-50"
+						"electric_vortex_self_slow_duration"	"3.0"
+						"AbilityDuration"				
+						{
+							"value"				"1.1 1.4 1.7 2.0"
+							"special_bonus_unique_storm_spirit"	"+0.2"
+						}
+						"radius_scepter"	
+						{
+							"special_bonus_scepter"		"475"
+							"affected_by_aoe_increase"	"1"
+						}
+
+						"enemy_overload_duration"			
+						{
+							"value"						"0"
+						}
+				
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+		
+			//=================================================================================================================
+			// Ability: Storm Spirit Overload
+			//=================================================================================================================
+			"storm_spirit_overload"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"AbilitySound"					"Hero_StormSpirit.Overload"
+				"AbilityDuration"				"0.8"
+				"HasShardUpgrade"				"1"
+				"IsBreakable"					"1"
+		
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportBonus"	"40"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"overload_aoe"
+					{
+						"value"			"300"		
+						"affected_by_aoe_increase"	"1"
+					}
+					"overload_move_slow"			
+					{
+						"value"						"-80"
+						"special_bonus_unique_storm_spirit_overload_aspd"		"-25.0"				
+					}
+					"overload_attack_slow"
+					{
+						"value"						"-90"
+						"special_bonus_unique_storm_spirit_overload_aspd"		"-25.0"				
+					}			
+					"overload_damage"
+					{
+						"value"			"25 50 75 100"
+				
+					}
+					"shard_activation_radius"
+					{
+						"special_bonus_shard"				"750"
+						"affected_by_aoe_increase"	"1"
+					}	
+					"shard_activation_charges"
+					{
+						"special_bonus_shard"				"3"
+					}	
+					"shard_activation_duration"
+					{
+						"special_bonus_shard"				"12"
+					}	
+					"shard_manacost"
+					{
+						"special_bonus_shard"				"100"
+					}
+					"shard_cooldown"
+					{
+						"special_bonus_shard"				"30"
+					}	
+					"shard_attack_speed_bonus"
+					{
+						"special_bonus_shard"				"40"
+					}																	
+					"overload_cast_range"
+					{
+						"value"					"0"
+					}
+					"overload_bounces"
+					{
+						"special_bonus_unique_storm_spirit_7"	"=2"
+					}
+					"overload_damage_pct"
+					{
+						"special_bonus_unique_storm_spirit_7"	"=50"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+			//=================================================================================================================
+			// Ability: Storm Spirit Ball Lightning
+			//=================================================================================================================
+			"storm_spirit_ball_lightning"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_StormSpirit.BallLightning"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"30"
+		
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDamage"					"6 10 14"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"ball_lightning_initial_mana_percentage"		"7.5"		
+						"ball_lightning_initial_mana_base"				"25"		
+						"ball_lightning_move_speed"			"1400 1850 2300"		
+						"ball_lightning_aoe"				
+						{
+							"value"			"200"		
+							"affected_by_aoe_increase"	"1"
+						}
+						"ball_lightning_travel_cost_base"	"10"		
+						"ball_lightning_travel_cost_percent"	"0.65"		
+						"ball_lightning_vision_radius"
+						{
+							"value"			"400"		
+							"affected_by_aoe_increase"	"1"
+						}		
+						"blocker_duration"			"5"		
+						"scepter_remnant_interval"			"300"
+						"auto_remnant_interval"
+						{
+							"special_bonus_unique_storm_spirit_4"		"450"
+						}
+				}
+			}
+			//=================================================================================================================
+			// Storm: Bloodstorm
+			//=================================================================================================================
+			"storm_spirit_galvanized"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				"AbilityValues"
+				{
+					"perma_mp_per_kill"		"0.1"
+					"mp_per_kill"			"0.2"
+					"aoe"					
+					{
+						"value"		"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"charges_per_death"		"2"
+					"level_divisor"				"3"
+				}
+			}
+		}
+	}
+}

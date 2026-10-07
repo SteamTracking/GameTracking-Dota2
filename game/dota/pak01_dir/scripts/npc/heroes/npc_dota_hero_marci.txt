@@ -1,0 +1,795 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_marci"
+	{
+		"Model"				"models/heroes/marci/marci_base.vmdl"
+		"IdleExpression"	"scenes/marci/marci_exp_idle_01.vcd"
+		"SoundSet"			"Hero_Marci"
+		"PickSound"			"marci_pick"
+		"BanSound"			"marci_ban"
+		"Enabled"			"1"
+		"HeroUnlockOrder"	"0"
+		"Role"				"Support,Carry,Initiator,Disabler,Escape"
+		"Rolelevels"		"1,1,2,1,1"
+		"Complexity"		"2"
+		"Team"				"Good"
+		"HeroID"			"136"
+		"HeroOrderID"			"122"
+		"BotImplemented"		"0"
+		"ModelScale"			"1"
+		"VersusScale"			"1"
+		"LoadoutScale"			"1"
+		"SpectatorLoadoutScale" "1"
+		"HeroGlowColor"			"0 50 247"
+		"CMEnabled"				"1"
+		"workshop_guide_name"		"Marci"
+		"new_player_enable"			"1"
+		"Adjectives"
+		{
+			"Female"		"1"
+			"Cape"			"1"
+			"Cute"			"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_mirana"
+		"HeroSelectSoundEffect"		"Hero_Marci.Pick"
+		"GibType"		"default"
+		"Ability1"		"marci_grapple"
+		"Ability2"		"marci_companion_run"
+		"Ability3"		"marci_bodyguard"
+		"Ability4"		"marci_special_delivery"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"marci_unleash"
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"marci_grapple"
+			"Ability2"		"marci_companion_run"
+			"Ability3"		"marci_bodyguard"
+			"Ability6"		"marci_unleash"
+		}	
+
+		"Ability10"		"special_bonus_unique_marci_dispose_slow"
+		"Ability11"		"special_bonus_unique_marci_rebound_radius"
+		"Ability12"		"special_bonus_unique_marci_grapple_damage"
+		"Ability13"		"special_bonus_unique_marci_guardian_damage"
+		"Ability14"		"special_bonus_unique_marci_grapple_stun_duration"
+		"Ability15"		"special_bonus_unique_marci_unleash_speed"
+		"Ability16"		"special_bonus_unique_marci_unleash_extend_duration"
+		"Ability17"		"special_bonus_unique_marci_guardian_strong_dispel"
+		"Facets"
+		{
+			"marci_sidekick" 
+			{
+				"Icon"				"healing"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"marci_guardian"
+						"AbilityIndex"	"2"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}			
+			"marci_bodyguard" 
+			{
+				"Icon"				"ricochet"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"marci_bodyguard"
+						"AbilityIndex"	"2"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+
+			"marci_buddy_system" 
+			{
+				"Icon"				"twin_hearts"
+				"Color"				"Blue"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"marci_pickmeup" 
+			{
+				"Icon"				"ricochet"
+				"Color"				"Purple"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"marci_fleeting_fury" 
+			{
+				"Icon"				"fist"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+
+			}
+			
+
+		}
+		
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"29"
+		"AttackDamageMax"			"33"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.2"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"2.2"
+		"AttributeBaseIntelligence"	"19"
+		"AttributeIntelligenceGain"	"1.9"
+		"StatusManaRegen"			"0.0"
+		"MovementSpeed"			"315"
+		"MovementTurnRate"		"0.900000"
+		"animation_transitions"
+		{
+		//	"ACT_DOTA_RUN"
+		//	{
+		//		"regular"		"0.300000"
+		//	}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.5000"
+				"unleash"		"0.3000"
+				"injured"		"0.2000"
+			}
+		}	
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+			"faster"	"250"
+		}
+		"HealthBarOffset"		"200"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1250"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"7500"
+				"MaxPolygonsLOD1"		"3400"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1250"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"summon"
+				"SlotText"		"#LoadoutSlot_Pet"
+				"ShowItemOnGeneratedUnits" "1"
+				"GeneratesUnits"
+				{
+					"0" "npc_dota_companion"
+				}
+			}
+			"6"
+			{
+				"SlotIndex" "6"
+				"SlotName" "ability_effects_1"
+				"SlotText" "marci_grapple"
+				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_marci"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_marci.vsndevts"
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_marci.vsndevts"
+		"showcase_attachments"
+		{
+			"attach_foot"		"1"
+			"eye_l"	"2"
+			"eye_3"	"3"
+			"attach_attack1"	"4"
+			"attach_attack2"	"5"
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_marci.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_marci.vpcf"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Marci: Dispose
+			//=================================================================================================================
+			"marci_grapple"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Marci.Grapple.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastRange"				"175"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+				//"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"16 14 12 10"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"landing_radius"	
+						{
+							"value"		"300"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"air_duration"		"0.5"
+						"air_height"		"150"
+						"pull_offset"		"75"
+						"throw_distance_behind"	
+						{
+							"value"		"250"					
+						}
+						"pull_angle"		"230"
+						"debuff_duration"	
+						{
+							"value"				"3"
+							"special_bonus_unique_marci_dispose_slow"		"+1.5"
+						}
+						"impact_damage"		
+						{
+							"value"			"60 150 240 330"
+							"special_bonus_unique_marci_grapple_damage"	"+115"
+						}
+						"movement_slow_pct"		"20 30 40 50"
+				}
+			}
+
+			//=================================================================================================================
+			// Marci: Unleashed
+			//=================================================================================================================
+			"marci_unleash"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"AbilitySound"					"Hero_Marci.Unleash.Cast"
+				"HasScepterUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.2"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+
+
+				"AbilityValues"
+				{
+						"duration"
+						{
+							"value"										"16"
+						}
+						"charges_per_flurry"	"5"
+						"flurry_bonus_attack_speed"	"700 925 1150"
+						"time_between_flurries"	"1.5"
+						"pulse_radius"			
+						{
+							"value"		"800"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"pulse_debuff_duration"	"2.0"
+						"pulse_damage"					
+						{
+							"value"			"50 100 150"
+							"CalculateSpellDamageTooltip" "1"
+						}
+						"pulse_move_slow_pct"	"30.0"
+						"pulse_attack_slow_pct"	"60.0 80.0 100.0"
+						"max_time_window_per_hit"	"1.0"
+						"bonus_movespeed"		
+						{
+							"value"		"15"
+							"special_bonus_unique_marci_unleash_speed"	"+15"
+						}
+						"recovery_fixed_attack_rate"	"2.0"
+						"shard_push_length"		
+						{
+							"value"		"300"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"scepter_cooldown_reduction"
+						{		
+							"special_bonus_scepter"		"10.0"
+						}
+						"dispel"			
+						{
+							"special_bonus_scepter"	"+1"
+						}
+						"pulse_silence_duration"
+						{
+							"special_bonus_scepter"	"+1"
+						}
+						"extend_duration"
+						{
+							"special_bonus_unique_marci_unleash_extend_duration" 		"6"
+						}
+						"AbilityCooldown"
+						{
+							"value"										"80 70 60"
+						}
+						"AbilityManaCost"
+						{
+							"value"										"100 125 150"
+						}
+				}
+		
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+			}
+
+			//=================================================================================================================
+			// Marci: Rebound
+			//=================================================================================================================
+			"marci_companion_run"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Marci.Rebound.Cast"
+				"HasShardUpgrade"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+				// Time
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70 80 90 100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"AbilityCooldown"				
+						{
+							"value"		"24 20 16 12"
+					
+						}
+				
+						"move_speed"			"1700"
+						"min_jump_distance"		"0"
+						"max_jump_distance"		
+						{
+							"value"										"450 550 650 750"
+							"special_bonus_unique_marci_lunge_range"	"+100"
+						}
+						"AbilityCastRange"
+						{
+							"value"										"450 550 650 750"
+							"special_bonus_unique_marci_lunge_range"	"+100"
+						}
+						"landing_radius"		
+						{
+							"value"	"300"
+							"special_bonus_unique_marci_rebound_radius"		"+50"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"impact_damage"			
+						{
+							"value"							"75 150 225 300"
+							"special_bonus_shard"			"+20%"
+						}
+						"debuff_duration"
+						{
+							"value"			"0.8 1.1 1.4 1.7"
+							"special_bonus_unique_marci_grapple_stun_duration"	"+0.75"
+						}
+						"min_lob_travel_time"	"0.1"
+						"max_lob_travel_time"	"0.2"
+						"min_height_above_lowest"	"250.0"
+						"min_height_above_highest"	"200.0"
+						"min_acceleration"		"6000.0"
+						"max_acceleration"		"6000.0"
+						"vector_preview_radius"	"100"
+						"ally_buff_duration"	"4.0"
+						"ally_movespeed_pct"	
+						{
+							"value"				"25"
+						}
+						"impact_position_offset"	"64"
+						"target_abort_distance"		"700"
+						"scepter_heal"
+						{
+							"special_bonus_scepter"	"300"
+						}
+						"scepter_armor"
+						{
+							"special_bonus_scepter"	"15"
+						}
+						"ally_arc_offset"
+						{
+							"value"					"150"
+						}
+						"ally_impact_damage_pct"
+						{
+							"value"				"0"
+						}				
+						"max_level"
+						{
+							"value"				"4"
+						}
+						"postjump_unleash_duration"
+						{
+							"value"				"0"
+						}
+						"postjump_flurry_charges"
+						{
+							"value"				"0"
+						}
+						"can_jump_off_allies"
+						{
+							"value"					"0"
+							"special_bonus_shard"	"1"
+						}
+				}
+		
+			}
+
+			//=================================================================================================================
+			// Marci: Sidekick
+			//=================================================================================================================
+			"marci_guardian"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Marci.Guardian.Applied"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1000"
+				"AbilityCastPoint"				"0.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"45 40 35 30"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"lifesteal_pct"
+					{
+						"value"			"12 18 24 30"
+						"special_bonus_unique_marci_guardian_lifesteal"	"+10"
+					}
+					"bonus_damage"		
+					{
+						"value"				"10 15 20 25"
+						"special_bonus_unique_marci_guardian_damage"			"+20"
+					}
+					"bonus_attack_range"	"0"
+					"max_partner_distance"				
+					{
+						"value"		"1750"
+						"affected_by_aoe_increase"	"1"
+					}
+					"max_partner_penalty"				"50"
+					"creep_lifesteal_reduction_pct"		"40"
+				}
+			}
+
+			//=================================================================================================================
+			// Marci: Bodyguard
+			//=================================================================================================================
+			"marci_bodyguard"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Marci.Guardian.Applied"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"600"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bodyguard_duration"
+					{
+						"value"											"7.0"
+						"special_bonus_facet_marci_buddy_system"		"+1.0"
+					}
+					"lifesteal_pct"
+					{
+						"value"											"12 18 24 30"
+						"special_bonus_unique_marci_guardian_lifesteal"	"+10"
+					}
+					"bonus_damage"		
+					{
+						"value"											"12 18 24 30"
+						"special_bonus_unique_marci_guardian_damage"	"+12"
+					}
+					"creep_lifesteal_reduction_pct"						"40"
+					"bodyguard_attack_range_buffer"
+					{
+						"value"											"125"
+					}
+					//"bonus_armor"										"4 8 12 16"
+					"max_partner_penalty"				"75"
+					"counter_cooldown"									"0.45"
+					"shared_healing_percent"
+					{
+						"value"											"0"
+					}
+
+					"shared_barrier"
+					{
+						"value"											"90 160 230 300"
+					}
+
+					"strong_dispel"
+					{
+						"value"												"0"
+						"special_bonus_unique_marci_guardian_strong_dispel"	"=1"
+					}
+
+					"shared_barrier_replenish_amount"					"30"
+				}
+			}
+
+			//=================================================================================================================
+			// Marci: Innate Courier Level
+			//=================================================================================================================
+			"marci_special_delivery"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"1.0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"215.0"
+						"hero_levelup"			"-5"
+					}
+
+					"bonus_levels"				"3"
+					"courier_max_level"			"30"
+					"bonus_hp"					"3"
+					"bonus_hp_tooltip"			"1"
+				}
+			}
+
+			//=================================================================================================================
+			// Marci: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_marci_grapple_stun_duration"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"					"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Marci: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_marci_guardian_lifesteal"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityValues"
+				{
+					"value"
+					{
+						"value" "10"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Marci: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_marci_lunge_range"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass" "special_bonus_base"
+			}
+
+			"special_bonus_unique_marci_unleash_speed"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+
+		
+			}
+
+			"special_bonus_unique_marci_grapple_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+
+	
+			}
+	
+			"special_bonus_unique_marci_unleash_extend_duration"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+			}
+			"special_bonus_unique_marci_lunge_movespeed"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+			}
+			"special_bonus_unique_marci_guardian_damage"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+			}
+			"special_bonus_unique_marci_dispose_slow"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+			}
+			"special_bonus_unique_marci_rebound_radius"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"							"special_bonus_base"
+			}
+		}
+	}
+}

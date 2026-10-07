@@ -1,0 +1,809 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_shredder"
+	{
+		"Model"		"models/heroes/shredder/shredder.vmdl"
+		"IdleExpression"		"scenes/shredder/shredder_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Shredder"
+		"IdleSoundLoop"		"Hero_Shredder.IdleLoop"
+		"Enabled"		"1"
+		"Role"			"Nuker,Durable,Escape"
+		"Rolelevels"	"3,2,2"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"HeroID"		"98"
+		"HeroOrderID"	"95"
+		"ModelScale"		"0.825000"
+		"VersusScale"		"0.825"
+		"NameAliases"		"Rizzrack; Shredder; Timbersaw"
+		"workshop_guide_name"		"Timbersaw"
+		"PickSound"		"shredder_timb_spawn_01"
+		"BanSound"		"shredder_timb_anger_02"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"29,108,43"
+		"Adjectives"
+		{
+			"Steed"			"1"
+			"BadTeeth"		"1"
+			"Purple"		"1"
+		}
+		"LastHitChallengeRival"		"npc_dota_hero_tiny"
+		"HeroSelectSoundEffect"		"Hero_Shredder.Pick"
+		"GibType"		"motor"
+		"Ability1"		"shredder_whirling_death"
+		"Ability2"		"shredder_timber_chain"
+		"Ability3"		"shredder_reactive_armor"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"shredder_flamethrower"
+		"Ability6"		"shredder_chakram"
+		"Ability7"		"shredder_return_chakram"
+		"Ability8"		"shredder_exposure_therapy"
+		"Ability9"		"generic_hidden"
+		"Ability10"		"special_bonus_unique_timbersaw_reactive_armor_regen_per_stack"
+		"Ability11"		"special_bonus_mp_regen_150"
+		"Ability12"		"special_bonus_unique_timbersaw_5"
+		"Ability13"		"special_bonus_unique_timbersaw_2"
+		"Ability14"		"special_bonus_unique_timbersaw_exposure_therapy_health"
+		"Ability15"		"special_bonus_unique_timbersaw_4"
+		"Ability16"		"special_bonus_unique_timbersaw"
+		"Ability17"		"special_bonus_unique_timbersaw_3"
+
+		"Facets"
+		{
+			"shredder_shredder"
+			{				
+				"Icon"				"tree"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}			
+			"shredder_second_chakram"
+			{
+				"Icon"				"spinning"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Deprecated"		"true"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"shredder_twisted_chakram"
+						"AbilityIndex"	"3"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+
+		}
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"shredder_whirling_death"
+			"Ability2"		"shredder_timber_chain"
+			"Ability3"		"shredder_reactive_armor"
+			"Ability4"		"shredder_chakram"
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"29"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"90"
+		"AttackAnimationPoint"		"0.360000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.6"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.6"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"2.7"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"280"
+		"particle_folder"		"particles/units/heroes/hero_shredder"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_shredder.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_shredder/shredder_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"offhand_weapon"
+				"SlotText"		"#LoadoutSlot_OffHand_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"521"
+				"TextureHeight"		"521"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"shoulder"
+				"SlotText"		"#LoadoutSlot_Shoulder"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"3000"
+				"MaxPolygonsLOD1"		"1200"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1500"
+				"MaxPolygonsLOD1"		"600"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_belt"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_2"
+				"SlotText" "shredder_timber_chain"
+				"DisplayInLoadout" "0"
+			}		
+			"10"
+			{
+				"SlotIndex" "10"
+				"SlotName" "ability_effects_4"
+				"SlotText" "shredder_chakram"
+				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_TANK"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"1"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_shredder.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_shredder.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"				"1"
+			"attach_attack1"		   "2"
+			"attach_attack2"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Shredder: Flamethrower ( shard ability )
+			//=================================================================================================================
+			"shredder_flamethrower"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"MaxLevel"						"1"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"damage_per_second"		"70"
+						"duration"		"8"
+						"width"		
+						{
+							"value"			"275"
+							"affected_by_aoe_increase"	"1"
+						}
+						"length"		
+						{
+							"value"			"400"
+							"affected_by_aoe_increase"	"1"
+						}
+						"move_slow_pct"		"40"
+						"building_dmg_pct"	"50"
+						"debuff_linger_duration"	"2.0"
+				}
+			}
+
+			//=================================================================================================================
+			// Shredder: Whirling Death
+			//=================================================================================================================
+			"shredder_whirling_death"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Shredder.WhirlingDeath.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"7.5 7 6.5 6"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"whirling_radius"			
+						{
+							"value"		"325"
+							"affected_by_aoe_increase"	"1"
+						}
+						"whirling_damage"						"60 120 180 240"
+						"tree_damage_scale"
+						{
+							"value"								"9 16 23 30"
+							"special_bonus_unique_timbersaw"	"+75"
+						}
+						"whirling_tick"				"0.3"
+						"stat_loss_pct"				
+						{
+							"value"			"13"
+							"special_bonus_unique_timbersaw_5"	"+2"
+
+						}
+						"stat_loss_univ"
+						{
+							"value"			"5"
+							"special_bonus_unique_timbersaw_5"	"+2"
+						}
+						"duration"
+						{
+							"value"				"7 9 11 13"
+					
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Shredder: Timber Chain
+			//=================================================================================================================
+			"shredder_timber_chain"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Shredder.TimberChain.Cast"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"4"
+		
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"60 70 80 90"
+		
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"chain_radius"		
+					{
+						"value"		"90 90 90 90"
+					}
+					"AbilityCastRange"				
+					{
+						"value"			"750 900 1050 1200"
+						"special_bonus_unique_timbersaw_3"	"+75%"
+					}
+					"radius"		
+					{
+						"value"		"225 225 225 225"
+					}
+					"speed"				
+					{
+						"value"			"2200 2400 2600 2800"
+						"special_bonus_unique_timbersaw_3"	"+75%"
+					}
+					"damage"			"45 105 165 225"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Shredder: Reactive Armor
+			//=================================================================================================================
+			"shredder_reactive_armor"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"HasScepterUpgrade"				"1"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"MaxLevel"						"4"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_armor"						"0.4 0.5 0.6 0.7"
+					"bonus_hp_regen"					
+					{
+						"value"																	"0.5 0.6 0.7 0.8"
+						"special_bonus_unique_timbersaw_reactive_armor_regen_per_stack"			"+0.25"
+
+					}
+			
+					"stack_limit"						
+					{
+						"value"			"10 20 30 40"
+						"special_bonus_unique_timbersaw_2"			"+6"
+					}
+					"stack_duration"					
+					{
+						"value"				"10 12 14 16"		
+					}
+					"stacks_per_hero_attack"
+					{
+						"value"				"4"
+						"special_bonus_unique_timbersaw_2"		"+1"
+					}	
+
+					"AbilityManaCost"				
+					{
+						"special_bonus_scepter"			"+200"
+					}
+					"AbilityCooldown"				
+					{
+						"special_bonus_scepter"  		"45"
+					}
+					"initial_shield"
+					{
+						"special_bonus_scepter"  		"150"
+					}
+					"shield_per_sec"
+					{
+						"special_bonus_scepter"  		"100"
+					}
+					"shield_per_sec_per_enemy"
+					{
+						"special_bonus_scepter"  		"75"
+					}
+					"max_shield"
+					{
+						"special_bonus_scepter"			"800"
+					}
+					"duration"
+					{
+						"special_bonus_scepter"	"8"
+					}
+					"radius"
+					{
+						"special_bonus_scepter"	"450"
+						"affected_by_aoe_increase"	"1"
+					}
+					"explosion_radius"
+					{
+						"special_bonus_scepter"	"450"
+						"affected_by_aoe_increase"	"1"
+					}
+					"base_explosion"
+					{
+						"special_bonus_scepter"	"200"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Shredder: Chakram
+			//=================================================================================================================
+			"shredder_chakram"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_Shredder.Chakram.Cast"
+				"LinkedAbility"					"shredder_chakram_2"
+				"AbilityDraftExtraAbilities"
+				{
+					"shredder_flamethrower" "shard"
+				}
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200 1200 1200"
+				"AbilityCastPoint"				"0.15"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"8.0 8.0 8.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"90 120 150"		
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"speed"					"900.0"
+						"radius"				
+						{
+							"value"	"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"pass_damage"
+						{
+							"value"						"75 150 225"
+						}
+						"damage_per_second"		
+						{
+							"value"						"50 75 100"
+						}
+						"slow"
+						{
+							"value"				"5"
+							"special_bonus_unique_timbersaw_4"	"+6"
+						}
+						"damage_interval"		"0.5"
+						"break_distance"		
+						{
+							"value"	"2000.0"
+							"affected_by_aoe_increase"	"1"
+						}
+						"mana_per_second"		"10 15 20"
+						"pass_slow_duration"	"0.5"
+						"slow_health_percentage"	"5"
+						"castpoint_scepter"		
+						{
+							"special_bonus_scepter"			"0.15"
+						}
+						"second_chakram"
+						{
+							"value"			"0"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Shredder: Chakram 2
+			//=================================================================================================================
+			"shredder_chakram_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"FightRecapLevel"				"1"
+				"MaxLevel"						"3"
+				"LinkedAbility"					"shredder_chakram"
+				"DependentOnAbility"			"shredder_chakram"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200 1200 1200"
+				"AbilityCastPoint"				"0.15"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"8.0 8.0 8.0"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 140 180"
+
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"speed"					
+						{
+							"value"				"900.0"
+						}
+						"radius"				
+						{
+							"value"		"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"pass_damage"
+						{
+							"value"						"100 150 200"
+							"special_bonus_facet_shredder_second_chakram"	"-30%"
+						}
+						"damage_per_second"		
+						{
+							"value"						"50 75 100"
+							"special_bonus_facet_shredder_second_chakram"	"-30%"
+						}
+						"damage_penalty_tooltip"		"30"
+						"slow"					
+						{
+							"value"			"5"
+							"special_bonus_unique_timbersaw_4"	"+6"
+						}
+						"damage_interval"		
+						{
+							"value"			"0.5"
+						}
+						"break_distance"		
+						{
+							"value"			"2000.0"
+							"affected_by_aoe_increase"	"1"
+						}
+						"mana_per_second"		
+						{
+							"value"		"14 22 30"
+						}
+						"pass_slow_duration"	
+						{
+							"value"		"0.5"
+						}
+						"slow_health_percentage"	
+						{
+							"value"		"5"
+						}
+						"scepter_bonus_damage"	
+						{
+							"value"		"20"
+						}		
+						"second_chakram"
+						{
+							"value"			"0"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Shredder: Return Chakram
+			//=================================================================================================================
+			"shredder_return_chakram"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"DependentOnAbility"			"shredder_chakram"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+				"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0 0.0 0.0"
+			}
+
+			//=================================================================================================================
+			// Shredder: Return Chakram
+			//=================================================================================================================
+			"shredder_return_chakram_2"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"		
+				"MaxLevel"						"3"
+				"DependentOnAbility"			"shredder_chakram"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		 		"AbilityCastAnimation"			"ACT_INVALID"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.0 0.0 0.0"
+			}
+
+			//=================================================================================================================
+			// Ability: Twisted Chakram
+			//=================================================================================================================
+			"shredder_twisted_chakram"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+				"AbilityTextureName"			"shredder_chakram_2"
+				"DependentOnAbility"			"shredder_chakram"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1200"
+				"AbilityCastPoint"				"0.2"
+		
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20 16 12"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100 140 180"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"speed"					"900"
+						"radius"				
+						{
+							"value"		"125"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"damage"				"100 150 200"	
+						"spread"				
+						{
+							"value"		"350"
+							"affected_by_aoe_increase"	"1"	
+						}
+						"min_throw_duration"			"0.0"
+						"max_throw_duration"			"0.5"
+						"min_target_distance"			"600"
+						"max_target_distance"			"600"
+
+						"slow"
+						{
+							"value"				"5"
+							"special_bonus_unique_timbersaw_4"	"+6"
+						}
+						"pass_slow_duration"	"2.0"
+						"slow_health_percentage"	"5"
+
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Tree Killer
+			//=================================================================================================================
+			"shredder_exposure_therapy"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"mana_restore"					
+					{
+						"value"					"4"
+						"hero_levelup"			"+0.5"
+					}
+
+					"health_restore"
+					{
+						"value"														"0"
+						"special_bonus_unique_timbersaw_exposure_therapy_health"	"+12"
+					}
+				}
+			}
+		}
+	}
+}

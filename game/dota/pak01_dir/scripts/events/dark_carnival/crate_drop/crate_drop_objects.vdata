@@ -1,0 +1,237 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "CDOTACrateDropObjectDef"
+	base = 
+	{
+		_class = "CDOTACrateDropObjectDef"
+		m_unID = 1
+		m_eType = "k_eCrateDropType_Object"
+		m_sParentName = ""
+		m_sEntityClassName = "dark_carnival_crate_drop_entity"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate.vmdl"
+		m_vSpawnVelocityMin = [ 0, 0, 0 ]
+		m_vSpawnVelocityMax = [ 0, 0, 0 ]
+		m_flFirstRowOffset = 0.0
+		m_flSecondRowOffset = 400.0
+		m_flAcceleration = 0
+		m_flFriction = 1
+		m_flFrictionScale = 1000
+		m_flScale = 1
+	}
+	platform = 
+	{
+		_class = "CDOTACrateDropPlatformDef"
+		m_unID = 2
+		m_eType = "k_eCrateDropType_Platform"
+		m_sParentName = "base"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_platform.vmdl"
+		m_sLoopSound = "dark_carnival.crate_drop.sound.platform_movement"
+		m_flAcceleration = 2700
+		m_flMass = 0
+		m_flInertiaInv = 0
+		m_nMassPriority = 10
+		m_flGravityScale = 0
+		m_flMaxSpeed = 2500
+	}
+	floor_trigger = 
+	{
+		_class = "CDOTACrateDropObjectDef"
+		m_unID = 3
+		m_eType = "k_eCrateDropType_Trigger"
+		m_sParentName = "base"
+		m_sModel = ""
+		m_sSearchEntity = "destruction_floor"
+		m_nNoDraw = 1
+		m_flGravityScale = 0
+		m_flInertiaInv = 0
+		m_nMassPriority = -1
+	}
+	crate = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 4
+		m_eType = "k_eCrateDropType_Droppable"
+		m_sParentName = "base"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate.vmdl"
+		m_vSpawnMin = [ -400, 0, 1200 ]
+		m_vSpawnMax = [ 400, 0, 1200 ]
+		m_flMass = 75
+		m_flBasePoints = 100
+		m_sSpawnSound = ""
+		m_sLoopSound = ""
+		m_sCatchSound = "dark_carnival.crate_drop.sound.crate_catch"
+		m_flTriggerDelay = 0.0
+		m_flGravityScale = 1.0
+		m_flTriggeredGravityScale = 1.25
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+		m_sDestroySound = "dark_carnival.crate_drop.sound.crate_destroy"
+	}
+	hazard = 
+	{
+		_class = "CDOTACrateDropHazardDef"
+		m_unID = 5
+		m_eType = "k_eCrateDropType_Hazard"
+		m_eHazardType = "k_eCrateDropHazardType_Bomb"
+		m_sParentName = "crate"
+		m_flMass = 100
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_hazard.vmdl"
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+		m_flExplosionRadius = 1000
+		m_flExplosionStrength = 55000
+		m_flUpkickExplosionStrength = 50000
+		m_flTriggerDelay = 0.0
+		m_sDestroySound = ""
+	}
+	crate_wide = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 6
+		m_sParentName = "crate"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate_wide.vmdl"
+		m_flMass = 150
+		m_flBasePoints = 150
+	}
+	crate_tall = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 7
+		m_sParentName = "crate"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate_tall.vmdl"
+		m_flMass = 150
+		m_sDestroySound = "dark_carnival.crate_drop.sound.crate_destroy"
+		m_flBasePoints = 200
+	}
+	track_light = 
+	{
+		_class = "CDOTACrateDropTrackLightDef"
+		m_unID = 8
+		m_eType = "k_eCrateDropType_TrackLight"
+		m_sParentName = "base"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_track_light.vmdl"
+		m_sCatchSound = "dark_carnival.crate_drop.sound.track_light_hit"
+		m_flAcceleration = 0
+		m_flMass = 0
+		m_flInertiaInv = 0
+		m_nMassPriority = 20
+		m_flGravityScale = 0
+		m_flMaxSpeed = 0
+	}
+	tutorial_crate_front = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 9
+		m_eType = "k_eCrateDropType_Droppable"
+		m_sParentName = "base"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate.vmdl"
+		m_vSpawnMin = [ 419, 0, 1200 ]
+		m_vSpawnMax = [ 420, 0, 1200 ]
+		m_flMass = 75
+		m_flBasePoints = 100
+		m_sSpawnSound = ""
+		m_sLoopSound = ""
+		m_sCatchSound = "dark_carnival.crate_drop.sound.crate_catch"
+		m_flTriggerDelay = 0.1
+		m_flGravityScale = 1.0
+		m_flTriggeredGravityScale = 1.25
+		m_nFirstRowWeight = 0
+		m_nSecondRowWeight = 100
+		m_nTutorialObject = 1
+		m_sDestroySound = "dark_carnival.crate_drop.sound.crate_destroy"
+	}
+	tutorial_crate_back = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 10
+		m_eType = "k_eCrateDropType_Droppable"
+		m_sParentName = "base"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate.vmdl"
+		m_vSpawnMin = [ -419, 0, 1200 ]
+		m_vSpawnMax = [ -419, 0, 1200 ]
+		m_flMass = 75
+		m_flBasePoints = 100
+		m_sSpawnSound = ""
+		m_sLoopSound = ""
+		m_sCatchSound = "dark_carnival.crate_drop.sound.crate_catch"
+		m_flTriggerDelay = 0.1
+		m_flGravityScale = 1.0
+		m_flTriggeredGravityScale = 1.25
+		m_nFirstRowWeight = 100
+		m_nSecondRowWeight = 0
+		m_nTutorialObject = 1
+		m_sDestroySound = "dark_carnival.crate_drop.sound.crate_destroy"
+	}
+	powerup_shield = 
+	{
+		_class = "CDOTACrateDropPowerupDef"
+		m_unID = 11
+		m_eType = "k_eCrateDropType_Powerup"
+		m_ePowerupType = "k_eCrateDropPowerupType_Shield"
+		m_sParentName = "crate"
+		m_flMass = 50
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_shield_rune.vmdl"
+		m_sCatchSound = "dark_carnival.crate_drop.sound.shield_activated"
+		m_sDestroySound = ""
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+	}
+	powerup_regen = 
+	{
+		_class = "CDOTACrateDropPowerupDef"
+		m_unID = 12
+		m_eType = "k_eCrateDropType_Powerup"
+		m_ePowerupType = "k_eCrateDropPowerupType_Regen"
+		m_sParentName = "crate"
+		m_flMass = 50
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_regen_rune.vmdl"
+		m_sCatchSound = "dark_carnival.crate_drop.sound.shield_regen"
+		m_sDestroySound = ""
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+	}
+	crate_extra_wide = 
+	{
+		_class = "CDOTACrateDropDroppableDef"
+		m_unID = 13
+		m_sParentName = "crate"
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_crate_extra_wide.vmdl"
+		m_flMass = 600
+		m_flBasePoints = 150
+		m_nDisableSpawnRotation = 1
+	}
+	hazard_nuke = 
+	{
+		_class = "CDOTACrateDropHazardDef"
+		m_unID = 14
+		m_eType = "k_eCrateDropType_Hazard"
+		m_eHazardType = "k_eCrateDropHazardType_Nuke"
+		m_sParentName = "crate"
+		m_flMass = 100
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_big_bomb.vmdl"
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+		m_flExplosionRadius = 5000
+		m_flExplosionStrength = 55000
+		m_flUpkickExplosionStrength = 50000
+		m_flTriggerDelay = 0.0
+		m_sDestroySound = ""
+	}
+	hazard_goop = 
+	{
+		_class = "CDOTACrateDropHazardDef"
+		m_unID = 15
+		m_eType = "k_eCrateDropType_Hazard"
+		m_eHazardType = "k_eCrateDropHazardType_Goop"
+		m_sParentName = "crate"
+		m_flMass = 100
+		m_sModel = "models/events/dark_carnival/crate_drop_minigame/crate_drop_sticky_bomb.vmdl"
+		m_nFirstRowWeight = 50
+		m_nSecondRowWeight = 50
+		m_flExplosionRadius = 5000
+		m_flExplosionStrength = 500
+		m_flUpkickExplosionStrength = 500
+		m_flTriggerDelay = 0.0
+		m_sDestroySound = ""
+	}
+}

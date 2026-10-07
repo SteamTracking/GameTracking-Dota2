@@ -1,0 +1,663 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_shadow_demon"
+	{
+		"Model"		"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"IdleExpression"		"scenes/shadow_demon/shadow_demon_exp_idle_01.vcd"
+		"SoundSet"		"Hero_ShadowDemon"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"3"
+		"Role"			"Support,Disabler,Initiator,Nuker"
+		"Rolelevels"	"2,2,1,1"
+		"Complexity"	"2"
+		"Team"		"Bad"
+		"HeroID"		"79"
+		"HeroOrderID"	"71"
+		"ModelScale"		"0.840000"
+		"LoadoutScale"		"0.84"
+		"VersusScale"		"0.84"
+		"SpectatorLoadoutScale" "0.76"
+		"HeroGlowColor"		"242 200 198"
+		"NameAliases"		"sd"
+		"CMEnabled"		"1"
+		"new_player_enable"		"1"
+		"SimilarHeroes"		"27,26,86"
+		"Adjectives"
+		{
+			"Cape"			"1"
+			"NicePecs"		"1"
+			"Demon"			"1"
+			"Red"			"1"
+		}
+		"PickSound"		"shadow_demon_shadow_demon_spawn_01"
+		"BanSound"		"shadow_demon_shadow_demon_anger_03"
+		"workshop_guide_name"		"Shadow Demon"
+		"LastHitChallengeRival"		"npc_dota_hero_bane"
+		"HeroSelectSoundEffect"		"Hero_ShadowDemon.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"148 68 121 255"
+		"Ability1"		"shadow_demon_disruption"
+		"Ability2"		"shadow_demon_disseminate"
+		"Ability3"		"shadow_demon_shadow_poison"
+		"Ability4"		"shadow_demon_shadow_poison_release"
+		"Ability5"		"shadow_demon_demonic_cleanse"
+		"Ability6"		"shadow_demon_demonic_purge"
+		"Ability7"		"shadow_demon_menace"
+		"Ability10"		"special_bonus_unique_shadow_demon_4"
+		"Ability11"		"special_bonus_strength_8"
+		"Ability12"		"special_bonus_movement_speed_20"
+		"Ability13"		"special_bonus_unique_shadow_demon_3"
+		"Ability14"		"special_bonus_unique_shadow_demon_disseminate_damage"
+		"Ability15"		"special_bonus_unique_shadow_demon_9"
+		"Ability16"		"special_bonus_unique_shadow_demon_purge_poison"
+		"Ability17"		"special_bonus_unique_shadow_demon_7"
+		"Facets"
+		{
+			"shadow_demon_promulgate" 
+			{
+				"Icon"				"nuke"
+				"Color"				"Gray"
+				"GradientID"		"0"
+				"Deprecated"		"true"				
+			}
+			"shadow_demon_facet_soul_mastery"
+			{
+				"Icon"				"illusion"
+				"Color"				"Purple"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"shadow_demon_shadow_servant"
+					}
+				}
+			}
+
+
+		}
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"shadow_demon_disruption"
+			"Ability2"		"shadow_demon_disseminate"
+			"Ability3"		"shadow_demon_shadow_poison"
+			"Ability4"		"shadow_demon_demonic_purge"
+		}		
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_shadow_demon/shadow_demon_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.2"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.6"
+		"MovementSpeed"		"290"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_shadow_demon"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_shadow_demon.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_shadow_demon/shadow_demon_loadout.vpcf"		"loadout"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"DisplayInLoadout" "0"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"back"
+				"SlotText"		"#LoadoutSlot_Back"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"		"4000"
+				"MaxPolygonsLOD1"		"1600"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"belt"
+				"SlotText"		"#LoadoutSlot_Belt"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2500"
+				"MaxPolygonsLOD1"		"1000"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"tail"
+				"SlotText"		"#LoadoutSlot_Tail"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"2000"
+				"MaxPolygonsLOD1"		"800"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_1"
+				"SlotText" "shadow_demon_disruption"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "shadow_demon_shadow_poison"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_STUN_SUPPORT | DOTA_BOT_GANKER"
+			"LaningInfo"
+			{
+				"SoloDesire"		"1"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"		"1"
+				"ProvidesSetup"		"2"
+				"RequiresSetup"		"0"
+			}
+		}
+		"precache"
+		{
+			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_shadow_demon.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_shadow_demon.vpcf"
+		}
+		"showcase_attachments"
+		{
+			"attach_head"			   "1"
+			"attach_attack1"		   "2"
+			"attach_attack2"		   "3"
+		}
+
+		"AbilityDefinitions"
+		{
+			//=================================================================================================================
+			// Shadow Demon: Shadow Demon Disruption
+			//=================================================================================================================
+			"shadow_demon_disruption"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_ShadowDemon.Disruption"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"2.75"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"675"
+				"AbilityCastPoint"				"0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"120"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"disruption_duration"		
+						{
+							"value"		"2.75"
+						}
+						"illusion_duration"			"8 10 12 14"
+						"illusion_outgoing_damage"	"-80.0 -70.0 -60.0 -50.0"
+						"illusion_outgoing_tooltip"	"20.0 30.0 40.0 50.0"
+						"illusion_flat_damage"
+						{
+							"value"							"20 35 50 65"
+							"CalculateSpellDamageTooltip"	"0"
+							"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+						}
+						"illusion_incoming_damage"	"200"
+						"tooltip_total_illusion_incoming_damage"	"300"
+						"AbilityCooldown"				
+						{
+							"value"			"26 24 22 20"
+							"special_bonus_unique_shadow_demon_7"			"=0.25"
+						}
+						"AbilityCharges"	
+						{
+							"value"				""
+						"special_bonus_unique_shadow_demon_7" "+2"
+						}
+						"AbilityChargeRestoreTime"		"26 24 22 20"
+						"illusion_bounty_base"		"0"
+						"illusion_bounty_growth"	"2"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Shadow Demon Soul Catcher
+			//=================================================================================================================
+			"shadow_demon_soul_catcher"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"AbilitySound"					"Hero_ShadowDemon.Soul_Catcher"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"26 24 22 20"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"80 100 120 140"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"health_lost"			"20 25 30 35"
+						"radius"				
+						{
+							"value"				"175 200 225 250"
+							"affected_by_aoe_increase"	"1"
+						}
+						"duration"				
+						{
+							"value"				"10"
+						}
+						"illusion_outgoing_damage"	"-70 -55 -40 -25"
+						"illusion_outgoing_damage_tooltip"	"30 45 60 75"
+						"illusion_incoming_damage"	"100"
+						"illusion_incoming_damage_tooltip"	"200"
+						"bonus_spell_amp"		"5 7 9 11"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Ability: Soul Mastery Variant
+			//=================================================================================================================
+			"shadow_demon_shadow_servant"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"health_lost"			"1"
+						"health_regain_pct"		"50"
+						"debuff_duration"		"10"
+						"illusion_outgoing_damage"	"-60"
+						"illusion_outgoing_damage_tooltip"	"40"
+						"radius"							
+						{
+							"value"		"1500"
+							"affected_by_aoe_increase"	"1"
+						}
+						"illusion_incoming_damage"	"100"
+						"illusion_incoming_damage_tooltip"	"200"
+				}
+			}
+	
+			//=================================================================================================================
+			// Shadow Demon: Shadow Demon Shadow Poison
+			//=================================================================================================================
+			"shadow_demon_shadow_poison"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilitySound"					"Hero_ShadowDemon.ShadowPoison"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"10"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"1500"
+				"AbilityCastPoint"				"0.25"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"40"
+
+				// Damage.
+				//-------------------------------------------------------------------------------------------------------------
+
+				// Stats
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityModifierSupportValue"	"0.0" // modifier is damage only.
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"stack_damage"			
+						{
+							"value"			"24 36 48 60"
+						"special_bonus_unique_shadow_demon_4" "+15%"
+						}
+						"max_multiply_stacks"	"5"
+						"bonus_stack_damage"
+						{
+							"value"				"60"
+							"special_bonus_unique_shadow_demon_4" "+15%"
+						}
+						"radius"				
+						{
+							"value"		"200"
+							"affected_by_aoe_increase"	"1"
+						}
+						"vision_radius"
+						{
+							"value"		"300"
+							"affected_by_aoe_increase"	"1"
+						}
+						"speed"					"1200"
+						"hit_damage"			
+						{
+							"value"			"24 36 48 60"
+							"special_bonus_unique_shadow_demon_4" "+15%"
+						}
+						"AbilityCooldown"
+						{
+							"value"									"2.5"
+							"special_bonus_unique_shadow_demon_3"	"-1"
+						}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Shadow Poison Release
+			//=================================================================================================================
+			"shadow_demon_shadow_poison_release"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"1.0"
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Shadow Demon Demonic Purge
+			//=================================================================================================================
+			"shadow_demon_demonic_purge"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+				"FightRecapLevel"				"2"
+				"HasScepterUpgrade"			"1"
+				"AbilitySound"					"Hero_ShadowDemon.DemonicPurge.Cast"
+				"AbilityDraftExtraAbilities"
+				{
+					"shadow_demon_demonic_cleanse" "shard"
+				}
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"5.0"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.3 0.3 0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150 175 200"
+				"AbilityValues"
+				{
+					"purge_damage"
+					{
+						"value" "300 450 600"
+						"special_bonus_unique_shadow_demon_1" "+150"
+					}
+					"max_charges"
+					{
+						"special_bonus_scepter" "2"
+					}
+					"AbilityCooldown"
+					{
+						"value"									"70 65 60"
+						"special_bonus_unique_shadow_demon_9"	"-20"
+					}
+					"charge_restore_time"
+					{
+						"special_bonus_scepter"					"70 65 60"
+						"special_bonus_unique_shadow_demon_9"	"-20"
+					}
+					"max_slow"
+					{
+						"value" "100"
+					}
+					"min_slow"
+					{
+						"value" "20"
+					}
+					"apply_poison_stacks"
+					{
+						"value"			"0"
+						"special_bonus_unique_shadow_demon_purge_poison"	"=1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Shadow Demon Demonic Purge
+			//=================================================================================================================
+			"shadow_demon_demonic_cleanse"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"2"
+				"MaxLevel"						"1"
+				"IsGrantedByShard"				"1"
+				"AbilitySound"					"Hero_ShadowDemon.DemonicPurge.Cast"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"5.0"
+				"AbilityCooldown"				"60"
+
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"800"
+				"AbilityCastPoint"				"0.3"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"150"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+						"purge_damage"		
+						{
+							"value"		"450"
+						}
+				}
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Disseminate
+			//=================================================================================================================
+			"shadow_demon_disseminate"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"AbilitySound"					"Hero_ShadowDemon.Soul_Catcher"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"26 22 18 14"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"700 775 850 925"
+				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"duration"						"6"
+			
+					"health_lost"		
+					{
+						"value"							"0 0 0 0"
+					}
+			
+					"damage_reflection_pct"	
+					{
+						"value"						"16 24 32 40"
+						"special_bonus_unique_shadow_demon_disseminate_damage"		"+15"
+					}
+					"radius"					
+					{
+						"value"			"675"
+							"affected_by_aoe_increase"	"1"
+					}
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Shadow Demon: Soul Crush
+			//=================================================================================================================
+			"shadow_demon_menace"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+				"AbilityValues"
+				{
+					"stack"			
+					{
+						"value"			"1.9"
+						"hero_levelup"	"+0.1"
+					}
+					"duration"		"8"
+				}
+			}
+		}
+	}
+}
