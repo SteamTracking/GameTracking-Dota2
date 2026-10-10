@@ -8871,6 +8871,7 @@ As each stone's cultural influence spread, it eventually came in conflict with t
 		"Attrib_Candyshop_1"						"Diretide 2022"
 		"Attrib_Candyshop_2"						"Crownfall Caravan"
 		"Attrib_AccountBound"						"Account Bound"
+		"Attrib_GiftableUntilDate"					"Giftable until %s1"
 		"InternationalEvent_Station0"				"watching a game at The International"
 		"InternationalEvent_Station1"				"visiting the Secret Shop at The International"
 		"InternationalEvent_Station2"				"visiting the Workshop Station at The International"
@@ -22993,6 +22994,8 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"dota_settings_low_latency_tooltip_boost"	"Low Latency mode is now enabled and optimizes system latency. Includes techniques that may draw more power to the GPU and slightly impact FPS to reduce latency as much as possible."
 	"dota_settings_low_latency_amd"				"AMD Anti-Lag 2.0"
 	"dota_settings_show_ability_videos"			"Show Ability Videos in Tooltips"
+	"dota_settings_hero_grid"					"Hero Grid"
+	"dota_settings_show_persona_portraits"		"Show Equipped Persona Portraits"
 	
 	"dota_settings_toasts_teammates"		"Teammates"
 	"dota_settings_toasts_show_itempickups"		"Teammate purchases or picks up key items."
@@ -23061,6 +23064,8 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 
 	"dota_settings_select_hero_previews_vision_new_setting_title"			"Select Hero Previews Hero Vision"
 	"dota_settings_select_hero_previews_vision_new_setting_description"		"Holding the Select Hero key will show the vision area of your hero."
+	"dota_settings_persona_portraits_new_setting_title"			"Persona Portraits in Hero Grid"
+	"dota_settings_persona_portraits_new_setting_description"	"Enable displaying your equipped persona portraits in the hero grid."
 
 	"DOTA_Hotkeys_Tooltip_Invoker"						"Enabling this box will set each individual invoker's spell to their Legacy Keys instead of using the bindings for Ability 4 and Ability 5"
 
@@ -24258,6 +24263,7 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_tooltip_econ_item_gift_restriction_permanent" "Not Giftable"
 	"DOTA_tooltip_econ_item_gift_allowed" "May be gifted"
 	"DOTA_tooltip_econ_item_gift_restriction_date" "Not Giftable until: {t:T:giftable_after_date_time} {t:s:giftable_after_date_time}"
+	"DOTA_tooltip_econ_item_gift_restriction_until_date" "Giftable until: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
 	"DOTA_tooltip_econ_item_gem_type"		"{s:gem_type}"
 	"DOTA_tooltip_econ_item_gem_strange_count" "{s:strange_count}"
 	"DOTA_tooltip_econ_item_gem_description" "{s:gem_description}"
@@ -24843,6 +24849,10 @@ To join as an experienced player, you must have at least {d:new_player_req_games
 	"DOTA_Treasure_RecyclingCount"		"x{d:inventory_count}"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Title"		"Recycling Last Item"
 	"DOTA_Treasure_DisassembleConfirm_Popup_Message"	"This is your only copy of this set.  After recycling, you will no longer have any of the items in this bundle. Are you sure you want to continue?"
+	"DOTA_Treasure_GiftingConfirm_Popup_Title"		"Gifting Last Item"
+	"DOTA_Treasure_GiftingConfirm_Popup_Message"	"This is your only copy of this set.  After gifting, you will no longer have any of the items in this bundle. Are you sure you want to continue?"
+	"DOTA_Treasure_GiftFriend_Tooltip_Limited"		"Giftable until: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+	"DOTA_Treasure_NotMarketableAndGiftingLimited"			"The contents of this treasure are not marketable or tradeable. Items can be gifted within 30 days of opening."
 
 	"DOTA_Treasure_MilestoneRewardsTitle"			"Bonus rewards"
 	"DOTA_Treasure_MilestoneRewardsDescription"		"Open chests to receive bonus rewards:"
@@ -52106,10 +52116,15 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_Announcer_Preview_Ringmaster_05" "I'd be so humiliated if I were you."
 		"DOTA_Announcer_Preview_Ringmaster_06" "A real performer wouldn't stand for this."
 
-		// Monster Hoard 2026
+		// Trove of Terror 2026
 		"DOTA_MonsterHoard2026_2026"													"2026"
 		"DOTA_MonsterHoard2026_TreasureTitle"											"Trove of Terror"
 		"DOTA_MonsterHoard2026_TreasureDescription"										"Delve into a monstrous collection of immortal items, an Arcana-inclusive Drow Ranger set, an all-new toothy Tidehunter Arcana — and even bonus Tormentor and Roshan skins that you'll earn along the way."
+
+		"Notification_Trove_Gifting"					"<b>Trove of Terror Gifting Update</b><br/><br/>
+Functionality that was intended to prevent exploitation of gift exchanges was instead mistakenly applied to all items coming out of the Trove of Terror, preventing any gifting from taking place.<br/><br/>
+The vast majority of gifting between friends takes place right after opening a treasure. To support friend gifting while we continue to iterate on the anti-exploit code, we've re-enabled gifting for all Trove of Terror sets: Each set can be gifted to a friend once within thirty days. For sets already in your inventory, the thirty days start now. For newly opened Troves, they start when the Trove is opened.<br/><br/>
+As some sets that would have been gifted if possible were instead recycled, we've granted everyone one new Trove of Terror per six recycling credits so far, rounded up."
 
 		//TIDEHUNTER ARCANA
 		"DOTA_Style_Tidehunter_Arcana_0"	"Maw of the Megalodon"
@@ -52150,6 +52165,8 @@ If you don't feel that you were able to dedicate the appropriate attention level
 		"DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter"	"+{s:arcana_progress_increment}"
 
 		"DOTA_HUD_Scoreboard_TidehunterArcanaNeeded"	"Heroes needed in a single Ravage to progress the second style unlock."
+
+		"Notification_TideArcana_CNVO"					"The bug causing Tidehunter Arcana's new VO to not play in Chinese has been fixed."
 
 		// TI 2026
 		"DOTA_EventName_International2026"						"The International 2026"

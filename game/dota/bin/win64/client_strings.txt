@@ -170,11 +170,7 @@
  (%u = 0x%x)\n
  (+%d more due to usercommand delivery)
  (08@HPX`j
- (08@HPXb0?C
  (08@HPZ
- (08@HR0?C
- (08@J0?C
- (0X`hpz0?C
  (Dirty Animation)
  (INVALID PSS PARAMETERS)\n
  (Negative)
@@ -4567,6 +4563,9 @@
 #DOTA_Treasure_DisassembleConfirm_Popup_Message
 #DOTA_Treasure_DisassembleConfirm_Popup_Title
 #DOTA_Treasure_FilterAvailable
+#DOTA_Treasure_GiftFriend_Tooltip_Limited
+#DOTA_Treasure_GiftingConfirm_Popup_Message
+#DOTA_Treasure_GiftingConfirm_Popup_Title
 #DOTA_Treasure_HelpDupe
 #DOTA_Treasure_HelpGrantAll
 #DOTA_Treasure_HelpHeader
@@ -4706,6 +4705,7 @@
 #DOTA_practice_vs_bots_team_radiant
 #DOTA_tooltip_econ_item_gift_allowed
 #DOTA_tooltip_econ_item_gift_restriction_date
+#DOTA_tooltip_econ_item_gift_restriction_until_date
 #DOTA_tooltip_econ_item_seasonal_accessible
 #DOTA_tooltip_econ_item_trade_cooldown_date
 #DOTA_tooltip_econ_item_trade_market_cooldown_date
@@ -7103,6 +7103,7 @@ $hRh
 (0'yX
 (0.1s interval)
 (0x%08X)'??'
+(2`aE
 (5Me
 (5jP
 (?333?DOTADiretideGrantSelectedTreasureKey
@@ -8223,6 +8224,7 @@ $hRh
 *BaseModelEntity::CBodyComponentBaseModelEntity
 *Gets the last-played times for the account
 *O\n\fDOTA_CM_PICK
+*PpH
 *Returns the player's community preferences
 *Source2/Composite Material Debug
 *UlS
@@ -8563,7 +8565,6 @@ $hRh
 ,#,/,5,9,A,W,Y,i,w,
 ,#DOTA_Hero_Selection_CaptainsMode_TheySelect
 ,(Optional) Visibility of the published file.
-,0EF
 ,3g4
 ,7~5d
 ,?IsUint32@Value@v8@@QEBA_NXZ
@@ -10292,7 +10293,7 @@ $hRh
 .?AV<lambda_1>@?EM@??UpdateCodexHeroDetails@CDOTA_DB_Popup_MonsterHunter_HeroCodex@@AEAAXPEAVCPanel2D@panorama@@0AEAUPageData_t@2@@Z@
 .?AV<lambda_1>@?GA@??OnTick@ArtyUnit_t@DOTA_ARTILLERY@@MEAAXM@Z@
 .?AV<lambda_1>@?GC@??UpdateSelectedItemDetails@CDOTA_DB_Page_TreasureDetails@@AEAAXXZ@
-.?AV<lambda_1>@?JF@??Update@CDOTA_UI_Tooltip_EconItem@@AEAAXVHeroID_t@@@Z@
+.?AV<lambda_1>@?JI@??Update@CDOTA_UI_Tooltip_EconItem@@AEAAXVHeroID_t@@@Z@
 .?AV<lambda_1>@?L@??EventCraftingInputFilled@CDOTA_DB_CraftingInputGroup@@AEAA_NPEAVCPanel2D@panorama@@_N@Z@
 .?AV<lambda_1>@?L@??EventFrameUpdate@CDOTA_Popup_Dark_Carnival_Encounter_Whack_A_Mole@@QEAAXXZ@
 .?AV<lambda_1>@?L@??FireEventsOnBodyMovementAsync@CPathSimple@@UEAAXIAEBVVectorWS@@0AEAV?$CUtlLeanVector@V?$function@$$A6AXXZ@std@@HVCMemAllocAllocator@@@@@Z@
@@ -20027,6 +20028,7 @@ $hRh
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventExecuteTrade@CDOTA_UI_MonsterHunter_MaterialTrader@@AEAA_NVMonsterHunterTradeRecipeID_t@@@Z@@GCSDK@@
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventExportVideo@CDOTA_Hud_ClipBuilder@@AEAAXXZ@@GCSDK@@
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventFinishSession@CDOTA_Hud_CoachingControls@@AEAA_NXZ@@GCSDK@@
+.?AV?$GCClientJobLambda@V<lambda_1>@?1??EventGiftToFriend@CDOTA_UI_TreasureRecycleStatus@@AEAA_NVitem_definition_index_t@@@Z@@GCSDK@@
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventGrantBlessing@CDOTA_DB_Page_BP_BlessingTrees@@AEAAXH@Z@@GCSDK@@
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventGrantEventAction@CDOTA_DB_Page_EventDebug@@AEAA_NXZ@@GCSDK@@
 .?AV?$GCClientJobLambda@V<lambda_1>@?1??EventGrantEventPoints@CDOTA_DB_Page_EventDebug@@AEAA_NPEAVCPanel2D@panorama@@PEBD_N@Z@@GCSDK@@
@@ -21887,7 +21889,7 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?EM@??UpdateCodexHeroDetails@CDOTA_DB_Popup_MonsterHunter_HeroCodex@@AEAAXPEAVCPanel2D@panorama@@0AEAUPageData_t@3@@Z@XPEAV45@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?GA@??OnTick@ArtyUnit_t@DOTA_ARTILLERY@@MEAAXM@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?GC@??UpdateSelectedItemDetails@CDOTA_DB_Page_TreasureDetails@@AEAAXXZ@PEAVCRadioButton@panorama@@H@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?JF@??Update@CDOTA_UI_Tooltip_EconItem@@AEAAXVHeroID_t@@@Z@XPEBVCAssetModifier@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?JI@??Update@CDOTA_UI_Tooltip_EconItem@@AEAAXVHeroID_t@@@Z@XPEBVCAssetModifier@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??EventCraftingInputFilled@CDOTA_DB_CraftingInputGroup@@AEAA_NPEAVCPanel2D@panorama@@_N@Z@_NPEAVCDOTA_DB_CraftingInputSlot@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??EventFrameUpdate@CDOTA_Popup_Dark_Carnival_Encounter_Whack_A_Mole@@QEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??FireEventsOnBodyMovementAsync@CPathSimple@@UEAAXIAEBVVectorWS@@0AEAV?$CUtlLeanVector@V?$function@$$A6AXXZ@std@@HVCMemAllocAllocator@@@@@Z@X$$V@std@@
@@ -37200,10 +37202,10 @@ $hRh
 02V8[
 05=k
 08@HR
-08@J0?C
 08bX
 09,h
 0:%02d
+0:`aE
 0;Q5[
 0<cz
 0M2~@p
@@ -37627,7 +37629,6 @@ $hRh
 2013-01-01
 2022_diretide_collectors_cache
 2025_cta_collectors_cache_voting
-20?C
 20t\f
 20x9
 21.CMsgClientToGCBingoGetUserDataResponse.EResponse
@@ -37960,11 +37961,13 @@ $hRh
 2\r.ELeaguePhase
 2\rlhp
 2\vp!d
+2\vpD
 2^pV
 2_bot
 2_mid
 2_top
 2_week_streak
+2`aE
 2a"l
 2bT~
 2cb:RO
@@ -38196,6 +38199,7 @@ $hRh
 4_bot
 4_top
 4_week_streak
+4`aE
 4f h
 4sdvk_DbH6U
 4tpD
@@ -38487,8 +38491,12 @@ $hRh
 8<pl
 8= zp
 8@HPZ
+8@HPZ 
 8A6j
+8B`aE
 8Client ID for which to count the number of issued tokens"
+8F0N
+8F@M
 8GZS
 8Gets the list of nicknames this user has for other users
 8If set, remove from ignore/block list instead of adding "\\n
@@ -39152,13 +39160,11 @@ $hRh
 @08N
 @0pp
 @333333)@R
-@60A
 @888
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @DebugIndividualStyle
-@HPX`hv 
-@HPXf
+@HPXf0
 @Integer overflow in %s
 @MfKZ
 @Pgl
@@ -39166,6 +39172,7 @@ $hRh
 @Requests the metadata that was generated from a specified fetch.
 @WE]X
 @X!pf
+@XHB
 @Zs3
 @\f1OJ
 @\n tertiary_advancing_node_group_id
@@ -40777,7 +40784,6 @@ Axis
 AxisAngleToQuaternion
 Azwraith
 B Load Layout Snippet
-B SH
 B!rA
 B#B)B/BCBSBUB[BaBsB}B
 B*k@5
@@ -40800,7 +40806,6 @@ B64_WRITE_PKCS7
 B8Z"h
 B9mXw8Voch0
 B>J7I
-B@SH
 BACKSLASH_CHAR
 BAD ENUMERATED
 BAD INTEGER
@@ -40994,6 +40999,7 @@ B\vp\n0
 B\vp\nP
 B_txt
 B`4I
+B`aE
 Background
 Background Image
 Background: Loading screen %u\n
@@ -44079,6 +44085,7 @@ CHECK_PADDING_MD
 CHECK_POLICY
 CHECK_SUITEB_CIPHER_LIST
 CHINA_REGIONAL_FINALS
+CHLB
 CHLClient::OnServerConnectionTimedOut Address: %s\n
 CHLTVSpectatorChannelJoinGameSystem
 CHRONOSPHERE
@@ -46697,6 +46704,8 @@ CanActivateDiscount
 CanAddSocket
 CanAffordBuybackAndQuickbuy
 CanBeExecuted
+CanBeGifted
+CanBeRecycled
 CanBeRerolled
 CanBeSoldByLocalPlayer
 CanBeSwapped
@@ -49815,10 +49824,10 @@ DOTADDBPromoCountdownUpdate
 DOTADDBPromoPage
 DOTADPCFantasyRegionDropDown
 DOTADPCPlayerPage
-DOTADPCQualifierRegionChanged
 DOTADPCScheduleDivisionFilter
 DOTADPCScheduleSetDay
 DOTADPCScheduleSetMonth
+DOTADPCScheduleToggleDetails
 DOTADPCScheduleWatchReplay
 DOTADPCStandingsDivisionSelected
 DOTADPCStandingsUpdated
@@ -50768,6 +50777,7 @@ DOTAHeroGridEditCategorySettings
 DOTAHeroGridHeroSelected
 DOTAHeroGridHideStickers
 DOTAHeroGridNew
+DOTAHeroGridPersonaPortraitsSettingChanged
 DOTAHeroGridRoleRankTierSelected
 DOTAHeroGridSelectDefaultConfig
 DOTAHeroGridSelectedConfigChanged
@@ -53708,6 +53718,7 @@ DOTATreasureList
 DOTATreasurePreview
 DOTATreasureRecycleBundle
 DOTATreasureRecycleCreditsHovered
+DOTATreasureRecycleGiftFriend
 DOTATreasureRecycleStatus
 DOTATreasureStickerPackDetailsPage
 DOTATreasureToggleCrownfallDiscountActive
@@ -54429,6 +54440,7 @@ D\n\tevent_ti6
 D\n\thunted_by
 D\n\vpredictions
 D\n\vtournaments
+D`aE
 Daily challenge: %s\n
 DailyBonusAvailable
 DailyBonusCountdown
@@ -56913,7 +56925,7 @@ FCVAR_UNLOGGED
 FCVAR_USERINFO
 FCVAR_VCONSOLE_SET_FOCUS
 FDA~i
-FDOTADPCScheduleToggleDetails
+FDOTADPCQualifierRegionChanged
 FEATURED_GAMEMODE
 FEED_ALERT_FANTASY
 FEED_ALERT_PREDICTIONS
@@ -59931,6 +59943,7 @@ HasLeague
 HasLeagueID
 HasLegacyItem
 HasLevel
+HasLimitedGifting
 HasLiveMatch
 HasLoadedScenario
 HasLocalPlayer
@@ -62515,6 +62528,7 @@ ItemSearchResult
 ItemSearchTextEntry
 ItemSelect
 ItemSet
+ItemSetGiftButton
 ItemSetPreview
 ItemSetPreview_1
 ItemSetPreview_2
@@ -62597,7 +62611,6 @@ J#}QU^u
 J%f%f%f%f%f%f%f%f
 J(?IsInt32@Value@v8@@QEBA_NXZ
 J(Optional) If this represents a game, this is the URL to that game's page."P\n
-J0?C
 J5W\ne
 J:xrG
 J>D2\r
@@ -62836,7 +62849,6 @@ L0fO*'
 L4Eud
 L4uGv~;6
 L5^x|S
-L=8u
 L@4T
 LAM\rhaI)|pL<
 LANLobby
@@ -66030,17 +66042,16 @@ P-224
 P-256
 P-384
 P-521
-P08@J0?C
+P08J@
 P08N
 P0WonMatch
 P1Avatar
 P1WonMatch
 P1\t98"
-P20?C
 P2Avatar
 P2P ping to "%s". Timed out after %.2fms\n
 P5[1
-P:0?C
+P6pf
 PAESocialFeedEventType
 PAGN_4
 PAGrave
@@ -68404,6 +68415,7 @@ R\n\rincludekvtags
 R\n\vpredictions
 R\r1>Vp
 R\vp!y
+R\vpD
 R]Di
 R_T5Y
 Rad Guys
@@ -69385,6 +69397,8 @@ RewardSetPreview
 RewardSlotBonusLeft
 RewardSlotBonusRight
 RewardSlotMain
+RewardSlotOverflowLeft
+RewardSlotOverflowRight
 RewardSquare
 RewardTerrain
 RewardTier
@@ -71729,6 +71743,7 @@ ShowTitles
 ShowTooltip
 ShowTourneyButton
 ShowTrackingTooltip
+ShowTroveGiftingViolator
 ShowTutorialState
 ShowUnavailable
 ShowUnitKills
@@ -74622,6 +74637,8 @@ TwoColumns
 TwoImages
 TwoItem
 TwoPlayers
+TwoRewardsOnLeft
+TwoRewardsOnRight
 TwoRows
 Type%d
 Type=
@@ -76309,9 +76326,9 @@ X\tQo
 X`hr
 Xd3h
 Xdota
+Xf@P
 XfJ7
-XfP2
-Xfp3
+Xf`Q
 Xin \t
 XjfR
 XqgA+
@@ -76403,7 +76420,6 @@ Z+5AS
 Z,google.golang.org/protobuf/types/known/anypb
 Z-google.golang.org/protobuf/types/known/typepb
 Z0000
-Z0?C
 Z0zd
 Z1google.golang.org/protobuf/types/known/wrapperspb
 Z6google.golang.org/protobuf/types/known/sourcecontextpb
@@ -76599,13 +76615,13 @@ Z~wl
 \fBlessingID_t
 \fCEntityIndex"
 \fKS1
+\fPaE
 \fW9c
 \fXu"L
 \f]ne3
 \fdhWTh
 \fevents.proto
 \fiaR
-\fpEF
 \ful2
 \fy&3Gl
 \l:ArR
@@ -77165,7 +77181,6 @@ Z~wl
 \nLeagueID_t"
 \nLeagueID_t"9\n#CMsgDOTACompendiumSelectionResponse
 \nLeagueID_t"C\n-CMsgDOTACompendiumRemoveAllSelectionsResponse
-\nPEF
 \nPlayerID_t
 \nPlayerID_t"
 \nSimulating Entities:\n\n
@@ -78863,6 +78878,7 @@ Z~wl
 \tMatchID_t"b\n$CMsgClientToGCMatchesMinimalResponse
 \tMatchID_t"i\n
 \tNone\n
+\tP8z
 \tParam BasePlayerWeapon returned NULL!\n
 \tParam selecting string is out of range!\n
 \tPlayer param "%s" returned NULL.\n
@@ -79083,6 +79099,7 @@ Z~wl
 \vGt5
 \vHCK/
 \vNCE\v
+\vP8z
 \vUY6[E
 \v\n\tRemoveFan
 \v\tV_UTF32CharsToUTF8
@@ -79261,9 +79278,11 @@ _video
 _wjb
 _xU`u
 _}eOk
-`20?C
 `28)fk
+`2`aE
 `3?New@Array@v8@@SA?AV?$Local@VArray@v8@@@2@PEAVIsolate@2@H@Z
+`60o
+`6Pp
 `:zQF
 `D$daM-l
 `DZG
@@ -79271,6 +79290,7 @@ _}eOk
 `H(hqA1p
 `ITS
 `VX:H
+`Z`aE
 `\n+k_EHeroSelectionText_CaptainsMode_YouSelect
 `\n+k_EHeroSelectionText_RandomDraft_HeroReview
 `\n\rvector_values
@@ -80467,7 +80487,6 @@ b0M%
 b2i_PVK_bio
 b5o-
 b=G3
-b@TH
 bAddToGroup
 bAlert
 bAlertable
@@ -80535,6 +80554,7 @@ b\n\fdescriptor_t
 b\np\tP
 b\vp\n0
 b]jY
+b`aE
 backend_response
 background
 background map
@@ -81145,7 +81165,6 @@ box2i
 box_character
 box_state
 bpFh
-bpTH
 bp_amount
 bp_max
 bp_remaining
@@ -87931,7 +87950,9 @@ gift_tokens_received
 gift_wrap
 giftable
 giftable after date
+giftable until date
 giftable_after_date_time
+giftable_until_date_time
 gifter account id
 gifter_account_id
 gifter_name
@@ -88872,7 +88893,6 @@ hours_remaining
 houseIdentifier
 hover
 how_to_play
-hpz0?C
 hr_H
 href="
 hscroll
@@ -89014,7 +89034,6 @@ hype_loc
 hypothermia
 h|gg
 i <= EVP_MAX_MD_SIZE
-i Sp
 i%YR
 i%|kB
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc.)
@@ -90247,7 +90266,6 @@ j <= (int)sizeof(ctx->key)
 j <= sizeof(c->iv)
 j"MRX
 j&LQ
-j0?C
 j0ksJ
 j2ty
 j3kg
@@ -97459,9 +97477,6 @@ p.ppBasis
 p.prime
 p.tpBasis
 p08@H^
-p0JP
-p0j J;
-p20?C
 p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
@@ -97474,9 +97489,7 @@ p4 edit ..\panorama\videos\heroes\%s.webm\n
 p4Z3
 p5Z3
 p5\nL,
-p60'
 p618
-p6pr
 p>?Set@Template@v8@@QEAAXV?$Local@VName@v8@@@2@V?$Local@VData@v8@@@2@W4PropertyAttribute@2@@Z
 p@0pqE5tsO?|1
 pCachedPoseBuffer->m_ID.IsValid()
@@ -97601,6 +97614,7 @@ panorama/images/heroes/*.vtex_c
 panorama/images/heroes/icons/%s%s_png.vtex
 panorama/images/heroes/icons/%s_png.vtex
 panorama/images/heroes/icons/npc_dota_hero_axe_png.vtex
+panorama/images/heroes/selection/%s_png.vtex_c
 panorama/images/hud/*.vtex_c
 panorama/images/hud/arcana/es/numbers/*.vtex_c
 panorama/images/items/%s_png.vtex_c
@@ -97622,6 +97636,7 @@ panorama/localization/addon_%language%.txt
 panorama/panorama_config.txt
 panorama/scripts
 panorama/styles
+panorama/videos/heroes/%s.webm
 panorama::CBaseSymbol<0>::String
 panorama::CBaseSymbol<1>::String
 panorama::CFillBrush::AccessStopColors
@@ -100308,7 +100323,6 @@ quiet
 quill_base_damage
 quill_stack_damage
 qx(q
-r CF
 r axis
 r$0I
 r-IE
@@ -100360,6 +100374,7 @@ r_dota_normal_maps 1
 r_dota_shadows 1
 r_printdecalinfo
 r_ssao 1
+r`aE
 rad2deg
 radar_cooldown
 radar_icon
@@ -103846,6 +103861,7 @@ t4O_
 t80z
 tA`KO/3G!\n7h=
 tGTS
+tJ 0X!
 tLY^m`6
 tLl 
 tLsq
@@ -104879,6 +104895,7 @@ trophy_state
 trophy_xp
 trophyid
 trophyscore
+trove_of_terror_gifting_violator
 true 
 trueBw
 true\n
@@ -106266,6 +106283,7 @@ x509_pkey
 x509_req
 x509_store
 x931
+xC\nIz%
 xFKF
 xOu\vsF
 xQfF
@@ -106365,8 +106383,8 @@ z(ov
 z-index
 z-offset
 z/B,9d
-z0?C
 z<d2
+z>0rB
 z>Hz
 zF):O4
 zG2m8
