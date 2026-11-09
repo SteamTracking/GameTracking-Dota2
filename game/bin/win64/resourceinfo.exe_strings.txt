@@ -3686,6 +3686,7 @@ ZSTD
 \t              Specify the block via its 4CC name - case matters!\n
 \t              With no additional arguments, a summary of the input(s) will be displayed.\n
 \t              collating the results of -module_dep for all DLLs. (Respects -v, -q, and -game)\n
+\t              text (5+ chars, including spaces/punctuation) instead of individual words.\n
 \t             | 0x%08X = %s\n
 \t             | 0x%08X = <UNKNOWN>\n
 \t %i bytes written to %s.\n
@@ -3728,7 +3729,8 @@ ZSTD
 \t-q          : Quiet mode\n
 \t-r          : Recursively search directories for files.\n
 \t-raw [file] : Block data is printed as raw bytes (hex dump), optionally to 'file'.\n
-\t-strings    : Prints string dictionary.\n
+\t-stringruns : With -strings/-binstrings, full runs of printable characters of min length %d are captured from raw binary data before splitting into alphanumeric words of min length %d\n
+\t-strings    : Prints string dictionary, including text from known strings and all alphanumeric strings in binary files of min length %d\n
 \t-v          : Verbose mode\n
 \tDepth        = %d\n
 \tExtra Data   = %d entries:\n
