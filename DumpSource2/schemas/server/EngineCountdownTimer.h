@@ -3,7 +3,6 @@
 class EngineCountdownTimer
 {
 	float32 m_duration;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
-	float32 m_timestamp;
-	float32 m_timescale;
+	float32 m_timestamp; // = -1
+	float32 m_timescale; // = 1
 };

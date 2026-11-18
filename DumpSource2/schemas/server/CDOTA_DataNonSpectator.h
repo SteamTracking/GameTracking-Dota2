@@ -26,5 +26,9 @@ class CDOTA_DataNonSpectator : public CBaseEntity
 	CRoshanPhaseInfo m_roshanSpawnInfo;
 	int32 m_nNextPowerRuneType;
 	int32 m_nNextPowerRuneSpawnIndex;
+	CHandle< CBaseEntity > m_hNextPowerRuneSpawner;
 	int32 m_iTowerKills;
+	ERoshanSpawnPhase m_eKnownRoshanPhase;
+	GameTime_t m_flKnownRoshanPhaseStartTime;
+	GameTime_t m_flKnownRoshanPhaseEndTime;
 };

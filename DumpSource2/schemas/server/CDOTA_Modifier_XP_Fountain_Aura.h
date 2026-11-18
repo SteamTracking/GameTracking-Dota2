@@ -11,5 +11,6 @@ class CDOTA_Modifier_XP_Fountain_Aura : public CDOTA_Buff
 	float32 radius;
 	float32 m_flPauseDuration;
 	bool m_bCapturableByEnemy;
+	bool m_bDefendersFieldDisabled;
 	ParticleIndex_t m_nFxProgress;
 };

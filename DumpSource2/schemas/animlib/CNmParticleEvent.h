@@ -9,6 +9,7 @@ class CNmParticleEvent : public CNmEvent
 	bool m_bStopImmediately;
 	bool m_bDetachFromOwner;
 	bool m_bPlayEndCap;
+	bool m_bAggregate;
 	CUtlString m_attachmentPoint0;
 	ParticleAttachment_t m_attachmentType0; // = "PATTACH_ABSORIGIN"
 	CUtlString m_attachmentPoint1;

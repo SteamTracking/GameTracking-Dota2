@@ -1,7 +1,6 @@
 class CDOTA_Modifier_Pugna_LifeDrain : public CDOTA_Buff
 {
-	int32 health_drain;
-	int32 ally_healing;
+	int32 life_drain;
 	float32 health_drain_death_boost;
 	float32 tick_rate;
 	bool m_bDoRangeCheck;
@@ -11,6 +10,8 @@ class CDOTA_Modifier_Pugna_LifeDrain : public CDOTA_Buff
 	bool m_bShard;
 	bool m_bFromWard;
 	CHandle< C_BaseEntity > m_hWard;
+	CHandle< C_BaseEntity > m_hDrainer;
+	int32 m_nDrainID;
 	float32 spell_amp_drain_duration;
 	int32 max_spell_amp_drain_pct;
 	int32 spell_amp_drain_rate;

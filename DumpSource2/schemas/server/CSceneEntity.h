@@ -52,9 +52,11 @@ class CSceneEntity : public CPointEntity
 	CEntityIOOutput m_OnResumed;
 	CEntityIOOutput m_OnPulseRequirement;
 	CUtlDict< SceneLocatorSettings_t > m_LocatorSettingsMap;
+	// MNotSaved
+	bool m_bOutputListLoaded;
 	CUtlDict< CUtlSymbolLarge > m_TargetNameMap;
 	CUtlDict< CUtlSymbolLarge > m_AnchorNameMap;
-	CUtlDict< CUtlSymbolLarge > m_ActorGraphMap;
+	CUtlDict< ActorGraphEntry_t > m_ActorGraphMap;
 	CUtlDict< ActorClipEntry_t > m_ActorClipMap;
 	CUtlVector< ActorMapping_t > m_ActorMap;
 	CHandle< CSceneEntity > m_hInterruptScene;
@@ -72,6 +74,7 @@ class CSceneEntity : public CPointEntity
 	CUtlVector< CHandle< CSceneListManager > > m_hListManagers;
 	CUtlSymbolLarge m_iszSoundName;
 	CUtlSymbolLarge m_iszSequenceName;
+	CUtlSymbolLarge m_iszLookTarget;
 	CHandle< CBaseModelEntity > m_hActor;
 	CHandle< CBaseEntity > m_hActivator;
 	int32 m_BusyActor;

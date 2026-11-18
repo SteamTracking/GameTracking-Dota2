@@ -9,6 +9,7 @@ class CDOTA_Modifier_Largo_Frogstomp_Thinker : public CDOTA_Buff
 	int32 infinite_stomps;
 	bool m_bStarted;
 	ParticleIndex_t m_nFXIndex;
+	float32 m_flFroglingScale;
 	int32 nNumTicks;
 	bool m_bGrantedGem;
 	bool m_bPendingDestroy;

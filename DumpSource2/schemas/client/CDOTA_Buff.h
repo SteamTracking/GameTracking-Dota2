@@ -11,6 +11,7 @@ class CDOTA_Buff : public C_HorizontalMotionController, public C_VerticalMotionC
 	GameTime_t m_flLastAppliedTime;
 	float32 m_flDuration;
 	GameTime_t m_flDieTime;
+	float32 m_flEffectiveness;
 	CHandle< C_BaseEntity > m_hCaster;
 	HeroID_t m_nApplierHeroID;
 	CHandle< C_BaseEntity > m_hAbility;

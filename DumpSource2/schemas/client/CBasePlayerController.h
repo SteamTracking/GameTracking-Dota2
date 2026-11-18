@@ -4,7 +4,7 @@ class CBasePlayerController : public C_BaseEntity
 	// MNotSaved
 	C_CommandContext m_CommandContext;
 	// MNotSaved
-	uint64 m_nInButtonsWhichAreToggles;
+	ButtonBitMask_t m_nInButtonsWhichAreToggles;
 	// MNotSaved
 	uint32 m_nTickBase;
 	CHandle< C_BasePlayerPawn > m_hPawn;

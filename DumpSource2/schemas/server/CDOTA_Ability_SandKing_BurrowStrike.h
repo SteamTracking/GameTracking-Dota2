@@ -5,4 +5,8 @@ class CDOTA_Ability_SandKing_BurrowStrike : public CDOTABaseAbility
 	float32 burrow_anim_time;
 	bool m_bIsVectorTargeted;
 	VectorWS m_vEndpoint;
+	VectorWS m_vLastThinkerLocation;
+	float32 spine_radius;
+	float32 spine_duration;
+	bool bHasStartedSpines;
 };

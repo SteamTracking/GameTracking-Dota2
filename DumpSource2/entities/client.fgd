@@ -264,7 +264,7 @@
 	destructible_part_initial_state_destructed_4_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces
 	destructible_part_initial_state_destructed_5_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces
 	input Alpha(integer) // PVAL_INT param
-	input Color(color255) // PVAL_COLOR_RGB param
+	input Color(color255) : "Set the render color (R G B)." // PVAL_COLOR_RGB color
 	input Skin(integer) // PVAL_INT param
 	input fademaxdist(float) // PVAL_FLOAT param
 	input fademindist(float) // PVAL_FLOAT param
@@ -448,7 +448,7 @@
 	input Disable(void)
 	input Enable(void)
 	input EndTouch(void)
-	input FindEntitiesInTrigger(api) // PVAL_STRING entityType, PVAL_ENTITY_NAME optionalEntityName, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node: Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts.
+	input FindEntitiesInTrigger(api) // PVAL_LEAF:CEntitySubtypeString entityType, PVAL_ENTITY_NAME optionalEntityName, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node: Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts.
 	input IsTouching(target_destination) : "Is the other entity touching the trigger?<br><br>This node can appear in Observable contexts." // PVAL_EHANDLE pOtherEntity, returns PVAL_BOOL retval, Pulse node
 	input IsTouchingAny(void) : "Is there any entity touching the trigger?<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
 	input StartTouch(void)
@@ -512,6 +512,7 @@
 	VoiceFile(string) // FIELD_STRING m_iszVoiceFile
 	AttackRange(integer) // FIELD_INT32 m_iAttackRange
 	HealthBarOffset(integer) // FIELD_INT32 m_iHealthBarOffset
+	SelectionHitboxScale(float) // FIELD_FLOAT32 m_flSelectionHitboxScale
 	VoiceBackgroundSound(string) // FIELD_STRING m_iszVoiceBackgroundSound
 	MinimapIcon(string) // FIELD_STRING m_iszMinimapIcon
 	UnitNameIconOverride(string) // FIELD_STRING m_iszUnitNameIconOverride
@@ -534,6 +535,7 @@
 	playerID(integer) // FIELD_INT32 m_nPlayerOwnerID
 	arcana_level(string) // FIELD_CHARACTER m_nDefaultArcanaLevel
 	default_color_gem_color(color255) // FIELD_COLOR32 m_defaultColorGemColor
+	show_occluded_outline(boolean) // FIELD_BOOLEAN m_bShowOccludedOutline
 	AdditionalSinkDelay(float) // FIELD_FLOAT32 m_flAdditionalSinkDelay
 	teamnumber(integer) // FIELD_UINT8 m_iTeamNum, ADDED_KEYFIELD
 	HasInventory(boolean) // FIELD_BOOLEAN m_bHasInventory
@@ -615,6 +617,7 @@
 @PointClass base(C_BaseEntity) = point_entity
 [
 	// component CBodyComponent: CBodyComponentPoint
+	input SetAngles(vector) // PVAL_VEC3 param
 	input SetPosition(vector) // PVAL_VEC3 param
 ]
 
@@ -850,6 +853,11 @@
 
 // CDOTA_Ability_Scout_Bonuses
 @PointClass base(dota_base_ability) = ability_scout_bonuses
+[
+]
+
+// C_DOTA_Ability_StoneOfRecall
+@PointClass base(dota_base_ability) = ability_stone_of_recall
 [
 ]
 
@@ -1318,6 +1326,11 @@
 [
 ]
 
+// C_DOTA_Ability_AncientApparition_ChillingTouch2
+@PointClass base(dota_base_ability) = ancient_apparition_chilling_touch_2
+[
+]
+
 // CDOTA_Ability_AncientApparition_ColdFeet
 @PointClass base(dota_base_ability) = ancient_apparition_cold_feet
 [
@@ -1694,6 +1707,16 @@
 
 // CDOTA_Ability_Beastmaster_SummonRazorback
 @PointClass base(dota_base_ability) = beastmaster_summon_razorback
+[
+]
+
+// CDOTA_Ability_Beastmaster_SummonThunderhide
+@PointClass base(dota_base_ability) = beastmaster_summon_thunderhide
+[
+]
+
+// C_DOTA_Ability_Beastmaster_ThunderhideDrum
+@PointClass base(dota_base_ability) = beastmaster_thunderhide_drum
 [
 ]
 
@@ -2087,6 +2110,21 @@
 [
 ]
 
+// C_DOTA_Ability_Chaos_Knight_Armageddon
+@PointClass base(dota_base_ability) = chaos_knight_armageddon
+[
+]
+
+// CDOTA_Ability_Chaos_Knight_ArmageddonsFlank
+@PointClass base(dota_base_ability) = chaos_knight_armageddons_flank
+[
+]
+
+// CDOTA_Ability_Chaos_Knight_ArmageddonsFlank_End
+@PointClass base(dota_base_ability) = chaos_knight_armageddons_flank_end
+[
+]
+
 // C_DOTA_Ability_ChaosKnight_Chaos_Bolt
 @PointClass base(dota_base_ability) = chaos_knight_chaos_bolt
 [
@@ -2119,6 +2157,11 @@
 
 // C_DOTA_Ability_Chaos_Knight_Reins_Of_Chaos
 @PointClass base(dota_base_ability) = chaos_knight_reins_of_chaos
+[
+]
+
+// C_DOTA_Ability_Chen_Anoint
+@PointClass base(dota_base_ability) = chen_anoint
 [
 ]
 
@@ -2720,6 +2763,11 @@
 [
 ]
 
+// CDOTA_Ability_Dazzle_ThroughTheRealm
+@PointClass base(dota_base_ability) = dazzle_through_the_realm
+[
+]
+
 // C_DOTA_Ability_Dazzle_Weave
 @PointClass base(dota_base_ability) = dazzle_weave
 [
@@ -2948,11 +2996,6 @@
 
 // C_DOTA_GuildBannerDynamic
 @PointClass base(prop_dynamic) = dota_guild_banner_dynamic
-[
-]
-
-// CDOTAInGamePredictionState
-@PointClass base(C_BaseEntity) = dota_in_game_predictions
 [
 ]
 
@@ -3204,7 +3247,8 @@
 [
 	pathNodes(string) // FIELD_STRING
 	pathNodeRadiusScales(string) // FIELD_STRING
-	pathNodeMoveSpeedTypes(string) // FIELD_STRING
+	pathNodeMoveSpeedType(string) // FIELD_STRING
+	pathNodeNPCTypes(string) // FIELD_STRING
 ]
 
 // C_DOTAMutationGameMode
@@ -3452,6 +3496,16 @@
 
 // C_DOTA_Ability_Earthshaker_Spirit_Cairn
 @PointClass base(dota_base_ability) = earthshaker_spirit_cairn
+[
+]
+
+// C_DOTA_Ability_Eimermole_MinersAura
+@PointClass base(dota_base_ability) = eimermole_miners_aura
+[
+]
+
+// C_DOTA_Ability_Eimermole_MinersSlam
+@PointClass base(dota_base_ability) = eimermole_miners_slam
 [
 ]
 
@@ -4289,6 +4343,7 @@
 @PointClass base(filter_base) = filter_activator_class
 [
 	filterclass(string) // FIELD_STRING m_iFilterClass
+	match_subclass(boolean) // FIELD_BOOLEAN m_bMatchSubclass
 ]
 
 // CFilterMassGreater
@@ -5221,6 +5276,11 @@
 [
 ]
 
+// CDOTA_Item_Balmhook
+@PointClass base(dota_item) = item_balmhook
+[
+]
+
 // C_DOTA_Item_CraniumBasher
 @PointClass base(dota_item) = item_basher
 [
@@ -5228,6 +5288,16 @@
 
 // C_DOTA_Item_BeltOfStrength
 @PointClass base(dota_item) = item_belt_of_strength
+[
+]
+
+// C_DOTA_Item_BerserkersHood
+@PointClass base(dota_item) = item_berserkers_hood
+[
+]
+
+// CDOTA_Item_BerserkersSabatons
+@PointClass base(dota_item) = item_berserkers_sabatons
 [
 ]
 
@@ -5283,6 +5353,11 @@
 
 // C_DOTA_Item_Blood_Grenade
 @PointClass base(dota_item) = item_blood_grenade
+[
+]
+
+// C_DOTA_Item_Bloodslinger
+@PointClass base(dota_item) = item_bloodslinger
 [
 ]
 
@@ -5361,6 +5436,11 @@
 [
 ]
 
+// CDOTA_Item_Brick
+@PointClass base(dota_item) = item_brick
+[
+]
+
 // C_DOTA_Item_Broadsword
 @PointClass base(dota_item) = item_broadsword
 [
@@ -5383,6 +5463,11 @@
 
 // C_DOTA_Item_Butterfly
 @PointClass base(dota_item) = item_butterfly
+[
+]
+
+// C_DOTA_Item_Caduceus
+@PointClass base(dota_item) = item_caduceus
 [
 ]
 
@@ -5423,6 +5508,11 @@
 
 // C_DOTA_Item_Clarity
 @PointClass base(dota_item) = item_clarity
+[
+]
+
+// C_DOTA_Item_Claszian_Timepiece
+@PointClass base(dota_item) = item_claszian_timepiece
 [
 ]
 
@@ -5558,11 +5648,6 @@
 
 // C_DOTA_Item_Desolator
 @PointClass base(dota_item) = item_desolator
-[
-]
-
-// C_DOTA_Item_Desolator_2
-@PointClass base(dota_item) = item_desolator_2
 [
 ]
 
@@ -6111,6 +6196,11 @@
 [
 ]
 
+// CDOTA_Item_HelmOfTheHivemind
+@PointClass base(dota_item) = item_helm_of_the_hivemind
+[
+]
+
 // C_DOTA_Item_HelmOfTheOverlord
 @PointClass base(item_helm_of_the_dominator) = item_helm_of_the_overlord
 [
@@ -6133,6 +6223,16 @@
 
 // C_DOTA_Item_Horizon
 @PointClass base(dota_item) = item_horizon
+[
+]
+
+// C_DOTA_Item_Horn_Of_Battle
+@PointClass base(dota_item) = item_horn_of_battle
+[
+]
+
+// C_DOTA_Item_Horn_Of_Battle_Greater
+@PointClass base(dota_item) = item_horn_of_battle_greater
 [
 ]
 
@@ -6458,6 +6558,11 @@
 
 // CDOTA_Item_Ninja_Gear
 @PointClass base(dota_item) = item_ninja_gear
+[
+]
+
+// C_DOTA_Item_Nothl_Sigil
+@PointClass base(dota_item) = item_nothl_sigil
 [
 ]
 
@@ -6796,6 +6901,11 @@
 [
 ]
 
+// CDOTA_Item_Recipe_BerserkersSabatons
+@PointClass base(dota_item) = item_recipe_berserkers_sabatons
+[
+]
+
 // CDOTA_Item_Recipe_Battlefury
 @PointClass base(dota_item) = item_recipe_bfury
 [
@@ -6813,6 +6923,11 @@
 
 // C_DOTA_Item_Recipe_Blood_Grenade
 @PointClass base(dota_item) = item_recipe_blood_grenade
+[
+]
+
+// C_DOTA_Item_Recipe_Bloodslinger
+@PointClass base(dota_item) = item_recipe_bloodslinger
 [
 ]
 
@@ -6858,6 +6973,11 @@
 
 // C_DOTA_Item_Recipe_Butterfly
 @PointClass base(dota_item) = item_recipe_butterfly
+[
+]
+
+// C_DOTA_Item_Recipe_Caduceus
+@PointClass base(dota_item) = item_recipe_caduceus
 [
 ]
 
@@ -6943,11 +7063,6 @@
 
 // C_DOTA_Item_Recipe_Desolator
 @PointClass base(dota_item) = item_recipe_desolator
-[
-]
-
-// C_DOTA_Item_Recipe_Desolator_2
-@PointClass base(dota_item) = item_recipe_desolator_2
 [
 ]
 
@@ -7466,11 +7581,6 @@
 [
 ]
 
-// C_DOTA_Item_Recipe_Revenants_Brooch
-@PointClass base(dota_item) = item_recipe_revenants_brooch
-[
-]
-
 // C_DOTA_Item_Recipe_RingOfAquila
 @PointClass base(dota_item) = item_recipe_ring_of_aquila
 [
@@ -7478,6 +7588,11 @@
 
 // C_DOTA_Item_Recipe_Ring_Of_Basilius
 @PointClass base(dota_item) = item_recipe_ring_of_basilius
+[
+]
+
+// C_DOTA_Item_Recipe_Ristuls_Devotion
+@PointClass base(dota_item) = item_recipe_ristuls_devotion
 [
 ]
 
@@ -7526,6 +7641,11 @@
 [
 ]
 
+// C_DOTA_Item_Recipe_Skypiercer
+@PointClass base(dota_item) = item_recipe_skypiercer
+[
+]
+
 // CDOTA_Item_Recipe_Solar_Crest
 @PointClass base(dota_item) = item_recipe_solar_crest
 [
@@ -7561,8 +7681,18 @@
 [
 ]
 
+// CDOTA_Item_Recipe_Starforge
+@PointClass base(dota_item) = item_recipe_starforge
+[
+]
+
 // C_DOTA_Item_Recipe_Stormcrafter
 @PointClass base(dota_item) = item_recipe_stormcrafter
+[
+]
+
+// C_DOTA_Item_Recipe_Stygian_Desolator
+@PointClass base(dota_item) = item_recipe_stygian_desolator
 [
 ]
 
@@ -7711,6 +7841,11 @@
 [
 ]
 
+// C_DOTA_Item_Red_Ledger
+@PointClass base(dota_item) = item_red_ledger
+[
+]
+
 // C_DOTA_Item_RefresherOrb
 @PointClass base(dota_item) = item_refresher
 [
@@ -7773,6 +7908,16 @@
 
 // C_DOTA_Item_RippersLash
 @PointClass base(dota_item) = item_rippers_lash
+[
+]
+
+// C_DOTA_Item_Vladmir
+@PointClass base(dota_item) = item_vladmir
+[
+]
+
+// C_DOTA_Item_Ristuls_Devotion
+@PointClass base(item_vladmir) = item_ristuls_devotion
 [
 ]
 
@@ -7911,6 +8056,11 @@
 [
 ]
 
+// C_DOTA_Item_Skypiercer
+@PointClass base(dota_item) = item_skypiercer
+[
+]
+
 // C_DOTA_Item_Slippers
 @PointClass base(dota_item) = item_slippers
 [
@@ -7996,6 +8146,16 @@
 [
 ]
 
+// C_DOTA_Item_Starforge
+@PointClass base(dota_item) = item_starforge
+[
+]
+
+// C_DOTA_Item_StoneOfRecall
+@PointClass base(dota_item) = item_stone_of_recall
+[
+]
+
 // CDOTA_Item_Stonefeather_Satchel
 @PointClass base(dota_item) = item_stonefeather_satchel
 [
@@ -8008,6 +8168,11 @@
 
 // C_DOTA_Item_StoutShield
 @PointClass base(dota_item) = item_stout_shield
+[
+]
+
+// C_DOTA_Item_Stygian_Desolator
+@PointClass base(dota_item) = item_stygian_desolator
 [
 ]
 
@@ -8251,6 +8416,11 @@
 [
 ]
 
+// C_DOTA_Item_VilePhial
+@PointClass base(dota_item) = item_vile_phial
+[
+]
+
 // C_DOTA_Item_VindicatorsAxe
 @PointClass base(dota_item) = item_vindicators_axe
 [
@@ -8258,11 +8428,6 @@
 
 // C_DOTA_Item_VitalityBooster
 @PointClass base(dota_item) = item_vitality_booster
-[
-]
-
-// C_DOTA_Item_Vladmir
-@PointClass base(dota_item) = item_vladmir
 [
 ]
 
@@ -9099,6 +9264,11 @@
 [
 ]
 
+// C_DOTA_Ability_LoneDruid_SpiritBear_SummonDruid
+@PointClass base(dota_base_ability) = lone_druid_spirit_bear_summon_druid
+[
+]
+
 // C_DOTA_Ability_LoneDruid_SpiritLink
 @PointClass base(dota_base_ability) = lone_druid_spirit_link
 [
@@ -9156,6 +9326,11 @@
 
 // C_DOTA_Ability_Lycan_Howl
 @PointClass base(dota_base_ability) = lycan_howl
+[
+]
+
+// CDOTA_Ability_Lycan_Pack_Hunter
+@PointClass base(dota_base_ability) = lycan_pack_hunter
 [
 ]
 
@@ -9351,11 +9526,6 @@
 
 // C_DOTA_Ability_Meepo_FairShare
 @PointClass base(dota_base_ability) = meepo_fair_share
-[
-]
-
-// C_DOTA_Ability_Meepo_Fling
-@PointClass base(dota_base_ability) = meepo_fling
 [
 ]
 
@@ -9604,6 +9774,11 @@
 [
 ]
 
+// CDOTA_Ability_MudGolem_HurlBigBoulder
+@PointClass base(dota_base_ability) = mud_golem_hurl_big_boulder
+[
+]
+
 // CDOTA_Ability_MudGolem_HurlBoulder
 @PointClass base(dota_base_ability) = mud_golem_hurl_boulder
 [
@@ -9781,6 +9956,11 @@
 
 // C_NetTestBaseCombatCharacter
 @PointClass base(C_BaseCombatCharacter) = net_test_basecombatcharacter
+[
+]
+
+// CDOTA_Ability_Neutral_Gold_Upgrade_Ability
+@PointClass base(dota_base_ability) = neutral_gold_upgrade_ability
 [
 ]
 
@@ -9986,6 +10166,11 @@
 
 // C_DOTA_Unit_Hero_Beastmaster_Hawk
 @PointClass base(npc_dota_beastmaster_beasts) = npc_dota_beastmaster_hawk
+[
+]
+
+// C_DOTA_Unit_Hero_Beastmaster_Thunderhide
+@PointClass base(npc_dota_beastmaster_beasts) = npc_dota_beastmaster_thunderhide
 [
 ]
 
@@ -10962,6 +11147,11 @@
 [
 ]
 
+// C_DOTA_Stone_Of_Recall
+@PointClass base(npc_dota_building) = npc_dota_stone_of_recall
+[
+]
+
 // C_DOTA_NPC_Techies_Minefield_Sign
 @PointClass base(C_DOTA_BaseNPC_Additive) = npc_dota_techies_minefield_sign
 [
@@ -11142,6 +11332,11 @@
 [
 ]
 
+// CDOTA_Ability_NyxAssassin_ScarabMetabolism
+@PointClass base(dota_base_ability) = nyx_assassin_scarab_metabolism
+[
+]
+
 // C_DOTA_Ability_Nyx_Assassin_SpikedCarapace
 @PointClass base(dota_base_ability) = nyx_assassin_spiked_carapace
 [
@@ -11189,6 +11384,11 @@
 
 // C_DOTA_Ability_Obsidian_Destroyer_SanityEclipse
 @PointClass base(dota_base_ability) = obsidian_destroyer_sanity_eclipse
+[
+]
+
+// C_DOTA_Ability_Odobenus_Blight
+@PointClass base(dota_base_ability) = odobenus_blight
 [
 ]
 
@@ -11242,6 +11442,16 @@
 [
 ]
 
+// C_DOTA_Ability_OgreSeal_Flop
+@PointClass base(dota_base_ability) = ogre_seal_flop
+[
+]
+
+// C_DOTA_Ability_OgreSealPup_DisapprovalAura
+@PointClass base(dota_base_ability) = ogre_seal_pup_disapproval_aura
+[
+]
+
 // CDOTA_Ability_Omniknight_Angelic_Flight
 @PointClass base(dota_base_ability) = omniknight_angelic_flight
 [
@@ -11289,6 +11499,11 @@
 
 // C_DOTA_Ability_Omniknight_Repel
 @PointClass base(dota_base_ability) = omniknight_repel
+[
+]
+
+// C_DOTA_Ability_Omniknight_RighteousPath
+@PointClass base(dota_base_ability) = omniknight_righteous_path
 [
 ]
 
@@ -12106,6 +12321,11 @@
 
 // C_DotaQuest
 @PointClass base(C_BaseEntity) = quest
+[
+]
+
+// C_DOTA_Ability_Radigull_Eggstremism
+@PointClass base(dota_base_ability) = radigull_eggstremism
 [
 ]
 
@@ -13061,6 +13281,11 @@
 
 // C_SoundOpvarSetDomeEntity
 @PointClass base(snd_opvar_set_point) = snd_opvar_set_dome
+[
+]
+
+// C_SoundOpvarSetEnclosureEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_enclosure
 [
 ]
 
@@ -17234,6 +17459,11 @@
 [
 ]
 
+// C_DOTA_Ability_Stone_Of_Recall_Teleport
+@PointClass base(dota_base_ability) = stone_of_recall_teleport
+[
+]
+
 // C_DOTA_Ability_StormSpirit_BallLightning
 @PointClass base(dota_base_ability) = storm_spirit_ball_lightning
 [
@@ -17849,6 +18079,11 @@
 [
 ]
 
+// C_DOTA_Ability_Undying_Bite
+@PointClass base(dota_base_ability) = undying_bite
+[
+]
+
 // C_DOTA_Ability_Undying_CeaselessDirge
 @PointClass base(dota_base_ability) = undying_ceaseless_dirge
 [
@@ -18191,6 +18426,11 @@
 
 // C_DOTA_Ability_Weaver_TimeLapse
 @PointClass base(dota_base_ability) = weaver_time_lapse
+[
+]
+
+// C_DOTA_Ability_Weaver_TimeLapseAlly
+@PointClass base(dota_base_ability) = weaver_time_lapse_ally
 [
 ]
 

@@ -102,11 +102,14 @@ class CPulseEditorSettings
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flRecentExecConnectionIndicatorSize; // = 8
 	CUtlString m_RecentExecConnectionIndicatorImg; // = "tools/images/pulse_editor/connection_execution_history.png"
+	// MPropertyColorPlusAlpha
+	Color m_colHighlightCursorIcon; // = [ 255, 0, 0, 192 ]
 	bool m_bBreakOnExceptions;
 	bool m_bShowExecutionHistory;
 	bool m_bBoxSelectRequiresFullyContained;
 	bool m_bShowFullContextLogging;
 	bool m_bFollowCursorDuringDebugSteps; // = true
+	bool m_bHighlightCursors;
 	// MPropertyStartGroup = "+Group Layout"
 	float32 m_flFlowMinWidth; // = 200
 	Color m_colSelectedBorder; // = [ 255, 255, 0 ]
@@ -158,4 +161,19 @@ class CPulseEditorSettings
 	Vector2D m_vecTimelinePauseIconOffset; // = [ -8, 3 ]
 	float32 m_flTimelineCursorHeight; // = 12
 	float32 m_flTimelineCursorTextHeight; // = 20
+	// MPropertyStartGroup = "+Diff"
+	// MPropertyAttributeRange = "4 64"
+	float32 m_flDiffEdgeArrowLength; // = 40
+	// MPropertyAttributeRange = "2 32"
+	float32 m_flDiffEdgeArrowHalfWidth; // = 16
+	// MPropertyAttributeRange = "2 64"
+	float32 m_flDiffEdgeArrowHeadLength; // = 16
+	// MPropertyAttributeRange = "1 16"
+	float32 m_flDiffEdgeArrowStemHalfWidth; // = 8
+	// MPropertyAttributeRange = "0 32"
+	float32 m_flDiffEdgeArrowMargin; // = 8
+	// MPropertyAttributeRange = "0 32"
+	float32 m_flDiffEdgeArrowLabelOffset; // = 12
+	// MPropertyAttributeRange = "4 64"
+	float32 m_flDiffEdgeArrowClickRadius; // = 20
 };

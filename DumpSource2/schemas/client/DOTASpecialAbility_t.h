@@ -16,11 +16,13 @@ class DOTASpecialAbility_t
 	DAMAGE_TYPES m_nDamageTypeField;
 	uint8 m_unLevelUpInterval;
 	uint8 m_unLevelUpBonusRequiredLevel;
+	float32 m_flLevelUpMaxValue;
 	bool m_bSpellDamageField;
 	bool m_bRequiresScepterField;
 	bool m_bRequiresShardField;
 	bool m_bAffectedByAoEIncrease;
 	bool m_bDynamicValue;
-	bool m_bAffectedByCurio;
+	int8 m_nAffectedByCurio;
+	bool m_bApplyEffectiveness;
 	bool m_bShowAbsoluteValues;
 };

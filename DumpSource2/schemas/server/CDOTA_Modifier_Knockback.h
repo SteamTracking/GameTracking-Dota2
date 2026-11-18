@@ -8,6 +8,7 @@ class CDOTA_Modifier_Knockback : public CDOTA_Buff
 	float32 m_flZDelta;
 	float32 m_fCurrentTimeHoriz;
 	float32 m_fCurrentTimeVert;
+	bool m_bDirectionProvided;
 	bool m_bShouldStun;
 	bool m_bRespectLeash;
 	bool m_bReversePolarity;

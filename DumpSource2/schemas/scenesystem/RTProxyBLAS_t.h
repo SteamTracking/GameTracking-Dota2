@@ -7,6 +7,6 @@ class RTProxyBLAS_t
 	uint16 m_nVertexCount;
 	VertexAlbedoFormat_t m_albedoFormat; // = "VERTEX_ALBEDO_NONE"
 	AABB_t m_boundLs;
-	Vector m_vVertexOriginLs;
+	Vector m_vVertexOriginLs; // = [ 0, 0, 0 ]
 	Vector m_vVertexExtentLs;
 };

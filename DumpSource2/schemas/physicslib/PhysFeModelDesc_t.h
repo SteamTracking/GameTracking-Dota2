@@ -96,6 +96,7 @@ class PhysFeModelDesc_t
 	CUtlVector< int16 > m_SkelParents;
 	CUtlVector< FeNodeWindBase_t > m_DynNodeWindBases;
 	CUtlVector< FeModelSelfCollisionLayer_t > m_SelfCollisionLayers;
+	CUtlVector< FeModelDeformer_t > m_Deformers;
 	float32 m_flInternalPressure;
 	float32 m_flDefaultTimeDilation;
 	float32 m_flWindage;

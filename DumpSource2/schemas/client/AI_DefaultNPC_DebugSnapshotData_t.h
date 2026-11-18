@@ -1,4 +1,5 @@
 // MPropertyFriendlyName = "Default NPC"
+// MDebugSnapshotDataSortPriority (UNKNOWN FOR PARSER)
 // MHasKV3TransferPolymorphicClassname
 class AI_DefaultNPC_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {

@@ -384,7 +384,7 @@ cavern_crawl_ui_generate_path_pos (developmentonly clientdll)
 cc_emit (developmentonly clientdll defensive)
 	Emits a closed caption
 
-changelevel (release)
+changelevel (release vconsole_fuzzy_matching vconsole_set_focus)
 	changelevel <mapname> :Multiplayer change level.
 
 chat_channel_debug (developmentonly clientdll defensive)
@@ -565,6 +565,9 @@ cl_ent_joints (clientdll cheat)
 	Displays the joint names + axes an entity.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
+cl_ent_list_names (developmentonly clientdll defensive)
+	List entity names
+
 cl_ent_messages (clientdll cheat)
 	Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
@@ -687,7 +690,7 @@ cl_imgui_debug_entity (clientdll cheat)
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 cl_imgui_set_selection (clientdll cheat)
-	Sets ImGui selection
+	Sets ImGui selection. Add 'focus' to bring the Entity Browser to the front.
 
 cl_imgui_set_status_text (clientdll cheat)
 	Sets ImGui header status text
@@ -815,6 +818,9 @@ cl_resetfps (developmentonly clientdll defensive)
 cl_rr_dump_rules (clientdll cheat)
 	Print all response rules
 
+cl_save_check_persistent_resources (developmentonly clientdll defensive)
+	Re-precache persistent entities and report precached resources that are no longer resident
+
 cl_script_add_debug_filter (clientdll cheat)
 	Add a filter to the game debug overlay
 
@@ -892,6 +898,9 @@ cl_soundscape_flush (clientdll cheat server_can_execute)
 
 cl_soundscape_printdebuginfo (developmentonly clientdll defensive)
 	print soundscapes
+
+cl_spawn_group_list_filters (clientdll cheat release)
+	List the registered spawn group entity filters.
 
 cl_spewserializers (cheat)
 	Spew serializers
@@ -1644,9 +1653,6 @@ dota_gold_summary (developmentonly clientdll defensive)
 dota_grant_consumable_charges (developmentonly gamedll cheat)
 	Grants a player a change in consumables
 
-dota_grant_event_action (developmentonly clientdll)
-	Grant all event 
-
 dota_gridnav_perf_test (developmentonly gamedll defensive)
 	<no description>
 
@@ -1910,12 +1916,6 @@ dota_remove_ability (gamedll client_can_execute)
 
 dota_remove_map_override (clientdll hidden cheat)
 	Remove a test map override
-
-dota_reset_event_action (developmentonly clientdll)
-	<event id> <start action id> [remove audit]
-
-dota_reset_event_action_range (developmentonly clientdll)
-	<event id> <start action id> <end action id> [remove audit]
 
 dota_reset_muerta_ofrenda_state (developmentonly clientdll defensive)
 	<no description>
@@ -2247,9 +2247,6 @@ dota_test_glyph (developmentonly clientdll defensive)
 dota_test_hero_token_popup (developmentonly clientdll cheat)
 	Show the hero token popup.
 
-dota_test_in_game_prediction (developmentonly gamedll)
-	Tests the in-game prediction system
-
 dota_test_npc (developmentonly gamedll defensive)
 	Creates a testing npc
 
@@ -2574,6 +2571,9 @@ ent_kill (gamedll cheat)
 	Kills the given entity(s)
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
+ent_list_names (developmentonly gamedll defensive)
+	List entity names
+
 ent_messages (gamedll cheat)
 	Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
@@ -2722,6 +2722,9 @@ ents (developmentonly gamedll defensive)
 escape (release clientcmd_can_execute)
 	Escape key pressed.
 
+event_grant_action (developmentonly clientdll)
+	<event id> <action id> [quantity] - Grant an event action
+
 event_grant_points (developmentonly clientdll)
 	Reset all state on your account relating to the given event id
 
@@ -2745,6 +2748,12 @@ event_override_premium_points (developmentonly clientdll)
 
 event_reload_schema (linked_concommand developmentonly gamedll clientdll defensive)
 	<no description>
+
+event_reset_action (developmentonly clientdll)
+	<event id> <action id> [remove audit]
+
+event_reset_action_range (developmentonly clientdll)
+	<event id> <start action id> <end action id> [remove audit]
 
 event_reset_state (developmentonly clientdll)
 	Reset all state on your account relating to the given event id
@@ -2932,16 +2941,16 @@ generate_split_challenge_files (developmentonly clientdll)
 generate_trash_synth (linked_concommand developmentonly defensive)
 	Args: [Asset directory Path]
 
-getpos (clientdll cheat)
+getpos (clientdll release)
 	dump position and angles to the console
 
-getpos_exact (clientdll cheat)
+getpos_exact (clientdll release)
 	dump origin and angles to the console
 
-getposcopy (clientdll cheat)
+getposcopy (clientdll release)
 	dump position and angles to the console and clipboard
 
-getposcopy_exact (clientdll cheat)
+getposcopy_exact (clientdll release)
 	dump origin and angles to the console and clipboard
 
 gfx_calculate_skin_diffusion_profile_dipole (developmentonly defensive)
@@ -3067,6 +3076,9 @@ hammer_dota_rebuild_paths (developmentonly defensive)
 hammer_force_autosave (developmentonly defensive)
 	<no description>
 
+hammer_goto_setpos (developmentonly defensive)
+	Moves the active hammer session's 3D views to a raw x y z or setpos x y z;setang p y r string
+
 hammer_map_files (developmentonly defensive)
 	<no description>
 
@@ -3153,7 +3165,7 @@ imgui_debug_entity (gamedll cheat)
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 imgui_set_selection (gamedll cheat)
-	Sets ImGui selection
+	Sets ImGui selection. Add 'focus' to bring the Entity Browser to the front.
 
 imgui_set_status_text (gamedll cheat)
 	Sets ImGui header status text
@@ -3317,6 +3329,9 @@ log_level (dontrecord release)
 
 log_verbosity (dontrecord release)
 	Set the verbosity of a logging channel.
+
+look_at_pos (developmentonly clientdll defensive)
+	Center the camera on the given position
 
 loop_dump (developmentonly defensive)
 	Print the listeners of the current loop mode
@@ -3645,6 +3660,12 @@ net_channels (release)
 net_connections_stats (release)
 	Print detailed network statistics for each network connection
 
+net_decode_callback_queue_stats_clear (developmentonly defensive)
+	Clear per-entity decode change callback stats
+
+net_decode_callback_queue_stats_dump (developmentonly defensive)
+	Print per-entity decode change callback stats
+
 net_fakeclear (release)
 	Clear all simulated network conditions
 
@@ -3738,6 +3759,9 @@ open_asset (developmentonly defensive)
 
 open_current_map_in_hammer (developmentonly)
 	opens the current map in hammer.
+
+open_current_map_in_hammer_with_current_setpos (developmentonly clientdll)
+	opens the current map in hammer with its camera at the current game camera.
 
 open_current_map_pulse_in_tool (developmentonly vconsole_fuzzy_matching)
 	Opens the specified pulse used in this map in the editor.
@@ -3892,7 +3916,7 @@ playcast (release)
 	Play a broadcast
 
 playdemo (release)
-	Play a recorded demo file (.dem ).
+	Play a recorded demo file (.dem ).  Options: start=<tick> end=<tick> timescale=<float> (run with no arguments for details).
 
 playdemo_scripted (developmentonly clientdll defensive)
 	Play a demo with an associated markup script.
@@ -3983,11 +4007,17 @@ r_render_coordination_state (developmentonly defensive)
 r_renderdoc_capture_frame (linked_concommand developmentonly defensive)
 	Triggers a RenderDoc capture
 
+r_renderdoc_capture_frame_unscheduled (linked_concommand developmentonly defensive)
+	Triggers a RenderDoc capture with sc_rendergraph_schedule pass reordering disabled, so passes are captured in submission order
+
 r_renderdoc_capture_window_dx11 (developmentonly)
 	Triggers a RenderDoc capture of a specific Window
 
 r_renderdoc_capture_window_vulkan (developmentonly)
 	Triggers a RenderDoc capture of a specific Window
+
+r_send_gpu_memory_report (developmentonly defensive)
+	Send r_gpu_mem_stats, a VMA memory dump and the console log in a minidump report.  Usage: r_send_gpu_memory_report [name ...] (default dang)
 
 r_textures_evict_all (linked_concommand developmentonly defensive)
 	Evict all resident texture.
@@ -4053,7 +4083,7 @@ removeid (developmentonly defensive)
 removeip (developmentonly defensive)
 	Remove an IP address from the ban list.
 
-repeat_last_console_command (release)
+repeat_last_console_command (dontrecord release)
 	Repeat last console command.
 
 replay_death (gamedll cheat)
@@ -4127,6 +4157,9 @@ run_perftest (cheat dontrecord)
 save (developmentonly gamedll dontrecord defensive)
 	Save Game
 
+save_check_persistent_resources (developmentonly gamedll defensive)
+	Re-precache persistent entities and report precached resources that are no longer resident
+
 save_clear_subdirectory (developmentonly gamedll replicated defensive)
 	<no description>
 
@@ -4138,12 +4171,6 @@ save_set_subdirectory (developmentonly gamedll replicated defensive)
 
 save_showelapsedtime (developmentonly gamedll defensive)
 	display up-to-date elapsed play time
-
-save_watchclass (developmentonly gamedll defensive)
-	Restrict spew to entities with matching classname
-
-save_watchentity (developmentonly gamedll defensive)
-	Restrict spew to entity index
 
 say (gamedll client_can_execute)
 	Display player message
@@ -4159,6 +4186,12 @@ sc_dumpworld (cheat)
 
 sc_dumpworld3d (cheat)
 	Dump the objects in a sceneworld into a 3d geoview buffer (Usage: sc_dumpworld3d <world_index>)
+
+sc_gpu_profiler_record_start (developmentonly)
+	Start recording every frame of GPU profiler timings.
+
+sc_gpu_profiler_record_stop (developmentonly)
+	Stop recording GPU profiler timings and write <name>_frames.csv and <name>_summary.csv. Optional argument: name (default is timestamped).
 
 sc_list_extradata_allocations (developmentonly defensive)
 	Prints out the overall extra data allocation counts
@@ -4539,6 +4572,12 @@ snd_sos_flush_operators (cheat)
 snd_sos_get_operator_field_info (cheat)
 	Currently gets info for a single operator field
 
+snd_sos_list_global_opvars (developmentonly defensive)
+	Lists the global opvars (opvars of library stacks) with their values: snd_sos_list_global_opvars [stack name filter]. Called from a tool stream tool it replies with them instead (globalOpVar records)
+
+snd_sos_list_stack_fields (developmentonly defensive)
+	Lists the operators of each operator stack (library stack) and their fields, by the full names stackValues uses: snd_sos_list_stack_fields [stack name filter] [field name filter] ("" for any stack). Called from a tool stream tool it replies with them instead (stackFields records, one per stack)
+
 snd_sos_pause_soundevent (cheat)
 	Pause the specified soundevent in the list
 
@@ -4558,7 +4597,7 @@ snd_sos_print_operator_stack_operator (cheat)
 	Prints an operator from a stack
 
 snd_sos_print_operator_stacks (cheat)
-	Prints a list of currently available stacks
+	Prints a list of currently available stacks with their operator and field counts: snd_sos_print_operator_stacks [stack name filter]. Called from a tool stream tool it replies with them instead (stack records)
 
 snd_sos_print_operators (cheat)
 	Prints a list of currently available operators
@@ -4659,6 +4698,18 @@ snd_steamaudio_enable_spatial_blend_fix (cheat)
 snd_steamaudio_halton_sequence (cheat)
 	Generate Halton Sequence for a given order and number of samples.
 
+snd_steamaudio_hammer_dynamic_object_close (cheat)
+	<name, hammer id or *> Closes dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
+
+snd_steamaudio_hammer_dynamic_object_open (cheat)
+	<name, hammer id or *> [openness 0-1, default 1] Opens dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
+
+snd_steamaudio_hammer_dynamic_object_toggle (cheat)
+	<name, hammer id or *> Opens closed and closes open dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
+
+snd_steamaudio_hammer_dynamic_objects_list (developmentonly defensive)
+	Lists the dynamic objects (doors, windows) of the baked occlusion Toggle Probe Visualization shows, and how open each is.
+
 snd_stereo_speaker_pan_exponent (developmentonly defensive)
 	Specifies the exponent for the pan xfade from speaker to speaker if the "exp" pan law is being used.
 
@@ -4687,7 +4738,10 @@ soundscape_flush (developmentonly gamedll defensive)
 	Flushes the server & client side soundscapes
 
 soundsysteminfo (developmentonly defensive)
-	Describe the current sound device without an active voice list.
+	Describe the current sound device without an active voice list, and the speaker layout the panner uses. Called from a tool stream tool it replies with the speaker layout instead (layout record)
+
+spawn_group_list_filters (gamedll cheat release)
+	List the registered spawn group entity filters.
 
 spec_goto (clientdll clientcmd_can_execute)
 	Move the spectator camera to a specific location. `spec_goto x y z pitch yaw`
@@ -5115,6 +5169,22 @@ vprof_generate_report_budget (developmentonly defensive)
 
 vprof_generate_report_hierarchy (developmentonly defensive)
 	Generate a report to the console.
+
+vprof_lite_dump (developmentonly defensive)
+	vprof_lite_dump [filename] [stop=1]
+	Write the vprof lite budget group statistics as CSV, then stop the profiler and clear its data.
+	stop=0 leaves the profiler running with its data.  The default filename is vprof_lite.csv in the mod directory;
+	an absolute path is used as given.  Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own.
+
+vprof_lite_start (developmentonly defensive)
+	vprof_lite_start [clear=1]
+	Start the vprof lite profiler, clearing any data it holds.  clear=0 keeps the data and continues adding to it.
+	Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own.
+
+vprof_lite_stop (developmentonly defensive)
+	vprof_lite_stop [clear=1]
+	Stop the vprof lite profiler and clear its data.  clear=0 keeps the data, for engine_frametime_print_report or vprof_lite_dump.
+	Sets vprof_lite_auto 0, so the game will not start the profiler on its own.
 
 vprof_loadhitstore_scale (developmentonly hidden)
 	Scale used when displaying load-hit-stores (0 = use default)

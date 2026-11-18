@@ -5,6 +5,7 @@ class PGDInstruction_t
 	PulseRuntimeRegisterIndex_t m_nReg0; // = -1
 	PulseRuntimeRegisterIndex_t m_nReg1; // = -1
 	PulseRuntimeRegisterIndex_t m_nReg2; // = -1
+	PulseRuntimeLambdaIndex_t m_nLambdaIdx; // = -1
 	PulseRuntimeInvokeIndex_t m_nInvokeBindingIndex; // = -1
 	PulseRuntimeChunkIndex_t m_nChunk; // = -1
 	int32 m_nDestInstruction;

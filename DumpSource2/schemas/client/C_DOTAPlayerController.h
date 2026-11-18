@@ -107,5 +107,7 @@ class C_DOTAPlayerController : public CBasePlayerController
 	int32[4] m_iMusicOperatorVals;
 	CUtlVector< sControlGroupElem >[10] m_ControlGroups;
 	KeyValues* m_pkvControlGroupKV;
+	HeroID_t m_cachedWearablesHeroID;
+	CUtlVector< C_DOTAWearableItem* > m_vecCachedWearables;
 	float32 m_flAltHeldStartTime;
 };

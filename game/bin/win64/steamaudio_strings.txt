@@ -1009,7 +1009,6 @@
 /usr/local/ssl/lib/engines
 /usr/local/ssl/private
 0123456789
-0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios.
 14 (default)
 3DES
 3DES(168)
@@ -1033,7 +1032,6 @@
 <invalid>
 <non-RTTI type>
 <unsupported>
-A probe pair keeps the deltas of a dynamic object only if opening it changes the reflection energy by more than this fraction of the energy with all dynamic objects closed, or of snd_steamaudio_baked_occlusion_reflection_regularization if that is higher.
 AA Compromise
 AACompromise
 ACCESS_DESCRIPTION
@@ -1210,9 +1208,7 @@ ASN1_verify
 AUTHORITY_INFO_ACCESS
 AUTHORITY_KEYID
 Acceptable OCSP Responses
-Add the baked deltas of open dynamic objects (doors, windows) to the baked occlusion.
 Affiliation Changed
-Air absorption coefficient used when baking occlusion.
 Any Extended Key Usage
 Any Purpose
 Any language
@@ -1582,8 +1578,6 @@ CSPName
 CSteamAudio::BakeDimensions
 CSteamAudio::BakePathing
 CSteamAudio::BakeReverb
-CSteamAudioBakedOcclusionDynamicObject
-CSteamAudioBakedOcclusionDynamicObjectPair
 CSteamAudioBakedReverbData::SetKV3FromProbeBatch
 CSteamAudioBakedReverbData::SetProbeBatchFromKV3
 CSteamAudioMovableBakedData
@@ -1646,7 +1640,6 @@ Code Signing
 Code=
 Cofactor: 
 CompressBakedReverbInProbeBatch
-Compressor Type
 Content file %s is corrupt (Chunk: %s). Verify integrity of game files.\n
 Content file %s is corrupt. Hashing could not be verified. Verify integrity of game files.\n
 Content file %s is corrupt. Verify integrity of game files.\n
@@ -2464,7 +2457,6 @@ Materials: Filesystem not initialized.\n
 Materials: Imported %d probes from baked file (%s).\n
 Materials: Loaded baked data file (%s).\n
 Materials: Unable to load baked data file (%s).\n
-Max ray length in meters to find resonant material.
 MessageBoxW
 Microsoft CSP Name
 Microsoft Commercial Code Signing
@@ -2477,7 +2469,6 @@ Microsoft Smartcardlogin
 Microsoft Trust List Signing
 Microsoft Universal Principal Name
 Missing custom_hrtfs key field in custom hrtf properties file. Cannot load!
-MixBus
 Mod Depth
 Mod Rate
 Module32First
@@ -2548,7 +2539,6 @@ Nonce
 Not After: 
 Not Before: 
 Not safe to 'new' this class due to alignment requirements
-Number of rays to trace to find resonant materials.
 O/lc\r=<1\r-,!@
 OBJ lib
 OBJECT DESCRIPTOR
@@ -3002,9 +2992,7 @@ RSA_verify_ASN1_OCTET_STRING
 RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
 RSDS
-Radius factor to multiply the distance between probes with to get the radius within which probes are averaged by the occlusion spatial filter, applied when baking.
 Ratio
-Rays are only sampled in half angle measured from +Z. 120 deg covers everything except a 60 deg cap around straight down.
 ReadConsoleInputW
 Reasons
 Reflections... (rays: %d x %d) (bounces: %d) (bidirectional: %s) (#runs: %d)\n
@@ -3237,7 +3225,6 @@ SXNET_get_id_asc
 SXNET_get_id_ulong
 SXNetID
 Salt Length: 0x
-Scales the deltas of the open dynamic objects before they are added to the baked occlusion.
 Secure Electronic Transactions
 Security
 Seed:
@@ -3247,9 +3234,6 @@ SetGrowSize
 Signature verification failed.
 Size Max
 Size Min
-Smooth
-Spatial filter of the occlusion reflection energy, applied when baking. 0: No spatial filtering. 1: bidirectional spatial filter.
-Spew Steam Audio scene list changes and realtime direct occlusion results (at most 10 lines a second).
 Stack part of OpenSSL 1.0.2j  26 Sep 2016
 Stages
 SteamAudio direct: NO SCENE, sound at (%.0f %.0f %.0f) %.0f from the listener is left unoccluded\n
@@ -3369,10 +3353,8 @@ Unable to load custom HRTF [%s]\n
 Unknown version %d for vpk %s
 Unprocessed type %d\n
 Unrecognized EHashType found: %d
-Unspecified
 Unsupported extension feature
 Usage: snd_steamaudio_halton_sequence <order> <numsamples>.\n
-Use alternate probe lookup algorithm to query materials for listener position based on kd-tree of probe points.
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -3396,7 +3378,6 @@ VMS_BIND_SYM
 VMS_LOAD
 VMS_MERGER
 VMS_UNLOAD
-VMixCompressorType_t
 VPK directory for '%s' corrupt
 Verify error:
 Verify failure\n
@@ -5254,27 +5235,11 @@ localKeyID
 localityName
 locator
 mXRecord
-m_flSpatialFilterRadiusFactor
-m_nCompressorType
-m_nHammerIdHash
-m_nHammerIdHashA
-m_nHammerIdHashB
-m_nSpatialFilterMode
 m_pClusteredProbeBatch
-m_sHammerId
 m_vecAABBs
 m_vecData
-m_vecDynamicObjectPairs
-m_vecDynamicObjects
 m_vecInitialTransforms
 m_vecKeys
-m_vecPairs
-m_vecPathingDeviationDeltas
-m_vecPathingDeviationResiduals
-m_vecPathingRatioDeltas
-m_vecPathingRatioResiduals
-m_vecReflectionEnergyDeltas
-m_vecReflectionEnergyResiduals
 mac absent
 mac generation error
 mac setup error
@@ -6172,17 +6137,6 @@ smime.p7z
 smime_sign
 smimeencrypt
 smimesign
-snd_steamaudio_baked_materials_probelookup_usealternate
-snd_steamaudio_baked_occlusion_dynamic_object_delta_scale
-snd_steamaudio_baked_occlusion_dynamic_objects
-snd_steamaudio_custombake_dynamic_object_energy_threshold
-snd_steamaudio_custombake_materials_coneangle
-snd_steamaudio_custombake_materials_max_raylength
-snd_steamaudio_custombake_materials_numrays
-snd_steamaudio_custombake_occlusion_air_absorption_coefficient
-snd_steamaudio_custombake_occlusion_spatialfilter_mode
-snd_steamaudio_custombake_occlusion_spatialfilter_radius_factor
-snd_steamaudio_debug_scene_spew
 snmpv2
 socket
 spkac

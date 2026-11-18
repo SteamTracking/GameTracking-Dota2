@@ -1,6 +1,7 @@
 class CDOTA_Ability_PrimalBeast_Rock_Throw : public CDOTABaseAbility
 {
 	int32 base_damage;
+	int32 damage_str_pct;
 	float32 impact_radius;
 	float32 fragment_impact_radius;
 	int32 fragment_impact_distance;

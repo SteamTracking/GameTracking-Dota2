@@ -7,4 +7,6 @@ class SAVE_HEADER
 	CUtlString m_sSpawnGroupName;
 	matrix3x4a_t m_vecWorldOffset;
 	float32 m_flSaveTime;
+	int32 m_nGameSavedTick;
+	int32 m_nGameDeltaTicks;
 };

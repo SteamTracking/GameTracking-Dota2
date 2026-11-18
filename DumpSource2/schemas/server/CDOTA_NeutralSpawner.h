@@ -16,9 +16,8 @@ class CDOTA_NeutralSpawner : public CPointEntity
 	int32 m_iBaseType;
 	bool m_bLimitedBatches;
 	PlayerID_t m_iStackingCreditPlayerID;
-	float32 m_fInternalSpawnTimerTime;
-	CountdownTimer m_InternalSpawnTimer;
 	CountdownTimer m_FXTimer;
+	bool m_bFinishedPendingUnits;
 	CUtlVector< CHandle< CDOTA_BaseNPC > > m_PendingUnits;
 	CUtlVector< CHandle< CDOTA_BaseNPC > > m_Units;
 	int32 m_iNextTypeUnitCount;

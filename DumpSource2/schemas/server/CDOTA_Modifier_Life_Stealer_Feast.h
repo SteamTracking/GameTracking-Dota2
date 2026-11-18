@@ -4,6 +4,8 @@ class CDOTA_Modifier_Life_Stealer_Feast : public CDOTA_Buff
 	float32 hp_damage_percent;
 	int32 creep_deny_percent;
 	int32 bonus_hp_per_creep;
+	int32 bonus_hp_per_creep_num_required;
 	int32 bonus_hp_per_hero;
 	int32 m_nTotalBonusHP;
+	int32 m_nCreepCounter;
 };

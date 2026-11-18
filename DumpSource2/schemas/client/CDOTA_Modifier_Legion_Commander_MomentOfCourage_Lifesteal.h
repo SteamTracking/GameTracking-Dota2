@@ -2,4 +2,5 @@ class CDOTA_Modifier_Legion_Commander_MomentOfCourage_Lifesteal : public CDOTA_B
 {
 	int32 hp_leech_percent;
 	int32 secondary_attack_damage;
+	float32 crit_mult;
 };

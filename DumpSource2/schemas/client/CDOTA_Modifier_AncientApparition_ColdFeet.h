@@ -6,4 +6,6 @@ class CDOTA_Modifier_AncientApparition_ColdFeet : public CDOTA_Buff
 	float32 stun_duration;
 	int32 damage_per_second;
 	float32 aoe;
+	int32 movement_slow;
+	bool leash;
 };

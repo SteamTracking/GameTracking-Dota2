@@ -39,10 +39,12 @@ class C_INIT_StatusEffectTf : public CParticleFunctionInitializer
 	float32 m_flSFXSDetailScrollZ;
 	// MPropertyFriendlyName = "D_ANIMATED_DETAIL"
 	bool m_bAnimatedDetail;
-	// MPropertyFriendlyName = "$SFXDetailAnimationTimePerFrame"
-	float32 m_flSFXDetailAnimationTimePerFrame; // = 0.1
-	// MPropertyFriendlyName = "$SFXDetailAnimationTimeOffset"
-	float32 m_flSFXDetailAnimationTimeOffset;
+	// MPropertyFriendlyName = "D_ANIMATED_NORMAL"
+	bool m_bAnimatedNormal;
+	// MPropertyFriendlyName = "$SFXAnimationTimePerFrame"
+	float32 m_flSFXAnimationTimePerFrame; // = 0.1
+	// MPropertyFriendlyName = "$SFXAnimationTimeOffset"
+	float32 m_flSFXAnimationTimeOffset;
 	// MPropertyFriendlyName = "$SFXUseModelUVs"
 	float32 m_flSFXSUseModelUVs;
 	// MPropertyFriendlyName = "$SFXEnvMapAmount"

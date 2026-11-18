@@ -10,7 +10,7 @@ class CBaseTrigger : public CBaseToggle
 	CEntityIOOutput m_OnTouchingChanged;
 	CUtlVector< CHandle< CBaseEntity > > m_hTouchingEntities;
 	CUtlSymbolLarge m_iFilterName;
-	CHandle< CBaseFilter > m_hFilter;
 	bool m_bDisabled;
+	CHandle< CBaseFilter > m_hFilter;
 	bool m_bUseAsyncQueries;
 };

@@ -6,7 +6,9 @@ class CGameRules
 	int32 m_nQuestPhase;
 	uint32 m_nLastMatchTime;
 	uint64 m_nLastMatchTime_MatchID64;
+	int32 m_nLastSimulationTick;
 	int32 m_nTotalPausedTicks;
+	int32 m_nTotalGameDeltaTicks;
 	int32 m_nPauseStartTick;
 	bool m_bGamePaused;
 };

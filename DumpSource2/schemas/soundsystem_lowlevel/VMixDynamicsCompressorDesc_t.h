@@ -13,11 +13,13 @@ class VMixDynamicsCompressorDesc_t
 	// MPropertyFriendlyName = "Release time (ms)"
 	float32 m_flReleaseTimeMS; // = 400
 	// MPropertyFriendlyName = "Threshold detection time (ms)"
-	float32 m_flRMSTimeMS; // = 300
+	float32 m_flRMSTimeMS; // = 100
 	// MPropertyFriendlyName = "Dry/Wet"
 	float32 m_flWetMix; // = 1
 	// MPropertyFriendlyName = "SideChain Highpass"
 	float32 m_flSCHighPassFreq;
+	// MPropertyFriendlyName = "Compressor Type"
+	VMixCompressorType_t m_nCompressorType; // = "MixBus"
 	// MPropertyFriendlyName = "Peak mode"
 	bool m_bPeakMode;
 	// MPropertyFriendlyName = "Auto Make-up Gain"

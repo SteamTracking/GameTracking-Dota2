@@ -10,5 +10,8 @@ class CDOTA_Modifier_Kez_RavensVeil_Thinker : public CDOTA_Buff
 	float32 blind_duration;
 	float32 vuln_duration;
 	bool mark_only_heroes;
+	bool buff_allies;
+	float32 buff_duration;
+	CUtlVector< CHandle< CBaseEntity > > m_alliesBuffed;
 	VectorWS m_vStartLoc;
 };

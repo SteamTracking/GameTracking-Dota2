@@ -52,4 +52,5 @@ class C_DOTABaseAbility : public C_BaseEntity
 	CHandle< C_BaseEntity > m_hHiddenAbilityForDisplay;
 	bool m_bUpgradedWithTome;
 	float32 m_flLastCastClickTime;
+	float32 m_flLastDoubleTapCastTime;
 };

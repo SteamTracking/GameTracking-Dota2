@@ -6,10 +6,12 @@ class Blessing_t
 	BlessingID_t nID; // = -1
 	// MPropertyAttributeEditor = "VDataNodePicker(//m_mapBlessingTypes/*)"
 	CUtlString BlessingType;
-	// MPropertyDescription = "fragment cost"
+	// MPropertyDescription = "blessing point cost if the map uses blessing levels, otherwise currency cost"
 	int32 nCost;
 	// MPropertyDescription = "number of grants of action to give"
 	int32 nValue;
+	// MPropertyDescription = "amount of the blessing's effect, for events that apply blessings by amount instead of by grants"
+	float32 flValue;
 	// MPropertyDescription = "can you unlock this node without owning any connected nodes?"
 	bool bStartNode;
 	Vector2D vecPos;

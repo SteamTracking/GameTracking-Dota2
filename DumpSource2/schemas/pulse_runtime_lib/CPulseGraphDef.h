@@ -14,5 +14,6 @@ class CPulseGraphDef
 	CUtlVector< CPulse_Constant > m_Constants;
 	CUtlVector< CPulse_DomainValue > m_DomainValues;
 	CUtlVector< CPulse_BlackboardReference > m_BlackboardReferences;
+	CUtlVector< CPulse_LambdaDef > m_LambdaDefs;
 	CUtlVector< CPulse_OutputConnection* > m_OutputConnections;
 };

@@ -5,4 +5,5 @@ class RenderSkeletonBone_t
 	matrix3x4_t m_invBindPose; // = [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0 ]
 	SkeletonBoneBounds_t m_bbox;
 	float32 m_flSphereRadius;
+	bool m_bRenderOnly;
 };

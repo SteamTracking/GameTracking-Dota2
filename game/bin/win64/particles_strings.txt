@@ -27,15 +27,12 @@
  [loop body, break -> C%d:I%d]
  depends on:
  next: %p, parent: %p\n
-!m_bUseMesh || !is_gpu_particle_system
 "Limit Count: " + m_nLimitCount
 "Position within sphere random" no longer supports the "randomly distribute to highest supplied Control Point" feature\n\t"Emit continuously" and "Emit noise" no longer support "scale emission to used control points".\n\t"Position from control points" had a max control point added to it.
 "Remap control point orientation to rotation" does something approaching sanity for the cases I looked at.  If we have cases where this isn't appropriate, we can split out the behavior.\n
 "Remap control point orientation to rotation" rewritten to make more sense.\n
 "Set control point rotation" pre-emission operator now correctly produces right-handed matrices [previously it would produce left-handed ones].
 "Twist around axis" force now rotates around the specified control point instead of control point 0.\n
-$SFXAnimationTimeOffset
-$SFXAnimationTimePerFrame
 $SFXDetailBlendMode
 %.4f/%.4f/%.4f
 %0*d
@@ -1070,7 +1067,6 @@ Array Remove Index
 Array Remove Invalid Elements
 Array Set Count
 Array Shuffle
-Artificially softens direct specular by clamping the minimum roughness this light sees (0-1)
 Assert True
 Async Call Method (Child Cursor) C%d:I%d
 Async Outflow (Child Cursor) C%d:I%d
@@ -1084,17 +1080,12 @@ Avg Actual Traces
 Avg Intersection Tests
 Avg. Render (us)
 Avg. Sim (us)
-BIND_LAMBDA
 BONE_INDICES
 BONE_WEIGHTS
 BOX_ANGLES
 BOX_FLAGS
 BOX_MAXS
 BOX_MINS
-BROADCAST_INVOKE
-BROADCAST_INVOKE_ARRAY_DOMAIN
-BROADCAST_INVOKE_ARRAY_SIMPLE
-BROADCAST_INVOKE_DOMAIN
 Bad KV3 data (%s)
 Bad KV3 data for resource '%s': %s\n
 Bad array index %d (array has %d elements)
@@ -1106,7 +1097,6 @@ Bad reinterpret on ArrayAppend
 Bad reinterpret on ArrayInsert
 Bad reinterpret on ArrayRemoveElementMatching
 Bad sequence in GetSequenceActivityName() for model '%s'!\n
-Base
 Base-10 logarithm
 Base-2 logarithm
 Begin testing a condition composed of Observable values. Continues checking until canceled.
@@ -1172,7 +1162,6 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
-CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
@@ -1187,14 +1176,16 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
-CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_PickBestOutflowSelector::ProcessSelector
 CPulseCell_RaceCursors::Start
 CPulseCell_RaceCursors::StopWaiting
 CPulseCell_Step_CallExternalMethod '%s'
 CPulseCell_Timeline::Start
+CPulseCell_Value_Curve
+CPulseCell_Value_Gradient
+CPulseCell_Value_RandomFloat
+CPulseCell_Value_RandomInt
 CPulseCell_WaitForCursorsWithTag::Wait
-CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -1322,10 +1313,8 @@ CPulseTestScriptLib::RegisterTestCheckpoint
 CPulseTestScriptLib::TestModeAssertTrue
 CPulseType
 CPulseVariant
-CPulse_LambdaDef
 CREATION_TIME
 CStrongHandle
-CURSOR_MAX_INSTRUCTIONS
 CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_MIRROR
@@ -1355,12 +1344,10 @@ C_INIT_InitFromCPSnapshot: Unsupported attribute data type! (%d)\n
 C_INIT_InitFromCPSnapshot: cannot initialize PREV_XYZ - XYZ cannot be read!\n
 C_INIT_InitFromCPSnapshot: framerate unknown initializing PREV_XYZ! Defaulting to 30fps, but particle velocity may look wrong...\n
 C_INIT_InitFromParentKilled: Unsupported attribute data type! (%d)\n
-C_OP_SetControlPointFromRenderAttribute
 C_OP_SetFromCPSnapshot: cannot initialize PREV_XYZ - XYZ cannot be read!\n
 C_OP_SetFromCPSnapshot: framerate unknown initializing PREV_XYZ! Defaulting to 30fps, but particle velocity may look wrong...\n
 Calculate vector attribute
 Call C%d:I%d (%s)
-Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Can NOT
 Cannot allocate abstract class
 Ceiling - round float up to nearest integer)
@@ -1399,6 +1386,7 @@ Compose Angles
 Compose Transforms
 Computes 2 raised to a power
 Computes e ( 2.71...) raised to a power
+Condition to evaluate when any of its dependent values change.
 Constrain distance to path between two control points
 Constrain distance to transform
 Constrain distance to user specified path
@@ -1436,8 +1424,8 @@ Cull when crossing sphere
 Cursor Has Tag
 Cursors Allowed To Run Parallel
 Cursors Allowed To Wait
+Curve
 Cycle Scalar
-D_ANIMATED_NORMAL
 Dampen Movement Relative to Plane
 Dampen Movement relative to model
 Data_Branch1xy
@@ -1456,18 +1444,6 @@ Domain: %s\n
 Dot Product Vector
 Dot Product of Vector a 
 Drive CP from global sound float
-EQ_ANIM_SEQUENCE
-EQ_MODEL_MATERIAL_GROUP
-EQ_PARTICLE_EHANDLE
-EQ_QANGLE
-EQ_RESOURCE
-EQ_RESOURCE_NAME
-EQ_SNDEVT_GUID
-EQ_SNDEVT_NAME
-EQ_TRANSFORM
-EQ_TRANSFORMWS
-EQ_VARIANT
-EQ_VDATA_CHOICE
 Elapsed time = %f\n
 Element Access R%d <- R%d[R%d]
 Emit continuously
@@ -1582,6 +1558,8 @@ Game Blackboards:
 Game Time To Float
 GameSupportsLegacyShaders
 Generate Brick Keys
+Generate a random float between min and max (inclusive)
+Generate a random integer between min and max (inclusive)
 GenerateCulledSortedIndexList
 GenerateSortedIndexList
 Get Relative Transform
@@ -1612,7 +1590,6 @@ Hitbox Offset Position
 IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
-INTERNAL_CALL_TO_PULSE
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
 If specified, each wait interval will vary randomly between WaitInterval this value
@@ -1811,18 +1788,6 @@ Movement skin to bones
 Movement skin to bones rigid
 Mul R%d <- R%d * R%d
 Multi-Segment Display Snapshot Generator
-NE_ANIM_SEQUENCE
-NE_MODEL_MATERIAL_GROUP
-NE_PARTICLE_EHANDLE
-NE_QANGLE
-NE_RESOURCE
-NE_RESOURCE_NAME
-NE_SNDEVT_GUID
-NE_SNDEVT_NAME
-NE_TRANSFORM
-NE_TRANSFORMWS
-NE_VARIANT
-NE_VDATA_CHOICE
 NONE/Disabled
 NULL CELL 
 Named model body part random
@@ -1847,6 +1812,7 @@ Normalize vector
 Not R%d <- !R%d
 Not safe to 'new' this class due to alignment requirements
 O@33S@1
+Observable
 Offset of m_Children.m_pHead: [%i]\n
 Offset vector to vector
 On Interval
@@ -1867,12 +1833,10 @@ PARENT_PARTICLE_ID
 PARENT_PARTICLE_INDEX
 PARTICLE_ID
 PET_SupportFadingOpaqueModels
-PF_TYPE_CONTROL_POINT_PLANE_DISTANCE
 PITCH
 PRECIPITATION
 PREV_XYZ
 PanelID
-Parent Map + VData
 Parent Map: %s\n
 Parent Particle ID
 Parent Particle Index
@@ -1953,13 +1917,10 @@ Profile Point 4
 PropWorldOrigin
 Pull towards control point
 Pulse domain which enables particle content to query leaf code to introspect game state.
-PulseExecHistoryCallerInfo_t
-PulseRuntimeLambdaIndex_t
 QAngle
 Quantize Float
 Quantize Float to Control Point Component
 R Sqrt
-RECORD_NEXT_SEQ_POINT
 REFCOUNTED_PTR
 RESOURCE_TYPE_PARTICLE_SNAPSHOT
 RESOURCE_TYPE_PARTICLE_SYSTEM
@@ -1976,6 +1937,8 @@ Ramp scalar linear random
 Ramp scalar linear simple
 Ramp scalar spline random
 Ramp scalar spline simple
+Random Float
+Random Integer
 Random World Position
 Random force
 Randomizes the order of items in the array (Knuth/Fisher-Yates Shuffle)
@@ -2148,8 +2111,6 @@ Rotation yaw flip random
 Rotation yaw random
 Round - round float up or down to integer
 Round Float
-Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
-Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCENEOBJECTPTR
 SCENEOBJECTPTR_NOFREE
 SCRATCH_FLOAT
@@ -2248,7 +2209,6 @@ Sim Time Max: %.2fms\n
 Sim Time Min: %.2fms\n
 Sine of angle. Input in radians, output in radians
 Snapshot load error for resource '%s': %s\n
-Specular Softness
 SphericalHarmonicsTextureB
 SphericalHarmonicsTextureC
 Spline
@@ -2331,8 +2291,8 @@ Usage: particle_profile_spike <'systems'|'operators'> <spike_threshold_ms>\n
 Use Random Children in Group
 Used to flag a test as having failed.
 User Event States
-VMAP_AND_VDATA
 Value 0-1 how far along duration (always 0 if duration is -1)
+Value to evaluate when any of its dependent values change. The result is compared against each case.
 Variable '%s' is referenced but not declared in this system (%s). Adding a fallback now.\n
 Vector To World Vector
 Vector component random
@@ -2413,7 +2373,6 @@ b#Bg
 bCondition
 bE"g
 bInherit
-bOverflowedInstructionHistoryLimit
 bValue
 bentnormal
 blendindices
@@ -2438,7 +2397,6 @@ creation_time
 curvature
 data_offset
 data_size
-default value (no entity / attribute)
 default_sort
 deg2rad
 densityVolume.InterpolatedVoxel( 0, Vector( 0.f, 0.f, 0.f ) )=%?
@@ -2446,7 +2404,6 @@ domain_scope
 element
 error.vpcf
 exp2
-externalCallerInfo
 features
 field_name
 flDegrees
@@ -2467,11 +2424,9 @@ flPercentage
 flPitch
 flRadians
 flRoll
-flScale
 flSeconds
 flTime
 flVal
-flValue
 flValueA
 flValueB
 flWaitInterval
@@ -2509,9 +2464,6 @@ implicit sort payload
 implicit vertex colors
 implicit vertices
 inherit attribute from peer particle systems
-init color from the mesh albedo
-init normal from the mesh normals
-input control point number (entity to read from)
 internal error in particle system MapParticleOrientationIndexToShaderCombo()
 inverseRotateVector
 inverseTransformVector
@@ -2529,37 +2481,17 @@ m_CaseOutflows
 m_CaseValues
 m_Children.m_pHead: [%p]\n
 m_DefaultCaseOutflow
-m_DependentObservableBlackboardReferences
-m_DependentObservableTempVars
-m_DependentObservableVars
-m_EvaluateConnection
-m_LambdaDefs
-m_ResultType
 m_Stops
 m_TagValue
-m_bAbsoluteValue
-m_bAnimatedNormal
-m_bCompletingVeryCloseToEndOfInterval
 m_bConditionValue
-m_bFireAtEnd
-m_bFireAtStart
 m_bFirstEvaluate
-m_bInitColorToAlbedo
-m_bInitNormal
-m_bUseParticleColorForVertColor
 m_buffer=
-m_flSFXAnimationTimeOffset
-m_flSFXAnimationTimePerFrame
 m_flSlopeIncoming
 m_flSlopeOutgoing
 m_hCursorOnOtherGraph
-m_mapNodeToNewCursorCount
 m_nActiveCase
-m_nCulledCursorCount
 m_nCurrentWakeIndex
-m_nLambdaIdx
 m_nYieldToken
-m_pszAttributeName
 m_szEffect
 manual_animation_frame
 materials/dev/gpu_particles_initialize.vmat
@@ -2592,7 +2524,6 @@ o\t\raHC
 opacity
 operators
 optionallycompressedtangentframe
-output component (0 = X, 1 = Y, 2 = Z)
 pCheckpointName
 pDescription
 pTagName
@@ -2625,9 +2556,6 @@ pulse_node_custom_attributes
 pulse_runtime_lib
 pvec_color_black
 pvec_color_white
-r_particle_allow_transform_instancing
-r_particle_gpu_implicit_skip_empty_bricks
-r_particle_render_nonsprites_issue_vizquery
 rad2deg
 rand_float
 rand_int
@@ -2635,7 +2563,6 @@ random_position
 read attribute from neighboring particle
 remap
 remap vector component to scalar
-render attribute name
 report_columns
 report_info
 report_rows
@@ -2686,6 +2613,7 @@ texcoord
 time_ms
 time_us
 tools/images/pulse_editor/cursor_kill.png
+tools/images/pulse_editor/exit_cycle_random.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 total_frames
 total_render

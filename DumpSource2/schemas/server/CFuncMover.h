@@ -26,6 +26,7 @@ class CFuncMover : public CBaseModelEntity
 	GameTime_t m_flTimeMovementStart;
 	GameTime_t m_flTimeMovementStop;
 	CHandle< CMoverPathNode > m_hStopAtNode;
+	float32 m_flMoveToT;
 	float32 m_flPathLocationToBeginStop;
 	float32 m_flPathLocationStart;
 	float32 m_flBeginStopT;
@@ -65,6 +66,11 @@ class CFuncMover : public CBaseModelEntity
 	bool m_bIsPaused;
 	CFuncMover::TransitionToPathNodeAction_t m_eTransitionedToPathNodeAction;
 	Quaternion m_qTransitionSourceOrientation;
+	bool m_bTransitionOrientationCorrectionPending;
+	Quaternion m_qTransitionOrientationCorrection;
+	Quaternion m_qTransitionOrientationCorrectionApplied;
+	GameTime_t m_flTimeTransitionOrientationCorrectionStart;
+	float32 m_flTransitionOrientationCorrectionTime;
 	int32 m_nDelayedTeleportToNode;
 	bool m_bIsImGuiLogging;
 	bool m_bIsImGuiEntTextLogging;
@@ -98,6 +104,7 @@ class CFuncMover : public CBaseModelEntity
 	float32 m_flFollowMoverSpeed;
 	float32 m_flFollowMoverVelocity;
 	GameTick_t m_nTickMovementRan;
+	GameTick_t m_nTickDependenciesResolved;
 	FuncMoverMovementSummary_t m_movementSummary;
 	FuncMoverMovementSummary_t m_movementSummaryAfterTransition;
 	CUtlVector< FuncMoverTransitionRecord_t > m_vecTransitionHistory;

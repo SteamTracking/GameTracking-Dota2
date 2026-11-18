@@ -20,6 +20,8 @@ class View3DOptionsEditableData_t
 	float32 flNearPlane;
 	// MPropertyFriendlyName = "Default light_environment draw distance"
 	float32 flShadowFarPlane;
+	// MPropertyFriendlyName = "Size Cull Threshold (% of view, 0 = off)"
+	float32 flSizeCullThreshold;
 	// MPropertyFriendlyName = "Alt+Mouse wheel adjusts backplane distance"
 	bool bMouseWheelControlsFarPlane;
 	// MPropertyFriendlyName = "Zoom sensitivity using mouse move"

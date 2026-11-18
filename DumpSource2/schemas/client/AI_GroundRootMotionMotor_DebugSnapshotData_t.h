@@ -1,13 +1,20 @@
 // MPropertyFriendlyName = "Ground Root Motion Motor"
+// MDebugSnapshotDataSortPriority (UNKNOWN FOR PARSER)
+// MDebugSnapshotDataStartCollapsed
 // MHasKV3TransferPolymorphicClassname
 class AI_GroundRootMotionMotor_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
-	CGlobalSymbol desired_movement_gait_set;
-	CGlobalSymbol desired_movement_gait;
-	CGlobalSymbol current_movement_gait_set;
-	CGlobalSymbol current_movement_gait;
+	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait_set; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t desired_stance; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait_set; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t current_stance; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
 	CGlobalSymbol movement_setting_id;
-	CGlobalSymbol gait_switch_blocked_reason;
+	DebugSnapshotVDataRef_t current_movement_settings_vdata;
+	DebugSnapshotVDataRef_t desired_movement_settings_vdata;
+	CGlobalSymbol pending_settings_changes;
+	CGlobalSymbol settings_change_transition;
 	bool b_goal_completion_allowed; // = true
 	CGlobalSymbol state;
 	int32 n_state_active_tick_count;

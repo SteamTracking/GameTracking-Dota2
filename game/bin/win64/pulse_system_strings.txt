@@ -316,11 +316,6 @@ Async Child1
 Async Child2
 Async Outflow (Child Cursor) C%d:I%d
 BACKSLASH_CHAR
-BIND_LAMBDA
-BROADCAST_INVOKE
-BROADCAST_INVOKE_ARRAY_DOMAIN
-BROADCAST_INVOKE_ARRAY_SIMPLE
-BROADCAST_INVOKE_DOMAIN
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
 Bad array index %d (array has %d elements)
@@ -330,7 +325,6 @@ Bad reinterpret on ArrayAppend
 Bad reinterpret on ArrayInsert
 Bad reinterpret on ArrayRemoveElementMatching
 BankID%d
-Base
 Base recognizer function 'alreadyParsedRule' called by unknown parser type - provide override for this function\n
 Base recognizer function 'consumeUntil' called by unknown parser type - provide override for this function\n
 Base recognizer function 'consumeUntilSet' called by unknown parser type - provide override for this function\n
@@ -404,7 +398,6 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
-CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_ExampleCriteria::CheckRequirement
 CPulseCell_ExampleSelector::ProcessSelector
@@ -421,7 +414,6 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
-CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_Outflow_TestExplicitYesNo::Run
 CPulseCell_Outflow_TestRandomYesNo::Run
 CPulseCell_PickBestOutflowSelector::ProcessSelector
@@ -436,7 +428,6 @@ CPulseCell_TestEnums::CompareValues
 CPulseCell_TestWaitWithAutoTracepoints::Wait
 CPulseCell_TestWaitWithCursorState::Wait
 CPulseCell_TestYieldForever::Run
-CPulseCell_TestYieldWithObservables::CursorState_t
 CPulseCell_TestYieldWithObservables::Run
 CPulseCell_Test_MultiInflow_NoDefault::InflowA
 CPulseCell_Test_MultiInflow_NoDefault::InflowB
@@ -455,9 +446,12 @@ CPulseCell_Test_MultiOutflow_WithParams_Yielding::Start
 CPulseCell_Timeline::Start
 CPulseCell_Val_TestDomainFindEntityByName::Eval
 CPulseCell_Val_TestDomainGetEntityName::Eval
+CPulseCell_Value_Curve
+CPulseCell_Value_Gradient
+CPulseCell_Value_RandomFloat
+CPulseCell_Value_RandomInt
 CPulseCell_Value_TestValue50::Eval
 CPulseCell_WaitForCursorsWithTag::Wait
-CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -651,13 +645,11 @@ CPulseTypeManager::Allocate( %s )\n
 CPulseTypeManager::Deallocate( %s, %p )\n
 CPulseTypeManager::DeallocateResource( %s, %s, dealloc=%p live=%p )\n
 CPulseVariant
-CPulse_LambdaDef
 CStrongHandle
 CTestDomainDerived_Cursor::GetCursorValueA
 CTestDomainDerived_Cursor::GetCursorValueB
 CTestDomainDerived_Cursor::SetCursorValueA
 CTestDomainDerived_Cursor::SetCursorValueB
-CURSOR_MAX_INSTRUCTIONS
 CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_MIRROR
@@ -673,7 +665,6 @@ Call C%d:I%d (%s)
 CallResume1
 CallResume2
 Called to invoke the graph
-Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Canceled
 Cannot allocate abstract class
 Ceiling - round float up to nearest integer)
@@ -702,6 +693,7 @@ Compose Angles
 Compose Transforms
 Computes 2 raised to a power
 Computes e ( 2.71...) raised to a power
+Condition to evaluate when any of its dependent values change.
 Convert %s R%d <- %s R%d
 Convert degrees (0-180) to radians (0-pi)
 Convert from a Game Time a raw floating-point time that will NOT fixed up - use with caution!
@@ -727,6 +719,7 @@ Cursor[ ptr:%p | id:%d | graph:%p ]: Yielded at cell ptr:%p id:%d\n
 Cursor[ ptr:%p | id:%d | graph:%p ]: ~CPulseExecCursor()\n
 Cursors Allowed To Run Parallel
 Cursors Allowed To Wait
+Curve
 DIGIT
 DOUBLE_AND
 DOUBLE_OR
@@ -759,18 +752,6 @@ Divide by zero!
 Domain: %s\n
 Dot Product Vector
 Dot Product of Vector a 
-EQ_ANIM_SEQUENCE
-EQ_MODEL_MATERIAL_GROUP
-EQ_PARTICLE_EHANDLE
-EQ_QANGLE
-EQ_RESOURCE
-EQ_RESOURCE_NAME
-EQ_SNDEVT_GUID
-EQ_SNDEVT_NAME
-EQ_TRANSFORM
-EQ_TRANSFORMWS
-EQ_VARIANT
-EQ_VDATA_CHOICE
 ESCAPE_CHAR
 ESCAPE_CODE
 EXPONENT
@@ -853,6 +834,8 @@ Function signature which will be replaced after compilation.
 Functions not supported in this evaluator (%s)
 Game Blackboards: 
 Game Time To Float
+Generate a random float between min and max (inclusive)
+Generate a random integer between min and max (inclusive)
 GenerateInt
 GenerateIntWithResult
 GenerateVector
@@ -906,7 +889,6 @@ ID_CHAR
 IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
-INTERNAL_CALL_TO_PULSE
 IPulseGraphLoadErrorReporter
 IPulseReloadListener
 If (R%d) Jump to Instr I%d
@@ -1021,18 +1003,6 @@ Multiple Return Test
 Multiple pointer returns
 NEGATIVE_TOK
 NEWLINE
-NE_ANIM_SEQUENCE
-NE_MODEL_MATERIAL_GROUP
-NE_PARTICLE_EHANDLE
-NE_QANGLE
-NE_RESOURCE
-NE_RESOURCE_NAME
-NE_SNDEVT_GUID
-NE_SNDEVT_NAME
-NE_TRANSFORM
-NE_TRANSFORMWS
-NE_VARIANT
-NE_VDATA_CHOICE
 NULL CELL 
 NULL_ENT
 Natural logarithm (base e)
@@ -1053,6 +1023,7 @@ OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
 OUTPUT!%s::%s
+Observable
 On '%s' Changed
 On Interval
 On True
@@ -1083,7 +1054,6 @@ PULSE_VMMD
 PanelID
 Parameters
 ParametersKV3
-Parent Map + VData
 Parent Map: %s\n
 Parser encountered %d error(s)
 Pass Outflow
@@ -1105,18 +1075,17 @@ Pulse system: minimal vpulse definition loading enabled - graphs may be incomple
 Pulse: %s 
 PulseBindingTypeForCType< PulseTestInlineValue_t >() == valueType
 PulseBindingTypeForCType< const PulseTestInlineValue_t & >() == valueType
-PulseExecHistoryCallerInfo_t
 PulseFindTypeInfo( valueType ).GetBaseType() == CPulseType()
-PulseRuntimeLambdaIndex_t
 PulseSystemEventCursorResult_t
 PulseSystemEventObservableVariableListenerNotify_t
 PulseSystemEventObservableVariableSourceChanged_t
 PulseSystemEventYieldResume_t
 R Sqrt
-RECORD_NEXT_SEQ_POINT
 RESOURCE_TYPE_PULSE_GRAPH_DEF
 Rad2 Deg
 Raise pen.
+Random Float
+Random Integer
 Random World Position
 Randomizes the order of items in the array (Knuth/Fisher-Yates Shuffle)
 Reciprocoal square root (1/sqrt)
@@ -1167,8 +1136,6 @@ Rotate a vector by the inverse of a local transform, not including position or s
 Rotate a world direction vector into a local direction, not including position or scale.
 Round - round float up or down to integer
 Round Float
-Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
-Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCOPE_QUALIFIER
 SEMICOLON
 SINGLE_LINE_COMMENT
@@ -1330,8 +1297,8 @@ Unknown variable %s
 Unsupported version %d for resource '%s' (Expected %d)\n
 Unwanted token '%s' %s
 Used to flag a test as having failed.
-VMAP_AND_VDATA
 Value 0-1 how far along duration (always 0 if duration is -1)
+Value to evaluate when any of its dependent values change. The result is compared against each case.
 Var( %s )
 Vector To World Vector
 WARNING: Pulse failed to restore yielded cursor - error with cell state (%d:%s)\n
@@ -1401,7 +1368,6 @@ attr_factory
 bCondition
 bInAutoWakeList
 bInherit
-bOverflowedInstructionHistoryLimit
 bValue
 bank_unique_id
 baseType.AreInstancesEqual( &first, &second )
@@ -1461,7 +1427,6 @@ exp2
 expr
 expr_alias
 expr_alias_info
-externalCallerInfo
 fakeEnt.m_nHandle.WeakHandle() == PULSE_WEAK_HANDLE_INVALID
 fake_derived_a
 fake_derived_b
@@ -1489,11 +1454,9 @@ flPercentage
 flPitch
 flRadians
 flRoll
-flScale
 flSeconds
 flTime
 flVal
-flValue
 flValueA
 flValueB
 flWaitInterval
@@ -1564,17 +1527,12 @@ m_Classes
 m_ClockScopeID
 m_DefaultCaseOutflow
 m_DefaultKV3
-m_DependentObservableBlackboardReferences
-m_DependentObservableTempVars
-m_DependentObservableVars
-m_EvaluateConnection
 m_HelpContextName
 m_Helpers
 m_Inargs
 m_Inputs
 m_Items
 m_KV3Metadata
-m_LambdaDefs
 m_LambdaSubscriptions
 m_LatestValue
 m_LegacyDefaultStr
@@ -1584,16 +1542,12 @@ m_MissingRetvalDefault
 m_ParamType
 m_PlugType
 m_PreparedHook
-m_ResultType
 m_ResumePoint
 m_Stops
 m_TagValue
 m_bChildCursorsShouldInherit
-m_bCompletingVeryCloseToEndOfInterval
 m_bConditionValue
 m_bCustom
-m_bFireAtEnd
-m_bFireAtStart
 m_bFirstEvaluate
 m_bInvokedOrScheduled
 m_bRemoveWhenOutOfScope
@@ -1612,13 +1566,10 @@ m_hGraphInstance
 m_hListenerInstance
 m_hObserver
 m_iValue
-m_mapNodeToNewCursorCount
 m_nActiveCase
 m_nCellID
 m_nClassType
-m_nCulledCursorCount
 m_nCurrentWakeIndex
-m_nLambdaIdx
 m_nLegacyDefaultInt
 m_nResult
 m_nStackDepthWhenAdded
@@ -1774,6 +1725,7 @@ test_inline_value
 test_pulse
 text_block
 tools/images/pulse_editor/cursor_kill.png
+tools/images/pulse_editor/exit_cycle_random.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 transformInverse
 transformVector

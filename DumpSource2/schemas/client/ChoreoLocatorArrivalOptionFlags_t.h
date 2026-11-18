@@ -11,4 +11,7 @@ enum ChoreoLocatorArrivalOptionFlags_t : uint16_t
 	// MPropertyFriendlyName = "Smooth Arrival Path"
 	// MPropertyDescription = "The entity will generate a path that might be longer, but has them arriving at the destination already facing the correct way"
 	eLocatorArrivalOption_SmoothArrivalPath = 4,
+	// MPropertyFriendlyName = "Don't Stop At Goal If Aligned"
+	// MPropertyDescription = "The entity won't play a stopping animation upon reaching the destination if the path arrives aligned with the arrival direction and the entity isn't strafing"
+	eLocatorArrivalOption_DontStopAtGoalIfAligned = 8,
 };

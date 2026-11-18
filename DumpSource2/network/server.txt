@@ -65,11 +65,12 @@ CBaseAnimGraphController
 	uint8 m_SerializePoseRecipeAG2Dynamic (change callbacks: AG2_PoseRecipeChanged)
 	uint32 m_nSerializePoseRecipeAG2ActiveSlot (change callbacks: AG2_PoseRecipeChanged)
 	int m_nSerializePoseRecipeVersionAG2
+	ChoreoAnimSlotNetworkedData_t m_vecChoreoAnimSlotsAG2 (change callbacks: AG2_OnChoreoAnimSlotsChanged)
+	uint32 m_nChoreoAnimSlotsChangeCountAG2 (change callbacks: AG2_OnChoreoAnimSlotsChanged)
 	int m_nServerGraphInstanceIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	int m_nServerSerializationContextIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	ResourceId_t m_primaryGraphId (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	ResourceId_t m_vecExternalGraphIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
-	ResourceId_t m_vecExternalClipIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 
 CBaseAnimatingActivity
 	network class
@@ -175,7 +176,6 @@ CBasePlatTrain
 CBasePlayerController
 	include by name: m_pEntity, m_flSimulationTime, m_flCreateTime, m_iTeamNum, m_nNextThinkTick, m_fFlags
 	include by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
-	overrides: m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
 	user group proxies: LocalPlayerExclusive, LocalTeamExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
 	network class
 	uint32 m_nTickBase (priority: 1; user groups: LocalPlayerAndPredictorsExclusive)
@@ -483,6 +483,7 @@ CDOTABaseGameMode
 	int m_iCustomScanMaxCharges
 	float m_flCustomScanCooldown
 	float m_flCustomGlyphCooldown
+	int m_iCustomGlyphMaxCharges
 	float m_flCustomBackpackSwapCooldown
 	float m_flCustomBackpackCooldownPercent
 	bool m_bDefaultRuneSpawnLogic
@@ -665,9 +666,17 @@ CDOTAGameRules
 	GameTime_t m_fGoodGlyphCooldown (sent as: float32)
 	GameTime_t m_fBadGlyphCooldown (sent as: float32)
 	GameTime_t m_flGlyphCooldowns (sent as: float32)
+	int m_iGoodGlyphCharges
+	int m_iBadGlyphCharges
+	int m_iGlyphCharges
+	GameTime_t m_fGoodGlyphActiveEndTime (sent as: float32)
+	GameTime_t m_fBadGlyphActiveEndTime (sent as: float32)
+	GameTime_t m_flGlyphActiveEndTimes (sent as: float32)
+	GameTime_t m_flGlyphUseCooldowns (sent as: float32)
 	GameTime_t m_fGoodRadarCooldown (sent as: float32)
 	GameTime_t m_fBadRadarCooldown (sent as: float32)
 	GameTime_t m_flRadarCooldowns (sent as: float32)
+	GameTime_t m_flGreaterHornOfBattleCooldowns (sent as: float32)
 	int m_iGoodRadarCharges
 	int m_iBadRadarCharges
 	int m_iRadarCharges
@@ -715,10 +724,12 @@ CDOTAGameRules
 	int m_nExpectedPlayers
 	int m_iMinimapDebugGridState
 	int m_iFoWFrameNumber (priority: 32)
+	CDOTA_FoWRevealedRegion m_vecFoWRevealedRegions (change callbacks: OnFoWRevealedRegionsChanged)
 	Vector m_vWeatherWindDirection
 	CTormentorSpawnPhase m_tormentorSpawnPhase
 	CTormentorSpawnPhase m_vecTormentorSpawnPhases
 	AbilityID_t m_vecDeityBlessings (sent as: int32)
+	NeutralArtifactPoolState_t m_arrArtifactPools
 	HeroID_t m_vecRequiredPlaytestHeroesStorage (sent as: int32)
 	HeroID_t m_vecRecommendedPlaytestHeroesStorage (sent as: int32)
 	bool m_bAllRequiredPlaytestHeroesPicked
@@ -762,13 +773,6 @@ CDOTAGameRules
 CDOTAGamerulesProxy
 	network class
 	CDOTAGameRules * m_pGameRules (type alias: CDOTAGameRules*; priority: 32)
-
-CDOTAInGamePredictionState
-	network class
-	bool m_bVotingClosed
-	bool m_bAllPredictionsFinished (change callbacks: OnAllPredictionsFinished)
-	InGamePredictionData_t m_vecPredictions
-	LeagueID_t m_nLeagueID (sent as: uint32)
 
 CDOTAMutationGameMode
 	network class
@@ -1156,6 +1160,9 @@ CDOTA_Ability_AncientApparition_BoneChill
 CDOTA_Ability_AncientApparition_ChillingTouch
 	network class
 
+CDOTA_Ability_AncientApparition_ChillingTouch2
+	network class
+
 CDOTA_Ability_AncientApparition_ColdFeet
 	network class
 
@@ -1347,7 +1354,13 @@ CDOTA_Ability_Beastmaster_Rugged
 CDOTA_Ability_Beastmaster_SummonRazorback
 	network class
 
+CDOTA_Ability_Beastmaster_SummonThunderhide
+	network class
+
 CDOTA_Ability_Beastmaster_Summon_Raptor
+	network class
+
+CDOTA_Ability_Beastmaster_ThunderhideDrum
 	network class
 
 CDOTA_Ability_Beastmaster_WildAxes
@@ -1476,6 +1489,9 @@ CDOTA_Ability_Brewmaster_PrimalSplit
 	CHandle< CBaseEntity> m_hPrimary (sent as: ehandle)
 	CHandle< CBaseEntity> m_hSecondary (sent as: ehandle)
 	CHandle< CBaseEntity> m_hTertiary (sent as: ehandle)
+	CHandle< CBaseEntity> m_hEarthScepterItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hStormScepterItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hFireScepterItem (sent as: ehandle)
 
 CDOTA_Ability_Brewmaster_Primal_Split_Cancel
 	network class
@@ -2378,6 +2394,15 @@ CDOTA_Ability_ChaosKnight_Phantasm
 CDOTA_Ability_ChaosKnight_Reality_Rift
 	network class
 
+CDOTA_Ability_Chaos_Knight_Armageddon
+	network class
+
+CDOTA_Ability_Chaos_Knight_ArmageddonsFlank
+	network class
+
+CDOTA_Ability_Chaos_Knight_ArmageddonsFlank_End
+	network class
+
 CDOTA_Ability_Chaos_Knight_FundamentalForging
 	network class
 
@@ -2385,6 +2410,9 @@ CDOTA_Ability_Chaos_Knight_Phantasmagoria
 	network class
 
 CDOTA_Ability_Chaos_Knight_Reins_Of_Chaos
+	network class
+
+CDOTA_Ability_Chen_Anoint
 	network class
 
 CDOTA_Ability_Chen_DivineFavor
@@ -2658,6 +2686,10 @@ CDOTA_Ability_Dazzle_ShadowWave
 CDOTA_Ability_Dazzle_Shallow_Grave
 	network class
 
+CDOTA_Ability_Dazzle_ThroughTheRealm
+	network class
+	CHandle< CBaseEntity> m_hPhysicalBody (sent as: ehandle)
+
 CDOTA_Ability_Dazzle_Weave
 	network class
 
@@ -2802,6 +2834,12 @@ CDOTA_Ability_Earthshaker_Slugger
 	network class
 
 CDOTA_Ability_Earthshaker_Spirit_Cairn
+	network class
+
+CDOTA_Ability_Eimermole_MinersAura
+	network class
+
+CDOTA_Ability_Eimermole_MinersSlam
 	network class
 
 CDOTA_Ability_Elder_Titan_AncestralSpirit
@@ -3687,6 +3725,9 @@ CDOTA_Ability_LoneDruid_SpiritBear_Return
 CDOTA_Ability_LoneDruid_SpiritBear_SpiritLink
 	network class
 
+CDOTA_Ability_LoneDruid_SpiritBear_SummonDruid
+	network class
+
 CDOTA_Ability_LoneDruid_SpiritLink
 	network class
 
@@ -3731,6 +3772,9 @@ CDOTA_Ability_Lycan_FeralImpulse
 	network class
 
 CDOTA_Ability_Lycan_Howl
+	network class
+
+CDOTA_Ability_Lycan_Pack_Hunter
 	network class
 
 CDOTA_Ability_Lycan_Shapeshift
@@ -3849,9 +3893,6 @@ CDOTA_Ability_Meepo_Earthbind
 	network class
 
 CDOTA_Ability_Meepo_FairShare
-	network class
-
-CDOTA_Ability_Meepo_Fling
 	network class
 
 CDOTA_Ability_Meepo_FlingRelease
@@ -4004,6 +4045,9 @@ CDOTA_Ability_Morty_Hop_Launch
 CDOTA_Ability_MudGolem_CloakAura
 	network class
 
+CDOTA_Ability_MudGolem_HurlBigBoulder
+	network class
+
 CDOTA_Ability_MudGolem_HurlBoulder
 	network class
 
@@ -4109,6 +4153,9 @@ CDOTA_Ability_Necronomicon_Warrior_ManaBurn
 CDOTA_Ability_Necronomicon_Warrior_Sight
 	network class
 
+CDOTA_Ability_Neutral_Gold_Upgrade_Ability
+	network class
+
 CDOTA_Ability_Neutral_SpellImmunity
 	network class
 
@@ -4205,6 +4252,9 @@ CDOTA_Ability_NyxAssassin_Innate_Mana_Burn
 CDOTA_Ability_NyxAssassin_NeuroSting
 	network class
 
+CDOTA_Ability_NyxAssassin_ScarabMetabolism
+	network class
+
 CDOTA_Ability_Nyx_Assassin_Burrow
 	network class
 
@@ -4250,10 +4300,19 @@ CDOTA_Ability_Obsidian_Destroyer_Ominous_Discernment
 CDOTA_Ability_Obsidian_Destroyer_SanityEclipse
 	network class
 
+CDOTA_Ability_Odobenus_Blight
+	network class
+
 CDOTA_Ability_OgreBruiser_OgreSmash
 	network class
 
 CDOTA_Ability_OgreMagi_FrostArmor
+	network class
+
+CDOTA_Ability_OgreSealPup_DisapprovalAura
+	network class
+
+CDOTA_Ability_OgreSeal_Flop
 	network class
 
 CDOTA_Ability_Ogre_Magi_Bloodlust
@@ -4308,6 +4367,9 @@ CDOTA_Ability_Omniknight_Purification
 	network class
 
 CDOTA_Ability_Omniknight_Repel
+	network class
+
+CDOTA_Ability_Omniknight_RighteousPath
 	network class
 
 CDOTA_Ability_Oracle_Clairvoyant_Cure
@@ -4523,7 +4585,6 @@ CDOTA_Ability_Pugna_Decrepify
 
 CDOTA_Ability_Pugna_LifeDrain
 	network class
-	EHANDLE m_hTarget (sent as: ehandle)
 
 CDOTA_Ability_Pugna_NetherBlast
 	network class
@@ -4553,6 +4614,9 @@ CDOTA_Ability_QueenOfPain_ShadowStrike
 	network class
 
 CDOTA_Ability_QueenOfPain_SonicWave
+	network class
+
+CDOTA_Ability_Radigull_Eggstremism
 	network class
 
 CDOTA_Ability_Rattletrap_Armor_Power
@@ -6767,6 +6831,14 @@ CDOTA_Ability_SpiritBreaker_NetherStrike
 CDOTA_Ability_SpiritBreaker_PlanarPocket
 	network class
 
+CDOTA_Ability_StoneOfRecall
+	network class
+	EHANDLE m_hThinker (sent as: ehandle)
+
+CDOTA_Ability_Stone_Of_Recall_Teleport
+	network class
+	float m_flChannelTime
+
 CDOTA_Ability_StormSpirit_BallLightning
 	network class
 
@@ -7089,6 +7161,9 @@ CDOTA_Ability_Tusk_WalrusPunch
 CDOTA_Ability_Twin_Gate_Portal_Warp
 	network class
 
+CDOTA_Ability_Undying_Bite
+	network class
+
 CDOTA_Ability_Undying_CeaselessDirge
 	network class
 
@@ -7292,6 +7367,9 @@ CDOTA_Ability_Weaver_Threads_Of_Fate
 	network class
 
 CDOTA_Ability_Weaver_TimeLapse
+	network class
+
+CDOTA_Ability_Weaver_TimeLapseAlly
 	network class
 
 CDOTA_Ability_Windrunner_EasyBreezy
@@ -7562,6 +7640,7 @@ CDOTA_BaseNPC
 	char m_CustomHealthLabel
 	Color m_CustomHealthLabelColor
 	OriginalModelFlags_t m_nIsOriginalModel
+	float m_flBuffEffectivenessOverride
 
 CDOTA_BaseNPC_Additive
 	network class
@@ -7847,6 +7926,7 @@ CDOTA_DataNonSpectator
 	CRoshanPhaseInfo m_roshanSpawnInfo
 	int m_nNextPowerRuneType
 	int m_nNextPowerRuneSpawnIndex
+	CHandle< CBaseEntity> m_hNextPowerRuneSpawner (sent as: ehandle)
 
 CDOTA_DataRadiant
 	network class
@@ -7871,6 +7951,12 @@ CDOTA_DeathProphet_Exorcism_Spirit
 CDOTA_DisplacementVisibility
 	network class
 	int m_HiddenDisplacement
+
+CDOTA_FoWRevealedRegion
+	float m_flMinX
+	float m_flMinY
+	float m_flMaxX
+	float m_flMaxY
 
 CDOTA_GameMechanic_AutoRecovery
 
@@ -8029,10 +8115,19 @@ CDOTA_Item_BagOfGold
 CDOTA_Item_Ballista
 	network class
 
+CDOTA_Item_Balmhook
+	network class
+
 CDOTA_Item_Battlefury
 	network class
 
 CDOTA_Item_BeltOfStrength
+	network class
+
+CDOTA_Item_BerserkersHood
+	network class
+
+CDOTA_Item_BerserkersSabatons
 	network class
 
 CDOTA_Item_BlackGrimoire
@@ -8060,6 +8155,9 @@ CDOTA_Item_Blitz_Knuckles
 	network class
 
 CDOTA_Item_Blood_Grenade
+	network class
+
+CDOTA_Item_Bloodslinger
 	network class
 
 CDOTA_Item_Bloodstone
@@ -8108,6 +8206,9 @@ CDOTA_Item_Bottomless_Chalice
 CDOTA_Item_Bracer
 	network class
 
+CDOTA_Item_Brick
+	network class
+
 CDOTA_Item_Broadsword
 	network class
 
@@ -8121,6 +8222,9 @@ CDOTA_Item_Bullwhip
 	network class
 
 CDOTA_Item_Butterfly
+	network class
+
+CDOTA_Item_Caduceus
 	network class
 
 CDOTA_Item_Caster_Rapier
@@ -8145,6 +8249,9 @@ CDOTA_Item_Circlet
 	network class
 
 CDOTA_Item_Clarity
+	network class
+
+CDOTA_Item_Claszian_Timepiece
 	network class
 
 CDOTA_Item_Claymore
@@ -8224,9 +8331,6 @@ CDOTA_Item_Demonicon
 	network class
 
 CDOTA_Item_Desolator
-	network class
-
-CDOTA_Item_Desolator_2
 	network class
 
 CDOTA_Item_Devastator
@@ -8566,6 +8670,9 @@ CDOTA_Item_HelmOfTheDominator
 CDOTA_Item_HelmOfTheDominator_2
 	network class
 
+CDOTA_Item_HelmOfTheHivemind
+	network class
+
 CDOTA_Item_HelmOfTheOverlord
 	network class
 
@@ -8579,6 +8686,12 @@ CDOTA_Item_Hood_Of_Defiance
 	network class
 
 CDOTA_Item_Horizon
+	network class
+
+CDOTA_Item_Horn_Of_Battle
+	network class
+
+CDOTA_Item_Horn_Of_Battle_Greater
 	network class
 
 CDOTA_Item_Hurricane_Pike
@@ -8772,6 +8885,9 @@ CDOTA_Item_Nian_Flag_Trap
 	network class
 
 CDOTA_Item_Ninja_Gear
+	network class
+
+CDOTA_Item_Nothl_Sigil
 	network class
 
 CDOTA_Item_NullTalisman
@@ -8984,6 +9100,9 @@ CDOTA_Item_Recipe_Ballista
 CDOTA_Item_Recipe_Battlefury
 	network class
 
+CDOTA_Item_Recipe_BerserkersSabatons
+	network class
+
 CDOTA_Item_Recipe_Black_King_Bar
 	network class
 
@@ -8991,6 +9110,9 @@ CDOTA_Item_Recipe_Blade_Mail
 	network class
 
 CDOTA_Item_Recipe_Blood_Grenade
+	network class
+
+CDOTA_Item_Recipe_Bloodslinger
 	network class
 
 CDOTA_Item_Recipe_Bloodstone
@@ -9023,6 +9145,9 @@ CDOTA_Item_Recipe_Bullwhip
 	network class
 
 CDOTA_Item_Recipe_Butterfly
+	network class
+
+CDOTA_Item_Recipe_Caduceus
 	network class
 
 CDOTA_Item_Recipe_Caster_Rapier
@@ -9073,9 +9198,6 @@ CDOTA_Item_Recipe_Demonicon
 	network class
 
 CDOTA_Item_Recipe_Desolator
-	network class
-
-CDOTA_Item_Recipe_Desolator_2
 	network class
 
 CDOTA_Item_Recipe_Devastator
@@ -9383,13 +9505,13 @@ CDOTA_Item_Recipe_Radiance
 CDOTA_Item_Recipe_RefresherOrb
 	network class
 
-CDOTA_Item_Recipe_Revenants_Brooch
-	network class
-
 CDOTA_Item_Recipe_RingOfAquila
 	network class
 
 CDOTA_Item_Recipe_Ring_Of_Basilius
+	network class
+
+CDOTA_Item_Recipe_Ristuls_Devotion
 	network class
 
 CDOTA_Item_Recipe_RodOfAtos
@@ -9419,6 +9541,9 @@ CDOTA_Item_Recipe_Silver_Edge
 CDOTA_Item_Recipe_Skadi
 	network class
 
+CDOTA_Item_Recipe_Skypiercer
+	network class
+
 CDOTA_Item_Recipe_Solar_Crest
 	network class
 
@@ -9440,7 +9565,13 @@ CDOTA_Item_Recipe_Sphere
 CDOTA_Item_Recipe_Spirit_Vessel
 	network class
 
+CDOTA_Item_Recipe_Starforge
+	network class
+
 CDOTA_Item_Recipe_Stormcrafter
+	network class
+
+CDOTA_Item_Recipe_Stygian_Desolator
 	network class
 
 CDOTA_Item_Recipe_Swift_Blink
@@ -9524,6 +9655,11 @@ CDOTA_Item_Recipe_Yasha
 CDOTA_Item_Recipe_Yasha_And_Kaya
 	network class
 
+CDOTA_Item_Red_Ledger
+	network class
+	int m_nCurrentAdjective (change callbacks: OnBountyBoardHitListChanged)
+	int m_nBountiesRemaining
+
 CDOTA_Item_RefresherOrb
 	network class
 
@@ -9558,6 +9694,9 @@ CDOTA_Item_Ring_Of_Basilius
 	network class
 
 CDOTA_Item_RippersLash
+	network class
+
+CDOTA_Item_Ristuls_Devotion
 	network class
 
 CDOTA_Item_RiverPainter
@@ -9672,6 +9811,9 @@ CDOTA_Item_Sisters_Shroud
 CDOTA_Item_Skadi
 	network class
 
+CDOTA_Item_Skypiercer
+	network class
+
 CDOTA_Item_Slippers
 	network class
 
@@ -9723,6 +9865,12 @@ CDOTA_Item_Spy_Gadget
 CDOTA_Item_StaffOfWizardry
 	network class
 
+CDOTA_Item_Starforge
+	network class
+
+CDOTA_Item_StoneOfRecall
+	network class
+
 CDOTA_Item_Stonefeather_Satchel
 	network class
 	int m_iStat (change callbacks: OnSatchelStatChange)
@@ -9731,6 +9879,9 @@ CDOTA_Item_Stormcrafter
 	network class
 
 CDOTA_Item_StoutShield
+	network class
+
+CDOTA_Item_Stygian_Desolator
 	network class
 
 CDOTA_Item_SuperArcane_Blink
@@ -9879,6 +10030,9 @@ CDOTA_Item_Veil_Of_Discord
 	network class
 
 CDOTA_Item_Vermillion_Robe
+	network class
+
+CDOTA_Item_VilePhial
 	network class
 
 CDOTA_Item_VindicatorsAxe
@@ -10047,6 +10201,8 @@ CDOTA_PlayerResource
 CDOTA_PushWave
 	network class
 
+CDOTA_RoshanObstructionTrigger
+
 CDOTA_RoshanSpawner
 	network class
 	int m_iLastKillerTeam
@@ -10062,6 +10218,9 @@ CDOTA_SimpleObstruction
 	bool m_bEnabled
 	bool m_bBlockFoW
 	bool m_bBlockNav
+
+CDOTA_Stone_Of_Recall
+	network class
 
 CDOTA_TempTree
 	network class
@@ -10186,6 +10345,9 @@ CDOTA_Unit_Hero_Beastmaster_Boar
 	network class
 
 CDOTA_Unit_Hero_Beastmaster_Hawk
+	network class
+
+CDOTA_Unit_Hero_Beastmaster_Thunderhide
 	network class
 
 CDOTA_Unit_Hero_Bloodseeker
@@ -11155,6 +11317,7 @@ CGameGibManager
 
 CGameRules
 	int m_nTotalPausedTicks
+	int m_nTotalGameDeltaTicks
 	int m_nPauseStartTick
 	bool m_bGamePaused
 
@@ -12099,6 +12262,9 @@ CRoshanPhaseInfo
 	ERoshanSpawnPhase m_eRoshanPhase
 	GameTime_t m_flRoshanPhaseStartTime (sent as: float32)
 	GameTime_t m_flRoshanPhaseEndTime (sent as: float32)
+	CHandle< CBaseEntity> m_hAegisItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hAegisHolder (sent as: ehandle)
+	HeroID_t m_nAegisHolderHeroID (sent as: int32)
 
 CRotatorTarget
 
@@ -12228,6 +12394,9 @@ CSoundOpvarSetBoxEntity
 CSoundOpvarSetDomeEntity
 	network class
 
+CSoundOpvarSetEnclosureEntity
+	network class
+
 CSoundOpvarSetEntity
 
 CSoundOpvarSetOBBEntity
@@ -12238,6 +12407,8 @@ CSoundOpvarSetOBBWindEntity
 
 CSoundOpvarSetPathCornerEntity
 	network class
+
+CSoundOpvarSetPathHelper
 
 CSoundOpvarSetPointBase
 	network class
@@ -12430,6 +12601,10 @@ CTriggerVolume
 CWorld
 	network class
 
+ChoreoAnimSlotNetworkedData_t
+	CGlobalSymbol m_sSlotID
+	CUtlBinaryBlock m_taskList
+
 CountdownTimer
 	float32 m_duration
 	GameTime_t m_timestamp (sent as: float32)
@@ -12479,6 +12654,7 @@ DataTeamPlayer_t
 	int m_iIncomeGold
 	int m_iWardKillGold
 	int m_iAbilityGold
+	int m_iMidasGold
 	int m_iNetWorth
 	int m_iDenyCount
 	int m_iLastHitCount
@@ -12575,16 +12751,12 @@ IHasAttributes
 
 ISkeletonAnimationController
 
-InGamePredictionData_t
-	uint32 m_nID
-	uint32 m_nValue
-	uint32 m_nRawValue
-	uint8 m_nValueState
-	bool m_bValueIsMask
-
 InventoryQuickBuyState_t
 	QuickBuySlot_t m_vecItemSlots
 	int m_nTotalSlotCountIncludingOverflow
+
+NeutralArtifactPoolState_t
+	AbilityID_t m_nOptions (sent as: int32)
 
 NeutralSpawnBoxes_t
 	struct not in network utl vector embedded
@@ -12601,6 +12773,7 @@ NextBotCombatCharacter
 PhysicsRagdollPose_t
 	CTransform m_RelativeTransforms (encoder: coord; change callbacks: OnTransformChanged)
 	EHANDLE m_hOwner (sent as: ehandle)
+	bool m_bFullyKeyframed (change callbacks: OnFullyKeyframedChanged)
 
 PingConfirmationState_t
 	int m_nInitiatingPlayerID

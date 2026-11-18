@@ -4,5 +4,6 @@ class CDOTA_Modifier_AncientApparition_ChillingTouch : public CDOTA_Buff
 	float32 duration;
 	float32 slow_duration;
 	int32 attack_range_bonus;
+	int32 attacks_as_magic;
 	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
 };

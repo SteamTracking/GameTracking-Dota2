@@ -10,6 +10,7 @@ class CParticleFloatInput : public CParticleInput
 	ParticleAttributeIndex_t m_nVectorAttribute; // = 6
 	int32 m_nVectorComponent;
 	bool m_bReverseOrder;
+	bool m_bAbsoluteValue;
 	float32 m_flRandomMin;
 	float32 m_flRandomMax; // = 1
 	bool m_bHasRandomSignFlip;

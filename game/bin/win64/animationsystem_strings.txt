@@ -2263,12 +2263,7 @@ Async Outflow (Child Cursor) C%d:I%d
 Attempting to perform a global blend without a bone mask! This is not supported so falling back to a local blend!
 Attribute
 BACKSLASH_CHAR
-BIND_LAMBDA
 BLEND_PREALIGNED|
-BROADCAST_INVOKE
-BROADCAST_INVOKE_ARRAY_DOMAIN
-BROADCAST_INVOKE_ARRAY_SIMPLE
-BROADCAST_INVOKE_DOMAIN
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
 Bad KV3 data in control block for '%s': %s\n
@@ -2280,7 +2275,6 @@ Bad max in ArrayFirstNElements (%d)
 Bad reinterpret on ArrayAppend
 Bad reinterpret on ArrayInsert
 Bad reinterpret on ArrayRemoveElementMatching
-Base
 Base recognizer function 'alreadyParsedRule' called by unknown parser type - provide override for this function\n
 Base recognizer function 'consumeUntil' called by unknown parser type - provide override for this function\n
 Base recognizer function 'consumeUntilSet' called by unknown parser type - provide override for this function\n
@@ -2415,11 +2409,8 @@ CNmPoseBufferPool::CreateCachedPoseBufferInternal
 CNmPoseBufferPool::GenerateNewCachedPoseID
 CNmPoseBufferPool::RecordState
 CNmSkeleton::DrawDebug
-CNmSoundEventBase
-CNmSoundEventBase::Position_t
 CNmStateMachineNode::CDefinition::PostInstantiateNode
 CNmStateNode::TransitionFlag_t::TransitionFlag_t
-CNmTaggedSoundEvent
 COMMA
 CPPScript Component
 CParentAttachmentName
@@ -2440,7 +2431,6 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
-CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
@@ -2455,14 +2445,16 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
-CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_PickBestOutflowSelector::ProcessSelector
 CPulseCell_RaceCursors::Start
 CPulseCell_RaceCursors::StopWaiting
 CPulseCell_Step_CallExternalMethod '%s'
 CPulseCell_Timeline::Start
+CPulseCell_Value_Curve
+CPulseCell_Value_Gradient
+CPulseCell_Value_RandomFloat
+CPulseCell_Value_RandomInt
 CPulseCell_WaitForCursorsWithTag::Wait
-CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -2590,7 +2582,6 @@ CPulseTestScriptLib::RegisterTestCheckpoint
 CPulseTestScriptLib::TestModeAssertTrue
 CPulseType
 CPulseVariant
-CPulse_LambdaDef
 CRelativeArray
 CResourceName
 CResourceNameTyped
@@ -2600,7 +2591,6 @@ CStrongHandle
 CStrongHandleCopyable
 CStrongHandleVoid
 CTransform
-CURSOR_MAX_INSTRUCTIONS
 CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_MIRROR
@@ -2662,7 +2652,6 @@ CUtlStringToken
 CUtlVectorFixedGrowable
 CWeakHandle
 Call C%d:I%d (%s)
-Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Cannot allocate abstract class
 Cannot construct abstract class
 Cannot parse %s: String Literals are not supported
@@ -2714,6 +2703,7 @@ Compose Angles
 Compose Transforms
 Computes 2 raised to a power
 Computes e ( 2.71...) raised to a power
+Condition to evaluate when any of its dependent values change.
 Considered Option
 Control Point1
 Control Point2
@@ -2742,6 +2732,7 @@ CurrentStateID
 Cursor Has Tag
 Cursors Allowed To Run Parallel
 Cursors Allowed To Wait
+Curve
 CycleControlClipNode
 DIGIT
 DOT_TO_MORPH
@@ -2776,18 +2767,6 @@ Dot Product Vector
 Dot Product of Vector a 
 Down
 ENUM_
-EQ_ANIM_SEQUENCE
-EQ_MODEL_MATERIAL_GROUP
-EQ_PARTICLE_EHANDLE
-EQ_QANGLE
-EQ_RESOURCE
-EQ_RESOURCE_NAME
-EQ_SNDEVT_GUID
-EQ_SNDEVT_NAME
-EQ_TRANSFORM
-EQ_TRANSFORMWS
-EQ_VARIANT
-EQ_VDATA_CHOICE
 ESCAPE_CHAR
 ESCAPE_CODE
 EXPONENT
@@ -2917,7 +2896,6 @@ Format2
 Format3
 Format4
 Format5
-Forward Stop Only
 Frac
 Fraction
 Fractional component (ie. returns 0.34 for 12.34)
@@ -2929,6 +2907,8 @@ Future Facing
 Future Velocity
 Game Blackboards: 
 Game Time To Float
+Generate a random float between min and max (inclusive)
+Generate a random integer between min and max (inclusive)
 Get Relative Transform
 GetArrayElement R%d <- R%d[ R%d ]
 GetBlackboardReference R%d <- BR%d (%s)
@@ -2974,7 +2954,6 @@ IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 IND)ind)"
-INTERNAL_CALL_TO_PULSE
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
 If specified, each wait interval will vary randomly between WaitInterval this value
@@ -3142,7 +3121,6 @@ ModelAttachmentName()
 ModelBodyGroupName()
 ModelBoneName()
 ModelMaterialGroupName()
-ModelMeshDNARig_t
 ModelSpaceBlendTask - Trying to perform a model-space blend using an additive pose
 MorphChannel
 MotionMatching:SelectionChangeCount
@@ -3165,18 +3143,6 @@ MoverNode
 Mul R%d <- R%d * R%d
 NEGATIVE_TOK
 NEWLINE
-NE_ANIM_SEQUENCE
-NE_MODEL_MATERIAL_GROUP
-NE_PARTICLE_EHANDLE
-NE_QANGLE
-NE_RESOURCE
-NE_RESOURCE_NAME
-NE_SNDEVT_GUID
-NE_SNDEVT_NAME
-NE_TRANSFORM
-NE_TRANSFORMWS
-NE_VARIANT
-NE_VDATA_CHOICE
 NULL CELL 
 Natural logarithm (base e)
 Neg R%d <- -R%d
@@ -3206,6 +3172,7 @@ OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
 ORIENT
+Observable
 On Interval
 On True
 OnInterval
@@ -3226,7 +3193,6 @@ Overlay Blend: %.2f%%
 OverlayBlendTask - Trying to perform an overlay blend with mismatched pose types ( additive/parent-space )
 OverlayProjectionDirection
 PARENT
-PF_TYPE_CONTROL_POINT_PLANE_DISTANCE
 PLUG_TYPE_INPUT
 PLUG_TYPE_OUTPUT
 PLUG_TYPE_RELAY_OMNIDIRECTIONAL_LEGACY
@@ -3248,7 +3214,6 @@ Parameterized Selector: Failed to select a valid option!
 Parameters
 ParametersKV3
 Parent
-Parent Map + VData
 Parent Map: %s\n
 ParentAttachmentName()
 Parser encountered %d error(s)
@@ -3276,13 +3241,10 @@ Program uses more temp variables than are supported. Needs %i, max is %i
 Prop( %s )
 PropWorldOrigin
 Pulse domain which enables particle content to query leaf code to introspect game state.
-PulseExecHistoryCallerInfo_t
-PulseRuntimeLambdaIndex_t
 QAngle
 Quaternion
 QuaternionStorage
 R Sqrt
-RECORD_NEXT_SEQ_POINT
 RESOURCE_TYPE_ANIMATION_GROUP_INTERNAL
 RESOURCE_TYPE_ANIMATION_INTERNAL
 RESOURCE_TYPE_ANIMGRAPH
@@ -3293,6 +3255,8 @@ RESOURCE_TYPE_SEQUENCE_GROUP_INTERNAL
 ROTATION
 Rad2 Deg
 Ragdoll Component
+Random Float
+Random Integer
 Random World Position
 Randomizes the order of items in the array (Knuth/Fisher-Yates Shuffle)
 Range_t
@@ -3350,8 +3314,6 @@ Rotate a world direction vector into a local direction, not including position o
 Rotation Only
 Round - round float up or down to integer
 Round Float
-Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
-Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCOPE_QUALIFIER
 SEMICOLON
 SINGLE_LINE_COMMENT
@@ -3468,7 +3430,6 @@ Trying to XY warp a section with no displacement, falling back to LERP!
 Trying to XY warp backwards, falling back to LERP!
 Trying to XY warp to under the distance threshold, falling back to LERP!
 Trying to set an offset on an unset node!
-Turn To Start
 Turn a time in seconds into a display string. NOT localized.
 TurnHelperNode
 Two Bone IK
@@ -3499,8 +3460,8 @@ UpdateContext
 Used to flag a test as having failed.
 VDataChoice( %s )
 VDataChoice()
-VMAP_AND_VDATA
 Value 0-1 how far along duration (always 0 if duration is -1)
+Value to evaluate when any of its dependent values change. The result is compared against each case.
 Var( %s )
 Variable "%s" has %i components, a specific component must be specified, for example use: "%s.x"
 Variable '%s' is referenced but not declared in this system (%s). Adding a fallback now.\n
@@ -3598,7 +3559,6 @@ attachment_type_cp1
 attr_factory
 bCondition
 bInherit
-bOverflowedInstructionHistoryLimit
 bValue
 b_action_restart
 b_movement_type_restart
@@ -3935,9 +3895,6 @@ curvature
 deg2rad
 detach_from_owner
 domain_scope
-eAim
-eForwardStopOnly
-eTurnToStart
 e_action_desired_shared
 e_movement_type_desired_shared
 element
@@ -3947,7 +3904,6 @@ emptyanimwithnoeffect
 euclidean_norm
 exp2
 expr
-externalCallerInfo
 fSpeedScale
 fetched: %s : %.3f\n
 field_name
@@ -3957,7 +3913,6 @@ flElapsed
 flExponent
 flFloat
 flFrac
-flGoalStrength
 flInputA
 flInputB
 flMax
@@ -3970,18 +3925,14 @@ flPercentage
 flPitch
 flRadians
 flRoll
-flScale
 flSeconds
 flTime
 flVal
-flValue
 flValueA
 flValueB
 flWaitInterval
 flWaitIntervalHigh
 flYaw
-flZin
-flZout
 flagchoices
 flc_columns
 flc_count
@@ -4051,13 +4002,7 @@ m_CaseValues
 m_Classes
 m_DefaultCaseOutflow
 m_DefaultKV3
-m_Deformers
-m_DependentObservableBlackboardReferences
-m_DependentObservableTempVars
-m_DependentObservableVars
 m_EndEffectorFixedOffsetAttachment
-m_EvaluateConnection
-m_FfdZLayers
 m_Format
 m_HelpContextName
 m_Helpers
@@ -4065,29 +4010,20 @@ m_HingeAxis
 m_Inputs
 m_Items
 m_KV3Metadata
-m_LambdaDefs
 m_LegacyDefaultStr
 m_LongName
 m_MetaData
 m_ParentJoint
 m_PlugType
 m_PoleVectorForAxis
-m_ResultType
 m_Stops
 m_TagValue
 m_attachments
-m_bAbsoluteValue
 m_bBakedTwoSided
-m_bBlendShapes
 m_bCanBatchWithDynamicShaderConstants
-m_bCompletingVeryCloseToEndOfInterval
-m_bCompressedZ3
 m_bConditionValue
 m_bCustom
-m_bDisableSequenceFadeOut
 m_bDrawLast
-m_bFireAtEnd
-m_bFireAtStart
 m_bFirstEvaluate
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
@@ -4102,7 +4038,6 @@ m_bUsingLegacyDefault
 m_bmaxs
 m_bmins
 m_deltaTransform\t\t\t\t[%f] [%s]
-m_dnaRigs
 m_eRbfType
 m_flMaxRadians
 m_flMinRadians
@@ -4113,21 +4048,13 @@ m_hGraphDefinition->m_instanceRequiredMemory > 0
 m_hitboxsets
 m_iValue
 m_influenceFlags
-m_mapNodeToNewCursorCount
 m_morphSet
 m_nActiveCase
-m_nBlock
 m_nChainLength > 1 && m_nChainLength < 8
 m_nClassType
-m_nCulledCursorCount
 m_nCurrStackSize
 m_nCurrentWakeIndex
-m_nLambdaIdx
 m_nLegacyDefaultInt
-m_nReferenceNode
-m_nRig
-m_nVertexMapIndex
-m_nVertexMapNameHash
 m_nYieldToken
 m_pIsHandshakeDisabled
 m_pItemSet
@@ -4286,6 +4213,7 @@ text_block
 theta_transpose
 to constrain
 tools/images/pulse_editor/cursor_kill.png
+tools/images/pulse_editor/exit_cycle_random.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 training_rotations
 training_stretches

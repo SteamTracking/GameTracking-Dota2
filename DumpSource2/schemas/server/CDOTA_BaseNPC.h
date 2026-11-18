@@ -28,6 +28,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	bool m_bCanRespawn;
 	bool m_bIsClone;
 	bool m_bConsideredHero;
+	bool m_bCountsAsCreepForLifesteal;
 	bool m_bUsesConstantGesture;
 	bool m_bIsPlayingSingleForcedActivity;
 	bool m_bHasUpgradeableAbilities;
@@ -56,6 +57,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	float32 m_flHealthRegen;
 	int64 m_nTotalDamageTaken;
 	float32 m_flHealthRegenCounter;
+	float32 m_flHealthDrainCounter;
 	float32 m_flManaRegenCounter;
 	float32 m_flAccumulatedHeal;
 	int32 m_iBaseAttackSpeed;
@@ -141,6 +143,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	bool m_bRunAIWhenControllableByPlayer;
 	CUtlSymbolLarge m_iszUnitToAbilityMapping;
 	CNetworkUtlVectorBase< CHandle< CBaseEntity > > m_vecAbilities;
+	uint64 m_unReservedAbilitySlots;
 	CUtlVector< CHandle< CBaseEntity > > m_associatedEmptyAbilities;
 	CHandle< CBaseEntity > m_hActiveAbility;
 	VectorWS m_vCursorLocation;
@@ -237,6 +240,7 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	bool m_bShouldDrawPath;
 	uint32 m_nScepterUpgradeID;
 	uint32 m_nShardUpgradeID;
+	bool m_bHasConsideredNPCController;
 	CUtlString m_strLastKillerAbility;
 	int32 m_anglediff;
 	int32 m_NetworkActivity;
@@ -271,4 +275,5 @@ class CDOTA_BaseNPC : public NextBotCombatCharacter
 	float32 m_flPrevHealthThinkRegen;
 	GameTime_t m_prevRegenChangeTime;
 	float32 m_flAccumulatedHealthRegenSinceLastLogged;
+	float32 m_flBuffEffectivenessOverride;
 };

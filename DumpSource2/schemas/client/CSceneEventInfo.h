@@ -10,7 +10,6 @@ class CSceneEventInfo
 	float32 m_flLastCycle;
 	CStrongHandle< InfoForResourceTypeCNmClip > m_hAnimClip;
 	CGlobalSymbol m_sAnimClipSlot;
-	CGlobalSymbol m_sAnimClipSlotWeight;
 	bool m_bHasArrived;
 	bool m_bExternalGraphFinished;
 	int32 m_nType;

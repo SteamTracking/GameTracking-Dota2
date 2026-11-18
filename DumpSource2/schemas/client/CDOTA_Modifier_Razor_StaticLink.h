@@ -10,6 +10,7 @@ class CDOTA_Modifier_Razor_StaticLink : public CDOTA_Buff
 	int32 pull_speed;
 	int32 min_pull_range;
 	ParticleIndex_t m_iLinkIndex;
+	CUtlSymbolLarge m_iszLinkModel;
 	CDOTA_Buff* m_pBuffPositive;
 	CDOTA_Buff* m_pNegative;
 	GameTime_t m_flLastThinkTime;

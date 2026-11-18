@@ -28,4 +28,5 @@ class C_DOTA_DataNonSpectator : public C_BaseEntity
 	CRoshanPhaseInfo m_roshanSpawnInfo;
 	int32 m_nNextPowerRuneType;
 	int32 m_nNextPowerRuneSpawnIndex;
+	CHandle< C_BaseEntity > m_hNextPowerRuneSpawner;
 };

@@ -1,5 +1,5 @@
 class CDOTA_Ability_Kunkka_Tidal_Wave : public CDOTABaseAbility
 {
 	CUtlVector< CHandle< CBaseEntity > > hAlreadyHitList;
-	VectorWS m_vStart;
+	Vector m_vWaveDirection;
 };

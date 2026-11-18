@@ -237,7 +237,7 @@ CPulseCell_BaseYieldingInflow
 	class CPulseCell_BaseYieldingInflow;
 }
 
-// fingerprint = 1295793995
+// fingerprint = 528699041
 CPulseCell_BooleanSwitchState
 {
 	// m_BaseClasses = ["CPulseCell_BaseState"]
@@ -256,9 +256,10 @@ CPulseCell_BooleanSwitchState
 	// pulse_inflows = {"name":"Activate","friendly_name":"Activate","description":"Begin testing a condition composed of Observable values. Continues checking until canceled.","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_BooleanSwitchState"
 	// editor_canvas_item_spec = {"className":"IsStateNode","item_factory":"BooleanSwitchState"}
-	// pulse_node_custom_attributes = [{"field_name":"m_Condition","attr_factory":"CPulseObservableExpression","friendly_name":"Observable","description":"Condition to evaluate when any of its dependent values change.","args":{"expression_type":"PVAL_BOOL"}}]
 	// pulse_outflows = {"name":"m_WhenTrue","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"While True","description":"Fired when the observable boolean is true, and killed when false."}, {"name":"m_WhenFalse","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"While False","description":"Fired when the observable boolean is false, and killed when true."}
-	class CPulseCell_BooleanSwitchState(null);
+	// bCondition: description = "Condition to evaluate when any of its dependent values change."
+	// bCondition: metadata = {"legacy_names":["m_Condition"]}
+	class CPulseCell_BooleanSwitchState(PVAL_LAMBDA:PVAL_BOOL bCondition "Observable");
 }
 
 // fingerprint = 717294393
@@ -339,6 +340,8 @@ CPulseCell_IntervalTimer
 	// m_BaseClasses = ["CPulseCell_BaseYieldingInflow"]
 	// m_FriendlyName = "Interval Timer"
 	// m_Description = "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
+	// m_Variables[] = {"m_Name":"m_bFireAtStart","m_FullType":"boolean","m_LongName":"Fire At Start","m_Description":"Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
+	// m_Variables[] = {"m_Name":"m_bFireAtEnd","m_FullType":"boolean","m_LongName":"Fire At End","m_Description":"Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
 	// hidden_in_tool = false
@@ -352,7 +355,7 @@ CPulseCell_IntervalTimer
 	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_IntervalTimer"
 	// header_icon = "tools/images/pulse_editor/node_timer.png"
 	// editor_canvas_item_spec = {"item_factory":"IntervalTimer"}
-	// pulse_outflows = {"name":"m_Completed","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"Completed","description":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up perfectly."}, {"name":"m_OnInterval","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"On Interval","description":"New child cursor starts here every time the wait interval elapses"}
+	// pulse_outflows = {"name":"m_Completed","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"Completed","description":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set."}, {"name":"m_OnInterval","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"On Interval","description":"New child cursor starts here every time the wait interval elapses"}
 	// flDuration: description = "This is the overall duration. If -1 timer will continue forever. During this duration, we will fire a new child cursor at each Interval."
 	// flDuration: advanced_view
 	// flWaitInterval: advanced_view
@@ -413,86 +416,28 @@ CPulseCell_PickBestOutflowSelector
 	class CPulseCell_PickBestOutflowSelector(null);
 }
 
-// fingerprint = 975032352
 CPulseCell_Value_Curve
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Curve"
-	// m_Variables[] = {"m_Name":"m_Curve","m_FullType":"curve","m_LongName":"Curve","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_spline":[],"m_tangents":[],"m_vDomainMins":[0.0,0.0],"m_vDomainMaxs":[0.0,0.0]},"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"Evaluate the curve at the specified input position","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_Value_Curve"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_Curve(PVAL_FLOAT t "t") -> (PVAL_FLOAT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::EvaluateCurve"
+	class CPulseCell_Value_Curve;
 }
 
-// fingerprint = 2092843331
 CPulseCell_Value_Gradient
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Gradient"
-	// m_Variables[] = {"m_Name":"m_Gradient","m_FullType":"kv3","m_LongName":"Gradient","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_Stops":[]},"m_KV3Metadata":{"hidden":false,"editor":"Gradient()"},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"Evaluate the gradient at a position between 0 and 1","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_Value_Gradient"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_Gradient(PVAL_FLOAT t "t") -> (PVAL_COLOR_RGB retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::EvaluateGradient"
+	class CPulseCell_Value_Gradient;
 }
 
-// fingerprint = 326640291
 CPulseCell_Value_RandomFloat
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Random Float"
-	// m_Description = "Generate a random float between min and max (inclusive)"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_Value_RandomFloat"
-	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::RandomFloat"
+	class CPulseCell_Value_RandomFloat;
 }
 
-// fingerprint = 393431413
 CPulseCell_Value_RandomInt
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Random Integer"
-	// m_Description = "Generate a random integer between min and max (inclusive)"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_Value_RandomInt"
-	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_RandomInt(PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::RandomInteger"
+	class CPulseCell_Value_RandomInt;
 }
 
 // fingerprint = 860342186
@@ -517,6 +462,7 @@ CPulseCell_WaitForCursorsWithTag
 	// supported_domains = {"BaseDomain":true}
 	// pulse_inflows = {"name":"Wait","friendly_name":"Wait","description":"","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_WaitForCursorsWithTag"
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// pTagName: description = "A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them."
 	// tagValue: description = "Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value."
@@ -543,7 +489,7 @@ CPulseCell_WaitForCursorsWithTagBase
 	class CPulseCell_WaitForCursorsWithTagBase;
 }
 
-// fingerprint = 1630411852
+// fingerprint = 1868167717
 CPulseCell_WaitForObservable
 {
 	// m_BaseClasses = ["CPulseCell_BaseYieldingInflow"]
@@ -561,9 +507,10 @@ CPulseCell_WaitForObservable
 	// pulse_inflows = {"name":"Start","friendly_name":"Start","description":"Begin testing a condition composed of Observable variable references. Continues checking until true.","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:resourcecompiler.dll!CPulseCell_WaitForObservable"
 	// header_icon = "tools/images/pulse_editor/observable_variable_listener.png"
-	// pulse_node_custom_attributes = [{"field_name":"m_Condition","attr_factory":"CPulseObservableExpression","friendly_name":"Observable","description":"Condition to evaluate when any of its dependent values change.","args":{"expression_type":"PVAL_BOOL"}}]
 	// pulse_outflows = {"name":"m_OnTrue","is_default_outflow":true,"backed_by_variable":true,"friendly_name":"On True","description":""}
-	class CPulseCell_WaitForObservable(null);
+	// bCondition: description = "Condition to evaluate when any of its dependent values change."
+	// bCondition: metadata = {"legacy_names":["m_Condition"]}
+	class CPulseCell_WaitForObservable(PVAL_LAMBDA:PVAL_BOOL bCondition "Observable");
 }
 
 // fingerprint = 3063805403
@@ -571,6 +518,7 @@ CPulseCursorFuncs
 {
 	// m_FriendlyName = "Any Other Cursors Have Tag"
 	// m_Description = "Check if any yielded cursors on the graph already have the given tag."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -582,6 +530,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Cursor Has Tag"
 	// m_Description = "Check if the cursor already has the given tag."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -602,6 +551,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Kill Cursors With Tag"
 	// m_Description = "Find all the yielded cursors on this graph with the matching tag and cancel them."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/kill_cursor_with_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -614,6 +564,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Remove Tag From Cursor"
 	// m_Description = "Remove the given tag from this cursor. If other cursors are waiting on us, they will resume."
+	// search_expr = "pTagName"
 	// editor_canvas_item_spec = {"className":"IsControlFlowNode"}
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
@@ -626,6 +577,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Tag Cursor"
 	// m_Description = "Save a named value of any type on the cursor."
+	// search_expr = "pTagName"
 	// editor_canvas_item_spec = {"className":"IsControlFlowNode"}
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// adds_cursor_tag
@@ -641,6 +593,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Wake Cursors With Tag"
 	// m_Description = "Find all the yielded cursors on this graph with the matching tag and wake them."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/kill_cursor_with_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -685,7 +638,7 @@ CPulseEnumlib
 	function RemoveFlags(PVAL_ENUM value "value", PVAL_ENUM flags "flags") -> (PVAL_ENUM retval "Result");
 }
 
-// fingerprint = 1311878972
+// fingerprint = 3039381659
 CPulseMathlib
 {
 	// m_FriendlyName = "Abs Float"
@@ -752,6 +705,34 @@ CPulseMathlib
 	// is_pure_value
 	function ClampInt(PVAL_INT x "x", PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
 
+	// m_FriendlyName = "Closest Point On Line"
+	// m_Description = "Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnLine(PVAL_VEC3 vPoint "Point", PVAL_VEC3 vLineA "Line A", PVAL_VEC3 vLineB "Line B") -> (PVAL_VEC3 retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On Line Segment"
+	// m_Description = "Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnLineSegment(PVAL_VEC3 vPoint "Point", PVAL_VEC3 vLineA "Line A", PVAL_VEC3 vLineB "Line B") -> (PVAL_VEC3 retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On World Line"
+	// m_Description = "Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnWorldLine(PVAL_VEC3_WORLDSPACE vPoint "Point", PVAL_VEC3_WORLDSPACE vLineA "Line A", PVAL_VEC3_WORLDSPACE vLineB "Line B") -> (PVAL_VEC3_WORLDSPACE retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On World Line Segment"
+	// m_Description = "Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnWorldLineSegment(PVAL_VEC3_WORLDSPACE vPoint "Point", PVAL_VEC3_WORLDSPACE vLineA "Line A", PVAL_VEC3_WORLDSPACE vLineB "Line B") -> (PVAL_VEC3_WORLDSPACE retval "Result", PVAL_FLOAT Fraction "Fraction");
+
 	// m_FriendlyName = "Compose Angles"
 	// m_Description = "Applies B in A's local space."
 	// expr_alias = "composeAngles"
@@ -799,6 +780,24 @@ CPulseMathlib
 	// has_observable_context
 	// is_pure_value
 	function DotProductVector(PVAL_VEC3 a "a", PVAL_VEC3 b "b") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Curve"
+	// m_Description = "Evaluate the curve at the specified input position"
+	// legacy_names = ["CPulseCell_Value_Curve"]
+	// has_observable_context
+	// is_pure_value
+	// curve: advanced_view
+	// curve: metadata = {"legacy_names":["m_Curve"]}
+	function EvaluateCurve(PVAL_FLOAT t "t", PVAL_LEAF:Curve curve "curve") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Gradient"
+	// m_Description = "Evaluate the gradient at a position between 0 and 1"
+	// legacy_names = ["CPulseCell_Value_Gradient"]
+	// has_observable_context
+	// is_pure_value
+	// gradient: advanced_view
+	// gradient: metadata = {"legacy_names":["m_Gradient"]}
+	function EvaluateGradient(PVAL_FLOAT t "t", PVAL_LEAF:Gradient gradient "gradient") -> (PVAL_COLOR_RGB retval "Result");
 
 	// m_FriendlyName = "Exp"
 	// m_Description = "Computes e ( 2.71...) raised to a power"
@@ -1121,6 +1120,22 @@ CPulseMathlib
 	// has_observable_context
 	// is_pure_value
 	function Rad2Deg(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Random Float"
+	// m_Description = "Generate a random float between min and max (inclusive)"
+	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
+	// expr_alias = "rand_float"
+	// legacy_names = ["CPulseCell_Value_RandomFloat"]
+	// expr_alias_info = "rand_float( Float flMin, Float flMax )"
+	function RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Random Integer"
+	// m_Description = "Generate a random integer between min and max (inclusive)"
+	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
+	// expr_alias = "rand_int"
+	// legacy_names = ["CPulseCell_Value_RandomInt"]
+	// expr_alias_info = "rand_int( Integer nMin, Integer nMax )"
+	function RandomInteger(PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Random World Position"
 	// m_Description = "Returns a random position centered on vCenter with random min and max radius"
@@ -1457,7 +1472,7 @@ CPulseTestScriptLib
 @lib:resourcecompiler.dll!CPulseCell_Inflow_ObservableVariableListener = 0
 @lib:resourcecompiler.dll!CPulseCell_Inflow_Yield = 955696098
 @lib:resourcecompiler.dll!CPulseCell_IsRequirementValid = 931326599
-@lib:resourcecompiler.dll!CPulseCell_ObservableSwitchState = 3382071419
+@lib:resourcecompiler.dll!CPulseCell_ObservableSwitchState = 1514532293
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleOrdered = 4001330057
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleRandom = 4259677353
 @lib:resourcecompiler.dll!CPulseCell_Outflow_CycleShuffled = 2434550510

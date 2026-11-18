@@ -5,8 +5,12 @@
 // MHasKV3TransferPolymorphicClassname
 class CPulseCell_IntervalTimer : public CPulseCell_BaseYieldingInflow
 {
-	// MPropertyDescription = "Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up perfectly."
+	// MPropertyDescription = "Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set."
 	CPulse_ResumePoint m_Completed; // = { "m_SourceOutflowName": "", "m_nDestChunk": -1, "m_nInstruction": -1 }
 	// MPropertyDescription = "New child cursor starts here every time the wait interval elapses"
 	SignatureOutflow_Continue m_OnInterval; // = { "m_SourceOutflowName": "", "m_nDestChunk": -1, "m_nInstruction": -1 }
+	// MPropertyDescription = "Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed."
+	bool m_bFireAtStart;
+	// MPropertyDescription = "Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)"
+	bool m_bFireAtEnd;
 };

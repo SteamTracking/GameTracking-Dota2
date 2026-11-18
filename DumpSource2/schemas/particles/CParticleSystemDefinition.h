@@ -114,10 +114,6 @@ class CParticleSystemDefinition : public IParticleSystemDefinition
 	// MPropertyAutoRebuildOnChange
 	bool m_bIsGPUParticleSystem;
 	// MPropertyStartGroup = "Performance Options"
-	// MPropertyFriendlyName = "minimum CPU level"
-	int32 m_nMinCPULevel;
-	// MPropertyFriendlyName = "minimum GPU level"
-	int32 m_nMinGPULevel;
 	// MPropertyFriendlyName = "time to sleep when not drawn"
 	float32 m_flNoDrawTimeToGoToSleep; // = 8
 	// MPropertyFriendlyName = "maximum draw distance"

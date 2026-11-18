@@ -7,6 +7,7 @@ class ModelMeshBufferData_t
 	bool m_bMeshoptIndexSequence;
 	int8 m_nMeshoptMeshletEncodeVersion; // = -1
 	bool m_bCompressedZSTD;
+	bool m_bCompressedZ3;
 	bool m_bCreateBufferSRV;
 	bool m_bCreateBufferUAV;
 	bool m_bCreateRawBuffer;

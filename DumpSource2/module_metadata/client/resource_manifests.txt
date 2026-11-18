@@ -198,8 +198,14 @@ GameStartup "DotaNewSettings_global_client" // src/game/client/dota/panorama/pop
 	materials/dev/blur_gaussian_25.vmat
 	materials/dev/copytexturemultiply.vmat
 	materials/dev/black.vmat
+	materials/dev/copycoloranddepth.vmat
 	materials/dev/dota_glow_blur.vmat
 	materials/dev/glow_output.vmat
+	materials/dev/solid_sky.vmat
+	materials/dev/outline_render.vmat
+	materials/dev/jfa_init.vmat
+	materials/dev/jfa_pass.vmat
+	materials/dev/outline_blend.vmat
 
 GameStartup "RenderingPipelineDotaGroup" // src/game/client/dota/renderingpipeline_dota.cpp
 	RenderingPipelineDotaSharedManifest
@@ -211,12 +217,6 @@ GameStartup "RenderingPipelineDotaGroup" // src/game/client/dota/renderingpipeli
 
 GameStartup "RenderingPipelineDotaPortraitGroup" // src/game/client/dota/renderingpipeline_dota_portrait.cpp
 	RenderingPipelineDotaPortraitManifest
-
-"" "RenderingPipelineDotaReflectRefractManifest" // src/game/client/dota/renderingpipeline_dota_reflect_refract.cpp
-	materials/dev/solid_sky.vmat
-
-GameStartup "RenderingPipelineDotaReflectRefractGroup" // src/game/client/dota/renderingpipeline_dota_reflect_refract.cpp
-	RenderingPipelineDotaReflectRefractManifest
 
 "" "RenderingPipelineDotaSharedManifest" // src/game/client/dota/renderingpipeline_dota_shared.cpp
 	materials/dev/flat_normal.vtex

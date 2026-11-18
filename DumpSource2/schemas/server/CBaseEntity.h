@@ -40,9 +40,7 @@ class CBaseEntity : public CEntityInstance
 	CUtlSymbolLarge m_iszDamageFilterName;
 	float32 m_flMoveDoneTime;
 	CUtlStringToken m_nSubclassID;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
 	float32 m_flAnimTime;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
 	float32 m_flSimulationTime;
 	GameTime_t m_flCreateTime;
 	bool m_bClientSideRagdoll;
@@ -54,9 +52,9 @@ class CBaseEntity : public CEntityInstance
 	// MNotSaved
 	int32 m_iSentToClients;
 	CUtlString m_sUniqueHammerID;
+	uint32 m_nHammerHashKey;
 	uint32 m_spawnflags;
 	GameTick_t m_nNextThinkTick;
-	// MKV3TransferSaveOpsForField = "GetEngineTickSaveRestoreOps"
 	int32 m_nSimulationTick;
 	CEntityIOOutput m_OnKilled;
 	uint32 m_fFlags;

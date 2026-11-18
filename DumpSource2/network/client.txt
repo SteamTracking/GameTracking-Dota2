@@ -61,11 +61,12 @@ CBaseAnimGraphController
 	uint8 m_SerializePoseRecipeAG2Dynamic (change callbacks: AG2_PoseRecipeChanged)
 	uint32 m_nSerializePoseRecipeAG2ActiveSlot (change callbacks: AG2_PoseRecipeChanged)
 	int m_nSerializePoseRecipeVersionAG2
+	ChoreoAnimSlotNetworkedData_t m_vecChoreoAnimSlotsAG2 (change callbacks: AG2_OnChoreoAnimSlotsChanged)
+	uint32 m_nChoreoAnimSlotsChangeCountAG2 (change callbacks: AG2_OnChoreoAnimSlotsChanged)
 	int m_nServerGraphInstanceIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	int m_nServerSerializationContextIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	ResourceId_t m_primaryGraphId (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 	ResourceId_t m_vecExternalGraphIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
-	ResourceId_t m_vecExternalClipIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 
 CBaseAnimatingActivity
 	bool m_bShouldAnimateDuringGameplayPause
@@ -76,7 +77,6 @@ CBaseFilter
 CBasePlayerController
 	include by name: m_pEntity, m_flSimulationTime, m_flCreateTime, m_iTeamNum, m_nNextThinkTick, m_fFlags
 	include by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
-	overrides: m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
 	user group proxies: LocalPlayerExclusive, LocalTeamExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
 	replay compat fields: m_skeletonInstance\.m_vecOrigin\..*| OnReplayCompat_GameSceneNodeOriginAngles
 	uint32 m_nTickBase (priority: 1; user groups: LocalPlayerAndPredictorsExclusive)
@@ -160,12 +160,6 @@ CDOTACustomShopItemInfo
 	char m_Category
 
 CDOTAEmptyAbility
-
-CDOTAInGamePredictionState
-	bool m_bVotingClosed
-	bool m_bAllPredictionsFinished (change callbacks: OnAllPredictionsFinished)
-	InGamePredictionData_t m_vecPredictions
-	LeagueID_t m_nLeagueID (sent as: uint32)
 
 CDOTAPlayerPawn
 	include by name: m_pCameraServices, m_pMovementServices
@@ -343,6 +337,8 @@ CDOTA_Ability_Beastmaster_PrimalRoar
 
 CDOTA_Ability_Beastmaster_SummonRazorback
 
+CDOTA_Ability_Beastmaster_SummonThunderhide
+
 CDOTA_Ability_Beastmaster_Summon_Raptor
 
 CDOTA_Ability_BerserkerTroll_Break
@@ -406,6 +402,10 @@ CDOTA_Ability_Centaur_Stampede
 
 CDOTA_Ability_Centaur_Work_Horse
 
+CDOTA_Ability_Chaos_Knight_ArmageddonsFlank
+
+CDOTA_Ability_Chaos_Knight_ArmageddonsFlank_End
+
 CDOTA_Ability_Chaos_Knight_FundamentalForging
 
 CDOTA_Ability_Clinkz_SearingArrows
@@ -452,6 +452,9 @@ CDOTA_Ability_Dazzle_NothlProjection
 	CHandle< CBaseEntity> m_hAbilitySoulEntity (sent as: ehandle)
 
 CDOTA_Ability_Dazzle_NothlProjectionEnd
+
+CDOTA_Ability_Dazzle_ThroughTheRealm
+	CHandle< CBaseEntity> m_hPhysicalBody (sent as: ehandle)
 
 CDOTA_Ability_Death_Prophet_MourningRitual
 
@@ -594,6 +597,8 @@ CDOTA_Ability_LoneDruid_Entangle
 CDOTA_Ability_LoneDruid_Innate_GiftBearer
 	int m_tierReroll
 
+CDOTA_Ability_Lycan_Pack_Hunter
+
 CDOTA_Ability_Lycan_SummonWolves_Bash
 
 CDOTA_Ability_Lycan_SummonWolves_GeistForm
@@ -666,6 +671,8 @@ CDOTA_Ability_Morphling_Hybrid
 
 CDOTA_Ability_MudGolem_CloakAura
 
+CDOTA_Ability_MudGolem_HurlBigBoulder
+
 CDOTA_Ability_MudGolem_HurlBoulder
 
 CDOTA_Ability_MudGolem_RockDestroy
@@ -682,6 +689,8 @@ CDOTA_Ability_NagaSiren_SlithereenCutlass
 
 CDOTA_Ability_Necronomicon_Archer_Purge
 
+CDOTA_Ability_Neutral_Gold_Upgrade_Ability
+
 CDOTA_Ability_Neutral_Upgrade
 
 CDOTA_Ability_Nevermore_Frenzy
@@ -693,6 +702,8 @@ CDOTA_Ability_Night_Stalker_Heart_Of_Darkness
 CDOTA_Ability_Night_Stalker_MidnightFeast
 
 CDOTA_Ability_Night_Stalker_Night_Reign
+
+CDOTA_Ability_NyxAssassin_ScarabMetabolism
 
 CDOTA_Ability_Nyx_Assassin_Burrow
 
@@ -1035,6 +1046,12 @@ CDOTA_DarkCarnival_MurderOfCrows
 
 CDOTA_FightingGame_EffectsEntity
 
+CDOTA_FoWRevealedRegion
+	float m_flMinX
+	float m_flMinY
+	float m_flMaxX
+	float m_flMaxY
+
 CDOTA_ItemStockInfo
 	int iTeamNumber
 	AbilityID_t nItemAbilityID (sent as: int32)
@@ -1058,7 +1075,11 @@ CDOTA_Item_AshLegionShield
 
 CDOTA_Item_Ballista
 
+CDOTA_Item_Balmhook
+
 CDOTA_Item_Battlefury
+
+CDOTA_Item_BerserkersSabatons
 
 CDOTA_Item_Book
 
@@ -1069,6 +1090,8 @@ CDOTA_Item_BookIntelligence
 CDOTA_Item_BookStrength
 
 CDOTA_Item_BootsOfTravel_2
+
+CDOTA_Item_Brick
 
 CDOTA_Item_Broom_Handle
 
@@ -1133,6 +1156,8 @@ CDOTA_Item_GunpowderGauntlets
 CDOTA_Item_Harmonizer
 
 CDOTA_Item_Havoc_Hammer
+
+CDOTA_Item_HelmOfTheHivemind
 
 CDOTA_Item_Helm_Of_The_Undying
 
@@ -1205,6 +1230,8 @@ CDOTA_Item_Recipe_Arcane_Blink
 CDOTA_Item_Recipe_Ballista
 
 CDOTA_Item_Recipe_Battlefury
+
+CDOTA_Item_Recipe_BerserkersSabatons
 
 CDOTA_Item_Recipe_BootsOfTravel_2
 
@@ -1309,6 +1336,8 @@ CDOTA_Item_Recipe_Silver_Edge
 CDOTA_Item_Recipe_Solar_Crest
 
 CDOTA_Item_Recipe_SpecialistsArray
+
+CDOTA_Item_Recipe_Starforge
 
 CDOTA_Item_Recipe_Swift_Blink
 
@@ -1904,6 +1933,9 @@ CRoshanPhaseInfo
 	ERoshanSpawnPhase m_eRoshanPhase
 	GameTime_t m_flRoshanPhaseStartTime (sent as: float32)
 	GameTime_t m_flRoshanPhaseEndTime (sent as: float32)
+	CHandle< CBaseEntity> m_hAegisItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hAegisHolder (sent as: ehandle)
+	HeroID_t m_nAegisHolderHeroID (sent as: int32)
 
 CScriptComponent
 
@@ -2041,7 +2073,7 @@ C_BasePlayerPawn
 	exclude by name: m_pWeaponServices, m_pItemServices, m_pAutoaimServices, m_pObserverServices, m_pWaterServices, m_pUseServices, m_pFlashlightServices, m_pMovementServices
 	include by user group: Player, Water, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	exclude by user group: FogController
-	overrides: m_lifeState changeCallback OnLifeStateChanged, m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
+	overrides: m_lifeState changeCallback OnLifeStateChanged
 	user group proxies: LocalPlayerExclusive
 	CPlayer_WeaponServices * m_pWeaponServices
 	CPlayer_ItemServices * m_pItemServices
@@ -2280,6 +2312,7 @@ C_DOTABaseGameMode
 	int m_iCustomScanMaxCharges
 	float m_flCustomScanCooldown
 	float m_flCustomGlyphCooldown
+	int m_iCustomGlyphMaxCharges
 	float m_flCustomBackpackSwapCooldown
 	float m_flCustomBackpackCooldownPercent
 	bool m_bDefaultRuneSpawnLogic
@@ -2428,9 +2461,17 @@ C_DOTAGamerules
 	GameTime_t m_fGoodGlyphCooldown (sent as: float32)
 	GameTime_t m_fBadGlyphCooldown (sent as: float32)
 	GameTime_t m_flGlyphCooldowns (sent as: float32)
+	int m_iGoodGlyphCharges
+	int m_iBadGlyphCharges
+	int m_iGlyphCharges
+	GameTime_t m_fGoodGlyphActiveEndTime (sent as: float32)
+	GameTime_t m_fBadGlyphActiveEndTime (sent as: float32)
+	GameTime_t m_flGlyphActiveEndTimes (sent as: float32)
+	GameTime_t m_flGlyphUseCooldowns (sent as: float32)
 	GameTime_t m_fGoodRadarCooldown (sent as: float32)
 	GameTime_t m_fBadRadarCooldown (sent as: float32)
 	GameTime_t m_flRadarCooldowns (sent as: float32)
+	GameTime_t m_flGreaterHornOfBattleCooldowns (sent as: float32)
 	int m_iGoodRadarCharges
 	int m_iBadRadarCharges
 	int m_iRadarCharges
@@ -2478,10 +2519,12 @@ C_DOTAGamerules
 	int m_nExpectedPlayers
 	int m_iMinimapDebugGridState
 	int m_iFoWFrameNumber (priority: 32)
+	CDOTA_FoWRevealedRegion m_vecFoWRevealedRegions (change callbacks: OnFoWRevealedRegionsChanged)
 	Vector m_vWeatherWindDirection
 	CTormentorSpawnPhase m_tormentorSpawnPhase
 	CTormentorSpawnPhase m_vecTormentorSpawnPhases
 	AbilityID_t m_vecDeityBlessings (sent as: int32)
+	NeutralArtifactPoolState_t m_arrArtifactPools
 	HeroID_t m_vecRequiredPlaytestHeroesStorage (sent as: int32)
 	HeroID_t m_vecRecommendedPlaytestHeroesStorage (sent as: int32)
 	bool m_bAllRequiredPlaytestHeroesPicked
@@ -2686,6 +2729,8 @@ C_DOTA_Ability_AlphaWolf_CriticalStrike
 
 C_DOTA_Ability_AncientApparition_BoneChill
 
+C_DOTA_Ability_AncientApparition_ChillingTouch2
+
 C_DOTA_Ability_AncientApparition_Innate_Absolute_Zero
 
 C_DOTA_Ability_AncientGolem_Rockslide
@@ -2780,6 +2825,8 @@ C_DOTA_Ability_Beastmaster_Mark_Of_The_Beast
 
 C_DOTA_Ability_Beastmaster_Rugged
 
+C_DOTA_Ability_Beastmaster_ThunderhideDrum
+
 C_DOTA_Ability_Beastmaster_WildAxes
 
 C_DOTA_Ability_BigThunderLizard_Frenzy
@@ -2844,6 +2891,9 @@ C_DOTA_Ability_Brewmaster_PrimalSplit
 	CHandle< CBaseEntity> m_hPrimary (sent as: ehandle)
 	CHandle< CBaseEntity> m_hSecondary (sent as: ehandle)
 	CHandle< CBaseEntity> m_hTertiary (sent as: ehandle)
+	CHandle< CBaseEntity> m_hEarthScepterItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hStormScepterItem (sent as: ehandle)
+	CHandle< CBaseEntity> m_hFireScepterItem (sent as: ehandle)
 
 C_DOTA_Ability_Brewmaster_Primal_Split_Cancel
 
@@ -3407,9 +3457,13 @@ C_DOTA_Ability_ChaosKnight_Phantasm
 
 C_DOTA_Ability_ChaosKnight_Reality_Rift
 
+C_DOTA_Ability_Chaos_Knight_Armageddon
+
 C_DOTA_Ability_Chaos_Knight_Phantasmagoria
 
 C_DOTA_Ability_Chaos_Knight_Reins_Of_Chaos
+
+C_DOTA_Ability_Chen_Anoint
 
 C_DOTA_Ability_Chen_DivineFavor
 
@@ -3629,6 +3683,10 @@ C_DOTA_Ability_Earthshaker_Fissure
 C_DOTA_Ability_Earthshaker_Slugger
 
 C_DOTA_Ability_Earthshaker_Spirit_Cairn
+
+C_DOTA_Ability_Eimermole_MinersAura
+
+C_DOTA_Ability_Eimermole_MinersSlam
 
 C_DOTA_Ability_Elder_Titan_AncestralSpirit
 
@@ -4097,6 +4155,8 @@ C_DOTA_Ability_LoneDruid_SpiritBear_Return
 
 C_DOTA_Ability_LoneDruid_SpiritBear_SpiritLink
 
+C_DOTA_Ability_LoneDruid_SpiritBear_SummonDruid
+
 C_DOTA_Ability_LoneDruid_SpiritLink
 
 C_DOTA_Ability_LoneDruid_TrueForm
@@ -4163,8 +4223,6 @@ C_DOTA_Ability_Meepo_DividedWeStand
 C_DOTA_Ability_Meepo_Earthbind
 
 C_DOTA_Ability_Meepo_FairShare
-
-C_DOTA_Ability_Meepo_Fling
 
 C_DOTA_Ability_Meepo_FlingRelease
 
@@ -4361,9 +4419,15 @@ C_DOTA_Ability_Obsidian_Destroyer_EssenceAura
 
 C_DOTA_Ability_Obsidian_Destroyer_SanityEclipse
 
+C_DOTA_Ability_Odobenus_Blight
+
 C_DOTA_Ability_OgreBruiser_OgreSmash
 
 C_DOTA_Ability_OgreMagi_FrostArmor
+
+C_DOTA_Ability_OgreSealPup_DisapprovalAura
+
+C_DOTA_Ability_OgreSeal_Flop
 
 C_DOTA_Ability_Ogre_Magi_Bloodlust
 
@@ -4398,6 +4462,8 @@ C_DOTA_Ability_Omniknight_Pacify
 C_DOTA_Ability_Omniknight_Purification
 
 C_DOTA_Ability_Omniknight_Repel
+
+C_DOTA_Ability_Omniknight_RighteousPath
 
 C_DOTA_Ability_Oracle_Clairvoyant_Cure
 
@@ -4514,7 +4580,6 @@ C_DOTA_Ability_Pudge_Rot
 C_DOTA_Ability_Pugna_Decrepify
 
 C_DOTA_Ability_Pugna_LifeDrain
-	EHANDLE m_hTarget (sent as: ehandle)
 
 C_DOTA_Ability_Pugna_NetherBlast
 
@@ -4535,6 +4600,8 @@ C_DOTA_Ability_QueenOfPain_ScreamOfPain
 C_DOTA_Ability_QueenOfPain_ShadowStrike
 
 C_DOTA_Ability_QueenOfPain_SonicWave
+
+C_DOTA_Ability_Radigull_Eggstremism
 
 C_DOTA_Ability_Rattletrap_BatteryAssault
 
@@ -5876,6 +5943,12 @@ C_DOTA_Ability_SpiritBreaker_NetherStrike
 
 C_DOTA_Ability_SpiritBreaker_PlanarPocket
 
+C_DOTA_Ability_StoneOfRecall
+	EHANDLE m_hThinker (sent as: ehandle)
+
+C_DOTA_Ability_Stone_Of_Recall_Teleport
+	float m_flChannelTime
+
 C_DOTA_Ability_StormSpirit_BallLightning
 
 C_DOTA_Ability_StormSpirit_ElectricVortex
@@ -6047,6 +6120,8 @@ C_DOTA_Ability_Tusk_Snowball
 
 C_DOTA_Ability_Twin_Gate_Portal_Warp
 
+C_DOTA_Ability_Undying_Bite
+
 C_DOTA_Ability_Undying_CeaselessDirge
 
 C_DOTA_Ability_Undying_Decay
@@ -6151,6 +6226,8 @@ C_DOTA_Ability_Weaver_TheSwarm
 C_DOTA_Ability_Weaver_Threads_Of_Fate
 
 C_DOTA_Ability_Weaver_TimeLapse
+
+C_DOTA_Ability_Weaver_TimeLapseAlly
 
 C_DOTA_Ability_Windrunner_EasyBreezy
 
@@ -6339,6 +6416,7 @@ C_DOTA_BaseNPC
 	char m_CustomHealthLabel
 	Color m_CustomHealthLabelColor
 	OriginalModelFlags_t m_nIsOriginalModel
+	float m_flBuffEffectivenessOverride
 
 C_DOTA_BaseNPC_Additive
 
@@ -6521,6 +6599,7 @@ C_DOTA_DataNonSpectator
 	CRoshanPhaseInfo m_roshanSpawnInfo
 	int m_nNextPowerRuneType
 	int m_nNextPowerRuneSpawnIndex
+	CHandle< CBaseEntity> m_hNextPowerRuneSpawner (sent as: ehandle)
 
 C_DOTA_DataRadiant
 
@@ -6656,6 +6735,8 @@ C_DOTA_Item_BagOfGold
 
 C_DOTA_Item_BeltOfStrength
 
+C_DOTA_Item_BerserkersHood
+
 C_DOTA_Item_BlackGrimoire
 
 C_DOTA_Item_Black_King_Bar
@@ -6673,6 +6754,8 @@ C_DOTA_Item_BlinkDagger
 C_DOTA_Item_Blitz_Knuckles
 
 C_DOTA_Item_Blood_Grenade
+
+C_DOTA_Item_Bloodslinger
 
 C_DOTA_Item_Bloodstone
 
@@ -6703,6 +6786,8 @@ C_DOTA_Item_Bullwhip
 
 C_DOTA_Item_Butterfly
 
+C_DOTA_Item_Caduceus
+
 C_DOTA_Item_Caster_Rapier
 
 C_DOTA_Item_Ceremonial_Robe
@@ -6718,6 +6803,8 @@ C_DOTA_Item_Chipped_Vest
 C_DOTA_Item_Circlet
 
 C_DOTA_Item_Clarity
+
+C_DOTA_Item_Claszian_Timepiece
 
 C_DOTA_Item_Claymore
 
@@ -6768,8 +6855,6 @@ C_DOTA_Item_DeathGoldDropped
 C_DOTA_Item_DemonEdge
 
 C_DOTA_Item_Desolator
-
-C_DOTA_Item_Desolator_2
 
 C_DOTA_Item_Devastator
 
@@ -6948,6 +7033,10 @@ C_DOTA_Item_Hood_Of_Defiance
 
 C_DOTA_Item_Horizon
 
+C_DOTA_Item_Horn_Of_Battle
+
+C_DOTA_Item_Horn_Of_Battle_Greater
+
 C_DOTA_Item_HydrasBreath
 
 C_DOTA_Item_Hyperstone
@@ -7048,6 +7137,8 @@ C_DOTA_Item_Nemesis_Curse
 C_DOTA_Item_NetherRaiment
 
 C_DOTA_Item_Nian_Flag_Trap
+
+C_DOTA_Item_Nothl_Sigil
 
 C_DOTA_Item_NullTalisman
 
@@ -7154,6 +7245,8 @@ C_DOTA_Item_Recipe_Blade_Mail
 
 C_DOTA_Item_Recipe_Blood_Grenade
 
+C_DOTA_Item_Recipe_Bloodslinger
+
 C_DOTA_Item_Recipe_Bloodstone
 
 C_DOTA_Item_Recipe_Bloodthorn
@@ -7171,6 +7264,8 @@ C_DOTA_Item_Recipe_Buckler
 C_DOTA_Item_Recipe_Bullwhip
 
 C_DOTA_Item_Recipe_Butterfly
+
+C_DOTA_Item_Recipe_Caduceus
 
 C_DOTA_Item_Recipe_Caster_Rapier
 
@@ -7201,8 +7296,6 @@ C_DOTA_Item_Recipe_Dagon4
 C_DOTA_Item_Recipe_Dagon5
 
 C_DOTA_Item_Recipe_Desolator
-
-C_DOTA_Item_Recipe_Desolator_2
 
 C_DOTA_Item_Recipe_Devastator
 
@@ -7324,11 +7417,11 @@ C_DOTA_Item_Recipe_Radiance
 
 C_DOTA_Item_Recipe_RefresherOrb
 
-C_DOTA_Item_Recipe_Revenants_Brooch
-
 C_DOTA_Item_Recipe_RingOfAquila
 
 C_DOTA_Item_Recipe_Ring_Of_Basilius
+
+C_DOTA_Item_Recipe_Ristuls_Devotion
 
 C_DOTA_Item_Recipe_RodOfAtos
 
@@ -7344,6 +7437,8 @@ C_DOTA_Item_Recipe_Shivas_Guard
 
 C_DOTA_Item_Recipe_Skadi
 
+C_DOTA_Item_Recipe_Skypiercer
+
 C_DOTA_Item_Recipe_Sorcerers_Staff
 
 C_DOTA_Item_Recipe_Soul_Booster
@@ -7355,6 +7450,8 @@ C_DOTA_Item_Recipe_Sphere
 C_DOTA_Item_Recipe_Spirit_Vessel
 
 C_DOTA_Item_Recipe_Stormcrafter
+
+C_DOTA_Item_Recipe_Stygian_Desolator
 
 C_DOTA_Item_Recipe_Tenderizer
 
@@ -7394,6 +7491,10 @@ C_DOTA_Item_Recipe_Yasha
 
 C_DOTA_Item_Recipe_Yasha_And_Kaya
 
+C_DOTA_Item_Red_Ledger
+	int m_nCurrentAdjective (change callbacks: OnBountyBoardHitListChanged)
+	int m_nBountiesRemaining
+
 C_DOTA_Item_RefresherOrb
 
 C_DOTA_Item_Repair_kit
@@ -7413,6 +7514,8 @@ C_DOTA_Item_RingOfTarrasque
 C_DOTA_Item_Ring_Of_Basilius
 
 C_DOTA_Item_RippersLash
+
+C_DOTA_Item_Ristuls_Devotion
 
 C_DOTA_Item_RiverPainter
 	int m_iRiverPaintColor
@@ -7478,6 +7581,8 @@ C_DOTA_Item_Sisters_Shroud
 
 C_DOTA_Item_Skadi
 
+C_DOTA_Item_Skypiercer
+
 C_DOTA_Item_Slippers
 
 C_DOTA_Item_Smoke_Of_Deceit
@@ -7504,9 +7609,15 @@ C_DOTA_Item_Spy_Gadget
 
 C_DOTA_Item_StaffOfWizardry
 
+C_DOTA_Item_Starforge
+
+C_DOTA_Item_StoneOfRecall
+
 C_DOTA_Item_Stormcrafter
 
 C_DOTA_Item_StoutShield
+
+C_DOTA_Item_Stygian_Desolator
 
 C_DOTA_Item_Swift_Blink
 
@@ -7587,6 +7698,8 @@ C_DOTA_Item_Vanguard
 C_DOTA_Item_Veil_Of_Discord
 
 C_DOTA_Item_Vermillion_Robe
+
+C_DOTA_Item_VilePhial
 
 C_DOTA_Item_VindicatorsAxe
 
@@ -7686,6 +7799,8 @@ C_DOTA_SimpleObstruction
 	bool m_bBlockFoW
 	bool m_bBlockNav
 
+C_DOTA_Stone_Of_Recall
+
 C_DOTA_TempTree
 	VectorWS m_vecTreeCircleCenter
 	bool m_bCanApplyTreeCostume
@@ -7744,6 +7859,8 @@ C_DOTA_Unit_Hero_Beastmaster_Beasts
 C_DOTA_Unit_Hero_Beastmaster_Boar
 
 C_DOTA_Unit_Hero_Beastmaster_Hawk
+
+C_DOTA_Unit_Hero_Beastmaster_Thunderhide
 
 C_DOTA_Unit_Hero_Bloodseeker
 
@@ -8383,6 +8500,7 @@ C_FuncTrackTrain
 
 C_GameRules
 	int m_nTotalPausedTicks
+	int m_nTotalGameDeltaTicks
 	int m_nPauseStartTick
 	bool m_bGamePaused
 
@@ -8788,6 +8906,8 @@ C_SoundOpvarSetAutoRoomEntity
 
 C_SoundOpvarSetDomeEntity
 
+C_SoundOpvarSetEnclosureEntity
+
 C_SoundOpvarSetOBBEntity
 
 C_SoundOpvarSetOBBWindEntity
@@ -8892,6 +9012,10 @@ C_World
 C_fogplayerparams_t
 	CHandle< CFogController> m_hCtrl (sent as: ehandle; user groups: PlayerFogController)
 
+ChoreoAnimSlotNetworkedData_t
+	CGlobalSymbol m_sSlotID
+	CUtlBinaryBlock m_taskList
+
 ClientQuickBuyItemState
 	short nItemType
 	bool bPurchasable
@@ -8945,6 +9069,7 @@ DataTeamPlayer_t
 	int m_iIncomeGold
 	int m_iWardKillGold
 	int m_iAbilityGold
+	int m_iMidasGold
 	int m_iNetWorth
 	int m_iDenyCount
 	int m_iLastHitCount
@@ -9041,16 +9166,12 @@ IHasAttributes
 
 ISkeletonAnimationController
 
-InGamePredictionData_t
-	uint32 m_nID
-	uint32 m_nValue
-	uint32 m_nRawValue
-	uint8 m_nValueState
-	bool m_bValueIsMask
-
 InventoryQuickBuyState_t
 	QuickBuySlot_t m_vecItemSlots
 	int m_nTotalSlotCountIncludingOverflow
+
+NeutralArtifactPoolState_t
+	AbilityID_t m_nOptions (sent as: int32)
 
 NeutralSpawnBoxes_t
 	struct not in network utl vector embedded
@@ -9063,6 +9184,7 @@ NeutralSpawnBoxes_t
 PhysicsRagdollPose_t
 	CTransform m_RelativeTransforms (encoder: coord; change callbacks: OnTransformChanged)
 	EHANDLE m_hOwner (sent as: ehandle)
+	bool m_bFullyKeyframed (change callbacks: OnFullyKeyframedChanged)
 
 PingConfirmationState_t
 	int m_nInitiatingPlayerID

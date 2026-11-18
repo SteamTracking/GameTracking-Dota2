@@ -7,7 +7,7 @@ class CDOTA_Modifier_DeathProphet_Exorcism : public CDOTA_Buff
 	int32 heal_percent;
 	int32 spirit_duration;
 	float32 ghost_spawn_rate;
-	int32 movement_bonus;
+	bool unslowable;
 	float32 m_flBonusExorcismDuration;
 	int32 m_iSpirits;
 	GameTime_t m_fStartTime;

@@ -6,7 +6,4 @@ class CMixSubgraph : public CMixPropertyBase
 	// MPropertyFriendlyName = "File"
 	// MPropertyAttributeEditor = "AssetBrowse( vmix )"
 	CUtlString subgraphFile; // = "soundstacks/subgraph_default.vmix"
-	// MPropertyFriendlyName = "Name"
-	// MPropertyAttributeChoiceName = "graph_names"
-	CUtlString subgraphName;
 };

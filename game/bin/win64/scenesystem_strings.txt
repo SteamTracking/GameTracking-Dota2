@@ -1436,7 +1436,6 @@ BorderShadow
 Borders
 Borders 
 Borders, background
-Both
 Both types:
 Bottom-left
 Bottom-right
@@ -1985,6 +1984,7 @@ CullParams_t
 Cumulative
 Current mouse cursor = %d: %s
 Currently all this does is to lift the 0..1 limits on dragging widgets.
+Curve
 Curve Tessellation Tolerance
 Curves segments override
 Custom Data and Getters
@@ -2281,7 +2281,6 @@ Enable keyboard controls.
 Enable logarithmic editing (more precision for small values).
 Enable outer-most padding (default if ImGuiTableFlags_BordersOuterV is set)
 Enable resizing of windows from their edges and from the lower-left corner.\nThis requires ImGuiBackendFlags_HasMouseCursors for better mouse cursor feedback.
-Enable scheduler to migrate barriers
 Enable scrolling page by page when clicking outside the scrollbar grab.\nWhen disabled, always scroll to clicked location.\nWhen enabled, Shift+Click scrolls to clicked location.
 Enable turning DragXXX widgets into text input with a simple mouse click-release (without moving).
 Enable various tools calling IM_DEBUG_BREAK().\n\nRequires a debugger being attached, otherwise IM_DEBUG_BREAK() options will appear to crash your application.
@@ -2759,7 +2758,6 @@ HoveredWindow->Root: '%s'
 HoveredWindow: '%s'
 HoveredWindowUnderMovingWindow: '%s'
 Hovering the colored canvas will override io.WantCaptureXXX fields.\nNotice how normally (when set to none), the value of io.WantCaptureKeyboard would be false when hovering and true when clicking.
-How much more estimated pooled memory than submission order a run of reordered passes may use, as a percentage of the submission order peak
 Hsmall
 HuaTianKaiTi?
 HuaTianSongTi?
@@ -3376,7 +3374,6 @@ MarkerSize
 MarkerWeight
 Markers
 Markers and Text
-Markers averaging less than this are left out of the GPU profiler per-frame CSV. They are still in the summary.
 Master disable flag (also hide from context menu)
 Material %s - cannot find raytrace shader!\n
 Material change on single-material desc
@@ -4300,7 +4297,6 @@ SceneSystem/GpuLightBinnerSupportViewModelCascade
 SceneSystem/HDRFrameBuffer
 SceneSystem/HairShading
 SceneSystem/IndirectDispatchBufferSizeMB
-SceneSystem/LightBinner/Debug Visualize Precomputed Shadow Atlas Lights
 SceneSystem/LightCookieAllocGranularity
 SceneSystem/LightCookieMinAllocSize
 SceneSystem/MeshletBufferCPUSlotCount
@@ -4621,7 +4617,6 @@ Stacked modals..
 Stairstep Plot
 Stairstep Plots
 StandardEncoding
-Start recording every frame of GPU profiler timings.
 StartAxis
 StartCharMetrics
 StartComposites
@@ -4653,7 +4648,6 @@ Stock 2
 Stock 3
 Stock Prices
 Stop and reset simulation
-Stop recording GPU profiler timings and write <name>_frames.csv and <name>_summary.csv. Optional argument: name (default is timestamped).
 Storage
 Strand Cull %%
 Strawberry
@@ -5149,7 +5143,6 @@ Views: %d, shadow %d (fog-only %d)  |  CPU: %02.01fms, shadow %02.01fms (fog-onl
 Viridis
 Virtual Texture Debugger
 Virtual Textures: %d
-Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). 0 picks 4, 6, 8, 12 or 16 slices for GPUs below 8GB, 8GB, 12GB, 16GB and larger. Changing it evicts every virtual texture tile.
 Virtual texture page atlas: %u -> %u slices, evicting all tiles\n
 Virtual texture page atlas: %u slices (%u MB) for a GPU with %llu MB, vt_page_atlas_size %d\n
 Virtual texture page atlas: allocated %u of the %u requested slices\n
@@ -6199,7 +6192,6 @@ kerning
 known
 label
 last used by %s
-lb_debug_visualize_precomputed_shadow_atlas_lights
 left pane
 lenBuildCharArray
 lenIV
@@ -6498,11 +6490,6 @@ rupiah
 s_hScrambledHalton != GENERIC_DATA_HANDLE_INVALID
 sc_dumpworld %d
 sc_dumpworld3d %d
-sc_gpu_profiler_record_min_ms
-sc_gpu_profiler_record_start
-sc_gpu_profiler_record_stop
-sc_rendergraph_schedule
-sc_rendergraph_schedule_memory_growth_threshold_pct
 sc_setclassflags %s %d
 scaron
 scedilla

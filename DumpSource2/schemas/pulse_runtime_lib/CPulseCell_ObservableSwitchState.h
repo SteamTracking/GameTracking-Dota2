@@ -3,9 +3,6 @@
 // MHasKV3TransferPolymorphicClassname
 class CPulseCell_ObservableSwitchState : public CPulseCell_BaseState
 {
-	// MPropertyDescription = "Value to evaluate when any of its dependent values change. The result is compared against each case."
-	// MPropertyFriendlyName = "Observable"
-	CPulseObservableExpression< CPulseVariant > m_SwitchValue; // = { "m_DependentObservableBlackboardReferences": [  ], "m_DependentObservableTempVars": [  ], "m_DependentObservableVars": [  ], "m_EvaluateConnection": { "m_SourceOutflowName": "", "m_nDestChunk": -1, "m_nInstruction": -1 } }
 	// MPulseFGDSkipField
 	CPulseObservableSwitchCases m_Cases; // = { "m_CaseOutflows": [  ], "m_CaseValues": [  ], "m_DefaultCaseOutflow": { "m_SourceOutflowName": "", "m_nDestChunk": -1, "m_nInstruction": -1 } }
 };

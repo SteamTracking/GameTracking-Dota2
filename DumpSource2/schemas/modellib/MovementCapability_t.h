@@ -18,8 +18,12 @@ enum MovementCapability_t : uint32_t
 	eUseStartAsPlantedTurn = 7,
 	// MPropertyFriendlyName = "Lean"
 	eLean = 8,
-	// MPropertyFriendlyName = "Forward Start Only"
-	eForwardStartOnly = 9,
+	// MPropertyFriendlyName = "Turn To Start"
+	eTurnToStart = 9,
+	// MPropertyFriendlyName = "Aim"
+	eAim = 10,
+	// MPropertyFriendlyName = "Forward Stop Only"
+	eForwardStopOnly = 11,
 	// MPropertySuppressEnumerator
-	eCount = 10,
+	eCount = 12,
 };

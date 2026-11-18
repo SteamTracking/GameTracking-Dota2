@@ -7,7 +7,7 @@ class vphysics_save_ragdoll_control_t
 	bool m_bRequiresDynamicBodies;
 	bool m_bIgnoreTeleport;
 	Vector m_vLinearVelocityAccumulator;
-	RotationVector m_vAngularVelocityAccumulator;
+	RotationVector m_vAngularVelocityAccumulator; // = [ 0, 0, 0 ]
 	Vector m_vForceAccumulator;
 	int32 m_nBodyCount;
 };

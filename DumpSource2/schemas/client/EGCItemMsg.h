@@ -16,6 +16,7 @@ enum EGCItemMsg : uint32_t
 	k_EMsgGCGiftedItems = 1027,
 	k_EMsgGCUnwrapGiftRequest = 1037,
 	k_EMsgGCUnwrapGiftResponse = 1038,
+	k_EMsgGCDeleteItem = 1040,
 	k_EMsgGCSortItems = 1041,
 	k_EMsgGCBackpackSortFinished = 1058,
 	k_EMsgGCAdjustItemEquippedState = 1059,

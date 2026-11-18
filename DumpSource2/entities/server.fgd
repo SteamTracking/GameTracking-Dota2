@@ -11,8 +11,7 @@
 	input CallScriptFunction(string) // PVAL_STRING pParam
 	input ChangeSubclass(string) // PVAL_STRING param
 	input ChangeTeam(integer) : "Set the entity team number" // PVAL_INT iTeamNum, Pulse node
-	input ClassMatches(string) : "Check the type of an entity. Includes base classes." // PVAL_STRING entityType, returns PVAL_BOOL retval, Pulse node
-	input ClassNameMatches(string) : "Returns true if the entity's class matches the one given (no wildcard support)" // PVAL_STRING pClassName, returns PVAL_BOOL retval, Pulse node
+	input ClassMatches(string) : "Check the type of an entity. Includes base classes." // PVAL_LEAF:CEntitySubtypeString entityType, returns PVAL_BOOL retval, Pulse node
 	input ClearContext(void)
 	input ClearParent(void)
 	input DisableAutoSleeping(void)
@@ -51,7 +50,7 @@
 	input GetLocalScale(void) : "Get the local scale of this entity." // returns PVAL_FLOAT retval, Pulse node
 	input GetLocalTransform(void) : "The entity origin transform (local). Use when you have a parent." // returns PVAL_TRANSFORM retval, Pulse node
 	input GetMoveParent(void) : "Get the entity's move parent (may not be the top level movement entity)." // returns PVAL_EHANDLE retval, Pulse node
-	input GetName(void) : "Get the name of the entity." // returns PVAL_ENTITY_NAME retval, Pulse node
+	input GetName(void) : "Get the targetname of the entity. Many entities can share this targetname." // returns PVAL_ENTITY_NAME retval, Pulse node
 	input GetRootMoveParent(void) : "Get the root move parent for the entity (traverses the hierarchy until it reaches the ancestor that controls the final transform)." // returns PVAL_EHANDLE retval, Pulse node
 	input GetTeamNumber(void) : "The entity team number" // returns PVAL_INT retval, Pulse node
 	input GetUp(void) : "The up vector of the entity." // returns PVAL_VEC3 retval, Pulse node
@@ -62,7 +61,7 @@
 	input Kill(void)
 	input KillConstrained(void)
 	input KillHierarchy(void)
-	input NameMatches(string) : "Returns true if the entity name matches the given string. Wildcards are accepted." // PVAL_STRING pNameOrWildcard, returns PVAL_BOOL retval, Pulse node
+	input NameMatches(api) // PVAL_STRING pNameOrWildcard, PVAL_BOOL bApplyNameFixup, returns PVAL_BOOL retval, Pulse node: Returns true if the entity name matches the given string. Wildcards are accepted.
 	input PlatformFollowYaw(void)
 	input PlatformIgnoreYaw(void)
 	input RemoveAttribute(string) // PVAL_STRING param
@@ -169,7 +168,6 @@
 	ownername(string) // FIELD_UTLSTRING
 	disableshadows(integer) // FIELD_INT32
 	disablereceiveshadows(integer) // FIELD_INT32
-	nodamageforces(integer) // FIELD_INT32
 	angle(float) // FIELD_FLOAT32
 ]
 
@@ -378,22 +376,26 @@
 	input Alpha(integer) // PVAL_INT param
 	input BreakJointByName(string) : "Destroy this joint by Name" // PVAL_STRING pJointName, Pulse node
 	input ClearRenderAttribute(string) : "Clear the specified render attribute" // PVAL_STRING pAttributeName, Pulse node
-	input Color(color255) // PVAL_COLOR_RGB param
+	input Color(color255) : "Set the render color (R G B)." // PVAL_COLOR_RGB color
 	input DestructibleHitGroupDestroy(api) // PVAL_ENUM:HitGroup_t nHitGroup, PVAL_INT nDamageLevel, Pulse node: Destroy a destructible hit group. Damage level of -1 means all damage levels, otherwise specify the last one you want to blow up.
 	input Extinguish(void)
-	input GetIntactDestructibleHitGroups(void) : "Returns the destructible hitgroups that are still intact." // returns PVAL_ARRAY:PVAL_ENUM:HitGroup_t retval, Pulse node
+	input GetAliveDestructibleHitGroups(void) : "Returns the destructible hit groups that still have a damage level standing." // returns PVAL_ARRAY:PVAL_ENUM:HitGroup_t retval, Pulse node
+	input GetDestructibleHitGroupDamageLevel(string) : "The last damage level destroyed, numbered from 0 like DestructibleHitGroupDestroy; -1 if none is destroyed yet. Warns and returns -1 if the hit group is not destructible." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_INT retval, Pulse node
+	input GetDestructibleHitGroupDamageLevelCount(string) : "How many damage levels the hit group has; loop from 0 until this to visit each level. Warns and returns 0 if the hit group is not destructible." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_INT retval, Pulse node
 	input GetJointLimitAngles(string) : "Returns the joint limit angles." // PVAL_STRING pJointName, returns PVAL_BOOL retval, PVAL_FLOAT MinAngle, PVAL_FLOAT MaxAngle, Pulse node
 	input GetRenderAlpha(void) : "Get object render alpha (0-255)" // returns PVAL_INT retval, Pulse node
 	input GetRenderColor(void) : "Get object render color (Alpha is ignored)" // returns PVAL_COLOR_RGB retval, Pulse node
+	input GetUndamagedDestructibleHitGroups(void) : "Returns the destructible hit groups that are at full health." // returns PVAL_ARRAY:PVAL_ENUM:HitGroup_t retval, Pulse node
 	input Ignite(void)
 	input IgniteHitboxFireScale(float) // PVAL_FLOAT param
 	input IgniteLifetime(float) // PVAL_FLOAT param
 	input IgniteNumHitboxFires(integer) // PVAL_INT param
-	input IsDestructibleHitGroupIntact(string) : "True/False if hitgroup is intact.  If hitgroup is not a destructible hitgroup you'll get a warning and it'll return false." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_BOOL retval, Pulse node
+	input IsDestructibleHitGroupAlive(string) : "True if the hit group still has a damage level standing. Warns and returns false if the hit group is not destructible." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_BOOL retval, Pulse node
+	input IsDestructibleHitGroupUndamaged(string) : "True if the hit group is at full health. Warns and returns false if the hit group is not destructible." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_BOOL retval, Pulse node
 	input SetBodyGroupValue(api) // PVAL_STRING pBodyGroupName, PVAL_INT iValue, Pulse node: Change the active choice for the named bodygroup to the specified value
 	input SetJointLimitAngles(api) // PVAL_STRING pJointName, PVAL_FLOAT flMinAngle, PVAL_FLOAT flMaxAngle, Pulse node: Sets the joint limit angles. Only valid for prismatic and revolute joints.
 	input SetJointLimitEnabled(api) // PVAL_STRING pJointName, PVAL_BOOL bEnabled, Pulse node: Enables/disables the joint limit. Only valid for prismatic and revolute joints.
-	input SetMaterialGroup(string) : "Change the active materialgroup" // PVAL_STRING pName, Pulse node
+	input SetMaterialGroup(string) : "Change the active materialgroup" // PVAL_MODEL_MATERIAL_GROUP pName, Pulse node
 	input SetModel(string) : "Change the current model" // PVAL_RESOURCE:vmdl hModel, Pulse node
 	input SetRenderAlpha(integer) : "Alpha 0-255" // PVAL_INT nAlpha, Pulse node
 	input SetRenderAttribute(string) // PVAL_STRING pValue
@@ -552,6 +554,11 @@
 
 // CDOTA_Ability_Scout_Bonuses
 @PointClass base(dota_base_ability) = ability_scout_bonuses
+[
+]
+
+// CDOTA_Ability_StoneOfRecall
+@PointClass base(dota_base_ability) = ability_stone_of_recall
 [
 ]
 
@@ -1119,6 +1126,7 @@
 @PointClass base(CBaseEntity) = point_entity
 [
 	// component CBodyComponent: CBodyComponentPoint
+	input SetAngles(vector) // PVAL_VEC3 param
 	input SetPosition(vector) // PVAL_VEC3 param
 ]
 
@@ -1159,6 +1167,11 @@
 
 // CDOTA_Ability_AncientApparition_ChillingTouch
 @PointClass base(dota_base_ability) = ancient_apparition_chilling_touch
+[
+]
+
+// CDOTA_Ability_AncientApparition_ChillingTouch2
+@PointClass base(dota_base_ability) = ancient_apparition_chilling_touch_2
 [
 ]
 
@@ -1597,6 +1610,16 @@
 [
 ]
 
+// CDOTA_Ability_Beastmaster_SummonThunderhide
+@PointClass base(dota_base_ability) = beastmaster_summon_thunderhide
+[
+]
+
+// CDOTA_Ability_Beastmaster_ThunderhideDrum
+@PointClass base(dota_base_ability) = beastmaster_thunderhide_drum
+[
+]
+
 // CDOTA_Ability_Beastmaster_WildAxes
 @PointClass base(dota_base_ability) = beastmaster_wild_axes
 [
@@ -1987,6 +2010,21 @@
 [
 ]
 
+// CDOTA_Ability_Chaos_Knight_Armageddon
+@PointClass base(dota_base_ability) = chaos_knight_armageddon
+[
+]
+
+// CDOTA_Ability_Chaos_Knight_ArmageddonsFlank
+@PointClass base(dota_base_ability) = chaos_knight_armageddons_flank
+[
+]
+
+// CDOTA_Ability_Chaos_Knight_ArmageddonsFlank_End
+@PointClass base(dota_base_ability) = chaos_knight_armageddons_flank_end
+[
+]
+
 // CDOTA_Ability_ChaosKnight_Chaos_Bolt
 @PointClass base(dota_base_ability) = chaos_knight_chaos_bolt
 [
@@ -2019,6 +2057,11 @@
 
 // CDOTA_Ability_Chaos_Knight_Reins_Of_Chaos
 @PointClass base(dota_base_ability) = chaos_knight_reins_of_chaos
+[
+]
+
+// CDOTA_Ability_Chen_Anoint
+@PointClass base(dota_base_ability) = chen_anoint
 [
 ]
 
@@ -2149,7 +2192,7 @@
 	input Disable(void)
 	input Enable(void)
 	input EndTouch(void)
-	input FindEntitiesInTrigger(api) // PVAL_STRING entityType, PVAL_ENTITY_NAME optionalEntityName, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node: Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts.
+	input FindEntitiesInTrigger(api) // PVAL_LEAF:CEntitySubtypeString entityType, PVAL_ENTITY_NAME optionalEntityName, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node: Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts.
 	input IsTouching(target_destination) : "Is the other entity touching the trigger?<br><br>This node can appear in Observable contexts." // PVAL_EHANDLE pOtherEntity, returns PVAL_BOOL retval, Pulse node
 	input IsTouchingAny(void) : "Is there any entity touching the trigger?<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
 	input StartTouch(void)
@@ -2542,6 +2585,11 @@
 [
 ]
 
+// CDOTA_Ability_Dazzle_ThroughTheRealm
+@PointClass base(dota_base_ability) = dazzle_through_the_realm
+[
+]
+
 // CDOTA_Ability_Dazzle_Weave
 @PointClass base(dota_base_ability) = dazzle_weave
 [
@@ -2779,11 +2827,6 @@
 
 // CDOTA_Hero_Recorder
 @PointClass base(CBaseEntity) = dota_hero_recorder
-[
-]
-
-// CDOTAInGamePredictionState
-@PointClass base(CBaseEntity) = dota_in_game_predictions
 [
 ]
 
@@ -3169,7 +3212,8 @@
 [
 	pathNodes(string) // FIELD_STRING
 	pathNodeRadiusScales(string) // FIELD_STRING
-	pathNodeMoveSpeedTypes(string) // FIELD_STRING
+	pathNodeMoveSpeedType(string) // FIELD_STRING
+	pathNodeNPCTypes(string) // FIELD_STRING
 ]
 
 // CDOTAMutationGameMode
@@ -3391,6 +3435,16 @@
 
 // CDOTA_Ability_Earthshaker_Spirit_Cairn
 @PointClass base(dota_base_ability) = earthshaker_spirit_cairn
+[
+]
+
+// CDOTA_Ability_Eimermole_MinersAura
+@PointClass base(dota_base_ability) = eimermole_miners_aura
+[
+]
+
+// CDOTA_Ability_Eimermole_MinersSlam
+@PointClass base(dota_base_ability) = eimermole_miners_slam
 [
 ]
 
@@ -4465,6 +4519,7 @@
 @PointClass base(filter_base) = filter_activator_class
 [
 	filterclass(string) // FIELD_STRING m_iFilterClass
+	match_subclass(boolean) // FIELD_BOOLEAN m_bMatchSubclass
 ]
 
 // CFilterContext
@@ -4687,6 +4742,7 @@
 	spawnobject(integer) // FIELD_INT32
 	propdata(integer) // FIELD_INT32
 	gamemass(integer) // FIELD_INT64
+	nodamageforces(integer) // FIELD_INT32
 	masscenteroffset(vector) // FIELD_VECTOR
 	massScale(float) // FIELD_FLOAT32
 	buoyancyscale(float) // FIELD_FLOAT32
@@ -4832,6 +4888,7 @@
 	distance_to_reach_zero_speed(float) // FIELD_FLOAT32 m_flDistanceToReachZeroSpeed
 	disable_deceleration_to_stop(boolean) // FIELD_BOOLEAN m_bDisableDecelerationToStop
 	time_to_blend_to_new_orientation(float) // FIELD_FLOAT32 m_flTimeToBlendToNewOrientation
+	transition_orientation_correction_time(float) // FIELD_FLOAT32 m_flTransitionOrientationCorrectionTime
 	start_forward_sound(sound) // FIELD_SOUNDNAME m_iszStartForwardSound
 	loop_forward_sound(sound) // FIELD_SOUNDNAME m_iszLoopForwardSound
 	stop_forward_sound(sound) // FIELD_SOUNDNAME m_iszStopForwardSound
@@ -4927,6 +4984,7 @@
 	input SetOrientationMode(integer) // PVAL_INT param
 	input SetSpeed(float) // PVAL_FLOAT param
 	input SetSpeedImmediate(float) // PVAL_FLOAT param
+	input SetT(float) : "Snap the mover to the given T value on its path." // PVAL_FLOAT flT, Pulse node
 	input SetTimeToBlendToNewOrientation(float) // PVAL_FLOAT param
 	input SetTimeToReachMaxSpeed(float) // PVAL_FLOAT param
 	input SetTimeToReachZeroSpeed(float) // PVAL_FLOAT param
@@ -5901,6 +5959,7 @@
 @PointClass base(point_entity) = info_player_start_dota
 [
 	disabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	team_slot(integer) // FIELD_INT32 m_nTeamSlot
 	input SetDisabled(void)
 	input SetEnabled(void)
 	input SetEnabledExclusively(void)
@@ -6035,6 +6094,7 @@
 	target_attachment(string) // FIELD_STRING m_sTargetAttachment
 	sound_for_scene(string) // FIELD_STRING m_iszSoundName
 	sequence_for_scene(string) // FIELD_STRING m_iszSequenceName
+	look_target(string) // FIELD_STRING m_iszLookTarget
 	onplayerdeath(intchoices) : "onplayerdeath" : : "" = // FIELD_INT32 m_iPlayerDeathBehavior (SceneOnPlayerDeath_t)
 	[
 		0 : "SCENE_ONPLAYERDEATH_DO_NOTHING"
@@ -6338,6 +6398,11 @@
 [
 ]
 
+// CDOTA_Item_Balmhook
+@PointClass base(dota_item) = item_balmhook
+[
+]
+
 // CDOTA_Item_CraniumBasher
 @PointClass base(dota_item) = item_basher
 [
@@ -6345,6 +6410,16 @@
 
 // CDOTA_Item_BeltOfStrength
 @PointClass base(dota_item) = item_belt_of_strength
+[
+]
+
+// CDOTA_Item_BerserkersHood
+@PointClass base(dota_item) = item_berserkers_hood
+[
+]
+
+// CDOTA_Item_BerserkersSabatons
+@PointClass base(dota_item) = item_berserkers_sabatons
 [
 ]
 
@@ -6400,6 +6475,11 @@
 
 // CDOTA_Item_Blood_Grenade
 @PointClass base(dota_item) = item_blood_grenade
+[
+]
+
+// CDOTA_Item_Bloodslinger
+@PointClass base(dota_item) = item_bloodslinger
 [
 ]
 
@@ -6478,6 +6558,11 @@
 [
 ]
 
+// CDOTA_Item_Brick
+@PointClass base(dota_item) = item_brick
+[
+]
+
 // CDOTA_Item_Broadsword
 @PointClass base(dota_item) = item_broadsword
 [
@@ -6500,6 +6585,11 @@
 
 // CDOTA_Item_Butterfly
 @PointClass base(dota_item) = item_butterfly
+[
+]
+
+// CDOTA_Item_Caduceus
+@PointClass base(dota_item) = item_caduceus
 [
 ]
 
@@ -6540,6 +6630,11 @@
 
 // CDOTA_Item_Clarity
 @PointClass base(dota_item) = item_clarity
+[
+]
+
+// CDOTA_Item_Claszian_Timepiece
+@PointClass base(dota_item) = item_claszian_timepiece
 [
 ]
 
@@ -6675,11 +6770,6 @@
 
 // CDOTA_Item_Desolator
 @PointClass base(dota_item) = item_desolator
-[
-]
-
-// CDOTA_Item_Desolator_2
-@PointClass base(dota_item) = item_desolator_2
 [
 ]
 
@@ -7267,6 +7357,11 @@
 [
 ]
 
+// CDOTA_Item_HelmOfTheHivemind
+@PointClass base(dota_item) = item_helm_of_the_hivemind
+[
+]
+
 // CDOTA_Item_HelmOfTheOverlord
 @PointClass base(item_helm_of_the_dominator) = item_helm_of_the_overlord
 [
@@ -7289,6 +7384,16 @@
 
 // CDOTA_Item_Horizon
 @PointClass base(dota_item) = item_horizon
+[
+]
+
+// CDOTA_Item_Horn_Of_Battle
+@PointClass base(dota_item) = item_horn_of_battle
+[
+]
+
+// CDOTA_Item_Horn_Of_Battle_Greater
+@PointClass base(dota_item) = item_horn_of_battle_greater
 [
 ]
 
@@ -7614,6 +7719,11 @@
 
 // CDOTA_Item_Ninja_Gear
 @PointClass base(dota_item) = item_ninja_gear
+[
+]
+
+// CDOTA_Item_Nothl_Sigil
+@PointClass base(dota_item) = item_nothl_sigil
 [
 ]
 
@@ -7952,6 +8062,11 @@
 [
 ]
 
+// CDOTA_Item_Recipe_BerserkersSabatons
+@PointClass base(dota_item) = item_recipe_berserkers_sabatons
+[
+]
+
 // CDOTA_Item_Recipe_Battlefury
 @PointClass base(dota_item) = item_recipe_bfury
 [
@@ -7969,6 +8084,11 @@
 
 // CDOTA_Item_Recipe_Blood_Grenade
 @PointClass base(dota_item) = item_recipe_blood_grenade
+[
+]
+
+// CDOTA_Item_Recipe_Bloodslinger
+@PointClass base(dota_item) = item_recipe_bloodslinger
 [
 ]
 
@@ -8014,6 +8134,11 @@
 
 // CDOTA_Item_Recipe_Butterfly
 @PointClass base(dota_item) = item_recipe_butterfly
+[
+]
+
+// CDOTA_Item_Recipe_Caduceus
+@PointClass base(dota_item) = item_recipe_caduceus
 [
 ]
 
@@ -8099,11 +8224,6 @@
 
 // CDOTA_Item_Recipe_Desolator
 @PointClass base(dota_item) = item_recipe_desolator
-[
-]
-
-// CDOTA_Item_Recipe_Desolator_2
-@PointClass base(dota_item) = item_recipe_desolator_2
 [
 ]
 
@@ -8622,11 +8742,6 @@
 [
 ]
 
-// CDOTA_Item_Recipe_Revenants_Brooch
-@PointClass base(dota_item) = item_recipe_revenants_brooch
-[
-]
-
 // CDOTA_Item_Recipe_RingOfAquila
 @PointClass base(dota_item) = item_recipe_ring_of_aquila
 [
@@ -8634,6 +8749,11 @@
 
 // CDOTA_Item_Recipe_Ring_Of_Basilius
 @PointClass base(dota_item) = item_recipe_ring_of_basilius
+[
+]
+
+// CDOTA_Item_Recipe_Ristuls_Devotion
+@PointClass base(dota_item) = item_recipe_ristuls_devotion
 [
 ]
 
@@ -8682,6 +8802,11 @@
 [
 ]
 
+// CDOTA_Item_Recipe_Skypiercer
+@PointClass base(dota_item) = item_recipe_skypiercer
+[
+]
+
 // CDOTA_Item_Recipe_Solar_Crest
 @PointClass base(dota_item) = item_recipe_solar_crest
 [
@@ -8717,8 +8842,18 @@
 [
 ]
 
+// CDOTA_Item_Recipe_Starforge
+@PointClass base(dota_item) = item_recipe_starforge
+[
+]
+
 // CDOTA_Item_Recipe_Stormcrafter
 @PointClass base(dota_item) = item_recipe_stormcrafter
+[
+]
+
+// CDOTA_Item_Recipe_Stygian_Desolator
+@PointClass base(dota_item) = item_recipe_stygian_desolator
 [
 ]
 
@@ -8867,6 +9002,11 @@
 [
 ]
 
+// CDOTA_Item_Red_Ledger
+@PointClass base(dota_item) = item_red_ledger
+[
+]
+
 // CDOTA_Item_RefresherOrb
 @PointClass base(dota_item) = item_refresher
 [
@@ -8929,6 +9069,16 @@
 
 // CDOTA_Item_RippersLash
 @PointClass base(dota_item) = item_rippers_lash
+[
+]
+
+// CDOTA_Item_Vladmir
+@PointClass base(dota_item) = item_vladmir
+[
+]
+
+// CDOTA_Item_Ristuls_Devotion
+@PointClass base(item_vladmir) = item_ristuls_devotion
 [
 ]
 
@@ -9067,6 +9217,11 @@
 [
 ]
 
+// CDOTA_Item_Skypiercer
+@PointClass base(dota_item) = item_skypiercer
+[
+]
+
 // CDOTA_Item_Slippers
 @PointClass base(dota_item) = item_slippers
 [
@@ -9152,6 +9307,16 @@
 [
 ]
 
+// CDOTA_Item_Starforge
+@PointClass base(dota_item) = item_starforge
+[
+]
+
+// CDOTA_Item_StoneOfRecall
+@PointClass base(dota_item) = item_stone_of_recall
+[
+]
+
 // CDOTA_Item_Stonefeather_Satchel
 @PointClass base(dota_item) = item_stonefeather_satchel
 [
@@ -9164,6 +9329,11 @@
 
 // CDOTA_Item_StoutShield
 @PointClass base(dota_item) = item_stout_shield
+[
+]
+
+// CDOTA_Item_Stygian_Desolator
+@PointClass base(dota_item) = item_stygian_desolator
 [
 ]
 
@@ -9407,6 +9577,11 @@
 [
 ]
 
+// CDOTA_Item_VilePhial
+@PointClass base(dota_item) = item_vile_phial
+[
+]
+
 // CDOTA_Item_VindicatorsAxe
 @PointClass base(dota_item) = item_vindicators_axe
 [
@@ -9414,11 +9589,6 @@
 
 // CDOTA_Item_VitalityBooster
 @PointClass base(dota_item) = item_vitality_booster
-[
-]
-
-// CDOTA_Item_Vladmir
-@PointClass base(dota_item) = item_vladmir
 [
 ]
 
@@ -10764,6 +10934,11 @@
 [
 ]
 
+// CDOTA_Ability_LoneDruid_SpiritBear_SummonDruid
+@PointClass base(dota_base_ability) = lone_druid_spirit_bear_summon_druid
+[
+]
+
 // CDOTA_Ability_LoneDruid_SpiritLink
 @PointClass base(dota_base_ability) = lone_druid_spirit_link
 [
@@ -10821,6 +10996,11 @@
 
 // CDOTA_Ability_Lycan_Howl
 @PointClass base(dota_base_ability) = lycan_howl
+[
+]
+
+// CDOTA_Ability_Lycan_Pack_Hunter
+@PointClass base(dota_base_ability) = lycan_pack_hunter
 [
 ]
 
@@ -11084,11 +11264,6 @@
 [
 ]
 
-// CDOTA_Ability_Meepo_Fling
-@PointClass base(dota_base_ability) = meepo_fling
-[
-]
-
 // CDOTA_Ability_Meepo_FlingRelease
 @PointClass base(dota_base_ability) = meepo_fling_release
 [
@@ -11344,6 +11519,11 @@
 [
 ]
 
+// CDOTA_Ability_MudGolem_HurlBigBoulder
+@PointClass base(dota_base_ability) = mud_golem_hurl_big_boulder
+[
+]
+
 // CDOTA_Ability_MudGolem_HurlBoulder
 @PointClass base(dota_base_ability) = mud_golem_hurl_boulder
 [
@@ -11523,6 +11703,11 @@
 
 // CDOTA_Ability_Necronomicon_Warrior_Sight
 @PointClass base(dota_base_ability) = necronomicon_warrior_sight
+[
+]
+
+// CDOTA_Ability_Neutral_Gold_Upgrade_Ability
+@PointClass base(dota_base_ability) = neutral_gold_upgrade_ability
 [
 ]
 
@@ -11735,6 +11920,11 @@
 
 // CDOTA_Unit_Hero_Beastmaster_Hawk
 @PointClass base(npc_dota_beastmaster_beasts) = npc_dota_beastmaster_hawk
+[
+]
+
+// CDOTA_Unit_Hero_Beastmaster_Thunderhide
+@PointClass base(npc_dota_beastmaster_beasts) = npc_dota_beastmaster_thunderhide
 [
 ]
 
@@ -12944,6 +13134,11 @@
 [
 ]
 
+// CDOTA_Stone_Of_Recall
+@PointClass base(npc_dota_building) = npc_dota_stone_of_recall
+[
+]
+
 // CDOTA_NPC_Techies_Minefield_Sign
 @PointClass base(npc_dota_base_additive) = npc_dota_techies_minefield_sign
 [
@@ -13131,6 +13326,11 @@
 [
 ]
 
+// CDOTA_Ability_NyxAssassin_ScarabMetabolism
+@PointClass base(dota_base_ability) = nyx_assassin_scarab_metabolism
+[
+]
+
 // CDOTA_Ability_Nyx_Assassin_SpikedCarapace
 @PointClass base(dota_base_ability) = nyx_assassin_spiked_carapace
 [
@@ -13178,6 +13378,11 @@
 
 // CDOTA_Ability_Obsidian_Destroyer_SanityEclipse
 @PointClass base(dota_base_ability) = obsidian_destroyer_sanity_eclipse
+[
+]
+
+// CDOTA_Ability_Odobenus_Blight
+@PointClass base(dota_base_ability) = odobenus_blight
 [
 ]
 
@@ -13231,6 +13436,16 @@
 [
 ]
 
+// CDOTA_Ability_OgreSeal_Flop
+@PointClass base(dota_base_ability) = ogre_seal_flop
+[
+]
+
+// CDOTA_Ability_OgreSealPup_DisapprovalAura
+@PointClass base(dota_base_ability) = ogre_seal_pup_disapproval_aura
+[
+]
+
 // CDOTA_Ability_Omniknight_Angelic_Flight
 @PointClass base(dota_base_ability) = omniknight_angelic_flight
 [
@@ -13278,6 +13493,11 @@
 
 // CDOTA_Ability_Omniknight_Repel
 @PointClass base(dota_base_ability) = omniknight_repel
+[
+]
+
+// CDOTA_Ability_Omniknight_RighteousPath
+@PointClass base(dota_base_ability) = omniknight_righteous_path
 [
 ]
 
@@ -14615,6 +14835,7 @@
 	acceptdamagefromheldobjects(boolean) // FIELD_BOOLEAN m_bAcceptDamageFromHeldObjects
 	forcemotiondisabled(boolean) // FIELD_BOOLEAN
 	phys_start_asleep(boolean) // FIELD_BOOLEAN
+	nodamageforces(integer) // FIELD_INT32
 	dynamiccontinuouscontactbehavior(intchoices) : "dynamiccontinuouscontactbehavior" : : "" = // FIELD_UINT8 m_nDynamicContinuousContactBehavior (DynamicContinuousContactBehavior_t)
 	[
 		0 : "DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY"
@@ -14813,6 +15034,11 @@
 
 // CDotaQuest
 @PointClass base(CBaseEntity) = quest
+[
+]
+
+// CDOTA_Ability_Radigull_Eggstremism
+@PointClass base(dota_base_ability) = radigull_eggstremism
 [
 ]
 
@@ -16080,6 +16306,14 @@
 	input SetTracesPerFrame(integer) // PVAL_INT param
 ]
 
+// CSoundOpvarSetEnclosureEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_enclosure
+[
+	pathHelperEntityName(string) // FIELD_STRING m_iszPathHelperEntityName
+	heightTop(vector) // FIELD_VECTOR m_vHeightTop
+	heightBottom(vector) // FIELD_VECTOR m_vHeightBottom
+]
+
 // CSoundOpvarSetOBBEntity
 @PointClass base(snd_opvar_set_aabb) = snd_opvar_set_obb
 [
@@ -16090,6 +16324,12 @@
 [
 	pathCornerEntityName(string) // FIELD_STRING m_iszPathCornerEntityName
 	useParentedPath(boolean) // FIELD_BOOLEAN m_bUseParentedPath
+]
+
+// CSoundOpvarSetPathHelper
+@PointClass base(CBaseEntity) = snd_opvar_set_path_helper
+[
+	isDoor(boolean) // FIELD_BOOLEAN m_bIsDoor
 ]
 
 // CSoundOpvarSetPrecipitationEntity
@@ -20295,6 +20535,11 @@
 [
 ]
 
+// CDOTA_Ability_Stone_Of_Recall_Teleport
+@PointClass base(dota_base_ability) = stone_of_recall_teleport
+[
+]
+
 // CDOTA_Ability_StormSpirit_BallLightning
 @PointClass base(dota_base_ability) = storm_spirit_ball_lightning
 [
@@ -20559,7 +20804,6 @@
 @PointClass base(CLogicalEntity) = test_io_combinations
 [
 	allow_empty_inputs(boolean) // FIELD_BOOLEAN m_bAllowEmptyInputs
-	input GetTestIntValue(void) : "<br><br>This node can appear in Observable contexts." // returns PVAL_INT retval, Pulse node
 	input InternalTestBool(boolean) // PVAL_BOOL bInValue
 	input InternalTestColor(color255) // PVAL_COLOR_RGB colInValue
 	input InternalTestEntityHandle(target_destination) // PVAL_EHANDLE hEntity
@@ -20574,6 +20818,7 @@
 	input InternalTestStringStringString(api) // PVAL_STRING strValueA, PVAL_STRING strValueB, PVAL_STRING strValueC
 	input InternalTestVector(vector) // PVAL_VEC3 vecInValue
 	input InternalTestVoid(void)
+	input TestIntValue(void) : "<br><br>This node can appear in Observable contexts." // returns PVAL_INT retval, Pulse node
 	input VariantBool(boolean) // PVAL_BOOL param
 	input VariantColor(color255) // PVAL_COLOR_RGB param
 	input VariantFloat(float) // PVAL_FLOAT param
@@ -20589,7 +20834,6 @@
 	output OnInternalTestEntityNameString(api) // PVAL_ENTITY_NAME nameA, PVAL_STRING strValueB
 	output OnInternalTestFloat(float) // PVAL_FLOAT param
 	output OnInternalTestFloatString(api) // PVAL_FLOAT flOutFloat, PVAL_STRING strOutString
-	output OnInternalTestInt(integer) // PVAL_INT param
 	output OnInternalTestSchemaEnum(string) // PVAL_ENUM:TestInputOutputCombinationsEnum_t param
 	output OnInternalTestString(string) // PVAL_STRING param
 	output OnInternalTestStringStringString(api) // PVAL_STRING strArg1, PVAL_STRING strArg2, PVAL_STRING strArg3
@@ -20602,6 +20846,7 @@
 	output OnVariantString(string) // PVAL_STRING param
 	output OnVariantVector(vector) // PVAL_VEC3 param
 	output OnVariantVoid(void)
+	output TestIntValue(integer) // PVAL_INT param
 ]
 
 // CDOTA_Ability_Throw_Coal
@@ -20855,6 +21100,9 @@
 // CChangeLevel
 @PointClass base(trigger) = trigger_changelevel
 [
+	destinationtype(integer) // FIELD_INT32
+	trackname(string) // FIELD_UTLSTRING
+	backtrack(boolean) // FIELD_BOOLEAN
 	map(string) // FIELD_UTLSTRING
 	landmark(string) // FIELD_UTLSTRING
 	input ChangeLevel(void)
@@ -21052,6 +21300,11 @@
 	output OnRemove(void)
 ]
 
+// CDOTA_RoshanObstructionTrigger
+@PointClass base(trigger) = trigger_roshan_obstruction
+[
+]
+
 // CServerRagdollTrigger
 @PointClass base(trigger) = trigger_serverragdoll
 [
@@ -21089,6 +21342,7 @@
 	use_landmark_angles(boolean) // FIELD_BOOLEAN m_bUseLandmarkAngles
 	mirror_player(boolean) // FIELD_BOOLEAN m_bMirrorPlayer
 	check_if_dest_clear_for_player(boolean) // FIELD_BOOLEAN m_bCheckDestIfClearForPlayer
+	move_world_decals(boolean) // FIELD_BOOLEAN m_bMoveWorldDecals
 ]
 
 // CTonemapTrigger
@@ -21216,6 +21470,11 @@
 
 // CDOTA_Ability_Twin_Gate_Portal_Warp
 @PointClass base(dota_base_ability) = twin_gate_portal_warp
+[
+]
+
+// CDOTA_Ability_Undying_Bite
+@PointClass base(dota_base_ability) = undying_bite
 [
 ]
 
@@ -21561,6 +21820,11 @@
 
 // CDOTA_Ability_Weaver_TimeLapse
 @PointClass base(dota_base_ability) = weaver_time_lapse
+[
+]
+
+// CDOTA_Ability_Weaver_TimeLapseAlly
+@PointClass base(dota_base_ability) = weaver_time_lapse_ally
 [
 ]
 

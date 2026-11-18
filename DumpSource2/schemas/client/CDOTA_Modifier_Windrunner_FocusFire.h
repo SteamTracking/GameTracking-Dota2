@@ -5,6 +5,7 @@ class CDOTA_Modifier_Windrunner_FocusFire : public CDOTA_Buff
 	bool bActive;
 	int32 bonus_attack_speed;
 	int32 focusfire_fire_on_the_move;
+	float32 focusfire_attack_effectiveness;
 	bool m_bPause;
 	int32 m_nNumArrowsLanded;
 	int32 m_nDamageDealt;

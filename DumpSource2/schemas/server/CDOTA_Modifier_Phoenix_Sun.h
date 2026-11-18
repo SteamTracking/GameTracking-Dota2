@@ -7,5 +7,4 @@ class CDOTA_Modifier_Phoenix_Sun : public CDOTA_Buff
 	int32 max_hero_attacks_required;
 	CHandle< CBaseEntity > m_hSecondaryTarget;
 	int32 m_iAttackCount;
-	int32 creep_attacks_count;
 };

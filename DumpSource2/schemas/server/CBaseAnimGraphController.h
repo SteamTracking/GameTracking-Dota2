@@ -27,11 +27,14 @@ class CBaseAnimGraphController : public CSkeletonAnimationController
 	uint32 m_nSerializePoseRecipeAG2ActiveSlot;
 	// MNotSaved
 	int32 m_nSerializePoseRecipeVersionAG2;
+	// MNotSaved
+	CUtlVectorEmbeddedNetworkVar< ChoreoAnimSlotNetworkedData_t > m_vecChoreoAnimSlotsAG2;
+	// MNotSaved
+	uint32 m_nChoreoAnimSlotsChangeCountAG2;
 	int32 m_nServerGraphInstanceIteration;
 	int32 m_nServerSerializationContextIteration;
 	ResourceId_t m_primaryGraphId;
 	CNetworkUtlVectorBase< ResourceId_t > m_vecExternalGraphIds;
-	CNetworkUtlVectorBase< ResourceId_t > m_vecExternalClipIds;
 	CGlobalSymbol m_sAnimGraph2Identifier;
 	CAnimGraph2InstancePtr m_pGraphInstanceAG2;
 	CExternalAnimGraphList m_vecExternalGraphs;

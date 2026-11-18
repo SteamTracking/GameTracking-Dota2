@@ -6,4 +6,6 @@ class CDOTA_Ability_Nevermore_Requiem : public CDOTABaseAbility
 	ParticleIndex_t m_nFXIndex;
 	int32 m_nKilleater_nLines;
 	CUtlVector< CHandle< CBaseEntity > > m_vecHeroesReqd;
+	CUtlVector< CHandle< CBaseEntity > > m_vecHitTargets;
+	CUtlVector< CHandle< CBaseEntity > > m_vecReturnHitTargets;
 };

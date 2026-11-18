@@ -13,6 +13,7 @@ class CDOTA_Modifier_Kez_ShodoSai_Parry : public CDOTA_Buff
 	float32 parry_window_duration;
 	float32 parry_stun_duration;
 	bool parry_only_heroes;
+	bool parry_any_damage;
 	CUtlVector< CHandle< C_BaseEntity > > m_vecParriedEnemies;
 	Vector m_vFacing;
 	float32 m_flFacingTarget;

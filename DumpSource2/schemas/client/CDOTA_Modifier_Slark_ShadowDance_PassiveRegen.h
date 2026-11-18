@@ -4,4 +4,5 @@ class CDOTA_Modifier_Slark_ShadowDance_PassiveRegen : public CDOTA_Buff
 	float32 bonus_regen;
 	float32 corruption_duration;
 	CUtlVector< AttackRecord_t > m_InFlightAttackRecords;
+	ParticleIndex_t m_nScreenFXIndex;
 };

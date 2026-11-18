@@ -72,6 +72,7 @@ class C_DOTABaseGameMode : public C_BaseEntity
 	int32 m_iCustomScanMaxCharges;
 	float32 m_flCustomScanCooldown;
 	float32 m_flCustomGlyphCooldown;
+	int32 m_iCustomGlyphMaxCharges;
 	float32 m_flCustomBackpackSwapCooldown;
 	float32 m_flCustomBackpackCooldownPercent;
 	bool m_bDefaultRuneSpawnLogic;

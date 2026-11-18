@@ -10,6 +10,6 @@ class C_BaseTrigger : public C_BaseToggle
 	CEntityIOOutput m_OnTouchingChanged;
 	CUtlVector< CHandle< C_BaseEntity > > m_hTouchingEntities;
 	CUtlSymbolLarge m_iFilterName;
-	CHandle< CBaseFilter > m_hFilter;
 	bool m_bDisabled;
+	CHandle< CBaseFilter > m_hFilter;
 };

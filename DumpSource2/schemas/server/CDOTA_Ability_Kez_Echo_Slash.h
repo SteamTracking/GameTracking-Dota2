@@ -12,6 +12,11 @@ class CDOTA_Ability_Kez_Echo_Slash : public CDOTA_Ability_Kez_BaseAbility
 	float32 effect_duration;
 	int32 m_nStrikesLeft;
 	GameTime_t m_NextStrikeTime;
+	bool m_bBackwardStrikes;
+	bool m_bBackwardStrikePending;
+	bool m_bStrikingBackward;
+	bool m_bStrikePairHitAnyTarget;
+	GameTime_t m_NextBackwardStrikeTime;
 	bool m_bFlutter;
 	ParticleIndex_t m_nFXCast;
 };

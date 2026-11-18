@@ -1,5 +1,6 @@
 class CDOTA_Modifier_Pugna_NetherWard : public CDOTA_Buff
 {
+	CNewParticleEffect* m_pRadiusFX;
 	float32 radius;
 	float32 mana_multiplier;
 	float32 mana_drained_per_attack;

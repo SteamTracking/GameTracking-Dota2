@@ -11,7 +11,6 @@ class RnHull_t
 	CUtlVector< Vector > m_VertexPositions; // = "[BINARY BLOB]"
 	CUtlVector< RnPlane_t > m_FacePlanes;
 	uint32 m_nFlags;
-	CRegionSVM* m_pRegionSVM;
 	CUtlVector< RnVertex_t > m_Vertices; // = "[BINARY BLOB]"
 	CUtlVector< RnHalfEdge_t > m_Edges; // = "[BINARY BLOB]"
 	CUtlVector< RnFace_t > m_Faces; // = "[BINARY BLOB]"

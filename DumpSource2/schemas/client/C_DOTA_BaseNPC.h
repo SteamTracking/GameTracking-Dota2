@@ -35,6 +35,7 @@ class C_DOTA_BaseNPC : public C_NextBotCombatCharacter
 	int32 m_iUnitNameStringTableIndex;
 	int32 m_iHealthBarOffset;
 	Color m_iHealthBarHighlightColor;
+	float32 m_flSelectionHitboxScale;
 	float32 m_flMana;
 	float32 m_flMaxMana;
 	float32 m_flManaThinkRegen;
@@ -207,5 +208,7 @@ class C_DOTA_BaseNPC : public C_NextBotCombatCharacter
 	bool m_bWearablesAreTaunting;
 	bool m_bWearablesLoadoutOverride;
 	bool m_bShowCannotBeDisabledIcon;
+	bool m_bShowOccludedOutline;
+	float32 m_flBuffEffectivenessOverride;
 	int32 m_nVisionPreviewViewer;
 };

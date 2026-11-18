@@ -30,7 +30,6 @@ class CNewParticleEffect : public IParticleEffect
 	float32 m_flFreezeTransitionOverride;
 	Vector m_LastMin;
 	Vector m_LastMax;
-	CSplitScreenSlot m_nSplitScreenUser;
 	Vector m_vecAggregationCenter;
 	int32 m_RefCount;
 };

@@ -7,6 +7,7 @@ class ModelEmbeddedMesh_t
 	CUtlVector< ModelMeshBufferData_t > m_vertexBuffers;
 	CUtlVector< ModelMeshBufferData_t > m_indexBuffers;
 	CUtlVector< ModelMeshBufferData_t > m_toolsBuffers;
+	CUtlVector< ModelMeshDNARig_t > m_dnaRigs;
 	int32 m_nVBIBBlock; // = -1
 	int32 m_nToolsVBBlock; // = -1
 };

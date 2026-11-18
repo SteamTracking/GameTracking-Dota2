@@ -38,7 +38,7 @@ enum PulseValueType_t : uint32_t
 	PVAL_SNDEVT_GUID = 16,
 	// MPropertyFriendlyName = "SoundEvent"
 	PVAL_SNDEVT_NAME = 17,
-	// MPropertyFriendlyName = "Entity Name"
+	// MPropertyFriendlyName = "Entity Targetname"
 	PVAL_ENTITY_NAME = 18,
 	// MPropertyFriendlyName = "Leaf Type"
 	PVAL_LEAF = 19,
@@ -66,5 +66,7 @@ enum PulseValueType_t : uint32_t
 	// MPropertyFriendlyName = "VData Choice"
 	PVAL_VDATA_CHOICE = 29,
 	// MPropertySuppressEnumerator
-	PVAL_COUNT = 30,
+	PVAL_LAMBDA = 30,
+	// MPropertySuppressEnumerator
+	PVAL_COUNT = 31,
 };

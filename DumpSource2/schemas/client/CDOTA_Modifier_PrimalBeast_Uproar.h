@@ -2,7 +2,6 @@ class CDOTA_Modifier_PrimalBeast_Uproar : public CDOTA_Modifier_Stacking_Base
 {
 	int32 stack_limit;
 	int32 damage_limit;
-	int32 stack_count_increase_on_disable;
 	float32 stack_duration;
 	float32 damage_min;
 	float32 damage_max;

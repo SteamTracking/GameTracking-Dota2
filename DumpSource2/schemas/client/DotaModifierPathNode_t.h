@@ -4,4 +4,5 @@ class DotaModifierPathNode_t
 	float32 m_flRadius;
 	float32 m_flDistToNext;
 	int32 m_nMoveSpeedType;
+	int32 m_nNPCType;
 };

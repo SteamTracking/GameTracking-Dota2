@@ -5,6 +5,7 @@ class entitytable_t
 	CEntityIndex saveentityindex; // = -1
 	bool bWasSaved;
 	SaveRestoreTableFlags_t flags;
+	int32 spawngroupslot; // = -1
 	CUtlSymbolLarge classname;
 	CUtlSymbolLarge globalname;
 	CUtlSymbolLarge entityname;

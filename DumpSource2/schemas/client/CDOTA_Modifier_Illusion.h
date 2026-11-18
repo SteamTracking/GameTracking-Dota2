@@ -4,6 +4,7 @@ class CDOTA_Modifier_Illusion : public CDOTA_Buff
 	int32 outgoing_damage_structure;
 	int32 outgoing_damage_roshan;
 	int32 incoming_damage;
+	float32 illusion_effectiveness;
 	int32 bounty_base;
 	int32 bounty_growth;
 	int32 fixed_day_vision;

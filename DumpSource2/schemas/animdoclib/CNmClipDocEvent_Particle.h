@@ -11,6 +11,8 @@ class CNmClipDocEvent_Particle : public CNmClipDocEvent
 	bool m_bDetachFromOwner;
 	bool m_bStopImmediately;
 	bool m_bPlayEndCap;
+	// MPropertyFriendlyName = "Attempt to Aggregate"
+	bool m_bAggregate;
 	// MPropertyStartGroup = "+Attachment"
 	// MPropertyAttrStateCallback
 	CUtlString m_attachmentPoint0;

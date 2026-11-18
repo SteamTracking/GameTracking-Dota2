@@ -16,4 +16,6 @@ class CInfoSpawnGroupLoadUnload : public CLogicalEntity
 	bool m_bQueueActiveSpawnGroupChange;
 	// MNotSaved
 	bool m_bQueueFinishLoading;
+	// MNotSaved
+	bool m_bLoadFinishedFired;
 };

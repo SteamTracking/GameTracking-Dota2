@@ -5,4 +5,5 @@ class CPulseCell_IntervalTimer::CursorState_t
 	float32 m_flWaitInterval;
 	float32 m_flWaitIntervalHigh;
 	bool m_bCompleteOnNextWake;
+	bool m_bCompletingVeryCloseToEndOfInterval;
 };

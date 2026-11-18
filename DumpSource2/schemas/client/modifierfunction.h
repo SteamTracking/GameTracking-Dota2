@@ -824,6 +824,16 @@ enum modifierfunction : uint32_t
 	MODIFIER_EVENT_ON_TREE_PLANTED = 410,
 	// MScriptDescription = "OnDamageHPLossSelf"
 	MODIFIER_EVENT_ON_DAMAGE_HP_LOSS_SELF = 411,
-	MODIFIER_FUNCTION_LAST = 412,
+	// MScriptDescription = "GetModifierHeroKillBountyBonus"
+	MODIFIER_PROPERTY_HERO_KILL_BOUNTY_BONUS = 412,
+	// MScriptDescription = "GetModifierPropertyAttackPotency"
+	MODIFIER_PROPERTY_ATTACK_POTENCY = 413,
+	// MScriptDescription = "GetModifierHealthDrainConstant"
+	MODIFIER_PROPERTY_HEALTH_DRAIN_CONSTANT = 414,
+	// MScriptDescription = "GetModifierHealthDrainPercentage"
+	MODIFIER_PROPERTY_HEALTH_DRAIN_PERCENTAGE = 415,
+	// MScriptDescription = "GetModifierHealthBarPipsFragile"
+	MODIFIER_PROPERTY_HEALTHBAR_PIPS_FRAGILE = 416,
+	MODIFIER_FUNCTION_LAST = 417,
 	MODIFIER_FUNCTION_INVALID = 65535,
 };

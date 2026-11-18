@@ -49,9 +49,6 @@ class CParticleVisibilityInputs
 	// MPropertyFriendlyName = "output radius scale maximum"
 	// MPropertySuppressExpr = "m_nCPin == -1"
 	float32 m_flRadiusScaleMax; // = 1
-	// MPropertyFriendlyName = "output radius FOV scale base"
-	// MPropertySuppressExpr = "m_nCPin == -1"
-	float32 m_flRadiusScaleFOVBase;
 	// MPropertyFriendlyName = "vr camera right eye"
 	// MParticleAdvancedField
 	bool m_bRightEye;

@@ -3,14 +3,14 @@ class CPlayer_MovementServices : public CPlayerPawnComponent
 	int32 m_nImpulse;
 	// MNotSaved
 	CInButtonState m_nButtons;
-	uint64 m_nQueuedButtonDownMask;
-	uint64 m_nQueuedButtonChangeMask;
-	uint64 m_nButtonDoublePressed;
+	ButtonBitMask_t m_nQueuedButtonDownMask;
+	ButtonBitMask_t m_nQueuedButtonChangeMask;
+	ButtonBitMask_t m_nButtonDoublePressed;
 	// MNotSaved
 	uint32[64] m_pButtonPressedCmdNumber;
 	// MNotSaved
 	uint32 m_nLastCommandNumberProcessed;
-	uint64 m_nToggleButtonDownMask;
+	ButtonBitMask_t m_nToggleButtonDownMask;
 	float32 m_flCmdForwardMove;
 	float32 m_flCmdLeftMove;
 	float32 m_flCmdUpMove;

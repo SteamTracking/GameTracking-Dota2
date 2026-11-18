@@ -1,3 +1,4 @@
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_OP_RtEnvCull : public CParticleFunctionOperator
 {

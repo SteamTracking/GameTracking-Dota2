@@ -15,4 +15,5 @@ enum EBaseGameEvents : uint32_t
 	GE_SosStopSoundEventHash = 212,
 	GE_ClothStiffenAnimEvent = 213,
 	GE_ClothEffectAnimEvent = 214,
+	GE_MoveWorldDecalsEvent = 215,
 };

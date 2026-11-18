@@ -17,16 +17,22 @@ C_BaseEntity_API
 	// m_FriendlyName = "Get Abs Origin"
 	// m_Description = "The entity origin (absolute)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetAbsOrigin(PVAL_EHANDLE _Target "Entity Handle") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "Get Origin"
 	// m_Description = "The entity origin (local)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetOrigin(PVAL_EHANDLE _Target "Entity Handle") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Get Team Number"
 	// m_Description = "The entity team number"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetTeamNumber(PVAL_EHANDLE _Target "Entity Handle") -> (PVAL_INT retval "Result");
 }
 
@@ -35,12 +41,16 @@ C_DOTA_BaseNPC_API
 {
 	// m_FriendlyName = "Set Auto Style Criteria"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAutoStyleCriteria(PVAL_EHANDLE:npc_dota_base _Target "npc_dota_base", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Style Override"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetStyleOverride(PVAL_EHANDLE:npc_dota_base _Target "npc_dota_base", PVAL_INT param "param");
@@ -53,6 +63,8 @@ C_DOTA_LinearProjectileInfoParticleAPI
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input InitialPosition(PVAL_LEAF:C_DOTA_LinearProjectileInfo _Target "C_DOTA_LinearProjectileInfo") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "OnParticleCollectionCreated"
@@ -73,18 +85,24 @@ C_DOTA_LinearProjectileInfoParticleAPI
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Position(PVAL_LEAF:C_DOTA_LinearProjectileInfo _Target "C_DOTA_LinearProjectileInfo") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "Transform"
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Transform(PVAL_LEAF:C_DOTA_LinearProjectileInfo _Target "C_DOTA_LinearProjectileInfo") -> (PVAL_TRANSFORM_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "Velocity"
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Velocity(PVAL_LEAF:C_DOTA_LinearProjectileInfo _Target "C_DOTA_LinearProjectileInfo") -> (PVAL_VEC3 retval "Result");
 }
 
@@ -95,6 +113,8 @@ C_DOTA_TrackingProjectileInfoParticleAPI
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Location(PVAL_LEAF:C_DOTA_TrackingProjectileInfo _Target "C_DOTA_TrackingProjectileInfo") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "OnParticleCollectionCreated"
@@ -115,18 +135,24 @@ C_DOTA_TrackingProjectileInfoParticleAPI
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Source(PVAL_LEAF:C_DOTA_TrackingProjectileInfo _Target "C_DOTA_TrackingProjectileInfo") -> (PVAL_EHANDLE retval "Result");
 
 	// m_FriendlyName = "Target"
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input Target(PVAL_LEAF:C_DOTA_TrackingProjectileInfo _Target "C_DOTA_TrackingProjectileInfo") -> (PVAL_EHANDLE retval "Result");
 
 	// m_FriendlyName = "Target Location"
 	// supported_domains = {"CParticleCollectionBindingInstance":true}
 	// pulse_feature_tag = 8
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input TargetLocation(PVAL_LEAF:C_DOTA_TrackingProjectileInfo _Target "C_DOTA_TrackingProjectileInfo") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 }
 
@@ -135,36 +161,48 @@ C_EnvDeferredLight_API
 {
 	// m_FriendlyName = "Intensity"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Intensity(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Intensity Over Time"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input IntensityOverTime(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Light Color"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input LightColor(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Radius"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Radius(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Turn Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOff(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light");
 
 	// m_FriendlyName = "Turn On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOn(PVAL_EHANDLE:env_deferred_light _Target "env_deferred_light");
@@ -175,18 +213,24 @@ C_GlobalLight_API
 {
 	// m_FriendlyName = "Light Scale"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input LightScale(PVAL_EHANDLE:env_global_light _Target "env_global_light", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Turn Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOff(PVAL_EHANDLE:env_global_light _Target "env_global_light");
 
 	// m_FriendlyName = "Turn On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOn(PVAL_EHANDLE:env_global_light _Target "env_global_light");
@@ -197,60 +241,80 @@ C_PortraitWorldUnit_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit");
 
 	// m_FriendlyName = "Disable Auto Fade And Auto Kill"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableAutoFadeAndAutoKill(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Disable Default Activity Modifiers"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableDefaultActivityModifiers(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit");
 
 	// m_FriendlyName = "Fade And Destroy Gesture"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input FadeAndDestroyGesture(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Force Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ForceLooping(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Remove Gesture"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveGesture(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Activity"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetActivity(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Activity Modifier"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetActivityModifier(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Start Gesture Override"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartGestureOverride(PVAL_EHANDLE:portrait_world_unit _Target "portrait_world_unit", PVAL_STRING param "param");
@@ -264,60 +328,80 @@ C_TriggerPhysics_API
 {
 	// m_FriendlyName = "Collapse To Force Point"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input CollapseToForcePoint(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Linear Force Point At"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input LinearForcePointAt(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_VEC3 param "param");
 
 	// m_FriendlyName = "Set Ang Velocity Damping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAngVelocityDamping(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Ang Velocity Limit"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAngVelocityLimit(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Damping Ratio"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDampingRatio(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Frequency"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetFrequency(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Gravity Scale"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetGravityScale(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Linear Force"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetLinearForce(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Velocity Damping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetVelocityDamping(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Velocity Limit"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetVelocityLimit(PVAL_EHANDLE:trigger_physics _Target "trigger_physics", PVAL_FLOAT param "param");
@@ -328,12 +412,16 @@ CBaseAnimatingActivity_API
 {
 	// m_FriendlyName = "Disable Anim Event Sounds"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableAnimEventSounds(PVAL_EHANDLE:baseanimating _Target "baseanimating", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Play Sequence"
 	// m_Description = "Play the specified animation sequence on a NON-ANIMGRAPH entity"
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// pSequenceName: metadata = {"suggestion_name":"pulse_model_sequence_name"}
@@ -341,6 +429,8 @@ CBaseAnimatingActivity_API
 
 	// m_FriendlyName = "Set Playback Rate"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlaybackRate(PVAL_EHANDLE:baseanimating _Target "baseanimating", PVAL_FLOAT param "param");
@@ -351,6 +441,8 @@ CBaseAnimatingOverlay_API
 {
 	// m_FriendlyName = "Set Playback Rate On All Layers"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlaybackRateOnAllLayers(PVAL_EHANDLE:baseanimating_overlay _Target "baseanimating_overlay", PVAL_FLOAT param "param");
@@ -361,6 +453,8 @@ CBaseAnimGraph_API
 {
 	// m_FriendlyName = "Disable Anim Event Sounds"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableAnimEventSounds(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph", PVAL_BOOL param "param");
@@ -368,29 +462,40 @@ CBaseAnimGraph_API
 	// m_FriendlyName = "Get Layer Cycle"
 	// m_Description = "Returns the cycle of an animation playing on this layer<br><br>This node can appear in Observable contexts."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
 	input GetLayerCycle(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph", PVAL_INT iLayer "Layer") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Is Anim Event Active"
 	// m_Description = "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
 	input IsAnimEventActive(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph", PVAL_ENUM:GameAnimEventIndex_t nAnimEvent "Anim Event") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Is External Choreo Graph Active"
 	// m_Description = "Is there an external choreo animgraph applied to this entity<br><br>This node can appear in Observable contexts."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
+	// show_as_observable_value
 	input IsExternalChoreoGraphActive(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Set Bodygroup"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetBodygroup(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Playback Rate"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlaybackRate(PVAL_EHANDLE:baseanimgraph _Target "baseanimgraph", PVAL_FLOAT param "param");
@@ -407,24 +512,32 @@ CBaseEntity_SharedAPI
 {
 	// m_FriendlyName = "Add Output"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input AddOutput(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
 
 	// m_FriendlyName = "Call Global Script Function"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input CallGlobalScriptFunction(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
 
 	// m_FriendlyName = "Call Private Script Function"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input CallPrivateScriptFunction(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
 
 	// m_FriendlyName = "Call Script Function"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input CallScriptFunction(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
@@ -432,21 +545,29 @@ CBaseEntity_SharedAPI
 	// m_FriendlyName = "Is Motion Enabled"
 	// m_Description = "Returns true if the entity is motion-enabled (i.e. its ideal motion type is dynamic). Note that the entity may still end up keyframed in some cases, e.g. if it's hierarchically attached to another keyframed entity."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input IsMotionEnabled(PVAL_EHANDLE _Target "Entity Handle") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Run Script Code"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RunScriptCode(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
 
 	// m_FriendlyName = "Run Script File"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RunScriptFile(PVAL_EHANDLE _Target "Entity Handle", PVAL_STRING pParam "Param");
 
 	// m_FriendlyName = "Set Scale"
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetScale(PVAL_EHANDLE _Target "Entity Handle", PVAL_FLOAT flValue "Value");
@@ -457,6 +578,8 @@ CBaseFilter_API
 {
 	// m_FriendlyName = "Test Activator"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TestActivator(PVAL_EHANDLE:filter_base _Target "filter_base");
@@ -468,35 +591,46 @@ CBaseFilter_API
 	output OnPass -> (PVAL_EHANDLE:filter_base _Target "Target");
 }
 
-// fingerprint = 2799329249
+// fingerprint = 283821823
 CBaseModelEntity_API
 {
 	// m_FriendlyName = "Alpha"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Alpha(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_INT param "param");
 
 	// m_FriendlyName = "Color"
+	// m_Description = "Set the render color (R G B)."
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
-	input Color(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_COLOR_RGB param "param");
+	input Color(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_COLOR_RGB color "color");
 
 	// m_FriendlyName = "fademaxdist"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input fademaxdist(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "fademindist"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input fademindist(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Skin"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Skin(PVAL_EHANDLE:basemodelentity _Target "basemodelentity", PVAL_INT param "param");
@@ -507,31 +641,41 @@ CBasePlayerController_API
 {
 	// m_FriendlyName = "Get Player Slot"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetPlayerSlot(PVAL_EHANDLE:player_controller _Target "player_controller") -> (PVAL_LEAF:CPlayerSlot retval "Result");
 
 	// m_FriendlyName = "Is Fake Client"
 	// m_Description = "Fake client, simulated server side; don't send network messages to them"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input IsFakeClient(PVAL_EHANDLE:player_controller _Target "player_controller") -> (PVAL_BOOL retval "Result");
 }
 
-// fingerprint = 2687711211
+// fingerprint = 3567462183
 CBaseTrigger_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:trigger _Target "trigger");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:trigger _Target "trigger");
 
 	// m_FriendlyName = "End Touch"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input EndTouch(PVAL_EHANDLE:trigger _Target "trigger");
@@ -540,38 +684,51 @@ CBaseTrigger_API
 	// m_Description = "Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts."
 	// header_expr = "\"Find \" + entityType + \" Entities In Trigger"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
 	// entityType: metadata = {"choice_name":"entityclass_choices","port_restrict_to_literal":true,"polymorphic_arg":true}
 	// optionalEntityName: advanced_view
 	// retval: metadata = {"polymorphic_arg":true,"polymorphic_dependent_arg":"entityType:to_subtype"}
-	input FindEntitiesInTrigger(PVAL_EHANDLE:trigger _Target "trigger", PVAL_STRING entityType "Entity Type", PVAL_ENTITY_NAME optionalEntityName "Optional Entity Name") -> (PVAL_ARRAY:PVAL_EHANDLE retval "Result");
+	input FindEntitiesInTrigger(PVAL_EHANDLE:trigger _Target "trigger", PVAL_LEAF:CEntitySubtypeString entityType "Entity Type", PVAL_ENTITY_NAME optionalEntityName "Optional Entity Name") -> (PVAL_ARRAY:PVAL_EHANDLE retval "Result");
 
 	// m_FriendlyName = "Is Touching"
 	// m_Description = "Is the other entity touching the trigger?<br><br>This node can appear in Observable contexts."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
 	input IsTouching(PVAL_EHANDLE:trigger _Target "trigger", PVAL_EHANDLE pOtherEntity "Other Entity") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Is Touching Any"
 	// m_Description = "Is there any entity touching the trigger?<br><br>This node can appear in Observable contexts."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// has_observable_context
+	// show_as_observable_value
 	input IsTouchingAny(PVAL_EHANDLE:trigger _Target "trigger") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Start Touch"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartTouch(PVAL_EHANDLE:trigger _Target "trigger");
 
 	// m_FriendlyName = "Toggle"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Toggle(PVAL_EHANDLE:trigger _Target "trigger");
 
 	// m_FriendlyName = "Touch Test"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TouchTest(PVAL_EHANDLE:trigger _Target "trigger");
@@ -606,6 +763,8 @@ CBeam_API
 {
 	// m_FriendlyName = "Scroll Speed"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ScrollSpeed(PVAL_EHANDLE:beam _Target "beam", PVAL_FLOAT param "param");
@@ -616,42 +775,56 @@ CBreakableProp_API
 {
 	// m_FriendlyName = "Add Health"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input AddHealth(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_INT param "param");
 
 	// m_FriendlyName = "Break"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Break(PVAL_EHANDLE:breakable_prop _Target "breakable_prop");
 
 	// m_FriendlyName = "physdamagescale"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input physdamagescale(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Remove Health"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveHealth(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Enable Breaking"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetEnableBreaking(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Set Enable Collisions"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetEnableCollisions(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Set Health"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetHealth(PVAL_EHANDLE:breakable_prop _Target "breakable_prop", PVAL_INT param "param");
@@ -675,6 +848,8 @@ CDOTA_UI_ScenePanelAPI
 	// m_FriendlyName = "Set Camera Entity"
 	// m_Description = "Set the camera entity - blend from the current camera over the specified duration"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetCameraEntity(PVAL_PANORAMA_PANEL_HANDLE:DOTAScenePanel _Target "DOTAScenePanel", PVAL_EHANDLE:point_camera pNewCamera "New Camera", PVAL_FLOAT flDuration "Duration" = 0.0);
@@ -682,6 +857,8 @@ CDOTA_UI_ScenePanelAPI
 	// m_FriendlyName = "Set Root Entity"
 	// m_Description = "Set the current scene root entity - reparents the root hero if present"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetRootEntity(PVAL_PANORAMA_PANEL_HANDLE:DOTAScenePanel _Target "DOTAScenePanel", PVAL_EHANDLE pNewRoot "New Root");
@@ -689,6 +866,8 @@ CDOTA_UI_ScenePanelAPI
 	// m_FriendlyName = "Set Rotation Limits"
 	// m_Description = "Change the camera rotation limits"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetRotationLimits(PVAL_PANORAMA_PANEL_HANDLE:DOTAScenePanel _Target "DOTAScenePanel", PVAL_FLOAT flYawMin "Yaw Min", PVAL_FLOAT flYawMax "Yaw Max", PVAL_FLOAT flPitchMin "Pitch Min", PVAL_FLOAT flPitchMax "Pitch Max");
@@ -711,132 +890,176 @@ CDynamicProp_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Disable Collision"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableCollision(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Enable Collision"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input EnableCollision(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Set Animation"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimation(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Animation Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimationLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Animation No Reset"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimationNoReset(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Animation No Reset Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimationNoResetLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Animation No Reset Not Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimationNoResetNotLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Animation Not Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnimationNotLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Default Animation"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDefaultAnimation(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Default Animation Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDefaultAnimationLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Default Animation Not Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDefaultAnimationNotLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Glow Override"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetGlowOverride(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_VEC3 param "param");
 
 	// m_FriendlyName = "Set Glow Range"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetGlowRange(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Idle Animation Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetIdleAnimationLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Idle Animation Not Looping"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetIdleAnimationNotLooping(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Playback Rate"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlaybackRate(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Start Glowing"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartGlowing(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Stop Glowing"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StopGlowing(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Turn Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOff(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
 
 	// m_FriendlyName = "Turn On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOn(PVAL_EHANDLE:prop_dynamic _Target "prop_dynamic");
@@ -882,12 +1105,16 @@ CEnvCubemapFog_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_cubemap_fog _Target "env_cubemap_fog", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_cubemap_fog _Target "env_cubemap_fog", PVAL_BOOL param "param");
@@ -898,18 +1125,24 @@ CEnvParticleGlow_API
 {
 	// m_FriendlyName = "setalphascale"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input setalphascale(PVAL_EHANDLE:env_particle_glow _Target "env_particle_glow", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "setcolortint"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input setcolortint(PVAL_EHANDLE:env_particle_glow _Target "env_particle_glow", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "setscale"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input setscale(PVAL_EHANDLE:env_particle_glow _Target "env_particle_glow", PVAL_FLOAT param "param");
@@ -920,18 +1153,24 @@ CEnvSoundscape_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_soundscape _Target "env_soundscape");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_soundscape _Target "env_soundscape");
 
 	// m_FriendlyName = "Toggle Enabled"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ToggleEnabled(PVAL_EHANDLE:env_soundscape _Target "env_soundscape");
@@ -945,54 +1184,72 @@ CEnvVolumetricFogController_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Enable Indirect"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input EnableIndirect(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Force Refresh"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ForceRefresh(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller");
 
 	// m_FriendlyName = "Set Anisotropy"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAnisotropy(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Draw Distance"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDrawDistance(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Fade Speed"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetFadeSpeed(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Fog Strength"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetFogStrength(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set To Defaults"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetToDefaults(PVAL_EHANDLE:env_volumetric_fog_controller _Target "env_volumetric_fog_controller");
@@ -1003,12 +1260,16 @@ CEnvVolumetricFogVolume_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_volumetric_fog_volume _Target "env_volumetric_fog_volume", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_volumetric_fog_volume _Target "env_volumetric_fog_volume", PVAL_BOOL param "param");
@@ -1019,12 +1280,16 @@ CFilterMultiple_API
 {
 	// m_FriendlyName = "Add Filter"
 	// m_Description = "Add the named entity to the filter list"
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input AddFilter(PVAL_EHANDLE:filter_multi _Target "filter_multi", PVAL_EHANDLE:filter_base pFilter "Filter");
 
 	// m_FriendlyName = "Remove Filter"
 	// m_Description = "Remove the named entity from the filter list"
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveFilter(PVAL_EHANDLE:filter_multi _Target "filter_multi", PVAL_EHANDLE:filter_base pFilter "Filter");
@@ -1035,102 +1300,136 @@ CFogController_API
 {
 	// m_FriendlyName = "Set2 D Skybox Fog Factor"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Set2DSkyboxFogFactor(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set2 D Skybox Fog Factor Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Set2DSkyboxFogFactorLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Angles"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAngles(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Color"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetColor(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Set Color Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetColorLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Set Color Secondary"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetColorSecondary(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Set Color Secondary Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetColorSecondaryLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Set End Dist"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetEndDist(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set End Dist Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetEndDistLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Far Z"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetFarZ(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Max Density"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMaxDensity(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Max Density Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMaxDensityLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Start Dist"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetStartDist(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Start Dist Lerp To"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetStartDistLerpTo(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Start Fog Transition"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartFogTransition(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller");
 
 	// m_FriendlyName = "Turn Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOff(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller");
 
 	// m_FriendlyName = "Turn On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOn(PVAL_EHANDLE:env_fog_controller _Target "env_fog_controller");
@@ -1141,12 +1440,16 @@ CInfoDynamicShadowHint_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:info_dynamic_shadow_hint _Target "info_dynamic_shadow_hint");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:info_dynamic_shadow_hint _Target "info_dynamic_shadow_hint");
@@ -1157,24 +1460,32 @@ CInfoOffscreenPanoramaTexture_API
 {
 	// m_FriendlyName = "Add CSS Class"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input AddCSSClass(PVAL_EHANDLE:info_offscreen_panorama_texture _Target "info_offscreen_panorama_texture", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:info_offscreen_panorama_texture _Target "info_offscreen_panorama_texture");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:info_offscreen_panorama_texture _Target "info_offscreen_panorama_texture");
 
 	// m_FriendlyName = "Remove CSS Class"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveCSSClass(PVAL_EHANDLE:info_offscreen_panorama_texture _Target "info_offscreen_panorama_texture", PVAL_STRING param "param");
@@ -1185,12 +1496,16 @@ CInfoVisibilityBox_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:info_visibility_box _Target "info_visibility_box");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:info_visibility_box _Target "info_visibility_box");
@@ -1201,36 +1516,48 @@ CInfoWorldLayer_API
 {
 	// m_FriendlyName = "Destroy Entities"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DestroyEntities(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
 
 	// m_FriendlyName = "Hide World Layer"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input HideWorldLayer(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
 
 	// m_FriendlyName = "Hide World Layer And Destroy Entities"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input HideWorldLayerAndDestroyEntities(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
 
 	// m_FriendlyName = "Show World Layer"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ShowWorldLayer(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
 
 	// m_FriendlyName = "Show World Layer And Spawn Entities"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ShowWorldLayerAndSpawnEntities(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
 
 	// m_FriendlyName = "Spawn Entities"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SpawnEntities(PVAL_EHANDLE:info_world_layer _Target "info_world_layer");
@@ -1244,48 +1571,64 @@ CLightEntity_API
 {
 	// m_FriendlyName = "Set Appearance"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetAppearance(PVAL_EHANDLE:light_omni _Target "light_omni", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Custom Appearance"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetCustomAppearance(PVAL_EHANDLE:light_omni _Target "light_omni", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Light Brightness"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetLightBrightness(PVAL_EHANDLE:light_omni _Target "light_omni", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Light Color"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetLightColor(PVAL_EHANDLE:light_omni _Target "light_omni", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Set Light Enabled"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetLightEnabled(PVAL_EHANDLE:light_omni _Target "light_omni", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Toggle"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Toggle(PVAL_EHANDLE:light_omni _Target "light_omni");
 
 	// m_FriendlyName = "Turn Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOff(PVAL_EHANDLE:light_omni _Target "light_omni");
 
 	// m_FriendlyName = "Turn On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input TurnOn(PVAL_EHANDLE:light_omni _Target "light_omni");
@@ -1296,36 +1639,48 @@ CLogicRelay_API
 {
 	// m_FriendlyName = "Cancel Pending"
 	// m_Description = "Cancel any events fired by this relay that are currently pending in the I/O event queue."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input CancelPending(PVAL_EHANDLE:logic_relay _Target "logic_relay");
 
 	// m_FriendlyName = "Disable"
 	// m_Description = "Disable this entity."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:logic_relay _Target "logic_relay");
 
 	// m_FriendlyName = "Enable"
 	// m_Description = "Enable this entity."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:logic_relay _Target "logic_relay");
 
 	// m_FriendlyName = "Enable Refire"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input EnableRefire(PVAL_EHANDLE:logic_relay _Target "logic_relay");
 
 	// m_FriendlyName = "Toggle"
 	// m_Description = "Toggle the relay between enabled and disabled."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Toggle(PVAL_EHANDLE:logic_relay _Target "logic_relay");
 
 	// m_FriendlyName = "Trigger"
 	// m_Description = "Trigger the relay, causing its OnTrigger output to fire if it is enabled."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Trigger(PVAL_EHANDLE:logic_relay _Target "logic_relay");
@@ -1344,12 +1699,16 @@ CPanel2DAPI
 {
 	// m_FriendlyName = "Add Class"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input AddClass(PVAL_PANORAMA_PANEL_HANDLE:Panel _Target "Panel", PVAL_STRING pClass "Class");
 
 	// m_FriendlyName = "B Load Layout Snippet"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input BLoadLayoutSnippet(PVAL_PANORAMA_PANEL_HANDLE:Panel _Target "Panel", PVAL_STRING pSnippetName "Snippet Name");
@@ -1357,16 +1716,22 @@ CPanel2DAPI
 	// m_FriendlyName = "Is Visible"
 	// pulse_feature_tag = 2
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input IsVisible(PVAL_PANORAMA_PANEL_HANDLE:Panel _Target "Panel") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Remove And Delete Children"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveAndDeleteChildren(PVAL_PANORAMA_PANEL_HANDLE:Panel _Target "Panel");
 
 	// m_FriendlyName = "Remove Class"
 	// pulse_feature_tag = 2
+	// allow_broadcast_array
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input RemoveClass(PVAL_PANORAMA_PANEL_HANDLE:Panel _Target "Panel", PVAL_STRING pClass "Class");
@@ -1415,42 +1780,56 @@ CParticleSystem_API
 {
 	// m_FriendlyName = "Destroy Immediately"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DestroyImmediately(PVAL_EHANDLE:info_particle_system _Target "info_particle_system");
 
 	// m_FriendlyName = "Freeze"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Freeze(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Control Point"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetControlPoint(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Data Control Point X"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDataControlPointX(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Data Control Point Y"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDataControlPointY(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Data Control Point Z"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDataControlPointZ(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Text String"
 	// m_Description = "Update the text data on this system."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// bLocalize: advanced_view
@@ -1458,24 +1837,32 @@ CParticleSystem_API
 
 	// m_FriendlyName = "Start"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Start(PVAL_EHANDLE:info_particle_system _Target "info_particle_system");
 
 	// m_FriendlyName = "Stop"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Stop(PVAL_EHANDLE:info_particle_system _Target "info_particle_system");
 
 	// m_FriendlyName = "Stop Play End Cap"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StopPlayEndCap(PVAL_EHANDLE:info_particle_system _Target "info_particle_system");
 
 	// m_FriendlyName = "Thaw"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Thaw(PVAL_EHANDLE:info_particle_system _Target "info_particle_system", PVAL_FLOAT param "param");
@@ -1486,42 +1873,56 @@ CPathParticleRope_API
 {
 	// m_FriendlyName = "Destroy Immediately"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DestroyImmediately(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope");
 
 	// m_FriendlyName = "Disable Pin"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisablePin(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Radius"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetRadius(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Slack"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetSlack(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Start"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Start(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope");
 
 	// m_FriendlyName = "Stop"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Stop(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope");
 
 	// m_FriendlyName = "Stop Play End Cap"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StopPlayEndCap(PVAL_EHANDLE:path_particle_rope _Target "path_particle_rope");
@@ -1533,40 +1934,56 @@ CPathSimple_API
 	// m_FriendlyName = "Get Closest Dir To Entity"
 	// m_Description = "Compute the closest direction along the path relative to the entity provided. (world space vector)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetClosestDirToEntity(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_EHANDLE hEntity "Entity") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Get Closest Pos To Entity"
 	// m_Description = "Compute the closest position on the path relative to the entity provided. (world space vector)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetClosestPosToEntity(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_EHANDLE hEntity "Entity") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Get Closest T Value To Entity"
 	// m_Description = "Compute the closest T value on the path relative to the entity provided. (0.0 to 1.0 float value that defines the point along the spline)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetClosestTValueToEntity(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_EHANDLE hEntity "Entity") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Get Dir At T Value"
 	// m_Description = "Compute the Direction along the spline at the provided T Value of the spline. (world space vector)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDirAtTValue(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_FLOAT flTValue "T Value") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Get Distance Between Entities Along Path"
 	// m_Description = "Compute the distance along the path between provided Entity A and Entity B"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDistanceBetweenEntitiesAlongPath(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_EHANDLE hEntityA "Entity A", PVAL_EHANDLE hEntityB "Entity B") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Get Pos At T Value"
 	// m_Description = "Compute the position at the provided T Value of the spline. (world space vector)"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetPosAtTValue(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_FLOAT flTValue "T Value") -> (PVAL_VEC3_WORLDSPACE retval "Result");
 
 	// m_FriendlyName = "Get T Value At Distance Offset"
 	// m_Description = "Given a starting T value on the spline and a distance traveled on the spline, return the resulting T value."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetTValueAtDistanceOffset(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_FLOAT flTValue "T Value", PVAL_FLOAT flDistance "Distance") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Set Entity At T Value"
 	// m_Description = "Set entity to the position of the provided T value of the spline (world space vector)"
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetEntityAtTValue(PVAL_EHANDLE:path_simple _Target "path_simple", PVAL_EHANDLE hEntity "Entity", PVAL_FLOAT flTValue "T Value");
@@ -1577,30 +1994,40 @@ CPlayerVisibility_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_player_visibility _Target "env_player_visibility", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_player_visibility _Target "env_player_visibility", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Set Player Fog Distance Multiplier"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlayerFogDistanceMultiplier(PVAL_EHANDLE:env_player_visibility _Target "env_player_visibility", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Player Fog Max Density Multiplier"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlayerFogMaxDensityMultiplier(PVAL_EHANDLE:env_player_visibility _Target "env_player_visibility", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Player Visibility Strength"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPlayerVisibilityStrength(PVAL_EHANDLE:env_player_visibility _Target "env_player_visibility", PVAL_FLOAT param "param");
@@ -1611,78 +2038,104 @@ CPointCamera_API
 {
 	// m_FriendlyName = "Activate"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Activate(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Change FOV"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ChangeFOV(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Deactivate"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Deactivate(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Disable DOF"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DisableDOF(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Enable DOF"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input EnableDOF(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Set DOF Far Blurry"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDOFFarBlurry(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set DOF Far Crisp"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDOFFarCrisp(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set DOF Near Blurry"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDOFNearBlurry(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set DOF Near Crisp"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDOFNearCrisp(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set DOF Tilt To Ground"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetDOFTiltToGround(PVAL_EHANDLE:point_camera _Target "point_camera", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetOff(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Set On"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetOn(PVAL_EHANDLE:point_camera _Target "point_camera");
 
 	// m_FriendlyName = "Set On And Turn Others Off"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetOnAndTurnOthersOff(PVAL_EHANDLE:point_camera _Target "point_camera");
@@ -1693,28 +2146,44 @@ CPointClientUIWorldTextPanel_API
 {
 	// m_FriendlyName = "Set Int Message"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetIntMessage(PVAL_EHANDLE:point_clientui_world_text_panel _Target "point_clientui_world_text_panel", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Message"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMessage(PVAL_EHANDLE:point_clientui_world_text_panel _Target "point_clientui_world_text_panel", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Toggle"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Toggle(PVAL_EHANDLE:point_clientui_world_text_panel _Target "point_clientui_world_text_panel");
 }
 
-// fingerprint = 2957171232
+// fingerprint = 2337677748
 CPointEntity_API
 {
+	// m_FriendlyName = "Set Angles"
+	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
+	// pulse_inflows = default
+	// pulse_outflows = default {"allow_direct_return":true}
+	input SetAngles(PVAL_EHANDLE:point_entity _Target "point_entity", PVAL_VEC3 param "param");
+
 	// m_FriendlyName = "Set Position"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetPosition(PVAL_EHANDLE:point_entity _Target "point_entity", PVAL_VEC3 param "param");
@@ -1725,12 +2194,16 @@ CPointOrient_API
 {
 	// m_FriendlyName = "Set Active"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetActive(PVAL_EHANDLE:point_orient _Target "point_orient", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Set Target"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetTarget(PVAL_EHANDLE:point_orient _Target "point_orient", PVAL_STRING param "param");
@@ -1741,18 +2214,24 @@ CPointTemplate_API
 {
 	// m_FriendlyName = "Delete Created Spawn Groups"
 	// m_Description = "Deletes all spawn groups created by the template. Only works if you use asynchronous spawn and INSERT_INTO_NEWLY_CREATED_SPAWN_GROUP."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input DeleteCreatedSpawnGroups(PVAL_EHANDLE:point_template _Target "point_template");
 
 	// m_FriendlyName = "Force Spawn"
 	// m_Description = "Spawn an instance of the template at the original position."
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ForceSpawn(PVAL_EHANDLE:point_template _Target "point_template");
 
 	// m_FriendlyName = "Force Spawn At Location"
 	// m_Description = "Tells the point_template entity to ForceSpawn and return the first entity that matches the name (wildcard)"
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// pLocationEntity: description = "If specified, will spawn the entities at this entity's location."
@@ -1763,6 +2242,8 @@ CPointTemplate_API
 
 	// m_FriendlyName = "Force Spawn Return Entities"
 	// m_Description = "Tells the point_template entity to ForceSpawn and return the all the entities spawned"
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// pLocationEntity: description = "If specified, will spawn the entities at this entity's location."
@@ -1772,6 +2253,8 @@ CPointTemplate_API
 
 	// m_FriendlyName = "Get Spawned Entities"
 	// m_Description = "Get the list of the most recent spawned entities."
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	// retval: metadata = {"polymorphic_arg":true}
@@ -1788,36 +2271,48 @@ CPointWorldText_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:point_worldtext _Target "point_worldtext");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:point_worldtext _Target "point_worldtext");
 
 	// m_FriendlyName = "Set Int Message"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetIntMessage(PVAL_EHANDLE:point_worldtext _Target "point_worldtext", PVAL_INT param "param");
 
 	// m_FriendlyName = "Set Message"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMessage(PVAL_EHANDLE:point_worldtext _Target "point_worldtext", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Text Color"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetTextColor(PVAL_EHANDLE:point_worldtext _Target "point_worldtext", PVAL_COLOR_RGB param "param");
 
 	// m_FriendlyName = "Toggle"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Toggle(PVAL_EHANDLE:point_worldtext _Target "point_worldtext");
@@ -2011,7 +2506,7 @@ CPulseCell_BaseYieldingInflow
 	class CPulseCell_BaseYieldingInflow;
 }
 
-// fingerprint = 1295793995
+// fingerprint = 528699041
 CPulseCell_BooleanSwitchState
 {
 	// m_BaseClasses = ["CPulseCell_BaseState"]
@@ -2030,9 +2525,10 @@ CPulseCell_BooleanSwitchState
 	// pulse_inflows = {"name":"Activate","friendly_name":"Activate","description":"Begin testing a condition composed of Observable values. Continues checking until canceled.","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:client.dll!CPulseCell_BooleanSwitchState"
 	// editor_canvas_item_spec = {"className":"IsStateNode","item_factory":"BooleanSwitchState"}
-	// pulse_node_custom_attributes = [{"field_name":"m_Condition","attr_factory":"CPulseObservableExpression","friendly_name":"Observable","description":"Condition to evaluate when any of its dependent values change.","args":{"expression_type":"PVAL_BOOL"}}]
 	// pulse_outflows = {"name":"m_WhenTrue","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"While True","description":"Fired when the observable boolean is true, and killed when false."}, {"name":"m_WhenFalse","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"While False","description":"Fired when the observable boolean is false, and killed when true."}
-	class CPulseCell_BooleanSwitchState(null);
+	// bCondition: description = "Condition to evaluate when any of its dependent values change."
+	// bCondition: metadata = {"legacy_names":["m_Condition"]}
+	class CPulseCell_BooleanSwitchState(PVAL_LAMBDA:PVAL_BOOL bCondition "Observable");
 }
 
 // fingerprint = 717294393
@@ -2113,6 +2609,8 @@ CPulseCell_IntervalTimer
 	// m_BaseClasses = ["CPulseCell_BaseYieldingInflow"]
 	// m_FriendlyName = "Interval Timer"
 	// m_Description = "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
+	// m_Variables[] = {"m_Name":"m_bFireAtStart","m_FullType":"boolean","m_LongName":"Fire At Start","m_Description":"Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
+	// m_Variables[] = {"m_Name":"m_bFireAtEnd","m_FullType":"boolean","m_LongName":"Fire At End","m_Description":"Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)","m_bUsingLegacyDefault":false,"m_DefaultKV3":false,"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
 	// MVDataNodeType = 0
 	// MVDataOverlayType = 0
 	// hidden_in_tool = false
@@ -2126,7 +2624,7 @@ CPulseCell_IntervalTimer
 	// fingerprint = "@lib:client.dll!CPulseCell_IntervalTimer"
 	// header_icon = "tools/images/pulse_editor/node_timer.png"
 	// editor_canvas_item_spec = {"item_factory":"IntervalTimer"}
-	// pulse_outflows = {"name":"m_Completed","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"Completed","description":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up perfectly."}, {"name":"m_OnInterval","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"On Interval","description":"New child cursor starts here every time the wait interval elapses"}
+	// pulse_outflows = {"name":"m_Completed","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"Completed","description":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set."}, {"name":"m_OnInterval","is_default_outflow":false,"backed_by_variable":true,"friendly_name":"On Interval","description":"New child cursor starts here every time the wait interval elapses"}
 	// flDuration: description = "This is the overall duration. If -1 timer will continue forever. During this duration, we will fire a new child cursor at each Interval."
 	// flDuration: advanced_view
 	// flWaitInterval: advanced_view
@@ -2254,86 +2752,28 @@ CPulseCell_ShmupWaitForDuration
 	class CPulseCell_ShmupWaitForDuration(PVAL_PANORAMA_PANEL_HANDLE:DOTABPCrownfallEncounterShmupPopup pTarget "Target", PVAL_FLOAT flDuration "Duration");
 }
 
-// fingerprint = 975032352
 CPulseCell_Value_Curve
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Curve"
-	// m_Variables[] = {"m_Name":"m_Curve","m_FullType":"curve","m_LongName":"Curve","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_spline":[],"m_tangents":[],"m_vDomainMins":[0.0,0.0],"m_vDomainMaxs":[0.0,0.0]},"m_KV3Metadata":{"hidden":false},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"Evaluate the curve at the specified input position","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:client.dll!CPulseCell_Value_Curve"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_Curve(PVAL_FLOAT t "t") -> (PVAL_FLOAT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::EvaluateCurve"
+	class CPulseCell_Value_Curve;
 }
 
-// fingerprint = 2092843331
 CPulseCell_Value_Gradient
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Gradient"
-	// m_Variables[] = {"m_Name":"m_Gradient","m_FullType":"kv3","m_LongName":"Gradient","m_Description":"","m_bUsingLegacyDefault":false,"m_DefaultKV3":{"m_Stops":[]},"m_KV3Metadata":{"hidden":false,"editor":"Gradient()"},"m_pItemSet":null}
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"Evaluate the gradient at a position between 0 and 1","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:client.dll!CPulseCell_Value_Gradient"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_Gradient(PVAL_FLOAT t "t") -> (PVAL_COLOR_RGB retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::EvaluateGradient"
+	class CPulseCell_Value_Gradient;
 }
 
-// fingerprint = 326640291
 CPulseCell_Value_RandomFloat
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Random Float"
-	// m_Description = "Generate a random float between min and max (inclusive)"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:client.dll!CPulseCell_Value_RandomFloat"
-	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::RandomFloat"
+	class CPulseCell_Value_RandomFloat;
 }
 
-// fingerprint = 393431413
 CPulseCell_Value_RandomInt
 {
-	// m_BaseClasses = ["CPulseCell_BaseValue"]
-	// m_FriendlyName = "Random Integer"
-	// m_Description = "Generate a random integer between min and max (inclusive)"
-	// MVDataNodeType = 0
-	// MVDataOverlayType = 0
-	// hidden_in_tool = false
-	// selector_has_specificity = false
-	// expect_default_outflow
-	// generic_node_category = 4
-	// supported_domains = {"BaseDomain":true}
-	// pulse_inflows = {"name":"Eval","friendly_name":"Eval","description":"","yields":false,"terminates":false,"is_default_inflow":false}
-	// fingerprint = "@lib:client.dll!CPulseCell_Value_RandomInt"
-	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
-	// retval: associated_outflow_name = "OutDefault"
-	// retval: direct_return_value_for = "Eval"
-	class CPulseCell_Value_RandomInt(PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
+	// legacy_name_replacement = "CPulseMathlib::RandomInteger"
+	class CPulseCell_Value_RandomInt;
 }
 
 // fingerprint = 860342186
@@ -2358,6 +2798,7 @@ CPulseCell_WaitForCursorsWithTag
 	// supported_domains = {"BaseDomain":true}
 	// pulse_inflows = {"name":"Wait","friendly_name":"Wait","description":"","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:client.dll!CPulseCell_WaitForCursorsWithTag"
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// pTagName: description = "A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them."
 	// tagValue: description = "Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value."
@@ -2384,7 +2825,7 @@ CPulseCell_WaitForCursorsWithTagBase
 	class CPulseCell_WaitForCursorsWithTagBase;
 }
 
-// fingerprint = 1630411852
+// fingerprint = 1868167717
 CPulseCell_WaitForObservable
 {
 	// m_BaseClasses = ["CPulseCell_BaseYieldingInflow"]
@@ -2402,9 +2843,10 @@ CPulseCell_WaitForObservable
 	// pulse_inflows = {"name":"Start","friendly_name":"Start","description":"Begin testing a condition composed of Observable variable references. Continues checking until true.","yields":true,"terminates":false,"is_default_inflow":true}
 	// fingerprint = "@lib:client.dll!CPulseCell_WaitForObservable"
 	// header_icon = "tools/images/pulse_editor/observable_variable_listener.png"
-	// pulse_node_custom_attributes = [{"field_name":"m_Condition","attr_factory":"CPulseObservableExpression","friendly_name":"Observable","description":"Condition to evaluate when any of its dependent values change.","args":{"expression_type":"PVAL_BOOL"}}]
 	// pulse_outflows = {"name":"m_OnTrue","is_default_outflow":true,"backed_by_variable":true,"friendly_name":"On True","description":""}
-	class CPulseCell_WaitForObservable(null);
+	// bCondition: description = "Condition to evaluate when any of its dependent values change."
+	// bCondition: metadata = {"legacy_names":["m_Condition"]}
+	class CPulseCell_WaitForObservable(PVAL_LAMBDA:PVAL_BOOL bCondition "Observable");
 }
 
 // fingerprint = 1759141200
@@ -2432,6 +2874,7 @@ CPulseCursorFuncs
 {
 	// m_FriendlyName = "Any Other Cursors Have Tag"
 	// m_Description = "Check if any yielded cursors on the graph already have the given tag."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -2443,6 +2886,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Cursor Has Tag"
 	// m_Description = "Check if the cursor already has the given tag."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -2463,6 +2907,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Kill Cursors With Tag"
 	// m_Description = "Find all the yielded cursors on this graph with the matching tag and cancel them."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/kill_cursor_with_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -2475,6 +2920,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Remove Tag From Cursor"
 	// m_Description = "Remove the given tag from this cursor. If other cursors are waiting on us, they will resume."
+	// search_expr = "pTagName"
 	// editor_canvas_item_spec = {"className":"IsControlFlowNode"}
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// generic_node_category = 5
@@ -2487,6 +2933,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Tag Cursor"
 	// m_Description = "Save a named value of any type on the cursor."
+	// search_expr = "pTagName"
 	// editor_canvas_item_spec = {"className":"IsControlFlowNode"}
 	// header_icon = "tools/images/pulse_editor/cursor_tag.png"
 	// adds_cursor_tag
@@ -2502,6 +2949,7 @@ CPulseCursorFuncs
 
 	// m_FriendlyName = "Wake Cursors With Tag"
 	// m_Description = "Find all the yielded cursors on this graph with the matching tag and wake them."
+	// search_expr = "pTagName"
 	// header_icon = "tools/images/pulse_editor/kill_cursor_with_tag.png"
 	// generic_node_category = 5
 	// pulse_inflows = default
@@ -2583,7 +3031,7 @@ CPulseGraphInstance_PanoramaPanel
 	function SetPrimaryScenePanel(PVAL_PANORAMA_PANEL_HANDLE:DOTAScenePanel pTarget "Target");
 }
 
-// fingerprint = 1311878972
+// fingerprint = 3039381659
 CPulseMathlib
 {
 	// m_FriendlyName = "Abs Float"
@@ -2650,6 +3098,34 @@ CPulseMathlib
 	// is_pure_value
 	function ClampInt(PVAL_INT x "x", PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
 
+	// m_FriendlyName = "Closest Point On Line"
+	// m_Description = "Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnLine(PVAL_VEC3 vPoint "Point", PVAL_VEC3 vLineA "Line A", PVAL_VEC3 vLineB "Line B") -> (PVAL_VEC3 retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On Line Segment"
+	// m_Description = "Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnLineSegment(PVAL_VEC3 vPoint "Point", PVAL_VEC3 vLineA "Line A", PVAL_VEC3 vLineB "Line B") -> (PVAL_VEC3 retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On World Line"
+	// m_Description = "Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnWorldLine(PVAL_VEC3_WORLDSPACE vPoint "Point", PVAL_VEC3_WORLDSPACE vLineA "Line A", PVAL_VEC3_WORLDSPACE vLineB "Line B") -> (PVAL_VEC3_WORLDSPACE retval "Result", PVAL_FLOAT Fraction "Fraction");
+
+	// m_FriendlyName = "Closest Point On World Line Segment"
+	// m_Description = "Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB."
+	// has_observable_context
+	// is_pure_value
+	// Fraction: advanced_view
+	function ClosestPointOnWorldLineSegment(PVAL_VEC3_WORLDSPACE vPoint "Point", PVAL_VEC3_WORLDSPACE vLineA "Line A", PVAL_VEC3_WORLDSPACE vLineB "Line B") -> (PVAL_VEC3_WORLDSPACE retval "Result", PVAL_FLOAT Fraction "Fraction");
+
 	// m_FriendlyName = "Compose Angles"
 	// m_Description = "Applies B in A's local space."
 	// expr_alias = "composeAngles"
@@ -2697,6 +3173,24 @@ CPulseMathlib
 	// has_observable_context
 	// is_pure_value
 	function DotProductVector(PVAL_VEC3 a "a", PVAL_VEC3 b "b") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Curve"
+	// m_Description = "Evaluate the curve at the specified input position"
+	// legacy_names = ["CPulseCell_Value_Curve"]
+	// has_observable_context
+	// is_pure_value
+	// curve: advanced_view
+	// curve: metadata = {"legacy_names":["m_Curve"]}
+	function EvaluateCurve(PVAL_FLOAT t "t", PVAL_LEAF:Curve curve "curve") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Gradient"
+	// m_Description = "Evaluate the gradient at a position between 0 and 1"
+	// legacy_names = ["CPulseCell_Value_Gradient"]
+	// has_observable_context
+	// is_pure_value
+	// gradient: advanced_view
+	// gradient: metadata = {"legacy_names":["m_Gradient"]}
+	function EvaluateGradient(PVAL_FLOAT t "t", PVAL_LEAF:Gradient gradient "gradient") -> (PVAL_COLOR_RGB retval "Result");
 
 	// m_FriendlyName = "Exp"
 	// m_Description = "Computes e ( 2.71...) raised to a power"
@@ -3019,6 +3513,22 @@ CPulseMathlib
 	// has_observable_context
 	// is_pure_value
 	function Rad2Deg(PVAL_FLOAT flRadians "Radians") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Random Float"
+	// m_Description = "Generate a random float between min and max (inclusive)"
+	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
+	// expr_alias = "rand_float"
+	// legacy_names = ["CPulseCell_Value_RandomFloat"]
+	// expr_alias_info = "rand_float( Float flMin, Float flMax )"
+	function RandomFloat(PVAL_FLOAT flMin "Min", PVAL_FLOAT flMax "Max") -> (PVAL_FLOAT retval "Result");
+
+	// m_FriendlyName = "Random Integer"
+	// m_Description = "Generate a random integer between min and max (inclusive)"
+	// header_icon = "tools/images/pulse_editor/exit_cycle_random.png"
+	// expr_alias = "rand_int"
+	// legacy_names = ["CPulseCell_Value_RandomInt"]
+	// expr_alias_info = "rand_int( Integer nMin, Integer nMax )"
+	function RandomInteger(PVAL_INT nMin "Min", PVAL_INT nMax "Max") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Random World Position"
 	// m_Description = "Returns a random position centered on vCenter with random min and max radius"
@@ -3378,6 +3888,8 @@ CShmupPanoramaFuncs
 	// m_FriendlyName = "Shmup Return Player Control To User"
 	// m_Description = "Notify the game that we are done controlling the player and they can return to the action."
 	// pulse_feature_tag = 2
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ShmupReturnPlayerControlToUser(PVAL_PANORAMA_PANEL_HANDLE:DOTABPCrownfallEncounterShmupPopup _Target "DOTABPCrownfallEncounterShmupPopup");
@@ -3385,6 +3897,8 @@ CShmupPanoramaFuncs
 	// m_FriendlyName = "Shmup Take Control Of Player"
 	// m_Description = "Allow this pulse graph to take control of the player.  If unsuccessful, or the game steals control back during a yield, this cursor will be killed."
 	// pulse_feature_tag = 2
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input ShmupTakeControlOfPlayer(PVAL_PANORAMA_PANEL_HANDLE:DOTABPCrownfallEncounterShmupPopup _Target "DOTABPCrownfallEncounterShmupPopup");
@@ -3395,42 +3909,56 @@ CSoundEventEntity_API
 {
 	// m_FriendlyName = "Pause Sound"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input PauseSound(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_BOOL param "param");
 
 	// m_FriendlyName = "Set Sound Event Name"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetSoundEventName(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Set Source Entity"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetSourceEntity(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Start Sound"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartSound(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_STRING param "param");
 
 	// m_FriendlyName = "Start Sound On Single Client"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StartSoundOnSingleClient(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_INT param "param");
 
 	// m_FriendlyName = "Stop Sound"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input StopSound(PVAL_EHANDLE:point_soundevent _Target "point_soundevent");
 
 	// m_FriendlyName = "Un Pause Sound"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input UnPauseSound(PVAL_EHANDLE:point_soundevent _Target "point_soundevent", PVAL_BOOL param "param");
@@ -3447,42 +3975,60 @@ CTakeDamageResultAPI
 {
 	// m_FriendlyName = "Get Damage Dealt"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDamageDealt(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Get Damage Direction"
 	// m_Description = "Get the direction vector of the incoming damage came"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDamageDirection(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_VEC3 retval "Result");
 
 	// m_FriendlyName = "Get Death Scorer"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDeathScorer(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult", PVAL_EHANDLE pHitEntity "Hit Entity") -> (PVAL_EHANDLE retval "Result");
 
 	// m_FriendlyName = "Get Destructible Hit Group Requests"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	// retval: metadata = {"polymorphic_arg":true}
 	input GetDestructibleHitGroupRequests(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_ARRAY:PVAL_LEAF:DestructiblePartDamageRequest_t retval "Result");
 
 	// m_FriendlyName = "Get Hit Group ID"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetHitGroupID(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_ENUM:HitGroup_t retval "Result");
 
 	// m_FriendlyName = "Get Inflictor"
 	// m_Description = "Inflictor is the entity that is dealing the damage.\nIt can be the attacker itself or a summoned unit, a projectile entity of some sort.\nIt is *MOST DEFINITELY NOT* the weapon or ability. Use Set/GetAbility for that."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetInflictor(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_EHANDLE retval "Result");
 
 	// m_FriendlyName = "Get Pre Modified Damage"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetPreModifiedDamage(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_FLOAT retval "Result");
 
 	// m_FriendlyName = "Has Damage Type Blast"
 	// m_Description = "Returns True if damage type is from a Blast"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input HasDamageTypeBlast(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_BOOL retval "Result");
 
 	// m_FriendlyName = "Has Damage Type Burn"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input HasDamageTypeBurn(PVAL_LEAF:CTakeDamageResult _Target "CTakeDamageResult") -> (PVAL_BOOL retval "Result");
 }
 
@@ -3491,24 +4037,32 @@ CTextureBasedAnimatable_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:hl_vr_texture_based_animatable _Target "hl_vr_texture_based_animatable");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:hl_vr_texture_based_animatable _Target "hl_vr_texture_based_animatable");
 
 	// m_FriendlyName = "Start"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Start(PVAL_EHANDLE:hl_vr_texture_based_animatable _Target "hl_vr_texture_based_animatable");
 
 	// m_FriendlyName = "Stop"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Stop(PVAL_EHANDLE:hl_vr_texture_based_animatable _Target "hl_vr_texture_based_animatable");
@@ -3519,36 +4073,48 @@ CTonemapController2_API
 {
 	// m_FriendlyName = "Disable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Disable(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller");
 
 	// m_FriendlyName = "Enable"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input Enable(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller");
 
 	// m_FriendlyName = "Set Exposure Adaptation Speed Down"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetExposureAdaptationSpeedDown(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Exposure Adaptation Speed Up"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetExposureAdaptationSpeedUp(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Max Exposure"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMaxExposure(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller", PVAL_FLOAT param "param");
 
 	// m_FriendlyName = "Set Min Exposure"
 	// hidden_in_tool
+	// allow_broadcast_array
+	// allow_broadcast_domain
 	// pulse_inflows = default
 	// pulse_outflows = default {"allow_direct_return":true}
 	input SetMinExposure(PVAL_EHANDLE:env_tonemap_controller _Target "env_tonemap_controller", PVAL_FLOAT param "param");
@@ -3559,15 +4125,21 @@ DestructiblePartDamageRequestAPI
 {
 	// m_FriendlyName = "Get Damage Level"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDamageLevel(PVAL_LEAF:DestructiblePartDamageRequest_t _Target "DestructiblePartDamageRequest_t") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Get Desired Health"
 	// m_Description = "Desired health if this is a request, otherwise the health it's at at this point."
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetDesiredHealth(PVAL_LEAF:DestructiblePartDamageRequest_t _Target "DestructiblePartDamageRequest_t") -> (PVAL_INT retval "Result");
 
 	// m_FriendlyName = "Get Hit Group"
 	// generic_node_category = 4
+	// allow_broadcast_array = false
+	// allow_broadcast_domain = false
 	input GetHitGroup(PVAL_LEAF:DestructiblePartDamageRequest_t _Target "DestructiblePartDamageRequest_t") -> (PVAL_ENUM:HitGroup_t retval "Result");
 }
 
@@ -3685,7 +4257,7 @@ PointCameraSettings_t
 @lib:client.dll!CPulseCell_Inflow_ObservableVariableListener = 0
 @lib:client.dll!CPulseCell_Inflow_Yield = 955696098
 @lib:client.dll!CPulseCell_IsRequirementValid = 931326599
-@lib:client.dll!CPulseCell_ObservableSwitchState = 3382071419
+@lib:client.dll!CPulseCell_ObservableSwitchState = 1514532293
 @lib:client.dll!CPulseCell_Outflow_CycleOrdered = 4001330057
 @lib:client.dll!CPulseCell_Outflow_CycleRandom = 4259677353
 @lib:client.dll!CPulseCell_Outflow_CycleShuffled = 2434550510
@@ -3693,7 +4265,7 @@ PointCameraSettings_t
 @lib:client.dll!CPulseCell_ReturnValues = 2637216531
 @lib:client.dll!CPulseCell_Step_CallExternalMethod = 1549135810
 @lib:client.dll!CPulseCell_Step_DebugLog = 3575830881
-@lib:client.dll!CPulseCell_Step_EntFire = 528291787
+@lib:client.dll!CPulseCell_Step_EntFire = 3643789756
 @lib:client.dll!CPulseCell_Step_PublicOutput = 861796290
 @lib:client.dll!CPulseCell_Timeline = 3988269055
 @lib:client.dll!CPulseGameBlackboard_API = 0
@@ -3714,6 +4286,7 @@ PointCameraSettings_t
 @lib:client.dll!CSoundOpvarSetAutoRoomEntity_API = 0
 @lib:client.dll!CSoundOpvarSetBoxEntity_API = 0
 @lib:client.dll!CSoundOpvarSetDomeEntity_API = 0
+@lib:client.dll!CSoundOpvarSetEnclosureEntity_API = 0
 @lib:client.dll!CSoundOpvarSetOBBWindEntity_API = 0
 @lib:client.dll!CSoundOpvarSetPathCornerEntity_API = 0
 @lib:client.dll!CSoundOpvarSetPointBase_API = 0

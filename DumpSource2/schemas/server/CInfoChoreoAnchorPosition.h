@@ -7,6 +7,10 @@ class CInfoChoreoAnchorPosition
 	float32 m_flRadius; // = 12
 	float32 m_flToleranceAngle;
 	bool m_bOnlyWarpPosition;
+	bool m_bDontSnapToNav;
+	bool m_bDontSnapToGround;
+	float32 m_flMaxDistanceFromNav; // = 50
+	float32 m_flGroundTraceDistance; // = 36
 	CHandle< CBaseEntity > m_hParent;
 	CInfoChoreoLocatorShapeType_t m_nShapeType; // = "POINT"
 };

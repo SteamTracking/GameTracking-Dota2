@@ -5,4 +5,5 @@ class FeFitMatrix_t
 	uint16 nEnd;
 	uint16 nNode;
 	uint16 nBeginDynamic;
+	uint16 nFlags;
 };

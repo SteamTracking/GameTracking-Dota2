@@ -6,4 +6,5 @@ enum EPerformAttackFlags : uint32_t
 	k_PerformAttackFlags_UseProjectile = 4,
 	k_PerformAttackFlags_SkipRangeCheck = 8,
 	k_PerformAttackFlags_ForceDefaultProjectile = 16,
+	k_PerformAttackFlags_NoLifesteal = 32,
 };

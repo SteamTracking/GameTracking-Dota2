@@ -8,6 +8,9 @@
 // MHasKV3TransferPolymorphicClassname
 class CVoiceContainerBase
 {
+	CUtlStringToken m_nResourceName;
+	bool m_bRegisteredVMix;
+	bool m_bIsValidForPlayback;
 	// MPropertySuppressField
 	CVSound m_vSound;
 	// MPropertySuppressExpr = "true"

@@ -5,4 +5,5 @@ enum ECreateAttackFlags : uint32_t
 	k_CreateAttackFlags_FakeAttack = 2,
 	k_CreateAttackFlags_NeverMiss = 4,
 	k_CreateAttackFlags_TriggeredAttack = 8,
+	k_CreateAttackFlags_NoCrit = 16,
 };

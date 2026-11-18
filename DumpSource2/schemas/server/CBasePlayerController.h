@@ -2,7 +2,7 @@
 class CBasePlayerController : public CBaseEntity
 {
 	// MNotSaved
-	uint64 m_nInButtonsWhichAreToggles;
+	ButtonBitMask_t m_nInButtonsWhichAreToggles;
 	// MNotSaved
 	uint32 m_nTickBase;
 	CHandle< CBasePlayerPawn > m_hPawn;
@@ -34,7 +34,6 @@ class CBasePlayerController : public CBaseEntity
 	bool m_bGamePaused;
 	// MNotSaved
 	ChatIgnoreType_t m_iIgnoreGlobalChat;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
 	float32 m_flLastPlayerTalkTime;
 	// MNotSaved
 	float32 m_flLastEntitySteadyState;

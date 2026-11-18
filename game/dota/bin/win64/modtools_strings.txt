@@ -9758,7 +9758,6 @@ Bones to discard the specified motion from.  If no bones are specified, motion i
 Bones which have the specified flags are excluded from skeleton only exports.  The bones can have other flags as well.
 Bones which have the specified flags exactly, i.e. no other flags set, are excluded from skeleton only exports.
 Bools
-Both
 Both rotation and translation are not allowed to be zero!
 Both the group and choice names need to be set
 Bounciness
@@ -10178,11 +10177,8 @@ CNmClipDocEvent_OrientationWarp::ValidateTrack
 CNmClipDocEvent_Particle::ValidateTrack
 CNmClipDocEvent_RootMotion::ValidateTrack
 CNmClipDocEvent_Sound::ValidateTrack
-CNmClipDocEvent_SoundBase
-CNmClipDocEvent_TaggedSound
 CNmClipDocEvent_TaggedSound::ValidateTrack
 CNmClipDocEvent_TargetWarp::ValidateTrack
-CNmClipDocument::SpeedScale_t
 CNmDocTool::Execute
 CNmDocTool::SpawnDialog
 CNmGraphInstance::RecordPreGraphEvaluateState
@@ -10191,11 +10187,8 @@ CNmPoseBufferPool::CreateCachedPoseBufferInternal
 CNmPoseBufferPool::GenerateNewCachedPoseID
 CNmPoseBufferPool::RecordState
 CNmSkeleton::DrawDebug
-CNmSoundEventBase
-CNmSoundEventBase::Position_t
 CNmStateMachineNode::CDefinition::PostInstantiateNode
 CNmStateNode::TransitionFlag_t::TransitionFlag_t
-CNmTaggedSoundEvent
 CP 0 must specify an attachment point name if using PATTACH_POINT or PATTACH_POINT_FOLLOW attachment type!
 CP 1 must specify an attachment point name if using PATTACH_POINT or PATTACH_POINT_FOLLOW attachment type!
 CParentAttachmentName
@@ -10671,6 +10664,7 @@ CurrentPreProfileMatrix
 Curvature
 Curvature Drop Amount
 Curvature Drop Distance
+Curve
 CurveEditor( { extended=true input_name="Frame" output_name="Value" } ) 
 Cut Max
 Cut Min
@@ -10836,7 +10830,6 @@ Duration Override Seconds
 Duration Scale
 Duration Seconds
 Duration: %.2fs
-DurationOverride
 Dynamic Float Selector
 Dynamic ID Selector
 DynamicConfig
@@ -11382,7 +11375,6 @@ ForceRealignBone
 ForceUnweightedBindposeBonePositions
 Forced
 Format error!
-Forward Stop Only
 FractionalPart( A )
 Frame Count
 Frame Number
@@ -12180,7 +12172,6 @@ ModelDocTextureGenerator_ObjectSpaceNormalMap_TSNormal
 ModelDocTextureGenerator_ObjectSpaceNormalMap_TSNormal_%dx%d
 ModelMaterialGroupName()
 ModelMesh
-ModelMeshDNARig_t
 ModelModifierList
 ModelModifier_DisableMorph
 ModelModifier_ScaleAndMirror
@@ -12487,7 +12478,6 @@ Override bone scale information on an animation
 Override model bounds.
 Override sound is invalid.
 Override surface property for auto-created physics. (Default behavior is to pick the first surfaceprop in the parent document.)
-Override the final duration of this clip by using a multiplier
 Override the health this external piece will spawn with regardless of the VMDL propdata. (For embedded pieces, just add propdata child node.)
 Override the mass this embedded piece will spawn with regardless of the VMDL propdata.
 OverrideVectorStream
@@ -13256,7 +13246,6 @@ Speed In
 Speed Multiplier
 Speed Out
 Speed Scale Mode
-SpeedScale
 Speedup
 Spew Wrinkle Stats
 Sphere: %s
@@ -13596,7 +13585,6 @@ Trying to XY warp to under the distance threshold, falling back to LERP!
 Trying to divide by zero!
 Trying to mod by zero!
 Trying to set an offset on an unset node!
-Turn To Start
 Turn off animation compression for this animation.<p><span style="color:#aa0000"><b>NOTE</b></span>: This significantly increases the size of the animation data.<p>Normally it should be false but if there are obvious compression artifacts, typically in tiny rotations, disabling compression may fix those.
 Twist Relax
 Two Bone IK
@@ -13658,7 +13646,6 @@ Unskinned
 Unsupported mesh type for '%s': %s
 Unsupported mix of opaque and translucent materials in thie groom group. Render materials in child groom meshfile nodes must either be all opaque or all translucent.
 Up Type
-Up Vector
 Use Actual Elapsed Time In State For Timed Events
 Use Block Solver
 Use Child Offset Attachment
@@ -14438,9 +14425,6 @@ dummyfilename.tif
 duplicate options detected for ID based selector!
 duration_info
 dynamic_attributes
-eAim
-eForwardStopOnly
-eTurnToStart
 ease_in_key
 ease_is_duration
 ease_out_key
@@ -14542,10 +14526,6 @@ find_str
 fixed_blend
 fixed_blend_val
 fj".T\CMek2>x
-flGoalStrength
-flScale
-flZin
-flZout
 fl_override_timing_value
 flagchoices
 flags value
@@ -14890,10 +14870,8 @@ m_DefaultKV3
 m_DefaultSolverSettings.m_nNumIterations
 m_DefaultTargetSettings.m_Bone
 m_DefaultTargetSettings.m_TargetSource
-m_Deformers
 m_EndEffectorFixedOffsetAttachment
 m_EnumArray
-m_FfdZLayers
 m_Format
 m_HelpContextName
 m_Helpers
@@ -14928,16 +14906,13 @@ m_UserData
 m_WeakReferenceList
 m_attachments
 m_bBakedTwoSided
-m_bBlendShapes
 m_bCanBatchWithDynamicShaderConstants
-m_bCompressedZ3
 m_bCustom
 m_bDrawLast
 m_bFileExists
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
 m_bIsGameFile
-m_bIsIntactProxy
 m_bIsNotMatchedToMaterial
 m_bNoShadow
 m_bOnlyShadow
@@ -14950,27 +14925,20 @@ m_bUsingLegacyDefault
 m_bmaxs
 m_bmins
 m_capabilities
-m_dnaRigs
 m_eRbfType
 m_flMaxRadians
 m_flMinRadians
-m_flSpeedScale
 m_hitboxsets
 m_iValue
 m_influenceFlags
 m_morphSet
-m_nBlock
 m_nChainLength > 1 && m_nChainLength < 8
 m_nClassType
 m_nFileCRC
 m_nFingerprint
 m_nFingerprintDefault
 m_nLegacyDefaultInt
-m_nReferenceNode
-m_nRig
 m_nUserData
-m_nVertexMapIndex
-m_nVertexMapNameHash
 m_pItemSet
 m_pRecording->m_recordedUpdateData.Tail()->m_updateType != NmRecordedUpdateType_t::Unknown
 m_params.m_nNumBonesInChain < 8
@@ -14978,7 +14946,6 @@ m_qFixupRotation
 m_rbfParameters
 m_rbfParametersKV3
 m_rgbColor
-m_speedScaleMode
 make_two_sided
 manual_animation_frame
 manual_mode
@@ -15156,7 +15123,6 @@ node_base_y0
 node_base_y1
 node_dest
 node_id_List
-node_name
 node_name_key
 non_bodygroup_single_choice
 none 

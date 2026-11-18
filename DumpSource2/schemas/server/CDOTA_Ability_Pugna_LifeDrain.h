@@ -1,4 +1,5 @@
 class CDOTA_Ability_Pugna_LifeDrain : public CDOTABaseAbility
 {
-	CHandle< CBaseEntity > m_hTarget;
+	bool m_bIgnoreActiveDrains;
+	GameTime_t m_flChannelEndTime;
 };

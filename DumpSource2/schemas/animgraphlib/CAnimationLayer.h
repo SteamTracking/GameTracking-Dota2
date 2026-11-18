@@ -5,6 +5,7 @@ class CAnimationLayer
 	CAnimNetVar< float32 > m_flCycle;
 	CAnimNetVar< float32 > m_flWeight;
 	CAnimNetVar< int32 > m_nOrder; // = 12
+	CAnimNetVar< bool > m_bDisableSequenceFadeOut;
 	bool m_bLooping;
 	int32 m_nFlags;
 	bool m_bSequenceFinished;

@@ -3,7 +3,8 @@ class CDOTA_Modifier_Mirana_SolarFlare : public CDOTA_Buff
 	float32 duration;
 	float32 smoothness;
 	float32 increase_rate;
-	int32 max_total_increase;
+	int32 max_attack_speed_increase;
+	int32 max_damage_increase;
 	GameTime_t flMaxDamageGameTime;
 	int32 evasion;
 	int32 m_iTotalAmount;

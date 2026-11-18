@@ -23,6 +23,8 @@ class C_SceneEntity : public C_PointEntity
 	// MNotSaved
 	bool m_bWasPlaying;
 	// MNotSaved
+	bool m_bDisableFrameSimulate;
+	// MNotSaved
 	CUtlVector< C_SceneEntity::QueuedEvents_t > m_QueuedEvents;
 	// MNotSaved
 	float32 m_flCurrentTime;

@@ -37,6 +37,8 @@ class CDOTA_AttackRecord
 	bitfield:1 m_bSuppressDamageSounds;
 	bitfield:1 m_bSuppressDamageEffects;
 	bitfield:1 m_bSuppressCleave;
+	bitfield:1 m_bNoLifesteal;
+	bitfield:1 m_bNoCrit;
 	int32 m_nBashSource;
 	int32 m_nCritSource;
 	int32 m_nAttackHeight;
@@ -47,6 +49,7 @@ class CDOTA_AttackRecord
 	float32 m_flDeadlyBlowBonus;
 	float32 m_flDeadlyBlowDamage;
 	float32 m_flDeadlyBlowDisplay;
+	float32 m_flEffectiveness;
 	int32 m_iProjectileSpeed;
 	Vector m_vForceDirectionOverride;
 	VectorWS m_vTargetLoc;

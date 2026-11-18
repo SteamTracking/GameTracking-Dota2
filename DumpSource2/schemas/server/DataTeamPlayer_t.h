@@ -24,6 +24,7 @@ class DataTeamPlayer_t
 	int32 m_iIncomeGold;
 	int32 m_iWardKillGold;
 	int32 m_iAbilityGold;
+	int32 m_iMidasGold;
 	int32 m_iNetWorth;
 	int32 m_iDenyCount;
 	int32 m_iLastHitCount;

@@ -16,6 +16,7 @@ class CFuncRotator : public CBaseModelEntity
 	CEntityIOOutput m_OnOscillateEndArrive;
 	CEntityIOOutput m_OnOscillateEndDepart;
 	GameTick_t m_nTickRotateRan;
+	GameTick_t m_nTickDependenciesResolved;
 	bool m_bStartedRotating;
 	FuncRotatorRotationSummary_t m_rotationSummary;
 	float32 m_flTimeToReachMaxSpeed;
@@ -38,4 +39,6 @@ class CFuncRotator : public CBaseModelEntity
 	CFuncRotator::RotationAxis_t m_eRotationAxis;
 	float32 m_flSpeedDriftFromOverRotate;
 	bool m_bQueueStop;
+	bool m_bIsImGuiLogging;
+	bool m_bIsImGuiEntTextLogging;
 };

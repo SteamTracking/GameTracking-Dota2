@@ -1,0 +1,3 @@
+class CVoiceSourceNodeDesc : public CVAudioNodeBaseDesc
+{
+};

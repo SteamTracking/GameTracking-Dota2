@@ -6,4 +6,5 @@ class CDOTA_Ability_Meepo_DividedWeStand : public CDOTABaseAbility
 	CHandle< CDOTA_Ability_Meepo_DividedWeStand > m_entPrimeDividedWeStand;
 	CHandle< CDOTA_Ability_Meepo_DividedWeStand > m_entNextDividedWeStand;
 	int32 m_iPendingUpgrades;
+	CHandle< CBaseEntity > m_hHeldEntity;
 };
