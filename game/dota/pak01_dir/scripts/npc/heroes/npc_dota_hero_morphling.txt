@@ -110,11 +110,11 @@
 		"ProjectileSpeed"		"1300"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"16"
-		"AttributeStrengthGain"		"2.6"
+		"AttributeStrengthGain"		"2.8"
 		"AttributeBaseAgility"		"33"
 		"AttributeAgilityGain"		"4.200000"
 		"AttributeBaseIntelligence"		"19"
-		"AttributeIntelligenceGain"		"1.800000"
+		"AttributeIntelligenceGain"		"2.000000"
 		"MovementSpeed"		"285"
 		"particle_folder"		"particles/units/heroes/hero_morphling"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
@@ -365,7 +365,7 @@
 					}
 				}
 			}
-	
+		
 			//=================================================================================================================
 			// Morphling: Adaptive Strike
 			//=================================================================================================================
@@ -402,7 +402,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-				
+					
 						"AbilityCooldown"
 						{
 							"value"								"17 14 11 8"
@@ -551,7 +551,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-			
+				
 					"slow_duration"		"3"
 					"attack_range_bonus"		"75 125 175 225"
 					"movement_slow_max"			"20 25 30 35"
@@ -599,7 +599,7 @@
 					}
 				}
 			}
-	
+		
 			//=================================================================================================================
 			// Morphling: Replicate
 			//=================================================================================================================
@@ -614,8 +614,7 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"AbilitySound"					"Hero_Morphling.Replicate"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-
-		        "HasScepterUpgrade"			"1"
+				"HasScepterUpgrade"			"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -640,37 +639,50 @@
 						"value"								"24"
 						"special_bonus_unique_morphling_8" "+12"
 					}
-		            "scepter_stat_steal"
+					"scepter_echo_count"
 					{
-						"special_bonus_scepter"						"20"
+						"value"						"0"
+						"special_bonus_scepter"		"+2"
 					}
-					"scepter_spell_amplify"	
+					"scepter_echo_cast_delay"			
 					{
-						"special_bonus_scepter"						"25"
+						"value"				"0"
+						"special_bonus_scepter"		"0.2"
 					}
-					"scepter_attack_speed"	
+					"scepter_echo_damage_outgoing_pct"
 					{
-						"special_bonus_scepter"						"70"
+						"value"						"0"
+						"special_bonus_scepter"		"+50"
 					}
-					"scepter_status_resist"	
+					"scepter_echo_damage_falloff_pct"			// if updating this, update scepter_echo_damage_second_tooltip_only
 					{
-						"special_bonus_scepter"						"40"
+						"special_bonus_scepter"		"+25"
 					}
-					"scepter_additional_stats"
+					"scepter_echo_damage_second_tooltip_only"
 					{
-						"special_bonus_scepter"						"20"
+						"special_bonus_scepter"		"+25"
 					}
-					"scepter_illusion_outgoing"
+
+					"scepter_echo_min_model_scale"		
 					{
-						"special_bonus_scepter"						"100"
+						"special_bonus_scepter"		"0.25"
 					}
-					"scepter_illusion_incoming"
+					"scepter_echo_appear_distance"		
 					{
-						"special_bonus_scepter"						"200"
+						"special_bonus_scepter"		"150"
+					}
+					"scepter_echo_visible_duration"		
+					{
+						"special_bonus_scepter"		"0.75"
+					}
+
+					"scepter_echo_retarget_radius"		
+					{
+						"special_bonus_scepter"		"450"
 					}
 				}		
 			}
-	
+		
 			//=================================================================================================================
 			// Morphling: Morph Replicate
 			//=================================================================================================================
@@ -682,7 +694,7 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 				"AbilityCastAnimation"			"ACT_INVALID"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		
+			
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityManaCost"				"0"
@@ -710,7 +722,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"600"
 				"AbilityCastPoint"				"0.25"
-		
+			
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCooldown"				"60"
@@ -769,7 +781,7 @@
 			}
 
 
-	
+		
 			//=================================================================================================================
 			// Morphling: Ebb and Flow
 			//=================================================================================================================
@@ -782,6 +794,8 @@
 				"FightRecapLevel"				"2"
 				"MaxLevel"						"1"
 				"Innate"						"1"
+				"IsBreakable"					"1"
+
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 
@@ -796,7 +810,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-			
+				
 					"swell_up_duration"				"1.5"
 					"swell_down_duration"			"1.0"
 					"swell_duration"			
@@ -809,7 +823,7 @@
 						"value"							"2.7"
 						"hero_levelup"					"+0.3"
 					}
-			
+				
 					"model_scale"					"40"
 					"stats_pct"
 					{

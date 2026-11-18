@@ -57,10 +57,10 @@
 
 		"Ability10"		"special_bonus_unique_muerta_dead_shot_range"
 		"Ability11"		"special_bonus_attack_speed_20"
-		"Ability12"		"special_bonus_unique_muerta_calling_hp_regen"
+		"Ability12"		"special_bonus_unique_muerta_the_calling_num_revenants"
 		"Ability13"		"special_bonus_intelligence_15"
 		"Ability14"		"special_bonus_unique_muerta_pierce_the_veil_duration"
-		"Ability15"		"special_bonus_unique_muerta_the_calling_num_revenants"
+		"Ability15"		"special_bonus_unique_muerta_the_calling_slow"
 		"Ability16"		"special_bonus_unique_muerta_gunslinger_double_shot_chance"
 		"Ability17"		"special_bonus_unique_muerta_dead_shot_charges"
 		"Facets"
@@ -99,8 +99,8 @@
 		}
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"24"
-		"AttackDamageMax"		"32"
+		"AttackDamageMin"		"28"
+		"AttackDamageMax"		"31"
 		"AttackRate"		"1.7"
 		"BaseAttackSpeed"		"110"
 		"AttackAnimationPoint"		"0.35"
@@ -370,7 +370,11 @@
 					"acceleration"			"0.75"
 					"rotation_initial"		"0"
 					"debug_draw"					"0"
-					"aura_movespeed_slow"			"-20"
+					"aura_movespeed_slow"
+					{
+						"value"											"-20"
+						"special_bonus_unique_muerta_the_calling_slow"	"-20"
+					}
 					"silence_duration"				"1.5 2 2.5 3"
 					"rotation_direction"			"-1"
 					"kill_check_radius"
@@ -412,9 +416,8 @@
 				{
 					"double_shot_chance"
 					{
-						"value"					"18 27 36 45"
-				
-						"special_bonus_unique_muerta_gunslinger_double_shot_chance"	"+20"
+						"value"					"20 30 40 50"
+						"special_bonus_unique_muerta_gunslinger_double_shot_chance"	"+15"
 					}
 					"target_search_bonus_range"	"175"
 					"bonus_damage"
@@ -554,13 +557,12 @@
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"500"
+				"AbilityCastRange"				"575"
 				"AbilityCastPoint"				"0.2"
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"12"
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -570,11 +572,15 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
+					"AbilityCharges"					"2"
+					"AbilityCooldown"					"0"
+					"AbilityChargeRestoreTime"			"12"
+
 					"projectile_speed"			"2500"
-					"damage"					"225"
+					"damage"					"125"
 					"knockback_distance"		"250"
 					"knockback_duration"		"0.2"
-					"duration"					"3.0"
+					"duration"					"2.25"
 					"slow_pct"					"-30"
 					"bonus_spell_damage_pct"	
 					{

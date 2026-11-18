@@ -6,6 +6,7 @@
   Cell%d EditorID:%d [%s]: %s\n
   Invoke%d: Cell%d %s\n
   Invoke%d: LibraryFunc %s\n
+  Lambda%d: %s\n
   Output Connection %d: '%s' -> '%s' : %s( %s )\n
   Output%d: '%s' (%s)\n
   R%d: %15s %25s %s\n
@@ -29,10 +30,14 @@
  : unexpected input...\n  expected one of : 
  <-- Arg '%s'
  <-- Retval '%s'
+ BR%d
  LinePos:
+ TempVar(EditorID:%d)
+ V%d
  Vector b
  [*OBSERVABLE*]
  [loop body, break -> C%d:I%d]
+ depends on:
 !CPulseType( PVAL_EHANDLE ).CanConvertTo( baseType )
 !CPulseType( PVAL_INT ).CanConvertTo( valueType )
 !PulseFindTypeInfo( baseType ).IsNull()
@@ -57,6 +62,7 @@
 %d Cells:\n
 %d Chunks:\n
 %d InvokeBindings:\n
+%d Lambdas:\n
 %d OutputConnections:\n
 %d PublicOutputs:\n
 %d TempVarBanks:\n
@@ -76,6 +82,8 @@
 %s:autowake
 %s:interrupt
 %s:wait
+%s_c
+'%s' (%s) -> Chunk%d I%d 
 ( ( const PulseStorage_t< PVAL_EHANDLE > * )asEHandle.GetInstanceStorage() )->GetBitRepresentation() == hEntA.GetRaw()
 (%s:%d)
 (Expecting %s)
@@ -87,6 +95,7 @@
 *( const PulseTestInlineValue_t * )loadedNull.GetInstanceStorage() == PulseTestInlineValue_t()
 *( const PulseTestInlineValue_t * )variantA.GetInstanceStorage() == valueA
 *** Test failure: "%s"
+, %d more element(s)...
 , at offset %d
 , near %s
 - Graph Def '
@@ -96,6 +105,7 @@
 -unknown source-
 -unknown source-(
 . Dead
+. Probable infinite loop
 . Req FAIL
 . Req PASS
 . Tag Added: '%s'
@@ -116,6 +126,8 @@
 .?AV?$CBaseAppSystem@VIPulseSystem@@@@
 .?AV?$CKV3ResourceTypeManager@$0GFHDGMHFHAHG@@@
 .?AV?$CPulseInlineValueTypeInfo@UPulseTestInlineValue_t@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCColorGradient@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCPiecewiseCurve@@@@
 .?AV?$CPulseModuleRegistrationHook@VCPulseModuleHost@@@@
 .?AV?$CTier0AppSystem@VIPulseSystem@@$0A@@@
 .?AV?$CTier1AppSystem@VIPulseSystem@@$0A@@@
@@ -186,8 +198,6 @@
 .?AVCPulseCell_Unknown@@
 .?AVCPulseCell_Val_TestDomainFindEntityByName@@
 .?AVCPulseCell_Val_TestDomainGetEntityName@@
-.?AVCPulseCell_Value_Curve@@
-.?AVCPulseCell_Value_Gradient@@
 .?AVCPulseCell_Value_TestValue50@@
 .?AVCPulseCell_WaitForCursorsWithTag@@
 .?AVCPulseCell_WaitForCursorsWithTagBase@@
@@ -202,6 +212,7 @@
 .?AVCPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView@@
 .?AVCPulseGraphInstance_TurtleGraphics@@
 .?AVCPulseGraphLoadContext@@
+.?AVCPulseInstanceLoadAPI@@
 .?AVCPulseInstanceLoadAPI_NoOp@@
 .?AVCPulseInterfaceHelpers_Load_NoOp@@
 .?AVCPulseLibraryVisitForFingerprint@@
@@ -232,7 +243,6 @@
 .?AVIPulseHost_Cursor@@
 .?AVIPulseHost_Unknown@@
 .?AVIPulseHost_YieldingCursor@@
-.?AVIPulseInstanceLoadAPI@@
 .?AVIPulseSystem@@
 .?AVIResourceTypeManager@@
 1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED );
@@ -306,6 +316,11 @@ Async Child1
 Async Child2
 Async Outflow (Child Cursor) C%d:I%d
 BACKSLASH_CHAR
+BIND_LAMBDA
+BROADCAST_INVOKE
+BROADCAST_INVOKE_ARRAY_DOMAIN
+BROADCAST_INVOKE_ARRAY_SIMPLE
+BROADCAST_INVOKE_DOMAIN
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
 Bad array index %d (array has %d elements)
@@ -349,6 +364,7 @@ BinMod
 BinMul
 BinNe
 BinSub
+BindLambda R%d <- Lambda%d
 Bool( %s )
 Break node reached a Method-call boundary without finding an enclosing loop.
 Breakpoint Log [%u]
@@ -364,17 +380,16 @@ CBasePulseGraphInstance::Shutdown( %s; %p ) %s\n
 CBasePulseGraphInstance::StartGraphReload( %p ) %s\n
 CBasePulseGraphInstance::~CBasePulseGraphInstance( %p )\n
 CBufferString
-CColorGradient
 CEntityNameString
 CGlobalSymbol
 CGlobalSymbolCaseSensitive
 CKV3MemberNameSet
 CKV3MemberNameWithStorage
+CKV3TransferInterface_PulseEnum_Load
 CLOSE_BRACE
 CLOSE_BRACKET
 CLOSE_PAREN
 COMMA
-CPiecewiseCurve
 CPulseArraylib
 CPulseArraylib::ArrayAppend
 CPulseArraylib::ArrayConcatenate
@@ -389,6 +404,7 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
+CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_ExampleCriteria::CheckRequirement
 CPulseCell_ExampleSelector::ProcessSelector
@@ -405,6 +421,7 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
+CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_Outflow_TestExplicitYesNo::Run
 CPulseCell_Outflow_TestRandomYesNo::Run
 CPulseCell_PickBestOutflowSelector::ProcessSelector
@@ -419,6 +436,7 @@ CPulseCell_TestEnums::CompareValues
 CPulseCell_TestWaitWithAutoTracepoints::Wait
 CPulseCell_TestWaitWithCursorState::Wait
 CPulseCell_TestYieldForever::Run
+CPulseCell_TestYieldWithObservables::CursorState_t
 CPulseCell_TestYieldWithObservables::Run
 CPulseCell_Test_MultiInflow_NoDefault::InflowA
 CPulseCell_Test_MultiInflow_NoDefault::InflowB
@@ -437,10 +455,9 @@ CPulseCell_Test_MultiOutflow_WithParams_Yielding::Start
 CPulseCell_Timeline::Start
 CPulseCell_Val_TestDomainFindEntityByName::Eval
 CPulseCell_Val_TestDomainGetEntityName::Eval
-CPulseCell_Value_Curve::Eval
-CPulseCell_Value_Gradient::Eval
 CPulseCell_Value_TestValue50::Eval
 CPulseCell_WaitForCursorsWithTag::Wait
+CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -468,6 +485,7 @@ CPulseGraphInstance_TestDomain_Derived::HandleIntDerived
 CPulseGraphInstance_TestDomain_Derived::SetInstanceValueX
 CPulseGraphInstance_TestDomain_Derived::Test_ValidateCursorValues
 CPulseGraphInstance_TurtleGraphics::Go
+CPulseInstanceLoadAPI
 CPulseMathlib
 CPulseMathlib::AbsFloat
 CPulseMathlib::AbsInt
@@ -477,12 +495,18 @@ CPulseMathlib::ArcTan
 CPulseMathlib::CeilingFloat
 CPulseMathlib::ClampFloat
 CPulseMathlib::ClampInt
+CPulseMathlib::ClosestPointOnLine
+CPulseMathlib::ClosestPointOnLineSegment
+CPulseMathlib::ClosestPointOnWorldLine
+CPulseMathlib::ClosestPointOnWorldLineSegment
 CPulseMathlib::ComposeAngles
 CPulseMathlib::ComposeTransforms
 CPulseMathlib::Cos
 CPulseMathlib::CrossProductVector
 CPulseMathlib::Deg2Rad
 CPulseMathlib::DotProductVector
+CPulseMathlib::EvaluateCurve
+CPulseMathlib::EvaluateGradient
 CPulseMathlib::Exp
 CPulseMathlib::Exp2
 CPulseMathlib::FloatToGameTime
@@ -525,6 +549,8 @@ CPulseMathlib::Pi
 CPulseMathlib::Pow
 CPulseMathlib::RSqrt
 CPulseMathlib::Rad2Deg
+CPulseMathlib::RandomFloat
+CPulseMathlib::RandomInteger
 CPulseMathlib::RandomWorldPosition
 CPulseMathlib::RemapClampedFloat
 CPulseMathlib::RotateVector
@@ -554,7 +580,6 @@ CPulseMathlib::TransformWorldVectorToLocal
 CPulseMathlib::VectorToWorldVector
 CPulseMathlib::WorldTransformInverse
 CPulseMathlib::WorldVectorToVector
-CPulseObservableExpression
 CPulseObservableSwitchCases
 CPulseStringlib
 CPulseStringlib::Format1
@@ -626,11 +651,13 @@ CPulseTypeManager::Allocate( %s )\n
 CPulseTypeManager::Deallocate( %s, %p )\n
 CPulseTypeManager::DeallocateResource( %s, %s, dealloc=%p live=%p )\n
 CPulseVariant
+CPulse_LambdaDef
 CStrongHandle
 CTestDomainDerived_Cursor::GetCursorValueA
 CTestDomainDerived_Cursor::GetCursorValueB
 CTestDomainDerived_Cursor::SetCursorValueA
 CTestDomainDerived_Cursor::SetCursorValueB
+CURSOR_MAX_INSTRUCTIONS
 CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_MIRROR
@@ -646,6 +673,7 @@ Call C%d:I%d (%s)
 CallResume1
 CallResume2
 Called to invoke the graph
+Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Canceled
 Cannot allocate abstract class
 Ceiling - round float up to nearest integer)
@@ -660,6 +688,10 @@ Clamp Int
 Clamp value to range (float)
 Clamp value to range (int)
 Class does not allow allocation from its schema binding
+Closest Point On Line
+Closest Point On Line Segment
+Closest Point On World Line
+Closest Point On World Line Segment
 Commit Step
 Compare Values
 Compare strings with case sensitivity, in contrast to normal string equality which is case-insensitive.
@@ -727,6 +759,18 @@ Divide by zero!
 Domain: %s\n
 Dot Product Vector
 Dot Product of Vector a 
+EQ_ANIM_SEQUENCE
+EQ_MODEL_MATERIAL_GROUP
+EQ_PARTICLE_EHANDLE
+EQ_QANGLE
+EQ_RESOURCE
+EQ_RESOURCE_NAME
+EQ_SNDEVT_GUID
+EQ_SNDEVT_NAME
+EQ_TRANSFORM
+EQ_TRANSFORMWS
+EQ_VARIANT
+EQ_VDATA_CHOICE
 ESCAPE_CHAR
 ESCAPE_CODE
 EXPONENT
@@ -735,6 +779,7 @@ Element Access R%d <- R%d[R%d]
 EntFire,%s,%s,%s
 EntityName
 Eq R%d <- R%d == R%d
+Eval
 Evaluate the curve at the specified input position
 Evaluate the gradient at a position between 0 and 1
 Exp2
@@ -777,6 +822,8 @@ Find all the yielded cursors on this graph and cancel them.
 Find all the yielded cursors on this graph with the matching tag and cancel them.
 Find all the yielded cursors on this graph with the matching tag and wake them.
 Find first element 'a' which compare equal to 'element' and return its index. Returns -1 if not found.
+Fire At End
+Fire At Start
 Fired when A becomes 0 from any other number.
 Fired when A exceeds 5.
 Fired whenever the global A value changes.
@@ -797,6 +844,7 @@ Format3
 Format4
 Format5
 Frac
+Fraction
 Fractional component (ie. returns 0.34 for 12.34)
 Free
 Func( %s )
@@ -808,6 +856,7 @@ Game Time To Float
 GenerateInt
 GenerateIntWithResult
 GenerateVector
+Get %s
 Get Cursor Value A
 Get Cursor Value B
 Get Enum Color Value
@@ -846,6 +895,7 @@ GetVar R%d <=MOVE*V%d (%s)
 Gradient()
 HPulseCell
 HPulseCellBase
+HPulseObservableLambda
 HYieldedCursor
 HandleInt
 HandleIntDerived
@@ -856,8 +906,8 @@ ID_CHAR
 IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
+INTERNAL_CALL_TO_PULSE
 IPulseGraphLoadErrorReporter
-IPulseInstanceLoadAPI
 IPulseReloadListener
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
@@ -881,9 +931,12 @@ InterruptImmediately
 Inverse Rotate Vector
 Inverse Transform Vector
 Invoke '%s' failed with code %d
+Invoke *Broadcast* R%d -> R%d: Cell%d %s
 Invoke Cell%d [eid=%d] %s%s
 Invoke Lib %s
 Invoke binding %d (%s) not found, converting to NOP\n
+Invoke binding %d broadcasts %s elements to incompatible %s targets; converting to NOP\n
+Invoke binding %d invalid for broadcast, converting to NOP\n
 Is In Test Mode
 Is Valid Vector
 Is Valid World Vector
@@ -913,8 +966,6 @@ Library Destroy Fake Entity
 Library Find Fake Entity By Name
 Library Spawn Fake Entity
 Line: 
-Live Float Value
-Live String Value
 Local
 LocalVector
 Log10
@@ -926,10 +977,10 @@ MPropertyFlattenIntoParentRow
 MPropertyLeafSuggestionProviderFn
 MPulseEditorHeaderExpr
 MPulseEditorHeaderText
+MPulseEditorSearchExpr
 MPulseExpressionAlias
 MPulseFunctionAddsCursorTag
 MPulseFunctionDisableRequirements
-MPulseFunctionHiddenInTool
 Make Angle
 Make Angle From Forward Vector
 Make Color
@@ -970,6 +1021,18 @@ Multiple Return Test
 Multiple pointer returns
 NEGATIVE_TOK
 NEWLINE
+NE_ANIM_SEQUENCE
+NE_MODEL_MATERIAL_GROUP
+NE_PARTICLE_EHANDLE
+NE_QANGLE
+NE_RESOURCE
+NE_RESOURCE_NAME
+NE_SNDEVT_GUID
+NE_SNDEVT_NAME
+NE_TRANSFORM
+NE_TRANSFORMWS
+NE_VARIANT
+NE_VDATA_CHOICE
 NULL CELL 
 NULL_ENT
 Natural logarithm (base e)
@@ -990,6 +1053,7 @@ OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
 OUTPUT!%s::%s
+On '%s' Changed
 On Interval
 On True
 OnAsyncChild1
@@ -1003,8 +1067,8 @@ Or R%d <- R%d || R%d
 Out1
 Out2
 Outflow List
-PInstruction_t<43>::Run
 PInstruction_t<44>::Run
+PInstruction_t<45>::Run
 PLUG_TYPE_INPUT
 PLUG_TYPE_OUTPUT
 PLUG_TYPE_RELAY_OMNIDIRECTIONAL_LEGACY
@@ -1019,6 +1083,7 @@ PULSE_VMMD
 PanelID
 Parameters
 ParametersKV3
+Parent Map + VData
 Parent Map: %s\n
 Parser encountered %d error(s)
 Pass Outflow
@@ -1035,16 +1100,20 @@ Probable infinite loop detected! Terminating pulse cursor after %d consecutive i
 Probable runaway cursor creation detected! Permanently disabling this graph instance (%s)
 Process Selector
 Prop( %s )
+Pulse graphs not allowed from untrusted addons.\n
 Pulse system: minimal vpulse definition loading enabled - graphs may be incomplete!\n
 Pulse: %s 
 PulseBindingTypeForCType< PulseTestInlineValue_t >() == valueType
 PulseBindingTypeForCType< const PulseTestInlineValue_t & >() == valueType
+PulseExecHistoryCallerInfo_t
 PulseFindTypeInfo( valueType ).GetBaseType() == CPulseType()
+PulseRuntimeLambdaIndex_t
 PulseSystemEventCursorResult_t
 PulseSystemEventObservableVariableListenerNotify_t
 PulseSystemEventObservableVariableSourceChanged_t
 PulseSystemEventYieldResume_t
 R Sqrt
+RECORD_NEXT_SEQ_POINT
 RESOURCE_TYPE_PULSE_GRAPH_DEF
 Rad2 Deg
 Raise pen.
@@ -1057,7 +1126,7 @@ Record that the function was called
 Reference Color
 Reference Flags
 Register Test Checkpoint
-RegisterChoice_CPulseTestFuncs_LibraryA_PrintStringWithLeafSuggestions
+RegisterChoice_CPulseTestFuncs_LibraryA_PrintStringWithLeafSuggestions_pValue
 Reinterpret Instance %s R%d <- %s R%d
 Reloading
 Remap Clamped Float
@@ -1081,6 +1150,8 @@ Returns interpolated value between A and B based on frac 0.0 - 1.0 (transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector)
+Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped.
+Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB.
 Returns the constant pi (3.14...)
 Returns the inverse of a transform.
 Returns the inverse of a world transform.
@@ -1096,6 +1167,8 @@ Rotate a vector by the inverse of a local transform, not including position or s
 Rotate a world direction vector into a local direction, not including position or scale.
 Round - round float up or down to integer
 Round Float
+Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
+Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCOPE_QUALIFIER
 SEMICOLON
 SINGLE_LINE_COMMENT
@@ -1257,6 +1330,7 @@ Unknown variable %s
 Unsupported version %d for resource '%s' (Expected %d)\n
 Unwanted token '%s' %s
 Used to flag a test as having failed.
+VMAP_AND_VDATA
 Value 0-1 how far along duration (always 0 if duration is -1)
 Var( %s )
 Vector To World Vector
@@ -1304,6 +1378,8 @@ a:typeparam
 active_frame
 adds_cursor_tag
 allflags
+allow_broadcast_array
+allow_broadcast_domain
 allow_direct_return
 allowed_api_features
 allowed_requirements
@@ -1320,9 +1396,12 @@ arg4
 asBool.GetValueBool()
 asInt.GetValueInt() == valueA.m_nValue
 assignedB.EqualTo( variantB, false )
+associated_with_observable_output
 attr_factory
+bCondition
 bInAutoWakeList
 bInherit
+bOverflowedInstructionHistoryLimit
 bValue
 bank_unique_id
 baseType.AreInstancesEqual( &first, &second )
@@ -1382,7 +1461,7 @@ exp2
 expr
 expr_alias
 expr_alias_info
-expression_type
+externalCallerInfo
 fakeEnt.m_nHandle.WeakHandle() == PULSE_WEAK_HANDLE_INVALID
 fake_derived_a
 fake_derived_b
@@ -1399,7 +1478,10 @@ flFloat
 flFrac
 flInputA
 flInputB
+flLiveFloatValue
+flMax
 flMaxRadius
+flMin
 flMinRadius
 flOutputA
 flOutputB
@@ -1431,6 +1513,7 @@ gameitemclass
 gameunitclass
 gamma
 getRelativeTransform
+gradient
 hCopy == hEntA
 hDefault == PULSE_TEST_EHANDLE_INVALID
 hInstance
@@ -1491,6 +1574,9 @@ m_Inargs
 m_Inputs
 m_Items
 m_KV3Metadata
+m_LambdaDefs
+m_LambdaSubscriptions
+m_LatestValue
 m_LegacyDefaultStr
 m_LongName
 m_MetaData
@@ -1498,12 +1584,16 @@ m_MissingRetvalDefault
 m_ParamType
 m_PlugType
 m_PreparedHook
+m_ResultType
 m_ResumePoint
 m_Stops
 m_TagValue
 m_bChildCursorsShouldInherit
+m_bCompletingVeryCloseToEndOfInterval
 m_bConditionValue
 m_bCustom
+m_bFireAtEnd
+m_bFireAtStart
 m_bFirstEvaluate
 m_bInvokedOrScheduled
 m_bRemoveWhenOutOfScope
@@ -1519,16 +1609,16 @@ m_hCursor
 m_hCursorOnOtherGraph
 m_hDef
 m_hGraphInstance
-m_hInstance
 m_hListenerInstance
 m_hObserver
 m_iValue
+m_mapNodeToNewCursorCount
 m_nActiveCase
 m_nCellID
 m_nClassType
+m_nCulledCursorCount
 m_nCurrentWakeIndex
-m_nCursorID
-m_nGraphID
+m_nLambdaIdx
 m_nLegacyDefaultInt
 m_nResult
 m_nStackDepthWhenAdded
@@ -1612,14 +1702,13 @@ pathnodeclass
 pending_events
 pointclass
 pointentityclass
-polymorphic_arg
 polymorphic_class
-port_name
 previous_value
 propattr_flatten_into_parent_row
 propdataname
 public_output::%s
 public_output::%s::%s
+pulse/pulse_enabled_for_untrusted_addons
 pulse_bindings
 pulse_editor
 pulse_fingerprints
@@ -1629,7 +1718,10 @@ pulse_open_graph_id %u %u
 pulse_runtime_lib
 pulse_test_example_suggestion
 rad2deg
+rand_float
+rand_int
 random_position
+readonly
 registers
 remap
 remove_key
@@ -1642,11 +1734,13 @@ rotateVectorToLocal
 rotateVectorToWorld
 round
 rsqrt
+sLiveStringValue
 saturate
 scheduled_hooks
 schemasystem
 scope_name
 scriptlist
+search_expr
 self
 self_handle
 self_type
@@ -1663,6 +1757,7 @@ stringmap
 struct
 subclass_choice
 suggestions
+switchValue
 system_state
 tagValue
 tag_list
@@ -1687,6 +1782,9 @@ transformVectorToWorld
 type:
 type_restriction_is_enum_flags
 upcast.GetType() == baseType
+vLineA
+vLineB
+vPoint
 value0
 value1
 value3

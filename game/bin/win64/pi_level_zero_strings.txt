@@ -281,8 +281,6 @@
 .?AVUSMMemoryProviderBase@@
 .?AVUsmAllocationException@@
 .?AV_System_error_category@std@@
-.?AVbad_optional_access@std@@
-.?AVinvalid_argument@std@@
 .P6AXPEAUumf_memory_provider_t@@@Z
 .rdata$CastGuardVftablesA
 .rdata$CastGuardVftablesC
@@ -386,7 +384,6 @@ Allocs
 Allocs from Pool
 Arg.Value->getZeHandlePtr(ZeHandlePtr, Arg.AccessMode, CommandBuffer->Device)
 Arg.Value->getZeHandlePtr(ZeHandlePtr, Arg.AccessMode, Queue->Device)
-Bad optional access
 BaseWaitList.createAndRetainUrZeEventList( EventWaitVector.size(), reinterpret_cast<const ur_event_handle_t *>(EventWaitVector.data()), Queue, ConvergenceCmdList->second.isCopy(Queue))
 Bucket Size
 Buffer->getZeHandle(ZeHandleDst, ur_mem_handle_t_::write_only, CommandBuffer->Device)
@@ -887,7 +884,6 @@ insertBarrierIntoCmdList(CmdLists[0], _ur_ze_event_list_t{}, *Event, IsInternal)
 insertBarrierIntoCmdList(CmdLists[I], _ur_ze_event_list_t{}, EventWaitVector[I], true )
 insertBarrierIntoCmdList(ConvergenceCmdList, BaseWaitList, *Event, IsInternal)
 insertStartBarrierIfDiscardEventsMode(CommandList)
-invalid stoi argument
 malloc
 memchr
 memcmp
@@ -1079,7 +1075,6 @@ spir64_gen
 spir64_x86_64
 stderr
 stdout
-stoi argument out of range
 strcmp
 strncmp
 strncpy
@@ -1351,7 +1346,6 @@ urUsmP2PPeerAccessGetInfoExp
 ur_exp_command_buffer 
 ur_program_binary_type_t: unhandled value
 ur_program_build_status_t: unhandled value
-vector<bool> too long
 warmupQueueGroup(false, QueueGroup.UpperIndex - QueueGroup.LowerIndex + 1)
 warmupQueueGroup(true, QueueGroup.UpperIndex - QueueGroup.LowerIndex + 1)
 xptiAddMetadata

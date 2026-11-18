@@ -314,7 +314,7 @@
 					"bonus_attack_speed"	"20 40 60 80"
 					"damage"
 					{
-						"value"					"50 100 150 200"
+						"value"					"60 120 180 240"
 						"special_bonus_unique_chen_11"		"+75"
 					}
 					"self_attack_range_bonus"			"0"
@@ -467,7 +467,7 @@
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"AbilitySound"					"Hero_Chen.HolyPersuasionCast"
-				"HasShardUpgrade"				"1"		
+				"HasShardUpgrade"				"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -477,7 +477,6 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"600"
 				"AbilityCooldown"				"15"
-			
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -487,29 +486,9 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-			
-					"max_units"				
-					{		
-						"value"				"1 2 3 4"
-					}
+					"max_units"				"1 2 3 4"
 					"level_req"				"3 4 5 6"
-					"health_min"			
-					{
-						"value"						"400"
-						"hero_levelup"				"+50"
-						"special_bonus_unique_chen_4"	"+1300"
-					}
-					"gold_pct"			"25 50 75 100"
-					"movement_speed_bonus"	"5 10 20 30"
-					"damage_bonus"	
-					{
-						"value"					"5 10 15 20"
-						"special_bonus_unique_chen_5"		"+12"
-					}
-					"is_martyr"
-					{
-						"value"							"0"
-					}
+					"gold_pct"				"25 50 75 100"
 					"current_hp_pct_tooltip"
 					{
 						"value"							"0"
@@ -520,11 +499,9 @@
 						"special_bonus_shard"			"=2"
 					}
 
-			
-
-					"unsummon_time"				"3.0"
+					"unsummon_time"						"3.0"
 					"unsummon_cooldown_reduction"		"12.0"
-
+					"teleport_delay"					"6 5 4 3"
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 			}
@@ -566,6 +543,19 @@
 					"base_value"				"25"
 					"heal_factor"				"50"
 				}
+			}
+
+			//=================================================================================================================
+			// Chen: Anoint (granted to creeps persuaded by Holy Persuasion)
+			//=================================================================================================================
+			"chen_anoint"
+			{
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"AbilityTextureName"			"chen_holy_persuasion"
+				"MaxLevel"						"1"
+				"AbilityCastPoint"				"0"
+				"AbilityCooldown"				"0"
+				"AbilityManaCost"				"0"
 			}
 
 			//=================================================================================================================
@@ -616,7 +606,7 @@
 					{
 						"value"							"20 30 40"
 					}
-					"ancient_creeps_scepter"		
+					"ancient_creeps_scepter"
 					{
 						"special_bonus_shard"	"1 2 3"
 					}
@@ -659,40 +649,44 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
-				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastPoint"				"0.3"
-				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
-
-				// Time		
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"0"
-				"AbilityCooldown"				"10"
-
-				// Cost
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"50"
-				"MaxLevel"						"1"
-				"Innate"						"1"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityManaCost"				"0"
 
 				"AbilityValues"
 				{
 					"zealots"					"1"
-					"zealot_respawn_time"
+					"AbilityCooldown"
 					{
 						"value"					"60"
 						"hero_levelup"			"-1"
 					}
-			
+					
+					"health_min"
+					{
+						"value"						"400"
+						"hero_levelup"				"+50"
+						"special_bonus_unique_chen_4"	"+1300"
+					}
+					"movement_speed_bonus"
+					{
+						"value"				"5"
+						"hero_levelup"		"2"	
+					}
+					"damage_bonus"
+					{
+						"value"				"5"
+						"hero_levelup"		"2"
+						"special_bonus_unique_chen_5"		"+12"
+					}
 					"damage"
-					{				
+					{
 						"hero_levelup"		"2"
 						"special_bonus_unique_chen_zealot"		"+25%"
 					}
@@ -701,8 +695,6 @@
 						"value"				"0"
 						"special_bonus_unique_chen_zealot"		"+25"
 					}
-
-					"teleport_delay"		"6"
 				}
 			}
 

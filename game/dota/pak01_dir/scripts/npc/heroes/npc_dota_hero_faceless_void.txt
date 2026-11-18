@@ -454,7 +454,7 @@
 				"AbilitySound"					"Hero_FacelessVoid.TimeDilation.Cast"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"AbilityCastPoint"				"0.1"
-				"AbilityCooldown"				"28 24 20 16"
+				"AbilityCooldown"				"24 21 18 15"
 				"AbilityManaCost"				"90"
 				"HasShardUpgrade"				"1"
 		
@@ -467,22 +467,22 @@
 						"value"		"700"
 						"affected_by_aoe_increase"	"1"
 					}
-					"duration"				"7 8 9 10"
+					"duration"				"6 7 8 9"
 					"slow"						
 					{	
-						"value"								"4 5 6 7"	// if changing this, also updated attack_slow_tooltip_only
+						"value"								"4 5 6 7"	// if changing this, also updated attack_slow
 						"special_bonus_shard"					"+5"
 					}
-					"attack_slow_tooltip_only"
+					"attack_slow"										// if changing this, also updated self_attackspeed_tooltip
 					{
 						"value"								"4 5 6 7"
-						"special_bonus_shard"					"+5"
+						"special_bonus_shard"					"+13"
 					}
 					"cooldown_percentage"	"30 40 50 60"
 					"base_damage"			"0"
 					"damage_per_stack"		
 					{
-						"value"				"4 6 8 10"
+						"value"				"6 8 10 12"
 						"special_bonus_unique_faceless_void_6" "+6"
 					}
 					"self_movespeed_tooltip"						//tooltip only. actual value is in "slow"
@@ -490,10 +490,10 @@
 						"value"								"0"
 						"special_bonus_shard"					"=9 =10 =11 =12"
 					}	
-					"self_attackspeed_tooltip"						//tooltip only. actual value is in "slow"
+					"self_attackspeed_tooltip"						//tooltip only. actual value is in "attack_slow"
 					{	
 						"value"								"0"
-						"special_bonus_shard"					"=9 =10 =11 =12"
+						"special_bonus_shard"					"=17 =18 =19 =20"
 					}	
 					"self_buff"
 					{
@@ -544,7 +544,7 @@
 						{
 							"value"		"500"
 							"affected_by_aoe_increase"	"1"
-							"special_bonus_unique_faceless_void_2" "+140"
+							"special_bonus_unique_faceless_void_2" "+125"
 						}
 						"duration"				
 						{

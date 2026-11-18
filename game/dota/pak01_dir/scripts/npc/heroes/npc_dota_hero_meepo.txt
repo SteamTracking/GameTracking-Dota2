@@ -35,12 +35,11 @@
 		"Ability2"		"meepo_poof"
 		"Ability3"		"meepo_ransack"
 		"Ability4"		"meepo_petrify"
-		"Ability5"		"meepo_megameepo"
+		"Ability5"		"meepo_geomancy"
 		"Ability6"		"meepo_divided_we_stand"
-		"Ability7"		"meepo_geomancy"
-		"Ability8"		"meepo_megameepo_fling"
+		"Ability7"		"meepo_fling_release"
 	
-		"Ability10"		"special_bonus_strength_7"
+		"Ability10"		"special_bonus_strength_6"
 		"Ability11"		"special_bonus_unique_meepo_3"
 		"Ability12"		"special_bonus_evasion_15"
 		"Ability13"		"special_bonus_unique_meepo_2"
@@ -90,14 +89,14 @@
 		}
 		"ArmorPhysical"		"3"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"29"
-		"AttackDamageMax"		"35"
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"26"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.380000"
 		"AttackAcquisitionRange"		"600"
 		"AttackRange"		"150"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"		"24"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
 		"AttributeStrengthGain"		"2.000000"
 		"AttributeBaseAgility"		"17"
 		"AttributeAgilityGain"		"2.100000"
@@ -317,7 +316,6 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_Meepo.Poof"
-				"HasScepterUpgrade"				"1"
 
 
 				// Casting
@@ -354,11 +352,6 @@
 					{
 						"value"			"50 80 110 140"
 						"special_bonus_unique_meepo_2"	"+40"
-					}
-
-					"megameepo_poof_scaling"			
-					{
-						"special_bonus_scepter"			"50"
 					}
 
 				}
@@ -403,10 +396,15 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"HasShardUpgrade"				"1"
 				"DisplayAdditionalHeroes"	"1"
 				"LevelsBetweenUpgrades"		"7"
 				"RequiredLevel"			"4"
-				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityCastPoint"				"0.2"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+				"AbilityCastGestureSlot"		"DEFAULT"
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
@@ -441,6 +439,26 @@
 			
 					"dps_penalty_pct"		"50 66 75 80"
 					"attribute_penalty_pct"	"0"
+
+					"xp_penalty_pct"		"50 66 75 80"
+					"xp_penalty_time"		"5.0"
+
+					"AbilityCastRange"
+					{
+						"special_bonus_shard"		"250"
+					}
+					"AbilityCooldown"
+					{
+						"special_bonus_shard"		"25 20 15 10"
+					}
+					"AbilityManaCost"
+					{
+						"special_bonus_shard"		"40"
+					}
+					"radius_tooltip"
+					{
+						"special_bonus_shard"		"+200"
+					}
 				}
 			}
 			
@@ -454,13 +472,13 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"MaxLevel"						"1"
-				"IsGrantedByScepter"			"1"
+				"IsGrantedByScepter"			"0"
 				"LinkedAbility"					"meepo_megameepo_fling"
 
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"90"
+				"AbilityCooldown"				"120"
 				"AbilityCastPoint"				"0.0"
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -481,7 +499,7 @@
 					"end_knockback_duration"		"0.3"
 					"end_knockback_distance"		"400"
 					"end_knockback_height"			"0"		
-					"stats_pct"						"40"
+					"stats_pct"						"25"
 
 					"poof_damage_factor"			"50"
 				}
@@ -551,11 +569,11 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
 				"MaxLevel"						"1"
 				"FightRecapLevel"				"1"
-				"IsGrantedByShard"				"1"
+				"IsGrantedByScepter"				"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastPoint"				"0.3"
+				"AbilityCastPoint"				"0.2"
 				"AbilityCastAnimation"		"ACT_DOTA_OVERRIDE_ABILITY_4"
 
 				// Time		
@@ -571,8 +589,8 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"duration"				"3"
-					"hp_restore"				"25"
+					"duration"					"4"
+					"hp_restore"				"50"
 				}
 		
 			}
@@ -614,80 +632,29 @@
 			}
 
 			//=================================================================================================================
-			// Ability: Meepo Fling
-			//=================================================================================================================
-			"meepo_fling"
-			{
-				// General
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-				"FightRecapLevel"				"1"
-				"AbilitySound"					"Hero_Sven.StormBoltImpact"
-				"LinkedAbility"					"meepo_fling_release"
-				"AbilityTextureName"			"meepo_megameepo_fling"
-
-
-				// Casting
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"250"
-				"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-
-
-				// Time		
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"30 25 20 15"
-				// Cost
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"40"
-
-				// Special
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityValues"
-				{
-					"fling_damage"					"50 100 150 200"
-					"fling_radius" 					
-					{
-						"value"				"300"
-						"affected_by_aoe_increase"	"1"
-					}
-					"fling_movespeed"				"900"
-					"fling_slow_duration"			"1.5 2.0 2.5 3"
-					"movement_slow"					"-30 -40 -50 -60"
-					"range"						"400 500 600 700"
-					"hold_duration"					"5"
-				}
-				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
-				"AbilityCastGestureSlot"		"DEFAULT"
-			}
-
-			//=================================================================================================================
 			// Ability: Meepo Fling Release
 			//=================================================================================================================
 			"meepo_fling_release"
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-				"MaxLevel"						"1"
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"MaxLevel"						"4"
+				"IsGrantedByShard"				"1"
+				"DependentOnAbility"			"meepo_divided_we_stand"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_Sven.StormBoltImpact"
-				"LinkedAbility"					"meepo_fling"
+				"LinkedAbility"					"meepo_divided_we_stand"
 
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"400 500 600 700"
-				"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+				"AbilityCastPoint"				"0.2"
 
 
 				// Time		
@@ -701,8 +668,24 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
+					"fling_damage"
+					{
+						"value"						"100 150 200 250"
+						"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
+					}
+					"impact_radius"
+					{
+						"value"						"200"
+						"affected_by_aoe_increase"	"1"
+					}
+					"movement_slow"				"-30 -40 -50 -60"
+					"fling_slow_duration"		"1.5 2.0 2.5 3"
+					"range"						"600 700 800 900"
+					"hold_duration"				"5"
+					"fling_movespeed"			"1000"
+					"vision_radius"				"300"
 				}
-				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_7"
 				"AbilityCastGestureSlot"		"DEFAULT"
 			}
 

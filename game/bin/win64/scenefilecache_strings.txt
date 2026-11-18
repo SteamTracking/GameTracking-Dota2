@@ -3,6 +3,7 @@
   criterion '%25s':'%15s' 
 !anchor_is_external
 %s '%s'
+%s / %s
 %s referencing %d missing resources:\n
 %s | %s: discarded rule because of invalid criterion %i:  %s\n
 %s%20s : %40s %5.3f\n
@@ -14,11 +15,19 @@
 %s/%s: discarded rule because of invalid criterion %i: %s\n
 %s: %s
 '%20s' vs. '%20s' = 
+(Single-Frame Animation)
 +Retiming
++Root Motion Warp
 , not matched\n
 , score %4.2f\n
 -> Success (%d attempts)\n
+.?AUCAttr_NullToolAttrValue_t@?4??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_IgnoredChannels@?1??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_StrafeMode@?1??GetAttributeTable_CChoreoEvent_FACE@CChoreoEvent_FACE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationBoneMaskID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationLayerType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationSlotID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_eType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_ANIMGRAPH_CONTROLLER@CChoreoEvent_ANIMGRAPH_CONTROLLER@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -35,6 +44,7 @@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAYER_CAMERA_CONTROL@CChoreoEvent_PLAYER_CAMERA_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -57,16 +67,17 @@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -91,8 +102,6 @@
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -103,6 +112,10 @@
 .?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?N@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?O@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?P@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AV<lambda_1>@?1??Compare@CResponseSystem@@QEAA_NPEBDPEAUCriteria@@_N@Z@
 .?AV<lambda_1>@?1??ComputeMatcher@@YAXPEAUCriteria@@PEAVCResponseSystem@@@Z@
 .?AV<lambda_1>@?1??ComputeMatcher@CResponseFileParser@@IEAAXPEAUCriteria@@@Z@
@@ -114,12 +127,17 @@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -136,6 +154,7 @@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@@@
@@ -143,6 +162,8 @@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CBaseConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -156,6 +177,7 @@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SPEAK@@@@
@@ -165,12 +187,16 @@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttrValue@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -187,6 +213,7 @@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SECTION@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SPEAK@@@@
@@ -194,6 +221,8 @@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -207,6 +236,7 @@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SPEAK@@@@
@@ -216,12 +246,17 @@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_CommonBase@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOKAT@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOP@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_SPEAK@@X@@
+.?AV?$CConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@X@@
+.?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@X@@
 .?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoActor@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@X@@
@@ -238,6 +273,7 @@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@X@@
@@ -245,6 +281,8 @@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoScene@@X@@
 .?AV?$CConcreteToolAttr@VQAngle@@VCChoreoActor@@X@@
 .?AV?$CConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@X@@
 .?AV?$CConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@X@@
 .?AV?$CConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@X@@
@@ -258,21 +296,26 @@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_GESTURE@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_SPEAK@@X@@
+.?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_LOOP@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOP@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -296,6 +339,8 @@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CConcreteToolAttrGetSet@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -309,9 +354,11 @@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SPEAK@@@@
+.?AV?$CConcreteToolAttrNull@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoActor@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoChannel@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
@@ -336,6 +383,7 @@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD_BODY@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PERMIT_RESPONSES@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_REQUIREMENTS@@@@
@@ -351,18 +399,22 @@
 .?AV?$CTier1AppSystem@VIResponseRulesFileCache@@$0A@@@
 .?AV?$CTier1AppSystem@VISceneFileCache@@$0A@@@
 .?AV?$CTier2AppSystem@VISceneFileCache@@$0A@@@
+.?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_LOOP@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOP@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -386,6 +438,8 @@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CToolAttrGetSetAccess@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CToolAttrGetSetAccess@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -399,14 +453,21 @@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SPEAK@@@@
+.?AV?$CToolAttrNullAccess@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$IToolAttrConcreteDataAccess@H@@
 .?AV?$IToolAttrConcreteDataAccess@M@@
+.?AV?$IToolAttrConcreteDataAccess@UNullToolAttrValue_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@@
 .?AV?$IToolAttrConcreteDataAccess@V?$Vec3D@M@@@@
+.?AV?$IToolAttrConcreteDataAccess@VCGlobalSymbol@@@@
 .?AV?$IToolAttrConcreteDataAccess@VCUtlString@@@@
 .?AV?$IToolAttrConcreteDataAccess@VQAngle@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoChannelType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4ChoreoLocatorArrivalOptionFlags_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4ChoreoStrafeMode_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4HandshakeTagType_t@@@@
@@ -414,9 +475,13 @@
 .?AV?$IToolAttrConcreteDataAccess@_N@@
 .?AV?$IToolAttr_TypedValue@H@@
 .?AV?$IToolAttr_TypedValue@M@@
+.?AV?$IToolAttr_TypedValue@UNullToolAttrValue_t@@@@
 .?AV?$IToolAttr_TypedValue@V?$Vec3D@M@@@@
+.?AV?$IToolAttr_TypedValue@VCGlobalSymbol@@@@
 .?AV?$IToolAttr_TypedValue@VCUtlString@@@@
 .?AV?$IToolAttr_TypedValue@VQAngle@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoChannelType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4ChoreoLocatorArrivalOptionFlags_t@@@@
 .?AV?$IToolAttr_TypedValue@W4ChoreoStrafeMode_t@@@@
 .?AV?$IToolAttr_TypedValue@W4HandshakeTagType_t@@@@
@@ -426,6 +491,7 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??Compare@CResponseSystem@@QEAA_NPEBDPEAUCriteria@@_N@Z@MPEBDAEA_N@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??ComputeMatcher@@YAXPEAUCriteria@@PEAVCResponseSystem@@@Z@MPEBDAEA_N@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??ComputeMatcher@CResponseFileParser@@IEAAXPEAUCriteria@@@Z@MPEBDAEA_N@std@@
+.?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AVCBaseToolAttr@@
 .?AVCBaseUndoable@@
 .?AVCChoreoActor@@
@@ -455,6 +521,7 @@
 .?AVCChoreoEvent_MOOD@@
 .?AVCChoreoEvent_MOOD_BODY@@
 .?AVCChoreoEvent_PERMIT_RESPONSES@@
+.?AVCChoreoEvent_PLAYER_CAMERA_CONTROL@@
 .?AVCChoreoEvent_PLAY_RESPONSE@@
 .?AVCChoreoEvent_PULSE_REQUIREMENT@@
 .?AVCChoreoEvent_REQUIREMENTS@@
@@ -498,6 +565,7 @@
 .?AVIResponseSystem@@
 .?AVISceneFileCache@@
 .?AVISequence@@
+.?AVIToolAttr_Array@@
 .?AVIToolAttr_Table@@
 .?AVIToolAttr_Value@@
 .?AVIUndoable@@
@@ -517,6 +585,7 @@ AI_ResponseSystem:  Unxpected TokenWaiting() with NULL buffer in %s
 Action
 ActorName
 Add Anim Clip Event
+Align With Target At Last Warp Event
 Anchor Actor
 Anchor Is External
 Anim Clip
@@ -540,9 +609,12 @@ Automated Action
 B-Spline
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
+Base
+Bone Mask ID
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\scenefilecache\_vpc_scenefilecache\default\win64\_msvc_\Retail\scenefilecache.pdb
 C:\buildworker\source2_dota_rel_2019_win64\build\src\responserules\runtime\criteriaset.cpp
 CChoreoActor
+CChoreoChannel
 CChoreoEvent_ANIMGRAPH_CONTROLLER
 CChoreoEvent_ANIM_CLIP
 CChoreoEvent_BaseLocalEvent
@@ -558,6 +630,7 @@ CChoreoEvent_INTERRUPT
 CChoreoEvent_LOCATOR
 CChoreoEvent_LOOKAT
 CChoreoEvent_LOOP
+CChoreoEvent_PLAYER_CAMERA_CONTROL
 CChoreoEvent_PLAY_RESPONSE
 CChoreoEvent_PULSE_REQUIREMENT
 CChoreoEvent_REQUIREMENTS
@@ -608,6 +681,8 @@ Catmull-Rom (Norm)
 Catmull-Rom (Tangent)
 Chance
 Choreo Control State
+ChoreoAnimationLayerType_t
+ChoreoChannelType_t
 ChoreoScene:%s
 Citadel
 Clip
@@ -627,6 +702,7 @@ Delay or Skip Amount
 Disable auto blink for BaseActor
 Discarded rule %s\n
 Don't Attenuate Captions
+Don't Stop At Goal If Aligned
 Dota
 Duplicate include: %s\n
 Dynamic Actor
@@ -639,6 +715,7 @@ End Time
 EndTime
 Error (problem that prevents task success)
 Event ID
+Events in this list are not repeated when the requirement loops, and are ignored as part of its conditions
 Expecting '{' in enumeration '%s', got '%s'
 Expecting '{' in enumeration '%s', got '%s'\n
 Expecting '{' in rule '%s', got '%s'
@@ -663,10 +740,12 @@ FaceposerSoundEventChooser
 Faceposer_ActorSuggestions
 Faceposer_AnimGraphParametersSuggestions
 Faceposer_BaseMoodSuggestions
+Faceposer_BoneMaskIDSuggestions
 Faceposer_ExpressionGroupSuggestions
 Faceposer_ExpressionNameSuggestions
 Faceposer_ExternalGraphControlSuggestions
 Faceposer_ExternalGraphSlotIDSuggestions
+Faceposer_ExternalPoseSlotIDSuggestions
 Faceposer_GestureNameSuggestions
 Faceposer_LookSpeedSuggestions
 Faceposer_LookTypeSuggestions
@@ -675,6 +754,8 @@ Facial Animation
 Failed to allocate an instance of a class of type '%s'
 Failed to apply FLC data to resource '%s': %s\n
 FindCriterionIndex
+Finish Scene On Completion
+FinishSceneOnCompletion
 Fixed Length
 FixedLength
 Flat
@@ -709,6 +790,8 @@ If true, the move-to params for this event will be exposed as ports to pulse
 If true, then this anchor will be exposed externally to the entity that owns this VCD
 Ignore External Lookats
 Ignore the lipsync data compiled into the vsnd, both embedded morph animation and phonemes.  Doesn't affect flex animation channels in the scene. NOTE: Requires mod specific support in game, see CChoreoComponent::IsLipsyncSuppressedForSound()
+Ignored Channels
+IgnoredChannels
 Interrupt
 Intro Playback Rate
 IntroPlaybackRate
@@ -716,8 +799,11 @@ KV3 save transfer failed: %s
 Kochanek-Bartels
 Kochanek-Bartels Early
 Kochanek-Bartels Late
+Layer Type
 LightmapUV
 LightmapUVW
+Limit Aim Angle
+LimitAimAngle
 Linear Interp.
 LoadKV3Object error: %s\n
 LoadResponseSystem
@@ -735,7 +821,6 @@ Loop Count
 Loop Playback Rate
 LoopCount
 LoopPlaybackRate
-Make this a requirement.
 Map Name
 Matched rule '%s', 
 Max Eye Weight
@@ -771,12 +856,12 @@ PivotPaint
 Play Sequence Overtop Script
 PlaySequenceOverScript
 Playback Rate
+Player Camera Control
 Preview Angles
 Preview Origin
 Print (for prototyping)
 PropWorldOrigin
 Public: %s
-Pulse Requirement
 Pulse Requirement Name
 PulseRequirementName
 RESOURCE_TYPE_CHOREO_SCENE
@@ -794,6 +879,9 @@ Referencing %d missing resources:\n%s
 Relative Orientation
 Relative Position
 ReloadModels
+Requirement Enabled
+Requirement [%s]
+RequirementEnabled
 Requirements m_linkedEventIDs[%d] m_bWaitUntilEnd[%s] 
 Reset On End
 Response
@@ -811,6 +899,7 @@ Rule '%s' using inlined criteria, which are no longer supported\n
 Rule is disabled.\n
 SCENE
 SPEAK
+Scales the movement speed used to reach this locator
 Scene (vcd)
 Scoring rule '%s' (%i)\n{\n
 Search criteria:\n
@@ -825,6 +914,8 @@ Should Teleport
 Show regardless of user setting
 Simple Cubic
 SimplePlaybackRate
+SingleFrameNotification
+Slot ID
 SoundDelayOrSkip
 Speak (sound event)
 Speaker contexts: '%s', 
@@ -852,8 +943,10 @@ TargetCastForModify
 Task
 Task/Action handshake.
 Teleport to %s
+The entity won't play a stopping animation upon reaching the destination if the path arrives aligned with the arrival direction and the entity isn't strafing
 ThenSimple rule Generated: rule '%s' with criteria '%s' pointing to response '%s'.\n
 ThenSimple rule generated in response '%s'.\n
+This is a single-frame animation so playback rate is not relevant - only the duration of the event
 Trigger Name
 TriggerName
 TrySendVNotify - SendKV3 failed\n
@@ -862,6 +955,7 @@ Unable to restore scene '%s'\n
 Unknown interpolation type %d\n
 Unnamed_Response(1)
 Unsupported version %d for resource '%s' (Expected %d)\n
+Use Alignment Bone
 VDataChoice( %s )
 VDataChoice()
 VNOTIFY_DISABLE
@@ -878,13 +972,15 @@ VertexGenericIntegerData
 VertexPaintBlendParams
 VertexPaintBlendParams1
 VertexPaintTintColor
-Volume Matches Event Ramp
-VolumeMatchesRamp
 WARNING: VNotify abandoned after too many attempts:\n%s\n
 Wait Until End
 WaitUntilEnd
 Wants Handshake
 Warning (problem that doesn't prevent forward progress)
+Warp Root Motion
+WarpAlignWithTargetAtLastWarpEvent
+WarpEnabled
+WarpUseAlignmentBone
 World Offset Reference Clip
 World contexts: '%s', 
 WorldOffsetReferenceClip
@@ -927,6 +1023,7 @@ binary
 blendindices
 blendweight
 blendweights
+bone_mask_id
 bspline
 cancel_existing
 catmullrom
@@ -938,6 +1035,7 @@ choreo_fullbody_takeover
 choreohelper_animclip
 choreohelper_baselocaleventwithramp
 choreohelper_default
+choreohelper_external_animgraph
 choreohelper_gesture
 choreohelper_lookat
 choreohelper_sequence
@@ -962,6 +1060,13 @@ disable_blink
 displayfirst
 displaylast
 dynamic_actor
+eAdditive
+eAnimation
+eBase
+eLocatorArrivalOption_DontStopAtGoalIfAligned
+eModelSpace
+eOverlay
+eUnknown
 easein
 easeinout
 easeout
@@ -983,7 +1088,7 @@ external_graph_choreo_a
 eye_ramp
 faceposer
 faceposermodel
-fast
+finish_scene_on_completion
 firetrigger
 flc_columns
 flc_count
@@ -1005,16 +1110,18 @@ has_duration
 has_preview_transform
 hold
 ignorePhonemes
+ignored_channels
 ignorelookats
 interrupt
 interrupt_and_cancel
 interrupt_then_resume
-is_requirement_condition
 kochanek
 kochanek_early
 kochanek_late
+layer_type
 left_edge
 lifespan
+limit_aim_angle
 linear_interp
 linked_events
 linked_requirement_id
@@ -1032,6 +1139,7 @@ m_Retiming
 m_Rules
 m_SoundEventScripts
 m_VcdLists
+m_WarpSettings
 m_actorName
 m_additionalTemplateResponseLines
 m_bApplyContextToWorld
@@ -1047,6 +1155,7 @@ m_bNoScene
 m_bSequential
 m_bSpeakOnce
 m_bStopOnNonIdle
+m_bUseAlignmentBone
 m_bUseSeparateEyeRamp
 m_concept
 m_context
@@ -1062,6 +1171,7 @@ m_flMaxEyeWeight
 m_flMaxHeadWeight
 m_flOutroPlaybackRate
 m_flSimplePlaybackRate
+m_flSingleFrameHoldDuration
 m_flSlopeIncoming
 m_flSlopeOutgoing
 m_freeVariableValues
@@ -1090,7 +1200,6 @@ m_speakerType
 m_suppressedTemplateResponseLines
 m_weapondelay.range
 m_weapondelay.start
-make_requirement
 matched, weight %4.2f (s %4.2f x c %4.2f)
 matchonce
 max_eye_weight
@@ -1111,6 +1220,7 @@ param3
 permitrepeats
 permitresponses
 playback_time
+player_camera_control
 playoverscript
 playresponse
 position_relative
@@ -1121,8 +1231,10 @@ preview_angles
 preview_origin
 previous_duration
 quiet
+reference_bone
 relative_orientation
 relative_position
+requirement_enabled
 requirement_name
 requirements
 reset_cycle_on_time_change
@@ -1160,11 +1272,13 @@ shifted_time
 should_teleport
 show_vcd_file
 simple_cubic
+slot_id
 snap
 source_column
 source_file_searchpath
 speak
 speakonce
+speed_scale
 startdelay
 stereo
 stop_on_nonidle
@@ -1181,7 +1295,6 @@ thensimple
 tool_request_args
 tool_request_text
 tool_request_tool
-unified
 unweighted
 vcd_pulse_requirement
 vdata
@@ -1189,7 +1302,6 @@ very_fast
 vmap
 vnmclip
 vnotify_ui
-volumematcheseventramp
 vrr1
 vrr_c1
 wait_until_end

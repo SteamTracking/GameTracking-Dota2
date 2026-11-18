@@ -42,13 +42,13 @@
 		"Ability7"		"generic_hidden"
 		"Ability8"		"generic_hidden"
 		"Ability10"		"special_bonus_unique_gyrocopter_homing_missile_damage"
-		"Ability11"		"special_bonus_hp_150"
+		"Ability11"		"special_bonus_hp_175"
 		"Ability12"		"special_bonus_unique_gyrocopter_6"
-		"Ability13"		"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"
+		"Ability13"		"special_bonus_unique_gyrocopter_5"
 		"Ability14"		"special_bonus_unique_gyrocopter_2"
 		"Ability15"		"special_bonus_unique_gyrocopter_3"
 		"Ability16"		"special_bonus_unique_gyrocopter_1"
-		"Ability17"		"special_bonus_unique_gyrocopter_5"
+		"Ability17"		"special_bonus_unique_gyrocopter_4"
 		"Facets"
 		{
 			"gyrocopter_secondary_strikes"
@@ -359,7 +359,6 @@
 				"AbilityValues"
 				{
 						"hits_to_kill_tooltip"		"3"
-						"tower_hits_to_kill_tooltip"		"6"
 						"stun_duration"				
 						{
 							"value"			"1.3 1.7 2.1 2.5"
@@ -373,7 +372,7 @@
 						}
 						"max_distance"				"1500"
 						"pre_flight_time"			"2.5"
-						"hero_damage"				"2"
+						"hits_to_kill"				"3"
 						"speed"						"500"
 						"acceleration"				"15"
 						"enemy_vision_time"			"4"
@@ -429,7 +428,7 @@
 					}
 					"radius"						
 					{
-						"value"										"1250"
+						"value"										"1050"
 						"affected_by_aoe_increase"	"1"
 					}
 					"max_attacks"
@@ -437,10 +436,11 @@
 						"value"					"4 5 6 7"
 						"special_bonus_unique_gyrocopter_2"			"+3"
 					}
+					"attack_effectiveness"			"50"
 					"projectile_speed"				"800"
 					"bonus_damage"
 					{
-						"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"+25"
+						"value"					"0"
 					}
 					"bonus_night_vision"		"0"
 					"additional_targets"		"0"
@@ -487,7 +487,7 @@
 						"AbilityCooldown"				
 						{
 							"value"	"75 65 55"
-							"special_bonus_unique_gyrocopter_5"				"-40"
+							"special_bonus_unique_gyrocopter_5"				"-10"
 						}
 						"slow_duration"				"4"
 						"slow"						"60"
@@ -497,7 +497,7 @@
 						}
 						"radius"					
 						{
-							"value"			"400"
+							"value"			"425"
 							"affected_by_aoe_increase"	"1"
 						}
 						"tracking_strike_radius"				
@@ -547,6 +547,7 @@
 				{
 					"double_target"			"1"
 					"sidegunner_fire_rate"		"1.3"
+					"attack_effectiveness"		"75"
 				}
 			}	
 
@@ -593,6 +594,8 @@
 
 				"MaxLevel"						"1"
 				"Innate"						"1"
+				"IsBreakable"					"1"
+
 				"AbilityValues"
 				{
 					"bonus_movespeed_duration"
@@ -601,8 +604,16 @@
 						"hero_levelup"	"0.1"
 					}
 		
-					"bonus_movement_speed_per_hit"			"1"	
-					"bonus_movement_speed_per_hit_creep"	"0.5"
+					"bonus_movement_speed_per_hit"
+					{
+						"value"								"1"
+						"special_bonus_unique_gyrocopter_4"	"x2"
+					}
+					"bonus_movement_speed_per_hit_creep"
+					{
+						"value"								"0.5"
+						"special_bonus_unique_gyrocopter_4"	"x2"
+					}
 				}
 			}
 

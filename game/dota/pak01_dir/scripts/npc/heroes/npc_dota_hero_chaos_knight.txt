@@ -37,9 +37,10 @@
 		"Ability1"		"chaos_knight_chaos_bolt"
 		"Ability2"		"chaos_knight_reality_rift"
 		"Ability3"		"chaos_knight_chaos_strike"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"chaos_knight_fundamental_forging"
+		"Ability4"		"chaos_knight_armageddon"
+		"Ability5"		"generic_hidden"
 		"Ability6"		"chaos_knight_phantasm"
+		"Ability7"		"chaos_knight_armageddons_flank_end"
 
 		"AbilityDraftAbilities"
 		{
@@ -111,8 +112,8 @@
 
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"32"
-		"AttackDamageMax"		"52"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"47"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.500000"
 		"AttackAcquisitionRange"		"600"
@@ -389,10 +390,15 @@
 						"value"					"0"
 						"special_bonus_shard"			"=6.0"
 					}
+					"illusion_effectiveness"
+					{
+						"value"					"0"
+						"special_bonus_shard"			"=25"
+					}
 					"illusion_damage_reduction_pct"
 					{
 						"value"							"0"
-						"special_bonus_shard"			"=15"
+						"special_bonus_shard"			"0"
 					}
 					"bounce_range_pct"	
 					{
@@ -528,6 +534,7 @@
 				"AbilityValues"
 				{
 					"images_count"				"3"
+					"illusion_effectiveness"		"100"
 					"illusion_duration"
 					{
 						"value"						"30.0"
@@ -575,6 +582,7 @@
 					}
 				}
 			}
+
 
 
 			//=================================================================================================================
@@ -635,6 +643,165 @@
 				"AbilityValues"
 				{
 				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Armageddon
+			//=================================================================================================================
+			"chaos_knight_armageddon"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+				"FightRecapLevel"				"1"
+				"AbilityTextureName"			"chaos_knight_armageddons_flank"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastRange"				"0"
+				"AbilityCastPoint"				"0.4"
+				"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"30"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"50"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"speed_per_second"			"5"
+					"drain_rate_multiplier"		"4"
+					"think_interval"			"0.1"
+					"max_bonus_speed"
+					{
+						"value"					"20"
+						"hero_levelup"			"+2"
+					}
+					"charge_speed_multiplier"		"2"
+					"current_max_charge_speed"
+					{
+						"value"					"0"
+						"dynamic_value"			"true"
+					}
+					"charge_accel_time"				"0.5"
+					"charge_decel_time"				"0.5"
+					"illusion_radius"				"1300"
+					"turn_rate"						"25"
+					"hit_radius"
+					{
+						"value"			"150"
+						"affected_by_aoe_increase"	"1"
+					}
+					"formation_spacing"				"130"
+					"formation_jitter"				"60"
+					"formation_width"				"100"
+					"run_animation_rate"				"1.8"
+					"max_charge_time"				"1.0"
+					"windup_turn_rate"				"120"
+					"attack_while_charging"				"1"
+					"jump_distance"				"500"
+					"jump_height"				"160"
+				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Armageddon's Flank
+			//=================================================================================================================
+			"chaos_knight_armageddons_flank"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"LinkedAbility"					"chaos_knight_armageddons_flank_end"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+				//"AbilityCastRange"			"2000"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"20"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"25"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{	
+					"duration"					
+					{
+						"value"					"8"
+						"hero_levelup"			"+0.25"
+					}
+					"bonus_speed"				
+					{
+						"value"					"60"
+						"hero_levelup"			"+6"
+					}
+					"tick_interval"				"0.1"
+					"movement_accel_per_second"	
+					{
+						"value"					"60"
+						"hero_levelup"			"+1"
+					}
+					"splash_aoe"				
+					{
+						"value"					"0"
+						"affected_by_aoe_increase"	"1"	
+					}
+					"movement_turn_rate_min"	"60"
+					"movement_turn_rate_max"	"180"
+					"bonus_attack_range"		"50"
+					"damage_cooldown"			"3"
+					"aura_range"
+					{
+						"value"	"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Chaos Knight: Armageddon's Flank End
+			//=================================================================================================================
+			"chaos_knight_armageddons_flank_end"	
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.0"
+				"AbilityCastRange"				"999999"
+		 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+				"AbilityCastGestureSlot"		"DEFAULT"
+		 		"MaxLevel"						"1"
+		 		"Innate"						"1"
+
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"0.3"
 			}
 		}
 	}

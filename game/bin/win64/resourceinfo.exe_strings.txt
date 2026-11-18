@@ -473,6 +473,7 @@ $prefix_element$
 .?AVCMapAssetTypeInfo@@
 .?AVCResourceAssetTypeInfo@@
 .?AVCSFMBaseImporter@@
+.?AVCSchemaRegistration_assetconfiglib@@
 .?AVCSchemaRegistration_resourceinfo@@
 .?AVCSchemaRegistration_toolutils2@@
 .?AVCSimpleAssetTypeInfo@@
@@ -794,6 +795,7 @@ $prefix_element$
 <EMPTY>\n
 <INVALID>
 <No Group>
+<None>
 <UNKNOWN>
 <invalid>
 <non-RTTI type>
@@ -801,7 +803,6 @@ $prefix_element$
 ======== %s -> No dependencies.\n
 ======== %s ========\n
 ======== %s ========\n\n
-=aes(partial)
 A8_UNORM
 AA Compromise
 AACompromise
@@ -828,6 +829,7 @@ AECDH-AES256-SHA
 AECDH-DES-CBC3-SHA
 AECDH-NULL-SHA
 AECDH-RC4-SHA
+AES part of OpenSSL 1.0.2j  26 Sep 2016
 AES(128)
 AES(256)
 AES-128-CBC
@@ -1152,7 +1154,6 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\datamodel\dependencygraph.c
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\check_cast.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\vpklib\packedstore.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\texturelib\extract.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\resourceinfo\resourceinfo.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\vpklib\packedstore.cpp
 CA Compromise
@@ -1430,7 +1431,6 @@ CUtlBlockVector<struct FileHandleTracker_t,int,class CMemAllocAllocator>::GrowCo
 CUtlBlockVector<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary::ElementInfo_t,int>,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CDmElement *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlSymbolLarge,struct DmMemoryInfo_t,class CDefLess<class CUtlSymbolLarge>,unsigned short>::Node_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -1732,7 +1732,8 @@ Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
 Decipher Only
-DecompressTextureBits
+DecompressTextureBits: %u bytes of texture data, but %d mips of %dx%d %s need %u; it comes out black\n
+DecompressTextureBits: virtual texture %s; it comes out black\n
 DeregisterEventSource
 Different CRL scope
 Diffie-Hellman based MAC
@@ -2231,8 +2232,10 @@ GetConsoleCP
 GetCursorInfo
 GetHashType() == ChunkHashFraction_t::EHashType::BLAKE3
 GetHashType() == ChunkHashFraction_t::EHashType::MD5
+GetProcessWindowStation
 GetQueueStatus
 GetSystemTime
+GetUserObjectInformationW
 GlobalMemoryStatus
 GlobalSize
 HEAD 
@@ -2406,6 +2409,7 @@ MapNode
 Mask Algorithm: 
 Match Particle Velocities
 Max Velocity
+MessageBoxW
 Microsoft CSP Name
 Microsoft Commercial Code Signing
 Microsoft Encrypted File System
@@ -2591,6 +2595,7 @@ OpenSSL X9.42 DH method
 OpenSSL default
 OpenSSL default user interface
 Operator cycle found during dependency graph traversal!\n
+Optional additional keys to check, in the same form as the main key (e.g. 'm_Content/m_strName')
 Order: 
 Orient Rotation to 2D Direction
 Oscillate Scalar
@@ -2877,7 +2882,6 @@ R8G8_B8G8_UNORM
 R8G8_SINT
 R8G8_SNORM
 R8G8_TYPELESS
-R8G8_UNORM
 R8_SINT
 R8_SNORM
 R8_TYPELESS
@@ -3302,7 +3306,8 @@ TYPE=
 TanFrameQuat
 TextImage
 Texture Configuration File
-This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
+The key whose value must match the asset name (ie. something like 'm_Model' if you want to apply this tag to .vmdl assets that are referenced by the vdata file)\nUse '/' to reach into sub-blocks, e.g. 'm_Content/m_strName', and '*' to search every element of an array, e.g. 'm_Levels/*/m_strName'.
+This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nThe expression is evaluated against the top-level vdata entry, even when the key reaches into a sub-block, so refer to sub-block fields by their full path. Expressions separate members with '.' (e.g. 'm_Content.m_bFoo').\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
 This is an S/MIME signed message%s%s
 Thread32First
 Thread32Next
@@ -3355,7 +3360,7 @@ Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -3425,6 +3430,7 @@ VTEX_FORMAT_R16
 VTEX_FORMAT_R16F
 VTEX_FORMAT_R32F
 VTEX_FORMAT_R32_UINT
+VTEX_FORMAT_R8G8_UNORM
 VTEX_FORMAT_R8_UNORM
 VTEX_FORMAT_RG11_EAC
 VTEX_FORMAT_RG1616
@@ -3446,6 +3452,7 @@ Velocity Repulse from World
 Verify error:
 Verify failure\n
 Verifying - %s
+Version: %u\n\n
 VertexElementAnnotation
 VertexGenericIntegerData
 VertexPaintBlendParams
@@ -3633,7 +3640,6 @@ ZSTD
 [%d] Pushing undo '%s'\n
 [%s] %s=%s\n
 [%s] Forced dmxconvert - Finished [%s] in %0.2f secs. Please re-save or upconvert this asset!\n
-[AES part of OpenSSL 1.0.2j  26 Sep 2016
 [HEX DUMP]:
 \%02X
 \U%04lX
@@ -3663,8 +3669,12 @@ ZSTD
 \t                      by the engine DLL's, and game DLL's if mod is specified.  
 \t                   [ %i coefficients ]\n
 \t                   [ %i mips, sized: 
+\t                   [ %i tiles, %i stored uncompressed, %s ]\n
+\t                   [ %i tiles, BAD OFFSET TABLE ]\n
 \t                   [ Format %s ]\n
+\t                   [ No offset table, tiles stored in page order ]\n
 \t                   [ Uncompressed %ikb, compressed %ikb -- %i%% ]\n
+\t                   [ Uncompressed %llukb, stored %llukb -- %llu%% ]\n
 \t                 DisplayRect=[%i  %i]\n
 \t                 MotionVectorsMaxDistanceInPx=%i\n
 \t                 RangeMax=[%.2f %.2f %.2f %.2f]\n
@@ -3679,6 +3689,7 @@ ZSTD
 \t               [ Entry %d: VTEX_EXTRA_DATA_FALLBACK_BITS - %d bytes ]\n
 \t               [ Entry %d: VTEX_EXTRA_DATA_METADATA - %d bytes ]\n
 \t               [ Entry %d: VTEX_EXTRA_DATA_SHEET - %d bytes ]\n
+\t               [ Entry %d: VTEX_EXTRA_DATA_VIRTUAL_TEXTURE_TILES - %d bytes ]\n
 \t              (available formats: %s)\n
 \t              (eg. DATA, RERL, REDI, NTRO).\n
 \t              If neither is specified, both are listed.\n
@@ -3787,6 +3798,7 @@ ZSTD
 \t\t\tLZ4HC level %i, %i->%i (%02i%% -%s) in %.1fms (%.2fmb/sec)\n
 \t\t\tZSTD level %i, %i->%i (%02i%% -%s) in %.1fms (%.2fmb/sec)\n
 \t\t\t\t\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%hu
 \tm_flDuration  = %.6f\n
 \tm_loopStart   = %d\n
 \tm_nChannels   = %d\n
@@ -3835,6 +3847,7 @@ additional verification
 address=
 aes iv setup failed
 aes key setup failed
+aes(partial)
 aes-128-cbc
 aes-128-cbc-hmac-sha1
 aes-128-cbc-hmac-sha256
@@ -3922,6 +3935,7 @@ asn1 parse error
 asn1 sig parse error
 asn1 unknown field
 asset_warnings
+assetconfiglib
 assettypes
 assettypes_common.txt
 assettypes_internal.txt
@@ -4024,6 +4038,8 @@ bad value
 bad version number
 bad write retry
 bad x509 filetype
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
@@ -4453,7 +4469,6 @@ dITRedirect
 dNSDomain
 dSAQuality
 dWry
-data
 data between ccs and finished
 data greater than mod len
 data is wrong
@@ -4842,7 +4857,6 @@ failed loading private key
 failed loading public key
 falloff_left
 falloff_right
-fast
 fast_strobe
 fatal
 favouriteDrink
@@ -4924,6 +4938,11 @@ group2pkparameters failure
 group=
 groupColor
 hammer
+has a bad tile offset table ( %d tiles )
+has compressed tiles but no offsets
+has no tile layout block, it needs recompiling
+has no tiles for mip %d
+has tiles in unknown compression %d
 hash
 hashAlgorithm
 hashFunc
@@ -5533,9 +5552,11 @@ lock to bone
 lower_hemisphere_is_black
 lowprecisionuv
 lowprecisionuv1
+luminaire_shape
 mXRecord
 m_AdditionalInputDependencies
 m_AdditionalRelatedFiles
+m_AlternateAssetKeys
 m_ArgumentDependencies
 m_ChildResourceList
 m_Format
@@ -5553,12 +5574,17 @@ m_SubassetDefinitions
 m_SubassetReferences
 m_UserData
 m_WeakReferenceList
+m_bBlendShapes
+m_bCompressedZ3
 m_bFileExists
 m_bIsGameFile
 m_bOptional
+m_dnaRigs
+m_nBlock
 m_nFileCRC
 m_nFingerprint
 m_nFingerprintDefault
+m_nRig
 m_nUserData
 m_pVertexData
 mac absent
@@ -5705,7 +5731,6 @@ multipart/signed
 multiple sgc restarts
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
-nCompressedSize == nUncompressedSize
 nDataSize > 0
 nLayoffState
 nSRecord
@@ -5831,7 +5856,6 @@ nodeID
 node_dest
 node_id_List
 node_name
-nodes
 noise
 nombstr
 non fips dsa method
@@ -5957,7 +5981,6 @@ otherRevInfoFormat
 othername
 othername error
 othername:<unsupported>
-out of memory
 ownerlog
 p is not prime
 p not prime
@@ -5972,6 +5995,7 @@ pSourceFunc
 pSpecified
 packet length too long
 padding check failed
+page order
 pagerTelephoneNumber
 parameter
 parameter encoding error
@@ -6235,6 +6259,7 @@ renderSettings
 renegotiate ext too long
 renegotiation encoding err
 renegotiation mismatch
+reordered
 reqCert
 req_info
 request not signed
@@ -6592,6 +6617,7 @@ shadow_secondary_color_night
 shape
 shared
 shared info error
+shear
 short header
 short line
 short read
@@ -6886,6 +6912,7 @@ the meth_data stack is corrupt
 there must be one signer
 thisUpdate
 thread=%lu, 
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 time not ascii format
 time stamp routines
 time syscall error

@@ -53,9 +53,9 @@
 		"Ability11"		"special_bonus_unique_venomancer_poisonsting_regen_reduction"
 		"Ability12"		"special_bonus_unique_venomancer_plague_spread"
 		"Ability13"		"special_bonus_unique_venomancer_2"
-		"Ability14"		"special_bonus_unique_venomancer_4"
+		"Ability14"		"special_bonus_unique_venomancer_5"
 		"Ability15"		"special_bonus_unique_venomancer_8"
-		"Ability16"		"special_bonus_unique_venomancer_5"
+		"Ability16"		"special_bonus_unique_venomancer_plague_damage"
 		"Ability17"		"special_bonus_unique_venomancer"
 		
 		"Facets"
@@ -488,6 +488,11 @@
 						"value"			"40.0"
 					}
 
+					"poison_sting_potency"
+					{
+						"value"			"50"
+					}
+
 					"ward_model_scale"
 					{
 						"value"								"1.0"
@@ -557,7 +562,11 @@
 
 					"debuff_duration"			"4"
 					"impact_damage"				"150 200 250"
-					"damage_per_second"			"2 3 4"
+					"damage_per_second"
+					{
+						"value"					"2 3 4"
+						"special_bonus_unique_venomancer_plague_damage"	"+2"
+					}
 					"damage_tick_rate"			".25"
 
 					"debuff_time_transfer"		"100"
@@ -608,7 +617,7 @@
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"600"
+				"AbilityCastRange"				"600 650 700 750"
 				"AbilityCastPoint"				"0.2"
 		
 				// Time		
@@ -624,11 +633,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"base_damage" 
-					{
-						"value"						"40 70 100 130"
-						"special_bonus_unique_venomancer_4"	"+100"
-					}
+					"base_damage"				"40 70 100 130"
 
 					"tick_damage"
 					{

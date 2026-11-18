@@ -60,16 +60,6 @@ enum EPurchaseHeroRelicResult {
 	k_EPurchaseHeroRelicResult_InvalidRarity = 7;
 }
 
-enum EDevEventRequestResult {
-	k_EDevEventRequestResult_Success = 0;
-	k_EDevEventRequestResult_NotAllowed = 1;
-	k_EDevEventRequestResult_InvalidEvent = 2;
-	k_EDevEventRequestResult_SqlFailure = 3;
-	k_EDevEventRequestResult_Timeout = 4;
-	k_EDevEventRequestResult_LockFailure = 5;
-	k_EDevEventRequestResult_SDOLoadFailure = 6;
-}
-
 enum ESupportEventRequestResult {
 	k_ESupportEventRequestResult_Success = 0;
 	k_ESupportEventRequestResult_Timeout = 1;
@@ -632,11 +622,6 @@ message CMsgClientToGCClaimEventActionUsingItem {
 
 message CMsgClientToGCClaimEventActionUsingItemResponse {
 	optional .CMsgDOTAClaimEventActionResponse action_results = 1;
-}
-
-message CMsgGCToClientClaimEventActionUsingItemCompleted {
-	optional uint64 item_id = 1 [boxed_type = "itemid_t"];
-	optional .CMsgDOTAClaimEventActionResponse action_results = 2;
 }
 
 message CMsgDOTAGetEventPoints {
@@ -2400,27 +2385,6 @@ message CMsgGCToClientRecordContestVoteResponse {
 	}
 
 	optional .CMsgGCToClientRecordContestVoteResponse.EResult eresult = 1 [default = SUCCESS];
-}
-
-message CMsgDevGrantEventAction {
-	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-	optional uint32 action_id = 2;
-	optional uint32 action_score = 3;
-}
-
-message CMsgDevGrantEventActionResponse {
-	optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-}
-
-message CMsgDevDeleteEventActions {
-	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-	optional uint32 start_action_id = 2;
-	optional uint32 end_action_id = 3;
-	optional bool remove_audit = 4;
-}
-
-message CMsgDevDeleteEventActionsResponse {
-	optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
 }
 
 message CMsgConsumeEventSupportGrantItem {

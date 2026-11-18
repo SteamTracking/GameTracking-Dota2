@@ -50,14 +50,14 @@
 			"Ability4"	"death_prophet_exorcism"
 		}
 
-		"Ability10"		"special_bonus_unique_death_prophet_silence_aoe"
+		"Ability10"		"special_bonus_attack_damage_20"
 		"Ability11"		"special_bonus_hp_200"
-		"Ability12"		"special_bonus_attack_speed_50"
-		"Ability13"		"special_bonus_unique_death_prophet_2"
+		"Ability12"		"special_bonus_unique_death_prophet_silence_aoe"
+		"Ability13"		"special_bonus_unique_death_prophet_5"
 		"Ability14"		"special_bonus_unique_death_prophet"
-		"Ability15"		"special_bonus_unique_death_prophet_3"
-		"Ability16"		"special_bonus_unique_death_prophet_5"
-		"Ability17"		"special_bonus_unique_death_prophet_exorcism_duration_on_kill"
+		"Ability15"		"special_bonus_unique_death_prophet_crypt_swarm_damage"
+		"Ability16"		"special_bonus_unique_death_prophet_4"
+		"Ability17"		"special_bonus_unique_death_prophet_2"
 		
 		"Facets"
 		{
@@ -105,12 +105,12 @@
 		
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"22"
-		"AttackDamageMax"		"32"
+		"AttackDamageMin"		"18"
+		"AttackDamageMax"		"28"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.5"
 		"AttackAcquisitionRange"		"800"
-		"AttackRange"		"600"
+		"AttackRange"		"500"
 		"BaseAttackSpeed"		"100"
 		"ProjectileModel"		"particles/units/heroes/hero_death_prophet/death_prophet_base_attack.vpcf"
 		"ProjectileSpeed"		"1000"
@@ -122,7 +122,7 @@
 		"AttributeBaseIntelligence"		"24"
 		"AttributeIntelligenceGain"		"3.000000"
 		"StatusManaRegen"	"0.5"
-		"MovementSpeed"		"290"
+		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.800000"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"particle_folder"		"particles/units/heroes/hero_death_prophet"
@@ -374,6 +374,8 @@
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_DeathProphet.CarrionSwarm"
 
+				"HasShardUpgrade"			"1"
+
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"900"
@@ -390,12 +392,7 @@
 					"damage"
 					{
 						"value"													"100 175 250 325"
-						"special_bonus_unique_death_prophet_crypt_swarm_damage"	"+50"
-					}
-					"AbilityCooldown"
-					{
-						"value"									"9 8 7 6"
-						"special_bonus_unique_death_prophet_2"	"-2.5"
+						"special_bonus_unique_death_prophet_crypt_swarm_damage"	"+110"
 					}
 					"start_radius"				
 					{
@@ -409,13 +406,37 @@
 					}
 					"range"						"900"
 					"speed"						"1100 1100 1100 1100"
-					"slow_percent"
+
+					"apply_debuff"
 					{
-						"value"				"0"
+						"value"						"0"
+						"special_bonus_shard"		"+1"
 					}
 					"slow_duration"
 					{
-						"value"				"0"
+						"value"						"0"
+						"special_bonus_shard"		"+0.5"
+					}
+					"slow_movement_pct"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"+100"
+					}
+
+					"AbilityCharges"
+					{
+						"value"						"0"
+						"special_bonus_shard"		"+2"
+					}
+					"AbilityChargeRestoreTime"
+					{
+						"value"						"0 0 0 0"
+						"special_bonus_shard"		"=10 =9 =8 =7"
+					}
+					"AbilityCooldown"
+					{
+						"value"						"10 9 8 7"
+						"special_bonus_shard"		"=1.0"
 					}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -440,7 +461,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"15 14 13 12"
+				"AbilityCooldown"				"17 15 13 11"
 				"AbilityDuration"				"3.5 4.0 4.5 5.0"
 
 				// Cost
@@ -454,7 +475,7 @@
 					"radius"					
 					{
 						"value"	"450"
-						"special_bonus_unique_death_prophet_silence_aoe"		"+75" 
+						"special_bonus_unique_death_prophet_silence_aoe"		"+125" 
 						"affected_by_aoe_increase"	"1"
 					}
 					"projectile_speed"					"1750"
@@ -490,14 +511,37 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
+					"spirits"
+					{
+						"value"									"1"
+						"special_bonus_unique_death_prophet_2"	"+1"
+					}
+					"radius"				
+					{
+						"value"	"700"
+						"affected_by_aoe_increase"	"1"
+					}
+					"spirit_speed"			"650"
+					"max_distance"			"2000"
+					"give_up_distance"		"1200"
+
+					"attack_damage_pct"
+					{
+						"value"				"15"
+						"hero_levelup"		"1"
+					}
+					"current_damage_tooltip"
+					{
+						"dynamic_value"				"true"
+					}
+
+					"building_damage_pct"	"50"
+					"spirit_duration"		"20"
+					"heal_percent"			"50"
+
 					"movement_speed_pct"
 					{
-						"value"				"0.5"
-						"hero_levelup"		"+0.75"
-					}
-					"cooldown_reduction_pct"
-					{				
-						"hero_levelup"		"+0.75"
+						"hero_levelup"		"+0.5"
 					}
 				}
 			}
@@ -513,12 +557,12 @@
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_DeathProphet.SpiritSiphon.Cast"
 
-		        "HasShardUpgrade"               "1"
+		        "HasScepterUpgrade"               "1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -543,28 +587,33 @@
 						"damage"					
 						{
 							"value"				"25 50 75 100"
-							"special_bonus_unique_death_prophet_3"	"+30"
 						}
 
-						"damage_pct"				"0"
-						"haunt_duration"				"6"
+						"haunt_duration"
+						{
+							"value"									"6"
+						}
 						"siphon_buffer"			"250"
 						"AbilityChargeRestoreTime"		
 						{
-							"value"					"40"
-							"special_bonus_unique_death_prophet_5" "-22"
+							"value"									"35"
+							"special_bonus_unique_death_prophet_5" "-8"
 						}
-						"shard_bonus_charges"			
+						"bonus_charges"			
 						{
-							"special_bonus_shard"	"1"
+							"value"						"+0"
 						}
-						"shard_fear_duration"			
+						"max_health_damage_pct"
 						{
-							"special_bonus_shard"		"1.0"
+							"special_bonus_scepter"		"+2.0"
 						}
-						"shard_consecutive_siphon_duration"			
+						"attack_slow"
 						{
-							"special_bonus_shard"		"3"
+							"special_bonus_scepter"		"+120"
+						}
+						"movement_slow"
+						{
+							"special_bonus_scepter"		"+0"
 						}
 				}
 			}
@@ -583,7 +632,6 @@
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"2"
 				"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
-		        "HasScepterUpgrade"			"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -592,7 +640,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"150.0"
+				"AbilityCooldown"				"145 135 125"
 				"AbilityDuration"				"40"
 
 				// Cost
@@ -621,21 +669,15 @@
 					"heal_percent"			"25"
 					"average_damage"		"65 68 71"
 					"ghost_spawn_rate"	"0.25"
-					"scepter_spirit_life_duration"	
-					{
-						"special_bonus_scepter"				"20"
-					}
-					"scepter_spirit_bonus_damage"	
-					{	
-						"special_bonus_scepter"				"60"
-						"CalculateSpellDamageTooltip"	"0"
-					}
 					"duration_increase_per_kill"
 					{
 						"value"			"0"
-						"special_bonus_unique_death_prophet_exorcism_duration_on_kill"			"+8"
-					}	
-					"movement_bonus"				"0"
+					}
+					"unslowable"
+					{
+						"value"									"0"
+						"special_bonus_unique_death_prophet_4"	"+1"
+					}
 				}
 			}
 

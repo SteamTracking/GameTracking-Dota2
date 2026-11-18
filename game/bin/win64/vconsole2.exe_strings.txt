@@ -15,6 +15,7 @@
   Group 4 Options:
   Invoke%d: Cell%d %s\n
   Invoke%d: LibraryFunc %s\n
+  Lambda%d: %s\n
   Output Connection %d: '%s' -> '%s' : %s( %s )\n
   Output%d: '%s' (%s)\n
   Predictor: 
@@ -50,16 +51,20 @@
  : unexpected input...\n  expected one of : 
  <-- Arg '%s'
  <-- Retval '%s'
+ BR%d
  Cancel 
  Do Not Restart 
  LZWSetupDecode
  LinePos:
  Reset And Restart 
  Restart Now! 
+ TempVar(EditorID:%d)
+ V%d
  Vector b
  [*OBSERVABLE*]
  [loop body, break -> C%d:I%d]
  clean
+ depends on:
  joined with CYAN text
  joined with GREEN text
  joined with MAGENTA text
@@ -107,6 +112,7 @@ $B0B
 %d Cells:\n
 %d Chunks:\n
 %d InvokeBindings:\n
+%d Lambdas:\n
 %d OutputConnections:\n
 %d PublicOutputs:\n
 %d TempVarBanks:\n
@@ -202,6 +208,7 @@ $B0B
 '%1' is not a recognized command.\n
 '%1' is not available until connected to Application.\n
 '%1' is not available until connected to Device.\n
+'%s' (%s) -> Chunk%d I%d 
 (%s:%d)
 (Expecting %s)
 (Expecting EOF)
@@ -212,6 +219,7 @@ $B0B
 *** Test failure: "%s"
 *:focus { margin: 1px; padding: 1x; border: 2px solid rgb( %1, %2, %3 ); }
 *File changed
+, %d more element(s)...
 , at offset %d
 , channels = 
 , height = 
@@ -236,8 +244,8 @@ $B0B
 .?AV<lambda_1>@?1???$SetFunction@P8CBindableCamera@@EAAX_N0@Z_N_N@CBindableCommand@?$CBindTargetDescriptor@VCBindableCamera@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CBindableCamera@@EAAX_N1@Z11@Z@
 .?AV<lambda_1>@?1???$SetFunction@P8CLightingControlRig@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCLightingControlRig@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CLightingControlRig@@EAAXXZ@Z@
 .?AV<lambda_1>@?1???$SetFunction@P8CQToolSceneWidget@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCQToolSceneWidget@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CQToolSceneWidget@@EAAXXZ@Z@
-.?AV<lambda_1>@?1??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@
 .?AV<lambda_1>@?1??StopEmission@CNewParticleEffect@@QEAAX_N000@Z@
+.?AV<lambda_1>@?CB@??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@
 .?AV<lambda_1>@?M@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@
 .?AV<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@
 .?AV<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@
@@ -247,8 +255,16 @@ $B0B
 .?AV?$CBindTargetDescriptor@VCQToolSceneWidget@@@@
 .?AV?$CCallback@VCQVConsole2@@USteamShutdown_t@@$0A@@@
 .?AV?$CErrorContextValue@PEBVKeyValues3@@@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??AssignVectorsToClusters@CKMeansClustering@@AEAAXXZ@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_bc7e@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?9??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@@@YAXHHPEBD$$QEAV1?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@@@YAXHHPEBD$$QEAV1?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_2>@?9??WriteToBufferBC_bcn@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@PEAVCRenderableBinding@@V?$CMemberFuncJobItemProcessor@PEAVCRenderableBinding@@VCRenderableUpdater@@V2@@@$00@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCColorGradient@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCPiecewiseCurve@@@@
 .?AV?$CVDataFileManager@VCToolSceneLightRig@@@@
 .?AV?$ISceneObjectDescBase@VCToolSceneAxisObject@@@@
 .?AV?$ISceneObjectDescBase@VCToolSceneGridObject@@@@
@@ -261,8 +277,8 @@ $B0B
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CBindableCamera@@EAAX_N0@Z_N_N@CBindableCommand@?$CBindTargetDescriptor@VCBindableCamera@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CBindableCamera@@EAAX_N1@Z11@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CLightingControlRig@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCLightingControlRig@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CLightingControlRig@@EAAXXZ@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CQToolSceneWidget@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCQToolSceneWidget@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CQToolSceneWidget@@EAAXXZ@Z@XPEAV5@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??StopEmission@CNewParticleEffect@@QEAAX_N000@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CB@??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?M@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@X$$V@std@@
@@ -348,8 +364,6 @@ $B0B
 .?AVCPulseCell_Step_PublicOutput@@
 .?AVCPulseCell_Timeline@@
 .?AVCPulseCell_Unknown@@
-.?AVCPulseCell_Value_Curve@@
-.?AVCPulseCell_Value_Gradient@@
 .?AVCPulseCell_WaitForCursorsWithTag@@
 .?AVCPulseCell_WaitForCursorsWithTagBase@@
 .?AVCPulseCell_WaitForObservable@@
@@ -357,6 +371,7 @@ $B0B
 .?AVCPulseExecCursor@@
 .?AVCPulseGraphDef@@
 .?AVCPulseGraphLoadContext@@
+.?AVCPulseInstanceLoadAPI@@
 .?AVCPulseInstanceLoadAPI_NoOp@@
 .?AVCPulseInterfaceHelpers_Load_NoOp@@
 .?AVCQAddLogViewerDialog@@
@@ -480,7 +495,6 @@ $B0B
 .?AVIPulseHost_Cursor@@
 .?AVIPulseHost_Unknown@@
 .?AVIPulseHost_YieldingCursor@@
-.?AVIPulseInstanceLoadAPI@@
 .?AVISceneObjectDesc@@
 .?AVISequence@@
 .?AVIToolHud@@
@@ -532,13 +546,13 @@ $B0B
 .vsky
 .webp
 0.0.0.0
+07:18:05
+07:20:52
 0BCDEFGHIJKLMNOPQRSTUVWXYZ1BCDEFGHIJKLMNOPQRSTUVWXYZ2BCDEFGHIJKLMNOPQRSTUVWXYZ3BCDEFGHIJKLMNOPQRSTUVWXYZ4BCDEFGHIJKLMNOPQRSTUVWXYZ\n
 0x%llx
 127.0.0.0
 127.0.0.1:%d
 172.16.0.0
-18:14:32
-18:14:33
 1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED );
 1AboutAction()
 1NextFrame()
@@ -810,6 +824,7 @@ $B0B
 <none>\n
 == PulseGraphDef ==\n
 => TempVarBank: Bank%d\n
+=C33[C
 ??0QAbstractNativeEventFilter@@QEAA@XZ
 ??0QActionGroup@@QEAA@PEAVQObject@@@Z
 ??0QApplication@@QEAA@AEAHPEAPEADH@Z
@@ -826,7 +841,6 @@ $B0B
 ??0QItemDelegate@@QEAA@PEAVQObject@@@Z
 ??0QKeySequence@@QEAA@AEBVQString@@W4SequenceFormat@0@@Z
 ??0QMessageBox@@QEAA@PEAVQWidget@@@Z
-??0QPainterPath@@QEAA@XZ
 ??0QPen@@QEAA@AEBV0@@Z
 ??0QPlainTextEdit@@QEAA@PEAVQWidget@@@Z
 ??0QPoint@@QEAA@XZ
@@ -917,7 +931,6 @@ $B0B
 ?beginReadArray@QSettings@@QEAAHAEBVQString@@@Z
 ?beginWriteArray@QSettings@@QEAAXAEBVQString@@H@Z
 ?bits@QImage@@QEAAPEAEXZ
-?boundedTo@QSize@@QEBA?AV1@AEBV1@@Z
 ?brush@QPainter@@QEBAAEBVQBrush@@XZ
 ?brush@QPalette@@QEBAAEBVQBrush@@W4ColorGroup@1@W4ColorRole@1@@Z
 ?brush@QPalette@@QEBAAEBVQBrush@@W4ColorRole@1@@Z
@@ -1028,12 +1041,12 @@ $B0B
 ?generatedIconPixmap@QCommonStyle@@UEBA?AVQPixmap@@W4Mode@QIcon@@AEBV2@PEBVQStyleOption@@@Z
 ?generatedIconPixmap@QProxyStyle@@UEBA?AVQPixmap@@W4Mode@QIcon@@AEBV2@PEBVQStyleOption@@@Z
 ?getSaveFileName@QFileDialog@@SA?AVQString@@PEAVQWidget@@AEBV2@11PEAV2@V?$QFlags@W4Option@QFileDialog@@@@@Z
+?globalInstance@QThreadPool@@SAPEAV1@XZ
 ?globalPos@QMouseEvent@@QEBA?AVQPoint@@XZ
 ?handle@QSplitter@@QEBAPEAVQSplitterHandle@@H@Z
 ?hasChildren@QAbstractListModel@@EEBA_NAEBVQModelIndex@@@Z
 ?hasScaledContents@QLabel@@QEBA_NXZ
 ?headerData@QAbstractItemModel@@UEBA?AVQVariant@@HW4Orientation@Qt@@H@Z
-?height@QFontMetrics@@QEBAHXZ
 ?hideEvent@QTabBar@@MEAAXPEAVQHideEvent@@@Z
 ?hideText@QToolTip@@SAXXZ
 ?hitTestComplexControl@QCommonStyle@@UEBA?AW4SubControl@QStyle@@W4ComplexControl@3@PEBVQStyleOptionComplex@@AEBVQPoint@@PEBVQWidget@@@Z
@@ -1081,7 +1094,6 @@ $B0B
 ?light@QPalette@@QEBAAEBVQBrush@@XZ
 ?lineWidth@QFrame@@QEBAHXZ
 ?loadResource@QPlainTextEdit@@UEAA?AVQVariant@@HAEBVQUrl@@@Z
-?logicalDotsPerInch@QScreen@@QEBANXZ
 ?logicalDpiY@QPaintDevice@@QEBAHXZ
 ?logicalIndexAt@QHeaderView@@QEBAHAEBVQPoint@@@Z
 ?maxVisibleItems@QComboBox@@QEBAHXZ
@@ -1115,6 +1127,7 @@ $B0B
 ?name@QColor@@QEBA?AVQString@@W4NameFormat@1@@Z
 ?notify@QApplication@@UEAA_NPEAVQObject@@PEAVQEvent@@@Z
 ?number@QString@@SA?AV1@_KH@Z
+?opacity@QPainter@@QEBANXZ
 ?orientation@QAbstractSlider@@QEBA?AW4Orientation@Qt@@XZ
 ?orientation@QHeaderView@@QEBA?AW4Orientation@Qt@@XZ
 ?pageStep@QAbstractSlider@@QEBAHXZ
@@ -1133,7 +1146,6 @@ $B0B
 ?polish@QCommonStyle@@UEAAXPEAVQApplication@@@Z
 ?polish@QCommonStyle@@UEAAXPEAVQWidget@@@Z
 ?polish@QProxyStyle@@UEAAXPEAVQApplication@@@Z
-?primaryScreen@QGuiApplication@@SAPEAVQScreen@@XZ
 ?processEvents@QCoreApplication@@SAXV?$QFlags@W4ProcessEventsFlag@QEventLoop@@@@@Z
 ?proxy@QStyle@@QEBAPEBV1@XZ
 ?qRegisterResourceData@@YA_NHPEBE00@Z
@@ -1210,7 +1222,6 @@ $B0B
 ?setCellWidget@QTableWidget@@QEAAXHHPEAVQWidget@@@Z
 ?setCheckState@QTableWidgetItem@@QEAAXW4CheckState@Qt@@@Z
 ?setCheckState@QTreeWidgetItem@@QEAAXHW4CheckState@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setCheckable@QGroupBox@@QEAAX_N@Z
 ?setChecked@QGroupBox@@QEAAX_N@Z
 ?setClearButtonEnabled@QLineEdit@@QEAAX_N@Z
@@ -1280,6 +1291,7 @@ $B0B
 ?setReadOnly@QPlainTextEdit@@QEAAX_N@Z
 ?setReadOnly@QTextEdit@@QEAAX_N@Z
 ?setRowHidden@QTableView@@QEAAXH_N@Z
+?setScaledContents@QLabel@@QEAAX_N@Z
 ?setSelected@QTreeWidgetItem@@QEAAX_N@Z
 ?setShape@QTabBar@@QEAAXW4Shape@1@@Z
 ?setShowGrid@QTableView@@QEAAX_N@Z
@@ -1389,6 +1401,7 @@ $B0B
 ?value@QSettings@@QEBA?AVQVariant@@AEBVQString@@AEBV2@@Z
 ?value@QSpinBox@@QEBAHXZ
 ?visualRect@QStyle@@SA?AVQRect@@W4LayoutDirection@Qt@@AEBV2@1@Z
+?waitForDone@QThreadPool@@QEAA_NH@Z
 ?warning@QMessageBox@@SAHPEAVQWidget@@AEBVQString@@1HHH@Z
 ?wheelEvent@QPlainTextEdit@@MEAAXPEAVQWheelEvent@@@Z
 ?wheelEvent@QTabBar@@MEAAXPEAVQWheelEvent@@@Z
@@ -1434,7 +1447,6 @@ AngleA
 AngleB
 AntiAliasStrength
 Any Other Cursors Have Tag
-Any request for a duplicate dispatch/mesh shader primitive in an outputbuffer must previously set the dispatch buffer
 Anywhere
 Applies 'Local' on top of 'Base'. Inverse of 'Get Relative Transform'
 Applies B in A's local space.
@@ -1472,14 +1484,20 @@ Asserts/Errors Only
 Async Call Method (Child Cursor) C%d:I%d
 Async Outflow (Child Cursor) C%d:I%d
 At Whitespace
-AtlasToVolumeTextureConversion(3613): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
+AtlasToVolumeTextureConversion(3541): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
 Attachment Text - Attachment Text - Attachment Text
 Auto Restart pending...
 Auto connect at startup
 Auto-Restart when any monitored libraries change
 Auto-reload file
 B channel not found!\n
+B33 B
 BACKSLASH_CHAR
+BIND_LAMBDA
+BROADCAST_INVOKE
+BROADCAST_INVOKE_ARRAY_DOMAIN
+BROADCAST_INVOKE_ARRAY_SIMPLE
+BROADCAST_INVOKE_DOMAIN
 BackBufferBlit
 Background Color...
 Background Setup
@@ -1524,6 +1542,7 @@ BayerGreenSplit
 Begin testing a condition composed of Observable values. Continues checking until canceled.
 Begin testing a condition composed of Observable variable references. Continues checking until true.
 Begin testing a value composed of Observable values. Continues checking until canceled.
+BeginSceneCameraChange
 BestQualityScale
 BinAdd
 BinDiv
@@ -1539,6 +1558,7 @@ BinMod
 BinMul
 BinNe
 BinSub
+BindLambda R%d <- Lambda%d
 Bits/sample must be 1 for Group 3/4 encoding/decoding
 BitsPerSample
 BitsPerSample tag is missing, assuming 8 bits per sample
@@ -1560,10 +1580,10 @@ ButtonHighlight
 ButtonPressed
 ButtonText
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\utils\vconsole2\_vpc_vconsole2\default\win64\_msvc_\Retail\vconsole2.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\common\stackhelpers\stackhelpers_vsymbolmodule_translation.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\extended\generic_expr.g
 C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\scenesystem\sceneobject.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlmap.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\toolrenderutils\toolmatsysutils.cpp
@@ -1586,7 +1606,6 @@ CCITT Group 3
 CCITT Group 4
 CCITT RLE
 CCITT RLE/W
-CColorGradient
 CCommunicationThread
 CEntityNameString
 CFALayout
@@ -1596,8 +1615,10 @@ CGeoViewerObjectId*
 CGeoViewerRenderable
 CGlobalSymbol
 CGlobalSymbolCaseSensitive
+CKMeansClustering::AssignVectorsToClusters(), C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\kmeansclustering.cpp:159
 CKV3MemberNameSet
 CKV3MemberNameWithStorage
+CKV3TransferInterface_PulseEnum_Load
 CLOSE_BRACE
 CLOSE_BRACKET
 CLOSE_PAREN
@@ -1605,13 +1626,11 @@ CLightingControlRig
 CLightingControlRig::DestroyBackgroundMap
 CLightingControlRig::ReloadLightRigConfig
 CLightingPreviewPopupUI
-CMeshPrimitiveOutputBuffer::Next
 CModelPreviewAttachedModel
 CNewParticleEffect::DetectChanges
 COMMA
 CParticleCollectionBindingInstance::HACK_UnusedBinding
-CParticleMgr::SimulateParticles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp:1167
-CPiecewiseCurve
+CParticleMgr::SimulateParticles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp:1166
 CPulseArraylib
 CPulseArraylib::ArrayAppend
 CPulseArraylib::ArrayConcatenate
@@ -1626,6 +1645,7 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
+CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
@@ -1640,14 +1660,14 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
+CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_PickBestOutflowSelector::ProcessSelector
 CPulseCell_RaceCursors::Start
 CPulseCell_RaceCursors::StopWaiting
 CPulseCell_Step_CallExternalMethod '%s'
 CPulseCell_Timeline::Start
-CPulseCell_Value_Curve::Eval
-CPulseCell_Value_Gradient::Eval
 CPulseCell_WaitForCursorsWithTag::Wait
+CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -1662,6 +1682,7 @@ CPulseEnumlib::AddFlags
 CPulseEnumlib::HasAllFlags
 CPulseEnumlib::HasAnyFlags
 CPulseEnumlib::RemoveFlags
+CPulseInstanceLoadAPI
 CPulseMathlib
 CPulseMathlib::AbsFloat
 CPulseMathlib::AbsInt
@@ -1671,12 +1692,18 @@ CPulseMathlib::ArcTan
 CPulseMathlib::CeilingFloat
 CPulseMathlib::ClampFloat
 CPulseMathlib::ClampInt
+CPulseMathlib::ClosestPointOnLine
+CPulseMathlib::ClosestPointOnLineSegment
+CPulseMathlib::ClosestPointOnWorldLine
+CPulseMathlib::ClosestPointOnWorldLineSegment
 CPulseMathlib::ComposeAngles
 CPulseMathlib::ComposeTransforms
 CPulseMathlib::Cos
 CPulseMathlib::CrossProductVector
 CPulseMathlib::Deg2Rad
 CPulseMathlib::DotProductVector
+CPulseMathlib::EvaluateCurve
+CPulseMathlib::EvaluateGradient
 CPulseMathlib::Exp
 CPulseMathlib::Exp2
 CPulseMathlib::FloatToGameTime
@@ -1719,6 +1746,8 @@ CPulseMathlib::Pi
 CPulseMathlib::Pow
 CPulseMathlib::RSqrt
 CPulseMathlib::Rad2Deg
+CPulseMathlib::RandomFloat
+CPulseMathlib::RandomInteger
 CPulseMathlib::RandomWorldPosition
 CPulseMathlib::RemapClampedFloat
 CPulseMathlib::RotateVector
@@ -1748,7 +1777,6 @@ CPulseMathlib::TransformWorldVectorToLocal
 CPulseMathlib::VectorToWorldVector
 CPulseMathlib::WorldTransformInverse
 CPulseMathlib::WorldVectorToVector
-CPulseObservableExpression
 CPulseObservableSwitchCases
 CPulseStringlib
 CPulseStringlib::Format1
@@ -1767,6 +1795,7 @@ CPulseTestScriptLib::RegisterTestCheckpoint
 CPulseTestScriptLib::TestModeAssertTrue
 CPulseType
 CPulseVariant
+CPulse_LambdaDef
 CQAddLogViewerDialog
 CQApplication
 CQAttachmentGeoViewer
@@ -1814,6 +1843,7 @@ CQTabbedToolButton
 CQTextAttachmentViewer
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQVConsole2
 CQVConsoleAbstractNativeEventFilter
 CQVerticalSpacerWidget
@@ -1848,6 +1878,7 @@ CToolSceneSky
 CToolSceneText
 CToolSceneTraceEnvironment::Draw_SetupIdForCurrentNode - Trying to draw with no node. You need to call Draw_SetCurrentNode() before drawing\n
 CToolsVisPopupUI
+CURSOR_MAX_INSTRUCTIONS
 CUtlBlockVector<class Vec2D<float>,int,class CMemAllocAllocator>::GrowCount
 CUtlBlockVector<class std::function<void __cdecl(void)>,int,class CMemAllocAllocator>::GrowCount
 CUtlBlockVector<struct CacheOptimizedTriangle_t,int,class CMemAllocAllocator>::GrowCount
@@ -1890,6 +1921,7 @@ Call Stack
 Call Stack (32 bit pointers)
 Call Stack (64 bit pointers)
 Call Stack (Text)
+Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Camera
 CameraCalibration1
 CameraCalibration2
@@ -1936,6 +1968,11 @@ Close VConsole when connected game/engine closes
 Close VConsole when connected tool framework closes
 Close all tabs except '%1'
 Close all tabs except Default ['%1']
+Closest Point On Line
+Closest Point On Line Segment
+Closest Point On World Line
+Closest Point On World Line Segment
+Color Consistency Partition %d MinBright %f
 ColorMap
 ColorMatrix1
 ColorMatrix2
@@ -1955,6 +1992,10 @@ Compare strings with case sensitivity, in contrast to normal string equality whi
 Completed
 Compose Angles
 Compose Transforms
+CompressBlocksBC1
+CompressBlocksBC3
+CompressBlocksBC6H
+CompressBlocksBC7
 Compression
 Compression algorithm does not support random access
 Compression scheme %u %s decoding is not implemented
@@ -1970,6 +2011,7 @@ ConsecutiveBadFaxLines
 Consider log text only
 ConsoleHistoryHelperTool
 Continued On Same Line.\n\t\tIndented 2 Tabs\nStart Of New Line\tIndented 1 Tab\tIndented 1 Tab\tIndented 1 Tab...
+ConvarHelperTool
 Convenience command to open a web url from a link attachment
 Convert %s R%d <- %s R%d
 Convert degrees (0-180) to radians (0-pi)
@@ -2085,6 +2127,18 @@ Draw in stereo using overlapping red and cyan images
 DrawBoneNamesChanged
 DrawSkyboxChanged
 DumpModeDecode: Not enough data for scanline %d
+EQ_ANIM_SEQUENCE
+EQ_MODEL_MATERIAL_GROUP
+EQ_PARTICLE_EHANDLE
+EQ_QANGLE
+EQ_RESOURCE
+EQ_RESOURCE_NAME
+EQ_SNDEVT_GUID
+EQ_SNDEVT_NAME
+EQ_TRANSFORM
+EQ_TRANSFORMWS
+EQ_VARIANT
+EQ_VDATA_CHOICE
 ERROR! LoadFromJPG( %s ) failed!\n
 ERROR! LoadFromPNG( %s ) failed!\n
 ERROR! LoadFromWebP( %s ) failed!\n
@@ -2103,7 +2157,9 @@ EXRReadFile() - cannot read image data!\n
 Early exit
 EarlyRetireParticleSystems
 Element Access R%d <- R%d[R%d]
+EncodeBC6Blocks
 End.\n
+EndSceneCameraChange
 EnsureCapacity
 EntityName
 EnumWindows
@@ -2170,13 +2226,29 @@ Find all the yielded cursors on this graph with the matching tag and cancel them
 Find all the yielded cursors on this graph with the matching tag and wake them.
 Find first element 'a' which compare equal to 'element' and return its index. Returns -1 if not found.
 Finished SetupMaterialSystem (%0.1fs)\n
+Fire At End
+Fire At Start
 Flash hidden channel activity in log viewer tab
 FlatSelection
 Float To Game Time
 Float( %f )
 FloatBitMap_t: Error loading %s\n
-FloatBitMap_t::LoadFromFile(3805): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
-FloatBitMap_t::LoadFromTGA(2754): Error loading %s\n
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
+FloatBitMap_t::LoadFromFile(3733): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
+FloatBitMap_t::LoadFromTGA(2682): Error loading %s\n
+FloatBitMap_t::WriteToBuffer(1207): Unsupported color format "%s", skipping!\n
+FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping!\n
+FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2323
+FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2435
+FloatBitMap_t::WriteToBufferBC_bcn(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2264
+FloatBitMap_t::WriteToBufferBC_bcn(2135): Error! Allocated %llu bytes when %llu are required!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1265): Error! Temp texture is %d bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1350): Unsupported output color format "%s"!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1359): Error! Allocated %llu bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1367): Error %d returned from ATI_TC_ConvertTexture()!\n
 Floating point "Predictor" not supported with %d data format
 Floor - round float down to nearest integer
 Floor Float
@@ -2196,6 +2268,7 @@ Format3
 Format4
 Format5
 Frac
+Fraction
 Fractional component (ie. returns 0.34 for 12.34)
 Frame Selected
 Frame Visible
@@ -2225,6 +2298,21 @@ GetConst R%d <- C%d (%s)
 GetDomainValue R%d <- DV%d (%s)
 GetInlineCallData
 GetInlineConst R%d <- C%d (%s)
+GetProfile_alpha_basic
+GetProfile_alpha_fast
+GetProfile_alpha_slow
+GetProfile_alpha_ultrafast
+GetProfile_alpha_veryfast
+GetProfile_basic
+GetProfile_bc6h_basic
+GetProfile_bc6h_fast
+GetProfile_bc6h_slow
+GetProfile_bc6h_veryfast
+GetProfile_bc6h_veryslow
+GetProfile_fast
+GetProfile_slow
+GetProfile_ultrafast
+GetProfile_veryfast
 GetTempVar R%d <- 
 GetTranslationData
 GetVar R%d <- V%d (%s)
@@ -2241,7 +2329,9 @@ Grid
 Group3Options
 Group4Options
 HAC K  Unused Binding
+HAtFKA
 HKEY_CURRENT_USER\Software\Valve\GeoView
+HPulseObservableLambda
 Hack Dota Layer Opaque
 Hack Dota Layer Opaque Translucent
 HalftoneHints
@@ -2252,7 +2342,7 @@ Header Color...
 HeaderCheckStateChanged
 HeaderSectionBackground
 HeaderSectionLine
-HelperLoadFbmByFileExtension(3585): Error! Unknown file type for %s\n
+HelperLoadFbmByFileExtension(3513): Error! Unknown file type for %s\n
 HeroViewer
 Hidden Channels
 HiddenIds
@@ -2278,9 +2368,9 @@ IHitTestable
 IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
+INTERNAL_CALL_TO_PULSE
 IP: Unknown
 IPulseGraphLoadErrorReporter
-IPulseInstanceLoadAPI
 IPulseReloadListener
 ISO JBIG
 IToolRenderCallbacks
@@ -2353,6 +2443,7 @@ Invalid tile size y :
 Inverse Rotate Vector
 Inverse Transform Vector
 Invoke '%s' failed with code %d
+Invoke *Broadcast* R%d -> R%d: Cell%d %s
 Invoke Cell%d [eid=%d] %s%s
 Invoke Lib %s
 Is In Test Mode
@@ -2451,9 +2542,9 @@ MAtomicTransfersAsPlainString
 MESSAGE\nColor
 ML_COMMENT
 MPropertyFlattenIntoParentRow
+MPulseEditorSearchExpr
 MPulseExpressionAlias
 MPulseFunctionAddsCursorTag
-MPulseFunctionHiddenInTool
 MSAA Resolve
 MVDataAssociatedFile
 MVDataRoot
@@ -2534,6 +2625,18 @@ Mul R%d <- R%d * R%d
 NColorRoles_Qt
 NEGATIVE_TOK
 NEWLINE
+NE_ANIM_SEQUENCE
+NE_MODEL_MATERIAL_GROUP
+NE_PARTICLE_EHANDLE
+NE_QANGLE
+NE_RESOURCE
+NE_RESOURCE_NAME
+NE_SNDEVT_GUID
+NE_SNDEVT_NAME
+NE_TRANSFORM
+NE_TRANSFORMWS
+NE_VARIANT
+NE_VDATA_CHOICE
 NULL CELL 
 NULL VP8Io parameter in VP8Decode().
 Name\t\t\t\t\tCount\t\tParticle Count\n
@@ -2579,6 +2682,7 @@ Not a valid GeoView File
 Not enough
 Not safe to 'new' this class due to alignment requirements
 NotReloading
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
 Number of devices to create (max %1):
 NumberOfInks
 OPEN_BRACE
@@ -2768,6 +2872,7 @@ OnVisibilityCellClicked
 OnVisibilityHeaderCheckStateChanged
 OnWireframe
 One of the client procedures is NULL pointer.
+Only DXT1/DXT5 online texture compression supported.\n
 Only wrote %d (of %d) values when saving map!
 Open Geo File
 Open In New Log Viewer
@@ -2785,8 +2890,8 @@ Outflow List
 Outgoing Message Overflow! - Discarding\n
 Output aborted.
 OverlayProjectionDirection
-PInstruction_t<43>::Run
 PInstruction_t<44>::Run
+PInstruction_t<45>::Run
 POISONED 
 POS_FLOATLITERAL
 POS_INTLITERAL
@@ -2798,6 +2903,7 @@ PageName
 PageNumber
 PanCamera3D
 PanelID
+Parent Map + VData
 Parent Map: %s\n
 ParseEXRHeaderFromMemory failed! Error message: %s\n
 ParseEXRHeaderFromMemory() failed! Error message: %s\n
@@ -2837,12 +2943,15 @@ PrimaryChromaticities
 Probable infinite loop detected! Terminating pulse cursor after %d consecutive instructions (%s)
 Probable runaway cursor creation detected! Permanently disabling this graph instance (%s)
 Process Selector
+ProcessBC6HResults
 Prop( %s )
 PropWorldOrigin
 Properties...
 Protocol: %d\n
 Pulse domain which enables particle content to query leaf code to introspect game state.
 Pulse: %s 
+PulseExecHistoryCallerInfo_t
+PulseRuntimeLambdaIndex_t
 QAbstractNativeEventFilter
 QAbstractScrollArea
 QDockWidgetTitleButton
@@ -2856,11 +2965,13 @@ Qt regular expression semantics.
 Qt5Concurrent.dll
 Qt::KeyboardModifiers
 Qt::MouseButton
+Quantize to %d Values
 R Sqrt
 R channel not found!\n
 RCON
 RCON server connection address: %s\n
 RCON: 
+RECORD_NEXT_SEQ_POINT
 Rad2 Deg
 Random World Position
 Randomizes the order of items in the array (Knuth/Fisher-Yates Shuffle)
@@ -2922,6 +3033,8 @@ Returns interpolated value between A and B based on frac 0.0 - 1.0 (transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector)
+Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped.
+Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB.
 Returns the constant pi (3.14...)
 Returns the inverse of a transform.
 Returns the inverse of a world transform.
@@ -2944,6 +3057,8 @@ Row pixels integer overflow (rowpixels %u)
 RowsPerStrip
 Run expensive operations like SetupMaterialSystem before they're needed, whenever VConsole is in the background
 Running SetupMaterialSystem '%s'\n
+Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
+Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCOPE_QUALIFIER
 SEMICOLON
 SGILog
@@ -3304,6 +3419,7 @@ Unknown variable %s
 UnknownType
 UnlitPostPass
 Unlock camera and allow perspective to roll upside down
+Unmodified
 Unrecognized error.
 Unsupported PSD color mode!\n
 Unsupported primitive type: %d\n
@@ -3333,6 +3449,7 @@ VConsole2.exe
 VConsole2Tools
 VConsole_SubTool_001_
 VData:%s
+VMAP_AND_VDATA
 VRenderingSiblingWidget
 VSYMMOD::%s( 0x%llX )\n
 VSYMMOD::Creating symbol module and loading symbols for '%s'\n
@@ -3521,9 +3638,11 @@ attr_factory
 autoRestartOnLibraryModification
 bAutoReload
 bChecked
+bCondition
 bEnable
 bIncludeChannelHeader
 bInherit
+bOverflowedInstructionHistoryLimit
 bSet
 bShowDialog
 bValue
@@ -3531,6 +3650,10 @@ backgroundColor
 backgroundSetup
 bad partition length
 bank_unique_id
+bc7e.dll
+bc7e_compress
+bc7e_init
+bc7e_init_params
 bentnormal
 bitmap output needs an 8 bit document
 blendindices
@@ -3610,11 +3733,10 @@ element
 execution_history
 exp2
 expr
-expression_type
+externalCallerInfo
 extrasMinimized
 fail, GetMappedModuleName\n
 fail\n
-fast
 field_name
 filesystem_stdio.dll
 filterDataModifier
@@ -3630,7 +3752,9 @@ flFloat
 flFrac
 flInputA
 flInputB
+flMax
 flMaxRadius
+flMin
 flMinRadius
 flOutputA
 flOutputB
@@ -3667,6 +3791,8 @@ found module '%s', not already loaded at 0x%llx, updating\n
 found pointer in module '%s'\n
 frac
 frameColor
+g2[4] b2[4] b3[4] r0[9:0] g0[9:0] b0[9:0] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+g2[5] g3[4] g3[5] r0[6:0] b3[0] b3[1] b2[4] g0[6:0] b2[5] b3[2] g2[4] b0[6:0] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
 gAMA
 g_pToolSceneNodeFactory
 game:tools/images/common/bindable_camera_fly_toggle.png
@@ -3694,6 +3820,7 @@ get module name\n
 getRelativeTransform
 get_good_mutex
 gfsdk_aftermath_lib.x64.dll
+gradient
 handleDelta
 helpsystem.dll
 hideFromTaskSwitching
@@ -3718,6 +3845,7 @@ inverseRotateVector
 inverseTransformVector
 is also the end of the line, so you must check your lexer rules\n
 is_selector
+ispc_texcomp.dll
 length2d
 length3d
 lerp
@@ -3748,9 +3876,13 @@ m_EvaluateConnection
 m_ExecutableArguments
 m_ExecutablePath
 m_Items
+m_LambdaDefs
+m_LambdaSubscriptions
+m_LatestValue
 m_LibraryPath
 m_MaterialSystemDependencies
 m_MenuString
+m_ResultType
 m_StatusBarTipString
 m_SubToolIconPath
 m_SubTools
@@ -3761,7 +3893,10 @@ m_bAllowAutoStart
 m_bCanAutoComplete
 m_bChildCursorsShouldInherit
 m_bCommand
+m_bCompletingVeryCloseToEndOfInterval
 m_bConditionValue
+m_bFireAtEnd
+m_bFireAtStart
 m_bFirstEvaluate
 m_bInternalUseOnly
 m_bIsDefault
@@ -3772,14 +3907,14 @@ m_bRequiresToolConnection
 m_bShowInUI
 m_hCursorOnOtherGraph
 m_hDef
+m_mapNodeToNewCursorCount
 m_nActiveCase
+m_nCulledCursorCount
 m_nCurrentWakeIndex
-m_nCursorID
-m_nGraphID
+m_nLambdaIdx
 m_nStackDepthWhenAdded
 m_nUniqueID
 m_nYieldToken
-m_pDuplicateDispatchPrimitives != nullptr
 m_szDefault
 m_szFriendlyName
 m_szGroupName
@@ -3805,6 +3940,8 @@ materials/tools/handle_edged_circle_translucent.vmat
 materials/tools/handle_edged_diamond.vmat
 materials/tools/handle_edged_diamond_translucent.vmat
 materials/tools/handle_generic.vmat
+materials/tools/handle_generic_aligned.vmat
+materials/tools/handle_generic_aligned_translucent.vmat
 materials/tools/handle_generic_translucent.vmat
 materials/tools/handle_ring.vmat
 materials/tools/handle_ring_translucent.vmat
@@ -3882,8 +4019,6 @@ parent
 parent_cursor_id
 pixelAspectRatio
 pointer not found in module list\n
-polymorphic_arg
-port_name
 posxyz
 previous_value
 propattr_flatten_into_parent_row
@@ -3904,10 +4039,24 @@ qt5cored.dll
 qt_dockwidget_closebutton
 qt_dockwidget_floatbutton
 qtadvanceddocking-qt5.dll
+r0[5:0] g3[4] b3[0] b3[1] b2[4] g0[5:0] g2[5] b2[5] b3[2] g2[4] b0[5:0] g3[5] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
+r0[7:0] b3[0] b2[4] g0[7:0] g2[5] g2[4] b0[7:0] g3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[5:0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] b3[1] b2[4] g0[7:0] b2[5] g2[4] b0[7:0] b3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[5:0] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] g3[4] b2[4] g0[7:0] b3[2] g2[4] b0[7:0] b3[3] b3[4] r1[5:0] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[5:0] r3[5:0]
+r0[8:0] b2[4] g0[8:0] g2[4] b0[8:0] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10:15] g1[3:0] g0[10:15] b1[3:0] b0[10:15]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] b2[4] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[4:0] b0[10] b2[3:0] r2[3:0] b3[1] b3[2] r3[3:0] b3[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] g3[4] g2[3:0] g1[4:0] g0[10] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[3:0] b3[0] b3[2] r3[3:0] g2[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[4:0] r0[10] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[7:0] r0[10:11] g1[7:0] g0[10:11] b1[7:0] b0[10:11]
+r0[9:0] g0[9:0] b0[9:0] r1[8:0] r0[10] g1[8:0] g0[10] b1[8:0] b0[10]
+r0[9:0] g0[9:0] b0[9:0] r1[9:0] g1[9:0] b1[9:0]
 r_stereo_mode_anaglyph
 r_stereo_mode_crossed
 r_stereo_mode_parallel
 rad2deg
+rand_float
+rand_int
 random_position
 read past end of file (truncated/corrupt)
 readbackcolor
@@ -3944,6 +4093,7 @@ sdktools\bin\vprojUI.exe
 searchContextPostLines
 searchContextPreLines
 searchString
+search_expr
 self
 self_handle
 self_with_wearables
@@ -3974,6 +4124,7 @@ strips
 subscribe
 success\n
 suppress_menu
+switchValue
 system_state
 tEXtSoftware
 tabCloseRequested
@@ -4032,6 +4183,9 @@ v8_icuuc.dll
 v8_libbase.dll
 v8_libplatform.dll
 v8_zlib.dll
+vLineA
+vLineB
+vPoint
 value0
 value1
 value3

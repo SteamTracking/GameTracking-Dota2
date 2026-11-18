@@ -13,6 +13,7 @@
  (Crouch)
  (Pitch)
  (Roll)
+ (anim shape match target)
  (disabled)
  (model ctrl %d)
  + %d static
@@ -73,6 +74,7 @@
  and %i other users
  background-color: #424242; 
  background-color: QLinearGradient( x1 : 0, y1 : 0, x2 : 0, y2 : 1, stop : 0 #292929, stop: 1 #202020 ); 
+ static
  { default }
 !"Calling CBaseEditorApp::SetActiveSession on an unknown session"
 !fixed
@@ -98,7 +100,6 @@ $ha_%s
 %.2fG
 %.2fkg
 %.3f %.3f %.3f
-%0.2f
 %1 File References:\n
 %1 Found Potential Skeletons
 %1 Found Referenced Skeletons
@@ -162,6 +163,7 @@ $ha_%s
 %f%c%f
 %f%f%f%f%f%f %n
 %i shapes
+%s  %.1f
 %s "%s" %d-%s%s
 %s %.3f
 %s %d "%s" {%.2f,%.2f,%.2f}
@@ -197,6 +199,7 @@ $ha_%s
 %s.vmdl
 %s: %.2f
 %s: ( %.2f )
+%s: fit %d dynamic
 %s<br>
 %s\%s%d
 %s\nLocal Revision: %d  Head Revision: %d
@@ -207,6 +210,7 @@ $ha_%s
 &Close
 &Delete Selected
 &Done
+&Live Files
 &New
 &Open
 &Recent Files
@@ -325,6 +329,7 @@ $ha_%s
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothRawTri@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothRigid@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothRodAnim@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothSDF@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothSimdPrism@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetStaticAttributes@CModelPreviewClothSimdRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -368,6 +373,7 @@ $ha_%s
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothRawTri@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothRigid@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothRodAnim@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothSDF@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothSimdPrism@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetStaticAttributes@CModelPreviewClothSimdRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -402,6 +408,7 @@ $ha_%s
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothRawTri@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothRigid@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothRodAnim@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothSDF@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothSimdPrism@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetStaticAttributes@CModelPreviewClothSimdRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -428,6 +435,7 @@ $ha_%s
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothPrism@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothQuad@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothRodAnim@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothSDF@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothSimdPrism@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetStaticAttributes@CModelPreviewClothSimdRod@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -599,7 +607,7 @@ $ha_%s
 .?AV<lambda_1>@?6??FilterInY@CSOAContainer@@QEAAXHVIntAABB_t@@HPEBM_N@Z@
 .?AV<lambda_1>@?6??FilterInZ@CSOAContainer@@QEAAXHVIntAABB_t@@HPEBM_N@Z@
 .?AV<lambda_1>@?DL@??Render@CModelDocSceneHUD@@UEAAXPEAVCToolRenderContext@@@Z@
-.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@
+.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@PEBVCResourceName@@PEBVCUtlString@@4@Z@
 .?AV<lambda_1_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@
 .?AV<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@
 .?AV<lambda_5>@?CF@??GenerateDistanceFieldFromTrianglesUsingHeatMethod@CVoxelArray@@IEAAXPEBV?$Vec3D@M@@HHH@Z@
@@ -623,6 +631,7 @@ $ha_%s
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothParticle@@@@
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothPrism@@@@
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothRod@@@@
+.?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothRodAnim@@@@
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothSDF@@@@
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothSimdPrism@@@@
 .?AV?$CBaseConcreteToolAttr@MVCModelPreviewClothSphere@@@@
@@ -681,6 +690,7 @@ $ha_%s
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRawTri@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRigid@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRod@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRodAnim@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSDF@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdPrism@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdRod@@@@
@@ -740,6 +750,7 @@ $ha_%s
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothParticle@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothPrism@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothRod@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothRodAnim@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothSDF@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothSimdPrism@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCModelPreviewClothSphere@@@@
@@ -792,6 +803,7 @@ $ha_%s
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothRawTri@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothRigid@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothRod@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothRodAnim@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothSDF@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothSimdPrism@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCModelPreviewClothSimdRod@@@@
@@ -897,6 +909,7 @@ $ha_%s
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothParticle@@X@@
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothPrism@@X@@
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothRod@@X@@
+.?AV?$CConcreteToolAttr@MVCModelPreviewClothRodAnim@@X@@
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothSDF@@X@@
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothSimdPrism@@X@@
 .?AV?$CConcreteToolAttr@MVCModelPreviewClothSphere@@X@@
@@ -955,6 +968,7 @@ $ha_%s
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothRawTri@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothRigid@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothRod@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothRodAnim@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothSDF@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdPrism@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdRod@@X@@
@@ -1023,6 +1037,7 @@ $ha_%s
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothParticle@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothPrism@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothRod@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothRodAnim@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothSDF@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothSimdPrism@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCModelPreviewClothSphere@@@@
@@ -1074,6 +1089,7 @@ $ha_%s
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothRawTri@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothRigid@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothRod@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothRodAnim@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothSDF@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothSimdPrism@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCModelPreviewClothSimdRod@@@@
@@ -1125,6 +1141,7 @@ $ha_%s
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothParticle@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothPrism@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothRod@@@@@@
+.?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothRodAnim@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothSDF@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothSimdPrism@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@MVCModelPreviewClothSphere@@@@@@
@@ -1179,6 +1196,7 @@ $ha_%s
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRawTri@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRigid@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRod@@@@@@
+.?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothRodAnim@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSDF@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdPrism@@@@@@
 .?AV?$CConcreteToolAttrSaveLoadHelper@V?$CBaseConcreteToolAttr@VCUtlString@@VCModelPreviewClothSimdRod@@@@@@
@@ -1288,6 +1306,7 @@ $ha_%s
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothParticle@@@@
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothPrism@@@@
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothRod@@@@
+.?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothRodAnim@@@@
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothSDF@@@@
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothSimdPrism@@@@
 .?AV?$CToolAttrGetSetAccess@MVCModelPreviewClothSphere@@@@
@@ -1339,6 +1358,7 @@ $ha_%s
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothRawTri@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothRigid@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothRod@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothRodAnim@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothSDF@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothSimdPrism@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCModelPreviewClothSimdRod@@@@
@@ -1518,7 +1538,7 @@ $ha_%s
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??FilterInY@CSOAContainer@@QEAAXHVIntAABB_t@@HPEBM_N@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??FilterInZ@CSOAContainer@@QEAAXHVIntAABB_t@@HPEBM_N@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?DL@??Render@CModelDocSceneHUD@@UEAAXPEAVCToolRenderContext@@@Z@XPEAVCModelDocAtom@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@XAEBUAssetSelectionInfo_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@PEBVCResourceName@@PEBVCUtlString@@4@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_5>@?CF@??GenerateDistanceFieldFromTrianglesUsingHeatMethod@CVoxelArray@@IEAAXPEBV?$Vec3D@M@@HHH@Z@XHH@std@@
@@ -1672,6 +1692,7 @@ $ha_%s
 .?AVCModelDocHelperType_CModelDocHelper_Capsule@@
 .?AVCModelDocHelperType_CModelDocHelper_ClothChain@@
 .?AVCModelDocHelperType_CModelDocHelper_ClothChainHinge@@
+.?AVCModelDocHelperType_CModelDocHelper_ClothDeformerFfdZ@@
 .?AVCModelDocHelperType_CModelDocHelper_ClothEffectWind@@
 .?AVCModelDocHelperType_CModelDocHelper_ClothElement@@
 .?AVCModelDocHelperType_CModelDocHelper_ClothMorphLayer@@
@@ -1688,6 +1709,7 @@ $ha_%s
 .?AVCModelDocHelperType_CModelDocHelper_FoliageVertexNormals@@
 .?AVCModelDocHelperType_CModelDocHelper_Foot@@
 .?AVCModelDocHelperType_CModelDocHelper_FootCycleOverride@@
+.?AVCModelDocHelperType_CModelDocHelper_GlassFracture@@
 .?AVCModelDocHelperType_CModelDocHelper_HandPose@@
 .?AVCModelDocHelperType_CModelDocHelper_IKChain@@
 .?AVCModelDocHelperType_CModelDocHelper_IKChainJoint@@
@@ -1736,6 +1758,7 @@ $ha_%s
 .?AVCModelDocHelper_Capsule@@
 .?AVCModelDocHelper_ClothChain@@
 .?AVCModelDocHelper_ClothChainHinge@@
+.?AVCModelDocHelper_ClothDeformerFfdZ@@
 .?AVCModelDocHelper_ClothEffectWind@@
 .?AVCModelDocHelper_ClothElement@@
 .?AVCModelDocHelper_ClothMorphLayer@@
@@ -1753,6 +1776,7 @@ $ha_%s
 .?AVCModelDocHelper_FoliageVertexNormals@@
 .?AVCModelDocHelper_Foot@@
 .?AVCModelDocHelper_FootCycleOverride@@
+.?AVCModelDocHelper_GlassFracture@@
 .?AVCModelDocHelper_HandPose@@
 .?AVCModelDocHelper_IKChain@@
 .?AVCModelDocHelper_IKChainJoint@@
@@ -1891,6 +1915,7 @@ $ha_%s
 .?AVCModelPreviewClothCapsule@@
 .?AVCModelPreviewClothCtrlOffset@@
 .?AVCModelPreviewClothCtrlSoftOffset@@
+.?AVCModelPreviewClothDeformer@@
 .?AVCModelPreviewClothDynKinLink@@
 .?AVCModelPreviewClothDynNodeFrictionMap@@
 .?AVCModelPreviewClothEffect@@
@@ -1916,6 +1941,7 @@ $ha_%s
 .?AVCModelPreviewClothRevOffset@@
 .?AVCModelPreviewClothRigid@@
 .?AVCModelPreviewClothRod@@
+.?AVCModelPreviewClothRodAnim@@
 .?AVCModelPreviewClothRope@@
 .?AVCModelPreviewClothSDF@@
 .?AVCModelPreviewClothSimdPrism@@
@@ -1969,6 +1995,7 @@ $ha_%s
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_BreakPiecePreview@@
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_ChildDocument@@
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_ClothChain@@
+.?AVCNodeEditorWidgetFactory_CQNodeEditor_ClothFfd@@
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_ClothNodeList@@
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_ExtractMotion@@
 .?AVCNodeEditorWidgetFactory_CQNodeEditor_GenericButtons@@
@@ -2145,6 +2172,7 @@ $ha_%s
 .?AVCQNodeEditor_BreakPiecePreview@@
 .?AVCQNodeEditor_ChildDocument@@
 .?AVCQNodeEditor_ClothChain@@
+.?AVCQNodeEditor_ClothFfd@@
 .?AVCQNodeEditor_ClothNodeList@@
 .?AVCQNodeEditor_ExtractMotion@@
 .?AVCQNodeEditor_GenericButtons@@
@@ -2276,6 +2304,7 @@ $ha_%s
 .?AVCTranslateGizmoHelper@@
 .?AVCTranslateGizmoRenderData@@
 .?AVCVectorAlignedVectorAdapter@@
+.?AVCVectorVectorAdapter@@
 .?AVCVolumetricCustomTrace@CParticleSystemQuery_ToolScene@@
 .?AVEBoneSetup@@
 .?AVIAnimationDebugRenderer@@
@@ -2335,6 +2364,7 @@ $ha_%s
 .?AVQSignalMapper@@
 .?AVQSpacerItem@@
 .?AVQStatusBar@@
+.\clips\
 .dmx
 .fbx
 .obj
@@ -2717,6 +2747,7 @@ $ha_%s
 1OnToggleClothBones( bool )
 1OnToggleClothShapes( bool )
 1OnToggleConstraints( bool )
+1OnToggleDNABones( bool )
 1OnToggleFPS( bool )
 1OnToggleGoalCloth( bool )
 1OnToggleGrid( bool )
@@ -2964,7 +2995,7 @@ $ha_%s
 <INVALID EXPRESSION>
 <NO EXPRESSION>
 <NO RULE>
-<No recent files>
+<No files>
 <P><b><FONT COLOR='%1'><big>%2</big></b></P></br>
 <UNKNOWN>
 <Unnamed %i %s>
@@ -2999,6 +3030,7 @@ $ha_%s
 <html><body><p><nobr><pre>%s[%*s]</pre> :: Removed %d frames from end hold at frame %d</nobr>
 <img src='%1' /> Node is disabled, it will not appear in the compiled model.
 <img src='%1' /> Node is suppressed because there is another higher-priority node with the name "%2".
+<missing vertex map>
 <no texture coordinates>
 <no_detail_layers_found>
 <nobr>    </nobr>
@@ -3035,10 +3067,12 @@ $ha_%s
 ??0QMovie@@QEAA@PEAVQObject@@@Z
 ??0QPainter@@QEAA@XZ
 ??0QPlainTextEdit@@QEAA@PEAVQWidget@@@Z
+??0QPointF@@QEAA@NN@Z
 ??0QPolygonF@@QEAA@$$QEAV0@@Z
 ??0QPolygonF@@QEAA@AEBVQRectF@@@Z
 ??0QProgressDialog@@QEAA@AEBVQString@@0HHPEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ??0QRandomGenerator@@QEAA@PEBI0@Z
+??0QRectF@@QEAA@NNNN@Z
 ??0QRegExpValidator@@QEAA@AEBVQRegExp@@PEAVQObject@@@Z
 ??0QRegularExpression@@QEAA@XZ
 ??0QScrollBar@@QEAA@W4Orientation@Qt@@PEAVQWidget@@@Z
@@ -3088,7 +3122,6 @@ $ha_%s
 ??YQString@@QEAAAEAV0@AEBV0@@Z
 ?QStringList_join@QtPrivate@@YA?AVQString@@PEBVQStringList@@PEBVQChar@@H@Z
 ?_fillRange@QRandomGenerator@@AEAAXPEAX0@Z
-?aboutToShow@QMenu@@QEAAXXZ
 ?absoluteDir@QFileInfo@@QEBA?AVQDir@@XZ
 ?absolutePath@QDir@@QEBA?AVQString@@XZ
 ?absolutePath@QFileInfo@@QEBA?AVQString@@XZ
@@ -3117,7 +3150,6 @@ $ha_%s
 ?argToQString@QtPrivate@@YA?AVQString@@VQStringView@@_KPEAPEBUArgBase@1@@Z
 ?at@QString@@QEBA?BVQChar@@H@Z
 ?atEnd@QDataStream@@QEBA_NXZ
-?availableGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?availableSizes@QIcon@@QEBA?AV?$QList@VQSize@@@@W4Mode@1@W4State@1@@Z
 ?baseName@QFileInfo@@QEBA?AVQString@@XZ
 ?begin@QPainter@@QEAA_NPEAVQPaintDevice@@@Z
@@ -3163,14 +3195,11 @@ $ha_%s
 ?count@QTabWidget@@QEBAHXZ
 ?currentChanged@QItemSelectionModel@@QEAAXAEBVQModelIndex@@0@Z
 ?currentChanged@QTabWidget@@QEAAXH@Z
-?currentItem@QTreeWidget@@QEBAPEAVQTreeWidgetItem@@XZ
 ?currentItemChanged@QTreeWidget@@QEAAXPEAVQTreeWidgetItem@@0@Z
 ?currentTime@QTime@@SA?AV1@XZ
-?currentWidget@QTabWidget@@QEBAPEAVQWidget@@XZ
 ?data@QString@@QEBAPEBVQChar@@XZ
 ?defaultFont@QTextDocument@@QEBA?AVQFont@@XZ
 ?defaultSectionSize@QHeaderView@@QEBAHXZ
-?deleteWidget@QWidgetAction@@MEAAXPEAVQWidget@@@Z
 ?devicePixelRatio@QScreen@@QEBANXZ
 ?dir@QFileInfo@@QEBA?AVQDir@@XZ
 ?directory@QFileDialog@@QEBA?AVQDir@@XZ
@@ -3194,7 +3223,6 @@ $ha_%s
 ?exists@QDir@@QEBA_NXZ
 ?exists@QFile@@QEBA_NXZ
 ?expandAll@QTreeView@@QEAAXXZ
-?expandedTo@QSize@@QEBA?AV1@AEBV1@@Z
 ?expandingDirections@QSpacerItem@@UEBA?AV?$QFlags@W4Orientation@Qt@@@@XZ
 ?fileName@QFile@@UEBA?AVQString@@XZ
 ?fileName@QFileInfo@@QEBA?AVQString@@XZ
@@ -3219,7 +3247,7 @@ $ha_%s
 ?hasNext@QDirIterator@@QEBA_NXZ
 ?hasTracking@QAbstractSlider@@QEBA_NXZ
 ?header@QTreeView@@QEBAPEAVQHeaderView@@XZ
-?height@QFontMetrics@@QEBAHXZ
+?height@QSizeF@@QEBANXZ
 ?heightForWidth@QLayoutItem@@UEBAHH@Z
 ?hideSection@QHeaderView@@QEAAXH@Z
 ?horizontalScrollBar@QAbstractScrollArea@@QEBAPEAVQScrollBar@@XZ
@@ -3369,7 +3397,6 @@ $ha_%s
 ?setCellWidget@QTableWidget@@QEAAXHHPEAVQWidget@@@Z
 ?setCheckState@QTableWidgetItem@@QEAAXW4CheckState@Qt@@@Z
 ?setCheckState@QTreeWidgetItem@@QEAAXHW4CheckState@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setColumnHidden@QTableView@@QEAAXH_N@Z
 ?setColumnHidden@QTreeView@@QEAAXH_N@Z
 ?setColumnMinimumWidth@QGridLayout@@QEAAXHH@Z
@@ -3392,6 +3419,7 @@ $ha_%s
 ?setExclusive@QButtonGroup@@QEAAX_N@Z
 ?setExpandsOnDoubleClick@QTreeView@@QEAAX_N@Z
 ?setFileName@QMovie@@QEAAXAEBVQString@@@Z
+?setFixedSize@QWidget@@QEAAXAEBVQSize@@@Z
 ?setFlags@QTreeWidgetItem@@QEAAXV?$QFlags@W4ItemFlag@Qt@@@@@Z
 ?setFlat@QPushButton@@QEAAX_N@Z
 ?setFontFamily@QTextEdit@@QEAAXAEBVQString@@@Z
@@ -3401,7 +3429,6 @@ $ha_%s
 ?setHorizontalScrollMode@QAbstractItemView@@QEAAXW4ScrollMode@1@@Z
 ?setHtml@QTextDocument@@QEAAXAEBVQString@@@Z
 ?setHtml@QTextEdit@@QEAAXAEBVQString@@@Z
-?setIconSize@QAbstractButton@@QEAAXAEBVQSize@@@Z
 ?setIconText@QAction@@QEAAXAEBVQString@@@Z
 ?setIconVisibleInMenu@QAction@@QEAAX_N@Z
 ?setId@QButtonGroup@@QEAAXPEAVQAbstractButton@@H@Z
@@ -3433,6 +3460,7 @@ $ha_%s
 ?setRootIsDecorated@QTreeView@@QEAAX_N@Z
 ?setRowHidden@QTableView@@QEAAXH_N@Z
 ?setRowMinimumHeight@QGridLayout@@QEAAXHH@Z
+?setScaledContents@QLabel@@QEAAX_N@Z
 ?setSectionResizeMode@QHeaderView@@QEAAXHW4ResizeMode@1@@Z
 ?setSectionsClickable@QHeaderView@@QEAAX_N@Z
 ?setSectionsMovable@QHeaderView@@QEAAX_N@Z
@@ -3459,6 +3487,7 @@ $ha_%s
 ?setValue@QProgressBar@@QEAAXH@Z
 ?setValue@QProgressDialog@@QEAAXH@Z
 ?setValue@QSpinBox@@QEAAXH@Z
+?setVerticalHeaderLabels@QTableWidget@@QEAAXAEBVQStringList@@@Z
 ?setVisible@QAction@@QEAAX_N@Z
 ?setVisible@QFileDialog@@UEAAX_N@Z
 ?setWordWrap@QLabel@@QEAAX_N@Z
@@ -3474,9 +3503,6 @@ $ha_%s
 ?sizeHint@QSpacerItem@@UEBA?AVQSize@@XZ
 ?sliderPosition@QAbstractSlider@@QEBAHXZ
 ?sortByColumn@QTableView@@QEAAXHW4SortOrder@Qt@@@Z
-?sortIndicatorOrder@QHeaderView@@QEBA?AW4SortOrder@Qt@@XZ
-?sortIndicatorSection@QHeaderView@@QEBAHXZ
-?sortItems@QTableWidget@@QEAAXHW4SortOrder@Qt@@@Z
 ?sortItems@QTreeWidget@@QEAAXHW4SortOrder@Qt@@@Z
 ?source@QDropEvent@@QEBAPEAVQObject@@XZ
 ?spacerItem@QSpacerItem@@UEAAPEAV1@XZ
@@ -3527,6 +3553,7 @@ $ha_%s
 ?wasCanceled@QProgressDialog@@QEBA_NXZ
 ?widget@QDockWidget@@QEBAPEAVQWidget@@XZ
 ?widgetForAction@QToolBar@@QEBAPEAVQWidget@@PEAVQAction@@@Z
+?width@QSizeF@@QEBANXZ
 @bonemerge
 A fatal error occurred.
 A resource error occurred.
@@ -3541,7 +3568,6 @@ AbandonAnyModalBrowse
 Abort
 Aborted!
 AbsFrames
-Absolute Clip Output Path (else uses ModelDoc relative '.\clips'):
 AcceptDropMenu
 AcceptDropSpecialMenu
 AcceptIfNItems
@@ -3664,7 +3690,9 @@ AnimFrameRangePart_t
 AnimGraph2 Skeleton Files (*.vnmskel )
 Animated Children
 Animated Goal
-Animated Simd Rods
+Animated Rods
+Animated Simd Rods[%d]
+Animated-Length Cloth Rod
 Animated-Length Cloth Rod4
 Animation Clip ( *.vnmclip );
 Animation Controls
@@ -3774,6 +3802,7 @@ Base[2][2]
 Base[2][3]
 BeforeChange
 BeginPick
+BeginSceneCameraChange
 Bind Angles (Absolute)
 Bind Angles (Relative)
 Bind Origin (Absolute)
@@ -3852,7 +3881,7 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\toolattr_p
 CAuthPhysModel
 CBaseEditorApp::SetActiveEditorSession
 CBaseEditorApp::~CBaseEditorApp
-CBaseToolsModelInstance::FilterTriangles(4721): 
+CBaseToolsModelInstance::FilterTriangles(4832): 
 CBindableCamera
 CCWWaa
 CCompressedAnimQuaternion
@@ -3931,6 +3960,7 @@ CModelPreviewClothQuad
 CModelPreviewClothRawTri
 CModelPreviewClothRigid
 CModelPreviewClothRod
+CModelPreviewClothRodAnim
 CModelPreviewClothSDF
 CModelPreviewClothSimdPrism
 CModelPreviewClothSimdRod
@@ -4108,6 +4138,7 @@ CQNodeEditor_AnimOrder
 CQNodeEditor_BreakPiecePreview
 CQNodeEditor_ChildDocument
 CQNodeEditor_ClothChain
+CQNodeEditor_ClothFfd
 CQNodeEditor_ClothNodeList
 CQNodeEditor_ExtractMotion
 CQNodeEditor_GenericButtons
@@ -4170,6 +4201,7 @@ CQTimelineSliceEditor
 CQToolOpenDialog
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQUVMapPopupUI
 CQUndoHistoryWidget
 CQUndoListWidget
@@ -4217,9 +4249,6 @@ CToolSceneSkeletonHelpers
 CToolSceneSky
 CToolSceneText
 CToolSceneTraceEnvironment::Draw_SetupIdForCurrentNode - Trying to draw with no node. You need to call Draw_SetCurrentNode() before drawing\n
-CToolTextureCache - Failed to convert file %s\n
-CToolTextureCache - Unable to read file %s\n
-CToolTextureCache - Unrecognized image format for file %s\n
 CToolsVisPopupUI
 CUtlDict<class CToolSceneHitBoxData::CBoneInfo *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CToolSceneHitBoxData::CMeshHitBoxes *,class CDefFastCaselessStringLess>::Insert
@@ -4233,12 +4262,12 @@ CUtlSortVector<int,class CUtlSortVectorDefaultLess<int>,class CUtlVector<int,int
 CUtlSortVector<unsigned int,class CUtlSortVectorDefaultLess<unsigned int>,class CUtlVector<unsigned int,int,class CUtlVectorMemory_Growable<unsigned int,int,0> > >::Find
 CUtlSortVector<unsigned int,class CUtlSortVectorDefaultLess<unsigned int>,class CUtlVector<unsigned int,int,class CUtlVectorMemory_Growable<unsigned int,int,0> > >::InsertIfNotFound
 CUtlStringMap
+CUtlVector<CUtlString>&
 CalcValueAdded
 CalcValueDivided
 CalcValueMultiplied
 CalcValueSubtracted
 Calculated Mass:
-Camera
 Camera Motion
 CameraLookAtSelection
 Can only merge BreakPieceEmbedded nodes
@@ -4306,6 +4335,7 @@ Change Associated Entity: %s
 Change Cloth Chain
 Change Cloth Rigid Point Cloud Cluster
 Change Cloth Self-Collision Cluster
+Change FFD layer %d %s, %g -> %g
 Change Imported Cloth
 Change Motion Frame
 Change Subtype...
@@ -4354,6 +4384,7 @@ Cloth Axial Edge Bend
 Cloth Container
 Cloth CtrlOffset
 Cloth CtrlSoftOffset
+Cloth Deformer
 Cloth Effect
 Cloth FitMatrix
 Cloth Friction
@@ -4400,7 +4431,6 @@ Collision Mask
 Color 0
 Color 1
 Color Format
-Colors
 Column %d
 Combo(
 ComboBoxCompleterClosed
@@ -4425,7 +4455,6 @@ Compiling dependent assets.
 Compiling...
 Component Display
 Component:
-Compound
 Computing distance field Z slice [%d/%d]\n
 Computing distance field floodfill (pass %d)...\n
 Config refers to ModelConfig/SpawnConfig which includes the Bone Merge Tool and Anim Scope Prop preview
@@ -4544,6 +4573,7 @@ Cycle
 Cycle Start
 CycleChanged
 DMX Files ( *.dmx )
+DNA Skeleton
 DOTAHeroes
 DOTAHerosStaging
 DOTAUnits
@@ -4631,12 +4661,9 @@ DuplicateSelectedNodes
 Duration (Seconds)
 Dynamic Configs
 E&xit
+EDIT_MODE
 ERROR: %s
 EXPECTED FILENAME\n
-EXRReadFile() - B channel not found!\n
-EXRReadFile() - G channel not found!\n
-EXRReadFile() - R channel not found!\n
-EXRReadFile() - cannot read image data!\n
 Econ Preview
 Edge
 Edit Animation Slice
@@ -4663,6 +4690,7 @@ EnableSliders
 Enabled && Disabled Nodes
 End effector bone:
 EndDebugging
+EndSceneCameraChange
 Enforce snake_case Names
 EnlargeGizmo
 Ensure frame rates on all animations are identical and try again.\n
@@ -4721,6 +4749,7 @@ FAILED: %s\n
 FAILED\n
 FBX Files ( *.fbx )
 FBX Files ( *.fbx );;All Files (*)
+FFD-Z %s @ %s
 F_MORPH_SUPPORTED
 Face
 Face Count
@@ -4791,7 +4820,6 @@ FeModelBuilder: Follower #%d %s is following parent #%d %s, which is also a foll
 Feather Weight In
 Feather Weight Out
 Feather Weights (%s-%s)
-Feature disabled
 Field Of View
 File Opened by Other User
 File Opened by Other Users
@@ -4819,6 +4847,7 @@ FindAndReplaceStringAttrVals
 Finish Placing Attachments
 Finished generating distance field nodes.
 First-Person Camera Preview
+Fit Matrices[%d]
 Fix: %s Create Default BodyGroup: %s
 Fix: %s Create Default BodyGroupChoice
 Fix: %s Create: %s
@@ -4873,7 +4902,6 @@ Frame offset added to all resulting animevent frame number. (floor and ceiling r
 Frame: <font color='white'>%d</font> - Cycle: <font color='white'>%.2f</font> - (%.2f/%.2fs)
 Framerate
 Friction [%.2f-%.2f]
-Front
 Gait Speed Enable Changed
 Game Preview
 Game audio muted while tools are active
@@ -5032,14 +5060,20 @@ ImportFromVMDL
 ImportFromVMDLWithBoneFlags
 Importing a file whose mod (%s) is not in the leafiest search path.<br>Do you want to promote your new model to %s, or import the model in-place?<pre>\nPromote : %s\n\nIn-Place: %s</pre>(You can also Browse to specify a custom VMDL.)
 Imports The Skeleton From The Specified File Or SkeletonFile Node
+Impostors: Atlas dimension %d outside of the valid range [2, 32].\n
+Impostors: Baking material group '%s' (%d/%d)\n
 Impostors: Could not add hull texcoords.\n
 Impostors: Could not build hull mesh.\n
 Impostors: Could not find any source meshes.\n
 Impostors: Could not find mesh node: %s. Skipping.\n
 Impostors: Could not get hull.\n
 Impostors: CreateHullFromMeshVertices failed: %s\n
+Impostors: Deleting stale file %s\n
 Impostors: Failed to finalize document.\n
+Impostors: Failed to generate impostor mesh.\n
 Impostors: Failed to write impostor mesh: %s\n
+Impostors: Invalid source LOD group index %d.\n
+Impostors: Material group '%s' not found in document. Skipping override.\n
 Impostors: Source mesh hull points (%d) below the limit of %d.\n
 Impostors: Source meshes have no vertices or zero extent.\n
 In-Game Animation Capture
@@ -5102,7 +5136,6 @@ Invalid argument for SaveEXRImageToFile
 Invalid check_game_data : game_data_class = "%s", No such class found in %s
 Invalid check_game_data archetype, no "game_data_type" string key specified
 Invalid cloth attribute: %s\n
-Invalid hull tree\n
 Invalid or Disabled Referenced Animation:: %s
 Invalid output directory, transmission bake failed.
 Invalid output directory: %s\n
@@ -5151,6 +5184,8 @@ LassoSelect
 LastLoadDirectory
 LastSaveDirectory
 Launch Game Preview
+Layer %1
+Layer %d: Z %g -> %g, XY scale %g, goal %g
 Leader Node (0)
 Leave Uncompiled
 Legacy Animation Attraction
@@ -5166,13 +5201,15 @@ LimitRadius
 Line Text
 List File References
 ListFileReferences
+LiveFilesGroup
+LiveFilesTable
 Load
 Load Animation Capture
 Load Autosave On Crash
 Load Failed
 Load captured animation
-LoadEXRImageFromMemory() failed! Error message: %s\n
 LoadEntityFGD failed
+LoadLiveFile
 LoadRecentFile
 Loaded '%1':\nwith the following errors:\n%2
 Loading mapping from %s file.\n
@@ -5263,6 +5300,7 @@ MaxPolygonsLOD0
 MaxPolygonsLOD1
 Merge
 Mesh '%s' not in any of the defined bodygroups - Fix will create and add it to '%s' bodygroup
+Mesh Compiler RT Proxy Material
 Mesh Count
 Mesh Display
 Mesh Files (*.dmx *.smd *.fbx)
@@ -5980,7 +6018,6 @@ OnSubChainActionInternal
 OnSubstringMatchChanged
 OnSwapSingleMulti
 OnSyncUI
-OnTabChanged
 OnTableDataCellChanged
 OnTargetVersionUpdate
 OnTimelineContextMenu
@@ -6004,6 +6041,7 @@ OnToggleBonePositionLabels
 OnToggleClothBones
 OnToggleClothShapes
 OnToggleConstraints
+OnToggleDNABones
 OnToggleDocumentPreview
 OnToggleFPS
 OnToggleGoalCloth
@@ -6121,14 +6159,16 @@ Outliner
 Outliner Drag After
 Outliner Drag Before
 Outliner Reparent
+Output Path:
 Output VSNAP must be within %s
 Output path cannot be made relative to content path\nThis is likely fine for debug\n\nContinue?
 Outputs
 Overwrite Existing File?
 PARTICLE
+PICK_MULTIPLE
+PICK_SINGLE
 POSITION
 PPPP
-PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 PanCamera3D
 PanTimeline
 Parent Bone[0]
@@ -6140,7 +6180,6 @@ Parent selected nodes under a CLoth Effects Folder
 Parent selected nodes under a Rigid Cloud Cluster
 Parent selected nodes under a Self Collision Cluster
 Parent selected nodes under a Vertex Map
-ParseEXRHeaderFromMemory() failed! Error message: %s\n
 Partially Locked (Driven by some random choices in current config)
 Particle Collision Spheres
 Paste Import Filter
@@ -6259,7 +6298,7 @@ PreviewSelectedSoundEvent
 PreviewSoundEvent
 Previous Step
 PrevtoolsVisMode
-Prisms
+Prisms[%d]
 Probe
 Probe[%u] %s
 Processing.
@@ -6314,6 +6353,8 @@ ReadOnlyKV3
 Reading Model Clip Counts: %1 not displayed
 RealTime
 RebuildAnimList
+RebuildFileListMenu
+RebuildLiveFilesSubmenu
 RebuildOutlinerTree
 RebuildRecentFilesSubmenu
 RebuildTable
@@ -6325,7 +6366,6 @@ Recommended %s Budget:\n
 Recompile Needed
 Recompute Cloth Simluation
 Recover Files?
-Reference
 Regexp Filter
 RelQ0
 Related file to the specified asset.
@@ -6413,6 +6453,7 @@ Resolution
 Resource "%s" requested out of bounds animation decompressor "%d"\n
 Resource "%s" requested unknown animation decompressor "%s"\n
 Resource File
+ResourceCompiler/MeshCompiler/RegisterRayTraceProxyMaterialDependency
 ResourceHandle_t
 Rest Volume
 Rest Volume[0]
@@ -6431,6 +6472,7 @@ Reversed Faces
 Revision
 Rod node indices out of range, malformed node
 Rods
+Rods[%d]
 Root Offset vector will be added to the position of all root bones
 Root Transform
 Root Transform[0]
@@ -6610,6 +6652,7 @@ Show Cloth Shapes
 Show Compiled\nBreakpiece Model
 Show Config
 Show Constraints
+Show DNA Bones
 Show Empty Categories
 Show Error List
 Show Errors & Warnings
@@ -6668,8 +6711,8 @@ Shown bone position & orientations labels will be in parent (local) space, other
 ShrinkGizmo
 Sim FPS
 Sim on Pause
-Simd Prisms
-Simd Rods
+Simd Prisms[%d]
+Simd Rods[%d]
 Simluate model with cloth and export animation with simulated joints
 Simulate All Physics
 Simulate Cloth
@@ -6963,7 +7006,6 @@ Unable to browse to Texture Generator output path: %1\n
 Unable to browse to Texture Generator output path: %s\n
 Unable to create autosave directory
 Unable to fine manifest "soundevents/soundevents_manifest.vrman" which is required, please investigate!
-Unable to load psd: %s\n
 Unable to open
 Unable to write file '%s'
 Undo History
@@ -6974,14 +7016,12 @@ Unit Query Volume (radius %.1f from bounds, limit unused)
 Unit Query Volume (radius limited to %.1f, bounds give %.1f)
 Unknown Snapshot Extraction Error
 Unknown bytecode %d
-Unknown error
 Unknown surface property '%s'
 UnlitPostPass
 Unlock camera and allow perspective to roll upside down
 UnlockCycleFromFrameModifier
 UnlockEventFromPreviewCycle
 Unnamed
-Unsupported PSD color mode!\n
 Untested code path - Morph layers without morphset/flex rules. Will try to map model flex controllers directly to cloth morph layers
 Update referring nodes
 Update version %d->%d
@@ -7095,6 +7135,7 @@ Worldspace
 X-Ray:
 X0 Node Name
 X1 Node Name
+XY-Scale
 Y0 Node Name
 Y1 Node Name
 YawCameraLeft
@@ -7104,6 +7145,8 @@ You have changed the start frame of an animation with events.<br>Should those ev
 You selected the joint chain, but that chain branches. Please select all joints in the chain that you want to make into a dynamically simulated rope.
 You selected the root of the joint chain, but that chain either branches or is empty. Please select all joints in the chain that you want to make into a dynamically simulated rope.
 You're loading a VMODEL file, which is no longer an active extension for ModelDoc files.<br><br><font color='red' size='+2'>Save this file with a VMDL extension before proceeding!</font><br>
+Z-in
+Z-out
 Zero
 Zero Extent
 Zero vertices
@@ -7118,6 +7161,7 @@ ZoomForwardBack2D
 ZoomForwardBack3D
 [%d] %s
 [%d] %s %d%%
+[%d] %s %d%%%s
 [%d] %s:%s
 [%s] / [%s] to cycle modes
 [%s] to reset rotation
@@ -7148,7 +7192,6 @@ _ModelDocCompileProgressListener
 _ModelDocEditorDocument
 __detail_layer_shape_
 __standin_dock
-__tool_texture_cache/%s.vtex
 _a.exr
 _active
 _b.exr
@@ -7165,6 +7208,7 @@ _clothSpring
 _empty
 _hidden
 _impostor.fbx
+_impostor_
 _l_end
 _mirror
 _modeldoc_editor_preview_save
@@ -7187,6 +7231,8 @@ animfilereference
 animgraph2_editor
 animgraph_editor
 ankle_bone
+ankle_l
+ankle_r
 ao_proxy_capsule
 application/x-clothchainattr
 attack
@@ -7208,7 +7254,6 @@ bExpanded
 bFixup
 bFlat
 bFloatOnly
-bFocusEvents
 bHide
 bHighlightSilhouette
 bIgnore
@@ -7233,7 +7278,9 @@ background-color: #22b14c
 background-color: #424242
 background-color: #656565
 background-color: QLinearGradient( x1 : 0, y1 : 0, x2 : 0, y2 : 1, stop : 0 #4C4C4C, stop: 1 #3E3E3E );
+ball_l
 ball_offset
+ball_r
 basehelperwithtransform
 bind_abs_angles
 bind_abs_origin
@@ -7370,6 +7417,7 @@ dire
 disableOptionsWindow
 disable_reset_to_default
 display_hide_from_picker
+dnarig_bones
 dockwidgetsvisibility
 drawGrid
 drawGroundAndAxis
@@ -7426,6 +7474,7 @@ face_count
 fast sweeping block function
 fetched: %s : %.3f\n
 ffValueOut
+fileList
 filterinY
 filterinZ
 finger_index
@@ -7450,7 +7499,6 @@ finger_thumb_2_L
 finger_thumb_2_R
 first_bodygroup
 firstpersoncamerapreview
-fit %d dynamic
 fixable
 flBias=%?
 flCycle
@@ -7468,9 +7516,11 @@ flThickness
 flVaue
 flaps
 floating
+foot_l
 foot_length
 foot_motion_events
 foot_name
+foot_r
 forceVisible
 frags%d.png
 frames
@@ -7576,6 +7626,7 @@ game_preview_maps
 gangindex
 gangtotal
 geometry
+glass_fracture
 gradientx
 gradienty
 gradientz
@@ -7628,6 +7679,7 @@ isPrism
 isVisible
 is_anim_source
 is_compiled_physics
+is_dna_bone
 is_dynamic
 is_error
 is_right_hand
@@ -7672,7 +7724,6 @@ m_bAllowCompounds
 m_bAnimRotation
 m_bConstraintLengthFromAnimation
 m_bDisableContinuousCollisionDetection
-m_bDisableRegionSVM
 m_bEnableEmptyModel
 m_bExplicitLength
 m_bForceSimulated
@@ -7694,6 +7745,7 @@ m_bOsOffset
 m_bPerBoneScaleEnabled
 m_bPositionDriven
 m_bReactToWeapons
+m_bShapeMatchTarget
 m_bShutdown
 m_bSimulated
 m_bStraightBendRods
@@ -7707,6 +7759,8 @@ m_eColorFormat
 m_eMaxBlendWeightsPerVertex
 m_eQueryVolumeMode
 m_eRenderPrimitiveType
+m_fArea
+m_fHoleRadius
 m_flAdditionalShearStretch
 m_flAntiShrink
 m_flBendStiffness
@@ -7745,8 +7799,10 @@ m_nNodes
 m_nParentBone
 m_nRoleHint
 m_nRopeOptions
+m_pieces
 m_sMaterialName
 m_sSemanticName
+m_vecOutline
 m_vecSpeculationPosMiddle
 m_xTransform
 maps\
@@ -7774,6 +7830,7 @@ meshes_enabled_by_default
 min( %s, %s )
 min_bounds
 missing all pose parameters\n
+missing bone '%s'
 model_archetypes
 model_asset
 model_key
@@ -7817,7 +7874,6 @@ nPart
 nRow
 nState
 nSubdivisions
-nTabIndex
 nToolID
 nValidGroupIndex
 nX=%? nY=%?
@@ -7847,9 +7903,6 @@ oldSize
 orient_node_name
 origin_left
 origin_right
-output to: %s/clips/\n
-output to: %s\n
-output to: [Model Path]/clips/\n
 override
 override_attr
 overwrite
@@ -7866,6 +7919,7 @@ pFrom
 pLabel
 pLayout
 pLightRigButton
+pMenu
 pMeshName
 pNewSettings
 pPreset
@@ -7893,6 +7947,7 @@ physicsSelfCollision
 physics_particle_box
 physics_particle_capsule
 physics_particle_sphere
+picker_mode
 portrait
 portrait (inverted)
 pose_controls
@@ -7946,6 +8001,7 @@ rowsContainer
 rtcInterpolate
 rtcIntersect1
 rtcSetGeometryVertexAttributeCount
+rtproxy_hash
 sFilename
 sPoseParamName
 scratchColor
@@ -7971,7 +8027,6 @@ self_with_wearables
 sequence_right
 sequence_type
 shadeReversedFaces
-shape_type
 shift_events
 should_have_prop_data
 showAbsoluteFrameNumbers
@@ -7996,6 +8051,7 @@ showClothBones
 showClothNormals
 showClothVolumetricElements
 showClothWireframe
+showDNABones
 showDynamic
 showFPS
 showGoalCloth
@@ -8400,3 +8456,4 @@ zoom_out_button
 { unnamed %i } %s
 {unnamed}
 |grad| = %g..%g voxels\n
+~~~~~~~~~~~~~~~~C:\buildworker\source2_dota_rel_2019_win64\build\src\toolrenderutils\toolstandardmodels.cpp

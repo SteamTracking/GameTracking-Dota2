@@ -96,7 +96,7 @@
 (channel = 
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 (unnamed)
-*** CVfx::StartupSanityCheck(7535): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** CVfx::StartupSanityCheck(7556): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
 *** Error adding variable to array!\n
 *** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
 *** Error! Multiple dynamic combos are putting the same constant (%s) in different descriptor sets. This won't work correctly.\n
@@ -107,10 +107,10 @@
 *** UNKNOWN ***
 *** VfxInit(188): Don't call VfxInit() more than once!
 *** VfxInit(196): g_pFullFileSystem must be set up before calling VfxInit!\n
-*** VfxPopulateSourceCache(1209): Error opening file "%s"!\n\n
-*** VfxPopulateSourceCache(1217): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForCrc(1369): Source cache incomplete, file "%s" missing!\n\n
-*** VfxReadAndPrepForCrc(1381): Error masking unused parts for "%s"!\n\n
+*** VfxPopulateSourceCache(1221): Error opening file "%s"!\n\n
+*** VfxPopulateSourceCache(1229): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1381): Source cache incomplete, file "%s" missing!\n\n
+*** VfxReadAndPrepForCrc(1393): Error masking unused parts for "%s"!\n\n
 , GetFont used
 , LoadFont used
 , at offset %d
@@ -251,14 +251,14 @@ ANTLR3_EXCEPTION number %d (%08X).\n
 ANTLR3_EXCEPTION: %s\n
 Actually dude, we didn't seem to be expecting anything here, or at least\n
 AddFontMemResourceEx
-AddRenderStateValueLoadToCommandBuffer(1828): Invalid data type for render state variable %s in material "%s"!\n
-AddRenderStateValueLoadToCommandBuffer(1869): Invalid data type for render state variable %s in material "%s"!\n
-AddRenderStateValueLoadToCommandBuffer(1955): Invalid data type for render state variable %s in material "%s"!\n
-AddRenderStateValueLoadToCommandBuffer(1963): Invalid variable source type for render state variable %s in material "%s"!\n
-AddRenderStateVariableToCommandBuffer(2028): Unsupported render state type in material "%s"!\n
-AddRenderStateVariableToCommandBuffer(2176): Unsupported render state in material "%s"!\n
-AddSamplerStateVariableToCommandBuffer(2249): Unsupported sampler state type for "%s" in material "%s"!\n
-AddSamplerStateVariableToCommandBuffer(2271): Unsupported sampler state type for "%s" in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(1895): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(1936): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(2022): Invalid data type for render state variable %s in material "%s"!\n
+AddRenderStateValueLoadToCommandBuffer(2030): Invalid variable source type for render state variable %s in material "%s"!\n
+AddRenderStateVariableToCommandBuffer(2095): Unsupported render state type in material "%s"!\n
+AddRenderStateVariableToCommandBuffer(2243): Unsupported render state in material "%s"!\n
+AddSamplerStateVariableToCommandBuffer(2316): Unsupported sampler state type for "%s" in material "%s"!\n
+AddSamplerStateVariableToCommandBuffer(2338): Unsupported sampler state type for "%s" in material "%s"!\n
 All Bad! Talk to Brian and Alex. g_pRenderHardwareConfig is NULL which means we won't load this material correctly: %s\n
 All static combo permutations currently loaded:\n
 All static combos set to zero
@@ -306,21 +306,21 @@ CFontTextureCache::IsCharCached
 CMatSystemTexture::SetMaterial
 CMatSystemTexture::SetSubTextureRGBA(256): 
 CMaterial2::ComputeMaterialBatchableFlags
-CMaterial2::GetMode(643): Material "%s" is requesting a bad mode "%s"!\n
-CMaterial2::GetVertexShaderInputSignature(780): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from!\n
-CMaterial2::GetVertexShaderInputSignature(812): Error! Material "%s" doesn't have a CVsInputSignatureVector!\n
-CMaterial2::GetVertexShaderInputSignature(830): Error! Material "%s" has invalid signature index %d!\n
-CMaterial2::LoadShadersAndSetupModes(1662): Error creating shader %s for material %s!\n
-CMaterialMode::ComputeWorkItemsToSetupStaticCombosForMode(2974): Failed call to FindOrCreateStaticComboDataInCache()!\n
-CMaterialMode::FindOrLoadVfx(2475): DxSupportLevel %d not supported!\n
-CMaterialSystem2::DynamicShaderCompile_UnloadAllMaterials(1073): ERROR!!! Shaders not freed before shader reload! (See spew above)\n\n
+CMaterial2::GetMode(644): Material "%s" is requesting a bad mode "%s"!\n
+CMaterial2::GetVertexShaderInputSignature(781): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from!\n
+CMaterial2::GetVertexShaderInputSignature(813): Error! Material "%s" doesn't have a CVsInputSignatureVector!\n
+CMaterial2::GetVertexShaderInputSignature(831): Error! Material "%s" has invalid signature index %d!\n
+CMaterial2::LoadShadersAndSetupModes(1663): Error creating shader %s for material %s!\n
+CMaterialMode::ComputeWorkItemsToSetupStaticCombosForMode(3064): Failed call to FindOrCreateStaticComboDataInCache()!\n
+CMaterialMode::FindOrLoadVfx(2486): DxSupportLevel %d not supported!\n
+CMaterialSystem2::DynamicShaderCompile_UnloadAllMaterials(1079): ERROR!!! Shaders not freed before shader reload! (See spew above)\n\n
 CMaterialSystem2::FrameUpdate
-CMaterialSystem2::GetErrorMaterial(505): GetErrorMaterial() called when m_pMaterialTypeManager == NULL!\n
+CMaterialSystem2::GetErrorMaterial(507): GetErrorMaterial() called when m_pMaterialTypeManager == NULL!\n
 CMaterialSystem2::Init(153): ERROR! Empty shader mode string found! Use "Default" instead!\n
 CMaterialSystem2::Init(169): ERROR! Shader mode "%s" has unsupported type "%s" specified gameinfo.gi!\n
 CMaterialSystem2::SetRenderStateForMode
-CMaterialSystem2::Shutdown(486): ERROR!!! Materials not released by other systems on shutdown! (See spew above)\n
-CMaterialSystem2::Shutdown(491): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above)\n
+CMaterialSystem2::Shutdown(488): ERROR!!! Materials not released by other systems on shutdown! (See spew above)\n
+CMaterialSystem2::Shutdown(493): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above)\n
 CMaterialSystem2Utils
 CMaterialSystem2Utils::GenerateMipMaps: Can't get resources for compute shader, falling back to normal mipgen.\n
 CMaterialSystem2Utils::RenderConvexGeometry
@@ -362,10 +362,10 @@ CUtlMemoryBlockAllocator<struct CFontTextureCache::Page_t,class CMemAllocAllocat
 CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CFontTextureCache::CacheEntry_t,unsigned short>,class CMemAllocAllocator>::AddPage
 CUtlNTree overflow!\n
 CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer\n
-CVfx::CreateFromVcs(8254): Error opening file %s\n
-CVfx::CreateFromVcs(8287): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8300): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8329): VCS %s Unserialize hit EOF\n
+CVfx::CreateFromVcs(8264): Error opening file %s\n
+CVfx::CreateFromVcs(8297): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8310): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8339): VCS %s Unserialize hit EOF\n
 CVfx::ParseResourceFileHeader
 CVfxStaticComboData::Decompress
 Cannot allocate abstract class
@@ -440,22 +440,22 @@ G(knN
 GLSL.std.450
 Geometry Shader
 GetCharABCWidthsW
-GetDefaultValueFromVariableDescription(399): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
-GetDefaultValueFromVariableDescription(404): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetDefaultValueFromVariableDescription(411): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetDefaultValueFromVariableDescription(416): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
 GetGlyphOutlineA
-GetRenderStateValue(1036): Invalid data type for render state variable %s in material "%s"!\n
-GetRenderStateValue(1089): Invalid data type for render state variable %s in material "%s"!\n
-GetRenderStateValue(1096): Error evaluating expression for render state variable %s in material "%s"!\n
-GetRenderStateValue(1102): Invalid variable source type for render state variable %s in material "%s"!\n
-GetSpecConstantValues(1292): Specialization constant "%s" in material "%s" is driven by a DynamicParams expression, which cannot be baked into the shader.\n
-GetSpecConstantValues(1302): Could not evaluate specialization constant "%s" in material "%s"! Talk to a programmer!\n
-GetSpecConstantValues(1322): Specialization constant "%s" (id %u) in material "%s" resolved to both %u and %u.\n
-GetValueFromDynamicMaterialParam(541): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
-GetValueFromDynamicMaterialParam(546): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
-GetValueFromMaterialParam(459): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
-GetValueFromMaterialParam(464): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
-GetValueFromMaterialParamAsVector4D(1528): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
-GetValueFromMaterialParamAsVector4D(1533): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetRenderStateValue(1095): Invalid data type for render state variable %s in material "%s"!\n
+GetRenderStateValue(1148): Invalid data type for render state variable %s in material "%s"!\n
+GetRenderStateValue(1155): Error evaluating expression for render state variable %s in material "%s"!\n
+GetRenderStateValue(1161): Invalid variable source type for render state variable %s in material "%s"!\n
+GetSpecConstantValues(1351): Specialization constant "%s" in material "%s" is driven by a DynamicParams expression, which cannot be baked into the shader.\n
+GetSpecConstantValues(1361): Could not evaluate specialization constant "%s" in material "%s"! Talk to a programmer!\n
+GetSpecConstantValues(1381): Specialization constant "%s" (id %u) in material "%s" resolved to both %u and %u.\n
+GetValueFromDynamicMaterialParam(553): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromDynamicMaterialParam(558): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetValueFromMaterialParam(471): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromMaterialParam(476): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
+GetValueFromMaterialParamAsVector4D(1595): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s"\n
+GetValueFromMaterialParamAsVector4D(1600): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s"!\n
 Glyph Miss: FontHandle_t:0x%8.8llx (%s), %s\n
 GraphicsMisc
 HEADER
@@ -483,9 +483,9 @@ MakeOrthonormalForward
 MakeOrthonormalRight
 Malgun Gothic
 Marlett
-MatPrintShaderInfo(3585): Error reading index!\n
-MatPrintShaders(3302): pVfx == NULL!\n
-MatPrintShaders(3351): pVfx == NULL!\n
+MatPrintShaderInfo(3539): Error reading index!\n
+MatPrintShaders(3256): pVfx == NULL!\n
+MatPrintShaders(3305): pVfx == NULL!\n
 MatUtilsRenderMesh
 MatUtilsRenderOutlinedRect
 MatUtilsRenderPrimitives
@@ -541,6 +541,7 @@ PC_SM_6_0_VULKAN
 PLAT_
 POSITION
 PROGRAM
+PS_CS
 PS_RENDER_STATE
 PS_RS
 PS_RTX
@@ -579,6 +580,7 @@ S_EXECUTION_REORDERING
 S_GPU_DEVICE_ID
 S_GPU_VENDOR_ID
 S_MOLTEN_VK
+S_NEEDS_MESHLET_OVERFLOW_HANDLING
 S_REVERSE_DEPTH_BUFFER
 S_SHADER_QUALITY
 S_SUBGROUP_WAVE_OPS
@@ -586,15 +588,15 @@ S_SUPPORTS_CLIP_DISTANCE
 S_SUPPORTS_DX_11_1
 S_TOOLS_ENABLED
 S_VR
-SetRenderStateValueFromVariable(1161): Unsupported render state type in material "%s"!\n
-SetSamplerStateValueFromVariable(1179): Sampler index %d out of bounds for "%s" in material "%s"!\n
-SetSamplerStateValueFromVariable(1252): Unsupported sampler state type for "%s" in material "%s"!\n
+SetRenderStateValueFromVariable(1220): Unsupported render state type in material "%s"!\n
+SetSamplerStateValueFromVariable(1238): Sampler index %d out of bounds for "%s" in material "%s"!\n
+SetSamplerStateValueFromVariable(1311): Unsupported sampler state type for "%s" in material "%s"!\n
 SetSubTextureRGBA: Invalid texture id %i\n
 SetTextAlign
 SetTextureRGBA: Invalid texture id %i\n
-SetVariable(1413): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s"!\n
-SetVariable(1430): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer!\n
-SetVariableValue(991): Unknown variable type for %s in material "%s"!\n
+SetVariable(1472): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s"!\n
+SetVariable(1489): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer!\n
+SetVariableValue(1003): Unknown variable type for %s in material "%s"!\n
 Shader %s attribute "%s" has inconsistent value or type across multiple shaders of a feature combo! [
 Shader %s doesn't support compile target %s\n
 Shader Quality set to %d\n
@@ -668,9 +670,8 @@ Version
 Vertex Shader
 VertexColorUVPos_t
 VertexUVPosColorNormalAndTangent_t
-Vfx file "%s" has both compute shader and other shaders. Compute shaders must be the only shader type in a vfx file.\n
 VfxComboType_t
-VfxDynamicShaderCompile(), C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp:8911
+VfxDynamicShaderCompile(), C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp:8921
 VfxInit
 VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
 VfxLoadShaderSource(77): Cannot read file "%s"\n
@@ -705,14 +706,14 @@ WARNING: Invalid resource version (%d): %s\n
 \n*** A feature alias in %s doesn't start with "F_"! Aborting shader compile!\n\n
 \n*** A feature in %s doesn't start with "F_"! Aborting shader compile!\n\n
 \n*** A static combo in %s doesn't start with "S_"! Aborting shader compile!\n\n
-\n*** CMaterial2::LoadShadersAndSetupModes(1600): Error! Trying to load material "%s" without any params!\n
-\n*** CVfx::ParseBoolFromFile(6845): Error opening file "%s"!\n\n
-\n*** CVfx::ParseCombosAndRulesFromFileHelper(7042): Error opening file "%s"!\n\n
-\n*** CVfx::ParseDescriptionFromFile(6930): Error opening file "%s"!\n\n
-\n*** CVfx::ParseFeaturesFromFile(6531): Error opening file "%s"!\n\n
-\n*** CVfx::ParseIncludeFiles(6489): Error opening include file in features list"%s"!\n\n
-\n*** CVfx::ParseModesFromFile(6339): Error opening file "%s"!\n\n
-\n*** CVfx::ParseVersionFromFile(6891): Error opening file "%s"!\n\n
+\n*** CMaterial2::LoadShadersAndSetupModes(1601): Error! Trying to load material "%s" without any params!\n
+\n*** CVfx::ParseBoolFromFile(6866): Error opening file "%s"!\n\n
+\n*** CVfx::ParseCombosAndRulesFromFileHelper(7063): Error opening file "%s"!\n\n
+\n*** CVfx::ParseDescriptionFromFile(6951): Error opening file "%s"!\n\n
+\n*** CVfx::ParseFeaturesFromFile(6552): Error opening file "%s"!\n\n
+\n*** CVfx::ParseIncludeFiles(6510): Error opening include file in features list"%s"!\n\n
+\n*** CVfx::ParseModesFromFile(6360): Error opening file "%s"!\n\n
+\n*** CVfx::ParseVersionFromFile(6912): Error opening file "%s"!\n\n
 \n*** Combo "%s" in %s doesn't match a known combo source!\n\n
 \n*** Combo "%s" in %s either does not follow the 0..N format, is not a valid dynamic combo name, or doesn't match an existing feature or mode argument!\n\n
 \n*** Combo "%s" in %s has arg %s that doesn't match an existing feature!\n\n
@@ -767,21 +768,21 @@ WARNING: Invalid resource version (%d): %s\n
 \n*** Unable to parse Version in HEADER section of %s!\n\n
 \n*** Unknown rule "%s" in %s!\n\n
 \n*** Unknown text found in FEATURES section in %s: "%s"\n\n
-\n*** VfxGetCompileTargetsFromVfxFile(1484): Error opening file "%s"!\n\n
-\n*** VfxGetUsedShaderProgramsFromVfxFile(1561): Error opening file "%s"!\n\n
+\n*** VfxGetCompileTargetsFromVfxFile(1496): Error opening file "%s"!\n\n
+\n*** VfxGetUsedShaderProgramsFromVfxFile(1573): Error opening file "%s"!\n\n
 \n//-----------------------------------\n
-\nCMaterial2::LoadShadersAndSetupModes(1595): Error! Material "%s" is already loaded!\n
-\nCMaterial2::LoadShadersAndSetupModes(1626): Cannot find shader entry in material "%s"! Using error.vfx!\n
-\nCMaterial2::LoadShadersAndSetupModes(1666): Error creating shader %s and cannot load error.vfx instead!\n
-\nCMaterial2::LoadShadersAndSetupModes(1705): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader!\n
-\nCMaterial2::LoadShadersAndSetupModes(1717): Error creating fallback shader %s for %s for material %s!\n
-\nCMaterial2::LoadShadersAndSetupModes(1721): Error creating fallback shader %s for %s and cannot load error.vfx instead!\n
-\nCMaterial2::LoadShadersAndSetupModes(1748): Error creating shader %s for material %s!\n
-\nCMaterial2::LoadShadersAndSetupModes(1753): Error creating shader %s and cannot load error.vfx instead!\n
-\nCMaterial2::LoadShadersAndSetupModes(1763): Error creating static combos for shader %s and error.vfx instead!\n
-\nCMaterialMode::ComputeRenderablePassesForContextInternal(3397): All bad! The error material failed in dynamic shader compile!\n
-\nCMaterialMode::CreateCommandBuffer(4310): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s\n
-\nInitDynamicShaderCompileDLL(119): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable!\n
+\nCMaterial2::LoadShadersAndSetupModes(1596): Error! Material "%s" is already loaded!\n
+\nCMaterial2::LoadShadersAndSetupModes(1627): Cannot find shader entry in material "%s"! Using error.vfx!\n
+\nCMaterial2::LoadShadersAndSetupModes(1667): Error creating shader %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1706): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader!\n
+\nCMaterial2::LoadShadersAndSetupModes(1718): Error creating fallback shader %s for %s for material %s!\n
+\nCMaterial2::LoadShadersAndSetupModes(1722): Error creating fallback shader %s for %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1749): Error creating shader %s for material %s!\n
+\nCMaterial2::LoadShadersAndSetupModes(1754): Error creating shader %s and cannot load error.vfx instead!\n
+\nCMaterial2::LoadShadersAndSetupModes(1764): Error creating static combos for shader %s and error.vfx instead!\n
+\nCMaterialMode::ComputeRenderablePassesForContextInternal(3487): All bad! The error material failed in dynamic shader compile!\n
+\nCMaterialMode::CreateCommandBuffer(4431): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s\n
+\nInitDynamicShaderCompileDLL(120): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable!\n
 \nMS,\nVS_MS_RTX
 \nPS_RENDER_STATE
 \nRTX
@@ -789,7 +790,7 @@ WARNING: Invalid resource version (%d): %s\n
 \nUsage: mat_assert_on_shader_use [shader_substring]\n       (no arguments disables the assert)\n\nExample: mat_assert_on_shader_use error.vfx - Assert when the error shader is used\n         mat_assert_on_shader_use sky       - Assert when sky.vfx or sky_cheap.vfx is used\n\n
 \nVCS file format is invalid for %s\n
 \nVCS file version is %d instead of %d for %s\n
-\nVfxDynamicShaderCompile(8992): Dynamic shader compile failed for %s in "%s"!\n
+\nVfxDynamicShaderCompile(9002): Dynamic shader compile failed for %s in "%s"!\n
 \n\t%02i%% (%i/%i)
 \n\t\tDynamic:
 \src\shaders\

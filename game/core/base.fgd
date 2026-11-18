@@ -21,6 +21,7 @@
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblocklight.vmat"		group =	"Tool Brushes/Block Light"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolssolidblocklight.vmat"	group =	"Tool Brushes/Block Light"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolslightmapres.vmat"		group =	"Tool Brushes/Lightmap Space"		}
+@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolslightmesh.vmat"		group =	"Tool Brushes/Light Mesh"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "visblocker.vmat"			group =	"Tool Brushes/Vis Blocker"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "skyvisblocker.vmat"			group =	"Tool Brushes/Vis Blocker"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsinvisible.vmat"		group =	"Tool Brushes/Invisible"			}
@@ -30,6 +31,7 @@
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsoccluder.vmat"			group =	"Tool Brushes/Occluder"				}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsprecipitation.vmat"	group =	"Tool Brushes/Precipitation"		}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblock_los.vmat"		group =	"Tool Brushes/Block LOS"			}
+@VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblack.vmat"			group =	"Tool Brushes/Black"				}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsblockbullets.vmat"		group =	"Tool Brushes/Clip/Bullets"			}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolsnavspaceclip.vmat"		group =	"Tool Brushes/Clip/Nav Space Clip"	}
 @VisGroupFilter { filter_type = "toolsMaterial"		material = "toolssteamaudiofullabsorption.vmat"	group =	"Tool Brushes/Steam Audio"	}
@@ -211,6 +213,8 @@
 	input SetRenderAttribute(string) : "Set the value of a render attribute used in material dynamic expressions. Examples: $myfloat=0.25 $myfloat4=1.0,0.0,1.0,1.0"
 	input ClearRenderAttribute(string) : "Remove a render attribute previously set by SetRenderAttribute, restoring it to its previous value."
 
+	input SetMaterialGroup(api)
+
 	// Outputs
 	output OnIgnite(void) : "Fired when this object catches fire."
 	output OnDestructibleHitGroupDamageLevelChanged(api)
@@ -324,7 +328,7 @@
 	disablereceiveshadows(boolean) [ group="Render Properties" ] : "Disable Receiving Shadows" : 0
 
 	input Alpha(integer) : "Set the sprite's alpha (0 - 255)."
-	input Color(color255) : "Set the sprite's color (R G B)."
+	input Color(api)
 
 	fademindist(float) [ group="Render Properties" ] : "Start Fade Dist" : -1 : "Distance at which the overlay starts to fade (-1 = subtract from fademaxdist)."
 	fademaxdist(float) [ group="Render Properties" ] : "End Fade Dist" : 0 : "Maximum distance at which the overlay is visible (0 = don't fade out)."
@@ -1021,8 +1025,23 @@ metadata
 
 @PointClass base( Targetname, SndOpvarSetPointBaseAddition1, SndOpvarSetPointBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") = snd_opvar_set_path_corner:
 [
-	pathCornerEntityName(target_destination) : "Path Corner Starting Entity" : "" : "The name of the entity that is at the start of the path"
+	pathCornerEntityName(target_destination) : "Path Corner Starting Entity" : "" : "The name of the entity that is at the start of the path. A path_corner or snd_opvar_set_path_helper."
 	useParentedPath(bool) : "Enable Path Corner Parenting" : "false" : "Enables the path corner entities to be parented to another entity and update their position accordingly"
+]
+
+@PointClass base( Targetname ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") line(255 255 255, targetname, target) = snd_opvar_set_path_helper :
+	"One node in a chain for snd_opvar_set_enclosure or snd_opvar_set_path_corner. Link nodes with Next Helper."
+[
+	target(target_destination) : "Next Helper" : "" : "The next snd_opvar_set_path_helper in the chain."
+	isDoor(boolean) : "Door To Next" : 0 : "The segment from this helper to the next is a doorway."
+]
+
+@PointClass base( Targetname, SndOpvarSetPointBase ) tags( Sound ) iconsprite("editor/snd_opvar_set.vmat") drawangles{} line(255 255 255, targetname, pathHelperEntityName) vecline_local( heightTop, 200, 255, 200 ) vecline_local( heightBottom, 255, 200, 200 ) = snd_opvar_set_enclosure :
+	"Sets an opvar to Distance Map Maximum inside a closed loop of snd_opvar_set_path_helpers and Distance Map Minimum outside. The loop is flattened onto the plane through this entity, using its local Z as up."
+[
+	pathHelperEntityName(target_destination) : "Path Helper Starting Entity" : "" : "The first snd_opvar_set_path_helper in the loop. The last helper always closes back to it."
+	heightTop(local_point) : "Height Top" : "0 0 128" : "Top of the inside region. Only this point's local Z is used."
+	heightBottom(local_point) : "Height Bottom" : "0 0 -16" : "Bottom of the inside region. Only this point's local Z is used."
 ]
 
 @BaseClass = SndOpvarSetPointAutoRoomBase
@@ -2560,7 +2579,7 @@ metadata
 	input StartSpawnGroupUnload(void) : "Start unloading the level."
 ]
 
-@PointClass tags( Info ) base(Targetname) size(-8 -8 -8, 8 8 8) = info_null : 
+@PointClass tags( Info ) base(Targetname) size(-8 -8 -8, 8 8 8) = info_null :
 	"An entity that's immediately removed on spawning. Useful as a spotlight target."
 [
 ]
@@ -3090,7 +3109,6 @@ metadata
 [
 	lip(integer) : "Lip" : 0 : "The amount, in inches, of the button to leave sticking out of the wall it recedes into when pressed. Negative values make the button recede even further into the wall."
 	master(string) : "Master (Obsolete)" : : "Legacy support: The name of a master entity. If the master hasn't been activated, this button cannot be pressed."
-	override_anticipation_name(string) : "Override Anticipation Action Name" : : "Specify an override for the GetUsePreviewAction for this button (the anticipation type)"
 	forcenpcexclude(boolean) : "Force NPC Exclude" : "0" : "NPC movement and collision will ignore this button"
 
 	spawnflags(flags) =
@@ -4209,7 +4227,7 @@ metadata
 		2 : "Preserve entity names (Don't do name fixup)" : 1
 	]
 
-	asynchronous(boolean) : "Asynchronous Spawn" : 0 : "Allows you to asynchronously spawn the entities referred to by the point template, which will happen at some point later after all dependent resources are downlaoded from UGC servers + asynch streamed in. Asynch point templates have the benefit that they don't precache resources that we never spawn."
+	asynchronous(boolean) : "Asynchronous Spawn" : 0 : "Allows you to asynchronously spawn the entities referred to by the point template, which will happen at some point later after all dependent resources are downloaded from UGC servers + asynch streamed in. Asynch point templates have the benefit that they don't precache resources that we never spawn."
 
 	timeoutInterval(float) : "Timeout Interval" : "0" : "The amount of seconds after which, if any client hasn't finished streaming the necessary assets, that client is disconnected and the template spawns anyways. Only used in asynchronous point_templates. 0 means use some reasonable default set in the code."
 
@@ -4417,6 +4435,8 @@ metadata
 	filterclass(string) : "Filter Classname" : : "The class name to filter by. If the filter mode is Allow, only entities whose "+
 		"class name matches the given string will pass the filter. If the filter mode is Disallow, "+
 		"all entities EXCEPT those whose class name matches the given string will pass the filter."
+	match_subclass(boolean) : "Match Subclass" : 0 : "If set, the filter compares against the activator's entity subclass name "+
+		"instead of its class name. Entities without a subclass never match."
 ]
 
 @FilterClass base(BaseFilter) iconsprite("editor/filter_class.vmat") = filter_activator_mass_greater :
@@ -5391,7 +5411,7 @@ metadata
 	forcenpcexclude(boolean) : "Force NPC Exclude" : "0" : "If set, NPC movement will ignore this prop"
 ]
 
-@PointClass base(PosableSkeleton, AcousticProperty) tags( PropStatic ) color(255 255 0) line(255 0 255, targetname, cubemap) sphere(fademindist, 200 200 200) sphere(fademaxdist, 200, 200, 200) sphere(grass_exclusion_radius, 100 200 100, singleSelect) 
+@PointClass base(PosableSkeleton, AcousticProperty) tags( PropStatic ) color(255 255 0) line(255 0 255, targetname, cubemap) sphere(fademindist, 200 200 200) sphere(fademaxdist, 200, 200, 200)
 	model
 	{
 		static = true
@@ -5463,7 +5483,7 @@ metadata
 	fademaxdist(float) [ group="Render Properties" ] : "End Fade Dist" : 0 : "Maximum distance at which the prop is visible (0 = don't fade out)."
 	baketoworld(boolean) [ group="Build Settings" ] : "Force Bake To World" : 0 : "If true mesh will be baked/merged into the world geometry of the map so that the model is not referenced at runtime. Use this if you want light probed static meshes to merge"
 	disablemerging(boolean) [ group="Build Settings" ] : "Disable Mesh Merging" : 0 : "If true this will not be merged with other geometry during map compile (reduces rendering efficiency)."
-	renderamt(integer) [ group="Render Properties" ] : "Alpha" : 255 : "Alpha of the fade, where 0 = fully transparent and 255 = fully opaque." 
+	renderamt(integer) [ group="Render Properties", min="0", max="255" ] : "Alpha" : 255 : "Alpha of the fade, where 0 = fully transparent and 255 = fully opaque." 
 	rendertocubemaps(boolean) [ group="Render Properties" ] : "Render to Cubemaps" : 1 : "If true, this geometry renders into baked cube maps"	
 	renderwithdynamic(boolean) [ group="Render Properties" ] : "Render with Dynamic Objects" : 0 : "Render this object with other dynamic objects"
 ]
@@ -6324,6 +6344,9 @@ metadata
 	use_landmark_angles(boolean) : "Use Landmark Orientations" : 0 : "Rotate around landmark by relative landmark orientations"
 	mirror_player(boolean) : "Mirror Player" : 0 : "Mirror the player teleport position through the plane defined by the trigger's origin and up vector"
 	check_if_dest_clear_for_player(boolean) : "Only Spawn-Valid Destinations" : 0 : "Only teleport if there is a clear teleport destination."
+	move_world_decals(boolean) : "Move World Decals With Player" : 0 : "When a player crosses into another level, the world decals inside this trigger (bullet holes etc.) move by the landmark offset "+
+		"onto the destination, for every client. Only for when the destination is a copy of this space (e.g. the other level's copy of an airlock or elevator car). "+
+		"Needs a Local Destination Landmark, and not Use Landmark Orientations or Mirror Player."
 ]
 
 @SolidClass base(Targetname) tags( Trigger ) 
@@ -7135,7 +7158,7 @@ metadata
 ]
 
 
-@SolidClass base(PhysicsTypeOverride_Mesh, Targetname, Parentname, Global, EnableDisable, Shadow) = func_shatterglass : "A procedurally-shattering glass panel." 
+@SolidClass base(PhysicsTypeOverride_Mesh, Targetname, Parentname, Global, EnableDisable, Shadow, AcousticProperty) = func_shatterglass : "A procedurally-shattering glass panel." 
 [
 	input Hit(void) : "Damages the panel"
 	input Shatter(void) : "Completely breaks the panel"
@@ -7229,7 +7252,7 @@ metadata
 	box_mins(vector) : "Box Mins" : "-64 -64 -64"
 	box_maxs(vector) : "Box Maxs" : "64 64 64"
 	FogStrength( float ) : "Fog strength" : "1.0" : "Technically the scattering value. Higher values make denser fog."
-	FalloffExponent( float ) : "Falloff Exponent" : "1.0" : "Controls the fall off curve for the fog at the edges"
+	FalloffExponent( float ) { min="0.001" max="2" } : "Falloff Exponent" : "1.0" : "Controls the fall off curve for the fog at the edges"
 	Shape(intchoices) : "Falloff Shape" : "0" : "" = 
 	[
 		"0" : "Linear (Box) Falloff"
@@ -7314,6 +7337,16 @@ centered_box_oriented
 		"1" : "Only Static Props"
 		"2" : "Only World Geometry"
 	]
+]
+
+@SolidClass tags( Lighting )
+	metadata
+	{
+		auto_apply_material = "materials/tools/toolslightmesh.vmat"
+	}
+= func_lightmesh : "A compile-time mesh that drives the lightmap of its target static props. It is not rendered and is not added to the map."
+[
+	targets(node_id_List) : "Target Objects" : "" : "Static props whose lightmap is driven by this light mesh."
 ]
 
 

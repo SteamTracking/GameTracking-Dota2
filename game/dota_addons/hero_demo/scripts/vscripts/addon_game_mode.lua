@@ -126,6 +126,7 @@ function CHeroDemo:InitGameMode()
 	
 	CustomGameEventManager:RegisterListener( "SpawnCreepsButtonPressed", function(...) return self:OnSpawnCreepsButtonPressed( ... ) end )
 	CustomGameEventManager:RegisterListener( "SpawnSingleCreepWaveButtonPressed", function(...) return self:OnSpawnSingleCreepWaveButtonPressed( ... ) end )
+	CustomGameEventManager:RegisterListener( "GiveMadstoneButtonPressed", function(...) return self:OnGiveMadstoneButtonPressed( ... ) end )
 	CustomGameEventManager:RegisterListener( "TowersEnabledButtonPressed", function(...) return self:OnTowersEnabledButtonPressed( ... ) end )
 	
 	CustomGameEventManager:RegisterListener( "PauseButtonPressed", function(...) return self:OnPauseButtonPressed( ... ) end )

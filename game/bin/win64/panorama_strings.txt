@@ -95,6 +95,7 @@ $.Schedule() - run JS func
 %-18s
 %-23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s\n
 %-8d
+%.*s_%s.%s
 %.14s.%03dZ
 %019llu
 %02X%02X
@@ -187,6 +188,9 @@ $.Schedule() - run JS func
 %sweb%s%s
 %sweb/shared/public/%s
 &lt;Needs a description&gt;
+'%s' cannot be listed, because it is the default source.
+'%s' is listed more than once.
+'%s' is not a valid language.
 '()+,-./:=?
 'id' or 'name' missing
 ((long)msg_hdr->msg_len) > 0
@@ -260,6 +264,12 @@ $.Schedule() - run JS func
 .?AV?$CBaseSymbol@$00@panorama@@
 .?AV?$CMultipleCallResults@VCLoadFileURLTask@panorama@@UHTTPRequestCompleted_t@@@@
 .?AV?$CPanelPtr@VIUIPanel@panorama@@@panorama@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??AssignVectorsToClusters@CKMeansClustering@@AEAAXXZ@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_bc7e@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@@@YAXHHPEBD$$QEAV1?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@@@YAXHHPEBD$$QEAV1?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_2>@?9??WriteToBufferBC_bcn@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CRefCounted1@VIUIDoubleBufferedTexture@panorama@@V?$CRefCountServiceBase@VCRefMT@@@@@@
 .?AV?$CRefCounted1@VIUIPanelImageSourceTexture@panorama@@V?$CRefCountServiceBase@VCRefMT@@@@@@
 .?AV?$CRefCounted1@VIUIStyleFileSet@panorama@@V?$CRefCountServiceBase@VCRefMT@@@@@@
@@ -832,8 +842,7 @@ $.Schedule() - run JS func
 <xs:element name="%s" type="%sType" />\n\t\t
 <xs:element name="%s" type="%sType" />\n\t\t\t
 === %s ===\n
-=aes(partial)
-?333333
+=C33[C
 ??0EscapableHandleScope@v8@@QEAA@PEAVIsolate@1@@Z
 ??0HandleScope@v8@@QEAA@PEAVIsolate@1@@Z
 ??0TryCatch@v8@@QEAA@PEAVIsolate@1@@Z
@@ -1162,6 +1171,7 @@ B-409
 B-571
 B2I_DSS
 B2I_RSA
+B33 B
 B64_READ_ASN1
 B64_READ_PKCS7
 B64_WRITE_ASN1
@@ -1294,6 +1304,7 @@ BrowserGoToURL
 Buffer too small
 By default after slicing the image as specified in border-image-slice the 9 regions will be used to fill the space specified by the standard border-width property.  This border-image-width property may be used to override that and specify different widths.  The values appear in top, right, bottom, left order, the 2nd through 4th may be omitted and corresponding earlier values will be used.  Values may be straight floats which specify a multiple of the corresponding border-width value, a percentage (which is relative to the size of the border image in the corresponding dimension), or 'auto' which means to use the intrinsic size of the corresponding border-image-slice.<br><br><b>Examples:</b><pre>border-image-width: 1 1 1 1;\nborder-image-slice: 50% 50% 50% 50%;\nborder-image-slice: auto;</pre>
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\panorama\_vpc_panorama\default\win64\_msvc_\Retail\panorama.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\common\jpegloader_common.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\panorama\basesymbol.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\panorama\data\imageloader.cpp
@@ -1381,6 +1392,7 @@ CImageResourceManager::LoadImageFromMemory
 CImageResourceManager::LoadImageInternal
 CImageResourceManager::LoadLocalFileSynchronous
 CImageResourceManager::LoadLocalFileSynchronous()
+CKMeansClustering::AssignVectorsToClusters(), C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\kmeansclustering.cpp:159
 CLIENT_CERTIFICATE
 CLIENT_FINISHED
 CLIENT_HELLO
@@ -1593,7 +1605,6 @@ CUIPanel::Initialize
 CUIPanel::MarkStylesDirty
 CUIPanel::RemoveAndDeleteChildren
 CUIPanel::RemoveAndDeleteChildrenOfType
-CUIPanel::RemoveClasses
 CUIPanel::SetFocusInternal
 CUIPanel::SetFocusToNextPanel
 CUIPanel::SetInputFocusToFirstOrLastChildInFocusOrder
@@ -1668,11 +1679,16 @@ Closing joystick %i\n
 Code Signing
 Code=
 Cofactor: 
+Color Consistency Partition %d MinBright %f
 Comma separated list of images or movies to draw in the background. Can specify "none" to not draw a background layer. Combined with background-position, background-size, background-texture-size and background-repeat values.<br><br><b>Example:</b><pre>background-image: url("file://{images}/default.tga"), url( "file://{movies}/Background1080p.webm" );</pre>
 CompileScript
 Compiler.
 Compiler.If
 Compiler.If not permitted for this element.
+CompressBlocksBC1
+CompressBlocksBC3
+CompressBlocksBC6H
+CompressBlocksBC7
 Conflicting @define value for '%s', was '%s', new '%s'
 ConstructMFString
 ConstructString
@@ -2244,6 +2260,7 @@ EdiPartyName
 EdiPartyName:<unsupported>
 Email address mismatch
 Encipher Only
+EncodeBC6Blocks
 EndFrame
 EndFrame - opacity lru
 EndFrame - rt cache cleanup
@@ -2348,7 +2365,21 @@ First argument to RegisterForUnhandledEvent is not a valid event type
 First argument to RegisterForUnhandledEvent must be a string (event type)
 First argument to RegisterKeyBind must be a panel object or string (input namespace, may be empty string)
 First argument to Schedule() must be a number as a delay in seconds
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
 FloatBitMap_t::LoadFromFloatBitmap: Received improper bitmap size, skipping!\n
+FloatBitMap_t::WriteToBuffer(1207): Unsupported color format "%s", skipping!\n
+FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping!\n
+FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2323
+FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2435
+FloatBitMap_t::WriteToBufferBC_bcn(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2264
+FloatBitMap_t::WriteToBufferBC_bcn(2135): Error! Allocated %llu bytes when %llu are required!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1265): Error! Temp texture is %d bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1350): Unsupported output color format "%s"!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1359): Error! Allocated %llu bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1367): Error %d returned from ATI_TC_ConvertTexture()!\n
 FlushConsoleInputBuffer
 Follow user preference
 Found button without associated event: %s
@@ -2429,12 +2460,30 @@ GetHeight
 GetInterpolatedMaxWidth
 GetInterpolatedScale2DCentered
 GetKeyState
+GetProcessWindowStation
+GetProfile_alpha_basic
+GetProfile_alpha_fast
+GetProfile_alpha_slow
+GetProfile_alpha_ultrafast
+GetProfile_alpha_veryfast
+GetProfile_basic
+GetProfile_bc6h_basic
+GetProfile_bc6h_fast
+GetProfile_bc6h_slow
+GetProfile_bc6h_veryfast
+GetProfile_bc6h_veryslow
+GetProfile_fast
+GetProfile_slow
+GetProfile_ultrafast
+GetProfile_veryfast
 GetQueueStatus
 GetScriptOrigin
 GetSystemTime
+GetUserObjectInformationW
 GetWidth
 Gets the time this frame started, in seconds since panorama was initialized
 GlobalMemoryStatus
+HAtFKA
 HB=\nHB
 HEAD 
 HIGH
@@ -2518,6 +2567,7 @@ Internal error occurred
 Internal failure creating panel in panorama
 InternalLambdaEvent
 International Organizations
+Invalid 'languages' attribute "%s"; %s
 Invalid @keyframe name (missing quotes or empty)
 Invalid Panel ID "%s"; %s
 Invalid XML format: %s
@@ -2525,10 +2575,10 @@ Invalid basic quad material\n
 Invalid button: %s
 Invalid certificate verification context
 Invalid clip-path %s, expecting url(#...)\n
-Invalid content height (flChildHeight = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)
-Invalid content width (flChildWidth = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)
-Invalid content wrap offset (flChildWrapOffset = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)
-Invalid content wrap row size (flChildWrapRowSize = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)
+Invalid content height (flChildHeight = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)\n
+Invalid content width (flChildWidth = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)\n
+Invalid content wrap offset (flChildWrapOffset = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)\n
+Invalid content wrap row size (flChildWrapRowSize = %f) calculated during child panel "%s"; this panel "%s" (reverting to %f)\n
 Invalid data found at end of file: %s
 Invalid event name to %s
 Invalid event name to DispatchEvent ('%s')
@@ -2633,6 +2683,7 @@ Mail
 Make a web request (disabled)
 Management
 Mask Algorithm: 
+MessageBoxW
 Microsoft CSP Name
 Microsoft Commercial Code Signing
 Microsoft Encrypted File System
@@ -2727,7 +2778,6 @@ Netscape SSL server
 Netscape Server Gated Crypto
 Never close the group automatically (used to indicate an error like the process exiting unexpectedly)
 No document element found
-No error
 Non Critical
 Non Repudiation
 Nonce
@@ -2735,6 +2785,7 @@ Not After:
 Not Before: 
 Not a key frame.
 Not enough arguments to %s
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
 O/lc\r=<1\r-,!@
 OBJ lib
 OBJECT DESCRIPTOR
@@ -2811,6 +2862,7 @@ Object Signing
 Object Signing CA
 OnJSScheduledFunction
 OnPanelDeleted
+Only DXT1/DXT5 online texture compression supported.\n
 Only Some Reasons
 OpenMutexA
 OpenSSL 1.0.2j  26 Sep 2016
@@ -3034,6 +3086,7 @@ Paint
 PaintEmptyFrameAndForceLaterRepaint
 Panel
 Panel %s is reloading layout %s\n
+Panel of type '%s' defines attribute '%s', which is generated from its 'languages' attribute.
 Panel of type '%s' has duplicate definition for attribute '%s'.
 PanelImageSource
 PanelLayoutInvalidated
@@ -3075,6 +3128,7 @@ Private-Key: (%d bit)\n
 Privilege Withdrawn
 Proc-Type: 
 Proc-Type: 4,
+ProcessBC6HResults
 ProcessMouseTrackingResults
 ProcessRemoteInput
 Property getter for CPanelStyle called on invalid object
@@ -3088,6 +3142,7 @@ Proxy Certificate Information
 Public Key
 Public-Key
 Public-Key: (%d bit)\n
+Quantize to %d Values
 Queue async event '%s' (delay %.2f to deliver at %.2f) for '%s' ( 0x%p )\n
 R2I_CERTPOL
 R2I_PCI
@@ -3705,6 +3760,7 @@ TextEntryFocusChange(): Set for %s\n
 TextEntryInvalid(): Cleared for %s\n
 TextInputFinished
 TextInputHandlerStateChange
+The 'languages' attribute requires a 'src' attribute with a 'file://' image source.
 The following file has been changed on disk but is also edited in memory. Would you like to throw out in memory changes?\n\nFile:\n%s
 Third argument to RegisterEventHandler is not a valid callback function
 Third argument to RegisterKeyBind is not a valid callback function or event name
@@ -3772,11 +3828,11 @@ Unexpected parsing error - popping panel off empty stack
 Unexpected protocol specified in file reference; expected 'file://' or 's2r://'.
 Unexpected transform type
 Unknown SVG attribute type\n
-Unknown error
 Unknown panel type in style selector: %s
 Unknown transform type %s
 Unknown transform type\n
 Unknown(%d)
+Unmodified
 Unprocessed type %d\n
 UnreadyForDisplay
 Unrecognized panel type: %s
@@ -4084,6 +4140,7 @@ additional verification
 address=
 aes iv setup failed
 aes key setup failed
+aes(partial)
 aes-128-cbc
 aes-128-cbc-hmac-sha1
 aes-128-cbc-hmac-sha256
@@ -4282,6 +4339,10 @@ base64 decode error
 base64 encoding
 basicConstraints
 basicOCSPResponse
+bc7e.dll
+bc7e_compress
+bc7e_init
+bc7e_init_params
 beige
 bevel
 bf-cbc
@@ -5064,7 +5125,6 @@ darkturquoise
 darkviolet
 dashed
 dashed-light
-data
 data between ccs and finished
 data greater than mod len
 data is wrong
@@ -5402,6 +5462,7 @@ excluded subtree violation
 excludedSubtrees
 expand on static bignum data
 expanded
+expected a comma-separated list of language names, found an empty value.
 expected a section name
 expecting a boolean
 expecting a dh key
@@ -5453,6 +5514,7 @@ file://{resources}/default_keybinds.cfg
 file://{resources}/keybinds.cfg
 file://{resources}/window_keybinds.cfg
 filename too big
+fill
 fill 
 fill-opacity
 fill-parent-flow
@@ -5503,6 +5565,8 @@ fullname
 func(%lu)
 function %s()
 functionality not supported
+g2[4] b2[4] b3[4] r0[9:0] g0[9:0] b0[9:0] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+g2[5] g3[4] g3[5] r0[6:0] b3[0] b3[1] b2[4] g0[6:0] b2[5] b3[2] g2[4] b0[6:0] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
 g_iStylePropertyIndexNextFree < 255
 gainsboro
 game/
@@ -6017,6 +6081,7 @@ ipsecTunnel
 ipsecUser
 iqmp
 iqmp not inverse of q
+ispc_texcomp.dll
 issuer
 issuer capabilities
 issuer decode error
@@ -6264,6 +6329,8 @@ krb5 server tkt not yet valid
 krb5 server tkt skew
 l <= sizeof(c->iv)
 language
+languages
+languagesrc-
 last octet invalid
 last-child
 lastModifiedBy
@@ -6772,7 +6839,6 @@ otherRevInfoFormat
 othername
 othername error
 othername:<unsupported>
-out of memory
 overscroll-x
 overscroll-y
 p is not prime
@@ -6847,9 +6913,10 @@ panorama::CSource2Surface::DrawBasicQuads
 panorama::CSource2Surface::DrawFancyQuad
 panorama::CStyleSymbol::CStyleSymbol
 panorama::CUIEngine::PanelDestroyed
-panorama::CUIEngine::UpdateVideoTextures(7612): 
+panorama::CUIEngine::UpdateVideoTextures(7620): 
 panorama::CUIPanel::AttachChild
 panorama::CUIPanel::DetachChild
+panorama::CUIPanel::RemoveClasses
 panorama::CUIPanel::~CUIPanel
 panorama::CUIRenderDeviceSource2::BSetTextureData
 panorama::CUIWindowInput::ChangeHoverState
@@ -7063,6 +7130,18 @@ qcStatements
 qualifiers
 qualityLabelledData
 quiet
+r0[5:0] g3[4] b3[0] b3[1] b2[4] g0[5:0] g2[5] b2[5] b3[2] g2[4] b0[5:0] g3[5] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
+r0[7:0] b3[0] b2[4] g0[7:0] g2[5] g2[4] b0[7:0] g3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[5:0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] b3[1] b2[4] g0[7:0] b2[5] g2[4] b0[7:0] b3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[5:0] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] g3[4] b2[4] g0[7:0] b3[2] g2[4] b0[7:0] b3[3] b3[4] r1[5:0] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[5:0] r3[5:0]
+r0[8:0] b2[4] g0[8:0] g2[4] b0[8:0] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10:15] g1[3:0] g0[10:15] b1[3:0] b0[10:15]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] b2[4] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[4:0] b0[10] b2[3:0] r2[3:0] b3[1] b3[2] r3[3:0] b3[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] g3[4] g2[3:0] g1[4:0] g0[10] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[3:0] b3[0] b3[2] r3[3:0] g2[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[4:0] r0[10] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[7:0] r0[10:11] g1[7:0] g0[10:11] b1[7:0] b0[10:11]
+r0[9:0] g0[9:0] b0[9:0] r1[8:0] r0[10] g1[8:0] g0[10] b1[8:0] b0[10]
+r0[9:0] g0[9:0] b0[9:0] r1[9:0] g1[9:0] b1[9:0]
 rFC822localPart
 radial
 radial( 

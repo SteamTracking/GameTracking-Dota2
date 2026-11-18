@@ -12,7 +12,6 @@
    Mip   Resident   Overhead   Overhead %%   256 pages\n
    SST: %.1f MB, uncompressed: %d MB (compression: %.1f%%)\n
    SST: EMPTY (no static geo rendered into any tiles, must be flagged as baked only)\n
-  ! %d leaked drawlists\n
   %-11s %10s %11s %12s %12s %9s\n
   %-14s %10s   %s\n
   %-14s %10s   (%s depth-only, %s fast-path depth-only)\n
@@ -95,6 +94,7 @@
  CentralNode=1
  DebugLevel:
  DockingEnable
+ Faint horizontal lines are the baseline averages.
  HasCentralNodeChild
  HasGamepad
  HasMouseCursors
@@ -278,6 +278,7 @@
 ##VerticalScrolling
 ##XContext
 ##YContext
+##baseline%d
 ##bez
 ##canvas
 ##cell
@@ -288,6 +289,7 @@
 ##columns_count
 ##csx
 ##current
+##cursor
 ##curvessegmentoverride
 ##data
 ##dndxy
@@ -297,7 +299,9 @@
 ##frames
 ##gradient1
 ##gradient2
+##graph
 ##hex
+##hidebelow
 ##hsv
 ##image
 ##input_end_frame
@@ -317,6 +321,7 @@
 ##palette
 ##panel
 ##picker
+##plot
 ##pos
 ##preview
 ##previewing_picker
@@ -327,6 +332,7 @@
 ##right
 ##routes
 ##sec
+##seconds
 ##selectable
 ##show_table_rects_type
 ##show_windows_rect_type
@@ -382,6 +388,7 @@ $%.0f
 %*s%s%*s
 %*sHello, sailor! Making this line long enough for the example.
 %*sThis is line %d
+%+.3f
 %-16s 
 %.*s
 %.*s\n
@@ -390,6 +397,7 @@ $%.0f
 %.0f
 %.0f (Always)
 %.0f deg
+%.0f s
 %.0f us
 %.0f%%
 %.0f/%.0f
@@ -404,6 +412,7 @@ $%.0f
 %.2f
 %.2f ms
 %.2f px
+%.2f s
 %.2f x %.2f
 %.2f\nsec
 %.2fms
@@ -445,12 +454,14 @@ $%.0f
 %d assets
 %d columns
 %d current allocations
+%d frames over %.1f s. %s Click a marker to plot it.%s
 %d past errors skipped.
 %d some text
 %d vertices, %d indices (%d triangles)
 %d visible windows, %d current allocations
 %d%%
 %d%s
+%d,%.4f
 %d-%02d
 %d-%02d-%02d
 %d-%d
@@ -470,10 +481,12 @@ $%.0f
 %i - %i
 %i The quick brown fox jumps over the lazy dog
 %i The quick brown fox jumps over the lazy dog\n
+%i barrier groups
 %i dynamic, %i cached, %i failed, %i lru'd in %ix%i atlas | %i requests, %i reused, %i re-renders drawn (%i held)
 %i filtered textures
 %i loaded models, %i allocations.  using %.1f%% of atlas
 %i object%s, %i draw call%s, %s tris
+%i of %i passes reordered, %i schedule batches
 %i requests, %i reused without re-render%s
 %i resources used
 %i textures
@@ -504,6 +517,7 @@ $%.0f
 %s is wrong format %s - expected %s!\n
 %s###Menu_%02d
 %s###doc%d
+%s##%d
 %s##path
 %s%s%s%s%s
 %s'%s'
@@ -533,6 +547,8 @@ $%.0f
 %s\n%.0f/%.0f
 %s\nIndex: %d
 %s\nLOD Level: %d Draw Calls: %d Triangles: %d
+%s_frames.csv
+%s_summary.csv
 %u ms
 '%c' (0x%04X)
 (%.02f)
@@ -594,6 +610,8 @@ $%.0f
 , %s alpha-tested
 , aliased to the error texture
 , still streaming
+,%.3f
+,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%d,
 - First Input that contains the glyph is used.\n- Use ImFontConfig::GlyphExcludeRanges[] to specify ranges to ignore glyph in given Input.\n- Prefer using a small number of ranges as the list is scanned every time a new glyph is loaded,\n  - e.g. GlyphExcludeRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };\n- This tool doesn't cache results and is slow, don't keep it open!
 - Load additional fonts with io.Fonts->AddFontXXX() functions.\n- Read FAQ and docs/FONTS.md for more details.
 - Load additional fonts with io.Fonts->AddFontXXX() functions.\n- The font atlas is built when calling io.Fonts->GetTexDataAsXXXX() or io.Fonts->Build().\n- Read FAQ and docs/FONTS.md for more details.\n- If you need to add/remove fonts at runtime (e.g. for DPI change), do it before calling NewFrame().
@@ -605,13 +623,12 @@ $%.0f
 --%02d
 --%02d-%02d
 --> granting current route\n
-->\n  [%s:%s]
-->\n  [%s:%s] %s
 .%03d %03d
 ..-         -XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          - XX       XX ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         -X..X     X..X---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         -X...X   X...XX           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         - X...X X...X XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         -  X...X...X  X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       -   X.....X   X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    -    X...X    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  -     X.X     X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X -    X...X    X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..X-   X.....X   X......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..X-  X...X...X  X.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........X- X...X X...X X........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............X-X...X   X...XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............X-X..X     X..XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............X- XX       XX X......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............X--------------X...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X -             X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X -             X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X -             XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X  -                   X..X  -       -  X...X  -         X...X         -  X..X           X..X  -           -     X........X  -                    XX   -       -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  -             -------------       -    X    -           X           -X.....................X-           -------------------                                 ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                                 -  X..X           X..X  -                                                                                                 -   X.X           X.X   -                                                                                                 -    XX           XX    -                                           
 ................
 .?AUReadStatsCallback_t@?4??OnBeginSubmitDisplayLists@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@
 .?AUReadStatsCallback_t@?8??OnBeginSubmitDisplayLists@CBaseSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@
+.?AUVtDecompressedTile_t@@
 .?AV<lambda_1>@?1???$DoNotDeleteReadCallback@VIReadBufferCallback@@@@YA?AV?$shared_ptr@VIReadBufferCallback@@@std@@PEAVIReadBufferCallback@@@Z@
 .?AV<lambda_1>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@
 .?AV<lambda_1>@?1??DrawInstances@CSceneObjectDesc@@IEAAXPEAVIRenderContext@@PEAUPerInstanceParams_t@2@HPEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@PEAUMaterialBindState_t@2@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@PEAUPerInstancePackedShaderData_t@@H@Z@
@@ -625,40 +642,43 @@ $%.0f
 .?AV<lambda_1>@?4??AddEnvironmentMapsForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_1>@?4??AtFinish@CSceneView@@QEAAXXZ@
-.?AV<lambda_1>@?4??KickoffBatchList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@AEAUDrawListVector_t@@AEAUGeneratePrimitivesArgs_t@ISceneObjectDesc@@_N@Z@
+.?AV<lambda_1>@?4??KickOffBatchList@CSceneSystem@@AEAAXPEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@$$QEAV?$CUtlLeanVector@UCMeshDrawPrimitive_t@@HVCMemAllocAllocator@@@@@Z@
 .?AV<lambda_1>@?5??DrawArray@CAggregateSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
 .?AV<lambda_1>@?6??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
 .?AV<lambda_1>@?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
-.?AV<lambda_1>@?6??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
+.?AV<lambda_1>@?6??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@V?$shared_ptr@V?$CUtlLeanVector@UCMeshDrawPrimitive_t@@HVCMemAllocAllocator@@@@@4@@Z@
 .?AV<lambda_1>@?7???R<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@
-.?AV<lambda_1>@?9??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
-.?AV<lambda_1>@?BC@??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@@Z@
-.?AV<lambda_1>@?CJ@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
+.?AV<lambda_1>@?7??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
+.?AV<lambda_1>@?BC@??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@@Z@
+.?AV<lambda_1>@?CP@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_1>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
-.?AV<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@
+.?AV<lambda_1>@?M@??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
+.?AV<lambda_1>@?O@??Thread_ProcessProceduralLayer@CSceneSystem@@AEAAXPEAVCSceneView@@PEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@@Z@
 .?AV<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_2>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@
 .?AV<lambda_2>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@
+.?AV<lambda_2>@?1??Thread_RenderViewLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
 .?AV<lambda_2>@?5??DrawArray@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
 .?AV<lambda_2>@?9??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
 .?AV<lambda_2>@?BA@???R0?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@
 .?AV<lambda_2>@?BC@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
-.?AV<lambda_2>@?CO@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
+.?AV<lambda_2>@?BJ@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@
+.?AV<lambda_2>@?DE@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_2>@?DP@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_2>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
-.?AV<lambda_2>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@
 .?AV<lambda_3>@?9??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
+.?AV<lambda_3>@?BD@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
 .?AV<lambda_3>@?BF@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
-.?AV<lambda_3>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
 .?AV<lambda_3>@?ED@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_3>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
 .?AV<lambda_3>@?N@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
+.?AV<lambda_3>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@
 .?AV<lambda_4>@?BA@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
-.?AV<lambda_4>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
+.?AV<lambda_4>@?BD@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
 .?AV<lambda_4>@?BL@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
 .?AV<lambda_4>@?EH@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
+.?AV<lambda_5>@?BD@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
 .?AV<lambda_5>@?BO@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
-.?AV<lambda_5>@?CE@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
 .?AV<lambda_6>@?CB@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
 .?AV?$CBaseAppSystem@VISceneSystem@@@@
 .?AV?$CBaseAppSystem@VISceneUtils@@@@
@@ -667,7 +687,7 @@ $%.0f
 .?AV?$CConCommandMemberAccessor@VCVirtualTextureManager@@@@
 .?AV?$CFixedSizeCircularBuffer@VCGPUProfHistoryFrame@@$0IA@H@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Thread_CullView@CSceneSystem@@AEAAXPEAVCSceneView@@PEAVCViewDrawList@@@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?BO@??GpuCullPrimitivesInView@CAggregateSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?BL@??GpuCullPrimitivesInView@CAggregateSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1??OnBeginRenderingFrame@CAggregateSceneObjectDesc@@UEAAXXZ@@@YAXHHPEBD$$QEAV1?1??OnBeginRenderingFrame@CAggregateSceneObjectDesc@@UEAAXXZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@PEAVCSceneObject@@V?$CFuncJobItemProcessor@PEAVCSceneObject@@@@$00@@@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@UGenerateTileWorkUnit_t@@V?$CMemberFuncJobItemProcessor@UGenerateTileWorkUnit_t@@VCBuildSparseShadowTree@@V2@@@$00@@@@
@@ -698,6 +718,8 @@ $%.0f
 .?AV?$ISceneObjectDescBase@VCSceneLightProbeVolumeObject@@@@
 .?AV?$_Func_base@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_base@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_base@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@PEAVIAsyncResourceDataRequest@@@std@@
+.?AV?$_Func_base@XAEBUVisibleSceneObject_t@@PEBVCPVSBits@@@std@@
 .?AV?$_Func_base@XPEAVCEnvMapSceneObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneBarnLightObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneLightObject@@@std@@
@@ -717,47 +739,51 @@ $%.0f
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AddEnvironmentMapsForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCEnvMapSceneObject@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AtFinish@CSceneView@@QEAAXXZ@PEAVCDisplayList@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??KickoffBatchList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@AEAUDrawListVector_t@@AEAUGeneratePrimitivesArgs_t@ISceneObjectDesc@@_N@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??KickOffBatchList@CSceneSystem@@AEAAXPEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@$$QEAV?$CUtlLeanVector@UCMeshDrawPrimitive_t@@HVCMemAllocAllocator@@@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??DrawArray@CAggregateSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@V?$shared_ptr@V?$CUtlLeanVector@UCMeshDrawPrimitive_t@@HVCMemAllocAllocator@@@@@5@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?7???R<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?9??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?BC@??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CJ@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?7??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?BC@??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CP@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?M@??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?O@??Thread_ProcessProceduralLayer@CSceneSystem@@AEAAXPEAVCSceneView@@PEAVCSceneLayer@@V?$shared_ptr@VCViewDrawList@@@std@@@Z@XAEBUVisibleSceneObject_t@@PEBVCPVSBits@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@XPEAVCSceneBarnLightObject@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??Thread_RenderViewLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@XAEBUVisibleSceneObject_t@@PEBVCPVSBits@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?5??DrawArray@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?9??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BA@???R1?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BC@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?CO@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?BJ@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@PEAVIAsyncResourceDataRequest@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?DE@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?DP@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?9??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?BD@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?BF@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_3>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?ED@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?N@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_4>@?BA@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_4>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?BD@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_4>@?BL@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_4>@?EH@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_5>@?BD@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_5>@?BO@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_5>@?CE@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_6>@?CB@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Ref_count_obj2@PEAURenderSemaphoreHandle_t__@@@std@@
 .?AV?$_Ref_count_obj2@UGpuCullingState_t@?2??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@@std@@
 .?AV?$_Ref_count_obj2@UImGuiViewportDrawData@@@std@@
 .?AV?$_Ref_count_obj2@UReadStatsCallback_t@?4??OnBeginSubmitDisplayLists@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@@std@@
 .?AV?$_Ref_count_obj2@UReadStatsCallback_t@?8??OnBeginSubmitDisplayLists@CBaseSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@@std@@
-.?AV?$_Ref_count_obj2@V?$CUtlVector@UCMeshDrawPrimitive_t@@HV?$CUtlVectorMemory_Growable@UCMeshDrawPrimitive_t@@H$0A@@@@@@std@@
+.?AV?$_Ref_count_obj2@V?$CUtlLeanVector@UCMeshDrawPrimitive_t@@HVCMemAllocAllocator@@@@@std@@
+.?AV?$_Ref_count_obj2@VCFeedbackReadback@CVirtualTextureManager@@@std@@
 .?AV?$_Ref_count_obj2@VCRenderGraphBuilder@@@std@@
 .?AV?$_Ref_count_obj2@VCSSTTileGenerationReadTexturePixelsCallback@@@std@@
 .?AV?$_Ref_count_obj2@VCSceneViewDebugOverlays@@@std@@
@@ -775,10 +801,10 @@ $%.0f
 .?AVCAmbientOcclusionProxySceneObject@@
 .?AVCAmbientOcclusionProxySceneObjectDesc@@
 .?AVCAnimatableSceneObjectDesc@@
-.?AVCAuxBufferReadback@CVirtualTextureManager@@
 .?AVCBLASBuildHelper@@
 .?AVCBarnLightObjectDesc@@
 .?AVCBarnLightObjectDescGPU@@
+.?AVCBarnLightObjectDescNull@@
 .?AVCBaseRenderingPipelineFactory@@
 .?AVCBaseSceneObjectDesc@@
 .?AVCBlitTextureToRenderTargetLayer@@
@@ -802,9 +828,11 @@ $%.0f
 .?AVCFarfieldProbeVolumeObjectDescGPU@@
 .?AVCFarfieldSDFVolumeObjectDesc@@
 .?AVCFarfieldSDFVolumeObjectDescGPU@@
+.?AVCFeedbackReadback@CVirtualTextureManager@@
 .?AVCFilterLayerRenderer@@
 .?AVCFullscreenQuadRenderer@@
 .?AVCGPUProfHistory@@
+.?AVCGPUProfilerFrameGraphListener@@
 .?AVCHairRenderContext@@
 .?AVCImGuiWrapper@@
 .?AVCImNeoSeqWrapper@@
@@ -812,7 +840,7 @@ $%.0f
 .?AVCInputLayoutRegistration_sm_hLayout@@
 .?AVCInstancedMeshSceneObject@@
 .?AVCInstancedMeshSceneObjectDesc@@
-.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@@Z@
+.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?1??DecompressTilesAsync@CVtTileStreamer@@QEAAX$$QEAV?$CUtlVector@UVtTileStreamRequest_t@@HV?$CUtlVectorMemory_Growable@UVtTileStreamRequest_t@@H$0A@@@@@$$QEAV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?1??DecompressTilesAsync@CVtTileStreamer@@QEAAX$$QEAV?$CUtlVector@UVtTileStreamRequest_t@@HV?$CUtlVectorMemory_Growable@UVtTileStreamRequest_t@@H$0A@@@@@$$QEAV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@@Z@@Z@
 .?AVCLightBinnerGPU@@
 .?AVCLightBinnerGPUFactory@@
 .?AVCLightBinnerNull@@
@@ -827,6 +855,7 @@ $%.0f
 .?AVCPathTraceSceneWorld@@
 .?AVCPipeline@CPathTraceSceneWorld@@
 .?AVCPointLightObjectDescGPU@@
+.?AVCProceduralRTProxy@@
 .?AVCProjectedDecalSceneObject@@
 .?AVCProjectedDecalSceneObjectDesc@@
 .?AVCQuadRenderer@@
@@ -894,6 +923,7 @@ $%.0f
 .?AVFillBufferGraphPass@CRenderGraphBuilder@@
 .?AVFillCBGraphPass@CRenderGraphBuilder@@
 .?AVGraphPass@CRenderGraphBuilder@@
+.?AVIAsyncProcessedDataResult@@
 .?AVIBaseSequence@@
 .?AVICharacterDecalRenderer@@
 .?AVIGraphResourceManager@CRenderGraphBuilder@@
@@ -906,6 +936,8 @@ $%.0f
 .?AVIModelRenderHelper@@
 .?AVIPathTraceSceneWorld@@
 .?AVIPipeline@IPathTraceSceneWorld@@
+.?AVIProceduralRTProxy@@
+.?AVIRayTraceComputeWork@@
 .?AVIReadBufferCallback@@
 .?AVIRenderDeviceVirtualTextureCallbacks@@
 .?AVIRenderingPipeline@@
@@ -924,6 +956,7 @@ $%.0f
 .?AVISequence@@
 .?AVIShaderReloadListener@@
 .?AVISparseShadowTree@@
+.?AVITimestampFrameGraphListener@@
 .?AVITonemapSystem@@
 .?AVIVDataResourceListener@@
 .?AVIVirtualDestuctor@CMeshInstanceGroomData@@
@@ -1212,7 +1245,6 @@ Another bullet point
 Anti-aliased fill
 Anti-aliased lines
 Anti-aliased lines use texture
-Any request for a duplicate dispatch/mesh shader primitive in an outputbuffer must previously set the dispatch buffer
 AnyHit0
 AnyHit1
 AnyHit2
@@ -1268,6 +1300,7 @@ Auto/Current
 Avail %.2f
 Available
 Average block Stream Time: %4.2fms
+Avg ms
 Avocado
 Axes
 Axis Constraints
@@ -1340,8 +1373,8 @@ Bar Plots
 Bar Stacks
 BarnLight
 BarnLightObjectDesc
-Barrier\n  [%s:%s] %s\n
-Barrier\n  [%s:%s]\n
+Barrier\n  [%s:%s] %s\n->\n  [%s:%s] %s
+Barrier\n  [%s:%s]\n->\n  [%s:%s]
 Barry
 Bars
 BaseSceneObjectDesc
@@ -1465,7 +1498,6 @@ By submission order (begin stack)
 C++ lambdas can be passed as function pointers as well!
 C6FaceSkyboxObjectDesc
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\scenesystem\_vpc_scenesystem\default\win64\_msvc_\Retail\scenesystem.pdb
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\scenesystem\sceneobject.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\aggregatedesc.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\aggregatertproxydesc.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\ambientocclusionproxy.cpp
@@ -1489,21 +1521,22 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\utils\scalable_
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\utils\virtualtexturemanager.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\utils\volumetricfog.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\utils\windcontroller.cpp
-C:\buildworker\source2_dota_rel_2019_win64\build\src\texturelib\extract.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\thirdparty\tinybvh\inc_tiny_bvh.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\thirdparty\tinybvh\tiny_bvh.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\thirdparty\tinybvh\tiny_bvh_base.h
 CAN_RENDER_INTO_SST 
 CAP_HEIGHT
 CAST_SHADOWS_ENABLED 
 CAggregateSceneObject
 CAggregateSceneObjectDesc
-CAggregateSceneObjectDesc::GpuCullPrimitivesInView(), C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\aggregatedesc.cpp:2081
+CAggregateSceneObjectDesc::GpuCullPrimitivesInView(), C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\aggregatedesc.cpp:2064
 CAmbientOcclusionProxySceneObjectDesc
 CAnimatableSceneObjectDesc
+CAnimatableSceneObjectDesc::SetupGroomRenderDataForObject
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (1)\n
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (2)\n
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (3)\n
 CBarnLightObjectDescGpu
+CBarnLightObjectDescNull
 CBaseSceneObjectDesc
 CBlitTextureToBackBufferLayer
 CBuildSparseShadowTree::GenerateSSTTiles(766): 
@@ -1549,7 +1582,6 @@ CMTatlastexture_.vtex
 CMesh Cannot create packed input layout, because the bone indices are out of range (0x%X)\n
 CMesh Cannot create packed input layout, too many blend weights per vertex %d, max %d\n
 CMeshBuilderSceneObjectDesc
-CMeshPrimitiveOutputBuffer::Next
 CMonitorObjectDesc
 COLOR_ATTACHMENT_OPTIMAL
 COLOR_ATTACHMENT_OUTPUT
@@ -1582,13 +1614,14 @@ CSceneSystem::CreateStaticShape(322):
 CSceneSystem::DeleteObjectForReal
 CSceneSystem::DeleteSceneObject
 CSceneSystem::FrameUpdate
-CSceneSystem::GenerateCompositeMorphTextureAtlas(5432): Expecting 1 renderable pass for material "%s" but found %d!\n
+CSceneSystem::GenerateCompositeMorphTextureAtlas(5148): Expecting 1 renderable pass for material "%s" but found %d!\n
 CSceneSystem::InitGfxObjects
 CSceneSystem::InitGfxObjects(969): 
-CSceneSystem::Thread_CullView(), C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\scenesystem.cpp:3094
+CSceneSystem::Thread_CullView(), C:\buildworker\source2_dota_rel_2019_win64\build\src\scenesystem\scenesystem.cpp:2832
 CSceneViewDebugOverlays: Cannot call AddToViewAndRetireStaleOverlays and pass in no abs time unless the overlay was created with the SCENE_VIEW_DEBUG_OVERLAY_TYPE_RELATIVE_TIMING flag!\n
 CSceneViewDebugOverlays::AddToView
 CSceneViewDebugOverlays::AgeList
+CSceneViewDebugOverlays::RemoveAllInScope
 CSceneViewDebugOverlays::Render2DLineOverlay GetMode("Default") == NULL? Can't Render with material %s!\n
 CSceneViewDebugOverlays::Render3DLineOverlay GetMode("Default") == NULL? Can't Render with material %s!\n
 CSceneViewDebugOverlays::Render3DTriangleOverlay GetMode("Default") == NULL? Can't Render with material %s\n
@@ -1607,7 +1640,6 @@ CSpotLightObjectDescGpu
 CStrongHandle
 CTRL 
 CTRL+LMB to select more than one frame to compare them.
-CTSQueue<class CSceneDrawList *,0>::Push
 CTSQueue<class CSceneObject *,0>::Push
 CTextureDisplayer
 CULLING
@@ -1623,6 +1655,7 @@ CUtlLeanVectorBase<struct UtlLinkedListElem_t<struct CUtlMultiList<class CPixelV
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<struct CUtlMultiList<class CPixelVisibilityQuery,unsigned short>::List_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<class CBitVec<64>,int,class CMemAllocAllocator>,class CBitVec<64>,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CMeshDrawPrimitive_t,int,class CMemAllocAllocator>,struct CMeshDrawPrimitive_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CMeshDrawPrimitive_t,int,class CMemAllocAllocator>,struct CMeshDrawPrimitive_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::AddPage
 CUtlMultiList overflow! (exhausted index range)\n
@@ -1743,6 +1776,7 @@ Clear All
 Clear Queries
 Clear Vel Volume
 Clear bakes
+Clear baseline
 Clear items
 Clear nodes
 Clear settings
@@ -2039,7 +2073,8 @@ DecalRenderTarget_Staging.vtex
 DecalRenderingLayer
 DecalRenderingView
 Declared shortcut routes automatically set key owner when mods matches.
-DecompressTextureBits
+DecompressTextureBits: %u bytes of texture data, but %d mips of %dx%d %s need %u; it comes out black\n
+DecompressTextureBits: virtual texture %s; it comes out black\n
 Decoration
 Decorations:
 Deep
@@ -2152,6 +2187,7 @@ Drag and drop to copy/swap items
 Drag bottom border to resize. Double-click bottom border to auto-fit to vertical contents.
 Drag from window title bar or their tab to dock/undock. Hold SHIFT to disable docking.\n\nDrag from window menu button (upper-left button) to undock an entire node (all windows).
 Drag from window title bar or their tab to dock/undock. Hold SHIFT to enable docking.\n\nDrag from window menu button (upper-left button) to undock an entire node (all windows).
+Drag or scroll the plot to change the range.
 Drag to reorder items (simple)
 Drag/Slider Flags
 Drag/drop items between plots.
@@ -2189,7 +2225,6 @@ DrawLists (%d)
 DrawMaterialQuad(67): Material %s cannot render in mode %s but is being asked to\n
 DrawShadowMapsForLight
 Drawing aggregates without valid meshlets, please recompile the map!
-Drawing instanced meshes without meshlets, please recompile the map!
 Draws/Dispatches
 Dsmall
 Dummy
@@ -2246,6 +2281,7 @@ Enable keyboard controls.
 Enable logarithmic editing (more precision for small values).
 Enable outer-most padding (default if ImGuiTableFlags_BordersOuterV is set)
 Enable resizing of windows from their edges and from the lower-left corner.\nThis requires ImGuiBackendFlags_HasMouseCursors for better mouse cursor feedback.
+Enable scheduler to migrate barriers
 Enable scrolling page by page when clicking outside the scrollbar grab.\nWhen disabled, always scroll to clicked location.\nWhen enabled, Shift+Click scrolls to clicked location.
 Enable turning DragXXX widgets into text input with a simple mouse click-release (without moving).
 Enable various tools calling IM_DEBUG_BREAK().\n\nRequires a debugger being attached, otherwise IM_DEBUG_BREAK() options will appear to crash your application.
@@ -2271,6 +2307,7 @@ Engine2/RenderingPipeline
 Engine2/RenderingPipeline/AmbientOcclusionProxies
 Engine2/RenderingPipeline/DistanceField
 Engine2/RenderingPipeline/OpaqueFade
+Ensure layout\n  -> %s
 Enter
 Enter 'HELP' for help.
 EnumDisplayMonitors
@@ -2347,7 +2384,6 @@ Export
 Extend hit area to all available width instead of allowing more items to be laid out after the node.
 Extensions
 EyeBallDataConstants_t
-EyeShader
 FACE_NAME
 FAMILY_NAME
 FDArray
@@ -2379,9 +2415,10 @@ Fancy
 FarfieldProbeVolume
 FarfieldSDFVolume
 Faster lines using texture data. Require backend to render with bilinear filtering (not point/nearest filtering).
+Fatal error in %s, line %i:\n%s\n
 Feature is currently in Beta. Please read comments in imgui.h
 Features:
-Feedback: %u shader writes -> %u unique records (%u readbacks so far)
+Feedback: %u unique records, %u dropped this frame (%u readbacks so far)
 File1_a.wav
 File1_b.wav
 Fill %s
@@ -2404,6 +2441,7 @@ FinishRenderingViews has been called without a call to begin!!!
 Fire
 First calls to Begin()/BeginChild() will return false.\n\nTHIS OPTION IS DISABLED because it needs to be set at application boot-time to make sense. Showing the disabled option is a way to make this feature easier to discover.
 First group hovered
+First use, waits for all earlier work\n->\n  [%s:%s]
 FitPadding
 Five
 Fixed
@@ -2490,6 +2528,7 @@ FreeType Loader Flags: 0x%08X
 Frogs
 Frozen columns
 Frozen rows
+Frozen while the mouse is over the plot.
 Frust+Illum
 Frustum
 Fsmall
@@ -2518,6 +2557,10 @@ GPU Instance Mem  : %s allocated, %s written, %s used
 GPU Memory Size
 GPU Time: %.2f ms
 GPU Transform Mem : %s allocated, %s written, %s used
+GPU profiler is already recording.\n
+GPU profiler is not recording.\n
+GPU profiler recording has no frames, nothing written.\n
+GPU profiler recording started.\n
 GPUProfiler
 GPUSort
 Gamepad
@@ -2562,6 +2605,7 @@ GetLocaleInfoA
 GetMessageExtraInfo
 GetMonitorInfoA
 GetMouseDragDelta(0):
+GetNativeSystemInfo
 GetPlotLimits() needs to be called between BeginPlot() and EndPlot()!
 GetPlotMousePos() needs to be called between BeginPlot() and EndPlot()!
 GetPlotPos() needs to be called between BeginPlot() and EndPlot()!
@@ -2586,6 +2630,7 @@ GrabMinSize
 GrabRounding
 Gradients
 Grapefruit
+Graph
 GraphicsMisc
 GraveAccent
 Gravesmall
@@ -2664,6 +2709,7 @@ Hex-encode non-ASCII
 HiddenTabBar
 Hide
 Hide Filtered
+Hide below
 Hide tab bar###HideTabBar
 Hierarchy lines
 High:  $%.2f
@@ -2713,6 +2759,7 @@ HoveredWindow->Root: '%s'
 HoveredWindow: '%s'
 HoveredWindowUnderMovingWindow: '%s'
 Hovering the colored canvas will override io.WantCaptureXXX fields.\nNotice how normally (when set to none), the value of io.WantCaptureKeyboard would be false when hovering and true when clicking.
+How much more estimated pooled memory than submission order a run of reordered passes may use, as a percentage of the submission order peak
 Hsmall
 HuaTianKaiTi?
 HuaTianSongTi?
@@ -2999,6 +3046,7 @@ Inferred Z order (front-to-back)
 Infinite Joint Weights encountered: Skinning will not work! (At position %.3f %.3f %.3f)\n
 Infinite Lines
 Initial Texture Barriers
+Initial layout\n  UNDEFINED -> %s
 Initialized: %s
 InlayText
 Inline color editor
@@ -3163,13 +3211,13 @@ Label5
 Label: %s
 LabelPadding
 LanguageGroup
+Last
 LastRequest = time: %.2f, frame: %d
 LastSelectionSize = %d
 Layer
 Layer Buffer Barriers
 Layout
 Layout & Scrolling
-Layout -> %s
 Layout/Basic Horizontal Layout
 Layout/Basic Horizontal Layout/Dummy
 Layout/Basic Horizontal Layout/Manual wrapping
@@ -3319,6 +3367,7 @@ Manual
 Manual wrapping:
 Manual-resize
 MappingScheme
+Marker
 Marker Size
 Marker Weight
 MarkerFill
@@ -3327,12 +3376,14 @@ MarkerSize
 MarkerWeight
 Markers
 Markers and Text
+Markers averaging less than this are left out of the GPU profiler per-frame CSV. They are still in the summary.
 Master disable flag (also hide from context menu)
 Material %s - cannot find raytrace shader!\n
 Material change on single-material desc
 Max Height (in Lines)
 Max LRU Age: %4d
 Max Time
+Max ms
 Max: %.1f %%
 Max: %d units
 Max: (%.2f, %.2f)
@@ -3376,6 +3427,7 @@ Midterm Exam
 Min / Max
 Min Duration (ms)
 Min Time
+Min ms
 Min: %.1f %%
 Min: %d units
 Min: (%.2f, %.2f)
@@ -3433,6 +3485,7 @@ Modal
 Modal windows are like popups but the user cannot close them by clicking outside.
 ModalWindowDimBg
 Modals
+Model '%s': eye bone '%s' is not skinned by a mesh with an eye shader material, eye ignored\n
 Modify
 Monitor
 Monitor View
@@ -3534,8 +3587,6 @@ N-gon sides
 NAV,FOCUS
 NB: Cursor & selection are preserved when refocusing last used item in code.
 NEEDS_DIRTY_UPDATE 
-NEEDS_DYNAMIC_REFLECTION
-NEEDS_DYNAMIC_REFLECTION_OR_REFRACTION 
 NEEDS_FRAMEBUFFER_COPY
 NEEDS_GPU_CULLING
 NEEDS_STATIC_ENVMAP_BINDING 
@@ -3627,6 +3678,7 @@ North
 Not Available
 Not Selected
 Not a widget per-se, but ImGuiTextFilter is a helper to perform simple filtering on text strings.
+Not reordering '%s'..'%s': its pooled memory would peak at ~%d KB, %d KB in submission order (only warning once)\n
 NotAllowed
 Note: some memory buffers have been compacted/freed.
 Notice
@@ -3698,6 +3750,7 @@ Option to save .ini data with extra comments (particularly helpful for Docking, 
 Options to configure how we handle recoverable errors.\n- Error recovery is not perfect nor guaranteed! It is a feature to ease development.\n- You not are not supposed to rely on it in the course of a normal application run.\n- Possible usage: facilitate recovery from errors triggered from a scripting language or after specific exceptions handlers.\n- Always ensure that on programmers seat you have at minimum Asserts or Tooltips enabled when making direct imgui API call! Otherwise it would severely hinder your ability to catch and correct mistakes!
 Or, enable 32-bit indices in imconfig.h.
 Orange
+Order
 Order=%d%n
 Ordering
 Original
@@ -3728,6 +3781,7 @@ OverlayProjectionDirection
 Overline is only drawn over the selected tab when ImGuiTabBarFlags_DrawSelectedOverline is set.
 Override ChildBg color
 Override Streaming GPU Memory
+P95 ms
 PIPELINE_SPECIFIC_0 
 PIPELINE_SPECIFIC_1 
 PIPELINE_SPECIFIC_2 
@@ -3772,6 +3826,7 @@ Pastel
 PathTracingShaderBindingTable
 Pauciloquent
 Pause Streaming Activity Graph
+Pause to zoom into a range.
 Pear
 Pen Pressure: %.1f
 PerVertexLighting
@@ -3832,6 +3887,7 @@ Plus
 PolitiFact: Who Lies More?
 Pollock
 Pool Mem
+Pool Mem peak %s, %s in submission order (%+.1f%%)
 Popup
 Popup 
 PopupBg
@@ -3878,8 +3934,7 @@ Price
 Primitives
 PrintScreen
 Printing unusually long amount of text.
-ProceduralGeometry
-ProceduralGeometry Updates
+ProceduralRTProxy Layout
 Processed
 ProggyClean.ttf
 Programmer error: %d visible items with conflicting ID!
@@ -3954,7 +4009,6 @@ R8G8_B8G8_UNORM
 R8G8_SINT
 R8G8_SNORM
 R8G8_TYPELESS
-R8G8_UNORM
 R8_SINT
 R8_SNORM
 R8_TYPELESS
@@ -4009,6 +4063,7 @@ Range: [%f,%f]
 RangeSrcItem = %I64d (0x%I64X), RangeSelected = %d
 Ranges
 Raw HSV values
+Raw frames
 Ray trace shader material %s - has no default mode!\n
 Ray trace shader material %s has invalid RayTypeCount %d - must be between 1 and %d\n
 RayGen
@@ -4022,6 +4077,9 @@ Real Update VT Atlas
 Realtime Plots
 Rebuild all
 Recent frames with allocations:
+Record
+Record every frame until stopped, then write _frames.csv and _summary.csv. Also sc_gpu_profiler_record_start/stop.
+Recording %.0f s, %d frames
 Rect is %sclicked, %shovered, %sheld
 Rect of child window is: (%.0f,%.0f) (%.0f,%.0f)
 Rects Index
@@ -4036,13 +4094,10 @@ Reduce hit area to the text label and a bit of margin.
 RefScale=%f
 RefScale=%g\n
 Reflection
-Reflection Render View
-ReflectionStencil
-ReflectionTemplate
-Refraction Render View
 RegisterClassExW
 Registry
 ReleaseCapture
+Release\n  [%s:%s]\n->\n  all later work
 Releases
 Reloaded %s into textureset\n
 Remaining
@@ -4051,6 +4106,7 @@ Remap w/ Ctrl+Shift: click anywhere to select new mouse button.
 Remove 20 items
 Remove all
 Remove one
+RemoveAllInScope
 Rename
 Rename..
 Rename...
@@ -4064,6 +4120,7 @@ Render3DLineOverlays
 Render3DSolidSphereOverlays
 Render3DSphereOverlays
 Render3DVectorTextOverlays
+RenderExternalImGUIViewports
 RenderLayerDrawListPart
 RenderPipelineAliases
 Rendering more items on the same line
@@ -4106,6 +4163,7 @@ Resource %s was created but never accessed\n
 ResourceCompiler/BakedLighting/DisableCullingForShadows
 ResourceCompiler/BakedLighting/LPVAtlas
 ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadows
+ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadowsForDirectionalLights
 ResourceCompiler/WorldRendererBuilder/UseStaticEnvMapForObjectsWithLightingOrigin
 Return to input text into a widget.
 Return value = %d\nIsItemFocused() = %d\nIsItemHovered() = %d\nIsItemHovered(_AllowWhenBlockedByPopup) = %d\nIsItemHovered(_AllowWhenBlockedByActiveItem) = %d\nIsItemHovered(_AllowWhenOverlappedByItem) = %d\nIsItemHovered(_AllowWhenOverlappedByWindow) = %d\nIsItemHovered(_AllowWhenDisabled) = %d\nIsItemHovered(_RectOnly) = %d\nIsItemActive() = %d\nIsItemEdited() = %d\nIsItemActivated() = %d\nIsItemDeactivated() = %d\nIsItemDeactivatedAfterEdit() = %d\nIsItemVisible() = %d\nIsItemClicked() = %d\nIsItemToggledOpen() = %d\nGetItemRectMin() = (%.1f, %.1f)\nGetItemRectMax() = (%.1f, %.1f)\nGetItemRectSize() = (%.1f, %.1f)
@@ -4200,6 +4258,7 @@ Save to memory
 Save/Revert in local non-persistent storage. Default Colors definition are not affected. Use "Export" below to save them somewhere.
 Save?
 SaveFlags: 0x%08X
+Saved %s_*.csv
 ScaleMax: %f
 ScaleToPixel: %f
 Scaron
@@ -4227,9 +4286,12 @@ SceneSystem/DisableLateAllocatedTransformBuffer
 SceneSystem/DisableShadowFullSort
 SceneSystem/DynamicShadowResolution
 SceneSystem/FogCachedShadowAtlasHeight
+SceneSystem/FogCachedShadowAtlasHeightTools
 SceneSystem/FogCachedShadowAtlasWidth
+SceneSystem/FogCachedShadowAtlasWidthTools
 SceneSystem/FogCachedShadowTileMaxFilterRadius
 SceneSystem/FogCachedShadowTileSize
+SceneSystem/FogCachedShadowTileSizeTools
 SceneSystem/FrameBufferCopyFormat
 SceneSystem/GpuLightBinner
 SceneSystem/GpuLightBinnerBinEnvMaps
@@ -4237,6 +4299,8 @@ SceneSystem/GpuLightBinnerBinLPVs
 SceneSystem/GpuLightBinnerSupportViewModelCascade
 SceneSystem/HDRFrameBuffer
 SceneSystem/HairShading
+SceneSystem/IndirectDispatchBufferSizeMB
+SceneSystem/LightBinner/Debug Visualize Precomputed Shadow Atlas Lights
 SceneSystem/LightCookieAllocGranularity
 SceneSystem/LightCookieMinAllocSize
 SceneSystem/MeshletBufferCPUSlotCount
@@ -4342,6 +4406,7 @@ Set 200x200
 Set 500x500
 Set 800x200
 Set as default
+Set baseline
 Set defaults in code:
 Set io.ConfigDebugHighlightIdConflicts=false to disable this warning in non-programmers builds.
 Set io.ConfigFlags |= ImGuiConfigFlags_DockingEnable in your code, or 
@@ -4517,7 +4582,7 @@ SmallButton
 SmallButton()
 SmoothNormals
 Snickersnee
-Solid Color Textures Resident: %5d (%3.1f%% of pages in use)
+Solid Color Textures: %5d, one texel each
 Some %s text %d,%d\nOver two lines..
 Some Document
 Some Selectable
@@ -4531,7 +4596,6 @@ Some other contents
 Some test %d
 Some tree contents
 SomeOption
-Sort
 Sort Hair
 Sort=%d%c%n
 Sorting
@@ -4557,6 +4621,7 @@ Stacked modals..
 Stairstep Plot
 Stairstep Plots
 StandardEncoding
+Start recording every frame of GPU profiler timings.
 StartAxis
 StartCharMetrics
 StartComposites
@@ -4581,15 +4646,14 @@ StemSnapV
 Stems
 Stems 1
 Stems 2
-Stencil Reflection Render View
 Stencil bit allocation failed\n
 Stencil override change
-StencilReflection
 Stock 1
 Stock 2
 Stock 3
 Stock Prices
 Stop and reset simulation
+Stop recording GPU profiler timings and write <name>_frames.csv and <name>_summary.csv. Optional argument: name (default is timestamped).
 Storage
 Strand Cull %%
 Strawberry
@@ -4615,6 +4679,7 @@ Style, Fonts
 Sub-child %d
 Sub-menu
 SubmitDepthResolve
+Submitted as pass %i, runs as pass %i, schedule batch %i
 Subplot
 Subplot [0x%08X]
 Subplots
@@ -4634,6 +4699,7 @@ Supported features:
 Swap
 Swap %s
 Swap Cmd<>Ctrl keys, enable various MacOS style behaviors.
+SwitchToThread
 SymLog Plot
 Symmetric Log Scale
 Synced Table %d
@@ -4814,7 +4880,7 @@ Tick Labels
 Tick Marks
 Ticks
 Tildesmall
-Tile Stream Latency, tiles per ms bucket (discarded before hookup: %u)
+Tile Stream Latency, tiles per ms bucket (discarded before hookup: %u, failed reads: %u)
 TileStreamLatency
 Tilefish
 Time Scale
@@ -4823,7 +4889,7 @@ TimeSlicedShadow
 Timer took %.4f
 Timesliced shadow rendering is enabled for view %s, but no shadow atlas id is set: this will corrupt shadows\n
 Tint
-TinyBVH Fatal Error: %s at %s:%d
+TinyBVH: %s
 TinyBVHFatalError
 Tip: Use 'Demo->Tools->Debug Log->Selection' to see selection requests as they happen.
 Title bar Hovered/Active tests
@@ -4937,8 +5003,10 @@ Ugravesmall
 Unable to AddTextureToSet( %s ): %s\n
 Unable to AddTextureToSet( %s ): Loading Texture failed\n
 Unable to cycle forground window, '%s' isn't in window list\n
+Unable to open '%s' for writing.\n
 Unable to reload texture %s into textureset: %s\n
 Unable to reload texture %s into textureset: couldn't load from disk\n
+Unable to write '%s'.\n
 Uncertain Data
 UnderlinePosition
 UnderlineThickness
@@ -4966,6 +5034,7 @@ UpdateAOProxySceneObject
 UpdateBuffers
 UpdateDirtyObjects
 UpdateGroomDensityAndAo
+UpdateTextureSetSlice
 UploadLightProbeVolumeConstants
 Use 24 Hour Clock
 Use Ctrl+Wheel to zoom
@@ -5009,20 +5078,29 @@ VIEWMODEL_LAYER
 VPages
 VT Mips
 VT residency as 256x256 pages, over %d textures:\n
+VT tile did not decompress for "%s"\n
 VT tile read failed for "%s": %s\n
+VT: %d mips, needs at least %d to reach 128x128, recompile it ( %s )\n
 VT: Unsupported texture format %s\n
 VT: Unsupported texture size %s\n
 VT: Unsupported texture size or flags. %s\n
 VT: alloc failed for tex %d, %dx%d fmt %d, aliasing the error texture (%s)\n
+VT: bad tile layout block, %s ( %d tiles, %d offsets, compression %d ) (%s)\n
 VT: created tex %d, %dx%d, %d mips%s, %d pages (%s)\n
 VT: destroyed tex %d, %d of %d pages were resident%s%s (%s)\n
+VT: evicting all pages, cancelled %d tile requests\n
+VT: no atlas page for %d tiles of mips %d-%d of tex %d, loading it without them (%s)\n
 VT: no physical pages left for tex %d, sampling the error tile (%s)\n
+VT: no tile layout block, the texture needs recompiling (%s)\n
 VT: tex %d low mips loaded, releasing the load (%s)\n
 VT: tex %d preload to %d, mips 2-%d, %d pages outstanding (%s)\n
 VT: tex %d preload to %d, nothing above the pinned mips, %d pages outstanding (%s)\n
+VT: tile %d of tex %d did not decompress\n
+VT: tile layout block is %d bytes, too short (%s)\n
 VTPageAtlas%s
 VTPageAtlasATI2N%s
 VTPageAtlasDXT5%s
+VTSolidColorAtlas
 VVector
 Validate
 Value = %.3f <-- (1) right-click this text
@@ -5031,6 +5109,7 @@ Version
 Vert:
 VertCount
 VertexCache
+VertexCacheEmptySignal
 VertexColorPos_t
 VertexColorUVPos_t
 VertexElementAnnotation
@@ -5070,10 +5149,14 @@ Views: %d, shadow %d (fog-only %d)  |  CPU: %02.01fms, shadow %02.01fms (fog-onl
 Viridis
 Virtual Texture Debugger
 Virtual Textures: %d
+Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). 0 picks 4, 6, 8, 12 or 16 slices for GPUs below 8GB, 8GB, 12GB, 16GB and larger. Changing it evicts every virtual texture tile.
 Virtual texture page atlas: %u -> %u slices, evicting all tiles\n
+Virtual texture page atlas: %u slices (%u MB) for a GPU with %llu MB, vt_page_atlas_size %d\n
+Virtual texture page atlas: allocated %u of the %u requested slices\n
+Virtual texture page atlas: could not allocate %u slices, trying %u\n
+Virtual texture page atlas: could not allocate even %u slices\n
 Virtual texture page atlas: could not create %u slices, staying at %u\n
 VirtualTextureAuxBuffer
-VirtualTextureCompactUsageBuffer
 VirtualTextureInfo
 VirtualTextureMgrManifest
 VirtualTexturePageTable
@@ -5085,12 +5168,15 @@ VisibleWindow
 Visualize
 VisualizeCulled
 Voltage
+VolumeFog Integrate %ux%u, %u slices
+VolumeFog Lighting %ux%ux%u, %u volumes, indirect %d, lpv %d, temporal %d
 VolumeMaxs
 VolumeMins
 VolumetricFogManifest
 Voxelize Density
 Voxelize Tangents
 Vsmall
+VtDecompressTiles
 VtFrameUpdate
 VtUpdateGPUDataStructures
 W: %.1f
@@ -5111,7 +5197,6 @@ WantUpdates
 Warning: Font scaling will NOT be smooth, because\nImGuiBackendFlags_RendererHasTextures is not set!
 Warning: Sizing Constraints won't work if the window is docked!
 Warning: owning Window is inactive. This DrawList is not being rendered!
-WaterRTProxy
 Watermelon
 Waves
 We are colorizing cells to B1->C2 here.
@@ -5279,6 +5364,7 @@ WorldRenderer/LightProbeVolumeAlgorithm
 WorldRenderer/LightProbeVolumeColorSpace
 WorldRenderer/LightProbeVolumeUncompressedFormat
 Wrap width
+Wrote %d frames (%.1f s) of GPU profiler data to %s and %s\n
 Wsmall
 X-Axis
 X-Axis %d
@@ -5437,6 +5523,9 @@ Zsmall
 \n<i>Not using PerViewConstantBuffer_t</i>
 \n<i>PerViewConstantBuffer_t</i>
 \n<i>Procedural Layer</i>
+\ncommandline,
+\nframes,%d\n
+\nframes_csv_min_ms,%.3f\n
 \tLayer %d "%s": %d inputs, %d outputs\n
 \tLayer %d "%s"\n
 \tRT %dx%d %s %dx MSAA used by %s\n
@@ -5459,7 +5548,6 @@ _COL4F
 _DefaultHide
 _DefaultSort
 _Disabled
-_Dup
 _HighlightHoveredColumn
 _IMWINDOW
 _IndentDisable
@@ -5504,12 +5592,12 @@ acosf
 active resources
 active sceneobject: %i clusters
 acute
+adapter,
 adieresis
 adobe
+after
 aggregate
 aggregate cullrequests
-aggregate meshlet indirect dispatch
-aggregate meshlet indirect dispatch recull
 aggregate meshlet overflow handling
 aggregate.fragmentCount
 aggregate.material_flags
@@ -5556,15 +5644,14 @@ asciicircum
 asciitilde
 asterisk
 asuperior
+async compute blas scratch memory
 atilde
 autofitter
+avg %.3f ms, min %.3f, max %.3f
 avg %f
 b%d (%.02f secs)
 b%d (%d)
 b%d: %d
-bDisableDynamicRefractionMap
-bNeedsDynamicReflectionMap
-bReflectDynamicObjectsOnly
 backface
 backslash
 bad_weak_ptr
@@ -5578,9 +5665,6 @@ base scene object cull request
 baseobject.material_name
 baseobject.meshletCount
 baseobject.model_name
-basesceneobject meshlet indirect dispatch
-basesceneobject meshlet indirect dispatch debug
-basesceneobject meshlet indirect dispatch recull
 basesceneobject visibility indices
 batchlist
 batchlist.batch_id
@@ -5719,6 +5803,7 @@ degenerate
 degree
 deleted by %s
 depth pass
+deque<T> too long
 desktop.ini
 dieresis
 digital_%d
@@ -5771,8 +5856,11 @@ dsuperior
 dual_lobe_roughness_0
 dual_lobe_roughness_1
 dual_lobe_roughness_mix
+dummy meshlet overflow handling
 dummybuffer
 dummybuffer_r32uint
+dummycullstats
+dummydebugmeshletdrawargs
 dyn materials
 eacute
 ecircumflex
@@ -5832,7 +5920,6 @@ fallback-script
 far_blue
 far_green
 far_red
-fast
 ffF@
 fff?
 figuredash
@@ -5845,8 +5932,6 @@ fiveeighths
 fiveinferior
 fiveoldstyle
 fivesuperior
-flWaterDepth
-flWaterStart
 flags3
 flip_sign
 flip_y
@@ -5875,6 +5960,7 @@ foursuperior
 fraction
 frag %i
 fragmentbounds
+frame,time_s
 franc
 freeze_cols
 freeze_rows
@@ -5896,6 +5982,8 @@ glyph-dict
 glyph-to-script-map
 glyphs
 gpu mem
+gpu_profile_%04d%02d%02d_%02d%02d%02d
+graphstats
 grave
 greater
 greaterequal
@@ -5914,6 +6002,11 @@ hairshadingatlas
 hairsimvelocityvolume
 hairtangentaccumvolume
 half
+has a bad tile offset table ( %d tiles )
+has compressed tiles but no offsets
+has no tile layout block, it needs recompiling
+has no tiles for mip %d
+has tiles in unknown compression %d
 has_preferred_x: %d (%.2f)
 heat
 heat1
@@ -5974,6 +6067,9 @@ incl. Discarded rects: %d, area: about %d px ~%dx%d px
 increase-x-height
 index
 indexbuffer
+indirect
+indirect dispatch buffer
+indirect dispatch overflow indices
 initial
 inner_width
 inner_width (when ScrollX active)
@@ -6005,9 +6101,6 @@ instance cull stats shadow
 instanced
 instanced mesh cull requests
 instanced mesh data
-instanced meshlet indirect dispatch
-instanced meshlet indirect dispatch debug
-instanced meshlet indirect dispatch recull
 instanced meshlet overflow handling
 instancedmesh.material_name
 instancedmesh.max_instances
@@ -6093,6 +6186,8 @@ io.WantCaptureMouseUnlessPopupClose: %d
 io.WantSetMousePos: %d
 io.WantTextInput: %d
 isFixedPitch
+issued after the last pass
+issued in front of %s
 isuperior
 item view
 items_count
@@ -6104,6 +6199,7 @@ kerning
 known
 label
 last used by %s
+lb_debug_visualize_precomputed_shadow_atlas_lights
 left pane
 lenBuildCharArray
 lenIV
@@ -6145,7 +6241,6 @@ m_mFromClipSpace
 m_mToClipSpace
 m_nCookie
 m_nLuminaireType
-m_pDuplicateDispatchPrimitives != nullptr
 m_vAngleFade
 m_vColor
 m_vDistanceFade
@@ -6157,6 +6252,7 @@ macron
 main.c
 manyquads
 marginally concave
+marker,avg_ms,min_ms,p50_ms,p95_ms,p99_ms,max_ms,frames_present,path\n
 materials/dev/aoproxy_splat.vmat
 materials/dev/compact_indirect_draws.vmat
 materials/dev/compute_depthbin_cullbits.vmat
@@ -6252,7 +6348,6 @@ mycolumns
 mycolumns3
 mypicker
 n r x z o e s c
-nCompressedSize == nUncompressedSize
 nIndex < m_RenderTargets.Count()
 nPrevTransformBufferIndex < V_ARRAYSIZE( m_transformBufferSlotsForIndex )
 nan_expectfail
@@ -6285,8 +6380,10 @@ occl
 occlusionproxyvb
 ocircumflex
 odieresis
+offset count does not match the tile count
 offset_angles
 offset_origin
+offsets are not a packed stream
 ogonek
 ograve
 onedotenleader
@@ -6343,6 +6440,9 @@ postscript-cmaps
 postscript-font-name
 postscript-info
 posxyz
+proceduralRTProxyEmissive
+proceduralRTProxyIB
+proceduralRTProxyVB
 product
 psaux
 pshinter
@@ -6375,6 +6475,7 @@ recull
 reculldispatchargs
 recullrequests
 registered
+rendersystem,%s\n
 rendertarget_
 rendertarget_dscratch_%d_%d_%d.vtex
 rendertarget_r11g11b10f_%d_%d
@@ -6391,11 +6492,17 @@ row bg target
 row bg type
 row_min_height
 rsuperior
+rtx_nonopaque
 rtx_random_samples.vtex
 rupiah
 s_hScrambledHalton != GENERIC_DATA_HANDLE_INVALID
 sc_dumpworld %d
 sc_dumpworld3d %d
+sc_gpu_profiler_record_min_ms
+sc_gpu_profiler_record_start
+sc_gpu_profiler_record_stop
+sc_rendergraph_schedule
+sc_rendergraph_schedule_memory_growth_threshold_pct
 sc_setclassflags %s %d
 scaron
 scedilla
@@ -6403,6 +6510,7 @@ scene_quadindexbuffer
 scenegfxresources
 sceneinfo_gpu - Load Materials
 sceneobject cull stats
+sceneobject dummy meshlet indirect dispatch debug
 sceneobject_h
 scenesimpleidx
 scenesimplevb
@@ -6422,6 +6530,7 @@ script_b94a0343
 scroll
 scrolling
 seaborn style
+seconds,%.3f\n
 section
 seen this frame
 semicolon
@@ -6582,6 +6691,7 @@ threequartersemdash
 threesuperior
 tied
 tilde
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 tile cull items
 tom-hi
 tom-low
@@ -6612,11 +6722,13 @@ ucircumflex
 udieresis
 ugrave
 unbatchable
+uncompressed tile size is not a page
 underscore
 undo_point: %d, redo_point: %d, undo_char_point: %d, redo_char_point: %d
 undopoints
 uniform_sky_color
 unique mats
+unknown compression
 uppercase
 used
 uvtangent
@@ -6631,6 +6743,7 @@ views
 void_context
 volumetric fog
 volumetric_fog.vtex
+vs Baseline
 vt_analyze_256_pages
 vt_evict_all
 vt_stream_latency_reset

@@ -108,11 +108,24 @@
 		"Ability18"		"special_bonus_unique_invoker_3"
 		"Ability19"		"special_bonus_unique_invoker_5"
 		"Ability20"		"special_bonus_unique_invoker_9"
-		"Ability21"		"special_bonus_unique_invoker_additional_chaos_meteors"
+		"Ability21"		"special_bonus_unique_invoker_13"
 		"Ability22"		"special_bonus_unique_invoker_forged_spirit_armor_reduction"
 		"Ability23"		"special_bonus_unique_invoker_2"
-		"Ability24"		"special_bonus_unique_invoker_13"
+		"Ability24"		"special_bonus_unique_invoker_additional_chaos_meteors"
 		"Ability25"		""
+		"DirectKeybindAbilities"
+		{
+			"Ability1"		"invoker_cold_snap"
+			"Ability2"		"invoker_ghost_walk"
+			"Ability3"		"invoker_tornado"
+			"Ability4"		"invoker_emp"
+			"Ability5"		"invoker_alacrity"
+			"Ability6"		"invoker_chaos_meteor"
+			"Ability7"		"invoker_sun_strike"
+			"Ability8"		"invoker_forge_spirit"
+			"Ability9"		"invoker_ice_wall"
+			"Ability10"		"invoker_deafening_blast"
+		}
 		"ArmorPhysical"		"-1"
 		"StatusHealthRegen"		"0.25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -725,7 +738,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 				"MaxLevel"						"1"
@@ -814,7 +827,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"MaxLevel"						"1"
@@ -870,6 +883,11 @@
 						"value"						"0"
 						"special_bonus_shard_1"		"1"
 					}
+					"ice_wall_damage_multiplier"
+					{
+						"value"						"1"
+						"special_bonus_shard_1"		"=1.25"
+					}
 				}
 			}
 
@@ -910,7 +928,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 				"MaxLevel"						"1"
@@ -1053,7 +1071,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"C"
@@ -1152,7 +1170,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"Z"
 				"AbilitySound"					"Hero_Invoker.Alacrity"
@@ -1240,7 +1258,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"D"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1308,7 +1326,7 @@
 					"burn_duration"				"3.0"
 					"burn_dps"
 					{
-						"value"					"10 15 20 25 30 35 40 45 50"
+						"value"					"12 16 20 24 28 32 36 40 44"
 						"levelkey"				"exortlevel"
 						"CalculateSpellDamageTooltip"	"1"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
@@ -1361,7 +1379,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"T"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -1399,7 +1417,7 @@
 					}
 					"damage"
 					{
-						"value"					"175 225 275 325 375 425 475 525 575"
+						"value"					"175 215 255 295 335 375 415 455 495"
 						"levelkey"				"exortlevel"
 					}
 					"vision_distance"			
@@ -1476,7 +1494,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"F"
@@ -1616,7 +1634,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"MaxLevel"						"1"
@@ -1653,7 +1671,7 @@
 					{
 						"value"				"30 36 42 48 54 60 66 72 78"
 						"levelkey"			"exortlevel"
-						"special_bonus_unique_invoker_ice_wall_dps" "+50"
+						"special_bonus_unique_invoker_ice_wall_dps" "+40"
 					}
 					"tick_interval"			"0.5"
 					"wall_place_distance"	"200"
@@ -1721,7 +1739,7 @@
 					"damage_per_second"
 					{
 						"value"				"36 48 60 72"
-						"special_bonus_unique_invoker_ice_wall_dps" "+50"
+						"special_bonus_unique_invoker_ice_wall_dps" "+40"
 					}
 					"wall_width"
 					{
@@ -1759,9 +1777,9 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 				"MaxLevel"						"1"
 				"HotKeyOverride"				"B"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"

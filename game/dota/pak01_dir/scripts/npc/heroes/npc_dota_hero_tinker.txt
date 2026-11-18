@@ -87,7 +87,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"19"
+		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"2.300000"
 		"AttributeBaseAgility"		"17"
 		"AttributeAgilityGain"		"1.400000"
@@ -485,7 +485,7 @@
 						"radius_explosion"
 						{
 							"value"			"0"
-							"special_bonus_unique_tinker_4"	"+250"
+							"special_bonus_unique_tinker_4"	"+300"
 							"affected_by_aoe_increase"	"1"
 						}
 						"splash_pct"		"100"
@@ -495,7 +495,7 @@
 						}
 						"scepter_reduction_pct"		
 						{
-							"special_bonus_scepter"		"13"
+							"special_bonus_scepter"		"9"
 						}						
 						"scepter_reduction_pierces_debuff_immunity"		"0"
 						"scepter_bounce_radius"		
@@ -677,7 +677,7 @@
 			
 					"heal_per_second"
 					{
-						"special_bonus_scepter"			"35"
+						"special_bonus_scepter"			"45"
 					}
 
 					"heal_duration"
@@ -785,7 +785,8 @@
 						"warp_distance_pct_tooltip"	"60"
 
 						"range_reduction"		"40"
-						"debuff_duration"		"2"
+						"debuff_duration"		"3"
+						"movement_slow_pct"		"100"
 				}
 			}
 	
@@ -892,11 +893,12 @@
 					"missile_damage"
 					{
 						"value"			"20 40 60 80"
-						"special_bonus_unique_tinker_deploy_turrets_missile_damage"	"+60"
+						"special_bonus_unique_tinker_deploy_turrets_missile_damage"	"+45"
 					}
 					"missile_speed"
 					{
-						"value"		"1350"
+						"value"							"1350"
+						"special_bonus_scepter"			"+20%"
 					}
 			
 					"turret_hp"
@@ -906,11 +908,13 @@
 
 					"missile_target_range"
 					{
-						"value"		"650 700 750 800"
+						"value"							"650 700 750 800"
+						"special_bonus_scepter"			"+20%"
 					}
 					"missile_range"
 					{
-						"value"		"750 800 850 900"
+						"value"							"750 800 850 900"
+						"special_bonus_scepter"			"+20%"
 					}
 			
 					"missile_width"
@@ -928,11 +932,6 @@
 					{
 						"value"		"1.5"
 						"special_bonus_scepter"			"-0.3"
-					}
-
-					"missile_attack_rate_tooltip"
-					{
-						"value"			"20"
 					}
 			
 					// Missile explosion splash

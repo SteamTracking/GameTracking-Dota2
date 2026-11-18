@@ -54,6 +54,12 @@
 		"Ability20"		"special_bonus_unique_largo_6"
 		"Ability21"		"special_bonus_unique_largo_7"
 		"Ability22"		"special_bonus_unique_largo_5"
+		"DirectKeybindAbilities"
+		{
+			"Ability1"		"largo_song_fight_song"
+			"Ability2"		"largo_song_double_time"
+			"Ability3"		"largo_song_good_vibrations"
+		}
 		"AbilityTalentStart"		"15"
 		"AbilityDraftAbilities"
 		{
@@ -74,8 +80,8 @@
 		}
 		"ArmorPhysical"				"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"39"
-		"AttackDamageMax"			"45"
+		"AttackDamageMin"			"37"
+		"AttackDamageMax"			"43"
 		"AttackRate"				"1.700000"
 		"AttackAnimationPoint"		"0.350000"
 		"AttackAcquisitionRange"	"600"
@@ -254,7 +260,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"2"
+				"AbilityCooldown"				"1.5"
 				//"AbilityChargeRestoreTime"		"4 3.5 3"
 
 				// Cost
@@ -303,7 +309,7 @@
 				// General
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityType"					"ABILITY_TYPE_BASIC"
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 				//"HasShardUpgrade"				"1"
 				"HasScepterUpgrade"				"1"
@@ -342,14 +348,14 @@
 					}
 					"burst_damage"
 					{
-						"value"		"20 30 40"
-						"special_bonus_unique_largo_7" "+12" // because +% doesn't work here, precalculate it
+						"value"		"24 37 50"
+						"special_bonus_unique_largo_7" "+15" // because +% doesn't work here, precalculate it
 					}
 					"damage_per_stack"
 					{	
 						"value"		"0"
 						"special_bonus_scepter"		"+6 +10 +14"
-						"special_bonus_unique_largo_7" "+6" // because +% doesn't work here, precalculate it
+						"special_bonus_unique_largo_7" "+4" // because +% doesn't work here, precalculate it
 					}
 					"magic_damage_bonus"
 					{
@@ -358,7 +364,7 @@
 					}
 					"spell_amp_bonus"
 					{
-						"value"			"8 12 16"
+						"value"			"6 8 10"
 						"special_bonus_unique_largo_7" "+30%"
 					}
 					"battle_burst_duration"
@@ -381,7 +387,7 @@
 				// General
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityType"					"ABILITY_TYPE_BASIC"
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				//"HasShardUpgrade"				"1"
 				"ShowCooldownInTooltips"		"0"
 				"MaxLevel"						"3"
@@ -447,7 +453,7 @@
 				// General
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityType"					"ABILITY_TYPE_BASIC"
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				//"HasShardUpgrade"				"1"
 				"ShowCooldownInTooltips"		"0"
 				"MaxLevel"						"3"
@@ -597,8 +603,7 @@
 					}
 					"damage_portion_pct"
 					{
-						"value"					"30 35 40 45"
-						//"value"					"0"
+						"value"					"25 30 35 40"
 					}
 					"damage_duration"
 					{
@@ -657,7 +662,7 @@
 		
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"			"13 11 9 7"
+				"AbilityCooldown"				"15 12 9 6"
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -697,7 +702,7 @@
 					}
 					"dispel_hp_regen"
 					{
-						"value"			"4 7 10 13"
+						"value"			"2.5 5 7.5 10"
 						"special_bonus_unique_largo_2"	"x2.5"
 					}
 					"buff_duration"		"8"

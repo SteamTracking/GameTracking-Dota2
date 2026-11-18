@@ -41,7 +41,7 @@
 		"Ability3"		"broodmother_incapacitating_bite"
 		"Ability4"		"broodmother_sticky_snare"
 		"Ability5"		"broodmother_spiders_milk"
-		"Ability6"		"broodmother_spawn_spiderlings"
+		"Ability6"		"broodmother_spawn_spiderlings"		
 
 		"AbilityDraftAbilities"
 		{
@@ -54,9 +54,9 @@
 		"Ability10"		"special_bonus_unique_broodmother_3"
 		"Ability11"		"special_bonus_unique_broodmother_6"
 		"Ability12"		"special_bonus_unique_broodmother_2"
-		"Ability13"		"special_bonus_unique_broodmother_7"
+		"Ability13"		"special_bonus_unique_broodmother_4"
 		"Ability14"		"special_bonus_unique_broodmother_5"
-		"Ability15"		"special_bonus_unique_broodmother_4"
+		"Ability15"		"special_bonus_unique_broodmother_7"
 		"Ability16"		"special_bonus_unique_broodmother_1"
 		"Ability17"		"special_bonus_unique_broodmother_web_speed"
 		
@@ -302,11 +302,11 @@
 							"value"				"220 320 420"
 							"special_bonus_unique_broodmother_3" "+80"
 						}
-						"damage_bonus"	"0 3 6"
+						"damage_bonus"	"0 6 12"
 						"hp_bonus"
 						{
 							"value"				"0"
-							"special_bonus_unique_broodmother_7" "+175"
+							"special_bonus_unique_broodmother_7" "+350"
 						}
 						"count"					
 						{
@@ -316,7 +316,13 @@
 						"tooltip_spiderling_hp"
 						{
 							"value"				"325"
-							"special_bonus_unique_broodmother_7" "+175"
+							"special_bonus_unique_broodmother_7" "+350"
+						}
+						"tooltip_spiderling_damage"
+						{
+							"value"				"18.5 24.5 30.5"
+							"CalculateSpellDamageTooltip"	"0"
+							"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 						}
 						"slow_duration"	
 						{
@@ -455,14 +461,14 @@
 				{
 					"kill_heal_heroes"					
 					{
-						"value"								"1.9"
+						"value"								"2.9"
 						"hero_levelup"						".1"
 					}
 			
 					"kill_creeps_penalty"						"40"
 					"kill_heal_aoe"							
 					{
-						"value"			"600"
+						"value"			"900"
 						"affected_by_aoe_increase"	"1"
 					}
 					"kill_heal_duration"					"3"
@@ -564,12 +570,12 @@
 					"miss_chance"			
 					{
 						"value"		"30 40 50 60"
-						"special_bonus_unique_broodmother_4"	"+20"
+						"special_bonus_unique_broodmother_4"	"+15"
 					}
 					"bonus_movespeed"		
 					{
 						"value"		"-15 -20 -25 -30"
-						"special_bonus_unique_broodmother_4"	"-25"
+						"special_bonus_unique_broodmother_4"	"-15"
 					}
 					"duration"				"2.0 2.0 2.0 2.0"
 					"attack_damage"			
@@ -606,21 +612,21 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"bonus_damage"			
+					"bonus_damage"
 					{
 						"value"					"40 50 60 70"
 						"CalculateSpellDamageTooltip"	"0"
 					}
-					"lifesteal_pct"			
+					"lifesteal_pct"
 					{
 						"value"				"40 60 80 100"
 						"special_bonus_unique_broodmother_6"				"+20"
 					}
-					"duration"				
+					"duration"
 					{
 						"value"		"8 10 12 14"
 					}
-					"bat_bonus"				
+					"bat_bonus"
 					{
 						"value"				"0"
 						"special_bonus_unique_broodmother_1" "+0.15"
@@ -634,18 +640,18 @@
 					{
 							"special_bonus_shard"	"1"
 					}
-					"aura_radius"		
+					"aura_radius"
 					{
-						"value"				"1200"				
+						"value"				"1200"
 						"affected_by_aoe_increase"	"1"
 					}
-			
-					
+
+
 				}
 			}
-	
+
 			//=================================================================================================================
-			// Broodmother: 
+			// Broodmother:
 			//=================================================================================================================
 			"broodmother_sticky_snare"
 			{
@@ -656,7 +662,7 @@
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 				"FightRecapLevel"				"1"
 				"MaxLevel"						"1"
 				"HasScepterUpgrade"				"1"
@@ -668,10 +674,10 @@
 				"AbilityCastPoint"				"0.2"
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-				// Time		
+				// Time
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCharges"				"2"
-				"AbilityChargeRestoreTime"		"30"		
+				"AbilityChargeRestoreTime"		"30"
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -683,18 +689,18 @@
 				{
 					"formation_delay"		"2.0"
 					"root_duration"			"3.0"
-					"damage_per_second"	
+					"damage_per_second"
 					{
 						"value"			"100"
 						"CalculateSpellDamageTooltip" "1"
 					}
 					"count"					"5"
-					"width"					
+					"width"
 					{
 						"value"		"900"
 						"affected_by_aoe_increase"	"1"
 					}
-			
+
 				}
 			}
 

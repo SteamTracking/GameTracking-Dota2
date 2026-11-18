@@ -94,6 +94,7 @@
 #DOTA_Workshop_DifferentTemplate_Text
 #DOTA_Workshop_DifferentTemplate_Title
 #DOTA_Workshop_DisplaySummonedUnits
+#DOTA_Workshop_DissolveColor
 #DOTA_Workshop_EditAngles
 #DOTA_Workshop_EditAttachments
 #DOTA_Workshop_EditGeneric
@@ -385,7 +386,6 @@ $(model_wearable:vmdl_name)
 $(particle_snapshot:psf_name)
 %.2f FPS (%.2fms%s)
 %.3f %.3f %.3f
-%0.2f
 %10.10s:  UpdateItemDefinitionList( %d : %s : %.3f ms )\n
 %10.10s:  UpdateItemDefinitionList(skipped)\n
 %d trace results\n
@@ -752,19 +752,11 @@ $(particle_snapshot:psf_name)
 1OnAddCamera()
 1OnAddHeroPreset()
 1OnAddSummon()
-1OnAmbientScaleChanged( float )
-1OnAnimationControlAnimationChanged( const QString )
 1OnAnimationControlFrameChanged( int )
-1OnAnimationControlPlaybackSpeedChanged( float )
 1OnAutomationChanged()
 1OnBackgroundColorChanged( const QColor & )
-1OnBackgroundImageChanged( int )
 1OnBrowse()
-1OnCameraChanged()
-1OnCameraFOVChanged( float )
-1OnCameraFarZChanged( float )
 1OnCameraNameSet( const QString & )
-1OnCameraRollChanged( float )
 1OnChangeGizmoEditMode( int )
 1OnChangeGizmoEditMode(int)
 1OnCheckAutomaticAdvance()
@@ -782,7 +774,6 @@ $(particle_snapshot:psf_name)
 1OnEditAttachmentAngles()
 1OnEditAttachmentOffset()
 1OnEditKVPressed()
-1OnEntityShadowScaleChanged( float )
 1OnFilterGroupBoxToggled( bool )
 1OnFindTextEdited( QString )
 1OnHeroItem_EditTemplate()
@@ -794,9 +785,6 @@ $(particle_snapshot:psf_name)
 1OnImportS1Mask1()
 1OnImportS1Mask2()
 1OnImportS1Normal()
-1OnLightDistanceChanged( float )
-1OnLightFOVChanged( float )
-1OnLightScaleChanged( float )
 1OnLightingPreviewChanged( QAbstractButton* )
 1OnLoadSession()
 1OnLoadZip()
@@ -937,7 +925,6 @@ $(particle_snapshot:psf_name)
 2ReadyToSubmit(PreparedWorkshopSubmission_t *)
 2ReadyToSubmit(PreparedWorkshopSubmission_t*)
 2ResetSlotModelsToDefault()
-2SceneCameraChanged()
 2SelectedAnimationChanged( const QString )
 2SlotModelsSelected()
 2StringChanged()
@@ -974,7 +961,6 @@ $(particle_snapshot:psf_name)
 <WORKSHOP IMPORT: %s>
 <a href="%1">%2</a>
 <font color='%s'>
-=aes(partial)
 >AES part of OpenSSL 1.0.2j  26 Sep 2016
 ??0QAbstractItemModel@@QEAA@PEAVQObject@@@Z
 ??0QAbstractTableModel@@QEAA@PEAVQObject@@@Z
@@ -1032,7 +1018,6 @@ $(particle_snapshot:psf_name)
 ?append@QListData@@QEAAPEAPEAXAEBU1@@Z
 ?arg@QString@@QEBA?AV1@_KHHVQChar@@@Z
 ?atEnd@QProcess@@UEBA_NXZ
-?availableGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?beginInsertRows@QAbstractItemModel@@IEAAXAEBVQModelIndex@@HH@Z
 ?beginRemoveRows@QAbstractItemModel@@IEAAXAEBVQModelIndex@@HH@Z
 ?beginResetModel@QAbstractItemModel@@IEAAXXZ
@@ -1134,7 +1119,6 @@ $(particle_snapshot:psf_name)
 ?path@QUrl@@QEBA?AVQString@@V?$QFlags@W4ComponentFormattingOption@QUrl@@@@@Z
 ?pixmap@QLabel@@QEBA?AVQPixmap@@W4ReturnByValueConstant@Qt@@@Z
 ?pos@QIODevice@@UEBA_JXZ
-?primaryScreen@QGuiApplication@@SAPEAVQScreen@@XZ
 ?qt_metacall@QAbstractItemModel@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
 ?qt_metacall@QAbstractTableModel@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
 ?qt_metacall@QProcess@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
@@ -1149,7 +1133,6 @@ $(particle_snapshot:psf_name)
 ?readAllStandardOutput@QProcess@@QEAA?AVQByteArray@@XZ
 ?readData@QProcess@@MEAA_JPEAD_J@Z
 ?readLineData@QIODevice@@MEAA_JPEAD_J@Z
-?rect@QPixmap@@QEBA?AVQRect@@XZ
 ?remove@QFile@@SA_NAEBVQString@@@Z
 ?remove@QListData@@QEAAXH@Z
 ?removeColumns@QAbstractItemModel@@UEAA_NHHAEBVQModelIndex@@@Z
@@ -1176,7 +1159,6 @@ $(particle_snapshot:psf_name)
 ?setAutoDefault@QPushButton@@QEAAX_N@Z
 ?setBackgroundRole@QWidget@@QEAAXW4ColorRole@QPalette@@@Z
 ?setCaseSensitivity@QRegExp@@QEAAXW4CaseSensitivity@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setColumnMinimumWidth@QGridLayout@@QEAAXHH@Z
 ?setCurrentIndex@QAbstractItemView@@QEAAXAEBVQModelIndex@@@Z
 ?setCurrentText@QComboBox@@QEAAXAEBVQString@@@Z
@@ -1193,7 +1175,6 @@ $(particle_snapshot:psf_name)
 ?setHorizontalSpacing@QGridLayout@@QEAAXH@Z
 ?setHtml@QTextEdit@@QEAAXAEBVQString@@@Z
 ?setIconPixmap@QMessageBox@@QEAAXAEBVQPixmap@@@Z
-?setIconSize@QAbstractButton@@QEAAXAEBVQSize@@@Z
 ?setIconVisibleInMenu@QAction@@QEAAX_N@Z
 ?setItemData@QAbstractItemModel@@UEAA_NAEBVQModelIndex@@AEBV?$QMap@HVQVariant@@@@@Z
 ?setLabelText@QProgressDialog@@QEAAXAEBVQString@@@Z
@@ -1208,6 +1189,7 @@ $(particle_snapshot:psf_name)
 ?setPlainText@QPlainTextEdit@@QEAAXAEBVQString@@@Z
 ?setReadOnly@QPlainTextEdit@@QEAAX_N@Z
 ?setRowMinimumHeight@QGridLayout@@QEAAXHH@Z
+?setScaledContents@QLabel@@QEAAX_N@Z
 ?setSectionResizeMode@QHeaderView@@QEAAXHW4ResizeMode@1@@Z
 ?setShowGrid@QTableView@@QEAAX_N@Z
 ?setSizePolicy@QWidget@@QEAAXVQSizePolicy@@@Z
@@ -1271,9 +1253,12 @@ AboutSlot
 Accepted Reservation: %u\n
 Activity
 Activity %s has %d sequences with a total weight of %d!\n
+Add Camera
 Add Custom Template
 Add File
 Add Folder
+Add Hero Preset
+Add Summon
 Add a folder to the VPK
 Add file(s) to the VPK
 AddButtonClicked
@@ -1282,6 +1267,25 @@ AddFolderSlot
 AddMapButtonClicked
 AddMapScriptButtonClicked
 Adding Search Path "%s" = '%s'\n
+Adjust Ambient Angles
+Adjust Ambient Brightness
+Adjust Ambient Origin
+Adjust Animation Frame
+Adjust Camera FOV
+Adjust Camera FarZ
+Adjust Camera Origin
+Adjust Camera Roll
+Adjust Camera Target
+Adjust Color
+Adjust Hero Angles
+Adjust Light Brightness
+Adjust Light Distance
+Adjust Light Size
+Adjust Shadow Scale
+Adjust Spotlight Angles
+Adjust Spotlight Origin
+Adjust Summon Origin
+Adjust Summon Scale
 Alyx Addon
 An error occurred retrieving details for a published file!\nFile ID: 
 An error occurred while retrieving file information.\nSome files will not be shown!
@@ -1292,7 +1296,6 @@ Any files (*)
 Approved
 Are you sure you want to cancel VPK creation
 Are you sure you want to change "workshop_revenue_share" target from %llu to %llu?
-Arg list too long
 Asset &Browser
 Asset Pack
 Attempting to load signing keys.\n
@@ -1303,8 +1306,6 @@ Bad Attachment Name
 Bad Expression
 Bad Hitbox Name
 Bad Hitbox Set Name
-Bad address
-Bad file descriptor
 Bad material group name
 Bad or duplicate anim name
 Bad or duplicate bodygroup name
@@ -1317,7 +1318,7 @@ Bad value for hAlign in AttachPos!
 Bad value for vAlign in AlignedPos!
 Bad value for vAlign in AttachPos!
 Before the template is active, you must:\n
-Broken pipe
+BeginSceneCameraChange
 BrowseImageButtonClicked
 Bundle Share
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\tools\workshopmanager\_vpc_workshopmanager\default\win64\_msvc_\Retail\workshopmanager.pdb
@@ -1383,6 +1384,7 @@ CQSummonPickerDialog
 CQSummonsEditorWidget
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQWearablePicker
 CQWorkshopAbilityIconsDialog
 CQWorkshopHeroItemDialog
@@ -1452,7 +1454,6 @@ CWorkshopCfg_DotaItemDef::UpdatePaymentRules:  can't update workshop_revenue_sha
 CWorkshopCfg_DotaItemDef::UpdatePaymentRules:  not changing payment rule for %llu, it's up to date\n
 CZipFile::ParseFromDisk
 CZipFile::SaveDirectory
-Camera
 CameraLookAtSelection
 CameraNameSet
 Cancel VPK creation?
@@ -1463,6 +1464,7 @@ Cannot use CQImportPreviewEditor outside of Toolframework2!\n
 Cannot use CQToolSceneWidgetAutoUpdate outside of Toolframework2!\n
 CaptureNextPresent
 Caster Branding
+Change Animation
 ChangelogTextChanged
 Classic
 CloneCameraToggled
@@ -1513,10 +1515,8 @@ DeleteSubmissionSlot
 Deleting selected file
 DescriptionTextChanged
 Destination
-Directory not empty
 DisplayInLoadout
 Do Not Ship
-Domain error
 Don't have test item keyvalues factory for '%s' yet\n
 DotaForward
 Download of file from cloud failed!\n
@@ -1549,10 +1549,6 @@ ECON_MODEL_CHANGE_EVENT_RECEIVED_GC_RESERVED_ITEMS
 ECON_MODEL_CHANGE_EVENT_UNITS
 ECON_MODEL_CHANGE_EVENT_UNKNOWN
 EWorkshopFileType
-EXRReadFile() - B channel not found!\n
-EXRReadFile() - G channel not found!\n
-EXRReadFile() - R channel not found!\n
-EXRReadFile() - cannot read image data!\n
 Edit Custom Template
 Edit workshop name or description
 Edit/Generate Template
@@ -1564,6 +1560,7 @@ EffigyCameraOffset
 EffigyGroundOffset
 EffigyZoomOut
 Encryption
+EndSceneCameraChange
 Error adding %s\n
 Error creating test keyvalues for '%s'\n
 Error loading image:\n%s
@@ -1575,7 +1572,6 @@ Error: Source 1 manifests are no longer supported.
 EventGizmoAngleChanged_t
 EventGizmoLengthChanged_t
 EventGizmoScaleChanged_t
-Exec format error
 Exit the VPK manager
 Exit the workshop manager
 ExitSlot
@@ -1610,10 +1606,7 @@ Failed to update wearable keys.\n
 Failed to write file
 File '%s' too large (%llu bytes)\n
 File Folder
-File exists
-File too large
 Filename '%s' is invalid to be contained in a VPK
-Filename too long
 Filter(s)
 First Tier
 FloatBitMap_t: Error loading %s\n
@@ -1621,9 +1614,9 @@ Fly [Toggle: %s]
 FocusIn
 FocusOut
 Frame: 
+FrameSliderPressed
 Frostivus 2017
 Frostivus 2017 Hero Items
-Function not implemented
 GameManagedItem
 Gem Unlock
 GenerateSHA256Digest
@@ -1658,7 +1651,6 @@ IToolSpecificPopupUI
 IWorkshopImportLog
 IWorkshopImportSessionListener
 Ignoring %s: unsupported file type.\n
-Illegal byte sequence
 Import complete, with problems:\n
 Import session item def count (%d) != 1\n
 Import successful!\n
@@ -1667,11 +1659,8 @@ Imported Item Info
 Importing files...\n
 Importing material: %s\n
 Importing model: %s\n
-Improper link
-Inappropriate I/O control operation
 IncreaseMoveSpeed
 Indices
-Input/output error
 IntegratedGuide
 Internal Error: Failed to convert
 Internal Error: Invalid game or content search path.
@@ -1680,13 +1669,9 @@ Internal Error: Portrait editor with no session
 Internal Error: Unrecognized format
 Internal Error: Unzip lost manifest
 Internal error: No submission details
-Interrupted function call
-Invalid argument
 Invalid import name
 Invalid poseparam name
-Invalid seek
 InvertSelectionSlot
-Is a directory
 Item Definition - '%s'
 Item Name/ID
 Item Set:
@@ -1706,7 +1691,6 @@ Lighting Preview
 LightingControl
 Load Zip
 Load portrait background images
-LoadEXRImageFromMemory() failed! Error message: %s\n
 LoadSessionClicked
 LoadZipClicked
 LocalTest
@@ -1733,6 +1717,7 @@ MouseControlCamera2D
 MouseControlCamera3D
 MouseControlCamera3D_Toggle
 MouseLook3D
+Move Camera
 MoveCameraBackward3D
 MoveCameraDown3D
 MoveCameraForward3D
@@ -1745,17 +1730,7 @@ Name of the VPK file to save
 New Template Created
 NewSlot
 NewSubmissionSlot
-No child processes
-No error
-No locks available
 No payment type
-No space left on device
-No such device
-No such device or address
-No such file or directory
-No such process
-Not a directory
-Not enough space
 Not signing; keys not set.\n
 Num selections: 
 On The Fence
@@ -1765,9 +1740,12 @@ OnAddCamera
 OnAddHeroPreset
 OnAddSummon
 OnAmbientColorChanged
-OnAmbientScaleChanged
+OnAmbientScaleChangedByEdit
+OnAmbientScaleChangedBySlider
+OnAmbientScaleSliderPressed
 OnAnimationControlAnimationChanged
 OnAnimationControlFrameChanged
+OnAnimationControlFrameSliderPressed
 OnAnimationControlPlaybackSpeedChanged
 OnAutomationChanged
 OnBackgroundColorChanged
@@ -1777,15 +1755,22 @@ OnBackgroundMapSelected
 OnBackgroundModelSelected
 OnBackgroundParticleSelected
 OnBrowse
-OnCameraChanged
-OnCameraFOVChanged
-OnCameraFarZChanged
+OnCameraFOVChangedByEdit
+OnCameraFOVChangedBySlider
+OnCameraFOVSliderPressed
+OnCameraFarZChangedByEdit
+OnCameraFarZChangedBySlider
+OnCameraFarZSliderPressed
 OnCameraNameSet
-OnCameraRollChanged
+OnCameraRollChangedByEdit
+OnCameraRollChangedBySlider
+OnCameraRollSliderPressed
 OnChangeGizmoEditMode
 OnChangePreviewMode
 OnCheckAutomaticAdvance
 OnClearPressed
+OnColorChangeFinished
+OnColorChangeStarted
 OnComboBoxValueSelected
 OnCopy
 OnCourierTeamChange
@@ -1800,7 +1785,9 @@ OnDumpButtonPressed
 OnEditAttachmentAngles
 OnEditAttachmentOffset
 OnEditKVPressed
-OnEntityShadowScaleChanged
+OnEntityShadowScaleChangedByEdit
+OnEntityShadowScaleChangedBySlider
+OnEntityShadowScaleSliderPressed
 OnFilterGroupBoxToggled
 OnFindTextEdited
 OnGodraysFXColorChanged
@@ -1818,9 +1805,15 @@ OnImportS1Mask2
 OnImportS1Normal
 OnItemTypeChanged
 OnLightColorChanged
-OnLightDistanceChanged
-OnLightFOVChanged
-OnLightScaleChanged
+OnLightDistanceChangedByEdit
+OnLightDistanceChangedBySlider
+OnLightDistanceSliderPressed
+OnLightFOVChangedByEdit
+OnLightFOVChangedBySlider
+OnLightFOVSliderPressed
+OnLightScaleChangedByEdit
+OnLightScaleChangedBySlider
+OnLightScaleSliderPressed
 OnLightingPreviewChanged
 OnLiveRenderingSwapChainChanged
 OnLoadSession
@@ -1903,18 +1896,14 @@ OpenContainingFolder
 OpenSSL error (%s): %s\n
 OpenSlot
 Opening item %u:  '%s' in item editor\n
-Operation not permitted
 OptionsSlot
 Other payment type
 Owner
-PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 PanCamera3D
 Parent: 
-ParseEXRHeaderFromMemory() failed! Error message: %s\n
 Partner Rule
 Partner Share
 Payment:
-Permission denied
 Persona
 Physics Debug Draw
 Pick Global Background
@@ -1927,6 +1916,7 @@ Player Branding
 Please enter a name for the VPK file.
 Please select at least 1 file to add to the VPK.
 Pop Out...
+Populate Slots
 PortraitAllowAnimatedPortrait
 PortraitAmbientColor
 PortraitAmbientDirection
@@ -2003,7 +1993,6 @@ RSASignSHA256
 Rarity
 Rarity:
 ReUploadSubmissionSlot
-Read-only file system
 Reading loading screen: %s\n
 Ready
 ReadyStatusChanged
@@ -2011,6 +2000,9 @@ ReadyToSubmit
 Refresh the view of published submissions
 RefreshFileBrowser
 ReloadLightRigDefinitions
+Remove Camera
+Remove Hero Preset
+Remove Summon
 Remove from the VPK
 RemoveButtonClicked
 RemoveMapButtonClicked
@@ -2026,12 +2018,8 @@ ReserveTestItemIndex failed -- too many test items?\n
 ResetClicked
 ResetMoveSpeed
 ResetSlotModelsToDefault
-Resource deadlock avoided
-Resource device
-Resource temporarily unavailable
 ResourceHandle_t
 RestartSim
-Result too large
 Retrieving files from Steam Cloud, please wait...
 RotateAboutTarget3D
 RotateLights
@@ -2054,6 +2042,20 @@ SelectAllSlot
 SelectedAnimationChanged
 SelectedPreviewAnimationClipChanged
 Sequence (or Clip)
+Set Ambient Brightness
+Set Background Image
+Set Background Map
+Set Background Model
+Set Background Particle
+Set Camera FOV
+Set Camera FarZ
+Set Camera Roll
+Set Hero Rotation
+Set Light Brightness
+Set Light Color
+Set Light Distance
+Set Light Size
+Set Shadow Scale
 Set encryption keys, will sign %s.\n
 SetCloneCameraEnabled
 SetCurrentAsset
@@ -2131,9 +2133,6 @@ ToggleLockCameraHeight
 ToggleSettingsPopup
 Tone Mapping
 Too Many LODs
-Too many links
-Too many open files
-Too many open files in system
 ToolObjects/GlobalLight
 ToolScene Portrait Overlay
 ToolSceneBackgroundMaterial
@@ -2161,17 +2160,14 @@ Unable to GetEngineTool 'item_editor' tool!\n
 Unable to delete the file from Steam!
 Unable to enumerate user's published files!\n
 Unable to find ItemEditor tool!\n
-Unable to load psd: %s\n
 Unable to retrieve cloud file info from Steam\n
 Unable to write file to disc!\n
 Uninspected
 Unit:
-Unknown error
 UnlitPostPass
 Unlock camera and allow perspective to roll upside down
 Unrecognized abilityicons template name: %1
 Unshipped
-Unsupported PSD color mode!\n
 Untitled VPK File
 UpdateEditFromSlider
 UpdateImagePreview
@@ -2198,7 +2194,6 @@ VerticalStrafeCamera
 View this submission on the Steam Workshop website
 ViewInWorkshopSlot
 VisibilityChanged
-Visual C++ CRT: Not enough memory to complete call to strerror.
 WARNING: This item has unresolved errors - are you sure you want to create an item?
 WORKSHOPCONTENT
 WORKSHOPGAME

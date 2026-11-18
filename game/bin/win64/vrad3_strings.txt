@@ -1,28 +1,21 @@
+    face %s: mean luminance %.4f, max %.4f%s\n
   %d search groups (%llu total ops)\n
   %d/%d Placements Approved (%.02f%%)\n
   Bad Fax Lines: %lu\n
   Consecutive Bad Fax Lines: %lu\n
-  Enumerate Placement Opportunities
-  Execute Approved Placements
   Fax DCS: %s\n
   Fax Data:
   Fax Receive Parameters: %08lx\n
   Fax Receive Time: %lu secs\n
   Fax SubAddress: %s\n
-  Free Line Cleanup
   Group 3 Options:
   Group 4 Options:
-  Partition Free Lines
   Performance: %.2fk approvals/sec\n
-  Placement Request Sort
-  Placement Review
-  Placement Search
   Predictor: 
   Round %d cumulative runtime: %dm %ds\n
-  Update Block Endpoints
   [GPU memory usage (WDDM): %s / %s (rendersystem: %s)]\n
   band +%.1f / -%.1f units at level 0, %.1f texels across it\n
-  bricks: %d (%s)\n
+  bricks: %d (%s, %s)\n
   cells: %d inside solid (%.1f%%), %d beyond every band (%.1f%%)\n
   farfield atlas %dx%dx%d (%d rows), %s resident\n
   farfield bricks [%d, %d)...
@@ -173,6 +166,7 @@ $timer
 *** TimeFrame "%s" is missing attribute "%s"!\n
 *** Unable to find or add attribute "%s" to element "%s"!\n
 +?333?Y
+, %d NaN/inf texels
 , channels = 
 , height = 
 ---- dmxconvert cmdline ----\n
@@ -273,13 +267,15 @@ $timer
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1???$WriteLightmapImage@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_write_sh_irradiance@@UEAAXHPEAPEBD@Z@@@YAXPEBDAEBVCVrad3LightmapImage@@W4FBMAttributeMask_t@@V1?1??Run@CVrad3Command_lightmap_image_write_sh_irradiance@@UEAAXHPEAPEBD@Z@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1???$WriteLightmapImage@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_write_tangent@@UEAAXHPEAPEBD@Z@@@YAXPEBDAEBVCVrad3LightmapImage@@W4FBMAttributeMask_t@@V1?1??Run@CVrad3Command_lightmap_image_write_tangent@@UEAAXHPEAPEBD@Z@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1???$WriteLightmapImage@V<lambda_3>@?6??Serialize@CVrad3LightmapImage@@QEAAXPEBD@Z@@@YAXPEBDAEBVCVrad3LightmapImage@@W4FBMAttributeMask_t@@V<lambda_3>@?6??Serialize@2@QEAAX0@Z@@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?1???R<lambda_24>@?1??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@QEBA@AEAV?$CUtlVector@UBCEndpoints_t@@HV?$CUtlVectorMemory_Growable@UBCEndpoints_t@@H$0A@@@@@AEAVCVarBitVec@@2AEBV6@AEBV?$CUtlVectorFixed@W4Vrad3LightmapChannel_t@@$0BE@H@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1???R<lambda_24>@?1??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@QEBA@AEAV?$CUtlVector@UBCEndpoints_t@@HV?$CUtlVectorMemory_Growable@UBCEndpoints_t@@H$0A@@@@@AEAVCVarBitVec@@2AEBV6@AEBV?$CUtlVectorFixed@W4Vrad3LightmapChannel_t@@$0BF@H@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1???R<lambda_2>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA@_N@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??AmeliorateBlockCompressionArtefacts_FillBlocks@@YAXH@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??AmeliorateBlockCompressionArtefacts_SanitizeLineCharts@@YAXXZ@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??AssignVectorsToClusters@CKMeansClustering@@AEAAXXZ@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??BakeLightProbeImage_Dilate@@YAXXZ@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??BakedLightProbeImage_DilateIrradianceSH@@YAXXZ@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??InitMip@CVrad3LightmapImage@@QEAAXAEBV3@H@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_consolidate_sh2_directional@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_dilate_over_invalid_jfa@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_encode_sh2@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Run@CVrad3Command_lightmap_image_fill_gutters@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
@@ -289,30 +285,35 @@ $timer
 .?AV?$CParallelLambdaJob@V<lambda_1>@?3??Run@CVrad3Command_lightmap_image_remove_fireflies@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?4???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_5>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PA6A?AV?$Vec3D@M@@AEBV5@@Z@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?5??LpvImageRemoveFirefliesAmbientCube@@YAXMPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_bc7e@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?9??Run@CVrad3Command_lpv_image_median_filter@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?CB@??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@@@YAXHHPEBD$$QEAV1?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1??SweepFarfieldSDFDistances@@YAXAEBUFarfieldVolume_t@@AEAV?$CUtlVector@MHV?$CUtlVectorMemory_Growable@MH$0A@@@@@@Z@@@YAXHHPEBD$$QEAV1?1??SweepFarfieldSDFDistances@@YAXAEBUFarfieldVolume_t@@AEAV?$CUtlVector@MHV?$CUtlVectorMemory_Growable@MH$0A@@@@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?5??Run@CVrad3Command_farfield_lpv_median_filter@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV1?5??Run@CVrad3Command_farfield_lpv_median_filter@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV7@@Z@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV8@@Z@Z@@Z@_N@Z@@@YAXHHPEBD$$QEAV1?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV7@@Z@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV6@@Z@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1???$?R$$A6A?AV?$Vec3D@M@@AEBV0@@Z@<lambda_4>@?1??Run@CVrad3Command_uber_weld@@UEAAXHPEAPEBD@Z@QEBA?A_PW4Vrad3LightmapChannel_t@@A6A?AV?$Vec3D@M@@AEBV8@@Z@Z@@Z@_N@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV2@1@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV3@1@Z@@Z@_N@Z@@@YAXHHPEBD$$QEAV1?8???$IterateRows@V<lambda_1>@?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAXPEBDAEAV2@1@Z@@Z@@CSOAContainer@@QEAAX$$QEAV1?1???$TransformRGB@V<lambda_1>@?1??AnalyzeImageError@@YAXPEBDAEAVFloatBitMap_t@@1@Z@@FloatBitMap_t@@QEAAX$$QEAV1?1??AnalyzeImageError@@YAX0AEAV3@1@Z@@Z@_N@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@@@YAXHHPEBD$$QEAV1?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_resample_borders@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_2>@?1??Run@CVrad3Command_farfield_lpv_resample_borders@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_2>@?8??Run@CVrad3Command_farfield_lpv_dilate@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_2>@?8??Run@CVrad3Command_farfield_lpv_dilate@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_3>@?1??AllocateFarfieldBricks@@YAXAEBVCUtlGrid@@AEBV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@AEAV?$CUtlVector@UFarfieldBrick_t@@HV?$CUtlVectorMemory_Growable@UFarfieldBrick_t@@H$0A@@@@@@Z@@@YAXHHPEBD$$QEAV<lambda_3>@?1??AllocateFarfieldBricks@@YAXAEBVCUtlGrid@@AEBV?$CUtlVector@EHV?$CUtlVectorMemory_Growable@EH$0A@@@@@AEAV?$CUtlVector@UFarfieldBrick_t@@HV?$CUtlVectorMemory_Growable@UFarfieldBrick_t@@H$0A@@@@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_4>@?1??Run@CVrad3Command_farfield_lpv_filter_fireflies@@UEAAXHPEAPEBD@Z@@@YAXHHPEBD$$QEAV<lambda_4>@?1??Run@CVrad3Command_farfield_lpv_filter_fireflies@@UEAAXHPEAPEBD@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_22>@?MD@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_29>@?BEP@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_29>@?BFA@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_2>@?1??Run@CVrad3Command_lpv_image_ambient_occlusion@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_2>@?3??LpvImageRemoveFirefliesSH2@@YAXMPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_30>@?BEP@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_32>@?BIK@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_36>@?BNB@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_37>@?BOG@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_38>@?BOG@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_39>@?BOG@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_2>@?9??WriteToBufferBC_bcn@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_30>@?BFA@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_32>@?BIL@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_36>@?BNC@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_37>@?BOH@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_38>@?BOH@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_39>@?BOH@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_3>@?1??Run@CVrad3Command_lightmap_image_encode_ahd@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_3>@?3??Run@CVrad3Command_lightmap_image_dilate_over_invalid_jfa@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_3>@?BN@??Run@CVrad3Command_path_trace_triangles_gpu@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_40>@?BPI@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_40>@?BPJ@??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_4>@?1??Run@CVrad3Command_lightmap_image_dilate_over_invalid_jfa@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_6>@?5??FindLongestLinesCoveringCells@@YAHAEAV?$CUtlBlockVector@ULineCoveringCells_t@@HVCMemAllocAllocator@@@@AEAVCVarBitVec@@HHH@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_6>@?8??Run@CVrad3Command_lightmap_ameliorate_block_compression_artefacts@@UEAAXHPEAPEBD@Z@@CParallelProcessLauncher@@
@@ -563,6 +564,7 @@ $timer
 .?AVCVrad3Command_farfield_sdf_band@@
 .?AVCVrad3Command_farfield_sdf_box@@
 .?AVCVrad3Command_farfield_sdf_cell_size@@
+.?AVCVrad3Command_farfield_sdf_compress@@
 .?AVCVrad3Command_farfield_sdf_compute_bricks@@
 .?AVCVrad3Command_farfield_sdf_compute_distances@@
 .?AVCVrad3Command_farfield_sdf_local_to_world@@
@@ -576,6 +578,7 @@ $timer
 .?AVCVrad3Command_lightmap_compute_block_gpu@@
 .?AVCVrad3Command_lightmap_export_packing_geometry_to_obj@@
 .?AVCVrad3Command_lightmap_free_memory@@
+.?AVCVrad3Command_lightmap_image_consolidate_sh2_directional@@
 .?AVCVrad3Command_lightmap_image_consolidate_small_charts@@
 .?AVCVrad3Command_lightmap_image_dilate_over_invalid_jfa@@
 .?AVCVrad3Command_lightmap_image_encode_ahd@@
@@ -599,6 +602,7 @@ $timer
 .?AVCVrad3Command_lightmap_image_write_normal@@
 .?AVCVrad3Command_lightmap_image_write_samplecount@@
 .?AVCVrad3Command_lightmap_image_write_sh2@@
+.?AVCVrad3Command_lightmap_image_write_sh2_lum@@
 .?AVCVrad3Command_lightmap_image_write_sh_irradiance@@
 .?AVCVrad3Command_lightmap_image_write_tangent@@
 .?AVCVrad3Command_lightmap_load_block_gpu@@
@@ -630,6 +634,8 @@ $timer
 .?AVCVrad3Command_lpv_type@@
 .?AVCVrad3Command_lpv_voxelize_gpu@@
 .?AVCVrad3Command_lpv_write_debug_voxelization@@
+.?AVCVrad3Command_material_ao_denoise@@
+.?AVCVrad3Command_material_sample_gpu@@
 .?AVCVrad3Command_path_trace_triangles_gpu@@
 .?AVCVrad3Command_path_trace_triangles_gpu_init@@
 .?AVCVrad3Command_path_trace_triangles_gpu_shutdown@@
@@ -683,6 +689,8 @@ $timer
 64 283 0
 8-byte data pool
 <!-- DMXVersion
+<None>
+=C33[C
 ActiveArea
 AddMatrixToMatrix
 AddUndoElement '%s'\n
@@ -707,7 +715,7 @@ AsShotICCProfile
 AsShotNeutral
 AsShotPreProfileMatrix
 AsShotWhiteXY
-AtlasToVolumeTextureConversion(3613): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
+AtlasToVolumeTextureConversion(3541): Error! Unable to parse grid/slice count from volume atlas filename: %s\n
 Attempted to add two format updaters with the same file format (%s)!\n
 Attempted to add two legacy updaters with the same file format (%s)!\n
 Attempted to add two serializers with the same file encoding (%s)!\n
@@ -718,10 +726,13 @@ Available OIDN devices:\n
 Average efficiency: % f\n
 Average variance: % f\n
 B channel not found!\n
+B33 B
 Bad code word
 BadFaxLines
 BakeLightProbeImage_Dilate(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:424
+Baked dynamic sky in %.2f seconds\n
 BakedLightProbeImage_DilateIrradianceSH(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:554
+Baking dynamic sky %s: %dx%d cube, %s mode with D_SKY_CAPTURE, game time 0, angles (%.1f %.1f %.1f), exposure bias %.2f, IBL scale (%.3f %.3f %.3f)\n
 BaselineExposure
 BaselineNoise
 BaselineSharpness
@@ -739,6 +750,7 @@ BlackLevelRepeatDim
 BrowInV
 Build: %s (SIMD: %dx fp32)\n
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\utils\vrad3\_vpc_vrad3\default\win64\_msvc_\Retail\vrad3.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\datamodel\dependencygraph.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
@@ -780,6 +792,7 @@ CFALayout
 CFAPlaneColor
 CHammerMesh
 CImagePlaneNode
+CKMeansClustering::AssignVectorsToClusters(), C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\kmeansclustering.cpp:159
 CManifestInstance
 CMapCable
 CMapCordon
@@ -832,7 +845,6 @@ CUtlBlockVector<struct `public: virtual void __cdecl CVrad3Command_lightmap_amel
 CUtlBlockVector<struct `public: virtual void __cdecl CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(int,char const * *)'::`2'::PlacementRequest_t,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CDmElement *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlSymbolLarge,struct DmMemoryInfo_t,class CDefLess<class CUtlSymbolLarge>,unsigned short>::Node_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -861,35 +873,36 @@ CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildwo
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1570
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1595
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1797
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2292
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2351
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2500
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3022
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3111
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3167
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3195
-CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3249
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2295
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2354
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:2503
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3025
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3115
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3171
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3199
+CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:3253
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:816
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:843
 CVrad3Command_lightmap_ameliorate_block_compression_artefacts::Run::<lambda_24>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:1946
+CVrad3Command_lightmap_image_consolidate_sh2_directional::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2307
 CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:654
 CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:730
 CVrad3Command_lightmap_image_dilate_over_invalid_jfa::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:756
-CVrad3Command_lightmap_image_encode_ahd::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1991
-CVrad3Command_lightmap_image_encode_sh2::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2174
+CVrad3Command_lightmap_image_encode_ahd::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2063
+CVrad3Command_lightmap_image_encode_sh2::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2246
 CVrad3Command_lightmap_image_fill_gutters::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:809
 CVrad3Command_lightmap_image_filter_median::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:991
 CVrad3Command_lightmap_image_remove_fireflies::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:1140
 CVrad3Command_lpv_image_ambient_occlusion::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1118
 CVrad3Command_lpv_image_median_filter::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1548
 CVrad3Command_lpv_image_median_filter_fog::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1708
-CVrad3Command_path_trace_triangles_gpu::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_gpu.cpp:4337
+CVrad3Command_path_trace_triangles_gpu::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_gpu.cpp:4697
 CVrad3Command_sceneinfo_gpu::Run
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2559
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2666
-CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2684
-CVrad3Command_uber_weld::Run::<lambda_2>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2591
-CVrad3Command_uber_weld::Run::<lambda_5>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2630
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2689
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2796
+CVrad3Command_uber_weld::Run(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2814
+CVrad3Command_uber_weld::Run::<lambda_2>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2721
+CVrad3Command_uber_weld::Run::<lambda_5>::operator ()(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:2760
 CVrad3LightmapImage::InitMip(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap.cpp:245
 Calculating hash for each luxel
 CalibrationIlluminant1
@@ -924,6 +937,7 @@ Clip packing geometry to block (CPU)...
 ClipBoard
 ClipPath
 CloseLid
+Color Consistency Partition %d MinBright %f
 Color Fade
 Color Light From Control Point
 Color Random
@@ -934,6 +948,10 @@ ColorResponseUnit
 Colormap
 Command: 
 Compiled GUI file
+CompressBlocksBC1
+CompressBlocksBC3
+CompressBlocksBC6H
+CompressBlocksBC7
 Compression
 Compression algorithm does not support random access
 Compression scheme %u %s decoding is not implemented
@@ -949,7 +967,10 @@ Copyright
 Copyright (c) Valve Corporation, All rights reserved.\n
 Could not decode alpha data.
 Could not write %s - no irradiance channel.\n
+Couldn't allocate the view constants for face %d of the dynamic sky\n
 Couldn't find routine '%s'\n
+Couldn't read back face %s of the dynamic sky, not writing dynamic_sky.exr\n
+Couldn't set the render state of %s (%s, D_SKY_CAPTURE) for face %d of the dynamic sky\n
 Counting luxels sharing hash value
 Create In Hierarchy
 CreateDocument failed
@@ -1081,6 +1102,7 @@ Done.  Changed (%.1f%%) samples, %.1f seconds.\n
 Done\n
 DotRange
 DumpModeDecode: Not enough data for scanline %d
+Dynamic sky %s has no %s mode, the bake uses its SkyTexture\n
 ERROR! LoadFromJPG( %s ) failed!\n
 ERROR! LoadFromPNG( %s ) failed!\n
 ERROR! LoadFromWebP( %s ) failed!\n
@@ -1090,6 +1112,7 @@ EXIFIFDOffset
 EXRHeader variable is not initialized.
 EditGameClassProps
 Element uses unknown element type %s\n
+EncodeBC6Blocks
 Encountered an element array attribute '%s' while reading the prefix element
 Encountered an element attribute '%s' while reading the prefix element
 Encountered invalid element ID data!
@@ -1117,6 +1140,7 @@ Error: %s has too few argments, should be %s <filename>\n
 Error: %s has too few argments, should be %s <ground_truth_filename>\n
 Error: %s has too few argments, should be %s <shadowsfile>\n
 Error: %s has too few argments, should be %s start_x start_y start_z end_x end_y end_z [minspp] [maxspp] [err]\n
+Error: %s has too few arguments, should be %s <0|1>\n
 Error: %s has too few arguments, should be %s <ahdColorFilename> <ahdDirectionFilename>\n
 Error: %s has too few arguments, should be %s <filename>\n
 Error: %s has too few arguments, should be %s <level>\n
@@ -1167,6 +1191,11 @@ Error: lpv_box has too few argments, should be lpv_box <minx> <miny> <minz> <max
 Error: lpv_cells has too few argments, should be lpv_cells <num_cells_x> <num_cells_y> <num_cells_z>\n
 Error: lpv_local_to_world has too few argments, should be lpv_local_to_world <m00> ... <m23>\n
 Error: lpv_type has too few arguments, should be lpv_type cube|sh2\n
+Error: material_ao_denoise - OIDN: %s\n
+Error: material_ao_denoise - the images do not match the %d x %d size.\n
+Error: material_ao_denoise has too few arguments, should be material_ao_denoise <ao> <albedo> <normal> <width> <height>\n
+Error: material_sample_gpu could not create the ray tracing pipeline\n
+Error: material_sample_gpu has too few arguments, should be material_sample_gpu <inputfile> <outputfile> <samplecount> <mindistance> <maxdistance> <samplesperpoint> <tracedirections> <seed> <occlusiondistance>\n
 Error: must run lightmap_image_gpu prior to lightmap_load_block_gpu\n
 Error: path_trace_triangles_gpu has too few arguments, should be path_trace_triangles_gpu <inputfile> <outputfile> <vertexcount> <minspt> <maxspt> <errortol> <smoothing>\n
 Error: path_trace_triangles_gpu_init has too few arguments, should be path_trace_triangles_gpu_init <maxtriangles>\n
@@ -1243,15 +1272,30 @@ FindLongestLinesCoveringCells(), C:\buildworker\source2_dota_rel_2019_win64\buil
 FindLongestLinesCoveringCells(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:241
 FindLongestLinesCoveringCells(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightmap_ameliorate_bc_artefacts.cpp:257
 Finding free lines of 4x4 blocks
+Finding placements for the remaining charts
 Fingers
 Fingers_L
 Fingers_R
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
 FloatBitMap_t::CopyFloatBitmap: Received NULL pointer!\n
-FloatBitMap_t::LoadFromFile(3805): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
+FloatBitMap_t::LoadFromFile(3733): Error! Slice %d format %dx%dx%d Attr(%d) != previous slices of %dx%d Attr(%d) for %s\n
 FloatBitMap_t::LoadFromFloatBitmap: Received improper bitmap size, skipping!\n
-FloatBitMap_t::LoadFromTGA(2754): Error loading %s\n
+FloatBitMap_t::LoadFromTGA(2682): Error loading %s\n
 FloatBitMap_t::WriteInMemoryEXRFast
 FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:171
+FloatBitMap_t::WriteToBuffer(1207): Unsupported color format "%s", skipping!\n
+FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping!\n
+FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2323
+FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2435
+FloatBitMap_t::WriteToBufferBC_bcn(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2264
+FloatBitMap_t::WriteToBufferBC_bcn(2135): Error! Allocated %llu bytes when %llu are required!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1265): Error! Temp texture is %d bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1350): Unsupported output color format "%s"!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1359): Error! Allocated %llu bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1367): Error %d returned from ATI_TC_ConvertTexture()!\n
 Floating point "Predictor" not supported with %d data format
 FoldLipLo
 FoldLipUp
@@ -1267,16 +1311,32 @@ Generic DMX
 Generic MovieObjects
 Generic SFM
 GetClipboardData
+GetProfile_alpha_basic
+GetProfile_alpha_fast
+GetProfile_alpha_slow
+GetProfile_alpha_ultrafast
+GetProfile_alpha_veryfast
+GetProfile_basic
+GetProfile_bc6h_basic
+GetProfile_bc6h_fast
+GetProfile_bc6h_slow
+GetProfile_bc6h_veryfast
+GetProfile_bc6h_veryslow
+GetProfile_fast
+GetProfile_slow
+GetProfile_ultrafast
+GetProfile_veryfast
 GlobalSize
 GrayResponseCurve
 GrayResponseUnit
 GridComputeRegion
 Group3Options
 Group4Options
+HAtFKA
 HalftoneHints
 Hammer temp export
 HammerPathTraceWorld
-HelperLoadFbmByFileExtension(3585): Error! Unknown file type for %s\n
+HelperLoadFbmByFileExtension(3513): Error! Unknown file type for %s\n
 Horizontal differencing "Predictor" not supported with %d-bit samples
 HostComputer
 ICC Profile
@@ -1393,6 +1453,7 @@ LogLuvDecode32: Not enough data at row %d (short %d pixels)
 LogLuvInitState
 LpvImageRemoveFirefliesAmbientCube(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1352
 LpvImageRemoveFirefliesSH2(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3_lightprobevolume.cpp:1191
+LpvPartialLuxels
 LuxelChartIDs.vtex
 Made
 Make
@@ -1411,6 +1472,8 @@ MarkOccupiedVertices
 MarkOccupiedVoxelsGPU: a single mesh exceeds the voxelize budget (%u v, %u i) - raise LPV_MARK_OCCUPIED_VERTEX/INDEX_BUDGET_BYTES\n
 MaskedAreas
 Match Particle Velocities
+MaterialSampleResults
+MaterialSamples
 MatrixMultiply
 MatrixWorldToCamera
 MatrixWorldToScreen
@@ -1438,6 +1501,7 @@ NOEXECHECK
 NULL VP8Io parameter in VP8Decode().
 NeXT
 NeXTDecode: Not enough data for scanline %ld
+No %s, not writing dynamic_sky.exr\n
 No space for "TransferFunction" tag
 No space for LZW code table
 No space for LZW hash table
@@ -1461,6 +1525,7 @@ Not a key frame.
 Not enough
 Num Keys Buffer
 Num Threads: %d\n
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
 NumberOfInks
 OIDN Filter (lg) %s 
 OIDN Filter (lg) SH irradiance
@@ -1477,6 +1542,7 @@ Old-style JPEG
 Old-style LZW codes, convert file
 OldSubfileType
 One of the client procedures is NULL pointer.
+Only DXT1/DXT5 online texture compression supported.\n
 OpenImageDenoise.dll
 Operator cycle found during dependency graph traversal!\n
 Orient Rotation to 2D Direction
@@ -1533,6 +1599,8 @@ Premature end-of-partition0 encountered.
 Preset File
 PrimaryChromaticities
 Procedural
+ProcessBC6HResults
+Quantize to %d Values
 R channel not found!\n
 RTLightmap
 Radius Random
@@ -1562,7 +1630,6 @@ Resampling lighting...
 ResetSampleCount: hash scene[%08x %08x], instances[%08x, %08x], instancedata[%08x, %08x], globals[%08x %08x], lights[%08x %08x], shaders[%08x %08x]\n
 ResetSampleCount: materialGeneration %i, %i\n
 ResolutionUnit
-ResourceCompiler/BakedLighting/LightmapGutterSize
 RichTIFFIPTC
 RigArms
 RigBody
@@ -1584,6 +1651,7 @@ Row pixels integer overflow (rowpixels %u)
 RowsPerStrip
 RtxSampledRenderResourcesDescSet
 Rtx_Sampled_Renderer_Complete
+RunCommand
 SAXPY2
 SFM Session
 SFM Settings
@@ -1598,6 +1666,7 @@ SHARC: allocated %u entries (%.1fmb)\n
 SMaxSampleValue
 SMinSampleValue
 Sample Validation and Fixup
+Sample materials... points=%d, spp=%d, distance=%.2f-%.2f, occlusion distance=%.2f
 SampleFormat
 SamplesPerPixel
 SamplesPerPixel tag is missing, assuming correct SamplesPerPixel value is 1
@@ -1618,6 +1687,8 @@ Serialize: Format %s expects to be written to a binary format, but the buffer is
 SetGrowSize
 Setting up field info failed
 ShadowScale
+Sky %s isn't a DynamicSky material, the bake uses its SkyTexture\n
+Sky %s isn't loaded, the bake has no sky IBL\n
 Software
 Start Repack Iteration
 Stats at %d samples:\n
@@ -1656,6 +1727,7 @@ TargetPrinter
 Texture Configuration File
 TextureFormat
 TextureWrapModes
+The bake uses the SkyTexture of %s, if it has one\n
 This is a BigTIFF file.  This format not supported\nby this version of libtiff.
 Threshholding
 ThunderDecode: %s data at scanline %ld (%lu != %lu)
@@ -1694,12 +1766,13 @@ Unknown compression type.
 Unknown data format %d for LogLuv compression
 Unknown encoding %d for LogLuv compression
 Unknown variable '%s'\n
+Unmodified
 Unserialize: Cannot determine encoding from file, and no encoding provided!\n
 Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -1734,6 +1807,8 @@ Vgui editor file
 Virual volume texture file
 Voxelize Farfield Probe Volume...
 Voxelize Light Probe Volume...
+VrForward
+Vrad3-MaterialSample
 Vrad3-VertexLight
 Vrad3-Voxelize
 WARNING: unable to remove '%s'\n
@@ -1755,11 +1830,12 @@ Write chart IDs to GPU memory...
 Write error at scanline %lu
 Write results to lightmap image... 
 WriteFarfieldLPVBrickSolidEXR
-WriteLightmapImage(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3.h:936
+WriteLightmapImage(), C:\buildworker\source2_dota_rel_2019_win64\build\src\utils\vrad3\vrad3.h:941
 Writing %s
 Writing %s... \n
 Wrote %s (%dx%dx%d).\n
 Wrote %s (%i fireflies)\n
+Wrote %s (faces +X -X +Y -Y +Z -Z, world space, with the sky's exposure, without its tint)\n
 Wrote %s.\n
 Wrote %s\n
 Wrote %s_sdf_zNN.exr (%dx%d, %d slices, %d bricks, %d unused tiles)\n
@@ -1791,6 +1867,7 @@ ZIPVSetField
 [%d] Popping undo '%s'\n
 [%d] Pushing undo '%s'\n
 [%s] Forced dmxconvert - Finished [%s] in %0.2f secs. Please re-save or upconvert this asset!\n
+\n  farfield voxelize bricks [%d, %d)
 \n# Faces\n
 \n# Lightmap UVs\n
 \n# Vertices\n
@@ -1819,6 +1896,7 @@ _linked_type_
 _name
 _volumeatlas_
 activeBookmarkSet
+albedo
 allocation
 alpha_fade
 alpha_fade_in_random
@@ -1851,6 +1929,8 @@ background
 backgroundMap
 bad partition length
 baked_twosided
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
@@ -1861,6 +1941,10 @@ baseMapToOverride
 baseName
 baseStates
 basic_movement
+bc7e.dll
+bc7e_compress
+bc7e_init
+bc7e_init_params
 binary
 binary_array
 binary_seqids
@@ -1951,7 +2035,6 @@ current directory
 curve info
 curvetypes
 custom
-data
 data height too large.
 data width or data height is negative.
 data width too large.
@@ -1992,6 +2075,7 @@ drawGameRenderablesMask
 drawToolRenderablesMask
 dummyfilename.tif
 durationTime
+dynamic_sky.exr
 element
 elementList
 element_array
@@ -2026,7 +2110,7 @@ farfield sdf distances: %d bricks, %u of %d samples solid (%.1f%%)\n
 farfield sdf grid: %dx%dx%d cells, cell size <%.1f, %.1f, %.1f>\n
 farfield sdf saturated bricks: %d of %d (%.1f%%) - %d outside, %d inside, %s freed\n
 farfield sdf sweep: corrected %02d%%\n
-farfield voxelize: %d bricks, %d rays x %d iterations\n
+farfield voxelize: %d bricks, %d rays x %d iterations, %d bricks per batch...
 farfield: %d bricks but we can only store %i in an atlas\n
 farfield: cell (%d,%d,%d) wants level %d but its finest brick is level %d\n
 farfield: cell (%d,%d,%d) wants level %d but no brick covers it\n
@@ -2049,6 +2133,7 @@ farfield_lpv_write_cell_voxelization
 farfield_sdf_band
 farfield_sdf_box
 farfield_sdf_cell_size
+farfield_sdf_compress
 farfield_sdf_compute_bricks
 farfield_sdf_compute_distances
 farfield_sdf_local_to_world
@@ -2084,10 +2169,13 @@ frameRate
 fromAttribute
 fromElement
 functionName
+g2[4] b2[4] b3[4] r0[9:0] g0[9:0] b0[9:0] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+g2[5] g3[4] g3[5] r0[6:0] b3[0] b3[1] b2[4] g0[6:0] b2[5] b3[2] g2[4] b0[6:0] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
 g_rtxAccelSet
 g_vrad3FarfieldSet
 g_vrad3LightmapSet
 g_vrad3LpvSet
+g_vrad3MaterialSampleSet
 g_vrad3SampleValidationSet
 gameitemclass
 gameunitclass
@@ -2133,6 +2221,7 @@ isGroup
 isOrientation
 isPosition
 is_line_mesh
+ispc_texcomp.dll
 item_item_crate
 jointIndices
 jointIndicesIndices
@@ -2172,6 +2261,7 @@ lightmap_compute_block_gpu
 lightmap_export_packing_geometry_to_obj
 lightmap_free_memory
 lightmap_free_memory: released %.1f MB (+packing geo)\n
+lightmap_image_consolidate_sh2_directional
 lightmap_image_consolidate_small_charts
 lightmap_image_dilate_over_invalid_jfa
 lightmap_image_encode_ahd
@@ -2195,6 +2285,7 @@ lightmap_image_write_mean
 lightmap_image_write_normal
 lightmap_image_write_samplecount
 lightmap_image_write_sh2
+lightmap_image_write_sh2_lum
 lightmap_image_write_sh_irradiance
 lightmap_image_write_tangent
 lightmap_importance_volumes
@@ -2240,13 +2331,16 @@ lpv_mark_occupied_gpu
 lpv_type
 lpv_voxelize_gpu
 lpv_write_debug_voxelization
+luminaire_shape
 m_pVertexData
 maintain position along path
 makefile
 manipulatorSettings
 mapNodeName
 mapUsageType
+material_ao_denoise
 material_name
+material_sample_gpu
 materialgroup
 materials/dev/rtx/debug_visualization.vmat
 materials/dev/rtx/pathtracer.vmat
@@ -2261,6 +2355,7 @@ materials/dev/vrad3/lightmap_vertexlight_reduce.vmat
 materials/dev/vrad3/lpv_raytrace.vmat
 materials/dev/vrad3/lpv_test_converged.vmat
 materials/dev/vrad3/mark_occupied_voxels.vmat
+materials/dev/vrad3/materialsample_raytrace.vmat
 materials/dev/vrad3/vertexlight_raytrace.vmat
 materials/dev/vrad3/vertexlight_test_converged.vmat
 matrix
@@ -2310,7 +2405,6 @@ nodeID
 node_dest
 node_id_List
 node_name
-nodes
 noise
 none 
 normal$0
@@ -2330,6 +2424,7 @@ oidnGetDeviceError
 oidnGetDeviceInt
 oidnGetNumPhysicalDevices
 oidnGetPhysicalDeviceString
+oidnNewBuffer
 oidnNewBufferWithStorage
 oidnNewDevice
 oidnNewFilter
@@ -2342,6 +2437,7 @@ oidnSetFilterImage
 oidnSetFilterInt
 oidnSetFilterProgressMonitorFunction
 oidnSyncDevice
+oidnWriteBuffer
 oidnWriteBufferAsync
 operators
 orientationChannel
@@ -2366,7 +2462,7 @@ path_trace_triangles_gpu
 path_trace_triangles_gpu_init
 path_trace_triangles_gpu_shutdown
 path_trajectory
-pc64 Oct  5 2026 18:10:23
+pc64 Nov 18 2026 07:16:10
 physicsSimplificationError
 physicsSimplificationOverride
 pinEnabled
@@ -2397,6 +2493,18 @@ propdataname
 pseudo-
 qangle_array
 quaternion_array
+r0[5:0] g3[4] b3[0] b3[1] b2[4] g0[5:0] g2[5] b2[5] b3[2] g2[4] b0[5:0] g3[5] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
+r0[7:0] b3[0] b2[4] g0[7:0] g2[5] g2[4] b0[7:0] g3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[5:0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] b3[1] b2[4] g0[7:0] b2[5] g2[4] b0[7:0] b3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[5:0] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] g3[4] b2[4] g0[7:0] b3[2] g2[4] b0[7:0] b3[3] b3[4] r1[5:0] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[5:0] r3[5:0]
+r0[8:0] b2[4] g0[8:0] g2[4] b0[8:0] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10:15] g1[3:0] g0[10:15] b1[3:0] b0[10:15]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] b2[4] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[4:0] b0[10] b2[3:0] r2[3:0] b3[1] b3[2] r3[3:0] b3[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] g3[4] g2[3:0] g1[4:0] g0[10] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[3:0] b3[0] b3[2] r3[3:0] g2[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[4:0] r0[10] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[7:0] r0[10:11] g1[7:0] g0[10:11] b1[7:0] b0[10:11]
+r0[9:0] g0[9:0] b0[9:0] r1[8:0] r0[10] g1[8:0] g0[10] b1[8:0] b0[10]
+r0[9:0] g0[9:0] b0[9:0] r1[9:0] g1[9:0] b1[9:0]
 radiusScale
 radius_random
 radius_scale
@@ -2489,6 +2597,7 @@ sharc accumulation
 sharc hash entries
 sharc resolved
 shared
+shear
 showAmbientOcclusion
 showCameraFrustum
 showFocalPlane
@@ -2639,6 +2748,8 @@ volumefogenabled
 vphzc
 vrad3
 vrad3.dll
+vrad3_dynamic_sky
+vrad3_dynamic_sky_face
 vrad3_raytrace_scene_world
 vrad3_test_tweaked_bc6h_compression
 vsDmxIO SketchUpScene

@@ -38,8 +38,8 @@
 		"Ability1"		"undying_decay"
 		"Ability2"		"undying_soul_rip"
 		"Ability3"		"undying_tombstone"
-		"Ability4"		"undying_ceaseless_dirge"
-		"Ability5"		"generic_hidden"
+		"Ability4"		"undying_bite"
+		"Ability5"		"undying_ceaseless_dirge"
 		"Ability6"		"undying_flesh_golem"
 
 		"AbilityDraftAbilities"
@@ -354,35 +354,20 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-						"damage_per_unit"			
-						{
-							"value"			"14 26 38 50"
-							"special_bonus_unique_undying_6" "+12"
-						}			
-						"max_units"					"10"
-						"radius"					
-						{
-							"value"			"1300"
-							"affected_by_aoe_increase"	"1"
-						}
-						"tombstone_heal"			"4 8 12 16"
-						"strength_share_percent"
-						{
-							"value"						"0"
-							"special_bonus_facet_undying_ripped"	"+10"
-						}
-						"strength_share_duration"
-						{
-							"value"						"0"
-							"special_bonus_facet_undying_ripped"	"+10"
-						}
-						"strength_share_model_scale"
-						{
-							"value"						"0"
-							"special_bonus_facet_undying_ripped"	"+15"
-						}
+					"damage_per_unit"			
+					{
+						"value"			"14 26 38 50"
+						"special_bonus_unique_undying_6" "+12"
+					}			
+					"max_units"					"10"
+					"radius"					
+					{
+						"value"			"1300"
+						"affected_by_aoe_increase"	"1"
+					}
+					"tombstone_heal"			"1 2 3 4"
 				}
-			}	
+			}
 
 			//=================================================================================================================
 			// Undying: Tombstone
@@ -398,7 +383,6 @@
 				"FightRecapLevel"				"1"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"AbilitySound"					"Hero_Undying.Tombstone"
-				"HasShardUpgrade"				"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -426,8 +410,8 @@
 					}
 					"tombstone_health"
 					{
-						"value"					"20 24 28 32"
-						"special_bonus_unique_undying_5"	"+16" 
+						"value"					"5 6 7 8"
+						"special_bonus_unique_undying_5"	"+4" 
 					}
 
 					"hits_to_destroy_tooltip"
@@ -458,7 +442,7 @@
 					{
 						"special_bonus_unique_undying" "+20"
 					}
-					"zombie_health"				"2"
+					"zombie_health"				"1"
 
 					"bunker_units"				"1"
 					"bunker_heal_pct"			"0"
@@ -583,7 +567,7 @@
 					"slow"						"30 35 40"
 					"damage_amp"				
 					{
-						"value"					"25 30 35"
+						"value"					"20 25 30"
 						"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 					}
 					"slow_duration"					"3"
@@ -603,6 +587,59 @@
 						"value"						"15"
 					}
 					"zombie_spawn_padding"			"36"			
+				}
+			}
+
+			//=================================================================================================================
+			// Undying: Bite (Shard)
+			//=================================================================================================================
+			"undying_bite"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"FightRecapLevel"				"1"
+				"IsGrantedByShard"				"1"
+				"MaxLevel"						"1"
+				"AbilitySound"					"Hero_Undying.Bite"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0"
+				"AbilityCastRange"				"400"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"18"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"70"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"bonus_attack_range"		"250"
+					"miss_distance"				"150"
+					"lunge_distance"			"250"
+					"lunge_duration"			"0.2"
+					"damage"					"250"
+					"zombie_duration"			"3"
+					"zombie_damage_reduction"	"40"
+					"zombie_slow"				"25"
+					"creep_zombie_duration"		"20"
+					"zombie_health"				"3"
+					"zombie_bonus_damage"
+					{
+						"special_bonus_unique_undying" "+20"
+					}
 				}
 			}
 

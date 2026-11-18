@@ -38,7 +38,7 @@
 		"Ability2"		"beastmaster_summon_razorback"
 		"Ability3"		"beastmaster_summon_raptor"
 		"Ability4"		"beastmaster_inner_beast"
-		"Ability5"		"beastmaster_drums_of_slom"
+		"Ability5"		"beastmaster_summon_thunderhide"
 		"Ability6"		"beastmaster_primal_roar"
 		"Ability7"		"generic_hidden"
 		"Ability10"		"special_bonus_armor_4"
@@ -87,7 +87,7 @@
 		"AttributeBaseStrength"		"24"
 		"AttributeStrengthGain"		"2.9"
 		"AttributeBaseAgility"		"19"
-		"AttributeAgilityGain"		"2.0"
+		"AttributeAgilityGain"		"2.3"
 		"AttributeBaseIntelligence"		"16"
 		"AttributeIntelligenceGain"		"1.9"
 		"MovementSpeed"		"305"
@@ -331,7 +331,7 @@
 					"range"						"1500"
 					"axe_damage"
 					{
-						"value"					"40 80 120 160"
+						"value"					"45 85 125 165"
 						"CalculateSpellDamageTooltip"	"1"
 					}
 					"duration"					
@@ -341,7 +341,7 @@
 
 					"damage_amp"
 					{
-						"value"				"5 6 7 8"
+						"value"				"4 5 6 7"
 						"special_bonus_unique_beastmaster_9"		"+1.5"
 					}
 					"AbilityCooldown"				
@@ -404,13 +404,13 @@
 					"boar_total_damage_tooltip"
 					{
 						"value"										"24 41 58 75"
-						"special_bonus_unique_beastmaster_2"		"+25"
+						"special_bonus_unique_beastmaster_2"		"+30"
 						"CalculateSpellDamageTooltip"				"0"
 					}
 					"boar_bonus_damage"
 					{
 						"value"										"0"
-						"special_bonus_unique_beastmaster_2"		"+25"
+						"special_bonus_unique_beastmaster_2"		"+30"
 					}
 					"boar_base_xp_bounty"				"60 70 80 90"
 					"boar_base_movespeed"				"320 330 340 350"
@@ -420,10 +420,86 @@
 					"AbilityCooldown"
 					{
 						"value"									"30"
-						"special_bonus_unique_beastmaster_3"	"-5"
 					}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Beastmaster: Summon Ancient Thunderhide ( scepter ability )
+			//=================================================================================================================
+			"beastmaster_summon_thunderhide"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilitySound"					"Hero_Beastmaster.Call.Boar"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.3"
+
+				// Time		
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCooldown"				"60"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{					
+					"thunderhide_base_max_health"		"2200"
+					"thunderhide_base_damage"			"90"
+					"thunderhide_total_damage_tooltip"
+					{
+						"value"										"90"
+						"special_bonus_unique_beastmaster_2"		"+30"
+						"CalculateSpellDamageTooltip"				"0"
+					}
+					"thunderhide_bonus_damage"
+					{
+						"value"										"0"
+						"special_bonus_unique_beastmaster_2"		"+30"
+					}
+					"thunderhide_base_xp_bounty"		"124"
+					"thunderhide_base_movespeed"		"355"
+					"thunderhide_slam_spawn_cooldown"	"5"
+				}
+				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+			}
+
+			//=================================================================================================================
+			// Thunderhide: Thunderhide Drum ( Summon Ancient Thunderhide )
+			//=================================================================================================================
+			"beastmaster_thunderhide_drum"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"FightRecapLevel"				"1"
+				"MaxLevel"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"max_stacks"					"20"
+					"stack_decay_time"				"1.0"
+					"bonus_pct_per_stack"			"1.0"
+					"aura_radius"					
+					{
+						"value"			"1200"
+						"affected_by_aoe_increase"	"1"
+					}
+				}
 			}
 	
 			//=================================================================================================================
@@ -541,8 +617,7 @@
 					"hawk_base_magic_resist"		"30 40 50 60"
 					"AbilityCooldown"
 					{
-						"value"									"30"
-						"special_bonus_unique_beastmaster_3"	"-5"
+						"value"									"25"
 					}
 					"attack_radius"			
 					{
@@ -555,8 +630,8 @@
 					}
 					"dive_damage"				
 					{
-						"value"		"60 95 130 165"
-						"special_bonus_unique_beastmaster_2" "+25"
+						"value"		"70 110 150 190"
+						"special_bonus_unique_beastmaster_2" "+30"
 					}
 					"dive_root_duration"		"0.4 0.6 0.8 1.0"
 					"roaming_radius"					"280"
@@ -780,7 +855,7 @@
 					}
 					"bonus_damage"
 					{
-						"special_bonus_unique_beastmaster_2"	"+25"
+						"special_bonus_unique_beastmaster_2"	"+30"
 					}
 				}
 			}
@@ -804,7 +879,7 @@
 				"AbilitySound"					"Hero_Beastmaster.Primal_Roar"
 				"AbilityDraftExtraAbilities"
 				{
-					"beastmaster_drums_of_slom" "scepter"
+					"beastmaster_summon_thunderhide" "scepter"
 				}
 
 				// Casting
@@ -977,7 +1052,7 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"AbilityValues"
 				{
-					"bonus_hp"				"250"
+					"bonus_hp"				"300"
 				}
 			}
 		}

@@ -23,6 +23,7 @@ enum EGCItemMsg {
 	k_EMsgGCGiftedItems = 1027;
 	k_EMsgGCUnwrapGiftRequest = 1037;
 	k_EMsgGCUnwrapGiftResponse = 1038;
+	k_EMsgGCDeleteItem = 1040;
 	k_EMsgGCSortItems = 1041;
 	k_EMsgGCBackpackSortFinished = 1058;
 	k_EMsgGCAdjustItemEquippedState = 1059;
@@ -392,6 +393,17 @@ message CMsgServerUseItem {
 
 message CMsgUseMultipleItems {
 	repeated uint64 item_ids = 1 [boxed_type = "itemid_t"];
+}
+
+message CMsgGCUseItemResponse {
+	optional .EGCMsgUseItemResponse response = 1 [default = k_EGCMsgUseItemResponse_ItemUsed];
+	optional uint32 defindex = 2 [boxed_type = "item_definition_index_t"];
+}
+
+message CMsgGCGiftedItems {
+	optional uint32 gifter_account_id = 1;
+	optional bool was_random_person = 2;
+	repeated uint32 recipient_account_ids = 3;
 }
 
 message CGCStoreRechargeRedirect_LineItem {

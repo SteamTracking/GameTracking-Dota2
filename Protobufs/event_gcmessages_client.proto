@@ -17,8 +17,8 @@ enum EGCEventClientMessages {
 	k_EMsgClientToGCDevResetEventStateResponse = 15008;
 	k_EMsgClientToGCDevGrantEventAction = 15009;
 	k_EMsgClientToGCDevGrantEventActionResponse = 15010;
-	k_EMsgClientToGCDevDeleteEventActions = 15011;
-	k_EMsgClientToGCDevDeleteEventActionsResponse = 15012;
+	k_EMsgClientToGCDevResetEventActions = 15011;
+	k_EMsgClientToGCDevResetEventActionsResponse = 15012;
 	k_EMsgClientToGCClaimEventAction = 15020;
 	k_EMsgClientToGCClaimEventActionResponse = 15021;
 	k_EMsgClientToGCGetPeriodicResource = 15100;
@@ -145,19 +145,23 @@ message CMsgClientToGCDevGrantEventActionResponse {
 		k_eDisabled = 3;
 		k_eTimeout = 4;
 		k_eNotAllowed = 5;
+		k_eInvalidEvent = 6;
+		k_eInvalidAccount = 7;
+		k_eGrantFailed = 8;
+		k_eNotGranted = 9;
 	}
 
 	optional .CMsgClientToGCDevGrantEventActionResponse.EResponse result = 1 [default = k_eInternalError];
 }
 
-message CMsgClientToGCDevDeleteEventActions {
+message CMsgClientToGCDevResetEventActions {
 	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
 	optional uint32 start_action_id = 2;
 	optional uint32 end_action_id = 3;
 	optional bool remove_audit = 4;
 }
 
-message CMsgClientToGCDevDeleteEventActionsResponse {
+message CMsgClientToGCDevResetEventActionsResponse {
 	enum EResponse {
 		k_eInternalError = 0;
 		k_eSuccess = 1;
@@ -165,9 +169,11 @@ message CMsgClientToGCDevDeleteEventActionsResponse {
 		k_eDisabled = 3;
 		k_eTimeout = 4;
 		k_eNotAllowed = 5;
+		k_eInvalidEvent = 6;
+		k_eInvalidAccount = 7;
 	}
 
-	optional .CMsgClientToGCDevDeleteEventActionsResponse.EResponse result = 1 [default = k_eInternalError];
+	optional .CMsgClientToGCDevResetEventActionsResponse.EResponse result = 1 [default = k_eInternalError];
 }
 
 message CMsgClientToGCClaimEventAction {
@@ -178,6 +184,10 @@ message CMsgClientToGCClaimEventAction {
 	optional bool suppress_rewards = 5;
 	optional bytes claim_data = 6;
 	optional uint64 consume_item_id = 7 [boxed_type = "itemid_t"];
+}
+
+message CMsgEventActionGrantLootListRewardData {
+	repeated uint32 item_def = 1 [boxed_type = "item_definition_index_t"];
 }
 
 message CMsgEventActionGrantResult {
@@ -196,6 +206,16 @@ message CMsgClientToGCClaimEventActionResponse {
 		k_eDisabled = 3;
 		k_eTimeout = 4;
 		k_eNotAllowed = 5;
+		k_eInvalidAction = 6;
+		k_eInvalidEvent = 7;
+		k_eEventNotActive = 8;
+		k_eEventNotOwned = 9;
+		k_eInsufficientLevel = 10;
+		k_eInsufficientPoints = 11;
+		k_eAlreadyClaimed = 12;
+		k_eInvalidScoreMode = 13;
+		k_eRequiresSubscription = 14;
+		k_eInvalidItem = 15;
 	}
 
 	optional .CMsgClientToGCClaimEventActionResponse.EResponse result = 1 [default = k_eInternalError];

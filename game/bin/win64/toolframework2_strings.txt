@@ -28,6 +28,7 @@ $name_$id
 %s/ellipse_to_cone_z%04i.tga
 %s: %f degrees off axis\n
 %s_backup_%d
+%y-%m-%d_%H-%M-%S
 &OYm
 (but no %1 - see vconsole for the list of all matching assets)\n\n
 (but no exact model match - see vconsole for the list of all matching assets)\n\n
@@ -64,10 +65,8 @@ $name_$id
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??gfx_generatemips_test@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@V?$Vec3D@M@@HHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?8??SrgbLinearToGamma@CSOAContainer@@QEAAXH@Z@X$$V@std@@
 .?AV?$_Ref_count_obj2@VQFileSystemWatcher@@@std@@
-.?AVCBitmapAssetTypeInfo@@
 .?AVCFGDFromAssetRegistry@@
 .?AVCJoystickInput@@
-.?AVCMapAssetTypeInfo@@
 .?AVCQDynamicWidget@@
 .?AVCQDynamicWidgetHelper@@
 .?AVCQImportWizard@@
@@ -77,12 +76,9 @@ $name_$id
 .?AVCQToolsAboutDialog@@
 .?AVCQToolsLoadingSplashScreen@@
 .?AVCQValveLocalizationToQtTranslator@@
-.?AVCResourceAssetTypeInfo@@
 .?AVCSchemaRegistration_toolutils2@@
-.?AVCSimpleAssetTypeInfo@@
 .?AVCToolFramework2@@
 .?AVCToolFrameworkTabletInfo@@
-.?AVCVMMDAssetTypeInfo@@
 .?AVIDynamicWidgetHost@@
 .?AVIKeyboardModifiersChangedListener@@
 .?AVIToolFramework2@@
@@ -145,6 +141,7 @@ $name_$id
 ==============================  end import json data  ==============================\n
 ============================== begin import json data ==============================\n
 ================================================================================\n\n
+=fff?animgraph_incompatible
 ?#YvwS
 ??0QAbstractNativeEventFilter@@QEAA@XZ
 ??0QApplication@@QEAA@AEAHPEAPEADH@Z
@@ -216,6 +213,7 @@ $name_$id
 ?ClassId@FbxShape@fbxsdk@@2VFbxClassId@2@A
 ?ClassId@FbxSubDiv@fbxsdk@@2VFbxClassId@2@A
 ?ClassId@FbxTrimNurbsSurface@fbxsdk@@2VFbxClassId@2@A
+?FindProperty@FbxObject@fbxsdk@@QEBA?AVFbxProperty@2@PEBD_N@Z
 ?GetChild@FbxNode@fbxsdk@@QEBAPEBV12@H@Z
 ?GetElementMaterial@FbxGeometryBase@fbxsdk@@QEBAPEBVFbxLayerElementMaterial@2@H@Z
 ?GetGeometry@FbxScene@fbxsdk@@QEAAPEAVFbxGeometry@2@H@Z
@@ -240,7 +238,6 @@ $name_$id
 ?append@QString@@QEAAAEAV1@PEBD@Z
 ?append@QString@@QEAAAEAV1@VQChar@@@Z
 ?bits@QImage@@QEAAPEAEXZ
-?boundedTo@QSize@@QEBA?AV1@AEBV1@@Z
 ?brush@QPalette@@QEBAAEBVQBrush@@W4ColorGroup@1@W4ColorRole@1@@Z
 ?brush@QPalette@@QEBAAEBVQBrush@@W4ColorRole@1@@Z
 ?brushOrigin@QPainter@@QEBA?AVQPoint@@XZ
@@ -354,6 +351,7 @@ $name_$id
 ?mousePressEvent@QPlainTextEdit@@MEAAXPEAVQMouseEvent@@@Z
 ?mouseReleaseEvent@QPlainTextEdit@@MEAAXPEAVQMouseEvent@@@Z
 ?notify@QApplication@@UEAA_NPEAVQObject@@PEAVQEvent@@@Z
+?opacity@QPainter@@QEBANXZ
 ?paintEvent@QPlainTextEdit@@MEAAXPEAVQPaintEvent@@@Z
 ?palette@QGuiApplication@@SA?AVQPalette@@XZ
 ?pen@QPainter@@QEBAAEBVQPen@@XZ
@@ -553,6 +551,7 @@ Choose Target Directory
 Collision File
 Color Temperatures:
 Command:\n%1\nWorking Directory:\n%2
+Compressed file had size %lld: %s\n
 Cone-Cone Union LUT %dx%d, separation angle %f\n
 Cone-Cone Union LUT %dx%dx%d to %s\n
 Copy Info
@@ -602,12 +601,19 @@ FBX Read Error
 FBX Subdirectory
 FBXSystem001
 F_RENDER_BACKFACES
+Failed To Get Temp Directory\n
+Failed To Import Zip
 Failed to convert DXT image data to IMAGE_FORMAT_RGBA8888\n
 Failed to copy file. (%s -> %s)\n
+Failed to create temp dir: %s\n
+Failed to enumerate entries in zip file: %s\n
+Failed to extract files from %1
+Failed to extract: %s\n
 Failed to find ANY FBX materials!
 Failed to find ANY source textures!
 Failed to find JPG version of %1\nFalling back to unsupported EXR\n
 Failed to find asset for new model: %s\n
+Failed to get item in zip file: %s\n
 Failed to initialize notification channel. (Another engine copy running?)
 Failed to initialize tool system for module '%1'\nThat tool will not be available.
 Failed to load %1!\n(error: '%2')\n
@@ -618,6 +624,7 @@ Failed to load shader configs
 Failed to load tool '%s' specified by request - ignored.\n
 Failed to load tool configuration file: %s
 Failed to load tool system for module '%1'\nThat tool will not be available.
+Failed to open zip file: %s\n
 Failed to parse import json data. (error %1)\nSee vconsole for details.\n
 Failed to parse import json data: (error %s)\n
 Failed to parse kv3: %s
@@ -632,14 +639,14 @@ Failed to write data as KeyValues3. (error %s)\n
 File %1 does not exist!
 FlatSelection
 Float Bitmap Failure
-FloatBitMap_t::ConvertLinearToGamma(609): Conversion not supported yet!\n
-FloatBitMap_t::MapRGBParallel(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:3327
+FloatBitMap_t::ConvertLinearToGamma(604): Conversion not supported yet!\n
+FloatBitMap_t::MapRGBParallel(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:3255
 FloatBitMap_t::WriteInMemoryEXRFast
 FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:171
 FocusReason
 G:\dev\source2\main\content\hlx\materials\particle\test\test_shlit_%d.exr
 G:\dev\source2\main\content\hlx\materials\particle\test\test_shlit_alpha.exr
-GatherReferencedMaterials: Falling back to gathering all %d materials on mesh '%s' (node '%s'):\n
+GatherReferencedMaterials: Falling back to using the mesh name '%s' (node '%s')\n
 Generate Preview Thumbnails
 Generate VMAT(s)
 Generate VMDL(s)
@@ -695,7 +702,6 @@ Light Reflectance Value (LRV) %.1f\n
 LightSplitterHandle
 LighterLine
 LighterToolbar
-Link
 LinkVisited
 Load custom diffusion profile
 LoadKV3Object error: %s\n
@@ -722,11 +728,14 @@ Models
 NColorRoles_Qt
 NICKNAME_ERROR
 New import data ready before previous import data processed! Let Joe D know if this happens frequently!\n
+No FBX Files Found In Zip File
 No FBX Materials Found
+No FBX files were found in zip file.
 No File
 No Importable FBX
 No LODs Selected For Export
 No Source Textures Found
+No files found in zip file: %s\n
 No importable fbx files found.\nFilenames ending in _collision or _lod1, _lod2, etc are ignored.\n(_lod0 is allowed, but stripped of its suffix)
 NoRole
 Normal\n
@@ -738,6 +747,7 @@ Only Changed
 Opacity
 Open In Asset Browser
 Open In ModelDoc Editor
+Optional additional keys to check, in the same form as the main key (e.g. 'm_Content/m_strName')
 Output Base Path:
 Output memory size is zero
 Outsourcing
@@ -816,14 +826,16 @@ SystemParametersInfoA
 TabBarBackgroundNotSelected
 TabTextInactive
 Target Resource Name
+Temp file path is too long: %s\n
 Test image\n
 The file <pre>"%s"</pre> is in a directory which cannot be modified.<br>%s
 The import tool encountered socket error %d while reading data from the input source.\n
 The import tool received too much data to process - grab Joe D if you see this error.
 The import tool timed out while reading data from the input source.
+The key whose value must match the asset name (ie. something like 'm_Model' if you want to apply this tag to .vmdl assets that are referenced by the vdata file)\nUse '/' to reach into sub-blocks, e.g. 'm_Content/m_strName', and '*' to search every element of an array, e.g. 'm_Levels/*/m_strName'.
 There are %1 assets that contain the %2 '%3',\nso it's possible you're re-importing an existing %4.\n\n
 This asset has a LOT of variations or sub-meshes, and would import as %1 models.\nAre you sure you want to import that many models?
-This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
+This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nThe expression is evaluated against the top-level vdata entry, even when the key reaches into a sub-block, so refer to sub-block fields by their full path. Expressions separate members with '.' (e.g. 'm_Content.m_bFoo').\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
 Took %llu seconds to get counter value '%s': %i\n
 Tool Frame Listeners - PostFrame
 Tool Frame Listeners - PreFrame
@@ -900,7 +912,9 @@ Xbox VDP is not supported on this platform.
 You cannot run multiple instances of the tools for:<br><tt>%2</tt><br><br>Run with '%1' if you absolutely must suppress this.
 ZB8~@
 ZFP compression is not supported in this build
+Zip file had entry with absolute path or .. in path: %s\n
 [VtdB
+\import_wizard\
 \n================================================================================\n
 \nDestination and source files are identital.
 \nDisabled because Generate VMATs is unchecked.
@@ -1055,6 +1069,7 @@ dynamic_actor
 eagle
 echidna
 editor_friendly_name
+editor_sort_priority
 elephant
 emotional
 exclude_from_distance_field
@@ -1087,8 +1102,6 @@ fromIccProfile: failed general sanity check
 fuchsia
 funny
 game:tools/images/appicon_tools.ico
-game:tools/images/assettypes/generic_lg.png
-game:tools/images/assettypes/generic_sm.png
 game:tools/images/common/check_red_sm.png
 game:tools/images/common/check_sm.png
 game:tools/images/common/hang_detected.png
@@ -1185,7 +1198,6 @@ importing %d fbx files (%d/%d lods and %d variations)\n
 incredulous
 indignant
 indigo
-inputs
 interesting
 ivory
 jMVy@
@@ -1224,6 +1236,7 @@ lod%d
 lodList
 lodPresets
 mQfWK@
+m_AlternateAssetKeys
 magenta
 magpie
 manatee
@@ -1260,7 +1273,6 @@ narwhal
 nervous
 newt
 noA@
-number
 obscene
 octopus
 olive
@@ -1298,7 +1310,6 @@ production
 prop.
 prop_static
 props
-publicMethods
 pulse_domain_value_entity_names
 pulse_graph_domain
 pulse_graph_domain_subtype
@@ -1337,7 +1348,6 @@ seahorse
 seal
 serialization_disabled
 serious
-settings
 settings.txt
 sh_%d.exr
 shader
@@ -1374,6 +1384,8 @@ steel
 stingy
 strong
 suffix
+suppress_expr_hammer
+suppress_expr_vdata
 surfaceProperties
 swan
 switch_thresholds

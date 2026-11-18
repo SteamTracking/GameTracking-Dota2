@@ -116,6 +116,7 @@ $keys
 %s '%s' in '%s'
 %s (master)
 %s (work camera parent)
+%s / %s
 %s Constraint - %s
 %s Models
 %s Particles
@@ -159,10 +160,12 @@ $keys
 (Active)
 (No User Picks)
 (Root Element)
+(Single-Frame Animation)
 (multiple presets with different descriptions)
 *.dem
 *.pre
 +Retiming
++Root Motion Warp
 , Ripple
 -cmd
 -y -loglevel panic -sameq -f image2 -i %9d.png -vcodec mpeg4 -aspect 16:9 -s 1280x720 -r 23.976 -vb 8000000 <FULL_MOVIE_PATH>
@@ -170,7 +173,12 @@ $keys
 ...filter...
 ../tf_movies/elements/sessions/mtt_%s/mtt_%s.dmx
 .?AU?$StoredFunctorCall2@XP6AXAEBVQStringList@@AEBVQString@@@ZV1@V2@@QtConcurrent@@
+.?AUCAttr_NullToolAttrValue_t@?4??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_IgnoredChannels@?1??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_StrafeMode@?1??GetAttributeTable_CChoreoEvent_FACE@CChoreoEvent_FACE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationBoneMaskID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationLayerType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationSlotID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bApplyAntialiasing@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bApplyAntialiasing@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAutoMakeupGain@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -190,6 +198,7 @@ $keys
 .?AUCAttr_m_bSolo@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bandDesc@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bandDesc@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_eType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixEffectChainDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixPresetDSPDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -326,6 +335,7 @@ $keys
 .?AUCAttr_m_interpolationMode@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nBandCount@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nChannelSet@?1??GetAttributeTable_Impl@VMixEQFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_nCompressorType@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nDebugBand@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nFilterSlope@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nFilterType@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -357,6 +367,7 @@ $keys
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAYER_CAMERA_CONTROL@CChoreoEvent_PLAYER_CAMERA_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -379,16 +390,17 @@ $keys
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?5??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -413,8 +425,6 @@ $keys
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -425,6 +435,10 @@ $keys
 .?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?N@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?O@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?P@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_oscType@?1??GetAttributeTable_Impl@VMixOscDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AV<lambda_100>@?BBP@??contextMenuEvent@CQAnimationSetControlTree@@MEAAXPEAVQContextMenuEvent@@@Z@
 .?AV<lambda_101>@?BBP@??contextMenuEvent@CQAnimationSetControlTree@@MEAAXPEAVQContextMenuEvent@@@Z@
@@ -1043,10 +1057,13 @@ $keys
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@@@
@@ -1055,8 +1072,10 @@ $keys
 .?AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixDelayDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixModDelayDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t@@@@
+.?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixEffectChainDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
@@ -1076,6 +1095,7 @@ $keys
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@@@
@@ -1083,11 +1103,14 @@ $keys
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CBaseConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CBaseConcreteToolAttr@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CBaseConcreteToolAttr@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -1117,6 +1140,7 @@ $keys
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SPEAK@@@@
@@ -1153,12 +1177,16 @@ $keys
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttrValue@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixEffectChainDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
@@ -1178,6 +1206,7 @@ $keys
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SECTION@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SPEAK@@@@
@@ -1185,11 +1214,14 @@ $keys
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoActor@@@@
 .?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -1219,6 +1251,7 @@ $keys
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SPEAK@@@@
@@ -1261,10 +1294,13 @@ $keys
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_CommonBase@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOKAT@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOP@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@MVCChoreoEvent_SPEAK@@X@@
+.?AV?$CConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@X@@
 .?AV?$CConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t@@X@@
 .?AV?$CConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@X@@
 .?AV?$CConcreteToolAttr@UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@X@@
@@ -1273,8 +1309,10 @@ $keys
 .?AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixDelayDesc_t@@X@@
 .?AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixModDelayDesc_t@@X@@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t@@X@@
+.?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@X@@
 .?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@UVMixEffectChainDesc_t@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t@@X@@
@@ -1294,6 +1332,7 @@ $keys
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@X@@
@@ -1301,11 +1340,14 @@ $keys
 .?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoScene@@X@@
 .?AV?$CConcreteToolAttr@VQAngle@@VCChoreoActor@@X@@
 .?AV?$CConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@X@@
 .?AV?$CConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@X@@
 .?AV?$CConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@X@@
 .?AV?$CConcreteToolAttr@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@X@@
+.?AV?$CConcreteToolAttr@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t@@X@@
@@ -1335,6 +1377,7 @@ $keys
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_GESTURE@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@X@@
 .?AV?$CConcreteToolAttr@_NVCChoreoEvent_SPEAK@@X@@
@@ -1377,6 +1420,7 @@ $keys
 .?AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CConcreteToolAttrDirectMember@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -1397,18 +1441,22 @@ $keys
 .?AV?$CConcreteToolAttrDirectMember@_NUVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@_NUVMixUtilityDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@_NUVMixVocoderDesc_t@@@@
+.?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_LOOP@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOP@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -1432,6 +1480,8 @@ $keys
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoActor@@@@
 .?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CConcreteToolAttrGetSet@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -1445,9 +1495,11 @@ $keys
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SPEAK@@@@
+.?AV?$CConcreteToolAttrNull@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UVMixAutoFilterDesc_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UVMixBoxverbDesc_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UVMixConvolutionDesc_t@@@@
@@ -1499,6 +1551,7 @@ $keys
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD_BODY@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PERMIT_RESPONSES@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAY_RESPONSE@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_REQUIREMENTS@@@@
@@ -1602,6 +1655,7 @@ $keys
 .?AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CToolAttrDirectMemberAccess@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -1622,18 +1676,22 @@ $keys
 .?AV?$CToolAttrDirectMemberAccess@_NUVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@_NUVMixUtilityDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@_NUVMixVocoderDesc_t@@@@
+.?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_LOOP@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_BaseLocalEvent@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOKAT@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOP@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
@@ -1657,6 +1715,8 @@ $keys
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoActor@@@@
 .?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
 .?AV?$CToolAttrGetSetAccess@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
 .?AV?$CToolAttrGetSetAccess@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
@@ -1670,9 +1730,11 @@ $keys
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_GESTURE@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SEQUENCE@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SPEAK@@@@
+.?AV?$CToolAttrNullAccess@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CVDataFileManager@VCToolSceneLightRig@@@@
 .?AV?$ISceneObjectDescBase@VCSFMGeometrySceneObject@@@@
 .?AV?$ISceneObjectDescBase@VCSFMTextureOverlaySceneObject@@@@
@@ -1683,25 +1745,33 @@ $keys
 .?AV?$ISceneObjectDescBase@VCToolSceneHitBoxObject@@@@
 .?AV?$IToolAttrConcreteDataAccess@$$BY02UVMixDynamicsBand_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@$$BY07UVMixEQFilterDesc_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@UNullToolAttrValue_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UVMixDynamicsBand_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UVMixEQFilterDesc_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UVMixFilterDesc_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoChannelType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4ChoreoLocatorArrivalOptionFlags_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4ChoreoStrafeMode_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4HandshakeTagType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4SharedMovementGait_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixChannelOperation_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4VMixCompressorType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterChannelSet_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterSlope_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixLFOShape_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixPannerType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixSubgraphSwitchInterpolationType_t@@@@
+.?AV?$IToolAttr_TypedValue@UNullToolAttrValue_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoChannelType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4ChoreoLocatorArrivalOptionFlags_t@@@@
 .?AV?$IToolAttr_TypedValue@W4ChoreoStrafeMode_t@@@@
 .?AV?$IToolAttr_TypedValue@W4HandshakeTagType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4SharedMovementGait_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixChannelOperation_t@@@@
+.?AV?$IToolAttr_TypedValue@W4VMixCompressorType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterChannelSet_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterSlope_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterType_t@@@@
@@ -2303,6 +2373,7 @@ $keys
 .?AVCArrayElementAccess@?$CConcreteToolAttr@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t@@X@@
+.?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AVCBasePresetOperation@@
 .?AVCBaseToolSystem2@@
 .?AVCBaseTransformManipulatorHelper@@
@@ -2341,6 +2412,7 @@ $keys
 .?AVCChoreoEvent_MOOD@@
 .?AVCChoreoEvent_MOOD_BODY@@
 .?AVCChoreoEvent_PERMIT_RESPONSES@@
+.?AVCChoreoEvent_PLAYER_CAMERA_CONTROL@@
 .?AVCChoreoEvent_PLAY_RESPONSE@@
 .?AVCChoreoEvent_PULSE_REQUIREMENT@@
 .?AVCChoreoEvent_REQUIREMENTS@@
@@ -3305,19 +3377,16 @@ $keys
 ??0QListWidgetItem@@QEAA@AEBVQString@@PEAVQListWidget@@H@Z
 ??0QMouseEvent@@QEAA@W4Type@QEvent@@AEBVQPointF@@1W4MouseButton@Qt@@V?$QFlags@W4MouseButton@Qt@@@@V?$QFlags@W4KeyboardModifier@Qt@@@@@Z
 ??0QPainter@@QEAA@XZ
-??0QPainterPath@@QEAA@XZ
 ??0QPersistentModelIndex@@QEAA@AEBV0@@Z
 ??0QPersistentModelIndex@@QEAA@AEBVQModelIndex@@@Z
 ??0QPersistentModelIndex@@QEAA@XZ
 ??0QPlainTextEdit@@QEAA@PEAVQWidget@@@Z
-??0QPointF@@QEAA@AEBVQPoint@@@Z
 ??0QPointF@@QEAA@NN@Z
 ??0QPolygonF@@QEAA@H@Z
 ??0QProcess@@QEAA@PEAVQObject@@@Z
 ??0QProgressDialog@@QEAA@PEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ??0QPropertyAnimation@@QEAA@PEAVQObject@@AEBVQByteArray@@0@Z
 ??0QRectF@@QEAA@NNNN@Z
-??0QRectF@@QEAA@XZ
 ??0QRegExp@@QEAA@XZ
 ??0QRegExpValidator@@QEAA@PEAVQObject@@@Z
 ??0QRegion@@QEAA@XZ
@@ -3418,7 +3487,6 @@ $keys
 ?addTopLevelItem@QTreeWidget@@QEAAXPEAVQTreeWidgetItem@@@Z
 ?addWidget@QStackedWidget@@QEAAHPEAVQWidget@@@Z
 ?adjustSize@QWidget@@QEAAXXZ
-?adjusted@QRectF@@QEBA?AV1@NNNN@Z
 ?alignedRect@QStyle@@SA?AVQRect@@W4LayoutDirection@Qt@@V?$QFlags@W4AlignmentFlag@Qt@@@@AEBVQSize@@AEBV2@@Z
 ?alignment@QLabel@@QEBA?AV?$QFlags@W4AlignmentFlag@Qt@@@@XZ
 ?append@?$QList@VQItemSelectionRange@@@@QEAAXAEBVQItemSelectionRange@@@Z
@@ -3430,15 +3498,12 @@ $keys
 ?ascent@QFontMetrics@@QEBAHXZ
 ?at@QString@@QEBA?BVQChar@@H@Z
 ?atEnd@QProcess@@UEBA_NXZ
-?availableGeometry@QDesktopWidget@@QEBA?BVQRect@@PEBVQWidget@@@Z
-?availableGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?baseName@QFileInfo@@QEBA?AVQString@@XZ
 ?begin@QPainter@@QEAA_NPEAVQPaintDevice@@@Z
 ?beginGroup@QSettings@@QEAAXAEBVQString@@@Z
 ?beginReadArray@QSettings@@QEAAHAEBVQString@@@Z
 ?beginResetModel@QAbstractItemModel@@IEAAXXZ
 ?beginWriteArray@QSettings@@QEAAXAEBVQString@@H@Z
-?bottom@QRectF@@QEBANXZ
 ?buttons@QButtonGroup@@QEBA?AV?$QList@PEAVQAbstractButton@@@@XZ
 ?buttons@QDialogButtonBox@@QEBA?AV?$QList@PEAVQAbstractButton@@@@XZ
 ?bytesAvailable@QProcess@@UEBA_JXZ
@@ -3486,7 +3551,6 @@ $keys
 ?currentIndex@QStackedWidget@@QEBAHXZ
 ?currentIndex@QTabBar@@QEBAHXZ
 ?currentIndex@QTabWidget@@QEBAHXZ
-?currentItem@QTreeWidget@@QEBAPEAVQTreeWidgetItem@@XZ
 ?currentPath@QDir@@SA?AVQString@@XZ
 ?currentRow@QListWidget@@QEBAHXZ
 ?currentTime@QTime@@SA?AV1@XZ
@@ -3495,7 +3559,6 @@ $keys
 ?dataChanged@QAbstractItemModel@@QEAAXAEBVQModelIndex@@0AEBV?$QVector@H@@@Z
 ?date@QDateTime@@QEBA?AVQDate@@XZ
 ?day@QDate@@QEBAHXZ
-?deleteWidget@QWidgetAction@@MEAAXPEAVQWidget@@@Z
 ?descent@QFontMetrics@@QEBAHXZ
 ?disconnectNotify@QFutureWatcherBase@@MEAAXAEBVQMetaMethod@@@Z
 ?disconnectOutputInterface@QFutureWatcherBase@@IEAAX_N@Z
@@ -3547,7 +3610,6 @@ $keys
 ?fileName@QFile@@UEBA?AVQString@@XZ
 ?filePath@QFileInfo@@QEBA?AVQString@@XZ
 ?fill@QImage@@QEAAXAEBVQColor@@@Z
-?fillPath@QPainter@@QEAAXAEBVQPainterPath@@AEBVQBrush@@@Z
 ?fillRect@QPainter@@QEAAXAEBVQRectF@@AEBVQColor@@@Z
 ?find@QWidget@@SAPEAV1@_K@Z
 ?findItems@QStandardItemModel@@QEBA?AV?$QList@PEAVQStandardItem@@@@AEBVQString@@V?$QFlags@W4MatchFlag@Qt@@@@H@Z
@@ -3567,8 +3629,6 @@ $keys
 ?hasHeightForWidth@QLayoutItem@@UEBA_NXZ
 ?header@QTreeView@@QEBAPEAVQHeaderView@@XZ
 ?headerData@QAbstractItemModel@@UEBA?AVQVariant@@HW4Orientation@Qt@@H@Z
-?height@QFontMetrics@@QEBAHXZ
-?height@QRectF@@QEBANXZ
 ?heightForWidth@QLayoutItem@@UEBAHH@Z
 ?hideEvent@QTabBar@@MEAAXPEAVQHideEvent@@@Z
 ?hideText@QToolTip@@SAXXZ
@@ -3628,7 +3688,6 @@ $keys
 ?layout@QLayoutItem@@UEAAPEAVQLayout@@XZ
 ?layoutAboutToBeChanged@QAbstractItemModel@@QEAAXAEBV?$QList@VQPersistentModelIndex@@@@W4LayoutChangeHint@1@@Z
 ?layoutChanged@QAbstractItemModel@@QEAAXAEBV?$QList@VQPersistentModelIndex@@@@W4LayoutChangeHint@1@@Z
-?left@QRectF@@QEBANXZ
 ?left@QString@@QEBA?AV1@H@Z
 ?lineTo@QPainterPath@@QEAAXNN@Z
 ?mapFrom@QWidget@@QEBA?AVQPoint@@PEBV1@AEBV2@@Z
@@ -3637,7 +3696,6 @@ $keys
 ?matches@QKeySequence@@QEBA?AW4SequenceMatch@1@AEBV1@@Z
 ?maximum@QAbstractSlider@@QEBAHXZ
 ?maximumSize@QSpacerItem@@UEBA?AVQSize@@XZ
-?menu@QToolButton@@QEBAPEAVQMenu@@XZ
 ?menuBar@QMainWindow@@QEBAPEAVQMenuBar@@XZ
 ?metaObject@QBoxLayout@@UEBAPEBUQMetaObject@@XZ
 ?metaObject@QFutureWatcherBase@@UEBAPEBUQMetaObject@@XZ
@@ -3692,7 +3750,6 @@ $keys
 ?pos@QIODevice@@UEBA_JXZ
 ?prepend@QListData@@QEAAPEAPEAXXZ
 ?prepend@QString@@QEAAAEAV1@PEBD@Z
-?primaryScreen@QGuiApplication@@SAPEAVQScreen@@XZ
 ?qt_metacall@QAbstractItemModel@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
 ?qt_metacall@QBoxLayout@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
 ?qt_metacall@QFileDialog@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z
@@ -3764,7 +3821,6 @@ $keys
 ?restoreState@QFileDialog@@QEAA_NAEBVQByteArray@@@Z
 ?restoreState@QHeaderView@@QEAA_NAEBVQByteArray@@@Z
 ?rgbSwapped@QImage@@QEHAA$$QEAV1@XZ
-?right@QRectF@@QEBANXZ
 ?right@QString@@QEBA?AV1@H@Z
 ?rootIndex@QAbstractItemView@@QEBA?AVQModelIndex@@XZ
 ?row@QPersistentModelIndex@@QEBAHXZ
@@ -3806,13 +3862,11 @@ $keys
 ?setBackgroundRole@QWidget@@QEAAXW4ColorRole@QPalette@@@Z
 ?setBaseSize@QWidget@@QEAAXAEBVQSize@@@Z
 ?setBottom@QIntValidator@@QEAAXH@Z
-?setBottom@QRectF@@QEAAXN@Z
 ?setBrush@QPen@@QEAAXAEBVQBrush@@@Z
 ?setCancelButton@QProgressDialog@@QEAAXPEAVQPushButton@@@Z
 ?setCaseSensitivity@QRegExp@@QEAAXW4CaseSensitivity@Qt@@@Z
 ?setCheckState@QTableWidgetItem@@QEAAXW4CheckState@Qt@@@Z
 ?setCheckState@QTreeWidgetItem@@QEAAXHW4CheckState@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setCollapsible@QSplitter@@QEAAXH_N@Z
 ?setColumnHidden@QTableView@@QEAAXH_N@Z
 ?setColumnHidden@QTreeView@@QEAAXH_N@Z
@@ -3851,6 +3905,7 @@ $keys
 ?setFilter@QDir@@QEAAXV?$QFlags@W4Filter@QDir@@@@@Z
 ?setFilterRegExp@QSortFilterProxyModel@@QEAAXAEBVQRegExp@@@Z
 ?setFilterWildcard@QSortFilterProxyModel@@QEAAXAEBVQString@@@Z
+?setFixedSize@QWidget@@QEAAXAEBVQSize@@@Z
 ?setFlags@QTreeWidgetItem@@QEAAXV?$QFlags@W4ItemFlag@Qt@@@@@Z
 ?setFlat@QGroupBox@@QEAAX_N@Z
 ?setFlat@QPushButton@@QEAAX_N@Z
@@ -3865,7 +3920,6 @@ $keys
 ?setHorizontalScrollMode@QAbstractItemView@@QEAAXW4ScrollMode@1@@Z
 ?setHorizontalSpacing@QGridLayout@@QEAAXH@Z
 ?setHtml@QTextEdit@@QEAAXAEBVQString@@@Z
-?setIconSize@QAbstractButton@@QEAAXAEBVQSize@@@Z
 ?setIconVisibleInMenu@QAction@@QEAAX_N@Z
 ?setImage@QClipboard@@QEAAXAEBVQImage@@W4Mode@1@@Z
 ?setIndexWidget@QAbstractItemView@@QEAAXAEBVQModelIndex@@PEAVQWidget@@@Z
@@ -3875,7 +3929,6 @@ $keys
 ?setLabelText@QInputDialog@@QEAAXAEBVQString@@@Z
 ?setLabelText@QProgressDialog@@QEAAXAEBVQString@@@Z
 ?setLayoutDirection@QWidget@@QEAAXW4LayoutDirection@Qt@@@Z
-?setLeft@QRectF@@QEAAXN@Z
 ?setMapping@QSignalMapper@@QEAAXPEAVQObject@@H@Z
 ?setMaxVisibleItems@QComboBox@@QEAAXH@Z
 ?setMaximum@QAbstractSlider@@QEAAXH@Z
@@ -3893,7 +3946,6 @@ $keys
 ?setNum@QLabel@@QEAAXH@Z
 ?setNum@QString@@QEAAAEAV1@HH@Z
 ?setNum@QString@@QEAAAEAV1@MDH@Z
-?setOpacity@QPainter@@QEAAXN@Z
 ?setOption@QFileDialog@@QEAAXW4Option@1@_N@Z
 ?setOptions@QFileDialog@@QEAAXV?$QFlags@W4Option@QFileDialog@@@@@Z
 ?setOrientation@QDialogButtonBox@@QEAAXW4Orientation@Qt@@@Z
@@ -3903,7 +3955,6 @@ $keys
 ?setRawData@QByteArray@@QEAAAEAV1@PEBDI@Z
 ?setRect@QRect@@QEAAXHHHH@Z
 ?setRegExp@QRegExpValidator@@QEAAXAEBVQRegExp@@@Z
-?setRight@QRectF@@QEAAXN@Z
 ?setRowHidden@QTableView@@QEAAXH_N@Z
 ?setRunnable@QFutureInterfaceBase@@QEAAXPEAVQRunnable@@@Z
 ?setSectionResizeMode@QHeaderView@@QEAAXHW4ResizeMode@1@@Z
@@ -3932,7 +3983,6 @@ $keys
 ?setTickInterval@QSlider@@QEAAXH@Z
 ?setTickPosition@QSlider@@QEAAXW4TickPosition@1@@Z
 ?setTitle@QGroupBox@@QEAAXAEBVQString@@@Z
-?setTop@QRectF@@QEAAXN@Z
 ?setUsesScrollButtons@QTabBar@@QEAAX_N@Z
 ?setUsesScrollButtons@QTabWidget@@QEAAX_N@Z
 ?setValue@QProgressBar@@QEAAXH@Z
@@ -3943,13 +3993,14 @@ $keys
 ?setVisible@QFileDialog@@UEAAX_N@Z
 ?setVisible@QInputDialog@@UEAAX_N@Z
 ?setWidget@QFormLayout@@QEAAXHW4ItemRole@1@PEAVQWidget@@@Z
-?setWidth@QRectF@@QEAAXN@Z
 ?setWindowModified@QWidget@@QEAAX_N@Z
 ?setWindowOpacity@QWidget@@QEAAXN@Z
 ?setWordWrap@QLabel@@QEAAX_N@Z
 ?setWordWrap@QListView@@QEAAX_N@Z
 ?setWordWrap@QTableView@@QEAAX_N@Z
 ?setWorkingDirectory@QProcess@@QEAAXAEBVQString@@@Z
+?setX@QPointF@@QEAAXN@Z
+?setY@QPointF@@QEAAXN@Z
 ?setupChildProcess@QProcess@@MEAAXXZ
 ?shared_null@QArrayData@@2QBU1@B
 ?shortcut@QAction@@QEBA?AVQKeySequence@@XZ
@@ -4056,11 +4107,9 @@ $keys
 ?widget@QSplitter@@QEBAPEAVQWidget@@H@Z
 ?widget@QStackedWidget@@QEBAPEAVQWidget@@H@Z
 ?widget@QTabWidget@@QEBAPEAVQWidget@@H@Z
-?width@QRectF@@QEBANXZ
 ?write@QListWidgetItem@@UEBAXAEAVQDataStream@@@Z
 ?writeData@QProcess@@MEAA_JPEBD_J@Z
 ?x@QMouseEvent@@QEBAHXZ
-?x@QWidget@@QEBAHXZ
 ?y@QMouseEvent@@QEBAHXZ
 ?y@QWidget@@QEBAHXZ
 ?year@QDate@@QEBAHXZ
@@ -4292,6 +4341,7 @@ Band Desc
 Base Item Set
 Bass Freq
 Bass Mono
+BeginSceneCameraChange
 Big : voiced alveolar stop
 Blade Clips
 Blade Clips And Bake Offset
@@ -4300,6 +4350,7 @@ BladeClips
 BladeClipsAndBakeOffset
 Blend Keys
 Bogus times passed into GenerateRotationLog\n
+Bone Mask ID
 Bookmark
 Bookmark Set
 Bookmark Set Name:
@@ -4370,6 +4421,7 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\bindableca
 CBaseToolSystem2::BlockingLoadResourceManifestGroup
 CBindableCamera
 CChoreoActor
+CChoreoChannel
 CChoreoEvent_ANIMGRAPH_CONTROLLER
 CChoreoEvent_ANIM_CLIP
 CChoreoEvent_BaseLocalEvent
@@ -4385,6 +4437,7 @@ CChoreoEvent_INTERRUPT
 CChoreoEvent_LOCATOR
 CChoreoEvent_LOOKAT
 CChoreoEvent_LOOP
+CChoreoEvent_PLAYER_CAMERA_CONTROL
 CChoreoEvent_PLAY_RESPONSE
 CChoreoEvent_PULSE_REQUIREMENT
 CChoreoEvent_REQUIREMENTS
@@ -4682,6 +4735,7 @@ CQTimestripWidget
 CQTitleBarCloseButton
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQTrackGroupVisibilityDialog
 CQTransformControlLabel
 CQTrimHandlesDialog
@@ -4834,10 +4888,8 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<clas
 CUtlMemoryBlockAllocator<class DmeTime_t,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<class Vec3D<float>,class CMemAllocAllocator>::AddPage
 CUtlNTree overflow!\n
-CUtlSortVector<struct KeyTimePair_t,class CKeyTimePairLess,class CUtlVector<struct KeyTimePair_t,int,class CUtlVectorMemory_Growable<struct KeyTimePair_t,int,0> > >::Insert
 C_BaseCSGrenadeProjectile
 C_DOTA_Unit_Hero_
-Camera
 CameraLookAtSelection
 Cameras
 Cameras:
@@ -4900,6 +4952,8 @@ Choose Character
 Choose Output File
 Choose Takes To Delete
 Choreo Control State
+ChoreoAnimationLayerType_t
+ChoreoChannelType_t
 Clear Background Texture
 Clear Bookmark
 Clear Bookmark Selection
@@ -4948,6 +5002,7 @@ CompileKeyTimeList
 Compress Logs
 Compress log layer
 Compress log layers
+Compressor Type
 ComputeKeyTangentsForSegment
 Concept
 Concept Name
@@ -5223,6 +5278,7 @@ Document was not saved because the file exists and was read-only and the file is
 Document was not saved because there was an error writing the file.
 Documentation
 Don't Attenuate Captions
+Don't Stop At Goal If Aligned
 DotaForward
 Drag Clip Operation
 Drag Edge Operation
@@ -5362,7 +5418,7 @@ Encountered same skybox multiple times in the scene: %s\n
 Encountered same texture plane multiple times in the scene: %s\n
 End Time
 EndCycle
-EndTime
+EndSceneCameraChange
 Engine Synced to Fixed FPS
 EngineSyncedToFixedFPS
 Ensure Info Attribute
@@ -5393,6 +5449,7 @@ Error! No user_animations subdirectory under model content directory: %1
 Error! Subdirectory: %1 doesn't exist under content directory: %2
 Error! Unknown
 Error: Wrong media snap
+Events in this list are not repeated when the requirement loops, and are ignored as part of its conditions
 Every 2 Frames
 Every 2nd Frame
 Every 3 Frames
@@ -5479,10 +5536,12 @@ FaceposerSoundEventChooser
 Faceposer_ActorSuggestions
 Faceposer_AnimGraphParametersSuggestions
 Faceposer_BaseMoodSuggestions
+Faceposer_BoneMaskIDSuggestions
 Faceposer_ExpressionGroupSuggestions
 Faceposer_ExpressionNameSuggestions
 Faceposer_ExternalGraphControlSuggestions
 Faceposer_ExternalGraphSlotIDSuggestions
+Faceposer_ExternalPoseSlotIDSuggestions
 Faceposer_GestureNameSuggestions
 Faceposer_LookSpeedSuggestions
 Faceposer_LookTypeSuggestions
@@ -5553,6 +5612,8 @@ FindKeysAtTimes
 FindKeysInTimeRange
 FindOrAddSceneObject
 Finish Floating Modification Layer
+Finish Scene On Completion
+FinishSceneOnCompletion
 First:
 FirstSlide
 FirstpersonLegsFade
@@ -5582,7 +5643,6 @@ Force Transform %s To Follow
 Force Transform %s To Follow %s
 Forgot the Title
 Fork : voiceless labiodental fricative
-Format
 Found multiple active env_cubemap_fog entities\n
 Found multiple active env_gradient_fog entities\n
 Frame  \tFrame  \tTotal  \tShot                   \tMap                    \tDoF    \tMBlur  \tTotal\n
@@ -5741,6 +5801,8 @@ Ignore Alpha Fade
 Ignore External Lookats
 Ignore Global Desaturation
 Ignore the lipsync data compiled into the vsnd, both embedded morph animation and phonemes.  Doesn't affect flex animation channels in the scene. NOTE: Requires mod specific support in game, see CChoreoComponent::IsLipsyncSuppressedForSound()
+Ignored Channels
+IgnoredChannels
 Image Files (*.png *.jpg *.exr);; All Files (*.*)
 Image Sequence
 Image Size
@@ -5859,6 +5921,7 @@ Lane Creep
 Lane Creeps
 LastDMXFile
 LastFileName
+Layer Type
 Layoff Settings
 LayoffMovieExtended
 LayoffPoster
@@ -5887,6 +5950,8 @@ Lighting Preview
 LightingControl
 Lights
 Lights:
+Limit Aim Angle
+LimitAimAngle
 Linear Tangents
 Linear tangents
 Linearly interpolate values between keys
@@ -5933,7 +5998,6 @@ Lower Timestrip
 MSAA Resolve
 MainWindow
 Make Root
-Make this a requirement.
 MakeRoot
 Manage Takes
 ManageTakes
@@ -5969,6 +6033,7 @@ Misc Effects
 Misc Sounds
 Misc. Entities
 Misc. Props
+MixBus
 Mod Depth
 Mod Rate
 Model Browser
@@ -6539,6 +6604,7 @@ PlaybackRate
 PlaybackSounds
 PlaybackSpeedChanged
 Player %d Models
+Player Camera Control
 PlayerRenderClipPlane
 Playhead
 Playhead: Blend each control towards that control's current value
@@ -6591,7 +6657,6 @@ PropertyEditorWidget_1
 Public: %s
 Publish Image to Steam
 Publish Video to YouTube and Steam
-Pulse Requirement
 Pulse Requirement Name
 PulseRequirementName
 Put; voiceless alveolar stop
@@ -6812,6 +6877,9 @@ ReplaceGapWithSlug
 ReplaceSelection
 Report Bug
 ReportBug
+Requirement Enabled
+Requirement [%s]
+RequirementEnabled
 Requirements m_linkedEventIDs[%d] m_bWaitUntilEnd[%s] 
 Resample
 Resample Logs
@@ -6960,6 +7028,7 @@ Scale [Ctrl + Right mouse]
 Scale:
 ScaleChanged
 ScaleMatrix
+Scales the movement speed used to reach this locator
 SceneCameraChanged
 ScenePreview
 SceneSystem/VolumetricFog
@@ -7172,7 +7241,6 @@ Shot Timeframe
 Shot: '%s' %s [ %.3f ]
 ShotListEditWindow
 Should Teleport
-Show
 Show 'Selectable' Column
 Show 'Visible' Column
 Show After Render Arguments
@@ -7249,6 +7317,7 @@ Sim_ChangeClip
 SimplePlaybackRate
 Simulate Even When Camera Shutter Closed
 Single File (side by side)
+SingleFrameNotification
 Sit : voiceless alveolar fricative
 Size Max
 Size Min
@@ -7264,7 +7333,6 @@ Skipping recording sound event %08x %s because parent %08x %s isn't being record
 Skipping recording vsnd %s because its event %08x wasn't found in its ancestor %08x\n
 Skybox
 Skyboxes
-Smooth
 Smooth Camera
 Smooth Samples
 Smooth: Blend each control towards a smoothed copy of the control's values
@@ -7323,7 +7391,6 @@ StartPlayingSound: %s [0x%x]%s\n
 StartPlayingStaticSound - FAILED to precache %s!\n
 StartPlayingStaticSound: %s [0x%x]%s\n
 StartSendingCameraTo
-StartTime
 State=%s
 StatusLabel
 Steady
@@ -7383,7 +7450,6 @@ Tabs
 Tail
 TakeRenderDocCapture
 Talk : voiceless bilabial stop
-Tangents
 Tangents Flat
 Tangents Flat Free
 Tangents Isometric
@@ -7423,6 +7489,7 @@ Texture Planes
 TextureOverlayFXClip
 The document has been modified.
 The ending frame to export, computed from the above choices
+The entity won't play a stopping animation upon reaching the destination if the path arrives aligned with the arrival direction and the entity isn't strafing
 The existing document could not be closed.
 The file \n%1\ndoes not exist in Perforce.\n\nOpen for add?
 The file \n%1\nexists already in Perforce and it is not open for edit.\n\n Open for edit?
@@ -7442,6 +7509,7 @@ There is no Perforce or connection to the Perforce server
 There was no element found. The root was not changed.
 This editor has no actions defined.
 This file is out of date. You should sync if you want to see the latest version or make edits.
+This is a single-frame animation so playback rate is not relevant - only the duration of the event
 This pose parameter isn't used by the currently playing sequence(s).
 This will overwrite an existing layoff. Continue?
 Time Code Display
@@ -7717,6 +7785,7 @@ UpdateValues
 UpdateVsnds
 UpdateWidth
 Upper Timeline
+Use Alignment Bone
 Use Camera Settings
 Use existing timeframe(s)
 Use phonemes from .wav file
@@ -7726,6 +7795,7 @@ Using .wav file phonemes for (%s)\n
 Utilities
 VConsole
 VMatrixDialog
+VMixCompressorType_t
 VRenderingSiblingWidget
 VTOOLDICTIONARY003
 Val : voiced labialdental fricative
@@ -7742,8 +7812,6 @@ Viewport Menu
 ViewportTool_t
 ViewportView
 Visible
-Volume Matches Event Ramp
-VolumeMatchesRamp
 VrLightCookieSettings
 WARNING: Reparenting currently unsupported: transform %s reparented from transform %s to transform %d\n
 WARNING: This file is checked out by another user. Any changes you make to this file could be overwritten by theirs. (or vice versa)
@@ -7754,6 +7822,10 @@ Waiting for Perforce
 Wants Handshake
 Warning: Unable to parse transform name %s into bone index and bone name\n
 Warning: recording start of the same sound 0x%08x (%s) twice!\n
+Warp Root Motion
+WarpAlignWithTargetAtLastWarpEvent
+WarpEnabled
+WarpUseAlignmentBone
 Weapon Effects
 WeightChanged
 Weighted Tangents
@@ -7820,7 +7892,6 @@ ZoomOutFromClip
 \tDriver Version:     %ld.%ld.%ld.%ld\n
 \tSubSystem / Rev:     0x%x / 0x%x\n
 \tVendorId / DeviceId:     0x%x / 0x%x\n
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 __tempSlug__
 _alpha
 _alpha.
@@ -7913,6 +7984,7 @@ blueCurveColor
 blurredVignette
 blurredVignetteScale
 bone %d (%s)
+bone_mask_id
 bookmark
 bookmarkSet
 bottomRight
@@ -7947,6 +8019,7 @@ choreo_fullbody_takeover
 choreohelper_animclip
 choreohelper_baselocaleventwithramp
 choreohelper_default
+choreohelper_external_animgraph
 choreohelper_gesture
 choreohelper_lookat
 choreohelper_sequence
@@ -8025,6 +8098,13 @@ drawGrid
 drawShadowFrustum
 draw_tool_render_util_layers
 dummyroot
+eAdditive
+eAnimation
+eBase
+eLocatorArrivalOption_DontStopAtGoalIfAligned
+eModelSpace
+eOverlay
+eUnknown
 editingAborted
 editingCanceled
 editingFinished
@@ -8078,6 +8158,7 @@ filterComboBox
 filterSizeLabel
 filterSizeLineEdit
 find any nonselected child
+finish_scene_on_completion
 firstNumberLabel
 firstNumberLineEdit
 flCycle
@@ -8360,6 +8441,7 @@ https://developer.valvesoftware.com/wiki/Source_Filmmaker
 ignoreAlphaFade
 ignoreDesaturation
 ignorePhonemes
+ignored_channels
 ignorelookats
 illumPositionDag
 inDelta
@@ -8385,7 +8467,6 @@ isFullscreen
 isMultiple
 isReadOnly
 isVisible
-is_requirement_condition
 itemSelection
 itemSetName
 item_combine_console
@@ -8411,6 +8492,7 @@ label2
 label_2
 label_3
 lastImportedFilename
+layer_type
 lbFadeIn
 lbFadeOut
 lbScale
@@ -8427,6 +8509,7 @@ lightType
 light_
 lightingOrigin
 lightness
+limit_aim_angle
 lineColor
 lineEdit
 linearAttenuation
@@ -8443,6 +8526,8 @@ lookupString
 loopcount
 m%d%d
 m_Retiming
+m_WarpSettings
+m_bUseAlignmentBone
 m_bUseSeparateEyeRamp
 m_buttonBox
 m_flIntroPlaybackRate
@@ -8451,6 +8536,7 @@ m_flMaxEyeWeight
 m_flMaxHeadWeight
 m_flOutroPlaybackRate
 m_flSimplePlaybackRate
+m_flSingleFrameHoldDuration
 m_floatEdit00
 m_floatEdit01
 m_floatEdit02
@@ -8469,9 +8555,9 @@ m_floatEdit32
 m_floatEdit33
 m_hWorldOffsetReferenceClip
 m_label
+m_nCompressorType
 m_nLoopCount
 mailto:SFMbugs@valvesoftware.com?subject=Bug Report from SFM user&body=
-make_requirement
 mapEntitiesToIgnore
 mapLightScale
 mapbuilder.blocklight
@@ -8628,6 +8714,7 @@ playbackClampFrameCount
 playback_time
 playdemo %1\ndemo_goto %2 pause\ndemo_resume; %3 %4\n
 player view setup not available!\n
+player_camera_control
 playoverscript
 playresponse
 point_light
@@ -8679,6 +8766,7 @@ replaceAnimations
 replacementMaterial
 replacing mono flex controller %s\n
 replacing stereo flex controllers %s and %s\n
+requirement_enabled
 requirement_name
 requirements
 reset_cycle_on_time_change
@@ -8787,6 +8875,7 @@ silence
 simulateWhenShutterClosed
 simulating channel
 sky_dota
+slot_id
 slug
 smoothedTimeOfDayAmount
 snapping
@@ -8809,6 +8898,7 @@ sounds/tools/sfm/preroll.vsnd
 sounds/tools/sfm/snap.vsnd
 soundwaveColor
 speak
+speed_scale
 spliterSizes
 splitterSizes
 spotAngularFalloff
@@ -8855,7 +8945,6 @@ trigger_
 trimtoshot
 trimtype
 ui_mouseactions/
-unified
 units
 unknown convar %s\n
 unknown particle system attachment type %d\n
@@ -8880,7 +8969,6 @@ vignette
 visible channel
 vmatrix
 volume_atten
-volumematcheseventramp
 volumetric
 volumetricIntensity
 volumetricLightLayout

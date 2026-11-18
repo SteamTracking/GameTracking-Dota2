@@ -44,6 +44,13 @@
 		"Ability17"					"special_bonus_unique_kez_falcon_rush_attack_speed"
 		"Ability18"					"special_bonus_unique_kez_mark_damage"
 		"Ability19"					"special_bonus_unique_kez_echo_slash_strike_count"
+		"DirectKeybindAbilities"
+		{
+			"Ability1"		"kez_falcon_rush"
+			"Ability2"		"kez_talon_toss"
+			"Ability3"		"kez_shodo_sai"
+			"Ability4"		"kez_ravens_veil"
+		}
 		"AbilityTalentStart"		"12"
 		"Adjectives"
 		{
@@ -293,12 +300,12 @@
 					"katana_echo_damage"				
 					{
 						"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
-						"value" 												"70 80 90 100"
+						"value" 												"30 45 60 75"
 						"CalculateSpellDamageTooltip"							"0"
 					}
-					"echo_hero_damage"				
+					"echo_base_damage"				
 					{
-						"value"													"20 40 60 80"
+						"value"													"40 70 100 130"
 						"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 						"CalculateSpellDamageTooltip"							"0"
 					}
@@ -368,6 +375,7 @@
 					"lifesteal_pct"
 					{
 						"value"							"0"
+						"special_bonus_unique_kez_grapple_lifesteal"	"+25"
 					}
 				}
 			}
@@ -454,7 +462,7 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"FightRecapLevel"				"1"
 				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
@@ -486,27 +494,28 @@
 					"strike_interval"										"0.25"
 					"strikes"												
 					{
-						"value"				"4"
+						"value"												"4"
 						"special_bonus_unique_kez_raptor_dance_strikes"  "+1"
 					}
 					"radius"						
 					{
-						"value"												"450"
+						"value"												"425"
 						"affected_by_aoe_increase"							"1"	
 						"special_bonus_unique_kez_raptor_dance_radius"		"+50"
 					}	
 					"base_damage"				
 					{
-						"value" 				"40 70 100"
-						"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
+						"value" 												"50 100 150"
+						"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 					}
 					"max_health_damage_pct"		
 					{
-						"value" 				"2.5"
-						"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
+						"value" 												"2.75 3.25 3.75"
+						"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 					}
 					"lifesteal_pct"				"100"
 					"illusion_lifesteal_pct"	"20"
+					"lifesteal_from_creeps"		"0"
 					"invuln_period"		"0.2"
 					"magic_resist"		"0"
 					"hard_dispel"		"0"
@@ -522,7 +531,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -567,7 +576,6 @@
 					{
 						"special_bonus_unique_kez_falcon_rush_attack_speed"			"=40"
 					}
-					"echo_proc_chance_reduction"			"50"
 				}
 			}
 
@@ -585,7 +593,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
@@ -641,7 +649,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"FightRecapLevel"				"1"
@@ -664,7 +672,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"sai_proc_vuln_chance"									"20"
+					"sai_proc_vuln_chance"									"24"
 			
 			
 					"base_crit_pct"										
@@ -723,7 +731,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"

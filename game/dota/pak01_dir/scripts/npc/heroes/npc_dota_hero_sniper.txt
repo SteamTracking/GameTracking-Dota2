@@ -425,8 +425,7 @@
 					}
 					"slow_movement_speed"	
 					{
-						"value"		"-12 -18 -24 -30"
-						"special_bonus_facet_sniper_scattershot"	"=-30 =-45 =-60 =-75"
+						"value"		"-10 -15 -20 -25"
 					}
 					"radius"			
 					{
@@ -491,14 +490,23 @@
 						"value"	"20 50 80 110"
 						"special_bonus_unique_sniper_headshot_damage"	"+30"
 					}
-					"proc_chance"					"40"
+					"proc_chance"
+					{
+						"value" 					"40"
+					}
+					
 					"knockback_distance"
 					{
 						"value"					"50"
 						"special_bonus_unique_sniper_3"			"+50"
 					}
 					"slow"			"-100"
-					"slow_duration"					"0.2 0.3 0.4 0.5"		
+					"slow_duration"
+					{
+						"value"		"0.2 0.3 0.4 0.5"
+					}
+
+					"attack_effectiveness"				"0"
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 			}
@@ -523,7 +531,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"20 18 16 14"
+				"AbilityCooldown"				"22 20 18 16"
 
 
 				// Cost
@@ -644,6 +652,7 @@
 						"value"								"300 400 500"
 						"special_bonus_unique_sniper_1"		"+150"
 					}
+
 					"projectile_speed"			"2500 2500 2500"
 					"scepter_stun_duration"			
 					{
@@ -669,6 +678,9 @@
 					{
 						"special_bonus_shard"			"0"
 					}
+
+					"bonus_potency"					"20 35 50"
+
 					"cooldown_reduction_on_kill"		"0 5 10"
 					"attack_factor"					"0 0 0"		// if updating this, update attack_factor_tooltip
 					"attack_factor_tooltip"			"100 100 100"	// tooltip only
@@ -681,7 +693,7 @@
 			//=================================================================================================================
 			"sniper_keen_scope"
 			{
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 				"MaxLevel"						"1"
 				"Innate"						"1"
 				"IsBreakable"					"1"

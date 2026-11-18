@@ -45,6 +45,7 @@
  by %d
  in %d steps
 !"Calling CBaseEditorApp::SetActiveSession on an unknown session"
+!anchor_is_external
 !bonemerge
 !layout_root
 !owning_panel
@@ -54,18 +55,23 @@
 "soundevents/soundevents_manifest.vrman" is not in P4 for, please investigate!
 #DOTA_Tooltip_ability_%s
 #DOTA_Tooltip_ability_%s_Description
+#else
+#endif
+#if defined(__cplusplus)
+#line
 %.2f %.2f %.2f 
 %.2f FPS (%.2fms%s)
 %.3f %.3f %.3f
-%0.2f
 %1 (Listed above)
 %1\n\nWarning - This file is currently opened by:\n\n%2
 %d trace results\n
 %f%c%f
+%s '%s'
 %s '%s' is not compatible (is '%s' but need '%s')
 %s (%s used by '%s')
 %s (Via node)
 %s (unreferenced)
+%s / %s
 %s @ %0.1fs
 %s @ frame %u
 %s NPC(s)
@@ -76,16 +82,30 @@
 %s [ID=%d]
 %s did not shut down correctly the last time it was used.\nMore recent autosaves exist of the files you were working on.\nWould you like to recover the last saved versions of the files that were open?\n
 %s%c
+%s%d%s
 %s%s%03d.%s%s
 %s%s%c
+%s*%s
 %s.vpcf
+%s: Broadcasting to all entities with the connected targetname.
+%s: Broadcasting to all entities with this targetname. Click to use only the first match.
+%s: Broadcasting to every element in the connected array.
+%s: Finding only the FIRST of multiple matches for this name.
+%s: Finding only the FIRST of multiple matches for this name. Click to use all matches.
+%s: Finding the FIRST match for this name.
+%s: Finding the FIRST match for this name. Click to use all matches.
 %s: Only one allowed
+%s: Targeting exactly the connected value.
+%s: Targeting exactly the named value.
+%s: ignoring malformed ParticleUi rule "%s"\n
 %s:%d:%d
 %s:%s [ID=%d]
 %s;%s
 %s<br><br><b>%s:</b> %s
 %s<br><br><b>%s:</b> %s (<i>%s</i>)
 %sStep_EntFire:%d
+%s[%d]
+%s[i]
 %s\%s%d
 %s\nLocal Revision: %d  Head Revision: %d
 %s\ngroup:\t%s\ntype:\t%s
@@ -97,6 +117,7 @@
 &Close
 &Display System Information
 &Done
+&Live Files
 &New
 &Open
 &Recent Directories
@@ -124,15 +145,24 @@
 (Cannot preview - no valid asset / resource name.)
 (Max)
 (No Asset)
+(Single-Frame Animation)
 (end - start) / (count - 1)
 (no .fgd entry)
 (no args)
 (no messages)
 (vdata subclass of %s)
+*** CVfx::StartupSanityCheck(7556): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
+*** VfxPopulateSourceCache(1221): Error opening file "%s"!\n\n
+*** VfxPopulateSourceCache(1229): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1381): Source cache incomplete, file "%s" missing!\n\n
+*** VfxReadAndPrepForCrc(1393): Error masking unused parts for "%s"!\n\n
 *.*_autosave
 *.vnmclip
 *.vpcf
 + m_PointAnalysis\n
++Retiming
++Root Motion Warp
 - CPulseSequencePoint * mismatch for %s on %d\n
 - Missed addition of %d\n
 - Missed addition of %s on %d\n
@@ -143,6 +173,7 @@
 --dynamic-inparam--
 --dynamic-outparam--
 -loadingscreen.vtex -cubemap -env_light_probe
+.?AUCAttr_NullToolAttrValue_t@?4??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Args@?1??GetAttributeTable_CPulseDoc_Inflow_Method@CPulseDoc_Inflow_Method@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Args@?1??GetAttributeTable_CPulseDoc_PublicOutputDefinition@CPulseDoc_PublicOutputDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_BoundValuePath@?1??GetAttributeTable_CPetVariableConfiguration@CPetVariableConfiguration@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -165,6 +196,7 @@
 .?AUCAttr_m_EventDefinitions@?1??GetAttributeTable_CPulseDoc_Step_Timeline@CPulseDoc_Step_Timeline@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_FriendlyName@?1??GetAttributeTable_PulseTimelineEventDefinition_t@PulseTimelineEventDefinition_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_GameBlackboard@?1??GetAttributeTable_CPulseDoc_Step_CallExternalMethod@CPulseDoc_Step_CallExternalMethod@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_IgnoredChannels@?1??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Input@?1??GetAttributeTable_CPulseDoc_Step_EntFire@CPulseDoc_Step_EntFire@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_MethodName@?1??GetAttributeTable_CPulseDoc_Step_CallExternalMethod@CPulseDoc_Step_CallExternalMethod@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Name@?1??GetAttributeTable_CPulseDocNode@CPulseDocNode@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -182,6 +214,7 @@
 .?AUCAttr_m_ReturnValues@?1??GetAttributeTable_CPulseDoc_Inflow_Method@CPulseDoc_Inflow_Method@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_SourceEntity@?1??GetAttributeTable_CPulseDoc_Inflow_EntOutputHandler@CPulseDoc_Inflow_EntOutputHandler@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_SourceOutput@?1??GetAttributeTable_CPulseDoc_Inflow_EntOutputHandler@CPulseDoc_Inflow_EntOutputHandler@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_StrafeMode@?1??GetAttributeTable_CChoreoEvent_FACE@CChoreoEvent_FACE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Text@?1??GetAttributeTable_CPulseDoc_BlockComment@CPulseDoc_BlockComment@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Type@?1??GetAttributeTable_CPulseEditableMethodArg@CPulseEditableMethodArg@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_Type@?1??GetAttributeTable_CPulseEditableValue@CPulseEditableValue@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -191,6 +224,9 @@
 .?AUCAttr_m_ValueType@?1??GetAttributeTable_CPetVariableNode@CPetVariableNode@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_ValueType@?1??GetAttributeTable_CPulseDoc_Step_CreateTempVar@CPulseDoc_Step_CreateTempVar@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_VarName@?1??GetAttributeTable_CPulseDoc_Step_CreateTempVar@CPulseDoc_Step_CreateTempVar@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationBoneMaskID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationLayerType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_animationSlotID@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDisallowInterrupts@?1??GetAttributeTable_CPulseDoc_Outflow_ScriptedSequence@CPulseDoc_Outflow_ScriptedSequence@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDoNotNotifyListeners@?1??GetAttributeTable_CPulseDoc_Step_SetVar@CPulseDoc_Step_SetVar@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDontTeleportAtEnd@?1??GetAttributeTable_CPulseDoc_Outflow_ScriptedSequence@CPulseDoc_Outflow_ScriptedSequence@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -207,6 +243,7 @@
 .?AUCAttr_m_bNotCondition@?1??GetAttributeTable_CPulseDoc_Outflow_LoopWhile@CPulseDoc_Outflow_LoopWhile@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bRangeIncludesEndpoint@?1??GetAttributeTable_CPulseDoc_Outflow_LoopIntegerRange@CPulseDoc_Outflow_LoopIntegerRange@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bWaitForChildOutflows@?1??GetAttributeTable_CPulseDoc_Step_Timeline@CPulseDoc_Step_Timeline@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_eType@?1??GetAttributeTable_CChoreoChannel@CChoreoChannel@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flTimeFromPrevious@?1??GetAttributeTable_PulseTimelineEventDefinition_t@PulseTimelineEventDefinition_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_iAttachType@?1??GetAttributeTable_CPetVariableConfiguration@CPetVariableConfiguration@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nArrayIndexDimension@?1??GetAttributeTable_CPulseDoc_Step_SetVar@CPulseDoc_Step_SetVar@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -216,7 +253,7 @@
 .?AUCAttr_m_nChildCursors@?1??GetAttributeTable_CPulseDoc_Step_FireCursors@CPulseDoc_Step_FireCursors@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nChildCursors@?1??GetAttributeTable_CPulseDoc_Step_RaceCursors@CPulseDoc_Step_RaceCursors@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nCycleMode@?1??GetAttributeTable_CPulseDoc_Outflow_Cycle@CPulseDoc_Outflow_Cycle@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_m_nFireMode@?1??GetAttributeTable_CPulseDoc_Step_EntFire@CPulseDoc_Step_EntFire@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_nEditorSortPriority@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nHeldWeaponBehavior@?1??GetAttributeTable_CPulseScriptedSequenceDataForEditor@CPulseScriptedSequenceDataForEditor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nKeysSource@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nMode@?1??GetAttributeTable_CPulseDoc_BlockComment@CPulseDoc_BlockComment@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -231,7 +268,8 @@
 .?AUCAttr_m_strEditorGroupName@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_strEditorModel@?1??GetAttributeTable_CPulseDoc_Step_SetAnimGraphParam@CPulseDoc_Step_SetAnimGraphParam@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_strEntityScope@?1??GetAttributeTable_CPetVariableConfiguration@CPetVariableConfiguration@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
-.?AUCAttr_m_strSuppressExpr@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_strSuppressExprHammer@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_strSuppressExprVData@?1??GetAttributeTable_CPulseDoc_VariableDefinition@CPulseDoc_VariableDefinition@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_szEntrySequence@?1??GetAttributeTable_CPulseScriptedSequenceDataForEditor@CPulseScriptedSequenceDataForEditor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_szExitSequence@?1??GetAttributeTable_CPulseScriptedSequenceDataForEditor@CPulseScriptedSequenceDataForEditor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_szPreIdleSequence@?1??GetAttributeTable_CPulseScriptedSequenceDataForEditor@CPulseScriptedSequenceDataForEditor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -239,8 +277,34 @@
 .?AUCAttr_m_szSyncGroup@?1??GetAttributeTable_CPulseDoc_Outflow_ScriptedSequence@CPulseDoc_Outflow_ScriptedSequence@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_vcdFilename@?1??GetAttributeTable_CPulseDoc_Outflow_PlayVCD@CPulseDoc_Outflow_PlayVCD@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_vecAdditionalActorsData@?1??GetAttributeTable_CPulseDoc_Outflow_ScriptedSequence@CPulseDoc_Outflow_ScriptedSequence@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_ANIMGRAPH_CONTROLLER@CChoreoEvent_ANIMGRAPH_CONTROLLER@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_BaseMood@CChoreoEvent_BaseMood@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_CommonBase@CChoreoEvent_CommonBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_EXPRESSION@CChoreoEvent_EXPRESSION@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_FACE@CChoreoEvent_FACE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_FIRETRIGGER@CChoreoEvent_FIRETRIGGER@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_GESTURE@CChoreoEvent_GESTURE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_INTERRUPT@CChoreoEvent_INTERRUPT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAYER_CAMERA_CONTROL@CChoreoEvent_PLAYER_CAMERA_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_SECTION@CChoreoEvent_SECTION@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoEvent_STOPPOINT@CChoreoEvent_STOPPOINT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CChoreoScene@CChoreoScene@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseAttr_PulseSelectorOutflowList_t@CPulseAttr_PulseSelectorOutflowList_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseDocNode@CPulseDocNode@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?2??GetAttributeTable_CPulseDoc_Inflow_EntOutputHandler@CPulseDoc_Inflow_EntOutputHandler@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseDoc_Inflow_ObservableVariableListener@CPulseDoc_Inflow_ObservableVariableListener@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseDoc_Requirement_Expression@CPulseDoc_Requirement_Expression@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseDoc_Requirement_FlowToolAttrTable@CPulseDoc_Requirement_FlowToolAttrTable@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -253,8 +317,71 @@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseDoc_Value_VarOrConstReference@CPulseDoc_Value_VarOrConstReference@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseEditableType@CPulseEditableType@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?2??GetAttributeTable_CPulseEditableValue@CPulseEditableValue@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_ANIMGRAPH_CONTROLLER@CChoreoEvent_ANIMGRAPH_CONTROLLER@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_CommonBase@CChoreoEvent_CommonBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_EXPRESSION@CChoreoEvent_EXPRESSION@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_FIRETRIGGER@CChoreoEvent_FIRETRIGGER@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_GESTURE@CChoreoEvent_GESTURE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_LOOP@CChoreoEvent_LOOP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PLAY_RESPONSE@CChoreoEvent_PLAY_RESPONSE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_PULSE_REQUIREMENT@CChoreoEvent_PULSE_REQUIREMENT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?3??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CPulseDoc_Requirement_FlowToolAttrTable@CPulseDoc_Requirement_FlowToolAttrTable@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?3??GetAttributeTable_CPulseEditableType@CPulseEditableType@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_REQUIREMENTS@CChoreoEvent_REQUIREMENTS@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?4??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?5??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_SEQUENCE@CChoreoEvent_SEQUENCE@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?6??GetAttributeTable_CChoreoEvent_SPEAK@CChoreoEvent_SPEAK@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_BaseLocalEvent@CChoreoEvent_BaseLocalEvent@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?7??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?8??GetAttributeTable_CChoreoActor@CChoreoActor@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_EXTERNAL_ANIMGRAPH@CChoreoEvent_EXTERNAL_ANIMGRAPH@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?8??GetAttributeTable_CChoreoEvent_LOOKAT@CChoreoEvent_LOOKAT@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?9??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?9??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?N@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?O@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_no_member@?P@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUGPUParticlesReadbackState@@
 .?AV<lambda_10>@?1???0CPulseDoc_BaseFlow@@QEAA@XZ@
 .?AV<lambda_10>@@
@@ -319,7 +446,7 @@
 .?AV<lambda_1>@?1??GetStaticNodeTypeInfo_Internal@CPulseDoc_Outflow_ScriptedSequence@@CAAEBVCPulseDocNodeTypeInfo@@XZ@
 .?AV<lambda_1>@?1??GetUnfilteredDomainValueChoices@CPulseDoc@@QEBAXW4PulseDomainValueType_t@@PEAV?$CUtlVector@U?$ToolAttrChoice_t@VCUtlString@@@@HV?$CUtlVectorMemory_Growable@U?$ToolAttrChoice_t@VCUtlString@@@@H$0A@@@@@@Z@
 .?AV<lambda_1>@?1??HasRequirementChildNodes@CPulseDoc_BaseFlow@@IEBA_NXZ@
-.?AV<lambda_1>@?1??InitializeWithNode@CPulseAttr_CPulseObservableExpression@@UEAAXPEBD00PEBVKeyValues3@@PEAVCPulseDoc_BaseFlow@@@Z@
+.?AV<lambda_1>@?1??InitObservable@CBasePulseInparamPort@@QEAAXPEBVCPulseSequencePoint@@@Z@
 .?AV<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Flow_ObservableSwitchState@@UEAAXPEAVCKV3TransferLoadContext@@@Z@
 .?AV<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Value_MakeArray@@UEAAXPEAVCKV3TransferLoadContext@@@Z@
 .?AV<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Value_Switch@@UEAAXPEAVCKV3TransferLoadContext@@@Z@
@@ -333,10 +460,11 @@
 .?AV<lambda_1>@?5???0CBasePulseInflowPort@@QEAA@PEBVCPulseDoc_BaseFlow@@PEBVCPulseSequencePoint@@_NVPulseSymbol_t@@W4PulseCursorInflowBehavior_t@@@Z@
 .?AV<lambda_1>@?5???0CQParticlePreviewControls@@QEAA@PEAVQWidget@@PEAVCPetKV3PropertyDomain@@@Z@
 .?AV<lambda_1>@?5??AddParticleDomainBindings@@YAXAEAVGameData@@@Z@
+.?AV<lambda_1>@?5??RebuildExits@CPulseDocNodeDynamicOutflowsAttr@@QEAAXXZ@
 .?AV<lambda_1>@?6??RebuildExits@CPulseDoc_Outflow_Simultaneous@@EEAAXXZ@
 .?AV<lambda_1>@?9??InitGeneric@CPulseDoc_Flow_Generic@@QEAA_NPEBD@Z@
-.?AV<lambda_1>@?BA@??LoadInAndOutParamList@@YAXPEAVCKV3TransferLoadContext@@_NAEBV?$CUtlVector@PEAVCBasePulseParamPort@@HV?$CUtlVectorMemory_Growable@PEAVCBasePulseParamPort@@H$0A@@@@@@Z@
-.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@
+.?AV<lambda_1>@?BJ@??LoadInAndOutParamList@@YAXPEAVCKV3TransferLoadContext@@_NAEBV?$CUtlVector@PEAVCBasePulseParamPort@@HV?$CUtlVectorMemory_Growable@PEAVCBasePulseParamPort@@H$0A@@@@@@Z@
+.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@PEBVCResourceName@@PEBVCUtlString@@4@Z@
 .?AV<lambda_1_>@?0???0CBasePulseInparamPort@@QEAA@PEAVCPulseDocNode@@VPulseSymbol_t@@W4PulseInValueSource_t@@AEBVKeyValues3@@@Z@
 .?AV<lambda_20>@@
 .?AV<lambda_21>@@
@@ -355,7 +483,7 @@
 .?AV<lambda_2>@?1???0CPulseDoc_Step_FireCursors@@QEAA@XZ@
 .?AV<lambda_2>@?1???0CPulseDoc_Step_RaceCursors@@QEAA@XZ@
 .?AV<lambda_2>@?1???0CPulseDoc_Step_Timeline@@QEAA@XZ@
-.?AV<lambda_2>@?1??InitializeWithNode@CPulseAttr_CPulseObservableExpression@@UEAAXPEBD00PEBVKeyValues3@@PEAVCPulseDoc_BaseFlow@@@Z@
+.?AV<lambda_2>@?1??InitObservable@CBasePulseInparamPort@@QEAAXPEBVCPulseSequencePoint@@@Z@
 .?AV<lambda_2>@?1??KV3TransferLoad@CPulseDoc_Value_Switch@@UEAAXPEAVCKV3TransferLoadContext@@@Z@
 .?AV<lambda_2>@?1??UpdateSpontaneousEntryPoint@CPulseDoc_Flow_Generic@@AEAAXXZ@
 .?AV<lambda_2>@?5???0CBasePulseInflowPort@@QEAA@PEBVCPulseDoc_BaseFlow@@PEBVCPulseSequencePoint@@_NVPulseSymbol_t@@W4PulseCursorInflowBehavior_t@@@Z@
@@ -385,6 +513,9 @@
 .?AV<lambda_9>@?1???0CPulseDoc_BaseFlow@@QEAA@XZ@
 .?AV<lambda_9>@@
 .?AV?$CBaseAppSystem@VIToolSystem2@@@@
+.?AV?$CBaseConcreteToolAttr@HVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttr@HVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttr@HVCChoreoEvent_LOOP@@@@
 .?AV?$CBaseConcreteToolAttr@HVCPulseAttr_PulseSelectorOutflowList_t@@@@
 .?AV?$CBaseConcreteToolAttr@HVCPulseDocNode@@@@
 .?AV?$CBaseConcreteToolAttr@HVCPulseDoc_Outflow_ExitList@@@@
@@ -394,11 +525,22 @@
 .?AV?$CBaseConcreteToolAttr@HVCPulseDoc_Step_RaceCursors@@@@
 .?AV?$CBaseConcreteToolAttr@HVCPulseDoc_Step_SetVar@@@@
 .?AV?$CBaseConcreteToolAttr@HVCPulseDoc_Value_MakeArray@@@@
+.?AV?$CBaseConcreteToolAttr@HVCPulseDoc_VariableDefinition@@@@
 .?AV?$CBaseConcreteToolAttr@MUPulseTimelineEventDefinition_t@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttr@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CBaseConcreteToolAttr@PEAVCPulseEditableMethodArg@@VCPulseDoc_Inflow_Method@@@@
 .?AV?$CBaseConcreteToolAttr@PEAVCPulseEditableMethodArg@@VCPulseDoc_PublicOutputDefinition@@@@
 .?AV?$CBaseConcreteToolAttr@PEAVCPulseEditableType@@V1@@@
 .?AV?$CBaseConcreteToolAttr@UGetVarTarget_t@@VCPulseDoc_Value_VarOrConstReference@@@@
+.?AV?$CBaseConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttr@UObservableSwitchCase_t@@VCPulseDoc_Flow_ObservableSwitchState@@@@
 .?AV?$CBaseConcreteToolAttr@UPulseDynamicOutflowDef_t@@VCPulseDocNodeDynamicOutflowsAttr@@@@
 .?AV?$CBaseConcreteToolAttr@UPulseTimelineEventDefinition_t@@VCPulseDoc_Step_Timeline@@@@
@@ -412,8 +554,12 @@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@UPulseTimelineEventDefinition_t@@HV?$CUtlVectorMemory_Growable@UPulseTimelineEventDefinition_t@@H$0A@@@@@VCPulseDoc_Step_Timeline@@@@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@UValueSwitchCase_t@@HV?$CUtlVectorMemory_Growable@UValueSwitchCase_t@@H$0A@@@@@VCPulseDoc_Value_Switch@@@@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCPulseScriptedSequenceDataForEditor@@HV?$CUtlVectorMemory_Growable@VCPulseScriptedSequenceDataForEditor@@H$0A@@@@@VCPulseDoc_Outflow_ScriptedSequence@@@@
+.?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_SchemaEnumSwitch@@@@
 .?AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_StringSwitch@@@@
+.?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttr@VCPetEditableType@@VCPetVariableNode@@@@
 .?AV?$CBaseConcreteToolAttr@VCPetVariableConfiguration@@VCPetVariableNode@@@@
 .?AV?$CBaseConcreteToolAttr@VCPulseEditableType@@VCBasePulseInparamPort@@@@
@@ -427,6 +573,28 @@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UPulseDynamicOutflowDef_t@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UPulseTimelineEventDefinition_t@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCBasePulseOutparamPort@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_BaseMood@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXPRESSION@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_FACE@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_GESTURE@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_INTERRUPT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoEvent_STOPPOINT@@@@
+.?AV?$CBaseConcreteToolAttr@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCPetVariableConfiguration@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCPulseDocNode@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCPulseDoc_BaseFlow@@@@
@@ -458,10 +626,16 @@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CBaseConcreteToolAttr@VColor@@VCPulseDoc_BlockComment@@@@
 .?AV?$CBaseConcreteToolAttr@VPulseDocNodeID_t@@VCPulseDoc_Step_CallMethod@@@@
+.?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@W4BlockCommentMode_t@@VCPulseDoc_BlockComment@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
+.?AV?$CBaseConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CBaseConcreteToolAttr@W4ParticleAttachment_t@@VCPetVariableConfiguration@@@@
 .?AV?$CBaseConcreteToolAttr@W4PulseCycleMode_t@@VCPulseDoc_Outflow_Cycle@@@@
-.?AV?$CBaseConcreteToolAttr@W4PulseEntFireMode_t@@VCPulseDoc_Step_EntFire@@@@
 .?AV?$CBaseConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_BaseFlow@@@@
 .?AV?$CBaseConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallExternalMethod@@@@
 .?AV?$CBaseConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallMethod@@@@
@@ -472,7 +646,21 @@
 .?AV?$CBaseConcreteToolAttr@W4PulseVariableKeysSource_t@@VCPulseDoc_VariableDefinition@@@@
 .?AV?$CBaseConcreteToolAttr@W4ScriptedHeldWeaponBehavior_t@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CBaseConcreteToolAttr@W4ScriptedMoveTo_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CBaseConcreteToolAttr@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttr@W4SharedMovementGait_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_GESTURE@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@@@
+.?AV?$CBaseConcreteToolAttr@_NVCChoreoEvent_SPEAK@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseDoc_BaseFlow@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseDoc_Inflow_Method@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseDoc_Outflow_If@@@@
@@ -484,6 +672,9 @@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseDoc_Step_Timeline@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseDoc_VariableDefinition@@@@
 .?AV?$CBaseConcreteToolAttr@_NVCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CBaseConcreteToolAttrValue@HVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttrValue@HVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttrValue@HVCChoreoEvent_LOOP@@@@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseAttr_PulseSelectorOutflowList_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseDocNode@@@@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseDoc_Outflow_ExitList@@@@
@@ -493,12 +684,48 @@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseDoc_Step_RaceCursors@@@@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseDoc_Step_SetVar@@@@
 .?AV?$CBaseConcreteToolAttrValue@HVCPulseDoc_Value_MakeArray@@@@
+.?AV?$CBaseConcreteToolAttrValue@HVCPulseDoc_VariableDefinition@@@@
 .?AV?$CBaseConcreteToolAttrValue@MUPulseTimelineEventDefinition_t@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_LOOP@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttrValue@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CBaseConcreteToolAttrValue@UGetVarTarget_t@@VCPulseDoc_Value_VarOrConstReference@@@@
+.?AV?$CBaseConcreteToolAttrValue@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CBaseConcreteToolAttrValue@USetVarTarget_t@@VCPulseDoc_Step_SetVar@@@@
+.?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttrValue@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UPulseDynamicOutflowDef_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UPulseTimelineEventDefinition_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCBasePulseOutparamPort@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_BaseMood@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_CommonBase@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_EXPRESSION@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_FACE@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_GESTURE@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_INTERRUPT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SECTION@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_SPEAK@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoEvent_STOPPOINT@@@@
+.?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCPetVariableConfiguration@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCPulseDocNode@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCPulseDoc_BaseFlow@@@@
@@ -530,10 +757,16 @@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CBaseConcreteToolAttrValue@VColor@@VCPulseDoc_BlockComment@@@@
 .?AV?$CBaseConcreteToolAttrValue@VPulseDocNodeID_t@@VCPulseDoc_Step_CallMethod@@@@
+.?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttrValue@VQAngle@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4BlockCommentMode_t@@VCPulseDoc_BlockComment@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ParticleAttachment_t@@VCPetVariableConfiguration@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4PulseCycleMode_t@@VCPulseDoc_Outflow_Cycle@@@@
-.?AV?$CBaseConcreteToolAttrValue@W4PulseEntFireMode_t@@VCPulseDoc_Step_EntFire@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4PulseMethodCallMode_t@@VCPulseDoc_BaseFlow@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallExternalMethod@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallMethod@@@@
@@ -544,7 +777,21 @@
 .?AV?$CBaseConcreteToolAttrValue@W4PulseVariableKeysSource_t@@VCPulseDoc_VariableDefinition@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ScriptedHeldWeaponBehavior_t@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4ScriptedMoveTo_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4SharedMovementGait_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoActor@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_GESTURE@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOCATOR@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SEQUENCE@@@@
+.?AV?$CBaseConcreteToolAttrValue@_NVCChoreoEvent_SPEAK@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCPulseDoc_BaseFlow@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCPulseDoc_Inflow_Method@@@@
 .?AV?$CBaseConcreteToolAttrValue@_NVCPulseDoc_Outflow_If@@@@
@@ -564,6 +811,9 @@
 .?AV?$CBindTargetDescriptor@VCQParticlePreview@@@@
 .?AV?$CBindTargetDescriptor@VCQToolSceneWidget@@@@
 .?AV?$CBindTargetDescriptor@VCToolSceneGizmoLibGizmo@@@@
+.?AV?$CConcreteToolAttr@HVCChoreoEvent_ANIM_CLIP@@X@@
+.?AV?$CConcreteToolAttr@HVCChoreoEvent_BaseLocalEvent@@X@@
+.?AV?$CConcreteToolAttr@HVCChoreoEvent_LOOP@@X@@
 .?AV?$CConcreteToolAttr@HVCPulseAttr_PulseSelectorOutflowList_t@@X@@
 .?AV?$CConcreteToolAttr@HVCPulseDocNode@@X@@
 .?AV?$CConcreteToolAttr@HVCPulseDoc_Outflow_ExitList@@X@@
@@ -573,11 +823,22 @@
 .?AV?$CConcreteToolAttr@HVCPulseDoc_Step_RaceCursors@@X@@
 .?AV?$CConcreteToolAttr@HVCPulseDoc_Step_SetVar@@X@@
 .?AV?$CConcreteToolAttr@HVCPulseDoc_Value_MakeArray@@X@@
+.?AV?$CConcreteToolAttr@HVCPulseDoc_VariableDefinition@@X@@
 .?AV?$CConcreteToolAttr@MUPulseTimelineEventDefinition_t@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_ANIM_CLIP@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_BaseLocalEvent@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_CommonBase@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOKAT@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_LOOP@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_REQUIREMENTS@@X@@
+.?AV?$CConcreteToolAttr@MVCChoreoEvent_SPEAK@@X@@
 .?AV?$CConcreteToolAttr@PEAVCPulseEditableMethodArg@@VCPulseDoc_Inflow_Method@@X@@
 .?AV?$CConcreteToolAttr@PEAVCPulseEditableMethodArg@@VCPulseDoc_PublicOutputDefinition@@X@@
 .?AV?$CConcreteToolAttr@PEAVCPulseEditableType@@V1@X@@
 .?AV?$CConcreteToolAttr@UGetVarTarget_t@@VCPulseDoc_Value_VarOrConstReference@@X@@
+.?AV?$CConcreteToolAttr@UNullToolAttrValue_t@@VCChoreoEvent_ANIM_CLIP@@X@@
 .?AV?$CConcreteToolAttr@UObservableSwitchCase_t@@VCPulseDoc_Flow_ObservableSwitchState@@X@@
 .?AV?$CConcreteToolAttr@UPulseDynamicOutflowDef_t@@VCPulseDocNodeDynamicOutflowsAttr@@X@@
 .?AV?$CConcreteToolAttr@UPulseTimelineEventDefinition_t@@VCPulseDoc_Step_Timeline@@X@@
@@ -591,8 +852,12 @@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@UPulseTimelineEventDefinition_t@@HV?$CUtlVectorMemory_Growable@UPulseTimelineEventDefinition_t@@H$0A@@@@@VCPulseDoc_Step_Timeline@@X@@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@UValueSwitchCase_t@@HV?$CUtlVectorMemory_Growable@UValueSwitchCase_t@@H$0A@@@@@VCPulseDoc_Value_Switch@@X@@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@VCPulseScriptedSequenceDataForEditor@@HV?$CUtlVectorMemory_Growable@VCPulseScriptedSequenceDataForEditor@@H$0A@@@@@VCPulseDoc_Outflow_ScriptedSequence@@X@@
+.?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_SchemaEnumSwitch@@X@@
 .?AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_StringSwitch@@X@@
+.?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoActor@@X@@
+.?AV?$CConcreteToolAttr@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@VCGlobalSymbol@@VCChoreoChannel@@X@@
 .?AV?$CConcreteToolAttr@VCPetEditableType@@VCPetVariableNode@@X@@
 .?AV?$CConcreteToolAttr@VCPetVariableConfiguration@@VCPetVariableNode@@X@@
 .?AV?$CConcreteToolAttr@VCPulseEditableType@@VCBasePulseInparamPort@@X@@
@@ -606,6 +871,28 @@
 .?AV?$CConcreteToolAttr@VCUtlString@@UPulseDynamicOutflowDef_t@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@UPulseTimelineEventDefinition_t@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCBasePulseOutparamPort@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoActor@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_BaseMood@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_CommonBase@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXPRESSION@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_FACE@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_FIRETRIGGER@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_GESTURE@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_INTERRUPT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_LOOKAT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_REQUIREMENTS@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SECTION@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SEQUENCE@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_SPEAK@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoEvent_STOPPOINT@@X@@
+.?AV?$CConcreteToolAttr@VCUtlString@@VCChoreoScene@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCPetVariableConfiguration@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCPulseDocNode@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCPulseDoc_BaseFlow@@X@@
@@ -637,10 +924,16 @@
 .?AV?$CConcreteToolAttr@VCUtlString@@VCPulseScriptedSequenceDataForEditor@@X@@
 .?AV?$CConcreteToolAttr@VColor@@VCPulseDoc_BlockComment@@X@@
 .?AV?$CConcreteToolAttr@VPulseDocNodeID_t@@VCPulseDoc_Step_CallMethod@@X@@
+.?AV?$CConcreteToolAttr@VQAngle@@VCChoreoActor@@X@@
+.?AV?$CConcreteToolAttr@VQAngle@@VCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@W4BlockCommentMode_t@@VCPulseDoc_BlockComment@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoChannelType_t@@VCChoreoChannel@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@X@@
+.?AV?$CConcreteToolAttr@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@X@@
 .?AV?$CConcreteToolAttr@W4ParticleAttachment_t@@VCPetVariableConfiguration@@X@@
 .?AV?$CConcreteToolAttr@W4PulseCycleMode_t@@VCPulseDoc_Outflow_Cycle@@X@@
-.?AV?$CConcreteToolAttr@W4PulseEntFireMode_t@@VCPulseDoc_Step_EntFire@@X@@
 .?AV?$CConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_BaseFlow@@X@@
 .?AV?$CConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallExternalMethod@@X@@
 .?AV?$CConcreteToolAttr@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallMethod@@X@@
@@ -651,7 +944,21 @@
 .?AV?$CConcreteToolAttr@W4PulseVariableKeysSource_t@@VCPulseDoc_VariableDefinition@@X@@
 .?AV?$CConcreteToolAttr@W4ScriptedHeldWeaponBehavior_t@@VCPulseScriptedSequenceDataForEditor@@X@@
 .?AV?$CConcreteToolAttr@W4ScriptedMoveTo_t@@VCPulseScriptedSequenceDataForEditor@@X@@
+.?AV?$CConcreteToolAttr@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@X@@
 .?AV?$CConcreteToolAttr@W4SharedMovementGait_t@@VCPulseScriptedSequenceDataForEditor@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoActor@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_ANIM_CLIP@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_BaseLocalEvent@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_FIRETRIGGER@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_GESTURE@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOCATOR@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_LOOKAT@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_PULSE_REQUIREMENT@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_REQUIREMENTS@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_SEQUENCE@@X@@
+.?AV?$CConcreteToolAttr@_NVCChoreoEvent_SPEAK@@X@@
 .?AV?$CConcreteToolAttr@_NVCPulseDoc_BaseFlow@@X@@
 .?AV?$CConcreteToolAttr@_NVCPulseDoc_Inflow_Method@@X@@
 .?AV?$CConcreteToolAttr@_NVCPulseDoc_Outflow_If@@X@@
@@ -672,6 +979,7 @@
 .?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@UPulseTimelineEventDefinition_t@@HV?$CUtlVectorMemory_Growable@UPulseTimelineEventDefinition_t@@H$0A@@@@@VCPulseDoc_Step_Timeline@@@@
 .?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@UValueSwitchCase_t@@HV?$CUtlVectorMemory_Growable@UValueSwitchCase_t@@H$0A@@@@@VCPulseDoc_Value_Switch@@@@
 .?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCPulseScriptedSequenceDataForEditor@@HV?$CUtlVectorMemory_Growable@VCPulseScriptedSequenceDataForEditor@@H$0A@@@@@VCPulseDoc_Outflow_ScriptedSequence@@@@
+.?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_SchemaEnumSwitch@@@@
 .?AV?$CConcreteToolAttrGetForModify@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_StringSwitch@@@@
 .?AV?$CConcreteToolAttrGetForModify@VCPetEditableType@@VCPetVariableNode@@@@
@@ -684,6 +992,9 @@
 .?AV?$CConcreteToolAttrGetForModify@VCPulseEditableType@@VCPulseEditableValue@@@@
 .?AV?$CConcreteToolAttrGetForModify@VCPulseEditableValue@@VCPulseDoc_BaseValueDefinition@@@@
 .?AV?$CConcreteToolAttrGetForModify@VCPulseScriptedSequenceDataForEditor@@VCPulseDoc_Outflow_ScriptedSequence@@@@
+.?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CConcreteToolAttrGetSet@HVCChoreoEvent_LOOP@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseAttr_PulseSelectorOutflowList_t@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseDocNode@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseDoc_Outflow_ExitList@@@@
@@ -692,12 +1003,46 @@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseDoc_Step_RaceCursors@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseDoc_Step_SetVar@@@@
 .?AV?$CConcreteToolAttrGetSet@HVCPulseDoc_Value_MakeArray@@@@
+.?AV?$CConcreteToolAttrGetSet@HVCPulseDoc_VariableDefinition@@@@
 .?AV?$CConcreteToolAttrGetSet@MUPulseTimelineEventDefinition_t@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOKAT@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_LOOP@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CConcreteToolAttrGetSet@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CConcreteToolAttrGetSet@UGetVarTarget_t@@VCPulseDoc_Value_VarOrConstReference@@@@
 .?AV?$CConcreteToolAttrGetSet@USetVarTarget_t@@VCPulseDoc_Step_SetVar@@@@
+.?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoActor@@@@
+.?AV?$CConcreteToolAttrGetSet@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@UPulseDynamicOutflowDef_t@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@UPulseTimelineEventDefinition_t@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCBasePulseOutparamPort@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoActor@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_BaseMood@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_CommonBase@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_EXPRESSION@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_FACE@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_GESTURE@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_INTERRUPT@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_SECTION@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_SPEAK@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoEvent_STOPPOINT@@@@
+.?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCPetVariableConfiguration@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCPulseDocNode@@@@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCPulseDoc_BaseFlow@@@@
@@ -727,10 +1072,16 @@
 .?AV?$CConcreteToolAttrGetSet@VCUtlString@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CConcreteToolAttrGetSet@VColor@@VCPulseDoc_BlockComment@@@@
 .?AV?$CConcreteToolAttrGetSet@VPulseDocNodeID_t@@VCPulseDoc_Step_CallMethod@@@@
+.?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoActor@@@@
+.?AV?$CConcreteToolAttrGetSet@VQAngle@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@W4BlockCommentMode_t@@VCPulseDoc_BlockComment@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
+.?AV?$CConcreteToolAttrGetSet@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ParticleAttachment_t@@VCPetVariableConfiguration@@@@
 .?AV?$CConcreteToolAttrGetSet@W4PulseCycleMode_t@@VCPulseDoc_Outflow_Cycle@@@@
-.?AV?$CConcreteToolAttrGetSet@W4PulseEntFireMode_t@@VCPulseDoc_Step_EntFire@@@@
 .?AV?$CConcreteToolAttrGetSet@W4PulseMethodCallMode_t@@VCPulseDoc_BaseFlow@@@@
 .?AV?$CConcreteToolAttrGetSet@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallExternalMethod@@@@
 .?AV?$CConcreteToolAttrGetSet@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallMethod@@@@
@@ -741,7 +1092,21 @@
 .?AV?$CConcreteToolAttrGetSet@W4PulseVariableKeysSource_t@@VCPulseDoc_VariableDefinition@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ScriptedHeldWeaponBehavior_t@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CConcreteToolAttrGetSet@W4ScriptedMoveTo_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CConcreteToolAttrGetSet@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CConcreteToolAttrGetSet@W4SharedMovementGait_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoActor@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_GESTURE@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOCATOR@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SEQUENCE@@@@
+.?AV?$CConcreteToolAttrGetSet@_NVCChoreoEvent_SPEAK@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseDoc_BaseFlow@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseDoc_Inflow_Method@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseDoc_Outflow_If@@@@
@@ -753,10 +1118,45 @@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseDoc_Step_Timeline@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseDoc_VariableDefinition@@@@
 .?AV?$CConcreteToolAttrGetSet@_NVCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CConcreteToolAttrNull@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UObservableSwitchCase_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UPulseDynamicOutflowDef_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UPulseTimelineEventDefinition_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UValueSwitchCase_t@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoActor@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoChannel@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_BaseLocalEventWithRamp@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_CommonBase@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_DISABLE_BLINK@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_EXPRESSION@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_FACE@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_FLEXANIMATION@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_GESTURE@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_IGNORE_EXTERNAL_LOOKATS@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_INTERRUPT@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_LOCK_FACING@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_LOOKAT@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_LOOP@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_MOOD_BODY@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PERMIT_RESPONSES@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PLAY_RESPONSE@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_SECTION@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_SEQUENCE@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_SPEAK@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoEvent_STOPPOINT@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoObjectBase@@@@
+.?AV?$CDefaultToolAttrTableForStruct@VCChoreoScene@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCPetVariableConfiguration@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCPulseAttr_PulseSelectorOutflowList_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@VCPulseDocNode@@@@
@@ -900,7 +1300,6 @@
 .?AV?$CPulseInflow@VCPulseDoc_Step_RaceCursors@@@@
 .?AV?$CPulseInflow@VCPulseDoc_Step_Timeline@@@@
 .?AV?$CPulseInparam@VCPulseDocNode@@@@
-.?AV?$CPulseInparam@VCPulseDoc_BaseFlow@@@@
 .?AV?$CPulseInparam@VCPulseDoc_Cast@@@@
 .?AV?$CPulseInparam@VCPulseDoc_Flow_Generic@@@@
 .?AV?$CPulseInparam@VCPulseDoc_Flow_ObservableSwitchState@@@@
@@ -993,6 +1392,7 @@
 .?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@UPulseTimelineEventDefinition_t@@HV?$CUtlVectorMemory_Growable@UPulseTimelineEventDefinition_t@@H$0A@@@@@VCPulseDoc_Step_Timeline@@@@
 .?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@UValueSwitchCase_t@@HV?$CUtlVectorMemory_Growable@UValueSwitchCase_t@@H$0A@@@@@VCPulseDoc_Value_Switch@@@@
 .?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCPulseScriptedSequenceDataForEditor@@HV?$CUtlVectorMemory_Growable@VCPulseScriptedSequenceDataForEditor@@H$0A@@@@@VCPulseDoc_Outflow_ScriptedSequence@@@@
+.?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@@@
 .?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_SchemaEnumSwitch@@@@
 .?AV?$CToolAttrGetForModifyAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_StringSwitch@@@@
 .?AV?$CToolAttrGetForModifyAccess@VCPetEditableType@@VCPetVariableNode@@@@
@@ -1005,6 +1405,9 @@
 .?AV?$CToolAttrGetForModifyAccess@VCPulseEditableType@@VCPulseEditableValue@@@@
 .?AV?$CToolAttrGetForModifyAccess@VCPulseEditableValue@@VCPulseDoc_BaseValueDefinition@@@@
 .?AV?$CToolAttrGetForModifyAccess@VCPulseScriptedSequenceDataForEditor@@VCPulseDoc_Outflow_ScriptedSequence@@@@
+.?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CToolAttrGetSetAccess@HVCChoreoEvent_LOOP@@@@
 .?AV?$CToolAttrGetSetAccess@HVCPulseAttr_PulseSelectorOutflowList_t@@@@
 .?AV?$CToolAttrGetSetAccess@HVCPulseDocNode@@@@
 .?AV?$CToolAttrGetSetAccess@HVCPulseDoc_Outflow_ExitList@@@@
@@ -1013,12 +1416,46 @@
 .?AV?$CToolAttrGetSetAccess@HVCPulseDoc_Step_RaceCursors@@@@
 .?AV?$CToolAttrGetSetAccess@HVCPulseDoc_Step_SetVar@@@@
 .?AV?$CToolAttrGetSetAccess@HVCPulseDoc_Value_MakeArray@@@@
+.?AV?$CToolAttrGetSetAccess@HVCPulseDoc_VariableDefinition@@@@
 .?AV?$CToolAttrGetSetAccess@MUPulseTimelineEventDefinition_t@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_CommonBase@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOKAT@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_LOOP@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_PLAYER_CAMERA_CONTROL@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CToolAttrGetSetAccess@MVCChoreoEvent_SPEAK@@@@
 .?AV?$CToolAttrGetSetAccess@UGetVarTarget_t@@VCPulseDoc_Value_VarOrConstReference@@@@
 .?AV?$CToolAttrGetSetAccess@USetVarTarget_t@@VCPulseDoc_Step_SetVar@@@@
+.?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoActor@@@@
+.?AV?$CToolAttrGetSetAccess@V?$Vec3D@M@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@VCGlobalSymbol@@VCChoreoChannel@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@UPulseDynamicOutflowDef_t@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@UPulseTimelineEventDefinition_t@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCBasePulseOutparamPort@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoActor@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIMGRAPH_CONTROLLER@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_BaseMood@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_CommonBase@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_EXPRESSION@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_FACE@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_GESTURE@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_INTERRUPT@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_LOOKAT@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_PLAY_RESPONSE@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_SECTION@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_SEQUENCE@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_SPEAK@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoEvent_STOPPOINT@@@@
+.?AV?$CToolAttrGetSetAccess@VCUtlString@@VCChoreoScene@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCPetVariableConfiguration@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCPulseDocNode@@@@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCPulseDoc_BaseFlow@@@@
@@ -1048,10 +1485,16 @@
 .?AV?$CToolAttrGetSetAccess@VCUtlString@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CToolAttrGetSetAccess@VColor@@VCPulseDoc_BlockComment@@@@
 .?AV?$CToolAttrGetSetAccess@VPulseDocNodeID_t@@VCPulseDoc_Step_CallMethod@@@@
+.?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoActor@@@@
+.?AV?$CToolAttrGetSetAccess@VQAngle@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@W4BlockCommentMode_t@@VCPulseDoc_BlockComment@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoAnimationLayerType_t@@VCChoreoChannel@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoChannelType_t@@VCChoreoChannel@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoLocatorArrivalOptionFlags_t@@VCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@W4ChoreoStrafeMode_t@@VCChoreoEvent_FACE@@@@
+.?AV?$CToolAttrGetSetAccess@W4HandshakeTagType_t@@VCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
 .?AV?$CToolAttrGetSetAccess@W4ParticleAttachment_t@@VCPetVariableConfiguration@@@@
 .?AV?$CToolAttrGetSetAccess@W4PulseCycleMode_t@@VCPulseDoc_Outflow_Cycle@@@@
-.?AV?$CToolAttrGetSetAccess@W4PulseEntFireMode_t@@VCPulseDoc_Step_EntFire@@@@
 .?AV?$CToolAttrGetSetAccess@W4PulseMethodCallMode_t@@VCPulseDoc_BaseFlow@@@@
 .?AV?$CToolAttrGetSetAccess@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallExternalMethod@@@@
 .?AV?$CToolAttrGetSetAccess@W4PulseMethodCallMode_t@@VCPulseDoc_Step_CallMethod@@@@
@@ -1062,7 +1505,21 @@
 .?AV?$CToolAttrGetSetAccess@W4PulseVariableKeysSource_t@@VCPulseDoc_VariableDefinition@@@@
 .?AV?$CToolAttrGetSetAccess@W4ScriptedHeldWeaponBehavior_t@@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$CToolAttrGetSetAccess@W4ScriptedMoveTo_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CToolAttrGetSetAccess@W4SharedMovementGait_t@@VCChoreoEvent_LOCATOR@@@@
 .?AV?$CToolAttrGetSetAccess@W4SharedMovementGait_t@@VCPulseScriptedSequenceDataForEditor@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoActor@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_ANIM_CLIP@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_BaseLocalEvent@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_FIRETRIGGER@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_GESTURE@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOCATOR@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_LOOKAT@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_PULSE_REQUIREMENT@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_REQUIREMENTS@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SEQUENCE@@@@
+.?AV?$CToolAttrGetSetAccess@_NVCChoreoEvent_SPEAK@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCPulseDoc_BaseFlow@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCPulseDoc_Inflow_Method@@@@
 .?AV?$CToolAttrGetSetAccess@_NVCPulseDoc_Outflow_If@@@@
@@ -1078,6 +1535,7 @@
 .?AV?$CToolAttrKV3FGDProvider@VCPulseDoc_Flow_Generic@@@@
 .?AV?$CToolAttrKV3FGDProvider@VCPulseDoc_Requirement_Generic@@@@
 .?AV?$CToolAttrKV3FGDProvider@VCPulseDoc_Value_Generic@@@@
+.?AV?$CToolAttrNullAccess@VCChoreoEvent_ANIM_CLIP@@@@
 .?AV?$CToolEventMapRegistrationHelper@VCPetSession@@@@
 .?AV?$CToolEventMapRegistrationHelper@VCQParticleFunctionList@@@@
 .?AV?$CToolEventMapRegistrationHelper@VCQParticlePreview@@@@
@@ -1095,6 +1553,7 @@
 .?AV?$IToolAttrConcreteDataAccess@PEAVCPulseEditableMethodArg@@@@
 .?AV?$IToolAttrConcreteDataAccess@PEAVCPulseEditableType@@@@
 .?AV?$IToolAttrConcreteDataAccess@UGetVarTarget_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@UNullToolAttrValue_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UObservableSwitchCase_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UPulseDynamicOutflowDef_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@UPulseTimelineEventDefinition_t@@@@
@@ -1113,8 +1572,12 @@
 .?AV?$IToolAttrConcreteDataAccess@VCPulseScriptedSequenceDataForEditor@@@@
 .?AV?$IToolAttrConcreteDataAccess@VPulseDocNodeID_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4BlockCommentMode_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoChannelType_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoLocatorArrivalOptionFlags_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4ChoreoStrafeMode_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4HandshakeTagType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4PulseCycleMode_t@@@@
-.?AV?$IToolAttrConcreteDataAccess@W4PulseEntFireMode_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4PulseMethodCallMode_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4PulseRequirementEvaluationOperator_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4PulseRequirementFailBehavior_t@@@@
@@ -1124,11 +1587,16 @@
 .?AV?$IToolAttrConcreteDataAccess@W4ScriptedMoveTo_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4SharedMovementGait_t@@@@
 .?AV?$IToolAttr_TypedValue@UGetVarTarget_t@@@@
+.?AV?$IToolAttr_TypedValue@UNullToolAttrValue_t@@@@
 .?AV?$IToolAttr_TypedValue@USetVarTarget_t@@@@
 .?AV?$IToolAttr_TypedValue@VPulseDocNodeID_t@@@@
 .?AV?$IToolAttr_TypedValue@W4BlockCommentMode_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoAnimationLayerType_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoChannelType_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoLocatorArrivalOptionFlags_t@@@@
+.?AV?$IToolAttr_TypedValue@W4ChoreoStrafeMode_t@@@@
+.?AV?$IToolAttr_TypedValue@W4HandshakeTagType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4PulseCycleMode_t@@@@
-.?AV?$IToolAttr_TypedValue@W4PulseEntFireMode_t@@@@
 .?AV?$IToolAttr_TypedValue@W4PulseMethodCallMode_t@@@@
 .?AV?$IToolAttr_TypedValue@W4PulseRequirementEvaluationOperator_t@@@@
 .?AV?$IToolAttr_TypedValue@W4PulseRequirementFailBehavior_t@@@@
@@ -1154,19 +1622,22 @@
 .?AV?$_Func_base@XPEAVKeyValues3@@@std@@
 .?AV?$_Func_base@XPEBUParticleDomainLeafElement_t@@@std@@
 .?AV?$_Func_base@XPEBVCPulseDocNode@@PEAVCUtlString@@@std@@
+.?AV?$_Func_base@XPEBVCPulseDoc_BaseFlow@@PEBVCBasePulseOutflowPort@@PEAVCUtlString@@@std@@
+.?AV?$_Func_base@XPEBVCPulseDoc_Flow_ObservableSwitchState@@PEBVCBasePulseOutflowPort@@PEAVCUtlString@@@std@@
 .?AV?$_Func_base@XPEBVCPulseSequencePoint@@PEAVCCompiledChunk@@@std@@
 .?AV?$_Func_base@_NAEBUPulseFGDDomainInfo_t@@@std@@
 .?AV?$_Func_base@_NPEBVCPulseDoc_BaseRequirement@@@std@@
 .?AV?$_Func_base@_NPEBVCPulseDoc_Connection_Inparam@@@std@@
 .?AV?$_Func_base@_NPEBVCPulseDoc_Connection_Outflow@@@std@@
 .?AV?$_Func_base@_NPEBVKeyValues3@@PEBV1@@std@@
-.?AV?$_Func_base@_N_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@std@@
+.?AV?$_Func_base@_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@std@@
 .?AV?$_Func_base@_N_NW4PulseValueType_t@@@std@@
 .?AV?$_Func_impl_no_alloc@P6AXPEAVCPulseDocNode@@PEBD@ZXPEAV1@PEBD@std@@
 .?AV?$_Func_impl_no_alloc@P6AXPEBVCPulseDocNode@@PEAVCUtlString@@@ZXPEBV1@PEAV2@@std@@
 .?AV?$_Func_impl_no_alloc@P6AXVHToolAttrTableInstance@@PEBVIBaseToolAttr@@PEAV?$CUtlVector@UToolAttrGenericChoice_t@@HV?$CUtlVectorMemory_Growable@UToolAttrGenericChoice_t@@H$0A@@@@@@ZXV1@PEBV2@PEAV3@@std@@
 .?AV?$_Func_impl_no_alloc@P6A_NPEBVKeyValues3@@0@Z_NPEBV1@PEBV1@@std@@
-.?AV?$_Func_impl_no_alloc@P6A_N_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@Z_N_NW41@AEBV2@W43@PEAV4@@std@@
+.?AV?$_Func_impl_no_alloc@P6A_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@Z_NW41@AEBV2@W43@PEAV4@@std@@
+.?AV?$_Func_impl_no_alloc@P8CPulseDoc_Flow_ObservableSwitchState@@EBAXPEBVCBasePulseOutflowPort@@PEAVCUtlString@@@ZXPEBV1@PEBV2@PEAV3@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@?1???0CPulseDoc_BaseFlow@@QEAA@XZ@XPEBVCPulseSequencePoint@@PEAVCCompiledChunk@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@@XPEAVCBasePetNode@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_11>@?1???0CPulseDoc_BaseFlow@@QEAA@XZ@XPEBVCPulseSequencePoint@@PEAVCCompiledChunk@@@std@@
@@ -1230,7 +1701,7 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GetStaticNodeTypeInfo_Internal@CPulseDoc_Outflow_ScriptedSequence@@CAAEBVCPulseDocNodeTypeInfo@@XZ@_NAEBUPulseFGDDomainInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GetUnfilteredDomainValueChoices@CPulseDoc@@QEBAXW4PulseDomainValueType_t@@PEAV?$CUtlVector@U?$ToolAttrChoice_t@VCUtlString@@@@HV?$CUtlVectorMemory_Growable@U?$ToolAttrChoice_t@VCUtlString@@@@H$0A@@@@@@Z@XAEBVCBasePulseDomainValueInfo@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??HasRequirementChildNodes@CPulseDoc_BaseFlow@@IEBA_NXZ@_NPEBVCPulseDoc_BaseRequirement@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??InitializeWithNode@CPulseAttr_CPulseObservableExpression@@UEAAXPEBD00PEBVKeyValues3@@PEAVCPulseDoc_BaseFlow@@@Z@XPEAUPulseSequencePointProperties_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??InitObservable@CBasePulseInparamPort@@QEAAXPEBVCPulseSequencePoint@@@Z@XPEAUPulseSequencePointProperties_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Flow_ObservableSwitchState@@UEAAXPEAVCKV3TransferLoadContext@@@Z@PEAVCBasePulseInparamPort@@VPulseSymbol_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Value_MakeArray@@UEAAXPEAVCKV3TransferLoadContext@@@Z@PEAVCBasePulseInparamPort@@VPulseSymbol_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??KV3TransferLoad@CPulseDoc_Value_Switch@@UEAAXPEAVCKV3TransferLoadContext@@@Z@PEAVCBasePulseInparamPort@@VPulseSymbol_t@@@std@@
@@ -1244,10 +1715,11 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?5???0CBasePulseInflowPort@@QEAA@PEBVCPulseDoc_BaseFlow@@PEBVCPulseSequencePoint@@_NVPulseSymbol_t@@W4PulseCursorInflowBehavior_t@@@Z@XPEAUPulseSequencePointProperties_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?5???0CQParticlePreviewControls@@QEAA@PEAVQWidget@@PEAVCPetKV3PropertyDomain@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??AddParticleDomainBindings@@YAXAEAVGameData@@@Z@XPEBUParticleDomainLeafElement_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??RebuildExits@CPulseDocNodeDynamicOutflowsAttr@@QEAAXXZ@XPEBVCPulseDoc_BaseFlow@@PEBVCBasePulseOutflowPort@@PEAVCUtlString@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??RebuildExits@CPulseDoc_Outflow_Simultaneous@@EEAAXXZ@XPEAUPulseSequencePointProperties_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?9??InitGeneric@CPulseDoc_Flow_Generic@@QEAA_NPEBD@Z@XPEAUPulseSequencePointProperties_t@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?BA@??LoadInAndOutParamList@@YAXPEAVCKV3TransferLoadContext@@_NAEBV?$CUtlVector@PEAVCBasePulseParamPort@@HV?$CUtlVectorMemory_Growable@PEAVCBasePulseParamPort@@H$0A@@@@@@Z@_NPEBVCPulseDoc_Connection_Inparam@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@XAEBUAssetSelectionInfo_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?BJ@??LoadInAndOutParamList@@YAXPEAVCKV3TransferLoadContext@@_NAEBV?$CUtlVector@PEAVCBasePulseParamPort@@HV?$CUtlVectorMemory_Growable@PEAVCBasePulseParamPort@@H$0A@@@@@@Z@_NPEBVCPulseDoc_Connection_Inparam@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@PEBVCResourceName@@PEBVCUtlString@@4@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1_>@?0???0CBasePulseInparamPort@@QEAA@PEAVCPulseDocNode@@VPulseSymbol_t@@W4PulseInValueSource_t@@AEBVKeyValues3@@@Z@_N_NW4PulseValueType_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_20>@@XPEAVCBasePetNode@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_21>@@XPEAVCBasePetNode@@@std@@
@@ -1266,7 +1738,7 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1???0CPulseDoc_Step_FireCursors@@QEAA@XZ@XPEAUPulseSequencePointProperties_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1???0CPulseDoc_Step_RaceCursors@@QEAA@XZ@XPEAUPulseSequencePointProperties_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1???0CPulseDoc_Step_Timeline@@QEAA@XZ@XPEAUPulseSequencePointProperties_t@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??InitializeWithNode@CPulseAttr_CPulseObservableExpression@@UEAAXPEBD00PEBVKeyValues3@@PEAVCPulseDoc_BaseFlow@@@Z@XPEBVCPulseSequencePoint@@PEAVCCompiledChunk@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??InitObservable@CBasePulseInparamPort@@QEAAXPEBVCPulseSequencePoint@@@Z@XPEBV4@PEAVCCompiledChunk@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??KV3TransferLoad@CPulseDoc_Value_Switch@@UEAAXPEAVCKV3TransferLoadContext@@@Z@PEAVCBasePulseInparamPort@@VPulseSymbol_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??UpdateSpontaneousEntryPoint@CPulseDoc_Flow_Generic@@AEAAXXZ@XPEBVCPulseSequencePoint@@PEAVCCompiledChunk@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?5???0CBasePulseInflowPort@@QEAA@PEBVCPulseDoc_BaseFlow@@PEBVCPulseSequencePoint@@_NVPulseSymbol_t@@W4PulseCursorInflowBehavior_t@@@Z@XPEAUPulseSequencePointProperties_t@@@std@@
@@ -1305,6 +1777,7 @@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@UPulseTimelineEventDefinition_t@@HV?$CUtlVectorMemory_Growable@UPulseTimelineEventDefinition_t@@H$0A@@@@@VCPulseDoc_Step_Timeline@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@UValueSwitchCase_t@@HV?$CUtlVectorMemory_Growable@UValueSwitchCase_t@@H$0A@@@@@VCPulseDoc_Value_Switch@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCPulseScriptedSequenceDataForEditor@@HV?$CUtlVectorMemory_Growable@VCPulseScriptedSequenceDataForEditor@@H$0A@@@@@VCPulseDoc_Outflow_ScriptedSequence@@X@@
+.?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCChoreoEvent_REQUIREMENTS@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_SchemaEnumSwitch@@X@@
 .?AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@VCPulseDoc_Outflow_StringSwitch@@X@@
 .?AVCBaseEditorApp@@
@@ -1342,6 +1815,43 @@
 .?AVCBindableTargetDescriptorInstance@?1??StaticBindableTargetDescriptor@CToolSceneGizmoLibGizmo@@SAPEAVCBaseBindTargetDescriptor@@XZ@
 .?AVCBoxScaleGizmoHelper@@
 .?AVCBoxScaleGizmoRenderData@@
+.?AVCChoreoActor@@
+.?AVCChoreoChannel@@
+.?AVCChoreoEvent@@
+.?AVCChoreoEvent_ANIMGRAPH_CONTROLLER@@
+.?AVCChoreoEvent_ANIM_CLIP@@
+.?AVCChoreoEvent_BaseGlobalEvent@@
+.?AVCChoreoEvent_BaseLocalEvent@@
+.?AVCChoreoEvent_BaseLocalEventWithRamp@@
+.?AVCChoreoEvent_BaseMood@@
+.?AVCChoreoEvent_CommonBase@@
+.?AVCChoreoEvent_DISABLE_BLINK@@
+.?AVCChoreoEvent_EXPRESSION@@
+.?AVCChoreoEvent_EXTERNAL_ANIMGRAPH@@
+.?AVCChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL@@
+.?AVCChoreoEvent_FACE@@
+.?AVCChoreoEvent_FIRETRIGGER@@
+.?AVCChoreoEvent_FLEXANIMATION@@
+.?AVCChoreoEvent_GESTURE@@
+.?AVCChoreoEvent_IGNORE_EXTERNAL_LOOKATS@@
+.?AVCChoreoEvent_INTERRUPT@@
+.?AVCChoreoEvent_LOCATOR@@
+.?AVCChoreoEvent_LOCK_FACING@@
+.?AVCChoreoEvent_LOOKAT@@
+.?AVCChoreoEvent_LOOP@@
+.?AVCChoreoEvent_MOOD@@
+.?AVCChoreoEvent_MOOD_BODY@@
+.?AVCChoreoEvent_PERMIT_RESPONSES@@
+.?AVCChoreoEvent_PLAYER_CAMERA_CONTROL@@
+.?AVCChoreoEvent_PLAY_RESPONSE@@
+.?AVCChoreoEvent_PULSE_REQUIREMENT@@
+.?AVCChoreoEvent_REQUIREMENTS@@
+.?AVCChoreoEvent_SECTION@@
+.?AVCChoreoEvent_SEQUENCE@@
+.?AVCChoreoEvent_SPEAK@@
+.?AVCChoreoEvent_STOPPOINT@@
+.?AVCChoreoObjectBase@@
+.?AVCChoreoScene@@
 .?AVCCompleteModifications@@
 .?AVCContentChangeWatcher@@
 .?AVCConvertCPRead_FloatInput@@
@@ -1353,8 +1863,10 @@
 .?AVCDocumentModifyStepBase@@
 .?AVCErrorMessageList@@
 .?AVCExtraAttrTableForInparamPort@@
+.?AVCFlexAnimationTrack@@
 .?AVCGizmo@@
 .?AVCHitBoxObjectDesc@@
+.?AVCKV3Transfer_ToolsOnlyBlockingResourceLoad@@
 .?AVCLightingControlRig@@
 .?AVCLightingPreviewPopupUI@@
 .?AVCOffscreenToolSceneWindow@@
@@ -1376,7 +1888,6 @@
 .?AVCPivotTranslateGizmoHelper@@
 .?AVCPulseAttr_AccompanyPathEventsOutflows@@
 .?AVCPulseAttr_AnimEventOutflows@@
-.?AVCPulseAttr_CPulseObservableExpression@@
 .?AVCPulseAttr_EntityOutput@@
 .?AVCPulseAttr_PulseSelectorOutflowList_t@@
 .?AVCPulseCustomAttrInparam@@
@@ -1584,9 +2095,11 @@
 .?AVCRotateGizmoRenderData@@
 .?AVCScaleGizmoHelper@@
 .?AVCScaleGizmoRenderData@@
+.?AVCSchemaRegistration_choreoobjects@@
 .?AVCSchemaRegistration_mathlib_extended@@
 .?AVCSimpleBaseEditorSession@@
 .?AVCSimpleSharedWindowEditorSession@@
+.?AVCTempCurveDataAccessor@@
 .?AVCTexturedRectangleSceneObject@@
 .?AVCTexturedRectangleSceneObjectDescriptor@@
 .?AVCTonemappingPopupUI@@
@@ -1629,6 +2142,7 @@
 .?AVCTranslateGizmoRenderData@@
 .?AVCVolumetricCustomTrace@CParticleSystemQuery_ToolScene@@
 .?AVIBindableCameraScene@@
+.?AVICurveDataAccessor@@
 .?AVIDomainValueListProvider@@
 .?AVIDraggableItemList@@
 .?AVIDraggableTargetItem@@
@@ -1636,12 +2150,11 @@
 .?AVIGizmoHelper@@
 .?AVIGizmoListener@@
 .?AVIGizmoOuter@@
-.?AVIMapDocExternalToolReferenceOwner@@
 .?AVIPetNodeVariableContext@@
 .?AVIProceduralWorkingSet@@
 .?AVIPropertyEditDomain@@
 .?AVIPulseEditableMethodArgOwner@@
-.?AVIPulseEditableTypeAndValueModificationListener@@
+.?AVIPulseEditableTypeAndValueOwner@@
 .?AVIPulseEditableTypeModificationListener@@
 .?AVIPulseEditableTypeScope@@
 .?AVIPulseEditorLoadCallbacks@@
@@ -1667,7 +2180,12 @@
 .P6AXPEBVCPulseDocNode@@PEAVCUtlString@@@Z
 .P6AXVHToolAttrTableInstance@@PEBVIBaseToolAttr@@PEAV?$CUtlVector@UToolAttrGenericChoice_t@@HV?$CUtlVectorMemory_Growable@UToolAttrGenericChoice_t@@H$0A@@@@@@Z
 .P6A_NPEBVKeyValues3@@0@Z
-.P6A_N_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@Z
+.P6A_NW4PulseEditorPortType_t@@AEBVCPulseType@@W4PulseKnownModuleScope_t@@PEAVPulseSymbol_t@@@Z
+.P8CPulseDoc_Flow_ObservableSwitchState@@EBAXPEBVCBasePulseOutflowPort@@PEAVCUtlString@@@Z
+.ini
+.vcs
+.vfx
+.vpk:
 .vsky
 1.5x
 1AddClicked()
@@ -1976,8 +2494,8 @@
 3>UQ
 < %i, %i > -> < %i, %i > [ %i, %i ]
 <Bad value> : 
+<No files>
 <No recent directories>
-<No recent files>
 <UNKNOWN>
 <a href='#%1' title='%3'>%2</a>
 <b>Build Action List:</b> <br>
@@ -1986,6 +2504,7 @@
 <br>%1<pre>"%2"</pre>is outside of the directory required for game content:<pre>"%3"\t</pre>
 <br>The file:<pre>"%1"</pre>has unsaved changes. Save them?
 <error>
+<externally specified>
 <font color="yellow">%s</font>
 <font color='red'>Error 
 <font color='white'>Info 
@@ -2004,6 +2523,8 @@
 ??0QGridLayout@@QEAA@XZ
 ??0QItemDelegate@@QEAA@PEAVQObject@@@Z
 ??0QMdiArea@@QEAA@PEAVQWidget@@@Z
+??0QPointF@@QEAA@NN@Z
+??0QRectF@@QEAA@NNNN@Z
 ??0QSignalMapper@@QEAA@PEAVQObject@@@Z
 ??0QSlider@@QEAA@W4Orientation@Qt@@PEAVQWidget@@@Z
 ??0QSpacerItem@@QEAA@HHW4Policy@QSizePolicy@@0@Z
@@ -2023,7 +2544,6 @@
 ??MQDateTime@@QEBA_NAEBV0@@Z
 ??YQString@@QEAAAEAV0@AEBV0@@Z
 ??YQString@@QEAAAEAV0@VQChar@@@Z
-?aboutToShow@QMenu@@QEAAXXZ
 ?addAction@QMenu@@QEAAPEAVQAction@@AEBVQIcon@@AEBVQString@@PEBVQObject@@PEBDAEBVQKeySequence@@@Z
 ?addButton@QMessageBox@@QEAAPEAVQPushButton@@AEBVQString@@W4ButtonRole@1@@Z
 ?addChild@QTreeWidgetItem@@QEAAXPEAV1@@Z
@@ -2038,9 +2558,9 @@
 ?alignment@QLabel@@QEBA?AV?$QFlags@W4AlignmentFlag@Qt@@@@XZ
 ?anchorClicked@QTextBrowser@@QEAAXAEBVQUrl@@@Z
 ?append@QByteArray@@QEAAAEAV1@PEBD@Z
-?availableGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?baseName@QFileInfo@@QEBA?AVQString@@XZ
 ?birthTime@QFileInfo@@QEBA?AVQDateTime@@XZ
+?bottomLeft@QRectF@@QEBA?AVQPointF@@XZ
 ?buttons@QButtonGroup@@QEBA?AV?$QList@PEAVQAbstractButton@@@@XZ
 ?canConvert@QVariant@@QEBA_NH@Z
 ?cellDoubleClicked@QTableWidget@@QEAAXHH@Z
@@ -2055,8 +2575,6 @@
 ?convertFromImage@QPixmap@@QEAA_NAEBVQImage@@V?$QFlags@W4ImageConversionFlag@Qt@@@@@Z
 ?cornerWidget@QMenuBar@@QEBAPEAVQWidget@@W4Corner@Qt@@@Z
 ?createEditor@QItemDelegate@@UEBAPEAVQWidget@@PEAV2@AEBVQStyleOptionViewItem@@AEBVQModelIndex@@@Z
-?currentChanged@QTabWidget@@QEAAXH@Z
-?currentWidget@QTabWidget@@QEBAPEAVQWidget@@XZ
 ?devicePixelRatio@QScreen@@QEBANXZ
 ?dir@QFileInfo@@QEBA?AVQDir@@XZ
 ?drawBackground@QItemDelegate@@IEBAXPEAVQPainter@@AEBVQStyleOptionViewItem@@AEBVQModelIndex@@@Z
@@ -2083,6 +2601,7 @@
 ?getOpenFileNames@QFileDialog@@SA?AVQStringList@@PEAVQWidget@@AEBVQString@@11PEAV4@V?$QFlags@W4Option@QFileDialog@@@@@Z
 ?hasHeightForWidth@QLayoutItem@@UEBA_NXZ
 ?header@QTreeView@@QEBAPEAVQHeaderView@@XZ
+?height@QRectF@@QEBANXZ
 ?heightForWidth@QLayoutItem@@UEBAHH@Z
 ?iconSize@QComboBox@@QEBA?AVQSize@@XZ
 ?init@QStyleOption@@QEAAXPEBVQWidget@@@Z
@@ -2150,11 +2669,9 @@
 ?setAlignment@QLayoutItem@@QEAAXV?$QFlags@W4AlignmentFlag@Qt@@@@@Z
 ?setAlignment@QLineEdit@@QEAAXV?$QFlags@W4AlignmentFlag@Qt@@@@@Z
 ?setAnimated@QMainWindow@@QEAAX_N@Z
-?setAutoRaise@QToolButton@@QEAAX_N@Z
 ?setBackground@QTreeWidgetItem@@QEAAXHAEBVQBrush@@@Z
 ?setBackgroundMode@QPainter@@QEAAXW4BGMode@Qt@@@Z
 ?setBackgroundRole@QWidget@@QEAAXW4ColorRole@QPalette@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setColumnHidden@QTableView@@QEAAXH_N@Z
 ?setColumnMinimumWidth@QGridLayout@@QEAAXHH@Z
 ?setCurrentText@QComboBox@@QEAAXAEBVQString@@@Z
@@ -2221,6 +2738,7 @@
 ?tip@QStatusTipEvent@@QEBA?AVQString@@XZ
 ?toLatin1@QString@@QEHAA?AVQByteArray@@XZ
 ?toStdString@QString@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+?topLeft@QRectF@@QEBA?AVQPointF@@XZ
 ?topLevelChanged@QDockWidget@@QEAAX_N@Z
 ?tr@QLabel@@SA?AVQString@@PEBD0H@Z
 ?triggered@QMenu@@QEAAXPEAVQAction@@@Z
@@ -2229,13 +2747,17 @@
 ?viewportEvent@QMdiArea@@MEAA_NPEAVQEvent@@@Z
 ?virtualGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?visibilityChanged@QDockWidget@@QEAAX_N@Z
+?width@QRectF@@QEBANXZ
+@%s@%s
 A block of steps that will execute in sequence
+A broadcast call can't produce outparams
 A fatal error occurred.
 A link from one block to another
 A link that specifies where data comes from
 A note with a border to be placed around other nodes. Fully surrounded nodes will stick to the note.
 A resource error occurred.
 A timeout occurred.
+AE_CHOREO_LOOP
 AFTERS:\n
 About &Qt
 Access a particular element of an array by index
@@ -2244,6 +2766,7 @@ Accompany NPC(s)
 AccompanyControllerInflows
 AccompanyPathEventsOutflows
 AccompanyPathInflow
+Action
 Action Animation
 ActivateNextEditorSession
 ActivatePreviousEditorSession
@@ -2253,9 +2776,11 @@ Activity
 Activity %s has %d sequences with a total weight of %d!\n
 Actor
 Actor: %s
+ActorName
 Add %s
 Add %s '%s'
 Add +
+Add Anim Clip Event
 Add Case
 Add Child
 Add Children
@@ -2298,9 +2823,22 @@ An error occurred when writing to the file.
 An independent note with no influence on other nodes.
 An unspecified error occurred.
 Analysis error: a non-observable variable in an observable scope
+Anchor Actor
+Anchor Is External
 Anchor: %s
 Anim Clip
+AnimClip Is Looping
+AnimClip Is Public
+AnimClip Public Name
+AnimClips:
+AnimGraphParameters
+AnimGraphValue
+AnimSequence Is Public
+AnimSequence Public Name
 AnimationLoopingChanged
+Animgraph Is Public
+Animgraph Public Name
+Animgraph Slot ID
 Any True
 AppRestoreToolSettings
 AppSaveToolSettings
@@ -2312,10 +2850,13 @@ Arithmetic negative of a number.<br>Represented in expressions as <tt>-VALUE</tt
 Array Element
 Array Index Dimension
 ArrayIndex%d
+Arrival Options
+Arrival Options are external
 Assemble an array
 Asset
 Asset Browser
 Assigns a friendly name to be displayed in the editor
+Assigns a sort priority that overrides the default pulse variable sort priority (which is on the bottom, and by variable creation order)
 Attach Entity Scope
 Attach Location Name
 Attach Type
@@ -2325,6 +2866,7 @@ Attribute %d.%s
 Attribute.%s.%s.RefinedType
 AutoRestart
 AutoRestartChanged
+Automated Action
 Autosaved %i
 Autosaves Enabled
 BAD REF
@@ -2363,6 +2905,7 @@ BaseValue
 Be careful with looping animations!
 Begin Sequence
 Begin monitoring the switch value. Continues until externally canceled.
+BeginSceneCameraChange
 Beginning EnumerateDependencies() at '%s'\n
 Beginning ExtractNamedValueInfoFromNode() for '%s'\n
 Beginning GetAllNamedValueInfo()\n
@@ -2385,15 +2928,16 @@ BlockCommentMode_t::NOTE
 BlockCommentMode_t::REGION
 Blocking Load for Pulse Load Entity VData
 Body Part:
+Bone Mask ID
 Bone merges this entity to a parent entity. Call again passing nothing to end the bone merge.
 Bone or Attachment Point Name (Child)
 Bone or Attachment Point Name (Parent)
 Boolean inverse - true converts to false and false converts to true.<br>Represented in expressions as <tt>!VALUE</tt>
 Branch %d
+Branch Imported Particles?
 Branch On
 Branch On Not
 Break is not inside a loop
-Broadcast by Entity Name
 Browse All Particle Systems
 Browse All Types
 BuildWatch
@@ -2412,6 +2956,7 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolscene\toolscene_t
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\baseeditorapp.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\bindablecamera.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\toolattr_propertydomain.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp
 CBaseEditorApp::SetActiveEditorSession
 CBaseEditorApp::~CBaseEditorApp
 CBaseKV3DataWithFGDClass
@@ -2423,6 +2968,34 @@ CBasePulseOutparamPort::REMOVE_LOCAL_NAME
 CBasePulsePort::CMD_RESET_CANVAS_VISIBILITY
 CBasePulsePort::CMD_TOGGLE_CANVAS_VISIBILITY
 CBindableCamera
+CChoreoActor
+CChoreoChannel
+CChoreoEvent_ANIMGRAPH_CONTROLLER
+CChoreoEvent_ANIM_CLIP
+CChoreoEvent_BaseLocalEvent
+CChoreoEvent_BaseMood
+CChoreoEvent_CommonBase
+CChoreoEvent_EXPRESSION
+CChoreoEvent_EXTERNAL_ANIMGRAPH
+CChoreoEvent_EXTERNAL_ANIMGRAPH_CONTROL
+CChoreoEvent_FACE
+CChoreoEvent_FIRETRIGGER
+CChoreoEvent_GESTURE
+CChoreoEvent_INTERRUPT
+CChoreoEvent_LOCATOR
+CChoreoEvent_LOOKAT
+CChoreoEvent_LOOP
+CChoreoEvent_PLAYER_CAMERA_CONTROL
+CChoreoEvent_PLAY_RESPONSE
+CChoreoEvent_PULSE_REQUIREMENT
+CChoreoEvent_REQUIREMENTS
+CChoreoEvent_SECTION
+CChoreoEvent_SEQUENCE
+CChoreoEvent_SPEAK
+CChoreoEvent_STOPPOINT
+CChoreoObjectBase
+CChoreoScene
+CChoreoScene::ImportEventFromKV3( %s ):  discarding invalid event of type '%s'\n
 CDmeSheetSequence
 CHAN_AUTO
 CHAN_BODY
@@ -2433,10 +3006,12 @@ CHAN_STREAM
 CHAN_VOICE
 CHAN_VOICE_BASE
 CHAN_WEAPON
+CKV3Transfer_ToolsOnlyBlockingResourceLoad
 CLightingControlRig
 CLightingControlRig::DestroyBackgroundMap
 CLightingControlRig::ReloadLightRigConfig
 CLightingPreviewPopupUI
+COMMON
 CP Component
 CP Distance
 CP Is Set
@@ -2452,6 +3027,7 @@ CP#%d Snapshot Changed
 CP#%d Snapshot Entry Count - Subset %s
 CP#%d.%s
 CP#%d.%s Distance
+CP#%d.%s Plane Distance
 CP#%d.%s Speed
 CP%d
 CP-Relative Direction
@@ -2494,6 +3070,7 @@ CPulseDoc_Flow_ObservableSwitchState
 CPulseDoc_Inflow_EntOutputHandler
 CPulseDoc_Inflow_Method
 CPulseDoc_Inflow_ObservableVariableListener
+CPulseDoc_MapEntities
 CPulseDoc_Outflow_Cycle
 CPulseDoc_Outflow_ExitList
 CPulseDoc_Outflow_If
@@ -2538,9 +3115,11 @@ CPulseEditableType
 CPulseEditableType::BROWSE_VARIABLE_TYPES
 CPulseEditableType::GetPrimaryTypeChoices
 CPulseEditableValue
+CPulseObservableExpression
 CPulseScriptedSequenceDataForEditor
 CPulseValuePort::CMD_CHANGE_VALUE_SOURCE
 CPulseValuePort::CMD_JUMP_TO_BLACKBOARD_REF
+CPulseValuePort::CMD_TOGGLE_DOMAIN_VALUE_ADAPTER
 CQAnimPreviewWidget
 CQAssetParentChildMenu
 CQAttributeEditor_SequencePicker
@@ -2603,6 +3182,7 @@ CQStylizedGroupBox
 CQToolButton
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQUndoHistoryWidget
 CQUndoListWidget
 CQVDataChoicePicker
@@ -2641,9 +3221,19 @@ CToolSceneSky
 CToolSceneText
 CToolSceneTraceEnvironment::Draw_SetupIdForCurrentNode - Trying to draw with no node. You need to call Draw_SetCurrentNode() before drawing\n
 CToolsVisPopupUI
+CUtlBlockVector<class CVfxStaticComboData,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CToolSceneHitBoxData::CBoneInfo *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CToolSceneHitBoxData::CMeshHitBoxes *,class CDefFastCaselessStringLess>::Insert
 CUtlHashtable
+CUtlLeanVectorBase<struct UtlRBTreeNode_t<class CChoreoEvent_GESTURE *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::AddPage
+CUtlVector<CUtlString>&
+CVfx::CreateFromVcs(8264): Error opening file %s\n
+CVfx::CreateFromVcs(8297): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8310): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8339): VCS %s Unserialize hit EOF\n
+CVfx::ParseResourceFileHeader
 Call
 Call %s
 Call <unbound>
@@ -2652,7 +3242,6 @@ Call Input
 Call Mode
 Caller
 Calls an Input in an instance of another graph.
-Camera
 Camera Distance
 Camera Dot Product
 CameraLookAtSelection
@@ -2666,6 +3255,7 @@ Cancel and keep my changes
 Cannot Redo
 Cannot Reload
 Cannot Undo
+Cannot broadcast from a branching point
 Cannot call an untracked function in an observable scope. %s '%s' is not a PULSE_VALUE_PURE nor take a IPulseHost_EntityObservable context!
 Cannot convert from %s to %s
 Cannot find any inflows for requirement check
@@ -2704,6 +3294,9 @@ Child %d
 Child Asset(s)
 Child particle system
 Child%d
+Choreo Control State
+ChoreoAnimationLayerType_t
+ChoreoChannelType_t
 Clamped
 Clear Data
 Clear Data and Reset
@@ -2712,6 +3305,7 @@ ClearRecentFiles
 Clip Looping: %s
 Clip: %s
 Close All
+CloseCaptionNoAttenuate
 Closed Correctly
 ClosedCorrectly %i
 Closest Camera
@@ -2730,8 +3324,11 @@ Commit Control Point And Preview State
 Commit Preview State
 Compare To:
 Compile Resulting Resources?
+CompileTargets
 Compiler error: Compiling expr didn't generate outparam
 Compiler error: Inparam was not already visited
+Concept
+Concept Name
 Concurrent Definition Count
 Concurrent System Count
 Condition that determines which value is picked
@@ -2750,7 +3347,6 @@ Connection_AnchorPoint
 Constant Definition
 ConstantDefinition
 ConstantOrVariableDef
-Constraint
 Content Folder
 Continue If
 Continue If Not
@@ -2758,7 +3354,6 @@ Control Point Range
 Control Point Value
 ControlPointConfiguration
 Controls
-Controls the method of dispatch. Options are:<br><br><b>Broadcast by Entity Name</b>: Fire at all entities with the desired name (standard Hammer behavior).<br><br><b>Single Entity Handle</b>: Fire at a specific entity referenced by the given handle.
 Convert Control Point #%d to Variable
 Convert Control Point #%d to Variable... 
 Copy (Leave original intact. P4 branch or filesystem copy.)
@@ -2766,6 +3361,7 @@ Copy Preview State
 Copy Result
 Copy Sound Event
 Copy System Definition...
+Copy Unbound Params From Actor
 Copy a value without modification
 CornerWidget:%s
 Could not add file to version control: %s
@@ -2780,7 +3376,7 @@ Could not determine type of result
 Could not find enumeration '%s'
 Could not find sequence!
 Could not load blackboard '%s'
-Could not write file.\n
+Could not write file "%s".\n
 Count of child cursors to spawn.
 Create New Sound Event
 Create Temporary Variable
@@ -2805,6 +3401,8 @@ Create an InitVec that mimics the old 'Random Vector' operator
 Create an TransformToVector that mimics the old 'Remap CP To Vector' operator
 Created "%1" but could not add it to version control. Add it by hand before submitting.
 Creates a new temporary variable that is scoped to this flow of execution. Any node after this one should be able to access this variable. To use in an expression, prefix with '@'. Each cursor that passes through this node gets its own copy of the value. If a downstream node Sets it, the new value is visible to any child cursors started by this one.
+Criteria
+Criteria Key/Value(s)
 Current System:   Active/Max/Allocated: %6d/%6d/%6d\nTotal %2d Systems: Active/Max/Allocated: %6d/%6d/%6d\n
 Current Value
 Current assets
@@ -2830,6 +3428,7 @@ DefaultPreviewCamera
 Defines a constant unchanging value that can be referenced anywhere in the graph.
 Defines a signal that this graph can emit (for entities, creates an output that can be linked to other entities via the I/O system)
 Defines a variable that can be read and written anywhere within the graph.
+Delay or Skip Amount
 Delay(%.2f)
 Delete
 Deleting autosave file: %s\n
@@ -2846,6 +3445,7 @@ Destination Type
 Detail Level
 Detail Level : %s
 Detail Level:
+DevShader
 DialogCancelled
 Didn't find convert-able inputs, but function reported a CP read? This probably requires a raw CP conversion of '%s' in code.
 Direct Value Copy
@@ -2857,10 +3457,12 @@ Directs the cursor to different paths depending on a boolean condition. Equivale
 Directs the cursor to one of two paths depending on a boolean condition, then continues to the After path once that completes. Equivalent to an if-else statement followed by more code. Keywords: exit, continue, then.
 Directs the cursor to the path matching the passed in value.<br>(or the default path if the value doesn't match any user-defined paths). Keywords: exit
 Disable Perforce Operations?
+Disable auto blink for BaseActor
 Disallow interrupts.
 Display Set
 DisplayInList %i
 DisplayInLoadout
+Distance To CP Plane
 Divide /
 Divide one number by another.<br>Represented in expressions as <tt>VALUE1 / VALUE2</tt>
 Do Not Notify Listeners
@@ -2872,6 +3474,8 @@ Domain value port '%s' has invalid type
 Domain-Specific Value
 Dominator Iteration ----------\n
 Dominators Completed after %d iterations\n
+Don't Attenuate Captions
+Don't Stop At Goal If Aligned
 Don't Teleport NPC On End
 Don't fixup end position with a teleport when the SS is finished.
 Don't know how to convert a write yet
@@ -2893,8 +3497,10 @@ Duplicate hook reference '%s'
 Duplicate name '%s'. Please choose a different name. See node properties for links to the prior name source.
 Duplicate name in this file
 Duplicate or Reference selected soundevent
+Dynamic Actor
 Dynamic Outflows
 E&xit
+EDIT_MODE
 ERROR! Cannot overwrite existing file:\n%1
 ERROR! Cannot specify an absolute path:\n%1\n(Use content folder override, above, to switch to a different mod.)
 Edit global system properties
@@ -2921,10 +3527,11 @@ End (multiple)
 End <unbound>
 End EnumerateDependencies()\n
 End ExtractNamedValueInfoFromNode()\n
+End Time
 EndCap Time
+EndSceneCameraChange
 Endcap Age
 Ensure on Nav Mesh On Finish
-EntFire::FixMode
 Entity %s :: %s
 Entity '%s' (%s)
 Entity I/O Input Parameter
@@ -2942,12 +3549,15 @@ Equivalent to an while-statement in code.
 Error choosing asset
 Error opening asset
 Error opening file
+Error! Cannot find GAME\%s file in current search paths! If this is a new shader, you must run vfxcompile.exe at least once, and then reload shaders.\n
 Errors reported! Check results carefully.
 Errors reported, proceed with caution
+Eval
 Event @ %0.1fs
 EventGizmoAngleChanged_t
 EventGizmoLengthChanged_t
 EventGizmoScaleChanged_t
+Events in this list are not repeated when the requirement loops, and are ignored as part of its conditions
 Example model
 Executes all outflows each time the node is visited. The incoming cursor visits each branch in turn. Keywords: simultaneous, exit.
 Existing Variables in other files: %s\n\n
@@ -2979,11 +3589,40 @@ ExprNotEqual
 ExprOr
 ExprSub
 ExprTernaryConditional
+Expression Group
+Expression Name
+ExpressionGroup
+ExpressionName
+External Anchor %d
+External Animgraph
+External Animgraph Control
 External Call "%s"
+External Graph: %s
 External Input
 External Port
 External Response Concept
 External Response Criteria
+External graph '%s' does not match graph '%s' used by '%s' in the parent map
+ExternalDescSet
+FEATURES
+Face %s
+Face Actor
+FaceposerSectionPause
+FaceposerSoundEventChooser
+Faceposer_ActorSuggestions
+Faceposer_AnimGraphParametersSuggestions
+Faceposer_BaseMoodSuggestions
+Faceposer_BoneMaskIDSuggestions
+Faceposer_ExpressionGroupSuggestions
+Faceposer_ExpressionNameSuggestions
+Faceposer_ExternalGraphControlSuggestions
+Faceposer_ExternalGraphSlotIDSuggestions
+Faceposer_ExternalPoseSlotIDSuggestions
+Faceposer_GestureNameSuggestions
+Faceposer_LookSpeedSuggestions
+Faceposer_LookTypeSuggestions
+Faceposer_SequenceNameSuggestions
+Facial Animation
 Fail Behavior
 Failed to assign %s '%s' onto '%s'
 Failed to compile Property: %s
@@ -2999,6 +3638,8 @@ Failed to open document to modify node
 Failed to read file
 Failed to resolve blackboard reference to name (%s)
 Failed to resolve variable to name (%s)
+Failed to save upgraded child particle system: %s
+Failed to save upgraded particle system %s to %s\n
 Failed to version
 Fast Asset Search
 File Opened by Other User
@@ -3019,21 +3660,21 @@ Filename
 Filename %i
 Files
 Files to Checkin:
+Finish Scene On Completion
+FinishSceneOnCompletion
 Fire %s
 Fire '%s'
 Fire Child Cursors
 Fire Entity Input
-Fire Mode
 Fire Output: %s
 Fire Output: <unbound>
 Fire Public Output
-Fire at a specific entity referenced by the given handle.
-Fire at all entities with the desired name (standard Hammer behavior).
-FireAtName
 Fires a series of child cursors at the specified times.
 Fires multiple child cursors simultaneously, and optionally waits for completion. Similar to Timeline or Parallel Branch. This will split execution into many simultaneous branches.
 Fires multiple child cursors simultaneously.  When ANY of those child cursors dies, all of the cursors created from this node will also be terminated.
 First Value
+Fixed Length
+FixedLength
 Float Interp (Clamped)
 Float Interp (Open)
 Float Min/Max:
@@ -3060,20 +3701,25 @@ ForceGenerator
 Forced-Restart Play Endcap
 FourVectors
 Frame: 
+FrameSliderPressed
 From
 Functions
 Gain:
+Gait Override
 Gait Override: %s
 Game Blackboard
 Game audio muted while tools are active
 General math expression for arithmetic and logic, using a c-style syntax.<br><br>Supports:<ul><li>bool, int, float, string types</li><li>basic math operators: + - * / %</li><li>boolean operators: ! || &&</li><li>comparison operators</li><li>some simple functions: pow, clamp, sin, cos, min, max</li><li>nested parenthesis</li><li>References to graph variables (by name)</li><li>References to blackboard variables (by graph_name::variable_name)</li><li>Exposing a parameter port by using a name with a dollar-sign prefix ($arg)</li><li>References to local params by using its name prefixed with an at-sign prefix (@MethodArg)</li></ul>
 GenerateSoundEventFromVSnd
 GeneratesUnits
+GestureName
 GetVDataChoiceFriendlyNameForValue
 GizmoRotate
 GizmoTranslate
 GpuCullPreview
 Grabs an NPC and makes them play a specified set of animations, optionally with any number of additional NPCs.
+Graph Parameter Name
+Graph Slot ID: %s (leave empty to use the slot authored in the VCD)
 Graph: %s
 Greater Or Equal >=
 Greater Than >
@@ -3081,10 +3727,19 @@ Greyscale
 Ground:
 Groundplane is Water
 Growth Time
+HEADER
 HELLO
 Hack Dota Layer Opaque
 Hack Dota Layer Opaque Translucent
 HandleReturnValues
+Handshake Enum
+HandshakeTagType_t::eMovement
+HandshakeTagType_t::eTask
+Hard Stop Speak Event
+HardStopSpeakEvent
+Has Duration
+Has Preview Transform
+HasDuration
 Held Weapon Behavior
 Help
 Helper_PlayVOLine
@@ -3097,6 +3752,8 @@ Hierarchical Rename:
 High:
 Higher-dimension arrays not suppported yet
 Hit Boxes
+Hold Event
+HoldEvent
 HorizontalStrafeCamera
 How many emitted values there should be, including start and stop.
 I.Test
@@ -3115,12 +3772,21 @@ IToolsResourceListener
 IUndoListener
 IWorkingSet*
 If any actor has a pre-idle, the scripted sequence will wait until this inflow is invoked. Note that this will start the sequence for any scripted sequence waiting on this node.
+If left empty, will default to the owner entity of this scene, meaning that the relative position will actually be the world position
 If no other cases are matched, this is the Output that will be used.
 If set and the attachment point is found in the child, use the attachment point's offset & angles
+If set, replaces manually-authored Relative Position/Orientation with world_OFFSET bone from the first frame of the specified clip. The offset is re-extracted from the clip as needed - it will track changes to the clip. (When active, shows the extracted values for relative position & orientation.)
 If set, this variable is visible to other non-blackboard graphs.
 If the VCD is paused, resumes playback
 If these requirements fail, what does the cursor do? If connected to a selector, we MUST skip downstream nodes.
+If true, the entity will be immediately moved to the destination
+If true, the move-to params for this event will be exposed as ports to pulse
+If true, then this anchor will be exposed externally to the entity that owns this VCD
+Ignore External Lookats
 Ignore Look At?
+Ignore the lipsync data compiled into the vsnd, both embedded morph animation and phonemes.  Doesn't affect flex animation channels in the scene. NOTE: Requires mod specific support in game, see CChoreoComponent::IsLipsyncSuppressedForSound()
+Ignored Channels
+IgnoredChannels
 Ignoring request to open file %s because the editor is currently in the process of opening another file.\n
 Illegal character: '$'
 Immediately
@@ -3128,6 +3794,7 @@ In Default
 Include Child Systems
 Include Child Times
 Include End Value
+Incorrect vpk path delimiter for shader %s\n
 IncreaseMoveSpeed
 Increment Value by this amount each time through the loop
 Index in the array (first element is 0)
@@ -3168,6 +3835,11 @@ InternalName
 InternalPath
 Interp Clamped (%g,%g,%g) - (%g,%g,%g)
 Interp Open (%g,%g,%g) - (%g,%g,%g)
+Interrupt
+Intro Playback Rate
+IntroPlaybackRate
+InvTextureDim
+InvViewportSize
 Invalid character used
 Invalid register for arg: %s
 Invalid source register
@@ -3200,11 +3872,14 @@ LOD Value %g - %g
 Last Changed Time CP#
 LastLoadDirectory
 LastSaveDirectory
+Layer Type
 Less Or Equal <=
 Less Than <
 Lifetime Random (Init Float)
 Lighting Preview
 LightingControl
+Limit Aim Angle
+LimitAimAngle
 Line Text
 Linear Remap
 Literal Color
@@ -3212,6 +3887,7 @@ Literal Float
 Literal Vector
 Live Preview
 Load Autosave On Crash
+LoadLiveFile
 LoadRecentDirectory
 LoadRecentFile
 Loaded '%1':\nwith the following errors:\n%2
@@ -3219,14 +3895,22 @@ Local Name
 Local Name Reference
 Lock Height [Toggle: %s]
 Lock this position when switching between systems
+Locomotion and choreo handshake
 Logical And &&
 Logical Not !
 Logical Or ||
+Look at %s
+Look at Actor
+LookAtActorName
+LookSpeed
+LookType
 Loop Action Animation?
+Loop Count
 Loop For Each
 Loop From %s Through %s%s
 Loop From %s Until %s%s
 Loop Over Array
+Loop Playback Rate
 Loop Post Idle Animation?
 Loop Pre Idle Animation?
 Loop Range (Float)
@@ -3237,13 +3921,18 @@ Loop Until Integer Range
 Loop While
 Loop from a start to an end value, including ('through') that end value, divided into a fixed number of steps.
 Loop from a start to an end value, optionally including ('through') or excluding ('until') that end value. Equivalent to a for() loop in code.
+LoopCount
+LoopPlaybackRate
 Looping Sequence!
 Loops over the elements in an array, optionally also provides the index.
 Low:
 Lucida Sans,16,-1,5,50,0,0,0,0,0,Regular
 Lucida Sans,20,-1,5,50,0,0,0,0,0,Regular
 Lucida Sans,72,-1,5,50,0,0,0,0,0,Regular
+MD5 match on %s, loading from vcs\n
+MD5 mismatch on %s, will load from vfx instead.\n
 MGPUParticleFunction
+MODES
 MObsoleteParticleFunction
 MParticleAdvancedField
 MParticleDomainTag
@@ -3265,7 +3954,10 @@ Malformed int literal '%s'
 Manually enter target filename. (Overrides rename rules)
 MarkSettingsDirty
 Match Value
+MaterialID
 Max Autosave Space 2
+Max Eye Weight
+Max Head Weight
 Max Saves Per Map
 MaxBonesLOD0
 MaxBonesLOD1
@@ -3288,6 +3980,12 @@ ModelInput
 Modulo %
 Monitor Switch: 
 Monitors an observable value and owns a child cursor for whichever case the value currently matches.<br>When the value moves to a different case the previous child cursor is canceled and the matching case fires a new one. Keywords: switch, state, observable, monitor
+Mood
+Mood Body: %s
+Mood: %s
+MoodName
+Moods File
+MotionVectorsMaxDistance
 MouseControlCamera
 MouseControlCamera2D
 MouseControlCamera3D
@@ -3296,8 +3994,10 @@ MouseLook3D
 Move
 Move '%s'
 Move Camera To Origin
+Move To %s
 Move To Behavior
 Move To Folder:
+Move-to options for this locator (don't stop at goal, ignore arrival facing, smooth arrival path)
 Move/Rename (P4 branch or filesystem copy, and P4 delete or recycle original.)
 MoveCameraBackward3D
 MoveCameraDown3D
@@ -3306,6 +4006,7 @@ MoveCameraLeft3D
 MoveCameraRight3D
 MoveCameraToOrigin
 MoveCameraUp3D
+Movement
 Movement Gait
 Movement Speed: %0.*fx   [%s] to reset
 Movement lag compensation
@@ -3357,6 +4058,7 @@ No graph variable named '%s'
 No originating Input found!
 No port for '%s' arg '%s'
 No target variable
+No valid vcs file found for shader %s\n
 No variable specified!
 No version of '%s' accepts provided argument types %s
 No-default-inflow must be the first child
@@ -3390,6 +4092,7 @@ Note: This is the list of currently-resident sound events, and may differ set of
 Now editing: 
 Num Branches
 Num Child Cursors
+Number of Loops (-1=forever)
 Object of the appropriate type, if valid.
 Object to cast
 ObservableSwitchCase_t
@@ -3402,6 +4105,7 @@ On Paused
 On Resumed
 On Variable Change
 On Variable Changed %s
+OnAbsoluteValueChanged
 OnAdd
 OnAddConfiguration
 OnAddFunctionOfType
@@ -3557,7 +4261,6 @@ OnSliderMoved
 OnSliderPressed
 OnSnapshotSubsetEdited
 OnSoundSelected
-OnTabChanged
 OnTimerUpdateAutoTonemapValue
 OnToggleControlPointEditor
 OnToggleExpand
@@ -3592,6 +4295,7 @@ OnWaterCheckBoxChanged
 OnWindChanged
 OnWorkingSetChanged
 Only cells are supported right now, sorry
+Only one inparam can be a broadcast target: %s
 Only this node will be skipped, and execution will proceed to the next connected node.
 Open All In &Directory...
 Open All In Directory
@@ -3603,9 +4307,11 @@ Open the %1 tool
 OpenMenuForChildrenOfAsset
 OpenMenuForParentsOfAsset
 OpenSession
+Optional External Graph
 Optional for display only.
 Optional sync group if there is more than one scripted sequence in the Pulse graph that you want to sync with. Leave blank to have this automatically generated.
 Optional target attachment name for IK and look-ats
+Optional. If using Pulse-defined Output, specify the graph here so we can find its params.
 Options: %s
 Ordered
 Other Tools
@@ -3640,6 +4346,8 @@ Output:
 Outputs at random without repicking (until all have been visited)
 Outputs at random, repeats allowed
 Outputs selected in order
+Outro Playback Rate
+OutroPlaybackRate
 Outside World
 Override target content folder
 Overwrite Existing Files?
@@ -3649,6 +4357,12 @@ P1 Max
 P2 Max
 P3 Max
 P4 Max
+PC SM 5.0 (D3D11)
+PC SM 5.0 (VULKAN)
+PC SM 6.0 (VULKAN)
+PC_SM_5_0
+PC_SM_5_0_VULKAN
+PC_SM_6_0_VULKAN
 PET GPU Buffer Readback
 PET2_AssetPaneDock
 PET2_FunctionDock
@@ -3659,6 +4373,11 @@ PET_AllowScreenSpaceOverlay
 PET_EditFunctionButton
 PET_FunctionRemoveButton
 PET_FunctionToggleEnabledCheckbox
+PICK_MULTIPLE
+PICK_SINGLE
+PS_CS
+PS_RENDER_STATE
+PS_RTX
 PanCamera3D
 Panel
 Panel '%s' (%s)
@@ -3666,6 +4385,7 @@ Param
 Param Connection
 Param Name
 Parameter '%s' is not accessible for read by node '%d'
+Parameter [%s=%s] 
 Parent Asset(s)
 Parent/Child Directory Mismatch
 ParentChildAssetHovered
@@ -3686,6 +4406,7 @@ Particle System Definition (*.vpcf);;Particle System Definition Autosave (*.vpcf
 Particle Visualizer
 ParticleFunctionType_t
 ParticlePreview
+ParticleUi_
 ParticleVariableRef
 Particles/Budget_ActualTraces
 Particles/Budget_EstimatedTraceCostUS
@@ -3716,6 +4437,7 @@ Perforce Changelist:
 Perforce Integration
 PerformSingleRedo
 PerformSingleUndo
+Permit Responses
 Persona
 Pet Node
 Pet Preview Model
@@ -3752,12 +4474,16 @@ Plane
 Play
 Play Scene
 Play Scripted Sequence on NPC
+Play Sequence Overtop Script
 Play Sequence on NPC/Prop Dynamic
 Play VCD
 Play VCD (Dynamic File)
 PlayModeChanged
 PlayOrStopSound
+PlaySequenceOverScript
+Playback Rate
 PlaybackSpeedChanged
+Player Camera Control
 Plays a Sequence on an actor/prop_dynamic and calls each of the trigger outflows when a corresponding anim event is fired.
 Plays a VCD and calls each of the trigger outflows when the corresponding trigger event fires.
 Plays a VCD that's specified externally
@@ -3774,6 +4500,8 @@ Pre Action Idle Animation
 Pre Emission Operator
 PrevSystemPressed
 Preview
+Preview Angles
+Preview Origin
 Preview Scale:
 Preview System
 Preview.
@@ -3783,6 +4511,7 @@ Primary Type
 Proceed Elegantly
 ProcessSelector
 Profile
+Program MD5 is out of date with features! %s\n
 Promote to active mod (%1)
 PromptToSyncNewVersion
 Prop Dynamic - Set Animgraph Param
@@ -3790,9 +4519,11 @@ Prop Dynamic - Set Animgraph Param '%s'
 Property Name
 Property Owner
 Public Output
+Public: %s
 PublicOutputDefinition
 PublishChange
 Pulse Node
+Pulse Requirement Name
 PulseCycleMode_t::ORDERED
 PulseCycleMode_t::RANDOM
 PulseCycleMode_t::SHUFFLED
@@ -3810,23 +4541,27 @@ PulseEvent_TopologyWillChangeLaterNotification_t
 PulseExpression
 PulseNodeEmbedded
 PulseNodeGeneric
+PulseObservableBoolExpression_t
 PulsePanel
 PulseRequirementEvaluationOperator_t::AND
 PulseRequirementEvaluationOperator_t::OR
 PulseRequirementFailBehavior_t::SKIP_DOWNSTREAM_NODES
 PulseRequirementFailBehavior_t::SKIP_SINGLE_NODE
+PulseRequirementName
 PulseScriptedSequenceData_t
 PulseTimelineEventDefinition_t
 PulseType
 Push to Game
 QComboBox*
 QMdiSubWindow*
+QMenu*
 QPushButton { \tbackground-color : rgb( 49, 69, 80 ); \tborder: 2px solid rgb( 143, 171, 187 ); \tborder-radius: 5px; \tmin-height : 18px; \tfont: bold 11px; } QPushButton:hover:!pressed { \tbackground-color : rgb( 100, 140, 160 ); } QPushButton:disabled { \tbackground-color : rgb( 40, 44, 46 ); \tborder: 2px solid rgb( 106, 111, 114 ); }
 QPushButton { \tbackground-color : rgb( 57, 80, 49 ); \tborder: 2px solid rgb( 157, 187, 143 ); \tborder-radius: 5px; \tmin-height : 18px; \tfont: bold 11px; } QPushButton:hover:!pressed { \tbackground-color : rgb( 110, 160, 100 ); } QPushButton:disabled { \tbackground-color : rgb( 41, 46, 40 ); \tborder: 2px solid rgb( 107, 114, 106 ); }
 QToolButton[popupMode="1"]{padding-right:16px;} QToolButton::menu-button{width: 16px; }
 Qt::KeyboardModifiers
 Qt::MouseButton
 Race Child Cursors
+RampCountChanged
 Random %g - %g
 Random (%g,%g,%g) - (%g,%g,%g)
 Random Alpha Window Threshold(Init Float)
@@ -3848,6 +4583,8 @@ Random Yaw(Init Float)
 Random:
 Randomly Flip Sign
 Reads the current value of graph-wide variable or constant
+RebuildFileListMenu
+RebuildLiveFilesSubmenu
 RebuildRecentDirectoriesSubmenu
 RebuildRecentFilesSubmenu
 RebuildVersionControlSubmenu
@@ -3855,12 +4592,14 @@ RecentDirectories
 RecentFiles
 Recover Files?
 Redo %1
-Reference
 Relative Direction: 
+Relative Orientation
+Relative Position
 Relative Position: 
 Reload this file?<br><pre>"%1"</pre>
 Reload?
 ReloadLightRigDefinitions
+ReloadModels
 Remap CP Orientation to Rotation(Remap Transform Orientation to Rotations)
 Remap CP To Scalar (Init Float)
 Remap CP To Vector (Transform->Vec)
@@ -3883,11 +4622,17 @@ Repeat Operation
 Replace:
 Requirement
 Requirement '%s' is not compatible with the connected selector
+Requirement Enabled
+Requirement Enabled: %s
+Requirement [%s]
+RequirementEnabled
 RequirementPort
 Requirement_Expression
 Requirement_ExternalPort
 Requirement_Generic
+Requirements m_linkedEventIDs[%d] m_bWaitUntilEnd[%s] 
 Reset Camera
+Reset On End
 Reset Preview State
 Reset Visibility
 Reset to Default
@@ -3928,10 +4673,12 @@ Save changes?
 Save this particle system before creating a new child for it.
 Scale:
 Scale: (%g,%g,%g) 
+Scales the movement speed used to reach this locator
 SceneCameraChanged
 ScenePreview
 Scripted Sequence '%s'
 Second Value
+SectionPause
 Segoe UI,11,-1,5,50,0,0,0,0,0,Regular
 Segoe UI,8,-1,5,50,0,0,0,0,0,Regular
 Select
@@ -3945,11 +4692,13 @@ SelectBaseProperties
 SelectedAnimationChanged
 SelectedPreviewAnimationClipChanged
 Self With Wearables
+Separate Eye Ramp
 SeqPoint{%p} %s%s%s
 Sequence '%s'
 Sequence (or Clip)
 Sequence has 0 duration!
 Sequence: %s
+SequenceName
 SequencePicked
 SequencePicker
 Sequences with no duration not supported!
@@ -3964,12 +4713,18 @@ Set Detail Level
 Set an animgraph parameter on a prop_dynamic entity.
 Set:
 SetAllFilesToOp
+SetAnimClipByName
 SetCurrentPopupUI
+SetExternalAnimgraphResource
 SetParticleDetailLevel
 SetSequence
+SetWorldOffsetReferenceClipByName
 Sets r_particle_debug_show_attribute to match.
+ShaderIDColor
+ShadingComplexity
 Shared Value
 SharedToolCommands
+Should Teleport
 ShouldSoundEventDisplayMetadata
 Show Asset Menu
 Show Bone Names
@@ -3994,9 +4749,10 @@ ShowVisualizerControls
 Signal an output event that this graph publishes to the outside world.
 Sim (US)
 Sim History
+SimplePlaybackRate
 Simulated Trace Cost (US):
 Simulation rate:
-Single Entity Handle
+SingleFrameNotification
 Singleton
 Skin:
 Skip Downstream Nodes
@@ -4011,7 +4767,10 @@ Smooth Camera
 SnapCameraToSelection
 Snapshot Changed
 Snapshot Element Count
+Some of these particle systems are in a read-only search path and can't be saved in place.\n\nThe upgraded versions will be branched (p4 integrate) to the following files, which will override the imported copies:\n\n%1\nContinue?
+Sort Priority
 Sound Event Picker
+SoundDelayOrSkip
 SoundPicker
 SoundSelected
 SoundsSelected
@@ -4019,11 +4778,13 @@ Source Entity
 Source outflow '%s' doesn't exist on parent %s
 SpaceWalk Camera
 Sparse
+Speed Scale: %s
 SphereBase_t
 Spurious value not expected in this class. Click to remove.
 StaleVersionToolBar
 Start playing the referenced scene.
 StartSendingCameraTo
+State=%s
 Static Preview
 Status...
 Step Count
@@ -4047,6 +4808,8 @@ StopSim
 StopSimWithEndcap
 StopWait
 StopWaiting
+Strafe Mode
+StrafeMode
 Sub-Type
 SubWindowActivated
 Subset
@@ -4054,7 +4817,10 @@ Subtract -
 Subtract two numbers.<br>Represented in expressions as <tt>VALUE1 - VALUE2</tt>
 Supports newlines and limited HTML markup
 SupportsActivities
-Suppress Expression
+Suppress Expression (Hammer)
+Suppress Expression (VData)
+Suppress Lipsync
+SuppressLipsync
 Switch Branch ( enum )
 Switch Branch ( int )
 Switch Branch ( string )
@@ -4062,19 +4828,28 @@ Switch Value
 Switch: 
 Switched screen:\n
 Symbol
+Sync Cycle To Time
+Sync Exit tag to next gesture Entry tag
 Sync Failed
 Sync Group
 Sync operation was NOT successful!
 Sync to head revision?
+SyncToFollowingGesture
 System will not end on stop!
 System_Definition
 TakeRenderDocCapture
 Takes the value of each element in the array
 Target Graph
+Target Handle
 Target Input not found (%d)
 Target Override: %s
 Target entity (pulse graph) to have this Input invoked
+Target on which the Input will run. Accepts either an Entity Targetname or Entity Handle. <br>When an Entity Targetname is specified, Fires at all entities with that targetname (standard Hammer behavior). <br>When an Entity Handle is specified, Fires at only the one entity referenced by the given handle. <br>If you choose a Parent Map Entity source here, can use further choose Targetname or Handle modes by using toggling the icon on the left.
 TargetName
+Targetname
+Task
+Task/Action handshake.
+Teleport to %s
 TempVar
 TempVarRegister
 Temporary variable '%s'
@@ -4084,7 +4859,11 @@ Temporary variable name is empty
 Terminates an Input or Hook and returns the provided value to the caller. Only needed for Inputs that specify a return value, or Hooks that expect one. You can also use this to return while out of a loop even for Inputs without a value.
 Ternary Conditional
 Test if an object is of the required type. If so, use that result as an object of the required type. Keywords: coerce, reinterpret.
+Texture*
+TextureDim
+TextureDimLog2
 TextureHeight
+TextureSheetData
 TextureWidth
 The array to loop over
 The array to read from
@@ -4094,6 +4873,7 @@ The autosave feature will be disabled.
 The case data is tested against the Input. If it matches, the corresponding Value will be returned as the Output.
 The current autosave directory does not have an absolute path.\nThe autosave feature will be disabled.
 The current value of the variable
+The entity won't play a stopping animation upon reaching the destination if the path arrives aligned with the arrival direction and the entity isn't strafing
 The file could not be accessed.
 The file could not be copied.
 The file could not be opened.
@@ -4125,7 +4905,9 @@ This asset is cannot be a child because it is already a parent!
 This autosave file's original file location:
 This call mode applies to all child cursors.
 This domain (%s) and external domain (%s) mismatch
+This entity is spawned by point_template '%s'. Check that point_template for the spawn timing!
 This file is currently opened by: %s
+This is a single-frame animation so playback rate is not relevant - only the duration of the event
 This node and all its downstream connected nodes will be skipped.
 This node takes time to run (yielding). Should we wait for this node to complete before proceeding? Or should this node execute simultaneously, equivalent to scheduling using an additional 'Fire Child Cursors' node?
 This node will always wait for the last event time. Should we also wait for the completion child cursors before running the 'Completed' outflow, or should it ignore them?
@@ -4186,8 +4968,10 @@ Total
 Track Largest System Bounds
 Transform CP to Rotation(TransformDirectionToRotation)
 TransformInput
+Trigger Name
 Trigger an Entity I/O input on a particular entity or all entities of a given name.
 Trigger: %s
+TriggerName
 True if either value is true.<br>Represented in expressions as <tt>VALUE1 || VALUE2</tt>
 True if the first number is greater than or equal to the second.<br>Represented in expressions as VALUE1 >= VALUE2</tt>
 True if the first number is greater than the second.<br>Represented in expressions as <tt>VALUE1 > VALUE2</tt>
@@ -4208,12 +4992,12 @@ Unable to create autosave directory
 Unable to find asset for the file %s! Was this file added to a read-only path but not the asset database?
 Unable to fine manifest "soundevents/soundevents_manifest.vrman" which is required, please investigate!
 Unable to open
+Unable to parse vpk paths from shader %s\n
 Undo %1
 UndoOrRedoByRow
 Unknown Input '%s'
 Unknown access type for CP index %d, type %d
 Unknown blackboard reference '%s'
-Unknown error
 Unknown object type for property %s
 Unknown type for argument
 Unknown type for first argument
@@ -4246,17 +5030,37 @@ Upgrade Version + Children
 UpgradeVersion
 UpgradeVersionRecursively
 Upgrading involves the following changes:
+Use Alignment Bone
 Use BBox Center, not CP
 Use Orientation
+UseSlangForDX11
 Used only to find the animation sequences
-Using a 'Parent Map Entity' Target with 'Single Entity Handle' Fire Mode will only find ONE Entity!
 VCD File Name Param
 VCD: %s
+VCS3 %s Load Failure: Could not find DATA block\n
 VConsole
 VDataChoice
+VFX_COMBO_ALIAS
+VFX_COMBO_DYNAMIC
+VFX_COMBO_STATIC
+VFX_COMBO_UNKNOWN
+VFX_PROGRAM_MAX
+VFX_RULE_ALLOW_NUM
+VFX_RULE_CHILD_OF
+VFX_RULE_REQUIRES
+VFX_RULE_SUPPRESS
+VFX_RULE_TYPE_DYNAMIC
+VFX_RULE_TYPE_FEATURE
+VFX_RULE_TYPE_MAX
+VFX_RULE_TYPE_STATIC
+VFX_RULE_TYPE_UNKNOWN
+VFX_RULE_UNKNOWN
 VRenderingSiblingWidget
+VS_MS_RTX
+VS_RTX
 VSound
 VTOOLDICTIONARY003
+VULKAN
 Value Inside Range:
 Value Outside Range:
 Value for expression variable '%s'
@@ -4296,6 +5100,13 @@ VersionControlStatus
 VertexColorUVPos_t
 VertexUVPos_t
 VerticalStrafeCamera
+VfxComboType_t
+VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
+VfxLoadShaderSource(77): Cannot read file "%s"\n
+VfxLoadShaderSource(85): Cannot find include file %s\n
+VfxRuleType_t
+VfxRule_t
+Viewport
 Viridis
 VisbibleInPortraitOnly
 Visit the developer help URL (%1)
@@ -4308,10 +5119,17 @@ WARNING: Failed to save file '%s': %s\n
 WARNING: Override mod content folder is invalid: %1<br>\n(Should generally be an absolute folder path within the content tree of this game)<br>\n<font color=red><h2>Proceed? This may result in failed perforce operations!</h2></font>
 WARNING: The parent particle system is in a different directory from the child!<br>Parent dir: %1<br>Child dir: %2<br><font color=red><h2>Proceed?</h2></font>
 WARNING: You have tools audio muted. Sounds will not be audible in tools outside this dialog.
+Wait Until End
 Wait for Child Cursors
 Wait for Children
+WaitUntilEnd
 Wakes this node and ignores any child cursors which are still executing.
+Wants Handshake
 Warning!
+Warp Root Motion
+WarpAlignWithTargetAtLastWarpEvent
+WarpEnabled
+WarpUseAlignmentBone
 When evaluating these requirements, how do we aggregate the results?
 When finishing the sequence, if the NPC uses the navmesh, ensure the NPC is on a valid location on the navmesh.
 When this node yields, a new cursor will be created here. After the node is complete or canceled, this other cursor will be canceled as well.
@@ -4324,8 +5142,10 @@ WireframeEffectsBloom
 WireframeTranslucent
 With Value
 World Gravity:
+World Offset Reference Clip
 World Wind:   
 WorldModel
+WorldOffsetReferenceClip
 Write comments on the canvas and optionally annotate regions of related nodes. Keywords: sticky, block, note.
 Writes a new value to a graph-wide or temporary (cursor-scoped) variable.
 X Component
@@ -4341,7 +5161,8 @@ ZoomCameraIn
 ZoomCameraOut
 ZoomForwardBack2D
 ZoomForwardBack3D
-[Advanced] An expression which can reference other variables to determine if this property should be shown or hidden.
+[Advanced] An expression which can reference other keys to determine if this property should be hidden in the Hammer property editor.
+[Advanced] An expression which can reference other keys to determine if this property should be hidden in the VData editor.
 [INTERNAL] Mirrored Ancestor InParam
 [INVALID_TARGET]
 [Inactive]
@@ -4352,33 +5173,60 @@ ZoomForwardBack3D
 \n   Size: L: <%i, %i>   A: <%i, %i>   Scale: %0.2f\n   Geometry: %s\n   Virtual Geometry: %s\n   Available Geometry: %s\n   Orientation: %s\n
 \n%s: %s
 \n(this file): %s
+\n*** Error masking unused parts! Unknown text found. This is usually caused by a '{' or '}' not tabbed properly or an invalid declaration at the global scope. (line %d):\n%s\n\n
 \nComplete!  ----------\n
+\nVCS file format is invalid for %s\n
+\nVCS file version is %d instead of %d for %s\n
+\src\shaders\
+__Attribute__
+__Expression__
+__FeatureToBool__
+__FeatureToFloat__
+__FeatureToInt__
+__RenderStateLiteral__
+__SetByArtistAndExpression__
+__SetByArtist__
 __case_cond
 __case_ne:%d
 __case_value_%d
 __empty_array
 __increment
 __index
+__lambda:%s
 __loop_cond
 __loop_index
 __zero
 _arrivaloptions
 _empty
+_enabled
+_feature
 _gait
 _hidden
 _imported/
 _looping
 _not_pickable
+_psrs
+_rtx
+_slot_id
+_speedscale
+_to_curve_
 accompany_npcs
 additional_source_file_ref
 adds_cursor_tag
-aimat
 alert_attr
+allow_broadcast_array
+allow_broadcast_domain
 allowed_variable_keys_types
 altclicked
 animclip
 animclip_is_looping
+animclip_is_public
 animclip_public_name
+animgraph_choreo_control_state
+animgraph_resource
+animgraph_slot_id
+animgraphcontroller
+animsequence_is_public
 animsequence_public_name
 application/x-pet-particle-function
 arrival_options
@@ -4389,7 +5237,6 @@ bChecked
 bCurrentActiveFunction
 bDisplaySets
 bEnable
-bFocusEvents
 bLocked
 bLooping
 bPreviewOnly
@@ -4397,14 +5244,27 @@ bTopological
 bTopologyChange
 background-color: #22b14c
 blackboard_ref
+blendStateDesc
 bodygroup_name
+bone_mask_id
 branch
 case
 case [%d] has no resolvable type!
 case [%d] is an invalid case!
 case_value
 cast<%s>( %s )
+cc_noattenuate
 checkState
+choreo_fullbody_takeover
+choreohelper_animclip
+choreohelper_baselocaleventwithramp
+choreohelper_default
+choreohelper_external_animgraph
+choreohelper_gesture
+choreohelper_lookat
+choreohelper_sequence
+choreohelper_speak
+choreoobjects
 className
 classes
 clipPath
@@ -4415,20 +5275,34 @@ component_inclusion_types
 cond
 condition
 controller_field
+copy_unbound_params_from_actor
 core_valve_default
 count - 1
 create_special_outflows_section
+cs_5_0
+cs_6_0
+curve_
+curvetype
 custom_game_state_1
 default bone merge
 default_npc
 default_pos
 default_rot
+depthStencilStateDesc
+disable_blink
 disable_requirements
 disable_reset_to_default
 display_hide_from_picker
 domain_subtype_info
+eAdditive
+eAnimation
+eBase
 eExplicitList
 eLead
+eLocatorArrivalOption_DontStopAtGoalIfAligned
+eModelSpace
+eOverlay
+eUnknown
 editor_group_name
 element_count
 end - start
@@ -4437,14 +5311,31 @@ entity_key
 entity_model
 error!
 event_%d
+event_id
 event_origin
+event_ramp_curve
 expr_alias
+external_animclip_name
+external_animgraph_control
+external_animgraph_is_public
+external_animgraph_name
+external_animgraph_public_name
+external_animgraph_slot_id
+external_animsequence_name
+external_graph_choreo_a
 extra_preview_system
+eye_ramp
+faceposermodel
 false_val
+fileList
+finish_scene_on_completion
 flSpeed
 flVaue
+flexanimation
+flexanimations
 floating
 forceVisible
+fraction
 fulltype
 g_pToolSceneNodeFactory
 gait_override
@@ -4522,6 +5413,7 @@ game:tools/images/pet/float_collection_age.png
 game:tools/images/pet/float_cp.png
 game:tools/images/pet/float_cp_age.png
 game:tools/images/pet/float_cp_distance.png
+game:tools/images/pet/float_cp_plane_distance.png
 game:tools/images/pet/float_cp_set.png
 game:tools/images/pet/float_cp_speed.png
 game:tools/images/pet/float_endcap_age.png
@@ -4610,21 +5502,30 @@ game:tools/images/valve_style/arrow_right_disabled.png
 game:tools/images/vconsole/appicon.ico
 game:tools/images/vconsole/appicon_dev.ico
 gamedata
+generic_initialize_observable
 geometry
+gs_5_0
+gs_6_0
 hAdditionalActor%d
 hEntityParent
 hPath
+handshake_enum
+hardstopspeakevent
 has_cursor_interrupt_priority
+has_duration
+has_preview_transform
 header_expr
 header_text
 healthbar_position
 heroID
-ignorecollision
-implies_observability
+ignorePhonemes
+ignored_channels
+ignorelookats
 index * delta
 index < stop
 inherit_attr
 internal_name
+interrupt
 is_activator_important
 is_public
 is_pulse_domain_subtype
@@ -4640,8 +5541,16 @@ keys_source
 label
 landscape
 landscape (inverted)
+layer_type
+left_edge
+lib_6_4
+limit_aim_angle
+linked_events
+linked_requirement_id
 local_name_ref
+loopcount
 m_Activator
+m_ActorName
 m_ActorTarget
 m_Actors
 m_AdditionalActors
@@ -4664,6 +5573,7 @@ m_CustomPorts
 m_DesiredOutputValueType
 m_DestinationSubType
 m_EditableCases
+m_EnabledArgName
 m_Entity
 m_EntityParent
 m_EntityTargetAttachment
@@ -4673,6 +5583,7 @@ m_ExpectedReturnValues
 m_ExprPortVariables
 m_ExprText
 m_ExternalClips
+m_ExternalGraph
 m_ExternalGraphs
 m_ExternalResponseConcept
 m_ExternalResponseCriteria
@@ -4680,6 +5591,7 @@ m_ExternalSequences
 m_FalseVal
 m_FilterSettings
 m_FirstArg
+m_FirstSpeak
 m_GameBlackboard
 m_GenericKeys
 m_In_Array
@@ -4725,8 +5637,11 @@ m_ParamValue
 m_ParseError
 m_PrimaryPoint
 m_PropertyName
+m_Requirements
+m_RequirementsEnabled
 m_ResponseConcept
 m_ResponseCriteria
+m_Retiming
 m_ReturnValuePorts
 m_SecondArg
 m_SingleParamType
@@ -4751,61 +5666,179 @@ m_TrueVal
 m_TypeError
 m_UnifiedElementType
 m_UserRefinedType
+m_VCDInfo
 m_VarDefID
 m_VarName
+m_WarpSettings
+m_allVars
+m_argIndexArray
+m_argTypeArray
+m_argValueArray
+m_attribIdx
+m_attributes
+m_bAllowLayerOverride
+m_bArrivalOptionsAreExternal
 m_bCachedShowActivatorByDefault
 m_bCachedShowCallerByDefault
 m_bCondition
+m_bDevShader
+m_bDomainValueBroadcast
+m_bEnabled && ( m_bReplaceTextureWithGradient || m_hTexture != "" )
+m_bGlobalsBDA
+m_bHasShaderProgram
+m_bIsLayerConstant
 m_bLiteralStringSingleQuotedForDisplay
 m_bNodeSkip
 m_bNotCondition
 m_bRangeIncludesEndpoint
 m_bShutdown
+m_bStaticCB
+m_bUseAlignmentBone
+m_bUseSeparateEyeRamp
+m_byteCodeData
+m_byteCodeIndex
 m_cachedParamValueType
+m_comboType
+m_constantBufferBindingArray
+m_defaultInputTexture
+m_dynamicComboArray
+m_dynamicComboIDs
+m_dynamicComboRenderState
+m_dynamicComboRuleArray
+m_dynamicComboVars
+m_dynamicComboVarsRef
 m_eFilterType
+m_expr
+m_flDefault
 m_flIdealHeight
+m_flIntroPlaybackRate
+m_flLoopPlaybackRate
+m_flMaxEyeWeight
+m_flMaxHeadWeight
+m_flOutroPlaybackRate
+m_flSimplePlaybackRate
+m_flSingleFrameHoldDuration
+m_flUiStep
 m_hChoreoScene
+m_hWorldOffsetReferenceClip
+m_hash
+m_iFeatureIndex
+m_indexAndRegisterOffsetArray
+m_indexAndRegisterOffsetCount
+m_indexAndRegisterOffsetStart
+m_inputColorSpace
+m_inputProcessingCommand
+m_intDefault
+m_intMax
+m_intMin
+m_mipProcessingCommand
+m_modeArray
 m_nActorID
 m_nArrayIndexDimension
+m_nByteCodeDataIdx
+m_nChannelDesc
+m_nChannelInfoIndex
 m_nChildCursors
+m_nComboIndexValue
+m_nCompareValue
+m_nConstantBufferSize
+m_nContextStateAffectedByVariable
 m_nCycleMode
+m_nDescriptorSet
+m_nEditorSortPriority
 m_nEvaluationOperator
 m_nEventID
 m_nExitCount
 m_nExpectedNumSequencesInSyncGroup
+m_nExtraRuleData
 m_nFailBehavior
+m_nFirstConstantElement
+m_nFirstRenderStateElement
+m_nHashChar
+m_nInputTextures
+m_nLoopCount
+m_nMaxRes
+m_nMinPrecisionBits
 m_nNumExits
+m_nOffs
+m_nRegisterElements
+m_nRegisterOffset
 m_nRequirementFailBehavior
 m_nRequirementOperator
+m_nSize
 m_nStandardYieldingFlow_CallMode
+m_nTypeSpecificBits
 m_nUserVisibility
+m_nVPulseToolLastModified
+m_nVariableBinding
+m_nVariableSourceMax
+m_offs
+m_outputTextureFormat
+m_pCompiledExpression
+m_pCompiledUIVisibilityExpression
+m_pSourceString
+m_programData
+m_programHashes
+m_registerType
+m_ruleType
 m_sDynamicVCDFileParam
 m_scriptedSequenceDataMain
+m_shaderComboSourceType
+m_sourceIndex
+m_sourceType
+m_staticComboArray
+m_staticComboData
+m_staticComboIDs
+m_staticComboRuleArray
+m_staticComboSettings
 m_strEditorFriendlyName
 m_strEditorGroupName
 m_strEditorModel
 m_strEntityOutput
-m_strSuppressExpr
+m_strSuppressExprHammer
+m_strSuppressExprVData
+m_stringArray
+m_szAliasName
 m_szEntrySequence
+m_szErrorString
 m_szExitSequence
 m_szPreIdleSequence
 m_szSequence
+m_szShaderFallback
+m_szStaticCombo
 m_szSyncGroup
+m_szTextureFileEnding
+m_szUiGroup
+m_textureChannelProcessorArray
+m_uiType
+m_variableDescriptionArray
+m_variableDescriptionVersionHash
 m_vcdFilename
 m_vecAdditionalActors
 m_vecAdditionalActorsData
 m_vecControllers
 m_vecGameBlackboards
+m_vecTexturesInput[
+m_vsInputSignatureArray
+m_vsInputSignatureIndexArray
 materials/editor/screenspace_particle_regions.vtex
 materials/tools/hlmv_ground.vmat
 materials/tools/light_probe.vmat
 mathlib_extended
+max_eye_weight
+max_head_weight
 merge_sequence_events
 meshes_enabled_by_default
 mirrored_ancestor_inparam
 mode_key
 model input '%s' unrecognized variable type '%s'
 model_key
+modes
+mood
+moodbody
+moods_file
+moodsfile
+ms_6_5
 nCol
 nColumn
 nDetailLevel
@@ -4817,12 +5850,13 @@ nMouseButton
 nNewIndex
 nRow
 nSelection
-nTabIndex
 nTypeInt
 no_import
+node context hints
 not_condition
 npc_dota_hero_base
 on target
+orientation_relative
 outer_pulse_port
 override_attr
 pAction
@@ -4833,6 +5867,7 @@ pData
 pDomain
 pEnumInfo
 pLightRigButton
+pMenu
 pParamValue
 pRootClass
 pSoundEventName
@@ -4844,6 +5879,7 @@ pVoidAsset
 pWindow
 padding-left: 1px; padding-right: 0px; padding-top: 1px; padding-bottom: 1px; margin-left: 4px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px
 padding-left: 5px; padding-right: 1px;
+param3
 parents
 particle_attachments
 particle_domain_internal_name
@@ -4858,35 +5894,61 @@ particles/error/null.vpcf
 path_accompany
 path_events
 path_port
+permitresponses
 pet.dll
+picker_mode
+playback_time
+player_camera_control
+playoverscript
+playresponse
 polymorphic_base_type
 port
 port_restrict_to_literal
 portrait
 portrait (inverted)
+position_relative
+post_requirement_duration
+preview_angles
+preview_origin
+previous_duration
 primary
 primary_type
 procedural_help_info
 property_editor_settings
+ps_5_0
+ps_6_0
+psrs
 public.vsnd_files
 pulse_bindings
 pulse_editor
-pulse_editor_map_entities
 pvec_color_black
 pvec_color_white
+rasterizerStateDesc
 readbackcolor
 refined_type
+relative_orientation
+relative_position
 remove_attr
 rendertargets
 replace
 required_attachments
 requirement_check_fixed
+requirement_enabled
+requirement_name
+requirements
 reset_attr
+reset_cycle_on_time_change
+reset_on_end
 reset_to_default_icon
 resourceManifest
 rigIdx
 rightClicked
+right_edge
 sDynamicVCDFileParam
+samples
+samples_use_time
+scene_ramp
+scene_ramp_curve
 scope_name
 scratchColor
 scratchDepth
@@ -4895,25 +5957,34 @@ scratchcolor_ui_material_on_model
 scratchdepth_debugoverlay
 scratchdepth_screenspace
 screen
+scripts//moods_default.vdata
 scripts//npc_units.vdata
 scripts/itemtest_manifest.txt
+scripts/moods_default.vdata
 scripts/npc/npc_heroes.txt
 scripts/npc/npc_heroes_staging.txt
 second
+section
 self:
 self:%u
 self_type
 self_with_wearables
+separate_eye_ramp
 seqName
 sequence_is_public
 sequence_key
+sequenceduration
 setText
 set_animgraph_param_values
+shaders\vfx
+shifted_time
+should_teleport
 show_port_labels
 show_vdata_file
 skip
 slot_%d_npcs
 slot_%d_path
+slot_id
 snapshot_local_bone
 snapshot_max_verts
 snapshot_original
@@ -4924,18 +5995,31 @@ soundevents/soundevents_manifest_devonly.vrman
 speak
 special_outflows_section_label_left
 special_outflows_section_label_right
+speed_scale
+spritecard.vfx
+standard_port_visibility_override
 standard_yielding_flow
 start + (index * delta)
+startdelay
 step < 0
 step < 0 && index > stop
 step > 0
 step > 0 && index < stop
 stop > index
+stoppoint
 strSoundEventName
+strafe_mode
+struct GS_INPUT
+struct PS_INPUT
+struct VS_INPUT
 sub_header_text
 sub_type_str
-suppress_expression
+suppress_expression_hammer
+suppress_expression_vdata
+suppresslipsync
+synctofollowinggesture
 target_arg_name
+templates
 test.txt
 to_subtype
 tonemapping
@@ -4957,7 +6041,10 @@ tools/images/pulse_editor/debugger_broken_other.png
 tools/images/pulse_editor/exit_cycle_ordered.png
 tools/images/pulse_editor/exit_cycle_shuffle.png
 tools/images/pulse_editor/fire_input_handle.png
+tools/images/pulse_editor/fire_input_handle_warn.png
+tools/images/pulse_editor/fire_input_handle_white.png
 tools/images/pulse_editor/fire_input_name.png
+tools/images/pulse_editor/fire_input_name_white.png
 tools/images/pulse_editor/firecursors.png
 tools/images/pulse_editor/graph_instance.png
 tools/images/pulse_editor/icon_stub.png
@@ -4996,6 +6083,7 @@ unknown input '%s' - falling back to string ent_fire param by default\n
 unnamed%d
 untitled_
 untitled_particle_
+unweighted
 use_slot_items
 vValue
 valAsText
@@ -5006,9 +6094,16 @@ vcd_pulse_requirement
 vcd_requirement
 vcd_trigger
 vdata_editor
+vfx_dx11
+vfx_vulkan
 vmix
 vmt_templates
 vrman
+vs_5_0
+vs_6_0
+wait_until_end
+wants_handshake
 windows_dispatcher_MSG
 windows_generic_MSG
 with
+zero_value

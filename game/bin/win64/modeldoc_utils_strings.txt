@@ -26,6 +26,7 @@
   ContentRoot = "%s"\n
   Invoke%d: Cell%d %s\n
   Invoke%d: LibraryFunc %s\n
+  Lambda%d: %s\n
   ModName = "%s"\n
   Output Connection %d: '%s' -> '%s' : %s( %s )\n
   Output%d: '%s' (%s)\n
@@ -43,12 +44,19 @@
  -testmode
  <-- Arg '%s'
  <-- Retval '%s'
+ BR%d
+ Created by Blender
  Found: 
+ Parameters/Connections
+ Parameters/Connections|
+ TempVar(EditorID:%d)
+ V%d
  Vector b
  [*OBSERVABLE*]
  [curvetype %s]\n
  [loop body, break -> C%d:I%d]
  and they all will have undefined parameters, including empty names\n
+ depends on:
  is not greater than the previous sample: 
  is not unique.
  samples per cycle: 
@@ -57,14 +65,33 @@
 "%s" renamed from "%s"
 "Limit Count: " + m_nLimitCount
 "id" "elementid" 
+$Allocation limit exceeded
+$Bad DEFLATE data
+$Bad index
+$Cancelled
+$Cyclic node hierarchy
 $DiffuseColor
+$Empty file
+$External file not found
+$File not found
+$IO error
+$Invalid UTF-8
+$Memory limit exceeded
+$Node depth limit exceeded
+$Not an FBX file
+$Out of memory
+$Threaded ASCII parse error
 $TransparentColor
+$Truncated file
+$Unrecognized file format
+$Unsafe options
 $keyValueChildren
 $prefix_attribute$
 $prefix_element$
 %*[ \t]P: "Original|ApplicationNativeFile", "KString", "", "", "%1023[^"]"
 %*[ \t]Property: "Original|ApplicationNativeFile", "KString", "", "%1023[^"]"
 %*s %d
+%*u:%s: %s\n
 %-40s\t%6d\t%9d\t\t%5.2f
 %.04f
 %.10f
@@ -80,6 +107,7 @@ $prefix_element$
 %d Cells:\n
 %d Chunks:\n
 %d InvokeBindings:\n
+%d Lambdas:\n
 %d OutputConnections:\n
 %d PublicOutputs:\n
 %d TempVarBanks:\n
@@ -156,12 +184,16 @@ $prefix_element$
 %s_p
 %s_physshapes.dmx
 %s_shape
-%s_t%c
+%s_t%s
 %s_wl_%d
+%u (max %u)
+'%s' (%s) -> Chunk%d I%d 
 'Number of columns in grid
 'Number of rows in grid
 ()$^.*+?[]|\-{},:=!\n\r
 (No class selected)
+(internal)
+(vn?\s+\F|vt)\s+\F\s+\F.*|f\s+[\-/0-9]+\s+[\-/0-9]+\s*[\-/0-9]+.*|(usemtl|mtllib)\s+\S.*
 *** Converter error - element "%s" already has a non-int attribute "%s"!\n
 *** Element "%s" has attribute "%s" with an unexpected type!\n
 *** Log "%s" has attribute "%s" with an unexpected type (expected int array)!\n
@@ -182,6 +214,7 @@ $prefix_element$
 ---- dmxconvert cmdline ----\n
 ---- dmxconvert output ----\n
 ---------------------------\n
+-[A-Za-z][\-A-Za-z0-9_]*
 .?AU?$TArrayDeleter@C@v11@AbcCoreAbstract@Alembic@@
 .?AU?$TArrayDeleter@E@v11@AbcCoreAbstract@Alembic@@
 .?AU?$TArrayDeleter@F@v11@AbcCoreAbstract@Alembic@@
@@ -425,6 +458,8 @@ $prefix_element$
 .?AV?$CDmeTypedLogLayer@_K@@
 .?AV?$CDmeTypedLogLayer@_N@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?BE@??Sample@CAlembicCurvesMesh@@UEAAXPEAVCAlembicToModelDoc@@MPEAUAlembicModelDocData_t@@PEBD@Z@@CParallelProcessLauncher@@
+.?AV?$CPulseInlineValueTypeInfo@VCColorGradient@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCPiecewiseCurve@@@@
 .?AV?$CTier0AppSystem@VIModelDocUtils@@$0A@@@
 .?AV?$CTier1AppSystem@VIModelDocUtils@@$0A@@@
 .?AV?$CTier2AppSystem@VIModelDocUtils@@$0A@@@
@@ -855,8 +890,6 @@ $prefix_element$
 .?AVCPulseCell_Step_PublicOutput@@
 .?AVCPulseCell_Timeline@@
 .?AVCPulseCell_Unknown@@
-.?AVCPulseCell_Value_Curve@@
-.?AVCPulseCell_Value_Gradient@@
 .?AVCPulseCell_WaitForCursorsWithTag@@
 .?AVCPulseCell_WaitForCursorsWithTagBase@@
 .?AVCPulseCell_WaitForObservable@@
@@ -929,10 +962,15 @@ $prefix_element$
 .?AVcodecvt_base@std@@
 .?AVnoncopyable@v11@Util@Alembic@@
 .?AVregex_error@std@@
+.Offset R
+.Offset S
+.Offset T
+.Weight
 .ani
 .animChans
 .arbGeomParams
 .childBnds
+.connected
 .dx80.vtx
 .dx90.vtx
 .faceCounts
@@ -950,6 +988,7 @@ $prefix_element$
 .phy
 .phy file contains entries for its collisionText. Add support\n
 .selfBnds
+.shader
 .sw.vtx
 .userProperties
 .vagrp
@@ -965,13 +1004,23 @@ $prefix_element$
 0x%llx
 16-byte data pool
 180_recovery
+3dsMax|
+3dsMax|ClassIDa
+3dsMax|ClassIDb
+3dsMax|MaxTexture
+3dsMax|Parameters|
+3dsMax|main|
+3dsMax|parameters
+3dsMax|params|OSLCode
+3dsMax|params|OSLShaderName
 4-byte data pool
-5a\v6;
 64 283 0
 8-byte data pool
 ; FBX %d.%d.%d
+;\s*FBX\s*\d+\.\d+\.\d+\s*project\s+file
 <!-- DMXVersion
 <No schemasystem>
+<None>
 <none>\n
 == PulseGraphDef ==\n
 ==Errors==\n
@@ -1017,9 +1066,7 @@ $prefix_element$
 ??4FbxQuaternion@fbxsdk@@QEAAAEAV01@AEBV01@@Z
 ??4FbxString@fbxsdk@@QEAAAEBV01@AEBV01@@Z
 ??4FbxVector4@fbxsdk@@QEAAAEAV01@AEBV01@@Z
-??8FbxDataType@fbxsdk@@QEBA_NAEBV01@@Z
 ??8FbxMatrix@fbxsdk@@QEBA_NAEBV01@@Z
-??9FbxDataType@fbxsdk@@QEBA_NAEBV01@@Z
 ??9FbxProperty@fbxsdk@@QEBA_NAEBV01@@Z
 ??9FbxPropertyHandle@fbxsdk@@QEBA_NAEBV01@@Z
 ??9FbxVector4@fbxsdk@@QEBA_NAEBV01@@Z
@@ -1030,7 +1077,6 @@ $prefix_element$
 ??DFbxMatrix@fbxsdk@@QEBA?AV01@AEBV01@@Z
 ??DFbxVector4@fbxsdk@@QEBA?AV01@N@Z
 ??GFbxVector4@fbxsdk@@QEBA?AV01@AEBV01@@Z
-??HFbxTime@fbxsdk@@QEBA?AV01@AEBV01@@Z
 ??HFbxVector4@fbxsdk@@QEBA?AV01@AEBV01@@Z
 ??YFbxString@fbxsdk@@QEAAAEBV01@PEBD@Z
 ?BeginGetMeshEdgeVertices@FbxMesh@fbxsdk@@QEAAXXZ
@@ -1073,8 +1119,6 @@ $prefix_element$
 ?Find@FbxPropertyHandle@fbxsdk@@QEBA?AV12@PEBDAEBV12@_N@Z
 ?Find@FbxPropertyHandle@fbxsdk@@QEBA?AV12@PEBD_N@Z
 ?FindAndReplace@FbxString@fbxsdk@@QEAA_NPEBD0_K@Z
-?FindProperty@FbxObject@fbxsdk@@QEBA?AVFbxProperty@2@PEBDAEBVFbxDataType@2@_N@Z
-?FindProperty@FbxObject@fbxsdk@@QEBA?AVFbxProperty@2@PEBD_N@Z
 ?FindPropertyHierarchical@FbxObject@fbxsdk@@QEBA?AVFbxProperty@2@PEBDAEBVFbxDataType@2@_N@Z
 ?GenerateNormals@FbxMesh@fbxsdk@@QEAA_N_N00@Z
 ?Get@FbxProperty@fbxsdk@@IEBA_NPEAXAEBW4EFbxType@2@@Z
@@ -1085,7 +1129,6 @@ $prefix_element$
 ?GetBlendShapeChannel@FbxBlendShape@fbxsdk@@QEAAPEAVFbxBlendShapeChannel@2@H@Z
 ?GetBlendShapeChannelCount@FbxBlendShape@fbxsdk@@QEBAHXZ
 ?GetChild@FbxNode@fbxsdk@@QEAAPEAV12@H@Z
-?GetChild@FbxProperty@fbxsdk@@QEBA?AV12@XZ
 ?GetChild@FbxPropertyHandle@fbxsdk@@QEBA?AV12@XZ
 ?GetChildCount@FbxNode@fbxsdk@@QEBAH_N@Z
 ?GetCluster@FbxSkin@fbxsdk@@QEAAPEAVFbxCluster@2@H@Z
@@ -1094,9 +1137,6 @@ $prefix_element$
 ?GetControlPointIndicesCount@FbxCluster@fbxsdk@@QEBAHXZ
 ?GetControlPointWeights@FbxCluster@fbxsdk@@QEBAPEANXZ
 ?GetCount@FbxLayerElementArray@fbxsdk@@QEBAHXZ
-?GetCurrentAnimationStack@FbxScene@fbxsdk@@QEAAPEAVFbxAnimStack@2@XZ
-?GetCurve@FbxProperty@fbxsdk@@QEAAPEAVFbxAnimCurve@2@PEAVFbxAnimLayer@2@PEBD_N@Z
-?GetCurve@FbxProperty@fbxsdk@@QEAAPEAVFbxAnimCurve@2@PEAVFbxAnimLayer@2@_N@Z
 ?GetDataName@FbxLayerElementUserData@fbxsdk@@QEBAPEBDH@Z
 ?GetDataType@FbxLayerElementUserData@fbxsdk@@QEBA?AVFbxDataType@2@H@Z
 ?GetDeformer@FbxGeometry@fbxsdk@@QEBAPEAVFbxDeformer@2@HW4EDeformerType@32@PEAVFbxStatus@2@@Z
@@ -1127,7 +1167,6 @@ $prefix_element$
 ?GetFlag@FbxProperty@fbxsdk@@QEBA_NW4EFlags@FbxPropertyFlags@2@@Z
 ?GetFolderName@FbxPathUtils@fbxsdk@@SA?AVFbxString@2@PEBD@Z
 ?GetFrameCount@FbxTime@fbxsdk@@QEBA_JW4EMode@12@@Z
-?GetFrameCountPrecise@FbxTime@fbxsdk@@QEBANW4EMode@12@@Z
 ?GetFrameRate@FbxImporter@fbxsdk@@QEAA_NAEAW4EMode@FbxTime@2@@Z
 ?GetFrameRate@FbxTime@fbxsdk@@SANW4EMode@12@@Z
 ?GetGenericNode@FbxScene@fbxsdk@@QEAAPEAVFbxGenericNode@2@PEBD@Z
@@ -1151,11 +1190,9 @@ $prefix_element$
 ?GetNameAsCStr@FbxProperty@fbxsdk@@QEBAPEBDXZ
 ?GetNameOnly@FbxObject@fbxsdk@@QEBA?AVFbxString@2@XZ
 ?GetNextDescendent@FbxProperty@fbxsdk@@QEBA?AV12@AEBV12@@Z
-?GetNextProperty@FbxObject@fbxsdk@@QEBA?AVFbxProperty@2@AEBV32@@Z
 ?GetNode@FbxNodeAttribute@fbxsdk@@QEBAPEAVFbxNode@2@H@Z
 ?GetNodeAttribute@FbxNode@fbxsdk@@QEAAPEAVFbxNodeAttribute@2@XZ
 ?GetOneFrameValue@FbxTime@fbxsdk@@SA_JW4EMode@12@@Z
-?GetParent@FbxProperty@fbxsdk@@QEBA?AV12@XZ
 ?GetParent@FbxPropertyHandle@fbxsdk@@QEBA?AV12@XZ
 ?GetPolygonCount@FbxMesh@fbxsdk@@QEBAHXZ
 ?GetPolygonSize@FbxMesh@fbxsdk@@QEBAHH@Z
@@ -1169,10 +1206,8 @@ $prefix_element$
 ?GetRelativeFileName@FbxFileTexture@fbxsdk@@QEBAPEBDXZ
 ?GetRootDocument@FbxObject@fbxsdk@@QEBAPEAVFbxDocument@2@XZ
 ?GetRootNode@FbxScene@fbxsdk@@QEBAPEAVFbxNode@2@XZ
-?GetS@FbxAMatrix@fbxsdk@@QEBA?AVFbxVector4@2@XZ
 ?GetSecondDouble@FbxTime@fbxsdk@@QEBANXZ
 ?GetShapeChannel@FbxGeometry@fbxsdk@@QEAAPEAVFbxAnimCurve@2@HHPEAVFbxAnimLayer@2@_NPEAVFbxStatus@2@@Z
-?GetSibling@FbxProperty@fbxsdk@@QEBA?AV12@XZ
 ?GetSibling@FbxPropertyHandle@fbxsdk@@QEBA?AV12@XZ
 ?GetSrcObject@FbxProperty@fbxsdk@@QEBAPEAVFbxObject@2@AEBVFbxCriteria@2@H@Z
 ?GetSrcObjectCount@FbxProperty@fbxsdk@@QEBAHAEBVFbxCriteria@2@@Z
@@ -1189,7 +1224,6 @@ $prefix_element$
 ?Inch@FbxSystemUnit@fbxsdk@@2V12@B
 ?Inverse@FbxMatrix@fbxsdk@@QEBA?AV12@XZ
 ?Is@FbxClassId@fbxsdk@@QEBA_NAEBV12@@Z
-?IsAnimated@FbxProperty@fbxsdk@@QEBA_NPEAVFbxAnimLayer@2@@Z
 ?IsEmpty@FbxString@fbxsdk@@QEBA_NXZ
 ?IsFBX@FbxImporter@fbxsdk@@QEAA_NXZ
 ?IsValid@FbxProperty@fbxsdk@@QEBA_NXZ
@@ -1271,6 +1305,7 @@ AE_WPN_EMPTYSHOTS_TO_POSEPARAM
 AE_WPN_NEXTCLIP_TO_POSEPARAM
 AE_WPN_PLAYWPNSOUND
 AE_ZOMBIE_POPHEADCRAB event format missing velocity parameter! Usage: event AE_ZOMBIE_POPHEADCRAB "<BoneName> <Speed>" \n
+ARNOLD_SHADER_ID
 AUTH_PHYS_BODY_DYNAMIC
 AUTH_PHYS_COLL_ATTR_IGNORE
 AbcGeom_Curve_v2
@@ -1297,7 +1332,13 @@ AddUndoElement '%s'\n
 Adding %s helper key at %d value 
 Additional related files absolute paths forbidden: %s
 Adds or merges the pose parameter range of the specified pose paramater
+Affect
+AffectRotation
+AffectScale
+AffectTranslation
 After the real remainder, how many additional digits should we continue to append to create additional visual movement?
+Aim At Object
+AimVector
 Alembic Bad Curves :: %s :: Bad curve vertex counts
 Alembic Bad Curves :: %s :: No curves
 Alembic Bad Curves :: %s :: No positions
@@ -1307,6 +1348,8 @@ Alembic Curves Have Heterogeneous Topology, Unsupported, only first sample will 
 Alembic Ogawa support only, unsupported Alembic archive type :: %d:: %s
 Alembic PolyMesh Has Heterogeneous Topology, Unsupported, only first sample will be converted :: %s
 Alias for CreateWeightlist with the List capitalized
+AllSame
+Allocation limit exceeded
 Alpha Fade In Random
 Alpha Fade In Simple
 Alpha Fade Out Random
@@ -1317,7 +1360,11 @@ Alpha Random
 Alpha Window Threshold Random
 Alpha blend weight for sequence 0
 Alpha blend weight for sequence 1
+Alphas
 Already have three vertices defined for this triangle\n
+Ambient
+AmbientColor
+AmbientFactor
 Amount of accumulated force to preserve
 Amount of current position to preserve
 Amount of damping of changes
@@ -1333,9 +1380,16 @@ AnimEvent %s Particle System Resource Not Found! Anim: %s Frame: %d VPCF: %s
 Animation Bone Flags
 Animation Configuration File
 Animation Stack Information\n
+AnimationCurve
+AnimationCurveNode
+AnimationLayer
+AnimationStack
 Animevent '%s' specifies a cycle and cannot determine proper frame - putting at frame 0! (Anim '%s')
 Anon_%d!%s
 Any Other Cursors Have Tag
+Aperture
+ApertureFormat
+ApertureMode
 Applies 'Local' on top of 'Base'. Inverse of 'Get Relative Transform'
 Applies B in A's local space.
 Apply Velocity in Local Space (0/1)
@@ -1349,6 +1403,7 @@ Arc Tangent of input value. Input can be any real number. Output in radians, fro
 ArcCos input out of range (-1, 1)
 ArcSin input out of range (-1, 1)
 Are we currently running unit tests?
+AreaLightShape
 Arms
 Array Append
 Array Concatenate
@@ -1363,7 +1418,14 @@ Array Remove Index
 Array Remove Invalid Elements
 Array Set Count
 Array Shuffle
+AspectH
+AspectHeight
+AspectRatioMode
+AspectType
+AspectW
+AspectWidth
 Assert True
+AssociateModel
 Async Call Method (Child Cursor) C%d:I%d
 Async Outflow (Child Cursor) C%d:I%d
 Attempted to add the same remapped control "%s" twice!\n
@@ -1375,11 +1437,24 @@ Attempted to create a ScalarPropertyReader from a non-array property type
 Attempted to read an attribute ("%s") of an inappropriate type %s!\n
 Attempted to read an attribute ("%s") of an inappropriate type!\n
 Attempted to read an attribute ("%s") of unknown type %s!\n
+AudioLayer
+Autodesk_Cache_File
+AxisLen
 B-Spline
+BIND_LAMBDA
+BROADCAST_INVOKE
+BROADCAST_INVOKE_ARRAY_DOMAIN
+BROADCAST_INVOKE_ARRAY_SIMPLE
+BROADCAST_INVOKE_DOMAIN
 Bad %s anim filename '%s' (encountered while importing %s)
+Bad DEFLATE data
+Bad NURBS geometry
+Bad UTF-8 string
+Bad W array size %s=%zu, %s=%zu
 Bad array index %d (array has %d elements)
 Bad content path: %s
 Bad count in ArraySetCount (%d)
+Bad index
 Bad max in ArrayFirstNElements (%d)
 Bad reinterpret on ArrayAppend
 Bad reinterpret on ArrayInsert
@@ -1390,18 +1465,41 @@ Bad source animation for posture '%s'
 Base
 Base-10 logarithm
 Base-2 logarithm
+BaseLayer
 Begin testing a condition composed of Observable values. Continues checking until canceled.
 Begin testing a condition composed of Observable variable references. Continues checking until true.
 Begin testing a value composed of Observable values. Continues checking until canceled.
 Binary (deterministic sequential ids)
 Binary: Element uses unknown element type %s\n
+BinaryData
+BindLambda R%d <- Lambda%d
+BindPose
+BindingTable
+Binormals
+BinormalsIndex
+BinormalsW
 BlendLayersUsingTimeSelection
+BlendMode
+BlendModes
+BlendShape
+BlendShapeChannel
+BlendWeights
+Blob
 Bone "%s" parent bone %d doesn't exist.  Only %d bones currently defined.\n
 Bone "%s" specified as bone %d but should be bone %d\n
 BoneFlag list missing worldspace info for bone '%s'
 BoneFlag parent '%s' different from compiled model parent '%s' for bone '%s'
 BoneFlags data present but skipped. (If there are serious problems, experiment with bone culling on imported model.)
+Boundary
+BoundaryRule
 BrowInV
+Bump
+BumpFactor
+ByEdge
+ByPolygon
+ByPolygonVertex
+ByVertex
+ByVertice
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\modeldoc_utils\_vpc_modeldoc_utils\default\win64\_msvc_\Retail\modeldoc_utils.pdb
 C:\buildworker\source2_dota_rel_2019_win64\build\src\datamodel\dependencygraph.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\movieobjects\dmelog.cpp
@@ -1412,6 +1510,7 @@ CBufferString
 CClothSimulation
 CCollisionModel::ParseSolids
 CCollisionModel::Validate
+CDATA[
 CDataModel:  %i elements left in memory!!!\n
 CDataModel: Failed to open file "%s"\n
 CDataModel: Failed to open file %s\n
@@ -1463,6 +1562,7 @@ CImagePlaneNode
 CKV3MemberNameSet
 CKV3MemberNameWithStorage
 CKV3TransferInterface_ModelDoc
+CKV3TransferInterface_PulseEnum_Load
 CManifestInstance
 CMapCable
 CMapCordon
@@ -1520,6 +1620,7 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
+CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
@@ -1534,14 +1635,14 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
+CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_PickBestOutflowSelector::ProcessSelector
 CPulseCell_RaceCursors::Start
 CPulseCell_RaceCursors::StopWaiting
 CPulseCell_Step_CallExternalMethod '%s'
 CPulseCell_Timeline::Start
-CPulseCell_Value_Curve::Eval
-CPulseCell_Value_Gradient::Eval
 CPulseCell_WaitForCursorsWithTag::Wait
+CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -1556,6 +1657,7 @@ CPulseEnumlib::AddFlags
 CPulseEnumlib::HasAllFlags
 CPulseEnumlib::HasAnyFlags
 CPulseEnumlib::RemoveFlags
+CPulseInstanceLoadAPI
 CPulseMathlib
 CPulseMathlib::AbsFloat
 CPulseMathlib::AbsInt
@@ -1565,12 +1667,18 @@ CPulseMathlib::ArcTan
 CPulseMathlib::CeilingFloat
 CPulseMathlib::ClampFloat
 CPulseMathlib::ClampInt
+CPulseMathlib::ClosestPointOnLine
+CPulseMathlib::ClosestPointOnLineSegment
+CPulseMathlib::ClosestPointOnWorldLine
+CPulseMathlib::ClosestPointOnWorldLineSegment
 CPulseMathlib::ComposeAngles
 CPulseMathlib::ComposeTransforms
 CPulseMathlib::Cos
 CPulseMathlib::CrossProductVector
 CPulseMathlib::Deg2Rad
 CPulseMathlib::DotProductVector
+CPulseMathlib::EvaluateCurve
+CPulseMathlib::EvaluateGradient
 CPulseMathlib::Exp
 CPulseMathlib::Exp2
 CPulseMathlib::FloatToGameTime
@@ -1613,6 +1721,8 @@ CPulseMathlib::Pi
 CPulseMathlib::Pow
 CPulseMathlib::RSqrt
 CPulseMathlib::Rad2Deg
+CPulseMathlib::RandomFloat
+CPulseMathlib::RandomInteger
 CPulseMathlib::RandomWorldPosition
 CPulseMathlib::RemapClampedFloat
 CPulseMathlib::RotateVector
@@ -1642,7 +1752,6 @@ CPulseMathlib::TransformWorldVectorToLocal
 CPulseMathlib::VectorToWorldVector
 CPulseMathlib::WorldTransformInverse
 CPulseMathlib::WorldVectorToVector
-CPulseObservableExpression
 CPulseObservableSwitchCases
 CPulseStringlib
 CPulseStringlib::Format1
@@ -1661,6 +1770,7 @@ CPulseTestScriptLib::RegisterTestCheckpoint
 CPulseTestScriptLib::TestModeAssertTrue
 CPulseType
 CPulseVariant
+CPulse_LambdaDef
 CResourceArray< ModelReference_t >
 CResourceExtReference< CWeakHandle< InfoForResourceTypeCModel > >
 CResourceExtReference< CWeakHandle< InfoForResourceTypeCTextureBase > >
@@ -1712,6 +1822,7 @@ CTRL_
 CTerrainSelection
 CTrajectoryPath
 CTrajectoryPathNode
+CURSOR_MAX_INSTRUCTIONS
 CUndoArrayAttributeSetMultipleValueElement
 CUndoArrayAttributeSetValueElement
 CUndoAttributeAddRemove
@@ -1732,7 +1843,6 @@ CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Inse
 CUtlDict<class CUtlString,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlVector<int,int,class CUtlVectorMemory_Growable<int,int,0> >,class CDefFastCaselessStringLess>::Insert
 CUtlDict<enum DmElementHandle_t,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<bool> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<class CUtlSymbolLarge> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<class Color> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
@@ -1794,9 +1904,21 @@ C_OP_RenderGrid
 C_OP_SpringConstraint
 C_OP_SpringForce
 Cables
+Cache
+CacheAbsoluteFileName
+CacheFileName
+CacheFileType
 Calculate Normals for Grid
 Call C%d:I%d (%s)
+Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Calling InitModelDocLib() twice in the same DLL.
+Camera
+CameraAperture
+CameraIndexName
+CameraProjectionType
+CameraStereo
+CameraSwitcher
+Cancelled
 Cannot Find DMX Node For FBXNode: %s\n
 Cannot add vertex data block with different number of normal indices (%d) and vertex indices (%d)\n
 Cannot add vertex data block with different number of texcoord indices (%d) and vertex indices (%d)\n
@@ -1820,6 +1942,8 @@ Cannot unserialize a prefix element here (type "$prefix_element$")
 Cannot unserialize collision file: %s error: %s
 Cannot unserialize constraint file: %s error: %s
 Cannot update mismatched op-type in already-setted 
+CastLight
+CastShadows
 Catmull-Rom
 Catmull-Rom (Norm X)
 Catmull-Rom (Norm)
@@ -1829,6 +1953,10 @@ Ceiling Float
 Center Offset
 Center core radius
 Changed incompatible %s name '%s' to '%s'
+ChannelInterpretation
+ChannelName
+ChannelType
+Character
 Check Requirement
 Check Type
 Check if any element of 'a' compares equal to 'element'.
@@ -1845,12 +1973,20 @@ Clamp Scalar
 Clamp Vector
 Clamp value to range (float)
 Clamp value to range (int)
+Clamped index
 Class Name
 Cleanup
 ClipBoard
 CloseLid
+Closed
+Closest Point On Line
+Closest Point On Line Segment
+Closest Point On World Line
+Closest Point On World Line Segment
+Cluster
 Code Driven Emitter
 Code Driven Initializer
+CollectionExclusive
 Collision shape : using non-immediate parent %s as attach bone\n
 Collision via traces
 Color Fade
@@ -1859,6 +1995,10 @@ Color Light from Control Point
 Color Light from Global Lighting
 Color Lit Per Particle
 Color Random
+ColorAndAlpha
+ColorIndex
+ColorRGB
+Colors
 Commit Step
 Compare strings with case sensitivity, in contrast to normal string equality which is case-insensitive.
 CompileScript failed: Cannot compute full path to vscript "%s" in "CONTENT"
@@ -1870,14 +2010,21 @@ Compiled GUI file
 Completed
 Compose Angles
 Compose Transforms
+Compound
 Compound Property not backed by a valid group.
 Compute Normals From Control Points
 Computes 2 raised to a power
 Computes e ( 2.71...) raised to a power
+Cone angle
+ConeAngle
 Confirm Collision
+Connections
 Constrain distance to control point
 Constrain distance to path between two control points
 Constrain particles to a box
+Constrained Object
+Constrained object (Child)
+Constraint
 Constraint follower pointing to unknown bone with hash %d
 Constraint target pointing to unknown attachment with hash %d
 Constraint target pointing to unknown bone with hash %d
@@ -1908,10 +2055,14 @@ Convert from a local-space to a world-space vector
 Convert from a raw floating-point time to a Game Time that will be saved/loaded appropriately
 Convert from a world-space to local-space vector
 Convert radians (0-pi) to degrees (0-180)
+CoordAxis
+CoordAxisSign
 Copy 'element' to the end of 'a', increasing its count by one.
 Copy R%d <- R%d
+Corrupted topology structure
 Cosine of angle. Input in radians, output in radians
 Could not allocate animation streams
+Could not open .mtl file: %s
 Could not open as Ogawa file from provided streams.
 Could not open as Ogawa file: 
 Could not resolve MDL path: %s
@@ -1923,7 +2074,6 @@ Couldn't CreateWeightList( "%s" )
 Couldn't convert color field: %s\n
 Couldn't convert to CDmeAxisSystem::AS_VALVE_ENGINE\n
 Couldn't create %s node
-Couldn't create FBX Scene for file: %s
 Couldn't create ModelDocBone node for Alembic XForm :: %s
 Couldn't create ModelDocMesh node for Alembic Curves :: %s
 Couldn't create ModelDocMesh node for Alembic PolyMesh :: %s
@@ -1938,7 +2088,7 @@ Couldn't find path to FBX File: "%s", %s
 Couldn't find path to RTS File: "%s", %s
 Couldn't generate unique name for animation "%s"
 Couldn't insert animation "%s" into dictionary
-Couldn't load FBX file: %s
+Couldn't load FBX file: %s :: %s
 Couldn't load Model File: %s - %s\n
 Couldn't load RTS file: %s
 Couldn't load modelanim file :: %s :: OBJ files unsupported for animation data
@@ -1961,6 +2111,8 @@ CreateSequence
 CreateWeightList
 CreateWeightlist
 Creates a weightlist on the model
+Creator
+Cropping
 Cross Product Vector
 Cross Product of Vector a x Vector b
 Cull Distance
@@ -1975,9 +2127,14 @@ Cull relative to Ray Trace Environment
 Cull relative to model
 Cull when crossing plane
 Cull when crossing sphere
+CurrentTextureBlendMode
+CurrentTimeMarker
 Cursor Has Tag
 Cursors Allowed To Run Parallel
 Cursors Allowed To Wait
+CustomFrameRate
+CustomHeight
+CustomWidth
 Cyclic samples provided are greater than the time per cycle. Expected: 
 DMX Model
 DMX Model Pipeline Animation Script File
@@ -1994,8 +2151,13 @@ DMX_MODEL_SOURCE_UNKNOWN
 Dampen Movement Relative to Control Point
 DataModel needs the file system to function
 Decay Time
+DecayType
 Default offset for cp1 relative to cp0 if cp1 not set
+DefaultAttributeIndex
+DefaultCamera
+Definitions
 DeformPercent
+Deformer
 Deg2 Rad
 Delta Sequences not supported
 DeltaPose expects source anim to be an animfile: '%s'
@@ -2007,7 +2169,11 @@ Desired Velocity CP
 Desired Velocity CP Field Override(for speed only)
 Destroy All Particles Immediately
 Detach R%d
+Diffuse
 Diffuse lighting amount
+DiffuseColor
+DiffuseFactor
+Dimension
 Direction Matching Strength
 Disable z-buffer test
 Disabled %s[%s]: Only Referenced By Disabled LODGroup%d, Source1 Shadow LOD
@@ -2015,6 +2181,10 @@ Disabled %s[%s]: Source1 Shadow LOD, Invalid Switch Distance :: %.1g
 Disabled, Only Referenced By Disabled %s[%s], Source1 Shadow LOD
 Disabled, Source1 Shadow LOD, Invalid Switch :: -1.0
 Discarding unsupported legacy IkRule class: %s
+Displacement
+DisplacementFactor
+DisplayLayer
+DisplayLevels|Level%zu
 Distance Between Control Points Scale
 Distance alpha
 Distance to Control Points Scale
@@ -2170,35 +2340,64 @@ DmeVertexDeltaData
 DmeXSIMakefile
 DmxSemanticName
 DoIncludeScript
+Document
+DocumentUrl
+Documents
 Domain: %s\n
 Dot Product Vector
 Dot Product of Vector a 
 Draw as opaque
 Dual sequence combine mode
+DualQuaternion
 Duplicate Bone: 
 Duplicate bone %d renamed :: "%s" -> "%s"\n
 Duplicate bone animation stream :: %s
+Duplicate connection to %u
 Duplicate morph animation stream :: %s
+Duplicate object ID
+Duplicate override
 Duration at which to Stop
+EQ_ANIM_SEQUENCE
+EQ_MODEL_MATERIAL_GROUP
+EQ_PARTICLE_EHANDLE
+EQ_QANGLE
+EQ_RESOURCE
+EQ_RESOURCE_NAME
+EQ_SNDEVT_GUID
+EQ_SNDEVT_NAME
+EQ_TRANSFORM
+EQ_TRANSFORMWS
+EQ_VARIANT
+EQ_VDATA_CHOICE
 ERROR: Specified full path %s does not lie under the mod search path!)\n
 ERROR: Specified path %s could not be made content-relative\n
 ERROR: Unable to create an attribute handle! Save, quit, restart and clean up your file to have fewer elements!\n
 Ease In
 Ease Out
+EdgeCrease
+EdgeIndexArray
+Edges
 EditGameClassProps
 EightWaySequence() helper not supported
 Element Access R%d <- R%d[R%d]
 Element uses unknown element type %s\n
 EmbeddedSubClass_%s
 EmbeddedSubClass_Scope_%d
+Emissive
+EmissiveColor
+EmissiveFactor
+Empty face has been removed
+Empty file
 Enable Children From Parent Particle Count
 Enable particle depth-feathering
 Enable particle outlining
 Encountered an element array attribute '%s' while reading the prefix element
 Encountered an element attribute '%s' while reading the prefix element
 Encountered invalid element ID data!
+End Joint
 End dot product value for fading as the particle normal becomes aligned with the view vector
 EndAttachment
+EndTime
 EntityName
 Eq R%d <- R%d == R%d
 Error in the undo system! Grab a programmer!\n
@@ -2213,6 +2412,8 @@ Event %u layer %i at time %i type %s\n
 Execute a script (internal)
 Exp2
 Expected CSeqResourceS1Sequence :: %s\n
+Expected a 'Name:' token
+Expected at least mesh.num_indices (%zu), got %zu
 Expecting ',', didn't find it!
 Expecting '[', didn't find it!
 Expecting ']', didn't find it!
@@ -2231,22 +2432,30 @@ Exported From:
 Exported from: 
 External BreakPiece MotionDisabled support removed.
 External BreakPiece health support removed.
+External file not found
 External wind force
-FBX Import failed: "%s" for file: %s
 FBX Mesh "%s" Invalid %s Channel On Blender Encoded Split Color Map "%s", missing 
 FBX Mesh "%s" Morph "%s" Will Not Have Morphed Normals
 FBX file version %d.%d.%d - %s\n
 FBX file version %d.%d.%d - SDK\n
+FBXHeaderExtension
+FBXHeaderExtension:.*
+FBXHeaderVersion
 FBXSurfaceMaterial( %s ).%s found but empty
 FBXSurfaceMaterial( %s ).%s found but not a string attribute
+FBXVersion
 FBX_vmatPath
+FKEffector
 FRAMERATE
+Face index begin (%u) out of bounds (%zu)
+Face index end (%u + %u) out of bounds (%zu)
 Facial Animation File
 Factory for element type '%s' already exists (Check your IMPLEMENT_ELEMENT_FACTORY macros for duplicate lookupNames)\n
 Fail Outflow
 Failed to allocate animation stream for channel label "%s"
 Failed to allocate animation stream for channel label "%s" :: %s 
 Failed to apply 'fps' option to non-anim-file: '%s'
+Failed to convert array
 Failed to create 1D blend '%s'
 Failed to create 2D blend '%s'
 Failed to create 2d blend for posematrix '%s'
@@ -2261,17 +2470,22 @@ Failed to create parent bone '%s' of boneflag-specified bone '%s'
 Failed to create posture '%s'
 Failed to create prefab path for file: '%s'
 Failed to create sequence '%s'\n
+Failed to evaluate
 Failed to find X pose parameter '%s'
 Failed to find Y pose parameter '%s'
 Failed to find source anim '%s'
 Failed to find source anim '%s' when creating '%s'
 Failed to import sequence :: %s
+Failed to load
 Failed to load contents of input mesh file: %s
 Failed to load document kv3 data: %s
 Failed to load existing compiled resource: %s
+Failed to load geometry cache
 Failed to locate external file: '%s'
 Failed to make path game- or content-relative: "%s" (for %s)
 Failed to multi-sequence with no pose params: '%s'
+Failed to open file
+Failed to open geometry cache: %s
 Failed to parse .rts channel label %d
 Failed to parse any channel labels in RTS file
 Failed to parse channel label %d in RTS file
@@ -2285,8 +2499,22 @@ Failed to split .rts channel label "%s" into <prefix>.<channel>
 Failed to split full path "%s" while initializing\n
 Failed to unserialize document data from kv3 data:\n%s
 Failed to write file: %s\n
+FarPlane
+FbxPropertyEntry
+FbxSemanticEntry
+Feature disabled
+FieldOfViewX
+FieldOfViewXProperty
+FieldOfViewY
+FieldOfViewYProperty
 File is not a valid input; contains ".nocompile.": %s
+File not found
+FileId
+FileName
 Film
+FilmHeight
+FilmSqueezeRatio
+FilmWidth
 Find all the yielded cursors on this graph and cancel them.
 Find all the yielded cursors on this graph with the matching tag and cancel them.
 Find all the yielded cursors on this graph with the matching tag and wake them.
@@ -2295,15 +2523,20 @@ FindAttrNode
 Fingers
 Fingers_L
 Fingers_R
+Fire At End
+Fire At Start
 First Control Point Location
 First Control Point Number
 First Control Point Parent
+First Joint
 FlattenLayers
 Flip Percentage
+FlipNormals
 Float To Game Time
 Floor - round float down to nearest integer
 Floor Float
 Flow Node ID
+FocalLength
 FoldLipLo
 FoldLipUp
 Force Triangulate
@@ -2311,6 +2544,8 @@ Force at Max distance
 Force at Min distance
 Force based on distance from plane
 Force to apply
+Form
+Format
 Format Duration String From Seconds
 Format encountered } without matching { at column %d
 Format expected number or } at column %d
@@ -2325,10 +2560,18 @@ Fourth Control Point Location
 Fourth Control Point Number
 Fourth Control Point Parent
 Frac
+Fraction
 Fractional component (ie. returns 0.34 for 12.34)
+Frame%u.%s
+Frame%uTick%u.%s
+FrameRate
 Frames Per Second
+FrontAxis
+FrontAxisSign
+FullWeights
 Game Blackboards: 
 Game Time To Float
+GateFit
 Generate normals for cylinder
 GenerateResourceNameFromFileName: Invalid extension specified in file name "%s"!\n
 GenerateSource2Filename: requires relative path for source 1 filename!\n
@@ -2337,6 +2580,11 @@ Generic DMX
 Generic MovieObjects
 Generic SFM
 GenericType
+GeometricRotation
+GeometricScaling
+GeometricTranslation
+Geometry
+GeometryUVInfo
 Get Relative Transform
 GetArrayElement R%d <- R%d[ R%d ]
 GetBlackboardReference R%d <- BR%d (%s)
@@ -2350,11 +2598,13 @@ GetInlineConst R%d <- C%d (%s)
 GetTempVar R%d <- 
 GetVar R%d <- V%d (%s)
 GetVar R%d <=MOVE*V%d (%s)
+GlobalSettings
 GlobalSize
 Globally Scale Initial Attributes
 Golden angle (is 137.508)
 Group ID to affect
 HAC K  Unused Binding
+HPulseObservableLambda
 Half-Lambert Normals
 Hammer temp export
 Has All Flags
@@ -2363,6 +2613,8 @@ HitboxSet( %s ) has multiple hitboxes with different parameters for Bone( %s )
 HitboxSet( %s ).Bone( %s ) :: Failed to create hitbox with name "%s", creating without a name\n
 HitboxSet( %s ).Bone( %s ) :: Failed to create hitbox\n
 Hold
+Hole
+HotSpot
 Houdini
 IArchive:::getArchiveVersion
 IArchive:::getNumTimeSampling
@@ -2387,9 +2639,12 @@ ICurvesSchema::init()
 IFaceSetSchema::get()
 IFaceSetSchema::init()
 IGeomBaseSchema::init()
+IKEffector
 IKV3TransferInterface_GameTime_Load
 IModelDocExtraDataLoad
 IModelDocExtraDataSave
+INTERNAL_CALL_TO_PULSE
+IO error
 IOSRoot
 IObject::getArchive()
 IObject::getChild()
@@ -2404,7 +2659,6 @@ IPolyMeshSchema::getFaceSetNames()
 IPolyMeshSchema::getTopologyVariance()
 IPolyMeshSchema::init()
 IPolyMeshSchema::loadFaceSetNames()
-IPulseInstanceLoadAPI
 IScalarProperty::get()
 IScalarProperty::getNumSamples()
 IScalarProperty::getTimeSampling()
@@ -2431,11 +2685,15 @@ If specified, each wait interval will vary randomly between WaitInterval this va
 If this cursor spawns other work via Fire And Forget, should this Tag be inherited?
 Ignore Delta Time
 IgnoreCloth support missing.
+Ignored bad base64 embedded content
+Ignoring geometry '%s' with bad mapping mode '%s'
 Ignoring invalid cmd sequence with groupSize0: %d, but no poseParam0: %s
 Ignoring invalid cmd sequence with groupSize1: %d, but no poseParam1: %s
 Ignoring invalid cmd sequence with no references: %s
 Ignoring invalid cmd sequence, reference count (%d) != group size (%d x %d = %d): %s
 Ignoring unsupported m_bAdjustSkeletonFromBoneFlags; Adjust Skeleton From Bone Flags
+ImageData
+Implementation
 ImportAnimGroup
 ImportAnimLayers
 ImportAttachmentList
@@ -2482,6 +2740,7 @@ Incorrect match of header datatype:
 Incorrect match of schema: 
 Incorrect number of joint weights or indices specified, must match number of positions values
 Incorrect number of time samples specified, expected 
+Indexes
 Indicate Test Failure
 Indicate that a checkpoint has been reached.
 Indicates a test failure if Value is false.
@@ -2491,6 +2750,7 @@ Inherit CP Orientaiton
 Inherit CP Orientation
 Inherit Initial Value From Parent Particle
 Inherit Velocity
+InheritType
 Inherited Field
 Inherited Velocity Scale
 Init CP Orientation to Rotations
@@ -2500,6 +2760,7 @@ Initial Color Bias
 Initial Repulsion Velocity
 Initial Scalar Noise
 Initial Velocity Noise
+InnerAngle
 Input BoneFlag defined parent '%s' not found in input files for bone '%s'
 Input Control Point Number
 Insert 'element' in the given index in 'a', increasing its count by one and moving the elements after index.
@@ -2520,6 +2781,7 @@ Invalid Model
 Invalid Path
 Invalid Sequence
 Invalid Time Sampling Type, time per cycle: 
+Invalid UTF-8
 Invalid anim reference: %s on single anim seq: %s\n
 Invalid archive in OrImpl(Archive)
 Invalid archive in OrImpl(Object)
@@ -2543,12 +2805,14 @@ Invalid scalar property group
 Inverse Rotate Vector
 Inverse Transform Vector
 Invert Abs Value
+Invoke *Broadcast* R%d -> R%d: Cell%d %s
 Invoke Cell%d [eid=%d] %s%s
 Invoke Lib %s
 Is In Test Mode
 Is Valid Vector
 Is Valid World Vector
 IsImportScript
+IsTheNodeInSet
 JawD
 JawH
 JawV
@@ -2558,8 +2822,16 @@ Joint references body %s, but that body cannot be found.
 Joint weights data is invalid
 Joint weights specified, but joint indices is missing
 Jump to Instr I%d
+KString
+KTime
 Kaydara FBX Binary  
+KeyAttrDataFloat
+KeyAttrFlags
+KeyAttrRefCount
+KeyCount
+KeyTime
 KeyValue
+KeyValueFloat
 KeyValues
 KeyValues2
 KeyValues2 (flat)
@@ -2567,22 +2839,50 @@ KeyValues2 (no ids)
 KeyValues: Can't serialize attribute of type %s into KeyValues files!\n
 KeyValues: Element uses unknown element type %s\n
 KeyValuesToDmeAttributes: skipping key %s=%s of unsupported type\n
+KeyVer
 Kill All Other Cursors
 Kill Cursors With Tag
+KnotVector
+KnotVectorU
+KnotVectorV
 Kochanek-Bartels
 Kochanek-Bartels Early
 Kochanek-Bartels Late
 LL Offset in FLU local space
 LL control point number
+LODBox
 LR Offset in FLU local space
 LR control point number
+Lambert
 Last two rows as percentage of total size %f %%:\n
+LastSaved|ApplicationName
+LastSaved|ApplicationVendor
+LastSaved|ApplicationVersion
 Latency CP
 Latency CP field
 Layer %d:  adding key at time %d [%d -> %d], value 
+LayerElement
+LayerElementBinormal
+LayerElementColor
+LayerElementEdgeCrease
+LayerElementHole
+LayerElementMaterial
+LayerElementNormal
+LayerElementPolygonGroup
+LayerElementSmoothing
+LayerElementTangent
+LayerElementTexture
+LayerElementUV
+LayerElementVertexCrease
+LayerElementVisibility
 LayerSequenceOverSequence() helper not supported
+LayeredTexture
+Lcl Rotation
+Lcl Scaling
+Lcl Translation
 Leaking %i elements\n
 Leap to Chunk C%d
+LeftCamera
 LeftFingers
 Length (magnitude) of Vector
 Length (magnitude) of Vector2D
@@ -2640,8 +2940,13 @@ Light 4 Control Point
 Light 4 Control Point Offset
 Light 4 Dynamic Light
 Light 4 Type 0=Point 1=Spot
+LightType
+Limb
+LimbLength
+LimbNode
 Limit-to-sequence unimplemented for S2 VModel files. (%s)
 Linear Interp.
+Link
 LipLoV
 LipUpV
 LipsV
@@ -2663,7 +2968,7 @@ LoadSMDModel( %s ): No DmeModel found in SMD file\n
 LoadSMDModel( %s ): SMD file does not exist\n
 Loading Alembic
 Loading DMX Model File
-Loading FBX File
+Loading FBX File (ufbx)
 Loading FBX Model File
 Loading OBJ Model File
 Loading SMD Model File
@@ -2673,6 +2978,9 @@ Local Offset Min
 Local Space CP
 Local Space Control Point
 Local acceleration force
+LocalStart
+LocalStop
+LocalTime
 LocalVector
 Lock Left column in place
 Lock Lower row in place
@@ -2683,9 +2991,11 @@ Lock the LL corner point in place
 Lock the LR corner point in place
 Lock the UL corner point in place
 Lock the UR corner point in place
+LodGroup
 LodGroup mesh '%s' (%s) not found in mesh list - skipping!\n
 Log10
 Log2
+LookAtProperty
 MAtomicTransfersAsMap
 MEntitySubclassScopeFile
 MHideInPolymorphicClassList
@@ -2704,10 +3014,11 @@ MPropertyReadOnly
 MPropertyRequired
 MPropertySortPriority
 MPropertySuppressBaseClassField
+MPulseEditorSearchExpr
 MPulseExpressionAlias
 MPulseFunctionAddsCursorTag
-MPulseFunctionHiddenInTool
 MResourceTypeForInfoType
+MULTIOUTPUT_TO_OSLMap
 MVDataAnonymousNode
 MVDataClassGroup
 MVDataComponentRequiresAncestor
@@ -2759,20 +3070,36 @@ Malformed fieldName in mesh: %s, bad semantic index %i\n
 Malformed fieldName in mesh: %s\n
 MapClass
 MapNode
+MappingInformationType
+Marker
 Match Particle Velocities
 Material group %d contains fewer materials than group 0
+MaterialAssignation
+Matrix
 Max Distance from plane
 Max Float
 Max Int
 Max Trace Length
 Max Velocity
 Max distance value
+MaxDampRangeX
+MaxDampRangeY
+MaxDampRangeZ
+MaxDampStrengthX
+MaxDampStrengthY
+MaxDampStrengthZ
+MaxDistance
 Maximum Restart Time
 Maximum Velocity
 Maximum of two values (float)
 Maximum of two values (int)
 Maximum radius for created lights
 Maximum segment length %
+MbP?a
+Media
+Member
+Memory limit exceeded
+Mesh '%s' has %d of %d normals that are zero-length or invalid, re-export the mesh with valid normals
 Mesh '%s' missing position values
 Mesh '%s' vertex data field %d is empty
 Mesh '%s'.field[%d] '%s' has a malformed name, invalid semantic index %d, valid range [0, 127]
@@ -2784,17 +3111,29 @@ Min Float
 Min Int
 Min distance from plane
 Min distance value
+MinDampRangeX
+MinDampRangeY
+MinDampRangeZ
+MinDampStrengthX
+MinDampStrengthY
+MinDampStrengthZ
+MinDistance
+MinMaxDistance
 Minimum Restart Time
 Minimum of two values (float)
 Minimum of two values (int)
 Minimum radius for created lights
 Minimum segment length %
 Missing cell class '%s', replacing with 'CPulseCell_Unknown'\n
+Missing geometry data: %s
 Mod R%d <- R%d %% R%d
 Mod2x blend mode
 Model Compile Reference
 Model Size Cull Bloat
+Model::Scene
 ModelDoc rename conflict, "%s" maps to "%s" and "%s"
+ModelUVScaling
+ModelUVTranslation
 Morph FloatAtlas support missing.
 Morph bWriteAtlas support missing.
 Move Particles Between 2 Control Points
@@ -2821,22 +3160,34 @@ MovieSettings
 Mul R%d <- R%d * R%d
 Multi-influence attachments not supported - ignoring all but first influence.
 My Subclass Name
+NE_ANIM_SEQUENCE
+NE_MODEL_MATERIAL_GROUP
+NE_PARTICLE_EHANDLE
+NE_QANGLE
+NE_RESOURCE
+NE_RESOURCE_NAME
+NE_SNDEVT_GUID
+NE_SNDEVT_NAME
+NE_TRANSFORM
+NE_TRANSFORMWS
+NE_VARIANT
+NE_VDATA_CHOICE
 NULL CELL 
 NULL CompoundPropertyReader passed into 
 NULL CompoundPropertyReaderPtr
 NULL parent passed into ISchema ctor
 NWay( %f, %f, %f, %f, %s, %s )
 Natural logarithm (base e)
+NearPlane
 Neg R%d <- -R%d
 Negative total skin weights on one or more vertices
+NegativePercentShapeSupport
 Neq R%d <- R%d != R%d
 No Alembic uniform time sampling with multiple samples found, will be static geometry
 No DmeChannelsClips found in specified dmElement %s.animationList[0]\n
 No DmeChannelsClips found in specified dmElement %s.animationList\n
 No DmeModel found in specified dmElement, cannot find %s.skeleton or %s.model\n
 No DmeModel or DmeChannelsClip found
-No FBX interface
-No FbxManager
 No MDL specified
 No Materials Assigned To %d Polygons On FbxMesh: %s
 No Softbody
@@ -2853,6 +3204,9 @@ No triangles defined\n
 Node '%s' resolve failure
 Node '%s' resolved into a null node.
 Node '%s' resolved into itself!
+Node depth limit exceeded
+NodeAttribute
+NodeAttributeName
 NodeID %d port '%s' called from C%d:I%d
 Noise Scalar
 Noise Vector
@@ -2865,6 +3219,7 @@ Noise scale 1
 Noise scale 2
 Noise scale 3
 Non-Uniform 2D Blend Params :: %s :: %s\n
+Non-node element connected to root
 Non-uniform scale %s.frame[%d] = < %8.4f %8.4f %8.4f >
 Non-uniform scaling
 Nonexistent GeomParam: 
@@ -2874,15 +3229,32 @@ Nonexistent scalar property:
 Normal Align to CP
 Normal Lock to Control Point
 Normal Modify Offset Random
+Normal index (%u) out of bounds (%zu) at %zu
 Normal texture scroll rate
+NormalMap
 Normalize
 Normalize Output
 Normalize Vector a
+Normals
+NormalsIndex
+NormalsW
 NoseV
 NostrilFlare
 Not R%d <- !R%d
 Not all solids (of %d) are defined in keyvalues! Undefined solids: 
+Null
 NumSegments
+Nurbs
+NurbsCurve
+NurbsSurface
+NurbsSurfaceOrder
+OSLBitmap
+OSLBitmap2
+OSLBitmap3
+OSLMap
+ObjectMetaData
+ObjectType
+Objects
 Offset End Point Amount
 Offset Vector to Vector
 Offset instead of accelerate
@@ -2895,26 +3267,41 @@ OldKeyValues
 On Interval
 On True
 OnInterval
+OneFile
+OneFilePerFrame
 Only Restart Children
 Only set orientation once
 Only set position once
 Only wrote %d (of %d) values when saving map!
+Opened .mtl file derived from .obj filename: %s
 Operate
 Operator cycle found during dependency graph traversal!\n
 Optimize for rope and cloth simulation
 Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value.
 Or R%d <- R%d || R%d
+Order
 Orient Rotation to 2D Direction
+OriginalUnitScaleFactor
+OriginalUpAxis
+OriginalUpAxisSign
+Original|ApplicationName
 Original|ApplicationNativeFile
+Original|ApplicationVendor
+Original|ApplicationVersion
+Original|FileName
+OrthoZoom
 Oscillate Scalar
 Oscillate Scalar Simple
 Oscillate Vector
 Oscillate Vector Simple
+OtherFlags
+Out of memory
 Out of order bodygroup-style meshgroup: %s (%s)
 Out of range index in 
 Out of range index in OrData::getChild: 
 Out of range index in OrData::getChildHeader: 
 Out-of-range acyclic index: 
+OuterAngle
 Outflow List
 Outline end 0
 Outline end 1
@@ -2930,11 +3317,14 @@ Override CP (X/Y/Z *= Radius/Thickness/Speed)
 Override CP 2 (X/Y/Z *= Pitch/Yaw/Roll)
 Override CP field
 Override Max Velocity from this CP
+PF_TYPE_CONTROL_POINT_PLANE_DISTANCE
 PHY Import: Invalid solid index %d in keyvalues\n
 PHY Import: Solid with index %d is defined twice!\n
 PHY file empty, zero hulls found: %s.
 PanelID
+Parent Map + VData
 Parent Map: %s\n
+Parent-Child
 Parsed %d channels in RTS file
 Particle Binding
 Particle Binding (Real)
@@ -2944,9 +3334,10 @@ Particle feathering closest distance to surface
 Particle feathering farthest distance to surface
 ParticleParamID_t
 Pass Outflow
-Password protected FBX files unsupported for file: %s
 Path Overflow, must be less than 260 characters.
 Per Particle World Collision Tests
+Periodic
+Phong
 PhysicsSurfaceProperties
 Pickover A Parameter
 Pickover B Parameter
@@ -2956,9 +3347,16 @@ Pitch Yaw Roll
 Pitch Yaw Roll Max
 Plane Normal
 Play End Cap Effect
+PointsIndex
+Pole Vector Object
+PoleVectorType
+PolygonGroup
+PolygonIndexArray
+PolygonVertexIndex
 PoseMatrixFromSequence '%s' - import expects subtractframe 4
 PoseMatrixFromSequence '%s' - import only supports 3 columns
 PoseMatrixFromSequence '%s' - import only supports 3 rows
+PoseNode
 Position Along Epitrochoid
 Position Along Path Random
 Position Along Path Sequential
@@ -2966,6 +3364,7 @@ Position Along Ring
 Position From Chaotic Attractor
 Position From Control Points
 Position From Parent Particles
+Position From Positions
 Position In CP Hierarchy
 Position Modify Offset Random
 Position Modify Offset Relative to Control Point
@@ -2982,21 +3381,36 @@ Position on Model Random
 Position with Phyllotaxis Distribution
 Position within hexahedron random
 Positions in grid
+Post-Extrapolation
+PostRotation
 PosterSettings
 Pre-Age Noise
+Pre-Extrapolation
+PreRotation
+PreferedAngleX
+PreferedAngleY
+PreferedAngleZ
 Prefix element cannot contain element or element_array attributes. ('%s')
 Preset File
 Prevent passing through a plane
 Prevent passing through static part of world
+PreviewDivisionLevels
 Previous Position
 Procedural
 Process Selector
 Project on Characters
 Project on Water
 Project on World
+Properties60
+Properties70
+PropertyTemplate
 Pull towards control point
 Pulse domain which enables particle content to query leaf code to introspect game state.
+PulseExecHistoryCallerInfo_t
+PulseRuntimeLambdaIndex_t
+QuaternionInterpolate
 R Sqrt
+RECORD_NEXT_SEQ_POINT
 RGB blend weight for sequence 0
 RGB blend weight for sequence 1
 Rad2 Deg
@@ -3020,9 +3434,18 @@ Re-Randomize Rate (-1 for once only)
 Read invalid POD type: 
 ReadObjectHeaders Invalid data at index 
 Reading FBX: %s\n
+Real
 Reciprocoal square root (1/sqrt)
 Redo\n======\n
 Reentrant initialization of CModelDocVMDLImportScript
+Reference
+ReferenceStart
+ReferenceStop
+ReferenceTime
+References
+Reflection
+ReflectionColor
+ReflectionFactor
 Refract amount
 Refract background
 Refract blur radius
@@ -3030,7 +3453,11 @@ Refract blur type
 Register Test Checkpoint
 Reinitialize On EndCap Scalar Random
 Reinterpret Instance %s R%d <- %s R%d
+RelPath
+Relations
 Relative Control point number
+RelativeFileName
+RelativeFilename
 Remap Average Scalar Value to CP
 Remap CP Component to CP Component
 Remap CP Orientation to Rotation
@@ -3093,7 +3520,11 @@ Render Sound
 Render Status Effect
 Render models
 Render projected
+RenderAPI
 RenderAsModels
+RenderDivisionLevels
+Repetition
+Required mesh.num_indices (%zu) indices, got %zu
 Restart Effect after Duration
 Return the number of elements in the array.
 Returns -1 or 0 or 1 based on the sign of the argument
@@ -3106,6 +3537,8 @@ Returns interpolated value between A and B based on frac 0.0 - 1.0 (transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector)
+Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped.
+Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB.
 Returns the constant pi (3.14...)
 Returns the inverse of a transform.
 Returns the inverse of a world transform.
@@ -3120,6 +3553,7 @@ RigConstraints
 RigHelpers
 RigLegs
 RigRoot
+RightCamera
 RightFingers
 Rigid model with multiple physics bodies?!
 RootSelectionSet
@@ -3135,6 +3569,7 @@ Rotation Axis
 Rotation Axis Max
 Rotation Axis Min
 Rotation Basic
+Rotation From Rotations
 Rotation Orient Initial Rotation Relative to CP
 Rotation Orient Relative to CP
 Rotation Orient to 2D Direction
@@ -3148,19 +3583,41 @@ Rotation Spin Yaw
 Rotation Yaw Flip Random
 Rotation Yaw Random
 Rotation from CP forward orientation
+RotationAccumulationMode
+RotationActive
+RotationMax
+RotationMaxX
+RotationMaxY
+RotationMaxZ
+RotationMin
+RotationMinX
+RotationMinY
+RotationMinZ
+RotationOffset
+RotationOrder
+RotationPivot
+RotationSpaceForLimitOnly
+RotationStiffnessX
+RotationStiffnessY
+RotationStiffnessZ
+Roughness_Map
 Round - round float up or down to integer
 Round Float
 RunScript failed: Empty script name specified
 RunScript failed: IncludeScript stack overflow, depth: %d
 RunScript failed: Scripting disabled or no server running
+Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
+Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCENE
 SFM Session
 SFM Settings
 SFM TrackGroup
+SFX_PBS_SHADER
 SSAOBias
 SSAORadius
 SSAOStrength
 Sample 
+SamplingRate
 Sanitized RTS channel label "%s" -> "%s"
 Saturate
 Saturate (clamps float between 0 and 1)
@@ -3169,6 +3626,7 @@ Save a named value of any type on the cursor.
 Scalar Property not backed by a valid group.
 Scalar Random
 Scalar field
+Scale From Scales
 Scale INV R%d <- R%d / R%d
 Scale R%d <- R%d * R%d
 Scale Radius from Initial Value
@@ -3177,7 +3635,22 @@ Scale factor for radius
 Scale factor for spring correction
 Scale factor to apply to input radius
 Scale model to match particle size
+ScaleAccumulationMode
+Scaling
+ScalingActive
+ScalingMax
+ScalingMaxX
+ScalingMaxY
+ScalingMaxZ
+ScalingMin
+ScalingMinX
+ScalingMinY
+ScalingMinZ
+ScalingOffset
+ScalingPivot
 ScalpD
+Scene
+SceneGenericPersistence
 SceneInfo
 SceneSystem/ComputeShaderSkinning
 Schema description file
@@ -3190,6 +3663,7 @@ Script_DoIncludeScript
 Second Control Point Location
 Second Control Point Number
 Second Control Point Parent
+SelectionNode
 Self illum amount
 Sequence From Control Point
 Sequence Id override
@@ -3233,24 +3707,37 @@ SetTempVar
 SetVar V%d (%s) <- R%d
 SetVarArrayElement1D V%d (%s) [ R%d ] <- R%d R%d
 Setting %s::%s = '%s'\n
+ShadingModel
+Shininess
+ShininessExponent
 ShotBoundsChannel
+Show
 SideFX
 Sign Float
 Sign Int
 Signature hook to fill out arguments for OnInterval
 Simple Cubic
 Sine of angle. Input in radians, output in radians
+Single Chain IK
+SkinningType
 Skipping duplicate script sequence '%s'
 Skipping duplicate script sequence '%s' (gesture)
 Skipping duplicate script sequence '%s' (posematrix)
 Skipping duplicate script sequence '%s' (posture)
 Skipping meshgroup '%s' - can't handle overlapping non-bodygroup meshgroups. (Multiply-referenced mesh '%s')
 Skipping meshgroup '%s' - expecting 'NAME_@NUMBER'
+Smoothing
+Smoothness
+SnapOnFrameMode
 Sort particles
+Source (Parent)
 Source Alpha value to map to alpha of 1
 Source Alpha value to map to alpha of zero
 Spatial Coordinate Offset
 Spatial Noise Coordinate Scale
+Specular
+SpecularColor
+SpecularFactor
 Speed Matching Strength
 Speed Max
 Speed Min
@@ -3276,9 +3763,11 @@ Sqr Float
 Sqr Int
 Sqrt
 Square root
+SqueezeRatio
 Start a timer with the specified duration, fire the OnInterval output 
 Start dot product value for fading as the particle normal becomes aligned with the view vector
 StartAttachment
+StartTime
 Starting Control Point
 Stencil test ID
 Stencil write ID
@@ -3289,8 +3778,12 @@ String Length
 Strings Are Equal Case Sensitive
 Sub Frame Interpolation
 Sub R%d <- R%d - R%d
+SubDeformer
+Switcher
 Symbol table:  %d entries %llu bytes\n
 T%d (%s)
+TCDefinition
+TEX_
 THEM
 TODO: BreakPiece nMultiplayerBreak support missing.
 TODO: Cloth Proxy CollapseTinyEdges support missing.
@@ -3316,14 +3809,25 @@ TODO: cmd sequence implement CMDS! : %s
 TYPE
 Tag Cursor
 Tag Self When Complete
+Take
+Takes
 Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>"Hello {} my name is {}"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>"Hello {0} my name is {1}"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>
 Tangent of angle. Input in radians, output in radians
+TangentsIndex
+TangentsW
 Target layer ID for rendering
 Temp Morph Scene
 Test Mode Assert True
 TestCheckpoint: %s
 Texture Configuration File
+Texture alpha
 Texture scroll rate
+TextureId
+TextureName
+TextureRotationPivot
+TextureScalingPivot
+TextureUV
+TextureUVVerticeIndex
 The filename may only contain lower case alphanumeric characters, dashes, and underscores.
 The name of the underlying class to allocate when using this subclass.
 The requested FaceSet name can't be found in PolyMesh.
@@ -3331,10 +3835,19 @@ Third Control Point Location
 Third Control Point Number
 Third Control Point Parent
 This is the overall duration. If -1 timer will continue forever. During this duration, we will fire a new child cursor at each Interval.
+Threaded ASCII parse error
+ThresholdsUsedAsPercentage
+Thresholds|Level%zu
 Time Coordinate Offset
 Time Noise Coordinate Scale
 Time since the start of the timer
 Time-of-Day Parameter
+TimeMarker
+TimeMode
+TimePerFrame
+TimeProtocol
+TimeSpanStart
+TimeSpanStop
 TokenMap::setUnique: token: 
 TongueCurl
 TongueD
@@ -3355,18 +3868,44 @@ Transform a relative vector into worldspace, including position and scale.
 Transform a vector by the inverse of a local transform, including position and scale. Inverse of 'Transform Vector'.
 Transform a worldspace vector into a relative vector, including position and scale.
 TransformA
+TransformAssociateModel
 TransformB
+TransformLink
+TranslationActive
+TranslationMax
+TranslationMaxX
+TranslationMaxY
+TranslationMaxZ
+TranslationMin
+TranslationMinX
+TranslationMinY
+TranslationMinZ
+TransparencyFactor
+Transparent
+TransparentColor
+TransparentFactor
 Tried to create compound property with the wrong property type: 
 Tried to read a compound property from a non-compound: 
 Tried to read a scalar property from a non-scalar: 
 Tried to read an array property from a non-array: 
 Tried to rename from '%s' to '%s', but '%s' already exists\n
+TrimNurbsSurface
+Truncated array: %s
+Truncated file
+Truncated vertex stream
 Turn a time in seconds into a display string. NOT localized.
+TypedIndex
+UFBX_INDEX_ERROR_HANDLING_ABORT_LOADING
 UL Offset in FLU local space
 UL control point number
 UPAXIS
 UR Offset in FLU local space
 UR control point number
+UVIndex
+UVSet
+UVSwap
+UberBitmap
+UberBitmap2
 Unable to access skeleton from compiled src resource data
 Unable to create AnimOrder in dst ModelDoc
 Unable to create unknown element %s!\n
@@ -3384,19 +3923,24 @@ Unexpected EOF in quoted string
 Unexpected key name "%s"\n
 Unexpected morph animation stream name :: "%s", expected "%s"
 Uniform speed
+Uninitialized options
+UnitScaleFactor
+Unknown .obj directive, skipped line
 Unknown DmeFlexRule: %s Of Type: %s\n
 Unknown Path Class
 Unknown format type
 Unknown interpolation type %d\n
 Unknown physics joint type encountered: %d
 Unknown physics shape type encountered: %d
+Unrecognized file format
 Unrecognized mesh specified in meshGroup '%s': %s
+Unsafe options
 Unserialize: Cannot determine encoding from file, and no encoding provided!\n
 Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -3405,8 +3949,14 @@ Unsupported Alembic version detected:
 Unsupported CSeqAutoLayer "FetchFrame" Flag :: %s :: %s
 Unsupported CSeqAutoLayer "Post" Flag :: %s :: %s
 Unsupported CSeqAutoLayer "Subtract" Flag :: %s :: %s
+Unsupported FBX version (%u)
 Unsupported file version detected: 
 Unsupported geometry cache file type extension :: %s
+Unsupported version
+UpAxis
+UpAxisSign
+UpVector
+UpVectorProperty
 UpdateLights
 Use Continuous Emission
 Use Eye Orientation
@@ -3425,6 +3975,7 @@ Using compiled skeleton for parent '%s' for bone '%s'
 VDataModelVersion001
 VDmElementFrameworkVersion001
 VDmSerializers001
+VMAP_AND_VDATA
 Valid Content Absolute Path
 Valid External Path
 Valid Game Absolute Path
@@ -3437,6 +3988,9 @@ Variable '%s' is referenced but not declared in this system (%s). Adding a fallb
 Vector Component Random
 Vector Random
 Vector To World Vector
+Vector3D
+VectorDisplacement
+VectorDisplacementFactor
 Velocity Away from Hitbox Random
 Velocity From Normal Random
 Velocity Inherit from Control Point
@@ -3445,11 +3999,18 @@ Velocity Radial Random
 Velocity Random
 Velocity Repulse from World
 Velocity Set from Control Point
+Version5
+VertexCacheDeformer
+VertexCrease
+VertexCreaseIndex
+VertexIndexArray
 Vgui editor file
 Virual volume texture file
+Visibility
 Visibility Alpha Scale maximum
 Visibility Alpha Scale minimum
 Visibility Camera Depth Bias
+Visibility Inheritance
 Visibility Proxy Input Control Point Number
 Visibility Proxy Radius
 Visibility Radius
@@ -3490,6 +4051,7 @@ Warning! Unsupported FBX Normal Mapping/Reference Mode %d/%d\n
 Warning! Unsupported FBX UV Mapping/Reference Mode %d/%d\n
 Warning! Unsupported FBX VertexColor Mapping/Reference Mode %d/%d\n
 Wavefront OBJ
+Weights
 What type of object this is.
 Whether the script is running as part of an import process. (Returns true.)
 Whether value has ALL of the specified flags set (it may have other flags.)
@@ -3500,8 +4062,12 @@ WipeUndo '%s'\n
 World Files
 World Node Files
 World Transform Inverse
+World Up Object
 World Vector To Vector
+WorldUpType
 WorldVector
+WrapModeU
+WrapModeV
 Write stencil on z-buffer test failure
 Write stencil on z-buffer test success
 WriteFbxMesh: failed to convert dmx to fbx.\n
@@ -3515,6 +4081,7 @@ Y axis scaling Scalar field
 Yield, Resume=%s
 Z axis scaling Scalar field
 Zero skin weights on one or more vertices
+Zero vertex size
 [ Chunk%d ]
 [ written at chunk start last-read I%d ]
 [ written by I%d last-read I%d ]
@@ -3532,15 +4099,25 @@ Zero skin weights on one or more vertices
 [NOP]
 [RETURN R%d]
 [RETURN]
+[\-+]?[0-9]+(\.[0-9]+)?([eE][\-+]?[0-9]+)?
+\c.obj
+\c\.fbx
+\c\.mtl
+\c\.obj
+\cnormals?
+\cpoints?
+\cpositions?
 \instances\
 \maps\
 \materialsrc\
 \nERROR: EXCEPTION:\n
 \nERROR: UNKNOWN EXCEPTION\n
 \prefabs\
+\s*#\s*File exported by ZBrush.*
 \sound\
 \t%8d
 \tNAN encountered in element '%s' guid %s attribute '%s'!\n
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 ^(.+)_[0-9A-Fa-f]{8}$
 __CursorQueue__
 __FireCursorsParent__
@@ -3567,6 +4144,8 @@ _linked_type_
 _lookFrame_0
 _lookFrame_1
 _lookFrame_2
+_map
+_map_on
 _mesh
 _my_subclass_name
 _name
@@ -3581,6 +4160,10 @@ adding layer %d to stack\n
 addlayer
 addlayer: log %p lc[%d], layer %p
 addlayer: log %p lc[%d], layer NULL
+aiEnableMatte
+aiMatteColor
+aiMatteColorA
+ai_image
 aimOffset
 allflags
 allow_overhead
@@ -3614,10 +4197,17 @@ animflags
 animgraph_compatibility_check
 animgraph_compatibility_force
 animturn
+aniso
+aniso_angle
+anisoangle
+anisor
+anisotropy
 anyflags
 aperture
+apos
 appVersion
 archetype_list
+ator->num_allocs < ator->max_allocs
 attached_prop_physics
 attachment_point
 attachment_point_cp1
@@ -3632,22 +4222,31 @@ autolayer
 autoplay
 axies
 axisSystem
+bCondition
 bInherit
+bOverflowedInstructionHistoryLimit
 bUseExactGeometry and bConvexHull both specified - creating PhysicsMeshFile
 bValue
 backgroundColor
 backgroundFXClip
 backgroundMap
 bad_weak_ptr
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
 balanceIndices
 balancechannel
+baseColor
 baseLayer
 baseMapToOverride
 baseName
 baseStates
+base_color
+base_diffuse_roughness
+base_metalness
+base_weight
 basic_movement
 batch particle systems
 bezier
@@ -3661,6 +4260,9 @@ blendColor
 blendMaxPathOpacity
 blendTransition
 blendTransitionAndPath
+blender version ?.?
+blender- ?.?
+blender-- ?.?.?
 blendindices$0
 blendindices$0Indices
 blendlayer
@@ -3687,8 +4289,12 @@ boxproject_mins
 brightness_units
 bspline
 bulge
+bump
+bump_map_amt
 cable_static
 cables_list
+cacheTimePerFrame
+cacheType
 camera
 candle_1
 candle_2
@@ -3703,6 +4309,7 @@ catmullrom
 catmullrom_normalize
 catmullrom_normalize_x
 catmullrom_tangent
+caustics
 cellConfiguration
 cellsNodeID
 center_follow
@@ -3712,6 +4319,7 @@ char[256]
 char[260]
 childBindRotation
 clearDecals
+clearcoat_bump_map_amt
 clipType
 cloth mesh
 cloth_enable$0
@@ -3720,6 +4328,30 @@ cmd sequence pose autolayer: %s, invalid poseParam %d, only %d defined: %s
 cmd sequence pose autolayer: %s, no poseParam %d: %s
 cmdLine
 cmds
+coat
+coatAnisotropy
+coatColor
+coatIOR
+coatNormal
+coatRotation
+coatRoughness
+coat_IOR
+coat_affect_color
+coat_affect_roughness
+coat_anisotropy
+coat_bump
+coat_bump_map_amt
+coat_color
+coat_ior
+coat_normal
+coat_normal_map
+coat_rotation
+coat_rough
+coat_roughness
+coat_roughness_anisotropy
+coat_roughness_inv
+coat_weight
+coating
 collapsed
 collisionText
 collisionrules
@@ -3793,6 +4425,7 @@ custom
 customorigin
 customorigin_follow
 cutoff_radius
+cutout
 cycle pose parameter: %s, without cyclepose on cmd sequence: %s\n
 cyclepose without cycle pose parameter on cmd sequence: %s\n
 damage_table
@@ -3820,7 +4453,12 @@ depthOfFieldSamples
 depth_sort_bias
 desired height
 detach_from_owner
+dielectricPriority
+diff_rough
+diff_roughness
 diffuse warp texture
+diffuseRoughness
+diffuse_roughness
 disable child
 disableOverride
 disableShadows
@@ -3828,6 +4466,10 @@ disableShadows2
 disableinlowquality
 disablemultiplegravitygrab
 disallowOverride
+disp
+displacement
+displacement_amt
+displacement_map_amt
 displayScale
 displaySet
 displaySetElements
@@ -3864,15 +4506,23 @@ element_array
 elementid
 embedded
 embeddedTarget
+emission
 emission scale from killed parent particles
+emissionColor
 emissionStopTime
+emission_color
 emission_duration
+emission_luminance
 emission_rate
 emission_start_time
 emission_start_time max
+emission_weight
+emissive
+emissive_intensity
 emit noise
 emit particles for killed parent particles
 emit to maintain count
+emit_color
 emit_continuously
 emit_instantaneously
 emitters
@@ -3892,6 +4542,7 @@ endattachment
 entity_properties
 evcode
 evparam
+exitToBackground
 exp2
 explode_fire
 explode_ice
@@ -3905,7 +4556,25 @@ export_foliageanimation_
 exported_animation
 exporttags
 expr
-expression_type
+extension|Specular
+extension|clearcoat
+extension|clearcoatNormal
+extension|clearcoatRoughness
+extension|enableClearCoat
+extension|enableIndexOfRefraction
+extension|enableSheen
+extension|enableSpecular
+extension|enableTransmission
+extension|indexOfRefraction
+extension|sheenColor
+extension|sheenRoughness
+extension|specular
+extension|specularColor
+extension|specularcolor
+extension|transmission
+extension|unlit
+externalCallerInfo
+extra
 extra_data
 eyeOffset
 eye_data
@@ -3928,6 +4597,8 @@ fadeouttime
 falloff_left
 falloff_right
 fast_strobe
+fbx sdk/fbx plugins build ?
+fbx sdk/fbx plugins version ?.?
 fbx2dmx
 fbx_vmatPath
 features
@@ -3947,7 +4618,9 @@ flFloat
 flFrac
 flInputA
 flInputB
+flMax
 flMaxRadius
+flMin
 flMinRadius
 flOutputA
 flOutputB
@@ -3955,7 +4628,6 @@ flPercentage
 flPitch
 flRadians
 flRoll
-flScale
 flSeconds
 flTime
 flVal
@@ -4009,12 +4681,19 @@ fromAttribute
 fromElement
 fromIndex
 functionName
+fuzz_color
+fuzz_roughness
+fuzz_weight
 g %4096s
 gameSoundName
 gamepreview
 gentle_pulse
+geometry_opacity
+geometry_tangent_map
+geometry_thin_walled
 getRelativeTransform
 globalState
+glossiness
 graphCurve
 gravity_grab_priority
 gravitygrabignoremassandsize
@@ -4043,6 +4722,9 @@ importedresultscurrent.txt
 importedresultsmaster.txt
 inFrame
 index
+index (%u) out of bounds (%zu)
+indirectDiffuse
+indirectSpecular
 indirectlight
 inertia
 initialMass
@@ -4056,6 +4738,7 @@ int32_t
 int64_t
 int8_t
 int_array
+internalReflections
 interpolator_left
 interpolator_right
 interpretation
@@ -4106,6 +4789,7 @@ kill on no collision
 kochanek
 kochanek_early
 kochanek_late
+lambert
 lastFrame
 leftEdgeActive
 leftEdgeCurveType
@@ -4143,6 +4827,7 @@ loopEnd
 loopFPS
 loopStart
 lower_hemisphere_is_black
+luminaire_shape
 m_Activities
 m_Anchor
 m_AngularLimits
@@ -4165,11 +4850,13 @@ m_Fx
 m_Indices
 m_KeyValue
 m_Keywords
+m_LambdaDefs
 m_LocalBindPose
 m_Loop
 m_MotionFrames
 m_MotionFramesRootBone
 m_PropDataGroups
+m_ResultType
 m_Shapes
 m_StartLoop
 m_SurfaceProp
@@ -4177,6 +4864,7 @@ m_TagValue
 m_Translation
 m_Vanim
 m_adjustAnimation
+m_bAbsoluteValue
 m_bAddLayer
 m_bAddStiffnessRods
 m_bAdjustSkeletonFromBoneFlags
@@ -4204,6 +4892,7 @@ m_bCanCollideWithWorldMeshes
 m_bClothCollisionLayers
 m_bCollide
 m_bColor
+m_bCompletingVeryCloseToEndOfInterval
 m_bConcavePerJoint
 m_bConditionValue
 m_bConfirmCollision
@@ -4233,6 +4922,8 @@ m_bExtractRZ
 m_bExtractTX
 m_bExtractTY
 m_bExtractTZ
+m_bFireAtEnd
+m_bFireAtStart
 m_bFirstEvaluate
 m_bFlammable
 m_bFlexClothBorders
@@ -4363,6 +5054,7 @@ m_iklock
 m_influenceName
 m_influences
 m_lodGroups
+m_mapNodeToNewCursorCount
 m_materialList
 m_materialSearchPath
 m_meshFile
@@ -4384,8 +5076,8 @@ m_nControlPoint11
 m_nControlPoint5
 m_nControlPoint6
 m_nControlPoint7
+m_nCulledCursorCount
 m_nCurrentWakeIndex
-m_nCursorID
 m_nCutMax
 m_nCutMin
 m_nDesiredEndPoint
@@ -4395,9 +5087,9 @@ m_nEndframe
 m_nFadeMax
 m_nFadeMin
 m_nFadeTime
-m_nGraphID
 m_nHeightTarget
 m_nIterations
+m_nLambdaIdx
 m_nLoopRestart
 m_nNumCols
 m_nNumRows
@@ -4477,6 +5169,15 @@ main_view
 maintain count scale control point
 maintain count scale control point field
 maintain position along path
+main|Alpha
+main|DoubleSided
+main|ambientOcclusion
+main|baseColor
+main|emission
+main|emissionColor
+main|metalness
+main|normal
+main|roughness
 makefile
 manipulatorSettings
 map/set<T> too long
@@ -4486,6 +5187,7 @@ map_Kd
 map_d
 massbias
 material group
+material_mode
 materials/
 materials/dev/gray_75.vmat
 materials/error.vmat
@@ -4501,6 +5203,8 @@ maya
 melee_immune
 mesh%d
 meshData_%s
+metallic
+metalness
 micDistance
 midJoint
 midOffset
@@ -4527,6 +5231,8 @@ morph_controls_name
 morph_rules
 morph_rules_name
 motionBlurSamples
+motionbuilder version ?.?
+motionbuilder/mocap/online version ?.?
 movieSettings
 movieobjects
 mp_anim
@@ -4556,10 +5262,13 @@ nWakePriority
 negative frame (%d) specified\n
 negative frame(%d) specified\n
 newmtl
+newmtl\s+\S.*
 nodeID
 noise
+norm
 normal$0
 normal$0Indices
+normalCamera
 normals
 normalsIndices
 null FbxMaterial
@@ -4570,6 +5279,8 @@ numcolumns
 numrows
 oOffset
 obj2dmx
+object
+obj|args
 offseTime
 offsetTime
 onbreak
@@ -4577,6 +5288,7 @@ onfirstimpact
 onlaunch
 onpickup
 onworldimpact
+open_file_fn()
 operator strength random scale max
 operator strength random scale min
 operator strength scale control point
@@ -4595,7 +5307,7 @@ oscillate_vector
 outFrame
 output is scalar of current value
 output is scalar of initial random range
-outputs
+outputChannelIndex
 overhead_follow
 overrideParent
 overridePos
@@ -4620,6 +5332,7 @@ path_trajectory
 peakframe
 per particle
 phonememap
+phong
 physics bone
 physics mesh
 physicsSimplificationError
@@ -4631,7 +5344,6 @@ pin_enabled
 pivotOffset
 point_follow
 poleVector
-polymorphic_arg
 posTolerance
 pose
 poseParamX
@@ -4670,6 +5382,7 @@ qangle log
 qangle_array
 quaternion log
 quaternion_array
+quot
 rad2deg
 radiusScale
 radius_end_scale
@@ -4678,6 +5391,8 @@ radius_random_exponent
 radius_scale
 radius_start_scale
 ragdollconstraint
+rand_float
+rand_int
 random force
 random position along path
 random position on model
@@ -4692,6 +5407,8 @@ randomly_flip_direction
 rawControlNames
 recordingstate
 refOrientation
+refl_color
+reflectivity
 regex_error
 regex_error(error_backref): The expression contained an invalid back reference.
 regex_error(error_badbrace): The expression contained an invalid range in a { expression }.
@@ -4773,6 +5490,8 @@ rotation_spin
 rotation_spin yaw
 rotations
 rotdamping
+roughness
+roughness_inv
 round
 rsqrt
 run for killed parent particles
@@ -4787,6 +5506,7 @@ scale in local space
 scale_bias
 scene
 schemaObjTitle
+search_expr
 second sequence animation rate
 second_sequence_random
 segmentScaleCompensate
@@ -4823,6 +5543,12 @@ shadow_color_night
 shadow_secondary_color_day
 shadow_secondary_color_night
 shared
+shear
+sheen
+sheenColor
+sheenRoughness
+sheen_color
+sheen_roughness
 should be cyclic
 showAmbientOcclusion
 showCameraFrustum
@@ -4861,13 +5587,28 @@ soundEventScript
 sound_base
 soundname
 sourceDag
+sourceMap
 sourceframe
 sources
 spawnFlags
 specificImpulse
 specific_impulse
+specular
+specularAnisotropy
+specularColor
+specularIOR
+specularRotation
+specularRoughness
+specular_IOR
+specular_anisotropy
+specular_color
 specular_direction_day
 specular_direction_night
+specular_ior
+specular_rotation
+specular_roughness
+specular_roughness_anisotropy
+specular_weight
 specularangles
 speed$0
 speed$0Indices
@@ -4883,6 +5624,10 @@ spin_rate_min
 spin_stop_time
 spin_z
 spring constant Ks
+sss_color
+sss_depth
+sss_scale
+sss_scatter_color
 staggerinterval
 standard
 startJoint
@@ -4915,11 +5660,25 @@ string log
 string_array
 subClipTrackGroup
 subkeys
+subsurface
+subsurfaceAnisotropy
+subsurfaceColor
+subsurfaceRadius
+subsurfaceScale
+subsurfaceType
+subsurface_anisotropy
+subsurface_color
+subsurface_radius
+subsurface_radius_scale
+subsurface_scale
+subsurface_scatter_anisotropy
+subsurface_weight
 subtract
 subtractframe
 suppress_warning_
 suppress_warning_list
 suppressed
+switchValue
 syncEngineFramerate
 synched
 tagValue
@@ -4935,6 +5694,7 @@ targetTileSet
 targetTileSetNodeID
 targetType
 targetWeight
+temp
 texcoord$%d
 texcoord$0Indices
 texture V Offset
@@ -4944,6 +5704,14 @@ textureCoordinates
 textureCoordinatesIndices
 textureFrame
 textures
+thinFilmIOR
+thinFilmThickness
+thinWalled
+thin_film_IOR
+thin_film_ior
+thin_film_thickness
+thin_film_weight
+thin_walled
 time %d
 time log
 time to recreate
@@ -4961,22 +5729,50 @@ toneMapScale
 tools/images/pulse_editor/cursor_kill.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 tools/model_archetypes.txt
+total <= ator->max_size - ator->current_size
 totalmass
 trackGroups
 tracks
 trail end tint factor
 trail_length_random
+trans_color
+trans_depth
+trans_ior
+trans_rough
+trans_roughness
+trans_roughness_inv
+trans_roughness_lock
 transformInverse
 transformVector
 transformVectorToLocal
 transformVectorToWorld
 transforms
+transmissionColor
+transmissionDepth
+transmissionDispersion
+transmissionExtraRoughness
+transmissionScatter
+transmissionScatterAnisotropy
+transmission_color
+transmission_depth
+transmission_dispersion
+transmission_dispersion_scale
+transmission_extra_roughness
+transmission_scatter
+transmission_scatter_anisotropy
+transmission_weight
+transmitAovs
 treeColor
 triangles
 turbulent force
 twist around axis
 twistJoints
 type_restriction_is_enum_flags
+ufbx panic: %s\n
+ufbx v%u.%u.%u error: %s (%.*s)\n
+ufbx v%u.%u.%u error: %s\n
+ufbx_write
+ufbxi_obj_load_mtl()
 uint16_t
 uint32_t
 uint64 log
@@ -4996,6 +5792,8 @@ use forces from farther away neighbors
 use highest supplied end point
 use parent particles for emission scaling
 useEdgeInfo
+useGlossiness
+use_
 usecurvetypes
 usedefaultvalue
 useedgeinfo
@@ -5003,6 +5801,9 @@ usemtl %4096s
 usesLaggedValues
 uses_lagged_values
 v %f %f %f
+vLineA
+vLineB
+vPoint
 value0
 value1
 value3
@@ -5045,10 +5846,11 @@ vector3 log
 vector3_array
 vector4 log
 vector4_array
-vector<bool> too long
+vector<T> too long
 velTolerance
 velocity_random
 velocity_tolerance
+vertex (%zu) out of bounds (%zu)
 vertex mistmatch %d vs %d :: sample time :: %8.4f s :: %s
 vertexFormat
 vertexpaint

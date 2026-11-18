@@ -23,7 +23,7 @@
 .?AUAsyncProcessDataResult@CRenderMeshManager@@
 .?AUAsyncProcessResult@CBaseIntrospectedToKV3TypeManager@@
 .?AUCMorphSetData@@
-.?AV<lambda_1>@?1??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@
+.?AV<lambda_1>@?CB@??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@
 .?AV<lambda_1>@?M@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@
 .?AV<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@
 .?AV?$CBaseAppSystem@VIMeshSystem@@@@
@@ -42,7 +42,7 @@
 .?AV?$CTypesafeIntrospectedToKV3TypeManager@$0GGHCGPGNHG@UCMorphSetData@@@@
 .?AV?$CTypesafeIntrospectedToKV3TypeManager@$0GMGEGNHG@UPermModelData_t@@@@
 .?AV?$ISceneObjectDescBase@VCSceneSkeletonObject@@@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CB@??SetupAccelerationStructure@RayTracingEnvironment@@QEAAXXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?M@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@X$$V@std@@
 .?AVAsyncProcessDataResults@CModelTypeManager@@
@@ -178,6 +178,7 @@ BindlessResources
 BoneConstraintList
 BoneConstraintRbf :: Cannot find input bone "%s" :: %s\n
 BoneConstraintRbf :: Cannot find output bone "%s" :: %s\n
+BoneConstraintRbf :: Invalid RBF parameters\n
 BoneConstraintRbf :: Invalid input %d or output %d bone count :: %s\n
 BoneConstraintRbf :: input bone count %d != input pose count %d :: %s\n
 BoneConstraintRbf :: output bone count %d != output pose count %d :: %s\n
@@ -205,7 +206,7 @@ CModelMaterialGroupName
 CModelTypeManager::FinalizeResource
 CModelTypeManager::GetErrorResource(119): GetErrorModel() called before error model exists!\n
 CParentAttachmentName
-CRenderMesh::CreateBufferResources(1214): 
+CRenderMesh::CreateBufferResources(1277): 
 CStrongHandle
 CStrongHandleCopyable
 CTransform
@@ -256,7 +257,6 @@ DOT_TO_MORPH
 Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
-DisableLODBlending
 DistanceFieldList_t
 DrawIndexedTriangles(145): 
 EnsureCapacity
@@ -268,6 +268,7 @@ Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load distance field KV3 data.\n
 FoliageAnimation
 ForceZPrepass
+Forward Stop Only
 Found translucent and opaque grooms in the same groom group. This is not allowed.\n
 G8R8_G8B8_UNORM
 HELPER_BONE
@@ -310,6 +311,7 @@ ModelAttachmentName()
 ModelBodyGroupName()
 ModelBoneName()
 ModelMaterialGroupName()
+ModelMeshDNARig_t
 MorphSetData_t
 NULL RenderMesh with valid handle\n
 NeedsDynamicShadows
@@ -388,7 +390,6 @@ R8G8_B8G8_UNORM
 R8G8_SINT
 R8G8_SNORM
 R8G8_TYPELESS
-R8G8_UNORM
 R8_SINT
 R8_SNORM
 R8_TYPELESS
@@ -413,6 +414,7 @@ Tried to load a polymorphic pointer with no '%s' key
 Tried to load resource reference '%s' from a value without a resource reference specific type.
 Trying to override a material with an invalid draw call index\n
 Trying to override the same draw call with two different materials!\nOnly the last override will be set!\n
+Turn To Start
 USAGE: print_model_bind_pose <vmdl_name> [bone_name]\n
 UUUU
 Unable to load tools vb block (%s: %d)\n
@@ -432,6 +434,8 @@ X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
 [idx=%d] "%s"
 acosf
+affine
+alphatest
 angularburst
 anim_data_block
 anim_graph_resource
@@ -440,6 +444,7 @@ animgraph2_graph
 animgraph_enum
 bOwnVBAndIB == m_bOwnVBAndIB && m_pFixedMeshDataOverride
 bShaderBlended
+bWantsFBCopyTexture
 baseclass
 bentnormal
 blendindices
@@ -465,30 +470,42 @@ compressedtangentframe
 curvature
 data_block
 distancefield_data_block
+eAim
+eForwardStopOnly
+eTurnToStart
 embedded_animation
 embedded_distancefield
 embedded_meshes
 embedded_physics
+embedding_norm
 error.vmesh
+euclidean_norm
 eye_data
 eye_data_list
-fast
+flGoalStrength
+flScale
+flZin
+flZout
 flagchoices
 floatchoices
 g_hSkeletonMeshLayout
 gameitemclass
 gameunitclass
+geodesic_norm
 group_data_block
 hair
 hairindirectargsbuffer
 inbound
+inputs
 instance_file
 instance_parm
 instance_variable
 intchoices
 interactive
 intmap
+inverse_threshold
 keyframeclass
+l2_regularization
 local
 local_point
 localaxis
@@ -499,6 +516,8 @@ lowprecisionuv1
 m_BaseClasses
 m_Classes
 m_DefaultKV3
+m_Deformers
+m_FfdZLayers
 m_Format
 m_HelpContextName
 m_Helpers
@@ -512,7 +531,9 @@ m_PlugType
 m_Stops
 m_attachments
 m_bBakedTwoSided
+m_bBlendShapes
 m_bCanBatchWithDynamicShaderConstants
+m_bCompressedZ3
 m_bCustom
 m_bDrawLast
 m_bHasBakedLightingFromLightMap
@@ -530,6 +551,7 @@ m_bUsingLegacyDefault
 m_bmaxs
 m_bmins
 m_distanceFields
+m_dnaRigs
 m_eRbfType
 m_flGridCellSize
 m_flMaxQuantizedDistance
@@ -538,17 +560,23 @@ m_hitboxsets
 m_iValue
 m_influenceFlags
 m_morphSet
+m_nBlock
 m_nBodyGroupChoice
 m_nBodyGroupIndex
 m_nClassType
 m_nLegacyDefaultInt
 m_nParentBoneNameHash
+m_nReferenceNode
 m_nResX
 m_nResY
 m_nResZ
+m_nRig
+m_nVertexMapIndex
+m_nVertexMapNameHash
 m_pItemSet
 m_quantizedData
 m_rbfParameters
+m_rbfParametersKV3
 m_rgbColor
 materialgroup
 materialgroup_driven_morph_list
@@ -588,9 +616,13 @@ node_dest
 node_id_List
 npc_ability_name
 npcclass
+num_inputs
+num_outputs
+num_poses
 omni
 optionallycompressedtangentframe
 outbound
+outputs
 overrideclass
 panorama_image
 panorama_layout
@@ -612,12 +644,18 @@ projectedDecal
 propdataname
 remove_key
 resourcesystem
+rigid
+rotation_ignore_threshold
 scriptlist
 seqgroup_data_block
+settings
 side
 sidelist
 solidclass
 std::pair
+stretch_ignore_threshold
+stretch_mean
+stretch_norm
 string_instanced
 stringmap
 struct
@@ -635,9 +673,16 @@ texcoord
 texcoord0
 texcoord1
 text_block
+theta_transpose
 tools.reference_notrace
 tools.toolsmaterial
 tools_vb_block
+training_rotations
+training_stretches
+training_translations
+transform_mode
+translation_ignore_threshold
+translation_mean
 vbib_block
 vdata
 vdata_choice

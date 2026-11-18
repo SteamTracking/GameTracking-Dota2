@@ -45,7 +45,7 @@
 		"Ability12"				"special_bonus_unique_snapfire_2"
 		"Ability13"				"special_bonus_cast_range_125"
 		"Ability14"				"special_bonus_unique_snapfire_8"
-		"Ability15"				"special_bonus_unique_snapfire_firesnap_cookie_additional_charge"
+		"Ability15"				"special_bonus_unique_snapfire_scatterblast_knockback"
 		"Ability16"				"special_bonus_unique_snapfire_6"
 		"Ability17"				"special_bonus_unique_snapfire_1"
 		"AbilityDraftAbilities"
@@ -291,7 +291,11 @@
 							"special_bonus_facet_snapfire_full_bore"	"=270"
 							"affected_by_aoe_increase"	"1"		
 						}
-						"debuff_duration"			"1.0"
+						"debuff_duration"			
+						{
+							"value"															"1.0"
+							"special_bonus_unique_snapfire_scatterblast_knockback"			"+1.0"
+						}
 						"movement_slow_pct"			"100"
 						"attack_slow_pct"			"100"
 						"point_blank_range"			
@@ -323,6 +327,12 @@
 						"shard_bonus_point_blank_dmg_pct"			
 						{
 							"special_bonus_shard"		"85.0"
+						}
+						"knockback_duration"		
+						{
+							"value"													"0.0"
+							"special_bonus_unique_snapfire_scatterblast_knockback" "+0.3"
+							
 						}
 				}
 			}
@@ -394,7 +404,7 @@
 					}
 					"damage_per_impact"
 					{
-						"value"		"170 250 330"
+						"value"		"180 250 320"
 					}
 					"duration_tooltip"		"5.5"
 					"projectile_vision"
@@ -666,7 +676,7 @@
 
 				// Time
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"24 20 16 12"
+				"AbilityCooldown"				"21 18 15 12"
 				"AbilityDuration"				"6"
 
 				// Cost
@@ -710,9 +720,10 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 				"MaxLevel"						"1"
 				"Innate"						"1"
+				"IsBreakable"					"1"
 			
 				"AbilityValues"
 				{

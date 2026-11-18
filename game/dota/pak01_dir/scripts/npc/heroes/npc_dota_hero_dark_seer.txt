@@ -49,7 +49,7 @@
 		}
 
 		"Ability10"		"special_bonus_unique_dark_seer_7"
-		"Ability11"		"special_bonus_unique_dark_seer_5"
+		"Ability11"		"special_bonus_armor_4"
 		"Ability12"		"special_bonus_unique_dark_seer_2"
 		"Ability13"		"special_bonus_unique_dark_seer_6"
 		"Ability14"		"special_bonus_unique_dark_seer_13"
@@ -114,6 +114,11 @@
 		"AttributeIntelligenceGain"		"2.700000"
 		"StatusHealthRegen"		"1.5"
 		"MovementSpeed"		"295"
+				"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+			"faster"	"300"
+		}
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"particle_folder"		"particles/units/heroes/hero_dark_seer"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
@@ -280,6 +285,7 @@
 						"knockback_distance"			"350"
 						"illusion_duration"			"6.0"
 						"max_damage"					"400"
+						"replica_effectiveness"		"60"
 						"normal_punch_illusion_delay"   "0.25"
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -306,7 +312,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"60 50 40 30"
+
 		
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -316,11 +322,15 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
+						"AbilityCooldown"
+						{
+							"value"								"50 42 34 26"
+							"special_bonus_unique_dark_seer_2" "-4"
+						}
 						"radius"				
 						{
 							"value"		"325 400 475 550"
 							"affected_by_aoe_increase"	"1"
-							"special_bonus_unique_dark_seer_2" "+75"
 						}
 						"duration"				"0.3 0.4 0.5 0.6"
 						"damage"				"70 130 190 250"
@@ -369,7 +379,6 @@
 					"radius"
 					{ 
 						"value"										"275"
-						"special_bonus_unique_dark_seer_5"			"+65"
 						"affected_by_aoe_increase"	"1"
 					}
 					"damage_per_second"		
@@ -517,6 +526,7 @@
 							"value"				"-30 -20 -10"
 							"special_bonus_unique_dark_seer_7"		"+15"
 						}
+						"replica_effectiveness"	"60"
 						"tooltip_outgoing"	
 						{
 							"value"		"70 80 90"
@@ -623,7 +633,7 @@
 				// General
 				//-------------------------------------------------------------------------------------------------------------
 
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 
 				"MaxLevel"						"1"

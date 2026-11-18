@@ -41,6 +41,7 @@
  Class Hierarchy Descriptor'
  Complete Object Locator'
  File
+ HUF_buildCTable error \n
  Type Descriptor'
  [%llu]
  [clone 
@@ -169,9 +170,10 @@ $xmm9
 %14.3f %12.2f
 %14s %10s
 %24s
+%2u :%7u \n
 %3d: <unknown relationship %d>\n
-%3d: Cache - group %u, mask 0x%llx\n
 %3d: Cache - mask 0x%llx\n
+%3d: Cache L%u %s - group %u, mask 0x%llx, size %u KB, line %u, assoc %u\n
 %3d: Group - max groups %u, active groups %u, 
 %3d: NumaNode %u - group %u, mask 0x%llx, node number %u\n
 %3d: NumaNode %u - mask 0x%llx, node number %u\n
@@ -179,7 +181,7 @@ $xmm9
 %3d: ProcessorCore %u - mask 0x%llx, flags 0x%x\n
 %3d: ProcessorPackage %u - groups %u 
 %3d: ProcessorPackage %u - mask 0x%llx\n
-%6.3f: ThreadPoolTest: Testing with %d jobs! Sleep %d, interleave %d, prioritized %d \n
+%6.3f: ThreadPoolTest: Testing with %d jobs! Sleep %d, prioritized %d\n
 %8.4f / %9.2f:  %s\n
 %8.4f / %9.2f:  Writing profile data to '%s'\n
 %8.8x-%4.4x-%4.4x-%2.2x%2.2x-%2.2x%2.2x%2.2x%2.2x%2.2x%2.2x
@@ -263,7 +265,6 @@ $xmm9
 %s: Start\n
 %s: ThreadPoolTest: YieldWaitPerFrameJobs - Basic test (%d jobs executed)\n
 %s: ThreadPoolTest: YieldWaitPerFrameJobs - Dynamic spawn test (%d initial + %d spawned = %d total)\n
-%s: ThreadPoolTest: YieldWaitPerFrameJobs - Only per-frame jobs executed by main thread test\n
 %s: Unable to get executable filename (%d byte buffer).
 %s: Unable to load SDL\n
 %s: added string size %d overflows (added to %d)\n
@@ -291,10 +292,13 @@ $xmm9
 %s: member count overflow (%u)\n
 %s: no space for allocation of %u\n
 %s: out of memory, falling back to regular allocators\n
+%s: per byte: DP positions %.2f, literal relax %.2f, rep relax %.1f, new relax %.1f\n
 %s: requested conversion of %d chars\n
 %s: string format requested %d chars\n
 %s: string length overflows (is %d, adding %d)\n
 %s: string length overflows (is %d, need %d unused)\n
+%s: suffix finder tsc/B: read %.0f stamp %.0f post %.0f\n
+%s: tree searches %.2f/B, visits %.1f per search\n
 %s: unable to find %s in '%s'\n
 %s: unable to grow count by %u (currently %u)\n
 %s: unable to load '%s', error %d\n
@@ -430,6 +434,7 @@ $xmm9
 ( %u: max procs %u, active proc %u, active mask 0x%llx )
 ( cubGap & 15 ) == 0
 (%d,%d)
+(-AVX512) 
 (Missing)
 (None)
 (Unaccounted)
@@ -456,6 +461,7 @@ $xmm9
 , %uP/%uE cores
 , Frequency: %.01f %s
 , SMT/HT index %d
+, core complex %u, scheduling class %u
 , efficiency class %lld
 , max frequency %.01f %s
 , peak commit: 
@@ -477,17 +483,28 @@ $xmm9
 --------------\n%3i convars/concommands for [%s]\n
 --------------\n%3i total convars/concommands\n
 -. +0123456789.
+-H -l 0.6 -w 24 -F 0 -e 5 -d 1 -h 20 -n 64 -p 0 -u 384 -f
+-H -l 0.6 -w 24 -F 1 -e 4 -r 4 -d 16 -h 18 -n 256 -p 0 -u 384 -f
+-H -l 0.6 -w 24 -F 2 -e 4 -r 5 -d 32 -h 18 -n 256 -p 0 -3 -g 20 -u 384 -f
+-H -l 0.6 -w 24 -k 1 -p 1 -L 4 -m row -r 5 -d 32 -e 4 -3 -g 20 -n 256 -W 1 -q 0.5 -2
+-H -l 0.6 -w 24 -k 2 -A 4 -p 1 -L 4 -m bt -d 16 -n 256 -C 32 -W 1 -q 0.5 -2 -K 1 -Z 1024
+-H -l 0.6 -w 24 -k 4 -A 4 -p 1 -L 4 -m bt -d 32 -n 256 -C 32 -W 1 -q 0.5 -2 -Z 1024
+-H -l 0.6 -w 27 -d 16 -n 999 -k 4 -K 1 -p 1 -L 64 -A 8 -E 4 -G 4 -C 32 -W 1 -q 0.5 -2
+-H -l 0.6 -w 27 -d 32 -n 999 -k 5 -K 2 -p 2 -L 64 -A 8 -E 4 -G 4 -W 1 -q 0.5 -2
+-P (command position context) is not supported by the table relax
 -RestartSelfFromAlternateLocation_RelaunchTime
 -abandoned
 -assert
 -assert_content
 -attachtodebugger
+-b: 1..256 KB
 -breakimmediately
 -cached
 -error
 -extended
 -inf
 -noautoargs
+-r: 4, 5 or 6
 -retire
 -rollback
 -testscript
@@ -502,12 +519,14 @@ $xmm9
 ..........| 
 .........| 
 .00cfg
+.?AUCBatchCopies@?1??ParallelForSharedCode@@YAXHHPEBDAEBV?$function@$$A6AXHH@Z@std@@HHW4JobPriority_t@@@Z@
+.?AUCExecMultiWorkerJob@@
 .?AUConcurrentQueueProducerTypelessBase@details@moodycamel@@
 .?AUEnumerateAbsPathsInDirRecursiveVisitor_t@@
-.?AUImplicitProducer@?$ConcurrentQueue@PEAVCThreadedJob@@UConcurrentQueueDefaultTraits@moodycamel@@@moodycamel@@
-.?AUProducerBase@?$ConcurrentQueue@PEAVCThreadedJob@@UConcurrentQueueDefaultTraits@moodycamel@@@moodycamel@@
+.?AUImplicitProducer@?$ConcurrentQueue@PEAVCThreadedJobSource@@UConcurrentQueueDefaultTraits@moodycamel@@@moodycamel@@
+.?AUProducerBase@?$ConcurrentQueue@PEAVCThreadedJobSource@@UConcurrentQueueDefaultTraits@moodycamel@@@moodycamel@@
 .?AU_Crt_new_delete@std@@
-.?AV<lambda_1>@?3??StopThreads@CThreadPool@@AEAAX_N@Z@
+.?AV<lambda_1>@?1???R0?1??StopThreads@CThreadPool@@AEAAXXZ@QEBA@PEBVCJobThread@@@Z@
 .?AV<lambda_1>@?8??FiberPoolDefaultWorker@@YA_KPEAX@Z@
 .?AV?$CBaseAppSystem@VICvar@@@@
 .?AV?$CBaseAppSystem@VIProcessUtils@@@@
@@ -515,10 +534,9 @@ $xmm9
 .?AV?$CBaseAppSystem@VIUtlStringTokenSystem@@@@
 .?AV?$CConCommandMemberAccessor@VCCvar@@@@
 .?AV?$CMemPassAllocT@U?$LLA_AddAlignedSelectors@ULowLevelAllocationScheme_mimalloc@@@@@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?9??ParallelForSharedCode@@YAXHHPEBDAEBV?$function@$$A6AXHH@Z@std@@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?P@??CompressFrame@CCompressZ3@@IEAAHPEBX_KAEAVCUtlBuffer@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@HV?$CMemberFuncJobItemProcessor@HVCCallQueue@@V1@@@$00@@@@
 .?AV?$CRefCountServiceBase@VCRefMT@@@@
-.?AV?$CRefCounted1@VIRefCounted@@V?$CRefCountServiceBase@VCRefMT@@@@@@
 .?AV?$CRefCounted1@VIThreadPool@@V?$CRefCountServiceBase@VCRefMT@@@@@@
 .?AV?$CStdMemAlloc@UMemConfig_t@@@@
 .?AV?$CTier0AppSystem@VICvar@@$0A@@@
@@ -526,8 +544,13 @@ $xmm9
 .?AV?$CTier0AppSystem@VITestScriptMgr@@$0A@@@
 .?AV?$CTier0AppSystem@VIUtlStringTokenSystem@@$0A@@@
 .?AV?$_Func_base@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?3??StopThreads@CThreadPool@@AEAAX_N@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1??StopThreads@CThreadPool@@AEAAXXZ@QEBA@PEBVCJobThread@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?8??FiberPoolDefaultWorker@@YA_KPEAX@Z@X$$V@std@@
+.?AV?$_Ref_count_obj2@UState@BinaryTree@parse@isa_avx2@z3@@@std@@
+.?AV?$_Ref_count_obj2@UState@FastFinder@parse@isa_avx2@z3@@@std@@
+.?AV?$_Ref_count_obj2@USuffixTree@parse@isa_avx2@z3@@@std@@
+.?AV?$_Ref_count_obj2@V?$vector@UNode3@SuffixTree@parse@isa_avx2@z3@@V?$allocator@UNode3@SuffixTree@parse@isa_avx2@z3@@@std@@@std@@@std@@
+.?AV?$_Ref_count_obj2@VPrefixCache@parse@isa_avx2@z3@@@std@@
 .?AV?$format_facet@Vlocale@std@@@v12@fmt@@
 .?AV?$numpunct@D@std@@
 .?AVCAsyncScheduledFunctionManager@@
@@ -542,7 +565,6 @@ $xmm9
 .?AVCDefaultLoggingResponsePolicy@@
 .?AVCDisposableKeyValuesSystem@@
 .?AVCDmSymbolTableLarge@@
-.?AVCExecMultiWorkerJob@@
 .?AVCFiberJobPool@@
 .?AVCFiberPoolDefaultWorker@?1??FiberPoolDefaultWorker@@YA_KPEAX@Z@
 .?AVCGlobalThreadPool@@
@@ -577,6 +599,7 @@ $xmm9
 .?AVCThreadPool@@
 .?AVCThreadedDependentJob@@
 .?AVCThreadedJob@@
+.?AVCThreadedJobSource@@
 .?AVCThreadedJobWithDependencies@@
 .?AVCThreadedTraverseJob_FastWin32@@
 .?AVCUtlBufferFormatOutputStream@@
@@ -639,6 +662,7 @@ $xmm9
 .?AV_Facet_base@std@@
 .?AV_Generic_error_category@std@@
 .?AV_Locimp@locale@std@@
+.?AV_Ref_count_base@std@@
 .?AV_System_error@std@@
 .?AV__non_rtti_object@std@@
 .?AVbad_alloc@std@@
@@ -651,6 +675,7 @@ $xmm9
 .?AVexception@std@@
 .?AVfacet@locale@std@@
 .?AVformat_error@v12@fmt@@
+.?AVinvalid_argument@std@@
 .?AVlength_error@std@@
 .?AVlogic_error@std@@
 .?AVout_of_range@std@@
@@ -749,6 +774,7 @@ $xmm9
 0 0 0
 0 0 0 0
 0 0 0 255
+0.9.0
 00000000-0000-0000-0000-000000000000
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789ABCDEF
@@ -763,10 +789,13 @@ $xmm9
 1#SNAN
 1.2.11
 127.0.0.1
+18446744073709551615
 1DBlend
 4\tgA
 4^K\fOI
 64-bit DWARF format is not supported\n
+6HK*\n
+9223372036854775808
 : proc group %u:%u, physical ID %d, core ID %d
 ::<lambda_
 ::string literal
@@ -774,7 +803,6 @@ $xmm9
 ;BIb?
 ;srv*http://symbols/windows
 <!-- kv3 encoding:%s:version{%s} format:%s:version{%s} -->\n
-<!-- schema 
 </link>
 </script>
 << NULL >>\n
@@ -806,6 +834,7 @@ $xmm9
 <unknown>
 >::operator ()
 ?0123456789ABCDEF~~~~~~~~~~~~~~~~
+?333333
 ??0?$CUniformRandomStreamImpl@VCAtomicMutex@@@@QEAA@H@Z
 ??0?$CUniformRandomStreamImpl@VCAtomicMutex@@@@QEAA@XZ
 ??0?$CUniformRandomStreamImpl@VCThreadNullMutex@@@@QEAA@H@Z
@@ -1082,7 +1111,7 @@ $xmm9
 ??_FCUtlBuffer@@QEAAXXZ
 ??_FCUtlInplaceBuffer@@QEAAXXZ
 ??_FCUtlSymbolTable@@QEAAXXZ
-?Abort@CThreadedJob@@QEAA?AW4JobStatus_t@@_N@Z
+?Abort@CThreadedJob@@QEAA_N_N@Z
 ?AbortJob@CFiber@@QEAA_NPEAX@Z
 ?AbsPath@CUtlString@@QEBA?AV1@PEBD@Z
 ?Access@CMemoryStack@@QEAAXPEAPEAXPEAI@Z
@@ -1337,7 +1366,6 @@ $xmm9
 ?FindElfVirtualSize@CModuleListSnapshot@@SA_KPEAX_K11@Z
 ?FindElfVirtualSize@CModuleListSnapshot@@SA_KPEBX_K1@Z
 ?FindEntry@CEnvironmentBlock@@QEBAHPEBDPEAPEBD_N@Z
-?FindFileName@CUtlFilenameSymbolTable@@QEBAIPEBD@Z
 ?FindInsertionPoint@CEventDispatcher_Base@@IEAAHAEBV?$CUtlVector@UEventListenerInfo_t@CEventDispatcher_Base@@HV?$CUtlVectorMemory_Growable@UEventListenerInfo_t@CEventDispatcher_Base@@H$0A@@@@@H@Z
 ?FindKey@KeyValues@@QEAAPEAV1@PEBD_N@Z
 ?FindKey@KeyValues@@QEAAPEAV1@VHKeySymbol@@@Z
@@ -1348,7 +1376,6 @@ $xmm9
 ?FindMachoVirtualSize@CModuleListSnapshot@@SA_KPEBX_K1@Z
 ?FindModuleVirtualSize@CModuleListSnapshot@@SA_KPEBX_K@Z
 ?FindNode@CVProfile@@QEAAPEAVCVProfNode@@PEAV2@PEBD@Z
-?FindOrAddFileName@CUtlFilenameSymbolTable@@QEAAIPEBD@Z
 ?FindOrCreateChild@CVProfNode@@QEAAPEAV1@PEBDAEAUVProfBudgetGroupCallSite@@AEBVCUtlSourceLocation@@@Z
 ?FindOrCreateCounter@CVProfile@@QEAAPEA_KPEBDW4CounterGroup_t@@@Z
 ?FindScopeForThreadHandle@CThreadLocalScope@@SAPEAV1@PEAUThreadHandle_t__@@@Z
@@ -1923,7 +1950,6 @@ $xmm9
 ?Remove@CDeferredCallStackMarker@@QEAAXXZ
 ?Remove@CEnvironmentBlock@@QEAA_NPEBD@Z
 ?Remove@CUtlString@@QEBA?AV1@PEBD_N@Z
-?RemoveAll@CUtlFilenameSymbolTable@@QEAAXXZ
 ?RemoveAll@CUtlSymbolTable@@QEAAXXZ
 ?RemoveAt@CBufferString@@QEAAPEBDHH@Z
 ?RemoveAtUTF8@CBufferString@@QEAAPEBDHH@Z
@@ -1981,7 +2007,6 @@ $xmm9
 ?ResolveUint64Value@CKeyValues_Data@@IEBA_KXZ
 ?ResolveWStringValue@CKeyValues_Data@@IEBAPEB_WXZ
 ?RestoreFromBuffer@CCountedStringPool_CI@@QEAA_NAEAVCUtlBuffer@@@Z
-?RestoreFromBuffer@CUtlFilenameSymbolTable@@QEAA_NAEAVCUtlBuffer@@@Z
 ?RestoreFromBuffer@CUtlSymbolTable@@QEAA_NAEAVCUtlBuffer@@@Z
 ?Resume@CThread@@QEAAIXZ
 ?Resume@CVProfNode@@QEAAXXZ
@@ -2019,7 +2044,6 @@ $xmm9
 ?SaveKV3Text_ToString@@YA_NAEBUKV3ID_t@@PEBVKeyValues3@@PEAVCUtlString@@PEAVCBufferString@@I@Z
 ?SaveKV3ToFile@@YA_NAEBUKV3ID_t@@0PEBVKeyValues3@@PEAVCUtlString@@PEBD3I@Z
 ?SaveToBuffer@CCountedStringPool_CI@@QEBA_NAEAVCUtlBuffer@@@Z
-?SaveToBuffer@CUtlFilenameSymbolTable@@QEAA_NAEAVCUtlBuffer@@@Z
 ?SaveToBuffer@CUtlSymbolTable@@QEBA_NAEAVCUtlBuffer@@@Z
 ?SaveToFile@KeyValues@@QEAA_NPEAVIFileSystem@@PEBD1_N2@Z
 ?Scanf@CUtlBuffer@@QEAAHPEBDZZ
@@ -2114,6 +2138,7 @@ $xmm9
 ?ShutdownInstance@CSingleAppInstance@@QEAAXXZ
 ?SignHash@Blake3SignedHash_t@@QEAAXPEBD@Z
 ?Signal@CThreadMultiWaitObject@@QEAAXXZ
+?SignalEventMonitor@CThreadedJobSource@@KAXPEAV1@@Z
 ?SimpleSpew@CGridStringPrinter@@QEBAXHPEBD@Z
 ?SimpleSpewColor@CGridStringPrinter@@QEBAXHAEBVColor@@PEBD@Z
 ?Sleep@CThread@@SAXI@Z
@@ -2122,7 +2147,6 @@ $xmm9
 ?Spew@CGridStringPrinter@@QEBAXHPEBD@Z
 ?SpewStats@CUtlLRUCacheBase@@SAXXZ
 ?SpewStrings@CCountedStringPool_CI@@QEBAXXZ
-?SpewStrings@CUtlFilenameSymbolTable@@QEAAXXZ
 ?Split@CSplitString@@AEAAXPEBDHPEAPEBDH_N@Z
 ?SplitCommands@CCommandBuffer@@SAXPEBDHPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z
 ?SplitPathAndPattern@CDirIterator@@IEAA_NPEBDPEAVCUtlString@@1@Z
@@ -2141,8 +2165,6 @@ $xmm9
 ?Stop@CVProfile@@QEAAXXZ
 ?StrAppendFormat@CBufferString@@QEAAPEBDPEBDZZ
 ?StrFormat@CBufferString@@QEAAPEBDPEBDZZ
-?String@CUtlFilenameSymbolTable@@QEAA_NAEBIPEADH@Z
-?String@CUtlFilenameSymbolTable@@QEAA_NAEBIPEAVCBufferString@@@Z
 ?String@CUtlSymbolTable@@QEBAPEBDVCUtlSymbol@@@Z
 ?StripExtension@CBufferString@@QEAAPEBD_N@Z
 ?StripExtension@CUtlString@@QEBA?AV1@XZ
@@ -2328,6 +2350,7 @@ $xmm9
 ?WriteAsBinary@KVPacker@@QEAA_NPEAVKeyValues@@AEAVCUtlBuffer@@@Z
 ?WriteAsBinary@KeyValues@@QEBA_NAEAVCUtlBuffer@@@Z
 ?WriteAsBinaryFiltered@KeyValues@@QEAA_NAEAVCUtlBuffer@@@Z
+?WriteJsonReport@CVProfile@@QEAA_NPEBD@Z
 ?WriteStructDescription@CStackStatsStructInfo@@QEAA_KPEAE_K@Z
 ?WriteToFile@CUtlBuffer@@QEAA_NPEBD_N@Z
 ?WriteToFileIfDifferent@CUtlBuffer@@QEAA_NPEBD@Z
@@ -2336,7 +2359,10 @@ $xmm9
 ?_FooHacked_DontEverCallMe@Hack_WatchWindow_t@@SAPEBU1@PEBX@Z
 ?base64_decode@@YA_NAEAVCUtlBuffer@@AEBV1@@Z
 ?base64_encode@@YA_NAEAVCUtlBuffer@@AEBV1@@Z
+?ffffff
 ?s_iCurrentUniqueNodeID@CVProfNode@@1V?$CInterlockedIntT@H$03@@A
+@333333
+@ffffff
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 ADVAPI32.dll
@@ -2474,11 +2500,12 @@ AssetPreviewSystem_001
 AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
+AssignCoreComplexesToPerfSets
 AssignProcessToJobObject
 AssignRangeMultipler with bitcount=32!\n
 AsyncScheduledFunctions
 AttachConsole
-Attempted to add job '%s' to pool that has already been completed [status=%i]\n
+Attempted to add job '%s' to pool that has already been started or completed [state=0x%llx]\n
 August
 AuthenticAMD
 AutoLayer
@@ -2511,6 +2538,7 @@ Background Thread
 Background Threads
 Bad Shortcut
 Bad dynamic_cast!
+Bad empty binary block\n
 Bad exponent in floating point number
 Bad expression operator: '%c%c', expected C style boolean expression operator.
 Bad expression token: %c in expression "%s"
@@ -2559,6 +2587,7 @@ Break on unknown stall cause
 BreakCommand
 BreakPieceEmbedded
 BreakPieceExternal
+Breaking content into %u epochs of size %u\n
 BroadcastAssertionMiniDumpContext_t
 BroadcastAssertionMiniDumpHandler - [Invoking crashdumpmailer]\n
 Buffers extend past the end of the input (%llu bytes)\n
@@ -2574,6 +2603,7 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlrbtree.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\checksum_blake3.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\coroutine.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\fileio.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\jobthread.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\keyvalues3_kv1textwriter.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\keyvalues3_textreader.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\keyvaluessystem.cpp
@@ -2877,6 +2907,7 @@ CChoiceAnimNode
 CChoreoAnimNode
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping!\n
 CCommentAnimNode
+CCompressZ3::CompressFrame(), C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0\keyvalues3_binarywriter.cpp:1205
 CConditionBase
 CConditionBaseConstPtr
 CConditionBasePtr
@@ -3171,7 +3202,9 @@ CTestScriptMgr::LoopForNumSeconds( %s ): no loop with this name exists.
 CTestScriptMgr::StartLoop( %s ): loop already exists.
 CThreadNullVerificationMutex: Thread %llu acquiring null-mutex while thread %llu is still holding it, indicates unexpected thread-safety issue
 CThreadNullVerificationMutex::Lock
+CThreadPool::QueueJobSourceRuns
 CThreadPool::Start called and it was already initialized.
+CThreadPool::StopThreads: %s thread %d ( %s ) has not exited after %.0f seconds\n
 CThreadedDependentJob::Wait UPSTREAM %d/%d jobs
 CThreadedTraverseJobSync::WaitForAllDone
 CThreadedTraverseJob_FastWin32::CThreadedTraverseJob_FastWin32
@@ -3432,6 +3465,7 @@ Compilation units ran off the end of .debug_info\n
 Compressed entry encoding index out of range (%u)\n
 Compressed entry table is not sorted\n
 Compression unsupported for format %u\n
+Computing frequencies\n
 ConDMsg
 ConVar
 Conditional Error: %s\n
@@ -3502,6 +3536,7 @@ Coroutine_YieldToMain
 Could not execute the command:\n   %s\nOS error message:\n   "%s"\n
 Could not hand the child process off to the kill job, aborting it:\n   %s\nOS error message:\n   "%s"\n
 Could not read from pipe associated with command %s\nWindows gave the error message:\n   "%s"\n
+Couldn't create a z3 decoder
 Couldn't window icon! %s\n
 CreateCommandLine
 CreateCompatibleBitmap
@@ -3527,6 +3562,7 @@ CreateSimpleThread
 CreateSolidBrush
 CreateSymbolicLinkW
 CreateThread
+CreateToolhelp32Snapshot
 CreateUniqueId
 CreateWindowExA
 CurrentBuild
@@ -3707,6 +3743,8 @@ FAIL: !Validate()\n
 FAIL: Not all items popped\n
 FAILED
 FALSE
+FASTCOVER must have at least one input file\n
+FASTCOVER parameters incorrect\n
 FATAL
 FATAL ERROR: 
 FCMOV 
@@ -3723,15 +3761,27 @@ FF\n@acosf
 FILE
 FLOAT
 FRENCH
+FSE_normalizeCount error with litLengthCount \n
+FSE_normalizeCount error with matchLengthCount \n
+FSE_normalizeCount error with offcodeCount \n
+FSE_writeNCount error with litlengthNCount \n
+FSE_writeNCount error with matchLengthNCount \n
+FSE_writeNCount error with offcodeNCount \n
 FUNC
 FaceTo
 Facing_Heading
 Failed during call to CDirWatcher::SetDirToWatch for directory '%s'\n
 Failed to CreateFileW for '%s'
+Failed to allocate buffers: out of memory\n
+Failed to allocate frequency table \n
+Failed to allocate parameters\n
+Failed to allocate scratch buffers \n
 Failed to assign bool literal value
 Failed to convert KV3 to string; error: %s\n
 Failed to get symsrv indices\n
+Failed to initialize context\n
 Failed to parse initial ConVar '%s'[%d] from string '%s'\n
+Failed to select dictionary\n
 Failed to write
 Fatal Error
 February
@@ -3881,7 +3931,6 @@ GetFileType
 GetForegroundWindow
 GetFullPathNameW
 GetJSONCharConversion
-GetJobManualEventFromPool
 GetLRUCacheRegistry
 GetLargePageMinimum
 GetLastError
@@ -3935,6 +3984,7 @@ GetStartupInfoW
 GetStdHandle
 GetStringTypeW
 GetSymbolNameFromAddress
+GetSystemCpuSetInformation
 GetSystemInfo
 GetSystemMetrics
 GetSystemTimeAsFileTime
@@ -3980,6 +4030,7 @@ HH:MM:SS.z
 HH:mm:ss
 HIGHDPI
 HOME
+HUF_writeCTable error \n
 Hammer/GameDefaultFarZ
 HammerMapLoader001
 HasExpandedResources
@@ -4157,7 +4208,6 @@ ISolveIKChainAnimNode
 ISubGraphAnimNode
 ISubGraphManager
 ITALIAN
-I\zH6
 Ignore
 Ignore All Asserts
 Ignore For 24 Hours
@@ -4176,13 +4226,19 @@ ImageUnload
 Import_GetICVarFactory
 InDefault
 Incomplete binary block: blob %i/%i, ret=%zx, input %u/%u\n
+Incomplete binary block: output %u/%u bytes, input %u/%u bytes, %s\n
 Incomplete binary block: output %u/%u bytes, input %u/%u bytes\n
+Incorrect accel\n
+Incorrect k\n
+Incorrect splitPoint\n
 Indicate to a test script that a checkpoint has been reached
 Indirect FDE pointer encoding is not supported\n
 Inflow_
 Inflow_Generic
 Inflow_Method
 InitMiniDumpReportOptions
+InitOnceBeginInitialize
+InitOnceComplete
 InitWin32ConsoleColorContext
 Initial CFA instructions advance location\n
 InitializeConditionVariable
@@ -4254,6 +4310,7 @@ Invalid line header segment size\n
 Invalid line header size\n
 Invalid low PC value 0x%llx (base 0x%llx)\n
 Invalid member name '%s'
+Invalid number "%s"
 Invalid number (%u) of fat binary architectures\n
 Invalid number starting with '%s'
 Invalid personality array block location (0x%x : 0x%x)\n
@@ -4301,6 +4358,7 @@ JSON error, unterminated element:
 JanFebMarAprMayJunJulAugSepOctNovDec
 January
 JmpToAlternateStack
+JobSource
 Jobs/Coroutines
 July
 June
@@ -4356,7 +4414,6 @@ Line %d at "%s": %s
 Line %d: 
 Line %d: %s
 Line %d: Invalid literal value "%s"
-Line %d: Invalid value "%s"
 Line info at 0x%x refers to non-existent CU, ignoring\n
 LinearDelta
 Linkage name without string value\n
@@ -4607,6 +4664,7 @@ Not enough data for compilation unit header\n
 Not enough data for compilation unit size\n
 Not enough data for line set header\n
 Not enough data for value
+Not enough memory \n
 Not enough string data for string table
 Notes: 
 November
@@ -4616,6 +4674,7 @@ NtDelayExecution
 NtQueryDirectoryFile
 NtQueryInformationThread
 NtQuerySystemInformation
+Number "%s" is too large for a double
 Number contains invalid character 0x%02x
 Number contains invalid character 0x%02x ('%c')
 NvOptimusEnablement
@@ -4625,6 +4684,7 @@ OSTypesAreCompatible
 OVERRIDE_MINIDUMP_PATH
 October
 Offset
+Offset Code Frequencies : \n
 Ole32.dll
 OnCanceled
 OnFailedToPerform
@@ -4768,7 +4828,6 @@ Peak working set: %s\n
 PeekMessageA
 PeekNamedPipe
 PerFrameTest_Basic
-PerFrameTest_OnlyPerFrameExecuted
 PhysicsBodyMarkup
 PhysicsBoneMarkup
 PhysicsBuilderMgr001
@@ -4928,6 +4987,7 @@ Plat_IsRunningOnCustomerMachine
 Plat_IsSafeToLoadModules
 Plat_IsScreenKeyboardShown
 Plat_IsSymlink
+Plat_IsUnderTestMonitor
 Plat_IsWindowFocused
 Plat_IsWindowMinimized
 Plat_IsWindowVisible
@@ -5058,6 +5118,8 @@ PreviewPreset
 PreviewPresetList
 Primary_Handler_Crashed
 Print the current number of FDs reported by getrlimit
+Process32FirstW
+Process32NextW
 ProductName
 Program launched from bad shortcut. Please delete this shortcut or unpin from the taskbar.
 PropVariantClear
@@ -5076,6 +5138,8 @@ QueryDirectoryFile
 QueryDirectoryFile for '%s' failed with NTSTATUS %ld
 QueryPerformanceCounter
 QueryPerformanceFrequency
+QueueJobSourceRuns: %d runs for '%s'
+QueueJobSourceRuns: '%s' would be owed %d runs
 QueueUserAPC
 RDTSC 
 RDTSCP 
@@ -5199,7 +5263,6 @@ RestartSelf_TestIfInternalArg
 RestoreWin32ConsoleColor
 Restoring saved stack over RestoreStackFrame (%p, %p, %p, %p)\n
 ResumeThread
-ReturnJobManualEventToPool
 RoInitialize
 RoUninitialize
 Root
@@ -5220,6 +5283,7 @@ RunThreadPoolPerFrameTests
 RunThreadPoolTests
 RunWithAlternateStack
 Running %s...\n
+S@ffffff,@
 SCHINESE
 SDL.window.create.flags
 SDL.window.create.height
@@ -5475,6 +5539,7 @@ Server Physics
 Server Simulation
 ServerEntity
 ServerPointEntity
+ServerPointPulseEntity
 ServerToolsInfo_001
 Set '%s' cache to size %d\n
 Set the color of a logging channel.
@@ -5765,6 +5830,7 @@ Test_Wait
 Test_Wait: requires seconds parameter.
 Test_WaitForCheckPoint
 Test_WaitForCheckPoint <checkpoint name> [once]: requires checkpoint name.
+Testing on %u samples of total size %u\n
 Tests done, purging test memory...
 TextLayout_001
 The specific type '%s' cannot be persisted
@@ -5798,18 +5864,15 @@ ThreadMultiWaitObjectSetDestroy
 ThreadMultiWaitObjectSetGetCount
 ThreadNanoSleep
 ThreadOpenProcess
-ThreadPoolTest:         %d threads -- %d (%d) jobs processed in %fms, %fms to suspend (%f/%f)\n
+ThreadPoolTest:         %d threads -- %d (%d) jobs processed in %fms (%fms per job)\n
 ThreadPoolTest:     NO Sleep\n
 ThreadPoolTest:   NOT to completion\n
-ThreadPoolTest:   Non-per-frame jobs executed by the time the per-frame jobs finished: %d (main thread: %d)\n
-ThreadPoolTest:   Per-frame jobs executed: %d (main thread: %d)\n
 ThreadPoolTest:   To completion\n
 ThreadPoolTest: ===== RunThreadPoolPerFrame Tests Complete =====\n\n
 ThreadPoolTest: Job distribution speed\n
 ThreadPoolTest: Jobs doing work, %s main thread\n
 ThreadPoolTest: YieldWaitPerFrameJobs - Basic test\n
 ThreadPoolTest: YieldWaitPerFrameJobs - Dynamic spawn test\n
-ThreadPoolTest: YieldWaitPerFrameJobs - Only per-frame jobs executed by main thread\n
 ThreadReadProcessMemory
 ThreadSetDebugNameS2
 ThreadSetPerfSetAffinity
@@ -5874,10 +5937,14 @@ ToolsStallMonitor_SetDisplayImageRGBA
 ToolsStallMonitor_SetMainThreadWindow
 ToolsStallMonitor_Shutdown
 Total logical processors: %u\n
+Total number of testing samples is %u and is invalid.\n
+Total number of training samples is %u and is invalid\n
+Total samples size is too large (%u MB), maximum size is %u MB\n
 Total virtual bytes: %s\n
 TracingFlags
 Trailing Data
 Trailing space on executable name! This will cause Application Verifier and ETW Heap tracing to fail!\n
+Training on %u samples of total size %u\n
 TransferMemory
 Transform
 TranslateMessage
@@ -5885,6 +5952,7 @@ TranslateStackInfo
 TrimRight
 Truncated data
 TryAcquireSRWLockExclusive
+Trying %u different sets of parameters\n
 Tuesday
 Two Bone
 Two KV3 format GUIDs with the same human-friendly name ('%s')
@@ -6026,6 +6094,7 @@ VALVE-MODULE-DEBUG-%08X
 VALVE_ASSERT_DIALOG_HOTKEYS
 VALVE_CLOCK_SPEED_CALCULATION
 VALVE_TESTMODE
+VALVE_TEST_MONITOR_PROCESS
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -6065,7 +6134,7 @@ VProfLite stopped.\n
 VProfLite_Clear
 VProfLite_DedicatedServerSleepBegin
 VProfLite_DedicatedServerSleepEnd
-VProfLite_GetBudgetGroupCurrentFrameStats
+VProfLite_GetBudgetGroupLastFrameStats
 VProfLite_GetEnabled
 VProfLite_GetHistoricalData
 VProfLite_NextFrame
@@ -6270,9 +6339,7 @@ V_XMLDecode
 V_XMLEncode
 V_XXH64
 V_XXH64_copyState
-V_XXH64_createState
 V_XXH64_digest
-V_XXH64_freeState
 V_XXH64_reset
 V_XXH64_update
 V_ZSTD_DStreamInSize
@@ -6296,6 +6363,7 @@ V_ZSTD_getFrameContentSize
 V_ZSTD_initDStream
 V_ZSTD_isError
 V_ZSTD_maxCLevel
+V_ZSTD_minCLevel
 V_abort
 V_acosd
 V_acosf
@@ -6490,6 +6558,51 @@ V_wcsnicmp_cch
 V_wcstod
 V_wcstoi64
 V_wcstoui64
+V_z3_cctx_ref_cdict
+V_z3_cctx_reset
+V_z3_cctx_reset_session
+V_z3_cctx_set_parameter
+V_z3_cctx_set_pledged_src_size
+V_z3_cjob_help
+V_z3_cjob_wait
+V_z3_compress
+V_z3_compress2
+V_z3_compress_bound
+V_z3_compress_stream2
+V_z3_compress_stream2_simple_args
+V_z3_compress_using_cdict
+V_z3_cpu_level
+V_z3_create_cctx
+V_z3_create_cdict
+V_z3_create_cjob
+V_z3_create_dctx
+V_z3_create_ddict
+V_z3_dctx_ref_ddict
+V_z3_dctx_reset_session
+V_z3_dctx_set_parameter
+V_z3_decompress
+V_z3_decompress_dctx
+V_z3_decompress_stream
+V_z3_decompress_stream_simple_args
+V_z3_decompress_using_ddict
+V_z3_estimate_dctx_size
+V_z3_estimate_ddict_size
+V_z3_estimate_dstream_size
+V_z3_estimate_dstream_size_from_frame
+V_z3_free_cctx
+V_z3_free_cdict
+V_z3_free_cjob
+V_z3_free_dctx
+V_z3_free_ddict
+V_z3_get_dict_id
+V_z3_get_dict_id_from_frame
+V_z3_get_error_code
+V_z3_get_error_name
+V_z3_get_frame_content_size
+V_z3_is_error
+V_z3_train_dictionary
+V_z3_version_number
+V_z3_version_string
 ValidateStringFormatSpecifiers
 Value_Generic
 Valve.Source
@@ -6517,7 +6630,6 @@ VisibilityInputs
 VoidFnPtrLookup_Tier0
 Vrad3_001
 VtuneApi32e.dll
-W)lQ
 W4vC
 WARNING
 WARNING: %s Denied a request to load '%s'\n
@@ -6530,6 +6642,7 @@ WARNING: Path suffix '%s' cannot be prefixed with '%s'\n
 WARNING: Suffix '%s' is a current-drive-root path (has a leading slash), cannot be prefixed with '%s'. Is the leading slash intentional and necessary?\n
 WARNING: Suffix '%s' is a drive-relative path, cannot be prefixed with '%s'\n
 WARNING: Suffix '%s' is an absolute path, cannot be prefixed with '%s'\n
+WARNING: The maximum dictionary size %u is too large compared to the source size %u! size(source)/size(dictionary) = %f, but it should be >= 10! This may lead to a subpar dictionary! We recommend training on sources at least 10x, and preferably 100x the size of the dictionary! \n
 WARNING: Unable to build frame unwind table for FDE at 0x%x\n
 WARNING: Unable to copy '%s' into symbol cache at '%s', error %u\n
 WARNING: Unable to initialize verifier allocator\n
@@ -6553,6 +6666,7 @@ WaitForDebugEvent
 WaitForMultiple: %d exceeded maximum of %d\n
 WaitForMultipleObjects
 WaitForSingleObject
+WaitForSingleObjectEx
 WaitOnAddress
 WakeAllConditionVariable
 WakeByAddressAll
@@ -6652,24 +6766,58 @@ ZwSetTimerResolution
 \bin\win64
 \bin\win64\tools
 \gc.exe
-\n \n!\n"\n#\n$\n%\n&\n'\n(\n)\n*\n+\n,\n-\n.\n/\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n:\n;\n<\n=\n>\n?\n@\ntier0.dll
+\n  complex %u: %u cores, %u KB L3, best scheduling class %u, %s
+\n \n!\n"\n#\n$\n%\n&\n'\n(\n)\n*\n+\n,\n-\n.\n/\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n:\n;\n<\n=\n>\n?\n@\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\n[\n\\n]\n^\n_\n`\na\nb\nc\nd\ne\nf\ntier0.dll
 \n%.3f: Testing %d threads:\n
 \n%d total counted strings.
 \nAbortMessage({
 \nConsole History (reversed)\n\n
+\nCore complexes, best first:
 \nLightweight verifier:\n
 \nOS memory stats:\n
 \nThreadPoolTest: ===== RunThreadPoolPerFrame Tests =====\n
 \n\nCMiniDumpComment encountered an error while generating the comment
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\n\n\n
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\n\n\n\n
+\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
 \n\t\n\n\n\v\n\f\n\r\n
+\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\r%70s\r
+\r%79s\r
+\r%u%%       
 \sdktools\bin
 \sdktools\bin\win32
 \sdktools\bin\win64
 \src\devtools\bin\
 \sym
 \system32\
+\t\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\n\v\v\v\v\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\t\n\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\t\n\t\n\v\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\t\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\t\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\t\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
 \u must be followed by exactly 4 hex digits
 \u0000
+\v\v\v\v\v\v\v\n\n\n\n\n\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\n\n\n\n\n\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\n\n\n\n\v\n\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\n\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\n\n\n\n\n\n\n\n\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
+\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v
 \v_dbghelp_home_linked
 \v_dbghelp_home_unlinked
 _%d_%02d%02d_%02d%02d%02d_%d
@@ -6880,6 +7028,7 @@ attributeAware
 auto
 auto_unragdoll_duration
 autoargs
+avx2
 bForceLookAtPath
 bKill
 bReacquireAfterBreak
@@ -6893,6 +7042,7 @@ bad file descriptor
 bad function call
 bad locale name
 bad message
+bad value for 
 base64_decode
 base64_encode
 bcrypt.dll
@@ -6901,6 +7051,7 @@ bin\win64\tier0.dll
 binary_auto
 binary_blob
 binary_lz4
+binary_z3
 binary_zstd
 blendamount
 block   
@@ -6933,6 +7084,7 @@ burst_scale
 c:\source2_minidump_log.txt
 cable
 cache*
+calls
 cannot commit OS memory (error: %d (0x%x), address: %p, size: 0x%zx bytes)\n
 cannot decommit OS memory (error: %d (0x%x), address: %p, size: 0x%zx bytes)\n
 cannot enable large OS page support, error %lu\n
@@ -6944,6 +7096,7 @@ cantdie
 carry_type
 ceil
 center
+chain
 channels
 char
 char16_t
@@ -6979,9 +7132,11 @@ consoleonly
 const
 constrainedEventID
 construction virtual table for derived 
+content checksum mismatch
 content_assertion
 control_point
 coroutine.m_pStackHigh <= coroutinePrev.m_pStackHigh
+corrupt or not a z3 frame
 corrupted meta-data in thread-free list\n
 corrupted thread-free list (possibly due to a cross-thread double free)\n
 cosf
@@ -6999,9 +7154,11 @@ curve
 cvar list\n--------------\n
 cvarlist
 cvarlist: [ partial ]\n
+d=%u\n
 damage
 darwin
 darwin\
+data
 datatypemisalignment
 dbghelp .sym symbols
 dbghelp COFF symbols
@@ -7043,11 +7200,14 @@ deprecated_page_reset
 deprecated_segment_cache
 deprecated_segment_reset
 destination address required
+destination buffer too small
 destroy_on_exit
 detailed
 developer
 device or resource busy
 devonly
+dictBufferCapacity must be at least %u\n
+dictionary corrupt
 diff buff needs increase
 diff buffer overrun
 differences
@@ -7085,6 +7245,7 @@ eager_commit_delay
 eager_region_commit
 eh_frame
 ehandle
+ehandle_serialize
 elapsed
 emitFromWorld
 empty search name, failing\n
@@ -7131,6 +7292,14 @@ failed to reserve %zu GiB huge pages\n
 failed to reserve %zu KiB memory\n
 failed\n
 false
+fast
+fast1
+fast2
+fast3
+fast4
+fast5
+fast6
+fast7
 file
 file exists
 file index mismatch\n
@@ -7168,6 +7337,9 @@ format
 format specifier requires numeric argument
 found at %s\n
 frame
+frame needs a dictionary
+frame needs another dictionary
+frame window larger than the decoder may keep
 frame_end
 free
 frexp
@@ -7232,6 +7404,7 @@ heap stats
 help
 help text
 help:  no cvar or command named %s\n
+high
 hljztL
 holdevent
 host unreachable
@@ -7253,14 +7426,21 @@ incorrect length check
 incremental_shapes
 inherit_owner_joints
 inity
+input size differs from the pledged size
+input too large
+input too large for the suffix finder
+instruction
 int( %d = 0x%X )
 int16
 int32
 int64
 int8
 intdividebyzero
+internal error: bad match at 
+internal error: block overrun
 internal error: failed to visit all abandoned segments due to failure to acquire the OS visitor lock
 internal error: failed to visit all abandoned segments due to failure to acquire the visitor lock
+internal error: the parse does not reproduce the source
 interrupted
 intoverflow
 invalid
@@ -7280,7 +7460,12 @@ invalid literal/length code
 invalid literal/lengths set
 invalid precision
 invalid seek
+invalid stof argument
+invalid stoi argument
 invalid stored block lengths
+invalid stoul argument
+invalid stoull argument
+invalid string position
 invalid string_view position
 invalid window size
 invalid_parameter
@@ -7292,12 +7477,14 @@ is_debris
 is_ragdoll
 item->next != nullptr
 jointWeightWeight
+k=%u\n
 kernel32.dll
 kernelbase.dll
 large_os_pages
 ldexp
 length
 lerp_curve
+libsais failed
 limit_os_alloc
 linked
 linux
@@ -7674,7 +7861,6 @@ m_flRadiusMax
 m_flRadiusMin
 m_flRadiusRandExponent
 m_flRadiusScale
-m_flRadiusScaleFOVBase
 m_flRadiusTaper
 m_flRandomMax
 m_flRandomMin
@@ -7920,6 +8106,7 @@ mimalloc_
 min %s
 min_angle
 missing '}' in format string
+missing value for 
 mmaps
 model
 model_name
@@ -7969,12 +8156,15 @@ modf
 moredetailed
 moveto
 multiplayer_break
+n<!-- schema 
 nBits != 32
 nInterruptability
 nMax
 nMin
 nOffset < m_nAllocationSize
 nOverrideCPField
+nOwed <= INT16_MAX
+nRunCountIncrease <= INT16_MAX
 nSwitchValue
 nTries < 10000000
 name
@@ -7992,6 +8182,7 @@ next_element_id
 nexttoken
 no buffer space
 no child process
+no error
 no guard
 no link
 no lock available
@@ -8006,6 +8197,7 @@ no such device or address
 no such file or directory
 no such process
 no symbols
+nodes
 nolog
 non-virtual thunk to 
 noncontinuableexception
@@ -8019,6 +8211,7 @@ not a stream
 not all freed
 not connected
 not enough memory
+not enough space to write RepOffsets \n
 not found
 not supported
 not using
@@ -8049,6 +8242,7 @@ origin_max_delta
 origin_relative
 os_tag
 osx*
+out of memory
 out-of-memory on OS allocation, try again... (attempt %lu, 0x%zx bytes, error code: 0x%x, address: %p, alignment: 0x%zx, flags: 0x%x)\n
 owner dead
 p,xj
@@ -8070,10 +8264,12 @@ pages
 panorama
 param
 param2
+parameter out of bound
 parent_bone
 particle
 particles/
 pass\n
+path
 pdbstr -r -p:"%s" -s:srcsrv
 pdbstr -w -p:"%s" -s:srcsrv -i:"%s"
 peak   
@@ -8175,6 +8371,7 @@ scrubber
 search '
 searches
 secondary
+seconds
 secure level: %d\n
 segments
 seq-id doesn't end with '_'\n
@@ -8216,11 +8413,14 @@ sqrtf
 srv*
 srv*http:
 srv*https:
+sse2
+sse4.2
 stack buffer overrun (/GS failure)
 start_frame
 start_scale
 start_time
 state not recoverable
+statistics ... \n
 std::
 std::allocator
 std::basic_iostream< char, std::char_traits< char > >
@@ -8233,9 +8433,13 @@ steam://openurl/
 steam://openurl_external/
 steam_api64.dll
 steamid64 %llu
+stof argument out of range
+stoi argument out of range
 stop_immediately
 stop_instantly
 stop_on_seq_change
+stoul argument out of range
+stoull argument out of range
 stream timeout
 string
 string pointer is null
@@ -8269,8 +8473,10 @@ testscript_debug
 text
 text file busy
 texturescale
+the CPU lacks the instructions this needs
 the arena size is too large (memory at %p with size %zu)\n
 the arena size is too small (memory at %p with size %zu)\n
+the segment group's suffix finder failed
 thin_element_threshold
 threads
 tier0
@@ -8287,7 +8493,9 @@ tools_stall_monitor_break_on_unknown_cause
 tooltips_class32
 total   
 total#   
+total_seconds
 touched
+trace
 transaction clone for 
 transform
 true
@@ -8320,6 +8528,7 @@ unable to free OS memory (error: %d (0x%x), size: 0x%zx bytes, address: %p)\n
 unable to get file indexes\n
 unable to use secure randomness\n
 unholsterweapon
+unified
 unknown
 unknown compression method
 unknown error
@@ -8336,6 +8545,9 @@ unsigned long
 unsigned long long
 unsigned short
 unspecified
+unsupported level
+unsupported parameter
+unused
 unwind_info
 update
 use_additional_offset
@@ -8450,6 +8662,9 @@ vpcf7
 vpcf8
 vpcf9
 vpk:
+vprof: couldn't convert the JSON report for %s: %s\n
+vprof: couldn't open %s to write the JSON report\n
+vprof: wrote %d of %d bytes of the JSON report to %s\n
 vpulse
 vpulse1
 vpulse10
@@ -8481,6 +8696,9 @@ vtune
 wait
 wakeup job
 warning
+warning : ZSTD_compressBegin_usingCDict failed \n
+warning : could not compress sample size %u \n
+warning : pathological dataset : literals are not compressible : samples are noisy or too regular \n
 warning: unable to allocate hinted aligned OS memory (%zu bytes, error code: 0x%x, address: %p, alignment: %zu, flags: 0x%x)\n
 wchar_t
 weldPositionTolerance
@@ -8496,6 +8714,9 @@ wrong protocol type
 x86_64
 yaw_end
 yaw_start
+z3 compression on a KV3 binary older than v5
+z3const
+z3text
 { lambda
 { parm#
 {unnamed type

@@ -943,6 +943,7 @@ CUITextLayoutPango::GetCharacterRangeCoordinates
 CUITextLayoutPango::GetLineRangeCoordinates
 CUITextLayoutPango::HitTestPoint
 CUITextLayoutPango::Initialize
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<struct panorama::UITextLayoutCacheKey_t,struct panorama::UITextOpacityMaskData_t,class CDefEquals<struct panorama::UITextLayoutCacheKey_t>,struct panorama::UITextLayoutCacheKey_t::Hash,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<struct panorama::UITextLayoutCacheKey_t,struct panorama::UITextOpacityMaskData_t,class CDefEquals<struct panorama::UITextLayoutCacheKey_t>,struct panorama::UITextLayoutCacheKey_t::Hash,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned int,struct panorama::CUIFontLoaderLinux::FontMemory_t *,class CDefEquals<unsigned int>,struct DefaultHashFunctor<unsigned int>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned int,struct panorama::CUIFontLoaderLinux::FontMemory_t *,class CDefEquals<unsigned int>,struct DefaultHashFunctor<unsigned int>,int>::HashBucket_t,int>::AddMultipleToTail
 Camellia(128)
 Camellia(256)
@@ -1552,8 +1553,10 @@ GetCharacterRangeCoordinates
 GetConsoleCP
 GetCursorInfo
 GetLineRangeCoordinates
+GetProcessWindowStation
 GetQueueStatus
 GetSystemTime
+GetUserObjectInformationW
 GlobalMemoryStatus
 HEAD 
 HIGH
@@ -1662,6 +1665,7 @@ Mail
 Management
 MarkColorRange
 Mask Algorithm: 
+MessageBoxW
 Microsoft CSP Name
 Microsoft Commercial Code Signing
 Microsoft Encrypted File System
@@ -3194,7 +3198,6 @@ dITRedirect
 dNSDomain
 dSAQuality
 dWry
-data
 data between ccs and finished
 data greater than mod len
 data is wrong
@@ -3567,9 +3570,6 @@ functionality not supported
 g_free
 g_object_unref
 g_type_check_instance_cast
-g_unichar_break_type
-g_utf8_find_next_char
-g_utf8_get_char
 generate cryptogram
 generationQualifier
 generator:
@@ -4483,7 +4483,6 @@ otherRevInfoFormat
 othername
 othername error
 othername:<unsupported>
-out of memory
 p is not prime
 p not prime
 p.char_two
@@ -4500,6 +4499,7 @@ pagerTelephoneNumber
 pango_attr_family_new
 pango_attr_iterator_destroy
 pango_attr_iterator_get
+pango_attr_iterator_get_font
 pango_attr_iterator_next
 pango_attr_iterator_range
 pango_attr_letter_spacing_new
@@ -4518,17 +4518,21 @@ pango_attr_type_register
 pango_attr_underline_new
 pango_attr_weight_new
 pango_attribute_init
+pango_context_get_font_description
 pango_context_get_font_map
 pango_context_get_language
 pango_context_get_metrics
+pango_context_load_font
 pango_context_set_base_dir
 pango_context_set_language
 pango_extents_to_pixels
 pango_fc_font_get_type
 pango_fc_font_lock_face
 pango_fc_font_unlock_face
+pango_font_description_copy_static
 pango_font_description_free
 pango_font_description_from_string
+pango_font_description_merge
 pango_font_description_set_size
 pango_font_description_set_stretch
 pango_font_description_set_style
@@ -4551,13 +4555,15 @@ pango_ft2_render_transformed
 pango_language_from_string
 pango_layout_context_changed
 pango_layout_get_attributes
+pango_layout_get_context
 pango_layout_get_ellipsize
+pango_layout_get_extents
 pango_layout_get_font_description
 pango_layout_get_height
 pango_layout_get_iter
 pango_layout_get_line_count
 pango_layout_get_line_readonly
-pango_layout_get_pixel_extents
+pango_layout_get_lines_readonly
 pango_layout_get_text
 pango_layout_get_width
 pango_layout_get_wrap
@@ -4574,9 +4580,8 @@ pango_layout_iter_get_run_extents
 pango_layout_iter_get_run_readonly
 pango_layout_iter_next_line
 pango_layout_iter_next_run
-pango_layout_line_get_pixel_extents
+pango_layout_line_get_extents
 pango_layout_line_get_x_ranges
-pango_layout_line_x_to_index
 pango_layout_new
 pango_layout_set_alignment
 pango_layout_set_attributes

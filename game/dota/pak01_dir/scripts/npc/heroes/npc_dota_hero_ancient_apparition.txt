@@ -55,11 +55,11 @@
 		}
 
 		"Ability10"		"special_bonus_unique_ancient_apparition_7"
-		"Ability11"		"special_bonus_unique_ancient_apparition_cold_feet_dps"
-		"Ability12"		"special_bonus_unique_ancient_apparition_3"
-		"Ability13"		"special_bonus_unique_ancient_apparition_cold_feet_distance"
+		"Ability11"		"special_bonus_unique_ancient_apparition_cold_feet_distance"
+		"Ability12"		"special_bonus_unique_ancient_apparition_bone_chill"
+		"Ability13"		"special_bonus_unique_ancient_apparition_2"
 		"Ability14"		"special_bonus_unique_ancient_apparition_ice_vortex_duration"
-		"Ability15"		"special_bonus_unique_ancient_apparition_2"
+		"Ability15"		"special_bonus_unique_ancient_apparition_3"
 		"Ability16"		"special_bonus_unique_ancient_apparition_1"
 		"Ability17"		"special_bonus_unique_ancient_apparition_5"
 		
@@ -85,6 +85,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"21"
 		"AttackDamageMax"		"31"
+		"BaseAttackSpeed"		"110"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.450000"
 		"AttackAcquisitionRange"		"800"
@@ -95,7 +96,7 @@
 		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"1.900000"
 		"AttributeBaseAgility"		"20"
-		"AttributeAgilityGain"		"2"
+		"AttributeAgilityGain"		"2.0"
 		"AttributeBaseIntelligence"		"23"
 		"AttributeIntelligenceGain"		"3.100000"
 		"MovementSpeed"		"285"
@@ -274,16 +275,22 @@
 					"damage_per_second"
 					{
 						"value"													"25 45 65 85"
-						"special_bonus_unique_ancient_apparition_cold_feet_dps"	"+30"
+						//"special_bonus_unique_ancient_apparition_cold_feet_dps"	"+30"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 					}
+					"movement_slow"			"4 6 8 10"
 					"break_distance"
 					{
 						"value"		"725 750 775 800"
-						"special_bonus_unique_ancient_apparition_cold_feet_distance"	"+250"
+						"special_bonus_unique_ancient_apparition_cold_feet_distance"	"+150"
 
 					}
 					"stun_duration"			"1.8 2.2 2.6 3.0"
+					"leash"
+					{
+						"value"											"0"
+						"special_bonus_unique_ancient_apparition_3"		"+1"
+					}
 					"area_of_effect"
 					{
 						"value"											"0"
@@ -327,11 +334,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"AbilityCooldown"
-					{
-						"value"					"10 8 6 4"
-						"special_bonus_unique_ancient_apparition_3"			"-2"
-					}
+					"AbilityCooldown"				"10 8 6 4"
 					"radius"				
 					{
 						"value"			"275"
@@ -340,12 +343,13 @@
 					"drag_speed"	"40 50 60 70"
 					"movement_speed_pct"
 					{
-						"value"	"-8"
+						"value"	"-10 -15 -20 -25"
+						"special_bonus_unique_ancient_apparition_vortex_slow"		"-12"
 						"display_type"			"kDebuffPercentage"
 					}
 					"spell_resist_pct"
 					{
-						"value"		"-16 -19 -22 -25"
+						"value"		"-14 -16 -18 -20"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 						"display_type"			"kDebuffPercentage"
 					}
@@ -398,30 +402,39 @@
 			
 					"damage"
 					{
-						"value"				"35 65 95 125"
-						"special_bonus_unique_ancient_apparition_2"		"+100"
+						"value"								"40 80 120 160"
+						"special_bonus_unique_ancient_apparition_2"				"+65"
 					}
 
-					"duration"		"3"
+					"duration"								"3"
 					"slow"
 					{
 						"value"					"100"
 						"display_type"			"kDebuffPercentage"
 					}
-					"slow_duration"		"0.7 0.8 0.9 1"
+					"slow_duration"						
+					{
+						"value"											"0.7 0.8 0.9 1"
+					}
 					"attack_range_bonus"
 					{
-						"value"				"60 90 120 150"
-						"special_bonus_unique_ancient_apparition_7"		"+300"
+						"value"								"60 90 120 150"
+						"special_bonus_unique_ancient_apparition_7"				"+300"
 					}
-					"AbilityManaCost"			"35"
+					"AbilityManaCost"						"30"
 					"AbilityCooldown"				
 					{
 						"value"			"10 7.5 5 2.5"
 						"special_bonus_scepter"						"-100%"
 					}
+					"attacks_as_magic"				
+					{
+						"value"						"0"
+						"special_bonus_scepter"		"0"
+					}
 				}
 			}
+
 
 			//=================================================================================================================
 			// Ancient Apparition: Ice Blast
@@ -455,7 +468,7 @@
 		
 				// Damage.
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityDamage"					"250 325 400"
+				"AbilityDamage"					"200 300 400"
 		
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -573,11 +586,13 @@
 					"tooltip_scepter_bonus"				"0.8"
 					"str_reduction_duration"
 					{
-						"value"							"4.0"
+						"value"											"4.0"
+						//"special_bonus_unique_ancient_apparition_bone_chill"		"0"
 					}
 					"movement_slow_pct"
 					{
-						"value"					"2"
+						"value"					"0"
+						"special_bonus_unique_ancient_apparition_bone_chill"		"+2"
 						"display_type"			"kDebuffPercentage"
 					}
 				}
@@ -590,7 +605,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 				"MaxLevel"						"1"
 		

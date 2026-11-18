@@ -111,7 +111,7 @@
 		"ProjectileSpeed"		"1125"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"20"
-		"AttributeStrengthGain"		"2.5"
+		"AttributeStrengthGain"		"2.7"
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.8"
 		"AttributeBaseIntelligence"		"13"
@@ -320,7 +320,7 @@
 
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-		
+
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -334,7 +334,10 @@
 					{
 						"value"								"120.0"
 					}
-
+					"bear_attack_leash_range_tooltip"
+					{
+						"dynamic_value"		"true"
+					}
 					"bear_hp"					"1500"
 					"bear_regen_tooltip"		"1.5"
 					"bear_bat"
@@ -447,7 +450,7 @@
 				{
 						"bonus_movement_speed_druid"		
 						{
-							"value"			"10 20 30 40"
+							"value"			"15 30 45 60"
 						}
 						"bonus_movement_speed_bear"
 						{
@@ -498,7 +501,7 @@
 				{
 						"bonus_movement_speed_druid"		
 						{
-							"value"			"10 20 30 40"
+							"value"			"15 30 45 60"
 						}
 						"bonus_movement_speed_bear"
 						{
@@ -794,7 +797,6 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastPoint"				"0"
 				"MaxLevel"						"1"
-				"HasScepterUpgrade"             "1"
 	
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
@@ -816,6 +818,60 @@
 					{
 						"value"															"3"
 						"special_bonus_unique_lone_druid_spirit_bear_return_cd"			"-1.0"
+					}
+				}
+			}
+
+			//=================================================================================================================
+			// Lone Druid: Summon Lone Druid (Spirit Bear Aghanim's Scepter)
+			//=================================================================================================================
+			"lone_druid_spirit_bear_summon_druid"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilitySound"					"Hero_LoneDruid.SpiritBear.Cast"
+				"MaxLevel"						"1"
+				"IsGrantedByScepter"			"1"
+
+				// Casting
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityCastPoint"				"0.5"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+				// Cost
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityManaCost"				"100"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"					"120.0"
+					}
+
+					"summon_health_pct"
+					{
+						"value"					"100"
+					}
+					"summon_mana_pct"
+					{
+						"value"					"100"
+					}
+
+					"summon_lockout"
+					{
+						"value"					"0.5"
+					}
+					"bonus_attack_leash_range"
+					{
+						"value"					"200"
+					}
+					"attack_leash_range_tooltip"
+					{
+						"value"					"1300"
 					}
 				}
 			}

@@ -47,9 +47,9 @@
 		"Ability6"		"nevermore_requiem"
 		"Ability7"		"nevermore_necromastery"
 		"Ability10"		"special_bonus_unique_nevermore_7"
-		"Ability11"		"special_bonus_unique_nevermore_4"
+		"Ability11"		"special_bonus_unique_nevermore_frenzy_max_collection_count"
 		"Ability12"		"special_bonus_unique_nevermore_3"
-		"Ability13"		"special_bonus_unique_nevermore_frenzy_max_collection_count"
+		"Ability13"		"special_bonus_unique_nevermore_frenzy_heal_per_soul"
 		"Ability14"		"special_bonus_unique_nevermore_1"
 		"Ability15"		"special_bonus_unique_nevermore_6"
 		"Ability16"		"special_bonus_unique_nevermore_frenzy_castspeed"
@@ -260,7 +260,7 @@
 				"17"		""
 				"18"		"nevermore_requiem"
 				"19"		""
-				"20"		"special_bonus_unique_nevermore_frenzy_max_collection_count"
+				"20"		"special_bonus_unique_nevermore_frenzy_heal_per_soul"
 				"21"		""
 				"22"		""
 				"23"		""
@@ -345,7 +345,7 @@
 						"shadowraze_cooldown"	"3"
 						"stack_bonus_damage" 
 						{
-							"value"				"35 50 65 80"
+							"value"				"20 40 60 80"
 							"CalculateSpellDamageTooltip"	"0"
 							"special_bonus_unique_nevermore_7"	"+30"
 						}
@@ -421,7 +421,7 @@
 						"shadowraze_cooldown"	"3"
 						"stack_bonus_damage" 
 						{
-							"value"				"35 50 65 80"
+							"value"				"20 40 60 80"
 							"CalculateSpellDamageTooltip"	"0"
 							"special_bonus_unique_nevermore_7"	"+30"
 						}
@@ -498,7 +498,7 @@
 					"shadowraze_cooldown"	"3"
 					"stack_bonus_damage" 
 					{
-						"value"				"35 50 65 80"
+						"value"				"20 40 60 80"
 						"CalculateSpellDamageTooltip"	"0"
 						"special_bonus_unique_nevermore_7"	"+30"
 					}
@@ -615,7 +615,12 @@
 					"presence_armor_reduction"
 					{
 						"value"		"-2.5 -4 -5.5 -7"
-						"special_bonus_unique_nevermore_3"	"-1.5"
+						"special_bonus_unique_nevermore_3"	"-1"
+					}
+					"presence_magic_resistance_reduction"
+					{
+						"value"		"-4 -6 -8 -10"
+						"special_bonus_unique_nevermore_3"	"-2"
 					}
 					"presence_radius"				
 					{
@@ -657,7 +662,6 @@
 					"bonus_attack_speed"	
 					{
 						"value"			"35 50 65 80"
-						"special_bonus_unique_nevermore_4"	"+30"
 					}
 					"bonus_move_speed"	
 					{
@@ -686,9 +690,13 @@
 					{
 						"value"						"3"
 						"special_bonus_unique_nevermore_frenzy_max_collection_count"				"+2"
-
 					}
 					"soul_collection_per_creep"			"1"
+					"heal_per_soul"
+					{
+						"value"						"0"
+						"special_bonus_unique_nevermore_frenzy_heal_per_soul"		"+25"
+					}
 					"linger_duration"					"8"
 				}
 			}
@@ -745,17 +753,17 @@
 						"affected_by_aoe_increase"	"1"
 					}
 					"requiem_reduction_ms"	"-20 -25 -30"
-					"requiem_reduction_mres"	"-5 -10 -15"
+					"requiem_fear_duration"
+					{
+						"value"		"1.2 1.5 1.8"
+						"special_bonus_unique_nevermore_6" "+0.5"
+					}
 					"requiem_slow_duration"	
 					{
-						"value"		"0.6"
-						"special_bonus_unique_nevermore_6" "+0.2"
+						"value"		"1.2 1.5 1.8"
+						"special_bonus_unique_nevermore_6" "+0.5"
 					}
-					"requiem_slow_duration_max"	
-					{
-						"value"					"2.15"
-					"special_bonus_unique_nevermore_6" "+0.45"
-					}				
+					"requiem_duration_per_soul"	"0.1"
 					"requiem_soul_conversion"	"1"
 					"requiem_line_width_start"	
 					{
@@ -767,7 +775,11 @@
 						"value"			"300"
 						"affected_by_aoe_increase"	"1"
 					}
-					"requiem_line_speed"	"700 700 700"
+					"requiem_line_speed"
+					{
+						"value"		"700"
+						"special_bonus_scepter"	"+30%"
+					}
 					"soul_death_release"	"0.5"
 					"requiem_heal_pct_scepter"	
 					{

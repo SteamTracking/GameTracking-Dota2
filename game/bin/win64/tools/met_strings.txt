@@ -19,11 +19,13 @@
  %f %f %f
  %f %f %f %f
  %s=%d
+ %sArray:%d
  (*** Current ***)
  (*** Default ***)
  (Editing Disabled)
  A:%3d
  B:%3d
+ Cube
  G:%3d
  R:%3d
  Save As - Original Location 
@@ -48,12 +50,15 @@
 #endif
 #if defined(__cplusplus)
 #line
+%1 %2 : %3 of %4
 %1 (%2x%3 source)
+%1 texels = 1px
 %1%2
 %1x%2 (%3x%4)
 %s (%s,%s,%s)
 %s <small>( from %s )</small>
-%s%dx%d, Lowest:%dx%d, Mips:%d, %s, %s
+%s%0.2f
+%s%dx%d%s, Lowest:%dx%d, Mips:%d, %s, %s
 %s%s "%s"%s\n
 %s%s "%s"\n
 %s() isn't a known function.
@@ -80,15 +85,15 @@
 'return'
 (On the line reading %s):\n
 (Set via dynamic expression)
+(This surface property is hidden)
 (This surface property is only applied to geometry authored in Hammer. Model surface properties are authored directly on their hitboxes/collision.)
 (Value inherited from <tt><b>%s</b></tt>)
 (Value inherited from layer reference)
 (Value set via reference)
 (Value set)
-(unnamed)
-*** CVfx::GenerateUiFeatureHiddenRuleErrorIndices(8736): Programmer Error! NULL pointer passed into function!\n
-*** CVfx::GenerateUiFeatureHiddenRuleErrorIndices(8762): Programmer Error! Non feature rule found in feature rule array!\n
-*** CVfx::StartupSanityCheck(7535): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** CVfx::GenerateUiFeatureHiddenRuleErrorIndices(8746): Programmer Error! NULL pointer passed into function!\n
+*** CVfx::GenerateUiFeatureHiddenRuleErrorIndices(8772): Programmer Error! Non feature rule found in feature rule array!\n
+*** CVfx::StartupSanityCheck(7556): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
 *** Error adding variable to array!\n
 *** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
 *** Error! Multiple dynamic combos are putting the same constant (%s) in different descriptor sets. This won't work correctly.\n
@@ -96,13 +101,15 @@
 *** Error! Multiple dynamic combos are putting the same sampler state (%s) in different bindless sampler indices. This won't work correctly.\n
 *** Error! Multiple dynamic combos are putting the same texure (%s) in different descriptor set slots. This won't work correctly.\n
 *** Problem remapping texture reference!\n
-*** VfxPopulateSourceCache(1209): Error opening file "%s"!\n\n
-*** VfxPopulateSourceCache(1217): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForCrc(1369): Source cache incomplete, file "%s" missing!\n\n
-*** VfxReadAndPrepForCrc(1381): Error masking unused parts for "%s"!\n\n
+*** VfxPopulateSourceCache(1221): Error opening file "%s"!\n\n
+*** VfxPopulateSourceCache(1229): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1381): Source cache incomplete, file "%s" missing!\n\n
+*** VfxReadAndPrepForCrc(1393): Error masking unused parts for "%s"!\n\n
 *.vfx
 *.vmat
 *_%1.%2
+.?AUSurfacePropAttr_t@@
+.?AV<lambda_1>@?1???$DoNotDeleteReadCallback@VIReadTexturePixelsCallback@@@@YA?AV?$shared_ptr@VIReadTexturePixelsCallback@@@std@@PEAVIReadTexturePixelsCallback@@@Z@
 .?AV<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@
 .?AV?$CBaseAppSystem@VIToolSystem2@@@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??VfxDynamicShaderCompile@@YAXAEAV?$CUtlVector@UVfxDynamicShaderCompileTask_t@@HV?$CUtlVectorMemory_Growable@UVfxDynamicShaderCompileTask_t@@H$0A@@@@@PEAVIVfx@@PEAVIRuntimeShaderCreateCallbacks@@P6AXH_NH@Z@Z@@CParallelProcessLauncher@@
@@ -113,17 +120,17 @@
 .?AV?$IOpCodeHandler@H@@
 .?AV?$IOpEvaluator@H@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
-.?AV?$_Ref_count_obj2@VCMipReadCallback@CQCompiledTextureWidget@@@std@@
+.?AV?$_Ref_count_resource@PEAVIReadTexturePixelsCallback@@V<lambda_1>@?1???$DoNotDeleteReadCallback@VIReadTexturePixelsCallback@@@@YA?AV?$shared_ptr@VIReadTexturePixelsCallback@@@std@@PEAV1@@Z@@std@@
 .?AVCBaseToolSystem2@@
 .?AVCBufferedErrorLoggingResponsePolicy@@
 .?AVCBufferedLoggingListener@@
 .?AVCCompileTargetExprOpCodeHandler@@
 .?AVCCompileTargetExprStackMachineBuilder@@
+.?AVCCompiledTexturePreviewSource@@
 .?AVCDynamicShaderCompileByteCode@@
 .?AVCIntOpEvaluator@@
 .?AVCMaterialAssetSelector@@
 .?AVCMaterialEditorTool@@
-.?AVCMipReadCallback@CQCompiledTextureWidget@@
 .?AVCQAngularSpanControl@@
 .?AVCQAngularSpanPreviewWidget@@
 .?AVCQAnnotateCaptureDialog@@
@@ -158,6 +165,7 @@
 .?AVCQHeightCorrectionControl@@
 .?AVCQHeightCorrectionPreviewWidget@@
 .?AVCQHelpDialog@@
+.?AVCQHighlightDropProxyStyle@@
 .?AVCQHistorySettingsDialog@@
 .?AVCQHorizontalWidgetList@@
 .?AVCQIgnoreScrollWheelComboBox@@
@@ -185,13 +193,15 @@
 .?AVCQSurfaceProperiesValidator@@
 .?AVCQSurfacePropertiesSelectDialog@@
 .?AVCQSurfacePropertiesWidget@@
+.?AVCQSurfacePropertyBrowser@@
 .?AVCQSurfacePropertyPicker@@
+.?AVCQSurfacePropertyTreeWidget@@
 .?AVCQTabWidget@@
 .?AVCQTextureControl@@
 .?AVCQTextureImage@@
-.?AVCQTexturePreviewImage@@
 .?AVCQTexturePreviewMagnify@@
 .?AVCQTexturePreviewPopup@@
+.?AVCQTexturePreviewView@@
 .?AVCQTextureSettingsDialog@@
 .?AVCQTitledGroupBox@@
 .?AVCQUVSettingsWidget@@
@@ -203,6 +213,11 @@
 .?AVCQWidgetList@@
 .?AVCQWorldMappingWidget@@
 .?AVCSchemaRegistration_met@@
+.?AVCSliceReadCallback@CCompiledTexturePreviewSource@@
+.?AVCSurfaceProp@@
+.?AVCSurfacePropertyDoc@@
+.?AVCSurfacePropertyDocData@@
+.?AVCTexturePreview2DSource@@
 .?AVCToolSceneMaterialPreview@@
 .?AVCUtlStackMachineBuilder@@
 .?AVCVfxMaterialParamStackMachineBuilder@@
@@ -211,6 +226,8 @@
 .?AVIAssetSelectionListener@@
 .?AVIRenderShaderByteCode@@
 .?AVIShaderReloadListener@@
+.?AVITexturePreviewSource@@
+.?AVITexturePreviewSourceListener@@
 .?AVIToolFrameworkAudioSettingsListener@@
 .?AVIToolSystem2@@
 .?AVIVDataExternalToolContextProvider@@
@@ -226,10 +243,13 @@
 // THIS FILE IS AUTO-GENERATED\n
 //-------------------------------------------------\n
 0123456789)"
+07:18:16
 0=Wrap,1=Mirror,2=Clamp,3=Border,4=MirrorOnce
+1 texel = %1px
+1/%1x
 1/2/3
 128 x 128
-18:15:33
+1:1 current mip
 1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | BOOLLITERAL | ID | INTEGERLITERAL | HEXINTEGERLITERAL | FLOATLITERAL | COMMENT | WS );
 1AboutAction()
 1ChangeReferenceAction()
@@ -244,8 +264,12 @@
 1OnAccept()
 1OnAcceptClicked()
 1OnAccepted()
+1OnActiveGroupChanged()
+1OnActualSize()
 1OnAddDynamicExpressionAction()
+1OnAlphaChannelToggled( bool )
 1OnAnnotateAction()
+1OnArrayElementChanged( int )
 1OnAttributeChanged( int, int )
 1OnAttributeSelectionChanged( const QItemSelection &, const QItemSelection & )
 1OnAutoFillAction()
@@ -274,6 +298,7 @@
 1OnCollapseAllGroups()
 1OnColorAccepted( QColor )
 1OnColorChanged( QColor )
+1OnColorChannelToggled( bool )
 1OnColorLineEditingFinished()
 1OnColorPicker()
 1OnColorSampled( QColor )
@@ -283,8 +308,10 @@
 1OnCopyColor()
 1OnCopyGroupVariables()
 1OnCopyPathToClipboardAction()
+1OnCubeFaceIndexChanged( int )
 1OnCurrentColorChanged()
 1OnDefaults()
+1OnDepthChanged( int )
 1OnDetachFromReference()
 1OnDragColorOverwrite()
 1OnDragColorSwap()
@@ -344,13 +371,13 @@
 1OnResetClicked()
 1OnResetToDefaultAction()
 1OnResolutionChanged()
-1OnRestoreSize()
 1OnRevertAction()
 1OnSanitizeMaterialsAction()
 1OnSaveAction()
 1OnSaveAsAction()
 1OnSaveIntoReference()
 1OnSaveToReference()
+1OnScreenChanged( QScreen * )
 1OnSelectionChanged( const QItemSelection &, const QItemSelection & )
 1OnSetDefault()
 1OnSettingsAction()
@@ -366,6 +393,7 @@
 1OnShowPreferredShaders()
 1OnShowRawOutputAction()
 1OnShowShaderAttributes()
+1OnSingleChannelMonochrome()
 1OnSliderActionTriggered( int )
 1OnSliderReleased()
 1OnSliderValueChanged( int )
@@ -392,6 +420,7 @@
 1OnVariableChanged( void *, VariableChange_t )
 1OnVariablePopupMenuAboutToShow()
 1OnViewMenuAboutToShow()
+1OnZoomIndexChanged( int )
 1OpenAssetBrowser()
 1OpenBuildWatch()
 1OpenVConsole()
@@ -405,7 +434,7 @@
 1SaveAsAction()
 1ShaderSelectionChanged( const QItemSelection &, const QItemSelection & )
 1SkinnedModelModeChanged( int )
-1SurfacePropertiesSelectionChanged( const QItemSelection &, const QItemSelection & )
+1SurfacePropertiesSelectionChanged()
 1UpdateEditFromSlider()
 1UpdateSliderFromEdit()
 1ValidateExpression()
@@ -443,6 +472,9 @@
 2currentColorChanged( const QColor & )
 2currentTextChanged(const QString&)
 2itemDoubleClicked( QTableWidgetItem * )
+2itemDoubleClicked( QTreeWidgetItem *, int )
+2itemSelectionChanged()
+2screenChanged( QScreen * )
 2selectionChanged( const QItemSelection &, const QItemSelection & )
 2sliderPressed( )
 2splitterMoved ( int, int )
@@ -495,9 +527,9 @@
 ??0QImage@@QEAA@PEAEHHW4Format@0@P6AXPEAX@Z2@Z
 ??0QImage@@QEAA@PEBEHHW4Format@0@P6AXPEAX@Z2@Z
 ??0QKeySequence@@QEAA@AEBVQString@@W4SequenceFormat@0@@Z
-??0QPainterPath@@QEAA@XZ
 ??0QPlainTextEdit@@QEAA@PEAVQWidget@@@Z
 ??0QProgressDialog@@QEAA@AEBVQString@@0HHPEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
+??0QRect@@QEAA@AEBVQPoint@@0@Z
 ??0QSlider@@QEAA@W4Orientation@Qt@@PEAVQWidget@@@Z
 ??0QStatusBar@@QEAA@PEAVQWidget@@@Z
 ??0QValidator@@QEAA@PEAVQObject@@@Z
@@ -511,6 +543,7 @@
 ??YQString@@QEAAAEAV0@D@Z
 ??YQString@@QEAAAEAV0@VQChar@@@Z
 ?QStringList_contains@QtPrivate@@YA_NPEBVQStringList@@AEBVQString@@W4CaseSensitivity@Qt@@@Z
+?QStringList_join@QtPrivate@@YA?AVQString@@PEBVQStringList@@PEBVQChar@@H@Z
 ?about@QMessageBox@@SAXPEAVQWidget@@AEBVQString@@1@Z
 ?accept@QFileDialog@@MEAAXXZ
 ?addAction@QMenu@@QEAAPEAVQAction@@AEBVQIcon@@AEBVQString@@PEBVQObject@@PEBDAEBVQKeySequence@@@Z
@@ -532,7 +565,10 @@
 ?clearSelection@QItemSelectionModel@@QEAAXXZ
 ?clicked@QGroupBox@@QEAAX_N@Z
 ?clickedButton@QMessageBox@@QEBAPEAVQAbstractButton@@XZ
-?contains@QRect@@QEBA_NAEBV1@_N@Z
+?columnCount@QTreeWidget@@QEBAHXZ
+?columnWidth@QTreeView@@QEBAHH@Z
+?constData@QString@@QEBAPEBVQChar@@XZ
+?constScanLine@QImage@@QEBAPEBEH@Z
 ?contains@QString@@QEBA_NAEBV1@W4CaseSensitivity@Qt@@@Z
 ?contentsRect@QWidget@@QEBA?AVQRect@@XZ
 ?convertFromImage@QPixmap@@QEAA_NAEBVQImage@@V?$QFlags@W4ImageConversionFlag@Qt@@@@@Z
@@ -545,13 +581,15 @@
 ?disconnect@QObject@@QEBA_NPEBV1@PEBD@Z
 ?done@QFileDialog@@MEAAXH@Z
 ?drawArc@QPainter@@QEAAXHHHHHH@Z
-?drawImage@QPainter@@QEAAXAEBVQPoint@@AEBVQImage@@@Z
+?drawImage@QPainter@@QEAAXAEBVQRect@@AEBVQImage@@0V?$QFlags@W4ImageConversionFlag@Qt@@@@@Z
+?drawImage@QPainter@@QEAAXAEBVQRect@@AEBVQImage@@@Z
 ?drawLine@QPainter@@QEAAXAEBVQPointF@@0@Z
 ?drawPie@QPainter@@QEAAXHHHHHH@Z
 ?drawPixmap@QPainter@@QEAAXHHAEBVQPixmap@@@Z
 ?drawPoint@QPainter@@QEAAXHH@Z
 ?drawRect@QPainter@@QEAAXAEBVQRect@@@Z
 ?drawText@QPainter@@QEAAXHHAEBVQString@@@Z
+?dropIndicatorPosition@QAbstractItemView@@IEBA?AW4DropIndicatorPosition@1@XZ
 ?ensureWidgetVisible@QScrollArea@@QEAAXPEAVQWidget@@HH@Z
 ?event@QStatusBar@@MEAA_NPEAVQEvent@@@Z
 ?exists@QFile@@SA_NAEBVQString@@@Z
@@ -576,16 +614,17 @@
 ?insertRow@QTableWidget@@QEAAXH@Z
 ?insertText@QTextCursor@@QEAAXAEBVQString@@@Z
 ?intersected@QRect@@QEBA?AV1@AEBV1@@Z
-?isMaximized@QWidget@@QEBA_NXZ
 ?isNull@QImage@@QEBA_NXZ
 ?isVisible@QAction@@QEBA_NXZ
 ?item@QTableWidget@@QEBAPEAVQTableWidgetItem@@HH@Z
 ?lineSpacing@QFontMetrics@@QEBAHXZ
 ?lineTo@QPainterPath@@QEAAXNN@Z
 ?loadFromData@QPixmap@@QEAA_NAEBVQByteArray@@PEBDV?$QFlags@W4ImageConversionFlag@Qt@@@@@Z
+?mapFrom@QWidget@@QEBA?AVQPoint@@PEBV1@AEBV2@@Z
 ?mapTo@QWidget@@QEBA?AVQPoint@@PEBV1@AEBV2@@Z
 ?matches@QKeyEvent@@QEBA_NW4StandardKey@QKeySequence@@@Z
 ?maximum@QAbstractSlider@@QEBAHXZ
+?maximumViewportSize@QAbstractScrollArea@@QEBA?AVQSize@@XZ
 ?menuBar@QMainWindow@@QEBAPEAVQMenuBar@@XZ
 ?metaObject@QFileDialog@@UEBAPEBUQMetaObject@@XZ
 ?metaObject@QStatusBar@@UEBAPEBUQMetaObject@@XZ
@@ -595,7 +634,6 @@
 ?move@QWidget@@QEAAXHH@Z
 ?moveTab@QTabBar@@QEAAXHH@Z
 ?moveTo@QPainterPath@@QEAAXNN@Z
-?moveTo@QRect@@QEAAXAEBVQPoint@@@Z
 ?open@QBuffer@@UEAA_NV?$QFlags@W4OpenModeFlag@QIODevice@@@@@Z
 ?paintEvent@QStatusBar@@MEAAXPEAVQPaintEvent@@@Z
 ?path@QFileInfo@@QEBA?AVQString@@XZ
@@ -621,10 +659,11 @@
 ?save@QImage@@QEBA_NPEAVQIODevice@@PEBDH@Z
 ?saveGeometry@QWidget@@QEBA?AVQByteArray@@XZ
 ?saveState@QMainWindow@@QEBA?AVQByteArray@@H@Z
-?scale@QSize@@QEAAXHHW4AspectRatioMode@Qt@@@Z
+?scale@QPainter@@QEAAXNN@Z
+?scale@QSize@@QEAAXAEBV1@W4AspectRatioMode@Qt@@@Z
 ?scaled@QImage@@QEBA?AV1@AEBVQSize@@W4AspectRatioMode@Qt@@W4TransformationMode@4@@Z
-?scaled@QImage@@QEBA?AV1@HHW4AspectRatioMode@Qt@@W4TransformationMode@3@@Z
 ?scaled@QPixmap@@QEBA?AV1@HHW4AspectRatioMode@Qt@@W4TransformationMode@3@@Z
+?scanLine@QImage@@QEAAPEAEH@Z
 ?selectedFiles@QFileDialog@@QEBA?AVQStringList@@XZ
 ?selectedRows@QItemSelectionModel@@QEBA?AV?$QList@VQModelIndex@@@@H@Z
 ?sender@QObject@@IEBAPEAV1@XZ
@@ -641,10 +680,9 @@
 ?setBackgroundRole@QWidget@@QEAAXW4ColorRole@QPalette@@@Z
 ?setCellWidget@QTableWidget@@QEAAXHHPEAVQWidget@@@Z
 ?setCheckState@QTableWidgetItem@@QEAAXW4CheckState@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setClearButtonEnabled@QLineEdit@@QEAAX_N@Z
-?setColor@QBrush@@QEAAXAEBVQColor@@@Z
 ?setColor@QPalette@@QEAAXW4ColorGroup@1@W4ColorRole@1@AEBVQColor@@@Z
+?setColumnHidden@QTreeView@@QEAAXH_N@Z
 ?setCurrentCell@QTableWidget@@QEAAXHHV?$QFlags@W4SelectionFlag@QItemSelectionModel@@@@@Z
 ?setCurrentIndex@QTabWidget@@QEAAXH@Z
 ?setCurrentItem@QTableWidget@@QEAAXPEAVQTableWidgetItem@@V?$QFlags@W4SelectionFlag@QItemSelectionModel@@@@@Z
@@ -657,11 +695,16 @@
 ?setDefaultSuffix@QFileDialog@@QEAAXAEBVQString@@@Z
 ?setDirection@QBoxLayout@@QEAAXW4Direction@1@@Z
 ?setDockOptions@QMainWindow@@QEAAXV?$QFlags@W4DockOption@QMainWindow@@@@@Z
+?setDragDropMode@QAbstractItemView@@QEAAXW4DragDropMode@1@@Z
+?setDragEnabled@QAbstractItemView@@QEAAX_N@Z
+?setDropIndicatorShown@QAbstractItemView@@QEAAX_N@Z
 ?setEditText@QComboBox@@QEAAXAEBVQString@@@Z
 ?setEscapeButton@QMessageBox@@QEAAXW4StandardButton@1@@Z
 ?setFeatures@QDockWidget@@QEAAXV?$QFlags@W4DockWidgetFeature@QDockWidget@@@@@Z
 ?setFileMode@QFileDialog@@QEAAXW4FileMode@1@@Z
 ?setFixedPitch@QFont@@QEAAX_N@Z
+?setFixedSize@QWidget@@QEAAXAEBVQSize@@@Z
+?setFlags@QTreeWidgetItem@@QEAAXV?$QFlags@W4ItemFlag@Qt@@@@@Z
 ?setFlat@QPushButton@@QEAAX_N@Z
 ?setFloatable@QToolBar@@QEAAX_N@Z
 ?setFontWeight@QTextEdit@@QEAAXH@Z
@@ -669,22 +712,22 @@
 ?setGeometry@QWidget@@QEAAXHHHH@Z
 ?setHandleWidth@QSplitter@@QEAAXH@Z
 ?setHorizontalHeaderItem@QTableWidget@@QEAAXHPEAVQTableWidgetItem@@@Z
-?setIconSize@QAbstractButton@@QEAAXAEBVQSize@@@Z
 ?setIconVisibleInMenu@QAction@@QEAAX_N@Z
 ?setLabelText@QProgressDialog@@QEAAXAEBVQString@@@Z
 ?setLineWrapMode@QPlainTextEdit@@QEAAXW4LineWrapMode@1@@Z
-?setMenuBar@QLayout@@QEAAXPEAVQWidget@@@Z
 ?setMidLineWidth@QFrame@@QEAAXH@Z
 ?setMovable@QTabWidget@@QEAAX_N@Z
 ?setMovable@QToolBar@@QEAAX_N@Z
-?setOpacity@QPainter@@QEAAXN@Z
 ?setOption@QFileDialog@@QEAAXW4Option@1@_N@Z
 ?setOrientation@QAbstractSlider@@QEAAXW4Orientation@Qt@@@Z
 ?setPlainText@QPlainTextEdit@@QEAAXAEBVQString@@@Z
 ?setReadOnly@QPlainTextEdit@@QEAAX_N@Z
 ?setRgba@QColor@@QEAAXI@Z
+?setRootIsDecorated@QTreeView@@QEAAX_N@Z
+?setScaledContents@QLabel@@QEAAX_N@Z
 ?setSectionsClickable@QHeaderView@@QEAAX_N@Z
 ?setSectionsMovable@QHeaderView@@QEAAX_N@Z
+?setSelected@QTreeWidgetItem@@QEAAX_N@Z
 ?setShowGrid@QTableView@@QEAAX_N@Z
 ?setSizeGripEnabled@QStatusBar@@QEAAX_N@Z
 ?setSizePolicy@QWidget@@QEAAXVQSizePolicy@@@Z
@@ -693,6 +736,7 @@
 ?setSortIndicatorShown@QHeaderView@@QEAAX_N@Z
 ?setSortingEnabled@QTableWidget@@QEAAX_N@Z
 ?setStatusTip@QAction@@QEAAXAEBVQString@@@Z
+?setStyle@QWidget@@QEAAXPEAVQStyle@@@Z
 ?setTabEnabled@QTabWidget@@QEAAXH_N@Z
 ?setTabIcon@QTabWidget@@QEAAXHAEBVQIcon@@@Z
 ?setTabText@QTabWidget@@QEAAXHAEBVQString@@@Z
@@ -703,6 +747,7 @@
 ?setTickPosition@QSlider@@QEAAXW4TickPosition@1@@Z
 ?setToolTip@QTreeWidgetItem@@QEAAXHAEBVQString@@@Z
 ?setTracking@QAbstractSlider@@QEAAX_N@Z
+?setUpdatesEnabled@QWidget@@QEAAX_N@Z
 ?setValue@QProgressDialog@@QEAAXH@Z
 ?setVerticalScrollMode@QAbstractItemView@@QEAAXW4ScrollMode@1@@Z
 ?setVerticalSpacing@QGridLayout@@QEAAXH@Z
@@ -718,6 +763,8 @@
 ?singleShotImpl@QTimer@@CAXHW4TimerType@Qt@@PEBVQObject@@PEAVQSlotObjectBase@QtPrivate@@@Z
 ?sliderPosition@QAbstractSlider@@QEBAHXZ
 ?sortByColumn@QTableView@@QEAAXHW4SortOrder@Qt@@@Z
+?sortItems@QTreeWidget@@QEAAXHW4SortOrder@Qt@@@Z
+?source@QDropEvent@@QEBAPEAVQObject@@XZ
 ?spacing@QBoxLayout@@QEBAHXZ
 ?staticMetaObject@QGroupBox@@2UQMetaObject@@B
 ?staticMetaObject@QHBoxLayout@@2UQMetaObject@@B
@@ -730,6 +777,7 @@
 ?text@QTableWidgetItem@@QEBA?AVQString@@XZ
 ?textCursor@QPlainTextEdit@@QEBA?AVQTextCursor@@XZ
 ?tickInterval@QSlider@@QEBAHXZ
+?toAlignedRect@QRectF@@QEBA?AVQRect@@XZ
 ?toLatin1@QString@@QEHAA?AVQByteArray@@XZ
 ?toLower@QString@@QEGBA?AV1@XZ
 ?toPlainText@QPlainTextEdit@@QEBA?AVQString@@XZ
@@ -765,6 +813,8 @@ Annotate Favorite...
 Asset Browser
 Assets
 Attributes Used:
+Audio Params
+Audio Sounds
 Auto (%dx%d)
 Auto (No Limit)
 Auto Fill Group Using Me
@@ -854,12 +904,14 @@ CQStateCaptureWidget
 CQStateCaptureWindow
 CQSubsurfaceProfileControl
 CQSurfacePropertiesSelectDialog
+CQSurfacePropertyBrowser
+CQSurfacePropertyTreeWidget
 CQTabWidget
 CQTextureControl
 CQTextureImage
-CQTexturePreviewImage
 CQTexturePreviewMagnify
 CQTexturePreviewPopup
+CQTexturePreviewView
 CQTextureSettingsDialog
 CQTitledGroupBox
 CQUserMaterialAttributesWidget
@@ -870,6 +922,7 @@ CQVariableToolTip
 CQVariablesWindow
 CQWidgetList
 CQWorldMappingWidget
+CSurfaceProp
 CUtlBlockVector<class CVfxStaticComboData,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CQTitledGroupBox *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class QVBoxLayout *,class CDefFastCaselessStringLess>::Insert
@@ -880,16 +933,17 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<clas
 CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<struct VfxVariableIndexData_t,2,int,class CMemAllocAllocator>,struct VfxVariableIndexData_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<unsigned char,12,short,class CMemAllocAllocator>,unsigned char,short>::AddMultipleToTail
 CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::AddPage
-CVfx::CreateFromVcs(8254): Error opening file %s\n
-CVfx::CreateFromVcs(8287): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8300): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8329): VCS %s Unserialize hit EOF\n
+CVfx::CreateFromVcs(8264): Error opening file %s\n
+CVfx::CreateFromVcs(8297): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8310): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8339): VCS %s Unserialize hit EOF\n
 CVfx::ParseResourceFileHeader
 Cache Status Changed
 Capture Favorite
 Capture current state as favorite.
 Categories
 Change '%s' to ...
+Change '%s' to inherit '%s'
 Change '%s' to inherit from ...
 Change Reference...
 Change To Color
@@ -927,12 +981,14 @@ Consolas
 Cont
 Copy Full Path To Clipboard
 Copy To Clipboard
+Core Info
 CornerWidget:%s
 Could not find layers to swap
 Could not locate key named '%s' in reference file: %s\n
 Courier New
 Create a new material.
 Create new Reference file?
+Cross
 Ctrl+C
 Ctrl+F
 Ctrl+N
@@ -945,6 +1001,7 @@ Ctrl+Shift+S
 Ctrl+V
 Ctrl+Y
 Ctrl+Z
+Cube 
 D_FADE_COLOR
 Decal Material Attributes
 DecalAlignWithGravityFactor
@@ -979,7 +1036,9 @@ Detach from Reference
 Detach vars from this Reference
 DetachReferenceAction
 Detail Object Assignments
+Detail Prop Type:
 Detail Props
+DetailPropType
 DetailPropType_1
 DetailPropType_2
 DetailPropType_3
@@ -991,6 +1050,10 @@ DeveloperDebug
 Direction3D
 Disabled due to current value of 
 Disk
+Display Columns:
+Display Single Channel Monochrome
+Display the alpha channel in black and white, exclusive with the color channels.
+Display this color channel.
 Dynamic Expression
 Dynamic Expression Editor - %1
 Dynamic combo %s referenced in expression doesn't exist.
@@ -1007,12 +1070,9 @@ ERROR! Missing a valid shader header. '%1' was not properly compiled. Send an e-
 ERROR_Missing_Shader
 ESC_SEQ
 EXPANDED
-EXRReadFile() - B channel not found!\n
-EXRReadFile() - G channel not found!\n
-EXRReadFile() - R channel not found!\n
-EXRReadFile() - cannot read image data!\n
 Edit Dynamic Expression...
 Edit a favorite's annotation.
+EditboxOctaveBand()
 Enable debugging tools.
 Entity Class
 Entity Render Attributes:
@@ -1040,9 +1100,12 @@ FEATURES
 FLOATLITERAL
 FLOATSUFFIX
 F_WETNESS
+Face
+Face %1
 Fade Duration: 
 Fade Start Time: 
 Failed to inherit from Reference
+Failed to load '%s': %s\n
 Failed to read Reference file
 Fast Asset Search
 Fastest
@@ -1061,10 +1124,12 @@ Float3 (expression) =
 Float4 (expression) = 
 FocusIn
 FocusOut
+Footsteps (%s)
 Force Compile To Disk
 Found infinite loop to %s when resolving material layer %i
 Function %s() expects %d arguments. Found %d.
 Game audio muted while tools are active
+Gameplay
 General Options
 Goto End
 Goto Start
@@ -1096,10 +1161,12 @@ IS_DIRECTX
 IS_PC
 IS_SM_
 IS_VULKAN
+ITexturePreviewSourceListener
 IToolFrameworkAudioSettingsListener
 IToolsResourceListener
 IVDataResourceListener
 Images (
+Impact Effects
 Import To "%1"
 Import To Group '%s': Match '%s' to '%s' (Pass:%d)\n
 Import...
@@ -1107,6 +1174,7 @@ In-Memory
 Incorrect vpk path delimiter for shader %s\n
 Inherit from 
 Inherit from Reference...
+Inherited from '%1'
 Inherited from Reference: <b>%1</b>
 Inherited from layer
 InitialInputAsTexture
@@ -1133,7 +1201,7 @@ Layer0\n
 LayerReference
 Legacy Material Format Not Supported.
 Lexer encountered %i errors parsing compile targets expression "%s"\n
-LoadEXRImageFromMemory() failed! Error message: %s\n
+Loading...
 Log: ERRORS!
 Log: WARNINGS!
 MD5 match on %s, loading from vcs\n
@@ -1175,6 +1243,9 @@ MatrixMultiply
 MatrixScale
 MatrixTranslate
 Max Wobble Angle: 
+Mip %1: %2x%3
+Mip %1: %2x%3 (%4)
+Mip %1: %2x%3x%4
 Mip Map / Downsample Settings
 Missing Content's Source. Asset System Not Finding Source Path. Editing Unavailable.
 Missing Texture Filename
@@ -1209,8 +1280,12 @@ OCTAL_ESC
 OnAccept
 OnAcceptClicked
 OnAccepted
+OnActiveGroupChanged
+OnActualSize
 OnAddDynamicExpressionAction
+OnAlphaChannelToggled
 OnAnnotateAction
+OnArrayElementChanged
 OnAssetCacheStatusChanged: %s\n
 OnAttributeChanged
 OnAttributeSelectionChanged
@@ -1238,6 +1313,7 @@ OnClearAllAction
 OnClearClicked
 OnClicked
 OnCollapseAllGroups
+OnColorChannelToggled
 OnColorLineEditingFinished
 OnColorPicker
 OnColorSampled
@@ -1247,8 +1323,10 @@ OnCopyAction
 OnCopyColor
 OnCopyGroupVariables
 OnCopyPathToClipboardAction
+OnCubeFaceIndexChanged
 OnCurrentColorChanged
 OnDefaults
+OnDepthChanged
 OnDetachFromReference
 OnDragColorOverwrite
 OnDragColorSwap
@@ -1306,13 +1384,13 @@ OnRenderAttributeTestValueChanged
 OnResetClicked
 OnResetToDefaultAction
 OnResolutionChanged
-OnRestoreSize
 OnRevertAction
 OnSanitizeMaterialsAction
 OnSaveAction
 OnSaveAsAction
 OnSaveIntoReference
 OnSaveToReference
+OnScreenChanged
 OnSetDefault
 OnSettingsAction
 OnShowCompiledTexturesAction
@@ -1328,6 +1406,7 @@ OnShowPreferredShaders
 OnShowRawOutputAction
 OnShowShaderAttributes
 OnSingleAssetFileStatusChanged: %s - %s\n
+OnSingleChannelMonochrome
 OnSliderActionTriggered
 OnSliderReleased
 OnSliderValueChanged
@@ -1350,7 +1429,7 @@ OnUserAttributesModified
 OnVariableChanged
 OnVariablePopupMenuAboutToShow
 OnViewMenuAboutToShow
-Only the default is available because the database could not be loaded.
+OnZoomIndexChanged
 Open Asset Browser
 Open Containing Folder
 Open Material
@@ -1361,9 +1440,6 @@ Open an existing material.
 Open the %1 tool
 Options...
 Original
-Original Size
-Original: %1x%2 Mip: %3
-Original: %1x%2, Scaled: %3x%4 Mip %5
 Other Tools
 Override Inherited Variable...
 Overwrite
@@ -1375,10 +1451,9 @@ PC_SM_5_0_VULKAN
 PC_SM_6_0_VULKAN
 PLAT_
 PROGRAM
-PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
+PS_CS
 PS_RENDER_STATE
 PS_RTX
-ParseEXRHeaderFromMemory() failed! Error message: %s\n
 Parser encountered %i errors parsing compile targets expression "%s"\n
 Paste From Clipboard
 Paste Material Attributes
@@ -1395,6 +1470,7 @@ Primary
 PrimaryToolBar
 Program MD5 is out of date with features! %s\n
 Properties...
+Property '%s' referencing a missing base '%s'\n
 Property For Wet Areas:
 Pull From Global Browser
 PullSelectionFromGlobalBrowser
@@ -1403,6 +1479,7 @@ PushSelectionToGlobalBrowser
 QEvent*
 QItemSelection
 QPushButton::menu-indicator{ image: url(does_not_exist.jpg); }
+QScreen*
 QToolButton { border: none; }
 QWheelEvent*
 RESIZED
@@ -1414,10 +1491,8 @@ Ready.
 RecentFile%d
 RecentFiles
 Rectangle Definition Browser
-Reference
 Reference Status Changed
 Reference key named '%s' has unexpected subkeys in reference file: %s\n
-References
 Refresh
 Refresh materials.
 RefreshAction
@@ -1440,13 +1515,13 @@ Reset to initial defaults at next restart. Requires restart of the Tool Chain.
 ResetToDefaults
 Resolution Warning - %s
 ResourceCompiler/TextureCompiler/PublicToolsDefaultMaxRes
-Restore the image's original size.
 Reveal in VDATA Editor
 Revert To Last Save
 Revert the material to disk contents.
 RevertAction
 RsTextureAddressMode_t
 SHRUNK
+SIG_ActiveGroupChanged
 SIG_ApplyExpression
 SIG_BrowseShadersAccept
 SIG_BrowseSurfacePropertiesAccept
@@ -1470,6 +1545,7 @@ S_EXECUTION_REORDERING
 S_GPU_DEVICE_ID
 S_GPU_VENDOR_ID
 S_MOLTEN_VK
+S_NEEDS_MESHLET_OVERFLOW_HANDLING
 S_REVERSE_DEPTH_BUFFER
 S_SHADER_QUALITY
 S_SUBGROUP_WAVE_OPS
@@ -1495,9 +1571,11 @@ Save the material under a new name.
 SaveAction
 SaveAllAction
 SaveAsAction
+Screen pixels per mip 0 texel. The mouse wheel over the image also zooms.
 Search for material variables.
 Select Material Reference
 Send an e-mail to GraphicsDev.
+Set '%s' for '%s'
 Set A Dynamic Expression
 Set As Default
 Set World Mapping (Game Units)
@@ -1532,9 +1610,11 @@ Show Original Contents
 Show Preferred Shaders
 Show Raw Output
 Show Shader Attributes
+Show a single cube face, or all of them unfolded into a cross.
 Show material load auto-sanitize fixups as modification.
 Show shader variable and sort keys. Used to iterate on shader variable grouping.
 Show the Material Editor's About box.
+Show the current mip at one screen pixel per texel.
 ShowCompiledTextures
 ShowCoreShaders
 ShowDevShaders
@@ -1561,18 +1641,26 @@ StateHistory
 Static combo %s referenced in expression doesn't exist.
 StaticCombo
 StaticComboRule
+Steam Audio
 Sub-rect file:
 Sub-rect mapping
 Subrect Files (*.rect)
 SubrectDefinition
 SubrectDefinitionUV2
 SubsurfaceProfile
+SupportsDetailProps
 SupportsMappingDimensions
 Suppress
 Suppress Compilation
 SuppressVNotifyMessages
 Surface Properties
+Surface prop file '%s' missing top level key '%s'\n
+Surface prop file '%s' sub-list '%s' missing top level key '%s'\n
+Surface property load warnings:\n%s
 SurfacePropertiesSelectionChanged
+SurfacePropertyEditor_DirtyOrRefreshStateChanged_t
+SurfacePropertyEditor_EntireDocumentChanged_t
+SurfacePropertyEditor_SurfacePropsChanged_t
 Suspend material compilation.
 Swap
 SwapLayers
@@ -1585,10 +1673,13 @@ Texture
 Texture (bound to variable)
 Texture Browser
 Texture Settings%1 - %2
+Texture array layer.
+Texture has only one mip level.
 Texture range [%.1f,%.1f], height range [%.1f,%.1f]
 TextureAverageColor
 TextureDim
 TextureDimLog2
+TexturePreview
 TexturePreviewFilteredMagnification
 TextureSheetData
 TextureSize
@@ -1606,17 +1697,18 @@ ToolTip - "%s" not found.
 ToolTips
 Tools  
 Tools audio currently muted
+Type to filter shaders
 UNICODE_ESC
 UV2 World Mapping
 UVSet1FastTextureOp
 UVSet2FastTextureOp
-Unable to load psd: %s\n
 Unable to load shader config: %s\n
 Unable to load tooltips: %s\n
 Unable to parse vpk paths from shader %s\n
 Unable to read the compiled texture, preview will be missing.\n
 Unable to resolve material layer %i: %s\n
-Unable to start a read of the compiled texture, preview will be missing.\n
+Unable to start a read of slice %d of the compiled texture, preview will be missing.\n
+Unavailable
 Unknown DX level\n
 Unknown Error.
 Unknown Error. Send an e-mail to GraphicsDev.
@@ -1627,7 +1719,7 @@ Unknown variable name %s.
 Unlimited
 Unrecognized VFX UI Type (%d).
 Unrecognized VFX UI Type (%d). Send an e-mail to GraphicsDev.
-Unsupported PSD color mode!\n
+Unrecognized surfaceproperty '%s' in %s\n
 Unsupported VFX UI Type '%s'.
 Unused {\n
 UnusedVariables
@@ -1671,11 +1763,11 @@ VariableChange_t
 VariableState
 VariablesWindow
 VectorText
+Vehicles
 Verbose resource compiles. Used to monitor compilation activity.
 VerboseCompilation
-Vfx file "%s" has both compute shader and other shaders. Compute shaders must be the only shader type in a vfx file.\n
 VfxComboType_t
-VfxDynamicShaderCompile(), C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp:8911
+VfxDynamicShaderCompile(), C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\vfx_common.cpp:8921
 VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
 VfxLoadShaderSource(77): Cannot read file "%s"\n
 VfxLoadShaderSource(85): Cannot find include file %s\n
@@ -1690,9 +1782,11 @@ VfxParseCompileTargetExpr(98): : Failed to create input stream from "%s"\n
 VfxRuleType_t
 VfxRule_t
 Viewport
+Volume depth slice, the range shrinks with each mip.
 WARNING: %1 materials depend on this reference file and may be affected:
 WARNING: MET cannot ensure file '%s' is writable - no asset!\n
 WW:9999WWW
+When only one channel is displayed, draw it in black and white instead of the channel's color.
 World Height:
 World Height: 
 World Width:
@@ -1701,6 +1795,8 @@ World space mapping
 WorldMappingHeight2
 WorldMappingWidth2
 Wrong Variable Type '%s' for '%s'.
+Z Slice
+Zoom
 \content\
 \default\
 \default_
@@ -1728,13 +1824,13 @@ Wrong Variable Type '%s' for '%s'.
 \n*** A feature in %s doesn't start with "F_"! Aborting shader compile!\n\n
 \n*** A static combo in %s doesn't start with "S_"! Aborting shader compile!\n\n
 \n*** CMaterialEditorTool::InitDynamicShaderCompileDLL(472): ERROR! Can't load %s, dynamic shader compile unavailable\n
-\n*** CVfx::ParseBoolFromFile(6845): Error opening file "%s"!\n\n
-\n*** CVfx::ParseCombosAndRulesFromFileHelper(7042): Error opening file "%s"!\n\n
-\n*** CVfx::ParseDescriptionFromFile(6930): Error opening file "%s"!\n\n
-\n*** CVfx::ParseFeaturesFromFile(6531): Error opening file "%s"!\n\n
-\n*** CVfx::ParseIncludeFiles(6489): Error opening include file in features list"%s"!\n\n
-\n*** CVfx::ParseModesFromFile(6339): Error opening file "%s"!\n\n
-\n*** CVfx::ParseVersionFromFile(6891): Error opening file "%s"!\n\n
+\n*** CVfx::ParseBoolFromFile(6866): Error opening file "%s"!\n\n
+\n*** CVfx::ParseCombosAndRulesFromFileHelper(7063): Error opening file "%s"!\n\n
+\n*** CVfx::ParseDescriptionFromFile(6951): Error opening file "%s"!\n\n
+\n*** CVfx::ParseFeaturesFromFile(6552): Error opening file "%s"!\n\n
+\n*** CVfx::ParseIncludeFiles(6510): Error opening include file in features list"%s"!\n\n
+\n*** CVfx::ParseModesFromFile(6360): Error opening file "%s"!\n\n
+\n*** CVfx::ParseVersionFromFile(6912): Error opening file "%s"!\n\n
 \n*** Combo "%s" in %s doesn't match a known combo source!\n\n
 \n*** Combo "%s" in %s either does not follow the 0..N format, is not a valid dynamic combo name, or doesn't match an existing feature or mode argument!\n\n
 \n*** Combo "%s" in %s has arg %s that doesn't match an existing feature!\n\n
@@ -1790,8 +1886,8 @@ Wrong Variable Type '%s' for '%s'.
 \n*** Unable to parse Version in HEADER section of %s!\n\n
 \n*** Unknown rule "%s" in %s!\n\n
 \n*** Unknown text found in FEATURES section in %s: "%s"\n\n
-\n*** VfxGetCompileTargetsFromVfxFile(1484): Error opening file "%s"!\n\n
-\n*** VfxGetUsedShaderProgramsFromVfxFile(1561): Error opening file "%s"!\n\n
+\n*** VfxGetCompileTargetsFromVfxFile(1496): Error opening file "%s"!\n\n
+\n*** VfxGetUsedShaderProgramsFromVfxFile(1573): Error opening file "%s"!\n\n
 \nCannot overwrite %1.\n
 \nCannot read file %1.\n
 \nCannot read material %1.\n
@@ -1837,7 +1933,7 @@ Wrong Variable Type '%s' for '%s'.
 \nSuccess! All %1 materials processed.\n
 \nVCS file format is invalid for %s\n
 \nVCS file version is %d instead of %d for %s\n
-\nVfxDynamicShaderCompile(8992): Dynamic shader compile failed for %s in "%s"!\n
+\nVfxDynamicShaderCompile(9002): Dynamic shader compile failed for %s in "%s"!\n
 \nYou have existing hosted materials.\nYou need to close ALL hosted materials before sanitization can proceed.\n
 \n\tVariableState\n
 \src\shaders\
@@ -1895,7 +1991,9 @@ _feature
 _not_pickable
 _psrs
 _rtx
+absorptionCoefficients
 acceptedColor
+allowsmokethrough
 appendstructuredbuffer
 attributeName
 bChecked
@@ -1906,12 +2004,16 @@ bool2
 bool3
 bool4
 brightness_offset
+bulletPenetrationDamageModifier
+bulletPenetrationDistanceModifier
+bulletspenetrate
 byteaddressbuffer
 cbuffer
 change
 clampu
 clampv
 clampw
+climbable
 collapseStateChanged
 column
 consumestructuredbuffer
@@ -1926,6 +2028,10 @@ dot2
 dot3
 dot4
 dynamicparams
+effect_alive
+effect_bloodpool
+effect_simplified
+exit_effect
 expected an integer or the name of a #define
 expected an integer, got "%.*s" ( #define names can be used in combo declarations and rules, but not in FEATURES )
 export
@@ -1940,6 +2046,7 @@ float4
 float4x3
 float4x4
 font: 8pt;
+footstep_modifier
 forcebc3
 g_bLayerBlendEnable
 g_bLayerBlendEnable%i
@@ -1949,7 +2056,6 @@ game:tools/images/assetbrowser/appicon.ico
 game:tools/images/assetbrowser/browse_asset.png
 game:tools/images/assetbrowser/pull_asset.png
 game:tools/images/assetbrowser/push_asset.png
-game:tools/images/assettypes/surface_sm.png.png
 game:tools/images/buildwatch/appicon.png
 game:tools/images/common/auto_mute_game.png
 game:tools/images/common/copy_sm.png
@@ -1998,6 +2104,7 @@ game:tools/images/met/texture_resolution_minor_info.png
 game:tools/images/met/texture_resolution_warning.png
 game:tools/images/vconsole/appicon.ico
 game:tools/images/vconsole/appicon_dev.ico
+gamematerial
 geometry
 group_expand_button
 group_label
@@ -2005,14 +2112,20 @@ group_options_button
 gs_5_0
 gs_6_0
 hMaterial
+impactDecalName
+impactGrazingDecalName
 import
 int2
 int3
 int4
+isslippery
+isstairs
+jumpfactor
 layer
 layer_shift_down
 layer_shift_up
 legacy_source1_inverted_normal
+legacymaterialtag
 lib_6_4
 m_allVars
 m_argIndexArray
@@ -2112,6 +2225,7 @@ materials/default/default.tga
 materials/default/default_%s.%s
 materials/met_configuration.txt
 materials\default\default
+maxspeedfactor
 met.dll
 met_shaders
 minimum_encode_quality
@@ -2121,6 +2235,8 @@ mip_filter_strength
 modes
 ms_6_5
 nColumn
+nDepthSlice
+nElement
 nFirst
 nQuality
 nRow
@@ -2136,6 +2252,7 @@ notepad.exe
 originalColor
 pAction
 pMouseEvent
+pScreen
 pWheelEvent
 paste
 ps_5_0
@@ -2145,8 +2262,12 @@ pszPath
 radians
 rasterizerStateDesc
 rect
+reduceweaponimpact
+reflectbullets
 rotate2d
 rotation2d
+runleft
+runright
 rwbuffer
 rwbyteaddressbuffer
 rwstructuredbuffer
@@ -2166,6 +2287,11 @@ sampler3DARRAY
 samplerCUBE
 samplerCUBEARRAY
 samplerstateindex
+scatteringCoefficients
+scripts/surfaceproperties_footsteps.txt
+scripts/surfaceproperties_game.txt
+scripts/surfaceproperties_impact_effects.txt
+scripts/surfaceproperties_steamaudio.txt
 selected
 shaderName
 shaders/vfx/*_features.vcs
@@ -2173,12 +2299,18 @@ shaders\vfx
 show_vdata_file
 sincos
 smoothstep
+soundstackmaterial
+sprayDecalName
+sprayDecalName_Alive
 struct GS_INPUT
 struct PS_INPUT
 struct VS_INPUT
 structuredbuffer
 subsurface profiles
 surfacePropertiesName
+surfaceattribute.%s
+surfaceproperties/surfaceproperties.vsurf
+surfacepropertyeditor
 texture2darrayindex
 texture2dindex
 texture3dindex
@@ -2188,10 +2320,13 @@ texturecubeindex
 tools/met/met_configuration.txt
 tools/met/met_shaderconfig.kv3
 tools/met/met_tooltips.kv3
+transmissionCoefficients
+unable to load
 unnamed_%2.2d
 untitled(%1).vmat
 untitled.vmat
 updatedColor
+use_oriented_effect
 valueChangedByEdit
 valueChangedBySlider
 vdata_editor
@@ -2201,4 +2336,6 @@ vfxc
 vmat_prefab
 vs_5_0
 vs_6_0
-zD(knN
+walkleft
+walkright
+x%d Volume

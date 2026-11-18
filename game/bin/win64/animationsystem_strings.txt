@@ -20,6 +20,7 @@
   Input: %f, %f, %f, %f \n
   Invoke%d: Cell%d %s\n
   Invoke%d: LibraryFunc %s\n
+  Lambda%d: %s\n
   Output Connection %d: '%s' -> '%s' : %s( %s )\n
   Output%d: '%s' (%s)\n
   Output: 
@@ -50,11 +51,15 @@
  : unexpected input...\n  expected one of : 
  <-- Arg '%s'
  <-- Retval '%s'
+ BR%d
  LinePos:
+ TempVar(EditorID:%d)
+ V%d
  Vector b
  [*OBSERVABLE*]
  [loop body, break -> C%d:I%d]
  \t\n\r@()[]{}=&,:*|;'!
+ depends on:
 !IsValidCachedPose( bufferID )
 !m_pRecording->m_recordedUpdateData.IsEmpty()
 "Limit Count: " + m_nLimitCount
@@ -69,6 +74,7 @@
 %d Cells:\n
 %d Chunks:\n
 %d InvokeBindings:\n
+%d Lambdas:\n
 %d OutputConnections:\n
 %d PublicOutputs:\n
 %d TempVarBanks:\n
@@ -122,6 +128,7 @@
 %s\n%2.f - Pos: %.2f, Orient: %.2f
 %s_color
 %s_matgrp
+'%s' (%s) -> Chunk%d I%d 
 'Play reversed' has no effect when used with time synchronization!
 (%f, %f, %f)
 (Blend1D):m_flBlendValue
@@ -420,7 +427,6 @@
 .?AUCDefinition@CNmIDSwitchNode@@
 .?AUCDefinition@CNmIDToFloatNode@@
 .?AUCDefinition@CNmIsExternalGraphSlotFilledNode@@
-.?AUCDefinition@CNmIsExternalPoseSetNode@@
 .?AUCDefinition@CNmIsInactiveBranchConditionNode@@
 .?AUCDefinition@CNmIsTargetSetNode@@
 .?AUCDefinition@CNmLayerBlendNode@@
@@ -861,6 +867,8 @@
 .?AV?$CParamLookupHelper@VQuaternion@@@@
 .?AV?$CParamLookupHelper@_K@@
 .?AV?$CParamLookupHelper@_N@@
+.?AV?$CPulseInlineValueTypeInfo@VCColorGradient@@@@
+.?AV?$CPulseInlineValueTypeInfo@VCPiecewiseCurve@@@@
 .?AV?$CRefCountedMemPoolObject@VCAnimPose@@@@
 .?AV?$CTier0AppSystem@VIAnimationSystem@@$0A@@@
 .?AV?$CTier1AppSystem@VIAnimationSystem@@$0A@@@
@@ -1768,7 +1776,6 @@
 .?AVCNmIDToFloatNode@@
 .?AVCNmIDValueNode@@
 .?AVCNmIsExternalGraphSlotFilledNode@@
-.?AVCNmIsExternalPoseSetNode@@
 .?AVCNmIsInactiveBranchConditionNode@@
 .?AVCNmIsTargetSetNode@@
 .?AVCNmLayerBlendNode@@
@@ -1799,12 +1806,14 @@
 .?AVCNmSelectorNode@@
 .?AVCNmSkeletonTypeManager@@
 .?AVCNmSoundEvent@@
+.?AVCNmSoundEventBase@@
 .?AVCNmSpeedScaleBaseNode@@
 .?AVCNmSpeedScaleNode@@
 .?AVCNmStateCompletedConditionNode@@
 .?AVCNmStateMachineNode@@
 .?AVCNmStateNode@@
 .?AVCNmSyncEventIndexConditionNode@@
+.?AVCNmTaggedSoundEvent@@
 .?AVCNmTargetInfoNode@@
 .?AVCNmTargetOffsetNode@@
 .?AVCNmTargetPointNode@@
@@ -1892,8 +1901,6 @@
 .?AVCPulseCell_Step_PublicOutput@@
 .?AVCPulseCell_Timeline@@
 .?AVCPulseCell_Unknown@@
-.?AVCPulseCell_Value_Curve@@
-.?AVCPulseCell_Value_Gradient@@
 .?AVCPulseCell_WaitForCursorsWithTag@@
 .?AVCPulseCell_WaitForCursorsWithTagBase@@
 .?AVCPulseCell_WaitForObservable@@
@@ -2209,6 +2216,7 @@ AngleB
 Anim Clip
 AnimGraph Choice Node failed to pick a new choice without repeating.  Check the weights on the Choice node.\n
 AnimGraphInstance
+AnimLayer:m_bDisableSequenceFadeOut
 AnimLayer:m_flCycle
 AnimLayer:m_flWeight
 AnimLayer:m_hSequence
@@ -2255,7 +2263,12 @@ Async Outflow (Child Cursor) C%d:I%d
 Attempting to perform a global blend without a bone mask! This is not supported so falling back to a local blend!
 Attribute
 BACKSLASH_CHAR
+BIND_LAMBDA
 BLEND_PREALIGNED|
+BROADCAST_INVOKE
+BROADCAST_INVOKE_ARRAY_DOMAIN
+BROADCAST_INVOKE_ARRAY_SIMPLE
+BROADCAST_INVOKE_DOMAIN
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
 Bad KV3 data in control block for '%s': %s\n
@@ -2300,6 +2313,7 @@ BinMod
 BinMul
 BinNe
 BinSub
+BindLambda R%d <- Lambda%d
 Blend (Masked): %.2f%%
 Blend: %.2f%%
 BlendNode
@@ -2312,6 +2326,7 @@ Bone Velocity
 BoneChannel
 BoneConstraintRbf :: Cannot find input bone "%s" :: %s\n
 BoneConstraintRbf :: Cannot find output bone "%s" :: %s\n
+BoneConstraintRbf :: Invalid RBF parameters\n
 BoneConstraintRbf :: Invalid input %d or output %d bone count :: %s\n
 BoneConstraintRbf :: input bone count %d != input pose count %d :: %s\n
 BoneConstraintRbf :: output bone count %d != output pose count %d :: %s\n
@@ -2376,6 +2391,7 @@ CIKJointConstraintData_Hinge
 CIKJointConstraintData_Plane
 CKV3MemberNameSet
 CKV3MemberNameWithStorage
+CKV3TransferInterface_PulseEnum_Load
 CLIENT: Activity %d is %s\n
 CLOSE_BRACE
 CLOSE_BRACKET
@@ -2397,9 +2413,13 @@ CNmGraphInstance::RecordPreGraphEvaluateState
 CNmPose::DrawDebug
 CNmPoseBufferPool::CreateCachedPoseBufferInternal
 CNmPoseBufferPool::GenerateNewCachedPoseID
+CNmPoseBufferPool::RecordState
 CNmSkeleton::DrawDebug
+CNmSoundEventBase
+CNmSoundEventBase::Position_t
 CNmStateMachineNode::CDefinition::PostInstantiateNode
 CNmStateNode::TransitionFlag_t::TransitionFlag_t
+CNmTaggedSoundEvent
 COMMA
 CPPScript Component
 CParentAttachmentName
@@ -2420,6 +2440,7 @@ CPulseArraylib::ArrayRemoveInvalidElements
 CPulseArraylib::ArraySetCount
 CPulseArraylib::ArrayShuffle
 CPulseCell_BooleanSwitchState::Activate
+CPulseCell_BooleanSwitchState::CursorState_t
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
@@ -2434,14 +2455,14 @@ CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_ObservableSwitchState::Activate
+CPulseCell_ObservableSwitchState::CursorState_t
 CPulseCell_PickBestOutflowSelector::ProcessSelector
 CPulseCell_RaceCursors::Start
 CPulseCell_RaceCursors::StopWaiting
 CPulseCell_Step_CallExternalMethod '%s'
 CPulseCell_Timeline::Start
-CPulseCell_Value_Curve::Eval
-CPulseCell_Value_Gradient::Eval
 CPulseCell_WaitForCursorsWithTag::Wait
+CPulseCell_WaitForObservable::CursorState_t
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -2456,6 +2477,7 @@ CPulseEnumlib::AddFlags
 CPulseEnumlib::HasAllFlags
 CPulseEnumlib::HasAnyFlags
 CPulseEnumlib::RemoveFlags
+CPulseInstanceLoadAPI
 CPulseMathlib
 CPulseMathlib::AbsFloat
 CPulseMathlib::AbsInt
@@ -2465,12 +2487,18 @@ CPulseMathlib::ArcTan
 CPulseMathlib::CeilingFloat
 CPulseMathlib::ClampFloat
 CPulseMathlib::ClampInt
+CPulseMathlib::ClosestPointOnLine
+CPulseMathlib::ClosestPointOnLineSegment
+CPulseMathlib::ClosestPointOnWorldLine
+CPulseMathlib::ClosestPointOnWorldLineSegment
 CPulseMathlib::ComposeAngles
 CPulseMathlib::ComposeTransforms
 CPulseMathlib::Cos
 CPulseMathlib::CrossProductVector
 CPulseMathlib::Deg2Rad
 CPulseMathlib::DotProductVector
+CPulseMathlib::EvaluateCurve
+CPulseMathlib::EvaluateGradient
 CPulseMathlib::Exp
 CPulseMathlib::Exp2
 CPulseMathlib::FloatToGameTime
@@ -2513,6 +2541,8 @@ CPulseMathlib::Pi
 CPulseMathlib::Pow
 CPulseMathlib::RSqrt
 CPulseMathlib::Rad2Deg
+CPulseMathlib::RandomFloat
+CPulseMathlib::RandomInteger
 CPulseMathlib::RandomWorldPosition
 CPulseMathlib::RemapClampedFloat
 CPulseMathlib::RotateVector
@@ -2542,7 +2572,6 @@ CPulseMathlib::TransformWorldVectorToLocal
 CPulseMathlib::VectorToWorldVector
 CPulseMathlib::WorldTransformInverse
 CPulseMathlib::WorldVectorToVector
-CPulseObservableExpression
 CPulseObservableSwitchCases
 CPulseStringlib
 CPulseStringlib::Format1
@@ -2561,6 +2590,7 @@ CPulseTestScriptLib::RegisterTestCheckpoint
 CPulseTestScriptLib::TestModeAssertTrue
 CPulseType
 CPulseVariant
+CPulse_LambdaDef
 CRelativeArray
 CResourceName
 CResourceNameTyped
@@ -2570,6 +2600,7 @@ CStrongHandle
 CStrongHandleCopyable
 CStrongHandleVoid
 CTransform
+CURSOR_MAX_INSTRUCTIONS
 CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_MIRROR
@@ -2631,9 +2662,9 @@ CUtlStringToken
 CUtlVectorFixedGrowable
 CWeakHandle
 Call C%d:I%d (%s)
+Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set.
 Cannot allocate abstract class
 Cannot construct abstract class
-Cannot convert KV3 type '%s' (%u) to a string token
 Cannot parse %s: String Literals are not supported
 Cannot parse AE_CL_CLOTH_ATTR %s: expected function name instead of %s\n
 Cannot parse AE_CL_CLOTH_ATTR %s: function parameters are expected in the form %s(offset)\n
@@ -2657,6 +2688,7 @@ Cant find specified effector bone ID ('%s') for two bone IK
 Ceiling - round float up to nearest integer)
 Ceiling Float
 Chain Lookat
+Chain Lookat Task - Trying to perform a chain lookat on top of an additive pose, this is not allowed!
 Check Requirement
 Check Type
 Check if any element of 'a' compares equal to 'element'.
@@ -2671,6 +2703,10 @@ Clamp value to range (int)
 Class does not allow allocation from its schema binding
 Class does not allow construction from its schema binding
 Clip Selector: Failed to select a valid option!
+Closest Point On Line
+Closest Point On Line Segment
+Closest Point On World Line
+Closest Point On World Line Segment
 Commit Step
 Compare strings with case sensitivity, in contrast to normal string equality which is case-insensitive.
 Completed
@@ -2740,6 +2776,18 @@ Dot Product Vector
 Dot Product of Vector a 
 Down
 ENUM_
+EQ_ANIM_SEQUENCE
+EQ_MODEL_MATERIAL_GROUP
+EQ_PARTICLE_EHANDLE
+EQ_QANGLE
+EQ_RESOURCE
+EQ_RESOURCE_NAME
+EQ_SNDEVT_GUID
+EQ_SNDEVT_NAME
+EQ_TRANSFORM
+EQ_TRANSFORMWS
+EQ_VARIANT
+EQ_VDATA_CHOICE
 ESCAPE_CHAR
 ESCAPE_CODE
 EXPONENT
@@ -2834,6 +2882,8 @@ Find all the yielded cursors on this graph and cancel them.
 Find all the yielded cursors on this graph with the matching tag and cancel them.
 Find all the yielded cursors on this graph with the matching tag and wake them.
 Find first element 'a' which compare equal to 'element' and return its index. Returns -1 if not found.
+Fire At End
+Fire At Start
 Fixed Section
 Flat
 Float Curve (%s)
@@ -2867,7 +2917,9 @@ Format2
 Format3
 Format4
 Format5
+Forward Stop Only
 Frac
+Fraction
 Fractional component (ie. returns 0.34 for 12.34)
 FrameUpdate
 Free
@@ -2904,6 +2956,7 @@ GraphNodes
 GridBlendNode
 HAC K  Unused Binding
 HELPER_BONE
+HPulseObservableLambda
 Has All Flags
 Has Any Flags
 HasPath
@@ -2917,12 +2970,11 @@ IK Target: %s
 IKChainDataPoleVectorForAxis::X
 IKChainDataPoleVectorForAxis::Y
 IKChainDataPoleVectorForAxis::Z
-IKV3TransferInterface_AllowRawStringTokenTransfer
 IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 IND)ind)"
-IPulseInstanceLoadAPI
+INTERNAL_CALL_TO_PULSE
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
 If specified, each wait interval will vary randomly between WaitInterval this value
@@ -2954,6 +3006,7 @@ Invalid target provided to target selector!
 Invalid warp sections to perform a root motion warp for the given start time!
 Inverse Rotate Vector
 Inverse Transform Vector
+Invoke *Broadcast* R%d -> R%d: Cell%d %s
 Invoke Cell%d [eid=%d] %s%s
 Invoke Lib %s
 Is In Test Mode
@@ -3029,9 +3082,9 @@ MPropertyFlattenIntoParentRow
 MPropertyReadOnly
 MPropertySortPriority
 MPropertySuppressField
+MPulseEditorSearchExpr
 MPulseExpressionAlias
 MPulseFunctionAddsCursorTag
-MPulseFunctionHiddenInTool
 MVDataAssociatedFile
 MVDataRoot
 Make Angle
@@ -3089,6 +3142,7 @@ ModelAttachmentName()
 ModelBodyGroupName()
 ModelBoneName()
 ModelMaterialGroupName()
+ModelMeshDNARig_t
 ModelSpaceBlendTask - Trying to perform a model-space blend using an additive pose
 MorphChannel
 MotionMatching:SelectionChangeCount
@@ -3111,6 +3165,18 @@ MoverNode
 Mul R%d <- R%d * R%d
 NEGATIVE_TOK
 NEWLINE
+NE_ANIM_SEQUENCE
+NE_MODEL_MATERIAL_GROUP
+NE_PARTICLE_EHANDLE
+NE_QANGLE
+NE_RESOURCE
+NE_RESOURCE_NAME
+NE_SNDEVT_GUID
+NE_SNDEVT_NAME
+NE_TRANSFORM
+NE_TRANSFORMWS
+NE_VARIANT
+NE_VDATA_CHOICE
 NULL CELL 
 Natural logarithm (base e)
 Neg R%d <- -R%d
@@ -3160,6 +3226,7 @@ Overlay Blend: %.2f%%
 OverlayBlendTask - Trying to perform an overlay blend with mismatched pose types ( additive/parent-space )
 OverlayProjectionDirection
 PARENT
+PF_TYPE_CONTROL_POINT_PLANE_DISTANCE
 PLUG_TYPE_INPUT
 PLUG_TYPE_OUTPUT
 PLUG_TYPE_RELAY_OMNIDIRECTIONAL_LEGACY
@@ -3181,6 +3248,7 @@ Parameterized Selector: Failed to select a valid option!
 Parameters
 ParametersKV3
 Parent
+Parent Map + VData
 Parent Map: %s\n
 ParentAttachmentName()
 Parser encountered %d error(s)
@@ -3208,10 +3276,13 @@ Program uses more temp variables than are supported. Needs %i, max is %i
 Prop( %s )
 PropWorldOrigin
 Pulse domain which enables particle content to query leaf code to introspect game state.
+PulseExecHistoryCallerInfo_t
+PulseRuntimeLambdaIndex_t
 QAngle
 Quaternion
 QuaternionStorage
 R Sqrt
+RECORD_NEXT_SEQ_POINT
 RESOURCE_TYPE_ANIMATION_GROUP_INTERNAL
 RESOURCE_TYPE_ANIMATION_INTERNAL
 RESOURCE_TYPE_ANIMGRAPH
@@ -3259,6 +3330,8 @@ Returns interpolated value between A and B based on frac 0.0 - 1.0 (transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world transform)
 Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector)
+Returns the closest point to Point on the infinite line through LineA and LineB. Fraction is 0 at LineA and 1 at LineB and not clamped.
+Returns the closest point to Point on the line segment from LineA to LineB. Fraction is clamped to 0 at LineA and 1 at LineB.
 Returns the constant pi (3.14...)
 Returns the inverse of a transform.
 Returns the inverse of a world transform.
@@ -3277,6 +3350,8 @@ Rotate a world direction vector into a local direction, not including position o
 Rotation Only
 Round - round float up or down to integer
 Round Float
+Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed.
+Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)
 SCOPE_QUALIFIER
 SEMICOLON
 SINGLE_LINE_COMMENT
@@ -3355,6 +3430,7 @@ TOK_COLON
 TWIST
 Tag Cursor
 Tag Self When Complete
+Tagged Sound (%s) (%s)
 Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>"Hello {} my name is {}"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>"Hello {0} my name is {1}"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br>
 TanFrameQuat
 Tangent of angle. Input in radians, output in radians
@@ -3392,6 +3468,7 @@ Trying to XY warp a section with no displacement, falling back to LERP!
 Trying to XY warp backwards, falling back to LERP!
 Trying to XY warp to under the distance threshold, falling back to LERP!
 Trying to set an offset on an unset node!
+Turn To Start
 Turn a time in seconds into a display string. NOT localized.
 TurnHelperNode
 Two Bone IK
@@ -3422,6 +3499,7 @@ UpdateContext
 Used to flag a test as having failed.
 VDataChoice( %s )
 VDataChoice()
+VMAP_AND_VDATA
 Value 0-1 how far along duration (always 0 if duration is -1)
 Var( %s )
 Variable "%s" has %i components, a specific component must be specified, for example use: "%s.x"
@@ -3499,6 +3577,7 @@ _autoreset
 a:fulltype
 a:typeparam
 acosf
+affine
 allflags
 allowed_api_features
 allowed_requirements
@@ -3517,7 +3596,9 @@ attachment_point
 attachment_point_cp1
 attachment_type_cp1
 attr_factory
+bCondition
 bInherit
+bOverflowedInstructionHistoryLimit
 bValue
 b_action_restart
 b_movement_type_restart
@@ -3854,16 +3935,20 @@ curvature
 deg2rad
 detach_from_owner
 domain_scope
+eAim
+eForwardStopOnly
+eTurnToStart
 e_action_desired_shared
 e_movement_type_desired_shared
 element
 embedded_animation
+embedding_norm
 emptyanimwithnoeffect
+euclidean_norm
 exp2
 expr
-expression_type
+externalCallerInfo
 fSpeedScale
-fast
 fetched: %s : %.3f\n
 field_name
 flDegrees
@@ -3872,9 +3957,12 @@ flElapsed
 flExponent
 flFloat
 flFrac
+flGoalStrength
 flInputA
 flInputB
+flMax
 flMaxRadius
+flMin
 flMinRadius
 flOutputA
 flOutputB
@@ -3892,6 +3980,8 @@ flValueB
 flWaitInterval
 flWaitIntervalHigh
 flYaw
+flZin
+flZout
 flagchoices
 flc_columns
 flc_count
@@ -3918,12 +4008,16 @@ game:tools/images/animgraph_editor/animgraph_parameter_virtual_base.png
 game:tools/images/animgraph_editor/animgraph_tag_base.png
 gameitemclass
 gameunitclass
+geodesic_norm
 getRelativeTransform
+gradient
 ground_offset
 handshakeTypes
 hsequence
+i < 127
 idiv
 inbound
+inputs
 instance_file
 instance_parm
 instance_variable
@@ -3932,11 +4026,13 @@ intchoices
 intmap
 inverseRotateVector
 inverseTransformVector
+inverse_threshold
 is also the end of the line, so you must check your lexer rules\n
 is_selector
 kAnimGraphSaveRestoreVersion
 keyframeclass
 keyvalues
+l2_regularization
 length2d
 length3d
 lerp
@@ -3955,11 +4051,13 @@ m_CaseValues
 m_Classes
 m_DefaultCaseOutflow
 m_DefaultKV3
+m_Deformers
 m_DependentObservableBlackboardReferences
 m_DependentObservableTempVars
 m_DependentObservableVars
 m_EndEffectorFixedOffsetAttachment
 m_EvaluateConnection
+m_FfdZLayers
 m_Format
 m_HelpContextName
 m_Helpers
@@ -3967,20 +4065,29 @@ m_HingeAxis
 m_Inputs
 m_Items
 m_KV3Metadata
+m_LambdaDefs
 m_LegacyDefaultStr
 m_LongName
 m_MetaData
 m_ParentJoint
 m_PlugType
 m_PoleVectorForAxis
+m_ResultType
 m_Stops
 m_TagValue
 m_attachments
+m_bAbsoluteValue
 m_bBakedTwoSided
+m_bBlendShapes
 m_bCanBatchWithDynamicShaderConstants
+m_bCompletingVeryCloseToEndOfInterval
+m_bCompressedZ3
 m_bConditionValue
 m_bCustom
+m_bDisableSequenceFadeOut
 m_bDrawLast
+m_bFireAtEnd
+m_bFireAtStart
 m_bFirstEvaluate
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
@@ -3995,6 +4102,7 @@ m_bUsingLegacyDefault
 m_bmaxs
 m_bmins
 m_deltaTransform\t\t\t\t[%f] [%s]
+m_dnaRigs
 m_eRbfType
 m_flMaxRadians
 m_flMinRadians
@@ -4005,15 +4113,21 @@ m_hGraphDefinition->m_instanceRequiredMemory > 0
 m_hitboxsets
 m_iValue
 m_influenceFlags
+m_mapNodeToNewCursorCount
 m_morphSet
 m_nActiveCase
+m_nBlock
 m_nChainLength > 1 && m_nChainLength < 8
 m_nClassType
+m_nCulledCursorCount
 m_nCurrStackSize
 m_nCurrentWakeIndex
-m_nCursorID
-m_nGraphID
+m_nLambdaIdx
 m_nLegacyDefaultInt
+m_nReferenceNode
+m_nRig
+m_nVertexMapIndex
+m_nVertexMapNameHash
 m_nYieldToken
 m_pIsHandshakeDisabled
 m_pItemSet
@@ -4021,6 +4135,7 @@ m_pRecording->m_recordedUpdateData.Tail()->m_updateType != NmRecordedUpdateType_
 m_params.m_nNumBonesInChain < 8
 m_qFixupRotation
 m_rbfParameters
+m_rbfParametersKV3
 m_rgbColor
 m_stack
 materialgroup
@@ -4065,6 +4180,9 @@ node_id_List
 npc_ability_name
 npcclass
 numStates <= s_nMaxStates
+num_inputs
+num_outputs
+num_poses
 numframes
 offBeforeFinished
 offWhenFinished
@@ -4073,6 +4191,7 @@ optionallycompressedtangentframe
 options.m_pBoneWeights->Count() >= m_boneIDs.Count()
 options.m_pBoneWeights->Count() >= m_pSkeleton->GetNumBones()
 outbound
+outputs
 overrideclass
 pCachedPoseBuffer->m_ID.IsValid()
 pCheckpointName
@@ -4092,7 +4211,6 @@ pathclass
 pathnodeclass
 pointclass
 pointentityclass
-polymorphic_arg
 polymorphic_class
 posxyz
 preview
@@ -4103,6 +4221,8 @@ propdataname
 pulse_node_custom_attributes
 pulse_runtime_lib
 rad2deg
+rand_float
+rand_int
 random_position
 remainingRootMotionToWarp\t[%f] [%s]
 remainingRootMotion\t\t\t[%f] [%s]
@@ -4110,18 +4230,22 @@ remap
 remove_key
 reorder_sequences
 resourcesystem
+rigid
 rootMotionToWarp\t\t\t\t[%f] [%s]
 rotateVector
 rotateVectorToLocal
 rotateVectorToWorld
+rotation_ignore_threshold
 round
 rsqrt
 saturate
 scriptlist
 scriptsToRun
+search_expr
 select
 self
 sequence_tag_spans
+settings
 side
 sidelist
 sign
@@ -4137,12 +4261,16 @@ stop_on_layer_seq_change_instantly
 stop_on_seq_change_instantly
 strFormat
 strValue
+stretch_ignore_threshold
+stretch_mean
+stretch_norm
 string_instanced
 stringmap
 struct
 subclass_choice
 suggestions
 suppressed_field
+switchValue
 tagCount
 tagValue
 tag_list
@@ -4155,20 +4283,30 @@ target_name_or_class
 target_source
 texcoord
 text_block
+theta_transpose
 to constrain
 tools/images/pulse_editor/cursor_kill.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
+training_rotations
+training_stretches
+training_translations
 transformInverse
 transformVector
 transformVectorToLocal
 transformVectorToWorld
+transform_mode
+translation_ignore_threshold
+translation_mean
 type_restriction_is_enum_flags
 use_layer_sequence
 vJOnPlane2
 vJOnPlane3
 vJOnPlane4
+vLineA
+vLineB
 vLookTarget
 vMsTargetPosition\t\t\t[%f] [%s]
+vPoint
 vVOnPlane1
 value0
 value1

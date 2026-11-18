@@ -219,8 +219,8 @@ $Globals
 *** Feature source "%s" on bool variable "%s" must stay in the range 0..1!\n
 *** Feature source "%s" on variable "%s" can only be set to an int, bool or float!\n
 *** Unknown source "%s" on variable "%s"!\n
-*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1277): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1287): Error masking unused parts for "%s"!\n\n
+*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1289): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForDynamicShaderCompileMaterialEditor(1299): Error masking unused parts for "%s"!\n\n
 ***Error! Variable %s is not an input texture\n
 *.vshadercache
 , at offset %d
@@ -304,6 +304,7 @@ Base recognizer function recover called by unknown parser type - provide overrid
 Base recognizer function recoverFromMismatchedSet called by unknown parser type - provide override for this function\n
 Base recognizer function recoverFromMismatchedToken called by unknown parser type - provide override for this function\n
 Bindless texture %s is using implicit sampler, use explicit samplers.
+BindlessCheckedIndex( %s )
 BlendEnable
 BlendEnable0
 BlendEnable1
@@ -565,6 +566,7 @@ PC_SM_5_0_VULKAN
 PC_SM_6_0_VULKAN
 PRAGMA
 PROGRAM
+PS_CS
 PS_RENDER_STATE
 PS_RTX
 Parameter '%s' has the same name in two constant buffers: '%s' and '%s'\n
@@ -609,6 +611,7 @@ S_EXECUTION_REORDERING
 S_GPU_DEVICE_ID
 S_GPU_VENDOR_ID
 S_MOLTEN_VK
+S_NEEDS_MESHLET_OVERFLOW_HANDLING
 S_REVERSE_DEPTH_BUFFER
 S_SHADER_QUALITY
 S_SUBGROUP_WAVE_OPS
@@ -787,6 +790,7 @@ arg1
 attribute
 bentnormal
 bindless_resources
+bindless_validation
 blendindices
 blendweight
 blendweights

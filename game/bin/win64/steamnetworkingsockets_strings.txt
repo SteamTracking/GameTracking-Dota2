@@ -709,7 +709,6 @@ App ignored P2P connect request from %s on %s\n
 App scheduled cleanup for FakeIP seession to %s (no active connection)\n
 Application closed connection
 Application closed connection in an unusual way
-Arg list too long
 Assertion Failed: !"Parse bug"
 Assertion Failed: !( TLinkStatsTracker::m_recvPktNumberMask[ idxRecvBitmask ] & bit )
 Assertion Failed: !( msgStatsIn.flags() & msgStatsIn.ACK_REQUEST_E2E )
@@ -1804,12 +1803,10 @@ Bad IV size
 Bad P2P signal from '%s': neither from/to connection IDs present\n
 Bad P2P signal: invalid from_identity '%s'\n
 Bad P2P signal: no from_identity\n
-Bad address
 Bad cert identity.  %s
 Bad cert.  %s.  Dropping.
 Bad cert: %s
 Bad client_identity_string '%s'\n
-Bad file descriptor
 Bad from_identity_string '%s'\n
 Bad identity in cert.  %s
 Bad identity in stats
@@ -1831,7 +1828,6 @@ Bogus cipher %d
 Bookkeeping bug!
 Bookkeeping bug: Can't remove logical socket from physical socket's table, it isn't there
 Bookkeeping error
-Broken pipe
 Buffer isn't big enough to hold padded+encrypted data and tag
 Buffer might not be big enough to hold decrypted data
 Bug! SDR_LISTEN_PORT not set?
@@ -2468,12 +2464,10 @@ Digital Signature
 DirName
 DirName:
 Directory
-Directory not empty
 Discarding handshake timestamp that's %lldms old, not sending in ConnectOK\n
 Discarding invalid CMsgSteamNetworkingP2PRendezvous from %s
 Discarding oldest SDR ticket for server %s.  Expiry=%u\n
 Domain
-Domain error
 Don't have network config. Check Internet connection
 Don't know Steam universe.  Forget to call SteamDatagram_SetUniverse()?
 Don't know our AppID.  Order of init bug?
@@ -2715,7 +2709,6 @@ Error initializing crypto
 Error setting option %d
 Error writing file
 Excluded
-Exec format error
 Existing symmetric connection [%s]
 Expected '"' to begin JSON object key, but found '%c' (0x%02x) instead
 Expected ':' but found '%c' (0x%02x) instead
@@ -2851,9 +2844,6 @@ Fatal Assertion Failed: x.GetRawData( tmp ) == cbData
 Fetching public config, but we don't know the realm.  This won't work in China!
 Field Type: %s\n
 Field=
-File exists
-File too large
-Filename too long
 FinalizeLocalCrypto
 FindServerDataForCluster
 Flags indicate presence of TimeSincePrev, but no room for it.  Stats message size %d, packet size %d
@@ -2861,7 +2851,6 @@ FlsGetValue2
 FlushMessagesOnConnection
 For best results, preload the config.  (See SDR_NETWORK_CONFIG env var)\n
 Found existing connection [%s].  Only one symmetric connection can be active at a time.
-Function not implemented
 GENERALIZEDTIME
 GENERALSTRING
 GENERAL_NAME
@@ -2929,9 +2918,11 @@ GetHTTPResponseBodyData failed
 GetIdentity
 GetListenSocketAddress
 GetLocalPingLocation
+GetProcessWindowStation
 GetRemoteFakeIPForConnection
 GetSessionConnectionInfo
 GetTickCount64
+GetUserObjectInformationW
 Giving up on %s after %d consecutive ping timeouts
 Giving up waiting for DualWifi adapter to be ready for secondary address access to %s.  (We waited ~%.1fs)\n
 Got SDR network config.  %s
@@ -3066,9 +3057,6 @@ Ignoring unknown control message %d from %s
 Ignoring unsolicited/spoofed/late packet from %s.
 Ignoring weird timestamp %llu in ChallengeReply, current time is %llu.\n
 Ignoring weird timestamp %llu in ConnectOK, current time is %llu, remote delay was %lld.\n
-Illegal byte sequence
-Improper link
-Inappropriate I/O control operation
 Incorrect challenge.  Could be spoofed.
 Incorrect client challenge / connection ID %x in RouterPingReply from %s.  Reply could be spoofed, ignoring.
 Incorrect connection ID
@@ -3083,7 +3071,6 @@ Initial ICE auth
 Initial attempt to contact %s failed.  Giving up after %d consecutive failures
 Initialized low level socket/threading support.\n
 Input starting with character '%c' (0x%02x) not a valid JSON value
-Input/output error
 Internal P2P message from %s is %d bytes; that's not big enough for the header!
 Internal callback failure
 Internal error
@@ -3099,7 +3086,6 @@ InternalReceivedP2PSignal
 InternalSetCertificate
 Internal_SDR_LISTEN_PORT
 International Organizations
-Interrupted function call
 Invalid 25519 key type
 Invalid AES-GCM key size
 Invalid DH key
@@ -3115,7 +3101,6 @@ Invalid address families
 Invalid address family request when binding to IPv4 address
 Invalid address family request when binding to IPv6 address
 Invalid address type %d
-Invalid argument
 Invalid auth data size
 Invalid cert
 Invalid cert or unsupported public key type
@@ -3139,14 +3124,12 @@ Invalid private key
 Invalid public key
 Invalid reliable message header byte 0x%02x
 Invalid routing blob (%d bytes)
-Invalid seek
 Invalid signature
 Invalid signature length
 Invalid state %d
 Invalidating cached routes when we shouldn't!  %s
 Invalidity Date
 Iphlpapi.dll
-Is a directory
 JOINT-ISO-ITU-T
 JSON file is empty
 JSON number contains too many characters
@@ -3242,6 +3225,7 @@ Mask Algorithm:
 Message from relay session %u mapped to %s, but that connection has no TransportFromSDRClient?
 Message size %d is too big.  Max internal size is %d
 Message size %u is too big.  Max is %d
+MessageBoxW
 Messages session %s: Implicitly accepted connection %s via SendMessageToUser\n
 Messages session %s: connection [%s] is idle timing out, but we have a partial message from our peer.  Assuming a message was sent just at the timeout deadline.   Extending timeout.\n
 Messages session %s: connection [%s] is idle timing out.  But we still have unacked sent data?!?  This seems bad\n
@@ -3363,17 +3347,14 @@ No PSS parameter restrictions\n
 No blob return buffer
 No cert data
 No certs?
-No child processes
 No client identity\n
 No configured STUN servers
 No control data returned even though we asked for TOS?
 No data
 No dropped packets, pkt num %lld, dup bit not set?  recvseq=%lld inorder=%lld, dup=%lld, lurch=%lld, ooo=%lld, %s.  (%s)
-No error
 No identity data
 No identity data is present
 No local candidate types are allowed by user settings and configured servers
-No locks available
 No need for SDR client network access
 No need for SDR network config
 No network config
@@ -3389,11 +3370,6 @@ No signaling?
 No signature
 No signed cert?  We cannot probe relays without a cert
 No signed data
-No space left on device
-No such device
-No such device or address
-No such file or directory
-No such process
 NoConnection
 NoSession
 Non Repudiation
@@ -3402,12 +3378,10 @@ None of %d certs trusted.  (E.g.:
 Not After: 
 Not Attempted
 Not Before: 
-Not a directory
 Not a regular file
 Not actually checking for Dual-wifi support, just creating simulating support, as per DualWifi_Enable=%d\n
 Not actually creating secondary socket as per DualWifi_Enable=%d\n
 Not configured to listen for for SDR
-Not enough space
 Not from trusted address; dropped
 Not in manual poll mode!
 Not initialized
@@ -3540,7 +3514,6 @@ OpenSSL X9.42 DH method
 OpenSSL default
 OpenSSL default user interface
 OpenSSL random number system reports not enough entropy
-Operation not permitted
 Options list is NULL, but nOptions != 0?
 Order: 
 OutOfOrderCorrectionWindowMicroseconds
@@ -3768,7 +3741,6 @@ Pended ack has timestamp %llx (=%llu), reference time is %llx (%llu), diff=%lld
 Pending ping measurement until network config is obtained.
 Performing ping measurement
 Permanent Identifier
-Permission denied
 Permitted
 Ping = %d = %d+%d+%d (front+interior+remote).  
 Ping data good enough to make routing decisions.  First ping received %.1fs ago, great=%d, good+=%d, ok+=%d, valid=%d, ignored=%d\n
@@ -3912,7 +3884,6 @@ RSA_verify
 RSA_verify_ASN1_OCTET_STRING
 RSA_verify_PKCS1_PSS_mgf1
 Rank=%d 
-Read-only file system
 ReadConsoleA
 ReallyAsyncCertRequest
 Realm changing %d -> %d?
@@ -3994,10 +3965,6 @@ Requesting cert for %s from Steam\n
 Require Explicit Policy
 Reserved reliable stream pos size
 ResetIdentity
-Resource deadlock avoided
-Resource device
-Resource temporarily unavailable
-Result too large
 Retrying
 Retrying cert request
 Retrying ping measurements
@@ -4402,9 +4369,6 @@ Too many chunks to send via TURN relay (max 3)
 Too many connections.
 Too many ephemeral FakeUDP ports.\n
 Too many extra attrs for TURN request
-Too many links
-Too many open files
-Too many open files in system
 Trailer Field: 0x
 TransportChangeConfirm
 Tried to connect request, but crypt not ready
@@ -4506,7 +4470,6 @@ Unexpected value for 'Unencrypted' config value
 Universe changing %d -> %d?
 Unknown callback type %d!
 Unknown control message
-Unknown error
 Unknown extra field type %d
 Unknown network config availability %d
 Unlocked a lock '%s' that wasn't held?
@@ -5889,7 +5852,6 @@ dITRedirect
 dNSDomain
 dSAQuality
 dane_i2d
-data
 data greater than mod len
 data is wrong
 data not multiple of block length

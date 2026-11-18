@@ -146,6 +146,12 @@
 	]
 
 	cooldown(float) : "Cooldown" : 0 : "After use, how long does another NPC has to wait in order to use this hint (in seconds)."
+	stance(intchoices) : "Stance" : 0 : "Stance the NPC should take while using this hint. May not apply to a given hint type." =
+	[
+		0 : "Don't Care"
+		1 : "Standing"
+		2 : "Crouching"
+	]
 	npc_snap_to_hint_distance( float ) : "Snap NPC To Hint Distance" : "-1" : "If > 0, don't snap the NPC to this hint position until the NPC is within the specified range (allows animgraph or other systems to move the entity even after the animations have started). If < 0, don't snap unless you have a Follow Entity specified."
 
 	// Inputs
@@ -297,7 +303,7 @@
 	"3" : "Very Low"
 	]
 
-	destructible_part_initial_state_destructed_1(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 1" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_1(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 1" : "-1" : "Parts in this hit group start the map destroyed, up to the Damage Level below. HITGROUP_INVALID leaves this slot unused." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -371,9 +377,9 @@
 
 	]
 
-	destructible_part_initial_state_destructed_1_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 1" : "0" : "Damage level to be set as fully destructed."
+	destructible_part_initial_state_destructed_1_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 1" : "0" : "Destroys this damage level and every level before it, so 0 destroys only the first level. -1 destroys every level."
 
-	destructible_part_initial_state_destructed_2(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 2" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_2(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 2" : "-1" : "Parts in this hit group start the map destroyed, up to the Damage Level below. HITGROUP_INVALID leaves this slot unused." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -445,9 +451,9 @@
 	"62" : "HITGROUP_WHEEL_REAR_LEFT"
 	"63" : "HITGROUP_WHEEL_REAR_RIGHT"
 	]
-	destructible_part_initial_state_destructed_2_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 2" : "0" : "Damage level to fully destroy."
+	destructible_part_initial_state_destructed_2_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 2" : "0" : "Destroys this damage level and every level before it, so 0 destroys only the first level. -1 destroys every level."
 
-	destructible_part_initial_state_destructed_3(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 3" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_3(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 3" : "-1" : "Parts in this hit group start the map destroyed, up to the Damage Level below. HITGROUP_INVALID leaves this slot unused." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -519,9 +525,9 @@
 	"62" : "HITGROUP_WHEEL_REAR_LEFT"
 	"63" : "HITGROUP_WHEEL_REAR_RIGHT"
 	]
-	destructible_part_initial_state_destructed_3_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 3" : "0" : "Damage level to fully destroy."
+	destructible_part_initial_state_destructed_3_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 3" : "0" : "Destroys this damage level and every level before it, so 0 destroys only the first level. -1 destroys every level."
 
-	destructible_part_initial_state_destructed_4(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 4" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_4(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 4" : "-1" : "Parts in this hit group start the map destroyed, up to the Damage Level below. HITGROUP_INVALID leaves this slot unused." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -593,9 +599,9 @@
 	"62" : "HITGROUP_WHEEL_REAR_LEFT"
 	"63" : "HITGROUP_WHEEL_REAR_RIGHT"
 	]
-	destructible_part_initial_state_destructed_4_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 4" : "0" : "Damage level to fully destroy."
+	destructible_part_initial_state_destructed_4_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 4" : "0" : "Destroys this damage level and every level before it, so 0 destroys only the first level. -1 destroys every level."
 
-	destructible_part_initial_state_destructed_5(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 5" : "-1" : "Parts assigned to this hit group will be initialized as destructed." =
+	destructible_part_initial_state_destructed_5(intchoices) [ group="Initially Destroyed Destructible Parts" ] : "Hit Group 5" : "-1" : "Parts in this hit group start the map destroyed, up to the Damage Level below. HITGROUP_INVALID leaves this slot unused." =
 	[
 	"-1" : "HITGROUP_INVALID"
 	"0" : "HITGROUP_GENERIC"
@@ -667,12 +673,12 @@
 	"62" : "HITGROUP_WHEEL_REAR_LEFT"
 	"63" : "HITGROUP_WHEEL_REAR_RIGHT"
 	]
-	destructible_part_initial_state_destructed_5_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 5" : "0" : "Damage level to fully destroy."
+	destructible_part_initial_state_destructed_5_part_index(integer) [ group="Initially Destroyed Destructible Parts" ] : "Damage Level 5" : "0" : "Destroys this damage level and every level before it, so 0 destroys only the first level. -1 destroys every level."
 
 	// Outputs
 	output OnDamaged(void) : "Fired when this NPC takes damage."
-	output OnStartDeath(void) : "Fired when this NPC has begun dying before other death-related callbacks." 
-	output OnDeath(void) : "Fired when this NPC is killed." 
+	output OnStartDeath(void) : "Deprecated: use OnDeath, which fires at the same moment."
+	output OnDeath(void) : "Fired the moment this NPC is killed, before any death animation. The killer is the activator."
 	output OnThreeQuarterHealth(void) : "Fired when this NPC reaches 75% of its maximum health (even if they die)."
 	output OnHalfHealth(void) : "Fired when this NPC reaches half of its maximum health (even if they die)."
 	output OnQuarterHealth(void) : "Fired when this NPC reaches 25% of its maximum health (even if they die)."

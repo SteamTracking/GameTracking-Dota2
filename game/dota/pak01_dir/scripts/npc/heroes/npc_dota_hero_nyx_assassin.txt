@@ -35,7 +35,7 @@
 		"Ability2"		"nyx_assassin_jolt"
 		"Ability3"		"nyx_assassin_spiked_carapace"
 		"Ability4"		"nyx_assassin_burrow"
-		"Ability5"		"nyx_assassin_neuro_sting"
+		"Ability5"		"nyx_assassin_scarab_metabolism"
 		"Ability6"		"nyx_assassin_vendetta"
 		"Ability7"		"nyx_assassin_unburrow"
 		"Ability10"		"special_bonus_unique_nyx_4"
@@ -44,7 +44,7 @@
 		"Ability13"		"special_bonus_unique_nyx_jolt_cooldown"
 		"Ability14"		"special_bonus_unique_nyx_6"
 		"Ability15"		"special_bonus_unique_nyx_2"
-		"Ability16"		"special_bonus_unique_nyx"
+		"Ability16"		"special_bonus_unique_nyx_assassin_scarab_metabolism"
 		"Ability17"		"special_bonus_agility_80"
 		
 		"AbilityDraftAbilities"
@@ -90,7 +90,7 @@
 		"AttributeAgilityGain"		"2.9"
 		"AttributeBaseIntelligence"		"21"
 		"AttributeIntelligenceGain"		"2.6"
-		"StatusHealthRegen"		"2.0"
+		"StatusHealthRegen"		"1.0"
 		"MovementSpeed"		"310"
 		"particle_folder"		"particles/units/heroes/hero_nyx_assassin"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
@@ -278,7 +278,7 @@
 						}
 						"duration"			
 						{
-							"value"				"1.1 1.4 1.7 2.0"
+							"value"				"1.25 1.5 1.75 2.0"
 							"special_bonus_unique_nyx_3"	"+0.2"
 						}
 						"length"			"750"
@@ -304,6 +304,7 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_NyxAssassin.ManaBurn.Target"
+				"AbilityTextureName"			"nyx_assassin_jolt"
 
 				// Unit Targeting
 				//-------------------------------------------------------------------------------------------------------------
@@ -315,14 +316,30 @@
 				"AbilityCastRange"				"600"
 				"AbilityCastPoint"				"0.4"
 		
-				// Time		
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"20 15 10 5"
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityManaCost"				"70 80 90 100"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityValues"
+				{
+					"AbilityCooldown"
+					{
+						"value"			"20 15 10 5"
+						"special_bonus_unique_nyx_jolt_cooldown"			"-3"
+					}
+					"max_mana_as_damage_pct"		"20 25 30 35"	
+					"mana_burn_pct"					"12 15 18 21"
+					"aoe"
+					{
+						"value"		"0"
+						"special_bonus_unique_nyx"		"+600"
+						"affected_by_aoe_increase"	"1"
+					}
+				
+				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"AbilityCastGestureSlot"		"DEFAULT"
 			}
 
 			//=================================================================================================================
@@ -363,16 +380,16 @@
 					"AbilityCooldown"
 					{
 						"value"			"11 9.5 8 6.5"
-						"special_bonus_unique_nyx_jolt_cooldown"			"-3"
+						"special_bonus_unique_nyx_jolt_cooldown"			"-2"
 					}
 					"max_mana_as_damage_pct"		
 					{
-						"value"		"25 30 35 40"
+						"value"		"20 25 30 35"
 
 					}
 					"mana_burn_pct"
 					{				
-						"value" 				"9 12 15 18"
+						"value" 				"12.5 15.0 17.5 20"
 					}
 					"aoe"
 					{
@@ -380,8 +397,8 @@
 						"special_bonus_unique_nyx"		"+600"
 						"affected_by_aoe_increase"	"1"
 					}
-					"damage_echo_duration"		"15"
-					"damage_echo_pct"			"15"
+					"damage_echo_duration"		"0"
+					"damage_echo_pct"			"0"
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 				"AbilityCastGestureSlot"		"DEFAULT"
@@ -485,7 +502,7 @@
 					}
 					"bonus_damage"					
 					{
-						"value"					"300 400 500"		
+						"value"					"300 380 460"		
 						"special_bonus_unique_nyx_vendetta_damage"		"+50"
 						"CalculateSpellDamageTooltip"	"1"
 					}
@@ -538,14 +555,13 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"health_regen_rate"		"1"
-					"mana_regen_rate"		"1"
-					"damage_reduction"			"40"
-					"cast_range"			"500"
+					"scarab_metabolism_multiplier"		"3"
+					"damage_reduction"					"40"
+					"cast_range"			"400"
 					"cooldown_reduction"			"25"
 					"carapace_radius"			
 					{
-						"value"			"400"
+						"value"			"350"
 						"affected_by_aoe_increase"	"1"
 					}
 				}
@@ -633,6 +649,42 @@
 				"AbilityValues"
 				{
 					"mana_burn_pct"				"12"
+				}
+			}
+
+			//=================================================================================================================
+			// Nyx Assassin: Scarab Metabolism
+			//=================================================================================================================
+			"nyx_assassin_scarab_metabolism"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+				"IsBreakable"					"1"
+				"Innate"						"1"
+				"MaxLevel"						"1"
+
+				"AbilityValues"
+				{
+					"out_of_combat_time"		"3.0"
+					"health_regen_pct"			"0.35"
+					"mana_regen_pct"			"0.35"
+					"bonus_movement_speed"
+					{
+						"value"					"5"
+						"hero_levelup"			"+1"
+					}
+					"breaks_on_damage"			
+					{
+						"value"				"1"
+						"special_bonus_unique_nyx_assassin_scarab_metabolism"		"=0"
+					}
+					"multiplier"		
+					{
+						"value"				"1"
+						"special_bonus_unique_nyx_assassin_scarab_metabolism" 		"=2"
+					}
 				}
 			}
 		}

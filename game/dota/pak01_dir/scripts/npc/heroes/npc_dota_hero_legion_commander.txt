@@ -45,13 +45,13 @@
 			"Ability4"		"legion_commander_duel"
 		}
 
-		"Ability10"		"special_bonus_unique_legion_commander_9"
+		"Ability10"		"special_bonus_unique_legion_commander_overwhelming_odds_attack_speed"
 		"Ability11"		"special_bonus_unique_legion_commander_outfight_them_armor"
 		"Ability12"		"special_bonus_unique_legion_commander_6"
 		"Ability13"		"special_bonus_unique_legion_commander_4"
 		"Ability14"		"special_bonus_unique_legion_commander_duel_duration"
 		"Ability15"		"special_bonus_unique_legion_commander_3"
-		"Ability16"		"special_bonus_unique_legion_commander_7"
+		"Ability16"		"special_bonus_unique_legion_commander_moment_of_courage_crit"
 		"Ability17"		"special_bonus_unique_legion_commander_duel_refresh_on_victory"
 		"Facets"
 		{
@@ -81,7 +81,7 @@
 		"AttackRange"		"150"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"25"
-		"AttributeStrengthGain"		"3.000000"
+		"AttributeStrengthGain"		"2.800000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.700000"
 		"AttributeBaseIntelligence"		"20"
@@ -380,7 +380,11 @@
 					"bonus_armor_heroes"		"0"
 					"bonus_armor_creeps"		"0"
 					"bonus_attack_speed_creeps"		"0"
-					"bonus_attack_speed"		"50 75 100 125"
+					"bonus_attack_speed"
+					{
+						"value"				"50 75 100 125"
+						"special_bonus_unique_legion_commander_overwhelming_odds_attack_speed"	"+30"
+					}
 					"duration"					"6.0"
 
 					"slow_duration"				"0.3"
@@ -390,7 +394,6 @@
 					"AbilityCooldown"
 					{
 						"value"						"18"
-						"special_bonus_unique_legion_commander_9"		"-2"
 					}
 
 					"shield_counts_non_hero_damage"		"0"
@@ -509,7 +512,11 @@
 					"hp_leech_percent"			
 					{
 						"value"		"55 65 75 85"
-						"special_bonus_unique_legion_commander_7" "+100"
+					}
+					"crit_mult"
+					{
+						"value"		"0"
+						"special_bonus_unique_legion_commander_moment_of_courage_crit"	"+180"
 					}
 			
 				}
@@ -570,7 +577,7 @@
 					"duel_refresh_on_victory"	
 					{
 						"value"					"0"
-						"special_bonus_unique_legion_commander_duel_refresh_on_victory"		"+30"
+						"special_bonus_unique_legion_commander_duel_refresh_on_victory"		"+25"
 					}
 					"damage_reduction_pct"			
 					{

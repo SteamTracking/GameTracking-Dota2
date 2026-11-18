@@ -39,7 +39,7 @@
 		"Ability1"		"skywrath_mage_arcane_bolt"
 		"Ability2"		"skywrath_mage_concussive_shot"
 		"Ability3"		"skywrath_mage_ancient_seal"
-		"Ability4"		"generic_hidden"	// RESERVED FOR FACET ABILITY
+		"Ability4"		"generic_hidden"
 		"Ability5"		"skywrath_mage_shield_of_the_scion"
 		"Ability6"		"skywrath_mage_mystic_flare"
 
@@ -51,7 +51,7 @@
 			"Ability4"		"skywrath_mage_mystic_flare"
 		}
 
-		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability10"		"special_bonus_unique_skywrath_scion_shield_barrier"
 		"Ability11"		"special_bonus_unique_skywrath_6"
 		"Ability12"		"special_bonus_unique_skywrath"
 		"Ability13"		"special_bonus_unique_skywrath_concussive_shot_slow"
@@ -293,7 +293,7 @@
 				"7"		"skywrath_mage_arcane_bolt"
 				"8"		"skywrath_mage_ancient_seal"
 				"9"		"skywrath_mage_ancient_seal"
-				"10"		"special_bonus_mp_regen_150"
+				"10"		"special_bonus_unique_skywrath_scion_shield_barrier"
 				"11"		"skywrath_mage_ancient_seal"
 				"12"		"skywrath_mage_mystic_flare"
 				"13"		"skywrath_mage_concussive_shot"
@@ -356,7 +356,6 @@
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_SkywrathMage.ArcaneBolt.Cast"
 				"HasShardUpgrade"               "1"
-		
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
@@ -397,7 +396,8 @@
 							"value"				"500"
 							"affected_by_aoe_increase"	"1"
 						}
-				
+						"secondary_bolt_interval"	"1"
+
 						"total_bolt_count"
 						{
 							"value"				"1"
@@ -462,7 +462,7 @@
 						"movement_speed_pct"	
 						{
 							"value"				"40"
-							"special_bonus_unique_skywrath_concussive_shot_slow"		"+20"
+							"special_bonus_unique_skywrath_concussive_shot_slow"		"+25"
 						}
 						"shot_vision"
 						{
@@ -509,8 +509,8 @@
 				{
 						"resist_debuff"			
 						{
-							"value"		"-20 -25 -30 -35"
-							"special_bonus_unique_skywrath_3"	"-10"
+							"value"		"-16 -20 -24 -28"
+							"special_bonus_unique_skywrath_3"	"-8"
 							"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 						}
 						"seal_duration"			"3.0 4.0 5.0 6.0"
@@ -522,7 +522,7 @@
 						"AbilityCooldown"
 						{
 							"value"								"14"
-							"special_bonus_unique_skywrath"		"-6"
+							"special_bonus_unique_skywrath"		"-5"
 						}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -571,8 +571,8 @@
 						"duration"				"2.0"
 						"damage"				
 						{
-							"value"			"800 1200 1600"
-						"special_bonus_unique_skywrath_5" "+400"
+							"value"			"800 1125 1450"
+							"special_bonus_unique_skywrath_5" "+350"
 						}
 						"damage_interval"		"0.1"
 						"scepter_radius"		
@@ -601,14 +601,16 @@
 				"AbilityValues"
 				{
 					"stack_duration"			"25"
-					"bonus_intelligence"		"0"
+					"bonus_intelligence"		"1"
 					"damage_barrier"
 					{
 						"value"					"13.5"
 						"hero_levelup"			"+1.5"
+						"special_bonus_unique_skywrath_scion_shield_barrier"		"+5"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+
 					}
-					"barrier_duration"			"12"
+					"barrier_duration"			"10"
 				}
 			}
 

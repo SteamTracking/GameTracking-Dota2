@@ -288,7 +288,7 @@ $prefix_element$
 .?AVCResourceStreamBase@@
 .?AVCResourceStreamVM@@
 .?AVCSFMBaseImporter@@
-.?AVCSchemaRegistration_toolutils2@@
+.?AVCSchemaRegistration_assetconfiglib@@
 .?AVCSimpleAssetTypeInfo@@
 .?AVCSingleChannelFileLoggingListener@@
 .?AVCUndoAttributeAddRemove@@
@@ -318,6 +318,7 @@ $prefix_element$
 64 283 0
 8-byte data pool
 <!-- DMXVersion
+<None>
 <non-RTTI type>
 == Non-Resource File ==\n
 == Resource File ==\n
@@ -371,7 +372,6 @@ CDmeDotaTileGrid
 CDmePolygonMeshDataStream
 CHammerMesh
 CImagePlaneNode
-CKV3MemberNameWithStorage
 CManifestInstance
 CMapCable
 CMapCordon
@@ -396,8 +396,6 @@ CMapTileMesh
 CMapTileProxy
 CMapVariableSet
 CMapWorld
-CModelMaterialGroupName
-CResourceNameTyped
 CTerrainSelection
 CTrajectoryPath
 CTrajectoryPathNode
@@ -417,7 +415,6 @@ CUndoManager::Undo
 CUtlBlockVector<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary::ElementInfo_t,int>,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CDmElement *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlSymbolLarge,struct DmMemoryInfo_t,class CDefLess<class CUtlSymbolLarge>,unsigned short>::Node_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -425,7 +422,6 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<stru
 CUtlMemoryBlockAllocator<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary::ElementInfo_t,int>,class CMemAllocAllocator>::AddPage
 CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer\n
 CVisibilityMgr
-CWeakHandle
 Cannot allocate abstract class
 Cannot allocate virtual address space in CResourceStreamVM::ReserveVirtualMemory, error %u\n
 Cannot change extension: '%s' != '%s'\n
@@ -623,16 +619,6 @@ LipUpV
 LipsV
 Logging errors to file '%s'\n
 Logging to file '%s'\n
-MPropertyAutoExpandSelf
-MPropertyStartGroup
-MVDataAnonymousNode
-MVDataAssociatedFile
-MVDataOutlinerAssetNameExpr
-MVDataOutlinerDefaultExpanded
-MVDataOutlinerDetailExpr
-MVDataOutlinerIconExpr
-MVDataPromoteField
-MVDataRoot
 Make sheet file
 MapClass
 MapNode
@@ -674,7 +660,6 @@ Prefix element cannot contain element or element_array attributes. ('%s')
 Preset File
 Procedural
 Processed %d file%s with %d error%s. (%d skipped)\n
-QAngle
 Radius Random
 Random Cull
 Randomly Flip Yaw
@@ -722,7 +707,6 @@ StereoFlip
 Symbol table:  %d entries %llu bytes\n
 Texture Configuration File
 The filename may only contain lower case alphanumeric characters, dashes, and underscores.
-This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
 TongueCurl
 TongueD
 TongueH
@@ -743,7 +727,7 @@ Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -807,6 +791,7 @@ animationTime
 animations
 animflags
 asset_warnings
+assetconfiglib
 assetinit success\n
 assetsystem
 assettypes
@@ -819,6 +804,8 @@ auto_time
 axisSystem
 background
 backgroundMap
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
@@ -892,7 +879,6 @@ create from parent particles
 curve info
 curvetypes
 custom
-data
 default set
 defaultBalance
 defaultCurveType
@@ -1019,6 +1005,7 @@ local_point
 localaxis
 lock to bone
 lower_hemisphere_is_black
+luminaire_shape
 m_AdditionalInputDependencies
 m_AdditionalRelatedFiles
 m_ArgumentDependencies
@@ -1085,7 +1072,6 @@ nodeID
 node_dest
 node_id_List
 node_name
-nodes
 noise
 normal$0
 normal$0Indices
@@ -1203,6 +1189,7 @@ shadow_secondary_color_day
 shadow_secondary_color_night
 shape
 shared
+shear
 showAmbientOcclusion
 showCameraFrustum
 showFocalPlane
@@ -1272,7 +1259,6 @@ tintColor
 toAttribute
 toElement
 toneMapScale
-toolutils2
 trail_length_random
 treeColor
 uint64_array
@@ -1331,4 +1317,3 @@ wrinkle
 wrinkle$0
 wrinkle$0Indices
 wrinkleIndices
-~CGenericFilter

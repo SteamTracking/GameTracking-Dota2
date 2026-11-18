@@ -51,9 +51,9 @@
 			"Ability6"		"lina_laguna_blade"
 		}
 
-		"Ability10"		"special_bonus_attack_damage_25"
+		"Ability10"		"special_bonus_unique_lina_4"
 		"Ability11"		"special_bonus_unique_lina_1"
-		"Ability12"		"special_bonus_unique_lina_4"
+		"Ability12"		"special_bonus_attack_damage_30"
 		"Ability13"		"special_bonus_unique_lina_3"
 		"Ability14"		"special_bonus_unique_lina_6"
 		"Ability15"		"special_bonus_unique_lina_2"
@@ -367,7 +367,6 @@
 				"AbilitySound"					"Ability.LightStrikeArray"
 				"TooltipSummaryProperties"		"light_strike_array_delay_time;light_strike_array_damage;light_strike_array_stun_duration"
 
-				"AbilityCastRange"				"700"
 				"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
 		
 				// Time		
@@ -382,6 +381,11 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
+						"AbilityCastRange"
+						{
+							"value"							"700"
+							"special_bonus_unique_lina_4"	"+100"
+						}
 						"light_strike_array_aoe"	
 						{
 							"value" "250"
@@ -429,10 +433,6 @@
 						"special_bonus_unique_lina_2"		"+1"
 						"display_type"						"kBuffPercentage"
 					}
-					"fiery_soul_magic_resist"
-					{
-						"special_bonus_unique_lina_4"		"+5"
-					}
 					"fiery_soul_max_stacks"				"7"
 					"fiery_soul_stack_duration"			"16"		
 					"bonus_spell_damage"
@@ -476,7 +476,7 @@
 					}
 					"spell_amp"
 					{
-						"value"							"35"
+						"value"							"30"
 						"display_type"					"kBuffPercentage"
 					}
 					"visualzdelta"							"100"
@@ -531,7 +531,7 @@
 				{
 					"damage"
 					{
-						"value"							"400 580 760"				
+						"value"							"360 525 690"				
 					}
 					"damage_delay"				"0.25"
 					"AbilityCooldown"
@@ -571,7 +571,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 				"MaxLevel"						"1"
 				"Innate"						"1"

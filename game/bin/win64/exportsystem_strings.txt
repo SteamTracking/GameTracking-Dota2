@@ -516,7 +516,6 @@ $prefix_element$
 .?AV?$CUndoLayerAdded@_K@@
 .?AV?$CUndoLayerAdded@_N@@
 .?AVCAnimationBucket@@
-.?AVCBitmapAssetTypeInfo@@
 .?AVCBoneSetup@@
 .?AVCCompressedAnimQuaternion@@
 .?AVCCompressedAnimVector3@@
@@ -719,19 +718,15 @@ $prefix_element$
 .?AVCImportSFMV9@@
 .?AVCLabelledDebugHelper@@
 .?AVCLogLayerSampleData@@
-.?AVCMapAssetTypeInfo@@
-.?AVCResourceAssetTypeInfo@@
 .?AVCSFMBaseImporter@@
 .?AVCSchemaRegistration_exportsystem@@
 .?AVCSchemaRegistration_toolutils2@@
-.?AVCSimpleAssetTypeInfo@@
 .?AVCUndoAttributeAddRemove@@
 .?AVCUndoAttributeRenameElement@@
 .?AVCUndoCreateElement@@
 .?AVCUndoDestroyElement@@
 .?AVCUndoElement@@
 .?AVCUndoFlattenLayers@@
-.?AVCVMMDAssetTypeInfo@@
 .?AVEBoneSetup@@
 .?AVFindByTypeVisitor@@
 .?AVIAnimationDebugRenderer@@
@@ -765,6 +760,7 @@ $prefix_element$
 64 283 0
 8-byte data pool
 <!-- DMXVersion
+<None>
 <UNKNOWN_EXPORT_TYPE>
 ??0FbxAMatrix@fbxsdk@@QEAA@AEBV01@@Z
 ??0FbxAMatrix@fbxsdk@@QEAA@XZ
@@ -1024,14 +1020,13 @@ BlendLayersUsingTimeSelection
 BrowInV
 Bump
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\utils\exportsystem\_vpc_exportsystem\default\win64\_msvc_\Retail\exportsystem.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\datamodel\dependencygraph.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\movieobjects\dmelog.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\movieobjects\dmerigconstraintoperators.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\fbxsystem\fbxsystem.cpp
-C:\buildworker\source2_dota_rel_2019_win64\build\src\texturelib\extract.cpp
 CAssociateResourceBlockLoader::BlockingLoadResourceFileData: Trying to load an illegal resource name %s!\n
-CBufferString
 CCompressedAnimQuaternion
 CCompressedAnimVector3
 CCompressedDeltaVector3
@@ -1146,7 +1141,6 @@ CUtlBlockVector<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary:
 CUtlDict<class CDmElement *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<enum DmElementHandle_t,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<bool> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<class CUtlSymbolLarge> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct ActiveLayer_t<class Color> *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
@@ -1227,7 +1221,8 @@ DataModel needs the file system to function
 Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
-DecompressTextureBits
+DecompressTextureBits: %u bytes of texture data, but %d mips of %dx%d %s need %u; it comes out black\n
+DecompressTextureBits: virtual texture %s; it comes out black\n
 Derived must implement
 DiffuseColor
 Distance Between Control Points Scale
@@ -1460,6 +1455,10 @@ Fingers
 Fingers_L
 Fingers_R
 FlattenLayers
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
 FloatBitMap_t::WriteInMemoryEXRFast
 FloatBitMap_t::WriteInMemoryEXRFast(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\tinyexr_impl.cpp:171
 FoldLipLo
@@ -1579,8 +1578,10 @@ Noise Vector
 NormalMap
 NoseV
 NostrilFlare
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
 Operate
 Operator cycle found during dependency graph traversal!\n
+Optional additional keys to check, in the same form as the main key (e.g. 'm_Content/m_strName')
 Orient Rotation to 2D Direction
 Original Foot 
 Original Knee
@@ -1673,7 +1674,8 @@ Texture Configuration File
 TextureColor
 TextureNormal
 TextureTranslucency
-This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
+The key whose value must match the asset name (ie. something like 'm_Model' if you want to apply this tag to .vmdl assets that are referenced by the vdata file)\nUse '/' to reach into sub-blocks, e.g. 'm_Content/m_strName', and '*' to search every element of an array, e.g. 'm_Levels/*/m_strName'.
+This expression determines whether the tag should actually be applied to an asset\nIt will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.\nThe expression is evaluated against the top-level vdata entry, even when the key reaches into a sub-block, so refer to sub-block fields by their full path. Expressions separate members with '.' (e.g. 'm_Content.m_bFoo').\nMost simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
 TongueCurl
 TongueD
 TongueH
@@ -1696,7 +1698,7 @@ Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -1788,6 +1790,8 @@ background
 backgroundColor
 backgroundFXClip
 backgroundMap
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
@@ -1906,7 +1910,6 @@ curve_%s_to_curve_%s
 curveinfo
 curvetypes
 custom
-data
 dataWindow
 date
 default set
@@ -1978,7 +1981,6 @@ fadeIn
 fadeOut
 falloff_left
 falloff_right
-fast
 fast_strobe
 fbx2dmx
 fetched: %s : %.3f\n
@@ -2010,8 +2012,6 @@ fromAttribute
 fromElement
 fromIndex
 functionName
-game:tools/images/assettypes/generic_lg.png
-game:tools/images/assettypes/generic_sm.png
 gameSoundName
 gameitemclass
 gameunitclass
@@ -2024,6 +2024,11 @@ green
 gridspacing
 groupColor
 hammer
+has a bad tile offset table ( %d tiles )
+has compressed tiles but no offsets
+has no tile layout block, it needs recompiling
+has no tiles for mip %d
+has tiles in unknown compression %d
 hiddenFlags
 hiddenGroups
 hideType
@@ -2117,9 +2122,11 @@ lock to bone
 lower_hemisphere_is_black
 lowprecisionuv
 lowprecisionuv1
+luminaire_shape
 m%d%d
 m_AdditionalInputDependencies
 m_AdditionalRelatedFiles
+m_AlternateAssetKeys
 m_ArgumentDependencies
 m_ChildResourceList
 m_InputDependencies
@@ -2203,14 +2210,12 @@ multi
 multi_%s
 multilevel
 multilevelchannel
-nCompressedSize == nUncompressedSize
 nDataSize > 0
 nLayoffState
 nodeID
 node_dest
 node_id_List
 node_name
-nodes
 noise
 normal$0
 normal$0Indices
@@ -2366,6 +2371,7 @@ shadow_secondary_color_day
 shadow_secondary_color_night
 shape
 shared
+shear
 showAmbientOcclusion
 showCameraFrustum
 showFocalPlane
@@ -2455,6 +2461,7 @@ text_block
 textureCoordinates
 textureCoordinatesIndices
 textureFrame
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 time log
 timeFrame
 time_array

@@ -52,9 +52,9 @@
 		"Ability10"		"special_bonus_unique_furion_6"
 		"Ability11"		"special_bonus_unique_furion_5"
 		"Ability12"		"special_bonus_unique_furion_2"
-		"Ability13"		"special_bonus_unique_furion_teleportation_barrier"
+		"Ability13"		"special_bonus_hp_300"
 		"Ability14"		"special_bonus_unique_furion_7"
-		"Ability15"		"special_bonus_unique_furion_4"
+		"Ability15"		"special_bonus_unique_furion_force_of_nature_treants"
 		"Ability16"		"special_bonus_unique_furion_3"
 		"Ability17"		"special_bonus_unique_furion"
 		"Facets"
@@ -295,8 +295,7 @@
 					"duration"						"2.5 3 3.5 4"
 					"sprout_damage"					
 					{
-						"value"															"70 130 190 250"
-						"special_bonus_unique_furion_4" 								"+240"
+						"value"															"70 140 210 280"
 					}
 					"sprout_damage_radius"
 					{
@@ -378,16 +377,16 @@
 				{
 					"AbilityCooldown"
 					{
-						"value"										"65 50 35 20"
+						"value"										"80 60 40 20"
 						"special_bonus_unique_furion_3"				"-100%"
 					}
 					"barrier"									
 					{
-						"value"					"70 130 190 250"
-						"special_bonus_unique_furion_teleportation_barrier"				"+100"
+						"value"					"0"
+						"special_bonus_unique_furion_teleportation_barrier"				"0"
 
 					}
-					"buff_duration"								"15"			
+					"buff_duration"								"0"			
 
 			
 				}
@@ -418,24 +417,30 @@
 					{
 						"value"		"150 225 300 375"
 						"affected_by_aoe_increase"	"1"
+						"special_bonus_unique_furion_force_of_nature_treants"		"+50"
 					}
-					"max_treants"					"2 3 4 5"
+					"max_treants"
+					{
+						"value"							"2 3 4 5"
+						"special_bonus_unique_furion_force_of_nature_treants"		"+2"
+					}
 					"treant_duration"				"50"
 					"treant_health"
 					{
-						"value"						"450"
+						"value"						"425 450 475 500"
 						"special_bonus_unique_furion"			"x3"
 					}
 					"treant_damage"
 					{
-						"value"					"16 25 34 43"
+						"value"					"15 25 35 45"
 						"special_bonus_unique_furion"			"x3"
 					}
 					"treant_bonus_hero_damage"
 					{
-						"value"					"6 10 14 18"
+						"value"					"5 10 15 20"
 						"special_bonus_unique_furion"			"x3"
 					}
+					"treant_armor"				"1 2 3 4"
 					"treant_movespeed"
 					{
 						"value"						"300 315 330 345"
@@ -545,7 +550,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -557,33 +562,17 @@
 				// Unit Targeting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		
-				// Stats
-				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastPoint"				"0.2"
-				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-				"AbilityCooldown"				"18"
-				"AbilityManaCost"				"80"
-			
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"duration"		"7"
-					"damage_per_tree"		"15"
-					"slow_per_tree"			"7"
-					"radius"				
-					{
-						"value"	"250"
-						"affected_by_aoe_increase"	"1"
-					}
-					"range"
-					{
-						"value"						"900"
-						"affected_by_aoe_increase"	"1"
-					}
+					"duration"					"5"
+					"damage_per_second"			"24"
+					"slow"						"10"
+					"treant_damage_per_second"	"12"
+					"treant_slow"				"5"
 				}
 			}
 
@@ -829,6 +818,18 @@
 			// Ability: Special Bonus
 			//=================================================================================================================
 			"special_bonus_unique_furion_4"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"BaseClass"						"special_bonus_base"
+			}
+
+			//=================================================================================================================
+			// Ability: Special Bonus
+			//=================================================================================================================
+			"special_bonus_unique_furion_force_of_nature_treants"
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------

@@ -46,9 +46,9 @@
 		"Ability7"					"hoodwink_sharpshooter_release"
 		"Ability8"					"hoodwink_mistwoods_wayfarer"		
 		"Ability10"					"special_bonus_unique_hoodwink_bushwhack_damage"
-		"Ability11"					"special_bonus_hp_175"
+		"Ability11"					"special_bonus_hp_200"
 		"Ability12"					"special_bonus_unique_hoodwink_scurry_charges"
-		"Ability13"					"special_bonus_agility_10"
+		"Ability13"					"special_bonus_agility_15"
 		"Ability14"					"special_bonus_unique_hoodwink_sharpshooter_vision"
 		"Ability15"					"special_bonus_unique_hoodwink_acorn_shot_bounces"
 		"Ability16"					"special_bonus_unique_hoodwink_sharpshooter_damage"
@@ -271,7 +271,7 @@
 						"damage"				"200"
 						"mark_duration"			"6.0"
 						"slow_pct"				"25"
-						"spell_amp"				"20"
+						"spell_amp"				"15"
 						"status_resistance"		"0"
 						"spread"				
 						{
@@ -415,7 +415,7 @@
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"1100"
+				"AbilityCastRange"				"1000"
 				"AbilityCastPoint"				"0.2"
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
@@ -429,11 +429,11 @@
 				{
 					"trap_radius"		
 					{
-						"value"		"265"
+						"value"		"275"
 						"affected_by_aoe_increase"	"1"	
 					}
-					"debuff_duration"		"1.5 1.7 1.9 2.1"
-					"projectile_speed"	"1300"
+					"debuff_duration"		"1.4 1.6 1.8 2.0"
+					"projectile_speed"		"1200"
 					"total_damage"
 					{
 						"value"							"90 180 270 360"
@@ -480,7 +480,7 @@
 				"AbilityValues"
 				{
 					"redirect_chance"			"0"
-					"movement_speed_pct"		"15 20 25 30"
+					"movement_speed_pct"		"20 24 28 32"
 					"duration"
 					{
 						"value"						"3.5 4.0 4.5 5.0"
@@ -496,7 +496,7 @@
 						"value"		"275"
 						"affected_by_aoe_increase"	"1"	
 					}
-					"evasion_multiplier"		"2"
+					"evasion_multiplier"		"1"
 			
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -572,8 +572,8 @@
 					}			
 					"max_damage"
 					{
-						"value"				"600 975 1350"
-						"special_bonus_unique_hoodwink_sharpshooter_damage"		"+400"
+						"value"				"550 875 1200"
+						"special_bonus_unique_hoodwink_sharpshooter_damage"		"+350"
 						"special_bonus_facet_hoodwink_hipshot"	"x0.75"
 					}
 					"recoil_distance"
@@ -663,7 +663,7 @@
 			{
 				// General
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"		
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"		
 				"Innate"						"1"
 		 		"MaxLevel"						"1"
 				"IsBreakable"					"1"
@@ -678,8 +678,8 @@
 
 					"redirect_chance"
 					{
-						"value"					"14.25"
-						"hero_levelup"			"0.75"
+						"value"					"10"
+						"hero_levelup"			"1"
 					}
 		 		}
 			}

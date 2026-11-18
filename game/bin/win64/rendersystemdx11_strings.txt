@@ -152,7 +152,7 @@
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 *** Buffer "%s": Failed to create shader resource view!\n
 *** Buffer "%s": Failed to create unordered access view!\n
-*** CVfx::StartupSanityCheck(7535): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** CVfx::StartupSanityCheck(7556): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
 *** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
 *** IL "%s": Unable to create input layout; layout has %d fields, which is more than %d!\n
 *** Run with -dx11debug to see native D3D errors!\n
@@ -164,10 +164,10 @@
 *** VB "%s": Tried to lock too much memory (%s>%s)!\n
 *** VB "%s": Tried to lock too much memory for subregion (%s>%s)!\n
 *** VB "%s": Tried to lock twice without an unlock!\n
-*** VfxPopulateSourceCache(1209): Error opening file "%s"!\n\n
-*** VfxPopulateSourceCache(1217): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForCrc(1369): Source cache incomplete, file "%s" missing!\n\n
-*** VfxReadAndPrepForCrc(1381): Error masking unused parts for "%s"!\n\n
+*** VfxPopulateSourceCache(1221): Error opening file "%s"!\n\n
+*** VfxPopulateSourceCache(1229): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1381): Source cache incomplete, file "%s" missing!\n\n
+*** VfxReadAndPrepForCrc(1393): Error masking unused parts for "%s"!\n\n
 *.spv
 +v$x+v$xv$+xv+$xv$+x+$vx+$vx$v+x+$vx$+vx+v $+v $v $+v +$v $++$ v+$ v$ v++$ v$+ v+xv$+ v$v$ +v+ $v$ ++x$v+ $v$v ++ $v$ +v
 , at offset %d
@@ -222,6 +222,7 @@
 .?AV?$_Mpunct@D@std@@
 .?AV?$_Mpunct@G@std@@
 .?AV?$_Mpunct@_W@std@@
+.?AV?$_Ref_count_obj2@UVirtualTextureTileLayout_t@@@std@@
 .?AV?$_Ref_count_resource@PEAVCReadGPUBuffer@@V<lambda_1>@?1???$DoNotDeleteReadCallback@VCReadGPUBuffer@@@@YA?AV?$shared_ptr@VCReadGPUBuffer@@@std@@PEAV1@@Z@@std@@
 .?AV?$codecvt@DDU_Mbstatet@@@std@@
 .?AV?$codecvt@GDU_Mbstatet@@@std@@
@@ -433,6 +434,7 @@ C:/dvs/p4/build/sw/devrel/libdev/NGX/core/rel_tot/source/common/util-log.cpp
 C:/dvs/p4/build/sw/devrel/libdev/NGX/core/rel_tot/source/lib/nvsdk_ngx_d3d11_lib.cpp
 C:/dvs/p4/build/sw/devrel/libdev/NGX/core/rel_tot/source/lib/nvsdk_ngx_lib_windows.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\rendersystem\_vpc_rendersystemdx11\default\win64\_msvc_\Retail\rendersystemdx11.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\dx\dxfunctions.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\dx\dxfunctions.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\dx\rendercontextdx11.cpp
@@ -445,32 +447,32 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\rendercontextb
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\renderdevicebase.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\renderdevicemgrbase.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(2873):Error loading texture: %s\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3707):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3710):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3729):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3732):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3765):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3768):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3790):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3793):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3813):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3816):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3836):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3839):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3861):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3864):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3876):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3879):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3891):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3894):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(3285):Error loading texture: %s\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4129):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4132):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4151):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4154):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4187):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4190):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4212):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4215):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4235):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4238):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4258):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4261):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4283):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4286):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4298):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4301):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4313):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\texturebase.cpp(4316):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
 C:\buildworker\source2_dota_rel_2019_win64\build\src\vfx\compiletargetexpr.g
 CCITT Group 3
 CCITT Group 4
 CCITT RLE
 CCITT RLE/W
 CCommandBufferChunk CUtlMemoryPool
-CDeviceFenceDx11::CDeviceFenceDx11(4495): 
+CDeviceFenceDx11::CDeviceFenceDx11(4458): 
 CDmeSheetSequence
 CFALayout
 CFAPlaneColor
@@ -516,40 +518,42 @@ CRenderContextDx11_SoftwareCommandLists::ForceFlushGPU(2501):
 CRenderContextDx11_SoftwareCommandLists::ResolveUsingShaders(2018):  failed to get ID3D11ShaderResourceView for source texture '%s', skipping.\n
 CRenderContextDx11_SoftwareCommandLists::ResolveUsingShaders(2035):  failed to get view for dest texture '%s', skipping.\n
 CRenderDeviceBase
-CRenderDeviceBase::AllocatePooledIndexBuffer(3787): 
-CRenderDeviceBase::AllocatePooledVertexBuffer(4007): 
-CRenderDeviceBase::AsyncSetTextureData(3376): 
-CRenderDeviceBase::BeginRenderingToSwapChain(3644): 
-CRenderDeviceBase::CreateConstantBuffer(1665): 
+CRenderDeviceBase::AllocatePooledIndexBuffer(3833): 
+CRenderDeviceBase::AllocatePooledVertexBuffer(4048): 
+CRenderDeviceBase::AsyncSetTextureData(3387): 
+CRenderDeviceBase::BeginRenderingToSwapChain(3673): 
+CRenderDeviceBase::CopyToPooledVertexBufferImpl(4121): 
+CRenderDeviceBase::CreateConstantBuffer(1668): 
 CRenderDeviceBase::CreateConstantBufferInternal
-CRenderDeviceBase::EndRenderDocCapture(3610): 
-CRenderDeviceBase::FindOrCreateTexture(1814): 
+CRenderDeviceBase::EndRenderDocCapture(3621): 
+CRenderDeviceBase::FindOrCreateTexture(1815): 
 CRenderDeviceBase::FindOrCreateTexture: Trying to load multiple mipmaps into 3d or array texture: %s\n
-CRenderDeviceBase::Flush(971): 
-CRenderDeviceBase::ForceFlushGPU(996): 
-CRenderDeviceBase::FreeTextureGPUResources(2136): 
-CRenderDeviceBase::FreeTextureGPUResources(2140): 
+CRenderDeviceBase::Flush(972): 
+CRenderDeviceBase::ForceFlushGPU(997): 
+CRenderDeviceBase::FreeTextureGPUResources(2147): 
+CRenderDeviceBase::FreeTextureGPUResources(2151): 
 CRenderDeviceBase::InitPerFrameMemoryStack
-CRenderDeviceBase::Present(683): 
-CRenderDeviceBase::SetPooledIndexBufferData(3835): 
-CRenderDeviceBase::SetPooledVertexBufferData(4051): 
-CRenderDeviceBase::StartRenderDocCapture(3597): 
+CRenderDeviceBase::Present(684): 
+CRenderDeviceBase::SetPooledIndexBufferData(3881): 
+CRenderDeviceBase::SetPooledVertexBufferData(4092): 
+CRenderDeviceBase::StartRenderDocCapture(3608): 
 CRenderDeviceDx11::BeginSubmittingDisplayLists(1127): 
 CRenderDeviceDx11::CreateDefaultShaders::<lambda_1>::operator ()
-CRenderDeviceDx11::DeleteQueryObject(3800): 
+CRenderDeviceDx11::DeleteQueryObject(3763): 
 CRenderDeviceDx11::EndQuery - Issued on an in-progress query!\n
-CRenderDeviceDx11::QueueReleaseShader(3007): 
-CRenderDeviceDx11::ReadTexturePixels(1925): 
+CRenderDeviceDx11::QueueReleaseShader(2971): 
+CRenderDeviceDx11::ReadTexturePixels(1889): 
 CRenderDeviceDx11::SetHardwareGammaRamp: Unable to set gamma controls!\n
 CRenderDeviceDx11::SetMode: Previous mode has not been shut down!\n
 CRenderDeviceMgrDx11::DisplayErrorAndExit
 CRenderDeviceMgrDx11::Init
-CRenderDocAPI::AutoGenerateDebugShaders(), C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\renderdocapi.cpp:886
+CRenderDocAPI::AutoGenerateDebugShaders(), C:\buildworker\source2_dota_rel_2019_win64\build\src\rendersystem\renderdocapi.cpp:934
+CRenderDocAPI::CaptureRenderDocFrameUnscheduled(357): 
 CRenderThreadDx11::CopyToStagingResource(275): Error! NULL texture pointer sent to CopyToStagingResource()!\n
-CRenderThreadDx11::GetReadBackResource(1542): Warning: Failed to create staging texture %d(%x)\n
-CRenderThreadDx11::GetReadBackResource(1546): Warning: GetDeviceRemovedReason: %d(%x)\n
-CRenderThreadDx11::GetReadBackResource(1564): Warning: Failed to create staging buffer %d(%x)\n
-CRenderThreadDx11::GetReadBackResource(1568): Warning: GetDeviceRemovedReason: %d(%x)\n
+CRenderThreadDx11::GetReadBackResource(1553): Warning: Failed to create staging texture %d(%x)\n
+CRenderThreadDx11::GetReadBackResource(1557): Warning: GetDeviceRemovedReason: %d(%x)\n
+CRenderThreadDx11::GetReadBackResource(1575): Warning: Failed to create staging buffer %d(%x)\n
+CRenderThreadDx11::GetReadBackResource(1579): Warning: GetDeviceRemovedReason: %d(%x)\n
 CRenderThreadDx11::OnAsyncReadback
 CRenderThreadDx11::OnAsyncReadback(168): 
 CRenderThreadDx11::OnReadBuffer(453): Error! NULL texture pointer sent to OnReadBuffer()!\n
@@ -559,7 +563,6 @@ CRenderThreadDx11::OnReadPixels(349): Failed to copy texture to staging resource
 CRenderThreadDx11::OnReadPixels(399): Warning: Failed to map staging resource %d (%x)\n
 CSheetDataTextureCache::AllocateAndUploadSequenceData(582): 
 CSwapChainBase::QueuePresentAndWait() looped for %d iterations without a present event.\n
-CTSQueue<class CVertexBufferDx11 *,0>::Push
 CTSQueue<struct QueuedDisplayListItem_t,0>::Push
 CTextureDx11::ReleaseD3DTexture(864): 
 CTextureManagerBase::AsyncHookUpTextureBits
@@ -628,6 +631,7 @@ ComputeTextureSpecificationFromMipDelta Adjusted
 ComputeTextureSpecificationFromMipDelta Disk
 ConsecutiveBadFaxLines
 Copyright
+Could not create procedural texture %s\n
 Could not decode alpha data.
 CreateComputeShader
 CreateConstantBufferInternal
@@ -877,8 +881,13 @@ FindOrCreateTexture: Dimensions %dx%dx%d exceed maximum supported by device (%dx
 FindOrCreateTexture: Only dynamic textures can have non-global scope!\n
 FindOrCreateTexture: Texture scope is unspecified!\n
 FindOrCreateTexture: Texture usage is unspecified!\n
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
 Floating point "Predictor" not supported with %d data format
 ForceHardwareSync
+ForceLoadShader: invalid shader loading state %d, shader %p has likely been freed\n
 FormatMessageW
 Found %d streaming textures in array, but in-flight count is %d\n
 Found registry key %ls in %ls
@@ -1211,6 +1220,8 @@ Not a TIFF file, bad magic number %d (0x%x)
 Not a TIFF file, bad version number %d (0x%x)
 Not a key frame.
 Not enough
+Nsight Graphics GPU Trace is only supported on Vulkan.\n
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
 NumberOfInks
 NvAPI initialization failed: %d\n
 NvAPI initialized: %s\n
@@ -1238,6 +1249,7 @@ OutHeight
 OutWidth
 Output
 Output aborted.
+OutputDebugStringW
 Overall System GPU memory use:\n
 Overflow of the sheet cache texture. Releasing and starting over. This is ok in asset browser, not so ok if the game is triggering this!\n
 Overflow of the sheet cache texture: Try increasing SheetCacheTextureRows in gameinfo.gi (current value %d)!\n
@@ -1259,6 +1271,7 @@ PIX/NSIGHT WAS detected.\n
 PLAT_
 PROGRAM
 PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
+PS_CS
 PS_RENDER_STATE
 PS_RTX
 PackBits
@@ -1315,6 +1328,11 @@ RayReconstruction.Hint.Render.Preset.Quality
 RayReconstruction.Hint.Render.Preset.UltraPerformance
 RayReconstruction.Hint.Render.Preset.UltraQuality
 RayTracingHitDistance
+ReadCompiledTextureMips: %s has %d pages ending past the %llu bytes read\n
+ReadCompiledTextureMips: %s has a %d byte page layout block, too short\n
+ReadCompiledTextureMips: %s has a bad page offset table ( %d pages )\n
+ReadCompiledTextureMips: %s has no page layout block, it needs recompiling\n
+ReadCompiledTextureMips: %s has no texture header\n
 ReadCompiledTextureMips: callback for %s is still using mip %d, but that data is about to be recycled\n
 ReadCompiledTextureMips: cannot convert %s from %s to %s\n
 ReadCompiledTextureMips: could not create a read request for %s\n
@@ -1325,6 +1343,8 @@ ReadCompiledTextureMips: mip %d of %s is below page size but the texture has no 
 ReadCompiledTextureMips: mip %d of %s runs past the data we read\n
 ReadCompiledTextureMips: mip %d of %s wants pages out to byte %lld but only %llu were read\n
 ReadCompiledTextureMips: no texture data for %s\n
+ReadCompiledTextureMips: page %d of %s did not decompress (format %d, %d bytes)\n
+ReadCompiledTextureMips: short read for %s, %llu bytes do not cover the header\n
 ReadCompiledTextureMips: short read for %s, wanted %lld bytes of mips but got %llu\n
 Recognition Exception
 ReductionMatrix1
@@ -1419,6 +1439,7 @@ S_EXECUTION_REORDERING
 S_GPU_DEVICE_ID
 S_GPU_VENDOR_ID
 S_MOLTEN_VK
+S_NEEDS_MESHLET_OVERFLOW_HANDLING
 S_REVERSE_DEPTH_BUFFER
 S_SHADER_QUALITY
 S_SUBGROUP_WAVE_OPS
@@ -1482,10 +1503,17 @@ SwapChainColor.vtex
 SwapChainDepth.vtex
 SwapChainTrueColor.vtex
 TEX read request: %d KB; %s\n
+TEXMAN:   %s\n
+TEXMAN: %s %s\n
 TEXMAN: %s LoadStreamingData (%s)\n
 TEXMAN: %s MarkTextureBitsLoaded (%s)\n
 TEXMAN: %s TextureBecameEvicted (%s)\n
+TEXMAN: %s has %d tiles, too few for mip %d, can't sample it as an ordinary texture\n
+TEXMAN: %s has no tile layout block, it needs recompiling\n
+TEXMAN: %s is sampled as an ordinary texture, but the virtual texture manager has no tiles for it\n
+TEXMAN: %s is sampled as an ordinary texture, streaming its mips detiled from its %s\n
 TEXMAN: %s loaded %s %i/%i mips (%ix%i / %ix%i) of %s (%i bytes)\n
+TEXMAN: %s stores its tiled mips out of order, every load of it as an ordinary texture reads all of them\n
 TEXMAN: Abandoning job in %s (%s)\n
 TEXMAN: Abandoning streaming request early in %s\n
 TEXMAN: Abandoning streaming request in %s\n
@@ -1493,8 +1521,10 @@ TEXMAN: Adding %llx+%p (binding=%p), %s to abandoned hookup jobs\n
 TEXMAN: Deleting %d textures\n
 TEXMAN: Outstanding stream count %d -> %d (%s)\n
 TEXMAN: Oversubscription state is %s, updating additional resolution bias from %.2f -> %.2f\n
+TEXMAN: no tile layout for %s\n
+TEXMAN: no virtual texture manager, and %s can't stream as an ordinary texture\n
+TEXMAN: reloading %d virtual textures created before the virtual texture manager\n
 TEXMAN: streaming data requested for a virtual texture before the VT manager callbacks were installed, not preloading (%s)\n
-TEXMAN: virtual texture created before the VT manager callbacks were installed, falling back to normal streaming (%s)\n
 TEXTURESTREAMING: Extremely low memory: Available mem: %.2f MB, Required: %.2f MB. (Limit: %.2f MB, All Texture Memory: %.2f MB, Streamable Texture Memory %.2fMB)\n
 TEXTURESTREAMING: Filled %d fallback textures in %.3f ms\n
 TEXTURESTREAMING: Resource view ptr or texture resources are still NULL after waiting.\n
@@ -1559,6 +1589,7 @@ Too much
 Total Size: %s (Count: %d)\n
 TransferFunction
 TransparencyMask
+Triggers a RenderDoc capture with sc_rendergraph_schedule pass reordering disabled, so passes are captured in submission order
 Truncated header.
 Trying registry key %ls in %ls
 Trying to create a render target with invalid image format %s\n
@@ -1605,7 +1636,6 @@ VZ#-DLU[3=h
 Valve.Source.Render
 Version
 VertexShader_t::CreateVertexShaderInputParameters
-Vfx file "%s" has both compute shader and other shaders. Compute shaders must be the only shader type in a vfx file.\n
 VfxLoadShaderSource(16): Cannot use absolute paths for shader includes. Found %s\n
 VfxLoadShaderSource(77): Cannot read file "%s"\n
 VfxLoadShaderSource(85): Cannot find include file %s\n
@@ -1618,6 +1648,7 @@ Video config version number changed ( '%s' is version %i, current version is %i 
 VideoDenoiser
 VideoSuperResolution
 Viewport
+Virtual textures created before the virtual texture manager
 VirtualKey
 Vulkan
 WAITING_FOR_HOOKUP_JOB 
@@ -1676,13 +1707,13 @@ ZIPVSetField
 \n*** A feature alias in %s doesn't start with "F_"! Aborting shader compile!\n\n
 \n*** A feature in %s doesn't start with "F_"! Aborting shader compile!\n\n
 \n*** A static combo in %s doesn't start with "S_"! Aborting shader compile!\n\n
-\n*** CVfx::ParseBoolFromFile(6845): Error opening file "%s"!\n\n
-\n*** CVfx::ParseCombosAndRulesFromFileHelper(7042): Error opening file "%s"!\n\n
-\n*** CVfx::ParseDescriptionFromFile(6930): Error opening file "%s"!\n\n
-\n*** CVfx::ParseFeaturesFromFile(6531): Error opening file "%s"!\n\n
-\n*** CVfx::ParseIncludeFiles(6489): Error opening include file in features list"%s"!\n\n
-\n*** CVfx::ParseModesFromFile(6339): Error opening file "%s"!\n\n
-\n*** CVfx::ParseVersionFromFile(6891): Error opening file "%s"!\n\n
+\n*** CVfx::ParseBoolFromFile(6866): Error opening file "%s"!\n\n
+\n*** CVfx::ParseCombosAndRulesFromFileHelper(7063): Error opening file "%s"!\n\n
+\n*** CVfx::ParseDescriptionFromFile(6951): Error opening file "%s"!\n\n
+\n*** CVfx::ParseFeaturesFromFile(6552): Error opening file "%s"!\n\n
+\n*** CVfx::ParseIncludeFiles(6510): Error opening include file in features list"%s"!\n\n
+\n*** CVfx::ParseModesFromFile(6360): Error opening file "%s"!\n\n
+\n*** CVfx::ParseVersionFromFile(6912): Error opening file "%s"!\n\n
 \n*** Combo "%s" in %s doesn't match a known combo source!\n\n
 \n*** Combo "%s" in %s either does not follow the 0..N format, is not a valid dynamic combo name, or doesn't match an existing feature or mode argument!\n\n
 \n*** Combo "%s" in %s has arg %s that doesn't match an existing feature!\n\n
@@ -1737,8 +1768,8 @@ ZIPVSetField
 \n*** Unable to parse Version in HEADER section of %s!\n\n
 \n*** Unknown rule "%s" in %s!\n\n
 \n*** Unknown text found in FEATURES section in %s: "%s"\n\n
-\n*** VfxGetCompileTargetsFromVfxFile(1484): Error opening file "%s"!\n\n
-\n*** VfxGetUsedShaderProgramsFromVfxFile(1561): Error opening file "%s"!\n\n
+\n*** VfxGetCompileTargetsFromVfxFile(1496): Error opening file "%s"!\n\n
+\n*** VfxGetUsedShaderProgramsFromVfxFile(1573): Error opening file "%s"!\n\n
 \n***ASSERT FAILED*** Image data section has too many channels (%d).
 \n***ASSERT FAILED*** Pointer is null.
 \n***ERROR*** [DecompressRle] Malformed RLE data encountered
@@ -1748,7 +1779,7 @@ ZIPVSetField
 \n***ERROR*** [PsdExtract] File seems to be corrupt, reserved bytes are not zero.
 \n***ERROR*** [PsdExtract] File seems to be corrupt, signature does not match "8BPS".
 \n***ERROR*** [PsdExtract] File seems to be corrupt, version does not match 1 or 2.
-\nGetVfxDll(95): ERROR! Can't load %s dll, automatic RenderDoc shader debug info not available.\n
+\nGetVfxDll(98): ERROR! Can't load %s dll, automatic RenderDoc shader debug info not available.\n
 \nIHDRPLTEIDATIENDtRNScHRMgAMAiCCPsBITsRGBtEXtzTXtiTXtbKGDhISTpHYssPLTtIMEoFFseXIf
 \nMS,\nVS_MS_RTX
 \nPS_RENDER_STATE
@@ -1997,6 +2028,10 @@ g_pRenderDevice is NULL. %d adapter(s) available. Iterating adapters %d - %d\n
 g_pRenderHardwareConfig is NULL. Display mode information unavailable\n
 gs_5_0
 gs_6_0
+has a bad tile offset table ( %d tiles )
+has compressed tiles but no offsets
+has no tiles for mip %d
+has tiles in unknown compression %d
 horizontal differencing 
 hr = D3D11Device()->CreateBuffer( &bd, pInitialData ? &initData : nullptr, &m_pVertexBuffer )
 hr = D3D11Device()->CreateShaderResourceView( m_pVertexBuffer, &srvDesc, &m_pSRView )
@@ -2060,7 +2095,6 @@ nvLocaltime(&curTime, &curTm) != nullptr
 nvapi_Direct_GetMethod
 nvapi_QueryInterface
 pDevice->CreateBuffer( &desc, NULL, &pD3dBuf )
-pDevice->CreateDepthStencilView( m_pDepthStencilTexture, &descDSV, &pView )
 pOutput->GetDesc( &desc )
 panorama_
 panorama_rt_
@@ -2095,6 +2129,7 @@ r_previous_dilated_motion_vectors
 r_rcas_input
 r_reactive_mask
 r_reconstructed_previous_nearest_depth
+r_renderdoc_capture_frame_unscheduled
 r_transparency_and_composition_mask
 raB3G
 rcasConfig
@@ -2147,6 +2182,7 @@ setting.shaderquality
 shader thread state machine violation\n
 shaders\vfx
 sheetcachetexture_.vtex
+solid color
 state machine violation - someone changed status while we were compiling\n
 streaming
 strip
@@ -2157,6 +2193,7 @@ struct VS_INPUT
 texcoord
 thread initialization failed.
 tile
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 tiles
 to fetch array of rationals
 to fetch per-sample values
@@ -2179,6 +2216,7 @@ unsupported color mode: lab
 unsupported color mode: multichannel
 unsupported color mode: unknown
 vb_created_input_layout
+vector<T> too long
 vfx_dx11
 vfx_vulkan
 vfxc

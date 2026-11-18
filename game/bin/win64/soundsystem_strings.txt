@@ -1,5 +1,7 @@
+    %s (%s %s x%d)\n
   %d: %s (%08lx :: %08lx) %s [%.1fs]\n
   Wall: surface = %s (%.2f), thickness = %.2f\n
+  [%d] %s (%s)\n
  (Start: 
  : %s : vol: %4.2f, sndlvl: %4.2f \n
  : Extraneous input - expected %s ...\n
@@ -20,8 +22,6 @@
  changes to final result of %.2f\n
 !!SyncExtref!!%s
 #OS_Default_Device
-$procedural
-$toolgraphs
 %*s%s.%s: %s
 %*s(%08x):Pausing: %s (%08x) : elapsed time: %.2fs\n
 %*s(%08x):Stopping: %s (%08x) : elapsed time: %.2fs\n
@@ -34,13 +34,15 @@ $toolgraphs
 %08x (%s)
 %d %s %s\n
 %d channels, %d bits per sample, %d Hz\n
+%d global opvars\n
+%d stacks, %d fields\n
 %d) %s %s -> %s\n
 %d) %s\n
 %dOffset: %i\n
 %f Async I/O Bumped priority for %s (%8.2f msec)\n
 %f: %f : %f : %f : %f\n
-%s %s audio contains INF/NaN
-%s %s audio contains INF/NaN at index %d\n
+%s %s =%s\n
+%s %s audio contains INF/NaN at index %d (%d samples)
 %s : %s
 %s : param size = %i, field size = %i\n
 %s = %s: %i : %i : %i : %i : %i : %i\n
@@ -64,6 +66,7 @@ $toolgraphs
 %s: params.pSfx is NULL.\n
 %s::Execute: Can't find operator stack %s in %s\n
 %s\n%s
+%s\nOperator Count: %i\nField Count: %i\n
 (%2db) %6lli : %s\n
 (%s) %d
 (Expecting %s)
@@ -74,7 +77,6 @@ $toolgraphs
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 ** %s -> %s\n
 **Cleanup resources**
-**unload**
 *SoundEvent Data*\n\t
 , at offset %d
 , near %s
@@ -242,6 +244,7 @@ $toolgraphs
 .?AUCAttr_m_interpolationMode@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nBandCount@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nChannelSet@?1??GetAttributeTable_Impl@VMixEQFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_nCompressorType@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nDebugBand@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nFilterSlope@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_nFilterType@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -365,6 +368,7 @@ $toolgraphs
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CBaseConcreteToolAttr@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -416,6 +420,7 @@ $toolgraphs
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CBaseConcreteToolAttrValue@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CBaseConcreteToolAttrValue@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -480,6 +485,7 @@ $toolgraphs
 .?AV?$CConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t@@X@@
 .?AV?$CConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@X@@
+.?AV?$CConcreteToolAttr@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@X@@
 .?AV?$CConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t@@X@@
@@ -539,6 +545,7 @@ $toolgraphs
 .?AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CConcreteToolAttrDirectMember@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CConcreteToolAttrDirectMember@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -589,7 +596,6 @@ $toolgraphs
 .?AV?$CDefaultToolAttrTableForStruct@VCVMixDataOffset@@@@
 .?AV?$CErrorContextValue@PEBVKeyValues3@@@@
 .?AV?$CKV3ResourceTypeManager@$0HAHDGEHG@@@
-.?AV?$CKV3ResourceTypeManager@$0HIGJGNHG@@@
 .?AV?$CParameter@VCAdditiveSynthInstanceView@CVoiceContainerStaticAdditiveSynth@@H@CVoiceContainerBase@@
 .?AV?$CParameter@VCFMSineInstance@CVoiceContainerRealtimeFMSineWave@@M@CVoiceContainerBase@@
 .?AV?$CParameter@VCGranulatorInstance@CVoiceContainerGranulator@@H@CVoiceContainerBase@@
@@ -651,6 +657,7 @@ $toolgraphs
 .?AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixPresetDSPDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixSubgraphSwitchDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@@@
+.?AV?$CToolAttrDirectMemberAccess@W4VMixCompressorType_t@@UVMixDynamicsCompressorDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@@@
 .?AV?$CToolAttrDirectMemberAccess@W4VMixFilterType_t@@UVMixFilterDesc_t@@@@
@@ -683,6 +690,7 @@ $toolgraphs
 .?AV?$IToolAttrConcreteDataAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@@
 .?AV?$IToolAttrConcreteDataAccess@VCUtlString@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixChannelOperation_t@@@@
+.?AV?$IToolAttrConcreteDataAccess@W4VMixCompressorType_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterChannelSet_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterSlope_t@@@@
 .?AV?$IToolAttrConcreteDataAccess@W4VMixFilterType_t@@@@
@@ -695,6 +703,7 @@ $toolgraphs
 .?AV?$IToolAttr_TypedValue@M@@
 .?AV?$IToolAttr_TypedValue@VCUtlString@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixChannelOperation_t@@@@
+.?AV?$IToolAttr_TypedValue@W4VMixCompressorType_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterChannelSet_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterSlope_t@@@@
 .?AV?$IToolAttr_TypedValue@W4VMixFilterType_t@@@@
@@ -837,7 +846,6 @@ $toolgraphs
 .?AVCKV3Transfer_AssertAlreadyLoadedResourceLoadInterface@@
 .?AVCKV3Transfer_EmptyResourceLoadInterface@@
 .?AVCKV3Transfer_ResourceLoadInterface@@
-.?AVCKV3Transfer_ToolsOnlyBlockingResourceLoad@@
 .?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?1??UpdateVoices@CVMixEngine@@QEAAXXZ@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?1??UpdateVoices@CVMixEngine@@QEAAXXZ@@Z@
 .?AVCLogForBugBug@@
 .?AVCLoopXFadeInstance@@
@@ -875,6 +883,7 @@ $toolgraphs
 .?AVCShaperAudioProcessor@@
 .?AVCSideChainAudioProcessor@@
 .?AVCSineInstance@CVoiceContainerDecayingSineWave@@
+.?AVCSmoothCompressorAudioProcessor@@
 .?AVCSndBeatPatternManager@@
 .?AVCSndBeatPlayer@@
 .?AVCSndSeqInstBaseSchema@@
@@ -1034,6 +1043,7 @@ $toolgraphs
 .?AVCSosOperatorOcclusion2@@
 .?AVCSosOperatorOcclusion@@
 .?AVCSosOperatorOcclusionInfo@@
+.?AVCSosOperatorOpVarArrayAggregate@@
 .?AVCSosOperatorOpvarCurve@@
 .?AVCSosOperatorOpvarGetElementFloat8@@
 .?AVCSosOperatorOrientVectorToEntity@@
@@ -1070,7 +1080,6 @@ $toolgraphs
 .?AVCSosOperatorSetBuiltins@@
 .?AVCSosOperatorSetContainerInstanceFloat3Param@@
 .?AVCSosOperatorSetContainerInstanceParam@@
-.?AVCSosOperatorSetConvar@@
 .?AVCSosOperatorSetEventInfo@@
 .?AVCSosOperatorSetOpVarArrayIndex@@
 .?AVCSosOperatorSetOpVarFloat3@@
@@ -1163,13 +1172,13 @@ $toolgraphs
 .?AVCVMixFilterProcessorDesc@@
 .?AVCVMixFlangerProcessorDesc@@
 .?AVCVMixFreeverbProcessorDesc@@
-.?AVCVMixMixer@@
 .?AVCVMixModDelayProcessorDesc@@
 .?AVCVMixOscProcessorDesc@@
 .?AVCVMixPannerProcessorDesc@@
 .?AVCVMixPitchShiftProcessorDesc@@
 .?AVCVMixPlateReverbProcessorDesc@@
 .?AVCVMixPresetDSPProcessorDesc@@
+.?AVCVMixPreviewManager@@
 .?AVCVMixShaperProcessorDesc@@
 .?AVCVMixSndInstance@@
 .?AVCVMixSteamAudioDirectProcessorDesc@@
@@ -1178,7 +1187,6 @@ $toolgraphs
 .?AVCVMixSteamAudioPathingProcessorDesc@@
 .?AVCVMixStereoDelayProcessorDesc@@
 .?AVCVMixSubgraphSwitchProcessorDesc@@
-.?AVCVMixTypeManager@@
 .?AVCVMixUtilityProcessorDesc@@
 .?AVCVMixVocoderProcessorDesc@@
 .?AVCVOIPInstance@CVoiceContainerVOIP@@
@@ -1202,6 +1210,7 @@ $toolgraphs
 .?AVCVoiceContainerNull@@
 .?AVCVoiceContainerOutputStreamAttached@@
 .?AVCVoiceContainerParameterBlender@@
+.?AVCVoiceContainerReference@@
 .?AVCVoiceContainerSelector@@
 .?AVCVoiceContainerSet@@
 .?AVCVoiceContainerSwitch@@
@@ -1271,8 +1280,6 @@ $toolgraphs
 <None>
 <UNRESOLVED>
 <Unknown>
-<any scope>
-<empty vmix>
 <invalid soundevent name>
 <invalid>
 <missing 
@@ -1282,6 +1289,9 @@ $toolgraphs
 ANTLR3_EXCEPTION number %d (%08X).\n
 ANTLR3_EXCEPTION: %s\n
 Abort processing sound event %s (scheduled recursively will not process this frame)\n
+Accumulate
+AccumulateToBuffer: mix gain is INF/NaN (%f), command skipped
+AccumulateToBufferVolumeRamp: mix gain is INF/NaN (start %f, end %f), command skipped
 Active ?: %s\n
 Active Voices: %d\n
 Actually dude, we didn't seem to be expecting anything here, or at least\n
@@ -1303,7 +1313,6 @@ Async read of %s failed: ERROR_FILEOPEN
 AsyncSoundQueue
 Atomic Type: %i\n
 Attack Time MS
-Attempt to recreate default mixgraph!\n
 Attempted preload of soundevent %s with no vsnds\n
 Attempted re-use of a soundevent guid to start a new soundevent: %s
 Attempting to pause non-existent soundevent: %s\n
@@ -1315,6 +1324,7 @@ Audio Occlusion: Could path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f encounte
 Audio Occlusion: No occlusion for path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f\n
 Audio Occlusion: No walls found, no occlusion\n
 Audio Occlusion: Occluded by audio blocker with occlusion value %.2f\n
+Audio Occlusion: audio blocker scaled by %.2f to %.2f\n
 Audio Occlusion: occlusion factor %.2f based on direct path; indirect ratio of %.2f based on finding %.2f paths lerped between %.2f and %.2f
 Audio Occlusion: occlusion factor %.2f based on direct path; indirect ratio of %.2f based on pathing
 Audio Occlusion: occlusion factor overridden to %.2f\n
@@ -1371,18 +1381,22 @@ BinNe
 BinSub
 Bits/Sample:\t%d\n
 Bool( %s )
+Broadcast Mono
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\soundsystem\_vpc_soundsystem\default\win64\_msvc_\Retail\soundsystem.pdb
 C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\extended\generic_expr.g
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\kv3transfer_saveloadresource.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\dsp_preset_soundgroup_mix.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\lowlevel\mix.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_dma.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_mixgroups.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_op_sys\sos_beatpattern_system.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_op_sys\sos_op_falloff.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_op_sys\sos_system.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_wave_mixer.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\snd_wave_mixer_mp3.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\steamaudio_wrapper.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\vmix.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\vmix_mixer.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\vmix_voicelist.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\vsound_manager.cpp
 CAssociateResourceBlockLoader::BlockingLoadResourceFileData: Trying to load an illegal resource name %s!\n
 CAsyncWavDataCache:  %i sounds total %s, %.2f %% of capacity\n
@@ -1390,8 +1404,7 @@ CAudioDecoderWave::OnCachedDataAvailable
 CAudioDecoderWaveMP3::OpenHandle
 CAudioMixThread::MixAudioFrame
 CFieldSelectionWordAllocator: Total number of array selection bytes on soundevent exceeded.\n\t%i required\n\t%i available\n
-CKV3Transfer_ToolsOnlyBlockingResourceLoad
-CKV3Transfer_ToolsOnlyBlockingResourceLoad::CKV3Transfer_ToolsOnlyBlockingResourceLoad
+CHRTFAudioProcessor::Process
 CLOSE_BRACE
 CLOSE_BRACKET
 CLOSE_PAREN
@@ -1402,6 +1415,7 @@ CSosFieldDataVsnd constructed with empty vsnd\n
 CSosOPeratorGetOpVarInfo
 CSosOperatorAudibility::Execute
 CSosOperatorConvar
+CSosOperatorFalloffTail::Execute
 CSosOperatorFindSourceDspPreset: unable to get source soundscape on event: %s\n
 CSosOperatorFloat16Accumulate16
 CSosOperatorFloatAccumulate12
@@ -1420,8 +1434,8 @@ CSosOperatorIncrementOpVarFloat
 CSosOperatorLogicSwitchSpeakers
 CSosOperatorMixGroup
 CSosOperatorMixLayer
+CSosOperatorOpVarArrayAggregate
 CSosOperatorOpvarCurve
-CSosOperatorSetConvar
 CSosOperatorSetOpVarArrayIndex
 CSosOperatorSetOpVarFloat3
 CSosOperatorSetOpVarString
@@ -1498,17 +1512,19 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CPendingInstanceParam,int,cla
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlStringTokenNoRegistration,class CUtlVector<unsigned int,int,class CUtlVectorMemory_Growable<unsigned int,int,0> >,class CDefEquals<class CUtlStringTokenNoRegistration>,struct DefaultHashFunctor<class CUtlStringTokenNoRegistration>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlStringTokenNoRegistration,class CUtlVector<unsigned int,int,class CUtlVectorMemory_Growable<unsigned int,int,0> >,class CDefEquals<class CUtlStringTokenNoRegistration>,struct DefaultHashFunctor<class CUtlStringTokenNoRegistration>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<int,struct SteamAudioOcclusionVizData_t,class CDefEquals<int>,struct DefaultHashFunctor<int>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<int,struct SteamAudioOcclusionVizData_t,class CDefEquals<int>,struct DefaultHashFunctor<int>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned __int64,struct vcon_SoundCacheMinorUpdateDatum_t,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned __int64,struct vcon_SoundCacheMinorUpdateDatum_t,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct VoicetraceStopSubvoice_t,int,class CMemAllocAllocator>,struct VoicetraceStopSubvoice_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<unsigned __int64,int,class CMemAllocAllocator>,unsigned __int64,int>::InsertBeforeGetPtr
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<unsigned int,int,class CMemAllocAllocator>,unsigned int,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<unsigned int,int,class CMemAllocAllocator>,unsigned int,int>::InsertBeforeGetPtr
+CUtlStringToken
 CVMixDescription::KV3TransferPostLoad
-CVMixTypeManager::VMixTableInit
+CVMixMasterVoiceList::InitMainGraph
+CVMixPreviewManager::VMixTableInit
 CVSoundStackScriptTypeManager::Allocate can't parse stack %s\n
 CVSoundStackScriptTypeManager::Allocate stack with empty name\n
 CVSoundTypeManager::CreateProceduralSfx
 CVSoundTypeManager::GetSfx
 CVoiceContainerRandomSampler: Loaded %d grains into table Total of %lld samples, %f MB.\n
+CVoiceContainerReference
 Can't find mix layer %s\n
 Can't find mixgroup name %s for submix\n
 Can't find sound event to remove for %s!\n
@@ -1519,18 +1535,20 @@ Cannot allocate abstract class
 CaptureSoundEventDefinitionOverwritesOn: skipped, snd_sos_capture_soundevent_overwrites is 0\n
 Catch up mixing failed: %d times\n
 Channels:\t%d\n
-CheckAndSilenceInfiniteBuffer
+CheckFinite
 Class does not allow allocation from its schema binding
 Cleaning up leaked audio capture stream.\n
 Cleaning up leaked audio stream!\n
 Close the group automatically after a short wait (good for 'success' messages)
 Close the group automatically when the associated parent process exits (good for sticky 'error' messages)
 Cluster size: %u
+Compressor Type
 Connection Offset: %i\n
 Container has %d Arguments:\n
 Container has %d Parameters:\n
 Convert Fixed To Float
 Copy Deinterleaved Float
+Copy Deinterleaved Float (pitch interp)
 Copying '%s' to '%s'\n
 Couldn't find any vsnds in directory %s.\n
 Couldn't load KV3 for resource: %s
@@ -1549,6 +1567,7 @@ CurTime: %f\n
 Cutoff Freq
 Cutoff Frequency
 DIGIT
+DIVIDE
 DOUBLE_AND
 DOUBLE_OR
 DOUBLE_QUOTED_STRING
@@ -1594,6 +1613,7 @@ Delay Type
 Denominator:\t%u\n
 Depth
 Depth Reflectivity
+Describe the current sound device without an active voice list, and the speaker layout the panner uses. Called from a tool stream tool it replies with the speaker layout instead (layout record)
 Detected %d-level recursion in sound operator stack, abort!\n
 Device active: %.2fs.  Active Voices: %d\n
 Did not find valid MixGroups entry in soundmixers.txt\n
@@ -1606,6 +1626,7 @@ Disallowed variable name: %s
 Distortion Mix (1.0 = wet)
 Distortion Threshold
 Distortion feedback
+Divide into channels
 DspPresetModifiers
 Duration: %f\n
 ERROR: Attempt to covert between float(s) failed due to size mismatch or index overrun on field %s in %s\n
@@ -1729,6 +1750,8 @@ Failed to load sounds/graphs/mixgraphs.vrman
 Failed to load voice container: %s\n
 Failed to read soundmixers.txt as KV3: %s\n
 Failed to start voice for %s\n
+Far reverb gain amount for listener DSP.
+Far reverb gain amount for source-specific DSP.
 Feedback Depth
 Feedback Diffusion1
 Feedback Diffusion2
@@ -1769,6 +1792,7 @@ Freq Range End
 Freq Range Start
 Func( %s )
 Gain
+Gain applied to the tail of sounds whose source is in this DSP preset (see csgo_mega use_tail_distance_attenuation). 1.0 leaves the tail unchanged.
 GameChat
 GameInput
 Generating TRASHSYNTH.\n
@@ -1810,6 +1834,7 @@ Ignoring reload of '%s' whose only changes are in vsnd_duration\n
 InOut: %.2f\nSize: %.1f
 Incorrect sampling rate in %s (mp3 frames are at %dHz, .vsnd file has %dHz)\n
 Increased audio mix latency to %.1f ms\n
+Infinite vmix control input: graph name: %s, control input type: %i.\n
 Input %s: 
 Input Diffusion1
 Input Diffusion2
@@ -1819,10 +1844,10 @@ Interpolation Mode
 Interpolation Time
 Invalid Sound Event
 Invalid Sound Event '%s'
-Invalid arg %s set for subvoice playing %s\n
 Invalid field type %s for field %s\n
 Invalid vmix graph %s\n
 Is Oneshot
+IsFinite( flValue )
 KV3 Pointer
 Key:\t%f\n
 KeyValues3
@@ -1842,6 +1867,8 @@ LightmapUV
 LightmapUVW
 Line: 
 ListenerForwardVector
+Lists the global opvars (opvars of library stacks) with their values: snd_sos_list_global_opvars [stack name filter]. Called from a tool stream tool it replies with them instead (globalOpVar records)
+Lists the operators of each operator stack (library stack) and their fields, by the full names stackValues uses: snd_sos_list_stack_fields [stack name filter] [field name filter] ("" for any stack). Called from a tool stream tool it replies with them instead (stackFields records, one per stack)
 LoadKV3Object error: %s\n
 LoadKV3ObjectInPlace error: %s\n
 Loading mapping from %s file.\n
@@ -1895,7 +1922,9 @@ Mismatched set
 Missing token
 Missing token %s
 Mix (1.0 = wet)
+Mix2x1: mix gain is INF/NaN (start %f, end %f), command skipped
 MixAudioFrame
+MixBus
 MixGroup %s: %f : %f : %f : %f : %f \n
 MixGroup %s:\n
 MixGroups
@@ -1916,17 +1945,21 @@ ModCutoffMin
 Modulation Depth
 Modulation Frequency
 Modulator Frequency
+Muting INF/NaN checks for audio\n
 NEGATIVE_TOK
 NEW DSP NODE: size:(%.0f,%.0f) height:(%.0f) dif %.4f : refl %.4f : cobj: %.0f : sky %.0f \n
 NEWLINE
 NULL m_pSfx
 Name:\n\t%s\n
+Near reverb gain amount for listener DSP.
+Near reverb gain amount for source-specific DSP.
 Never close the group automatically (used to indicate an error like the process exiting unexpectedly)
 No 'Mixers' member found in MixLayer in soundmixers.txt\n
 No DATA block for resource\n
 No MP3 support, can't compile!\n
 No data
 No input data for '%s'. (Empty buffer.)
+Non-Finite position received by Steam Audio
 Not safe to 'new' this class due to alignment requirements
 Note: Array declaration using table syntax on field %s in stack %s. Please convert.\n
 Note: Double array found in field %s in stack %s, value: %s\n
@@ -1952,11 +1985,11 @@ Only Tails On Fade Out
 OpenMutexA
 Opened Audio Input Device:\n\tChannel Count:\t%d\n\tSample Rate:\t%d\n\tBuffer Size:\t%d\n
 Operator 'logic_perspective_switch_string' received invalid input. Output will be empty.
-Operator Count: %i\n
 Operator Error: Event %s: %s\n
 Operator Field: %s = 
 Operator Index: %i\n
 Operator Stack: %s\nDependencies: %i\n
+Operator calc_falloff_curve has invalid distance params - could cause NaN: Sound Event: %s, Operator Stack: %s.\n.
 Operator container_sample_curve: Warning: vsnd %s is not yet loaded, queueing for load.\n
 Operators: %s -> %s\n
 Output %s: %.3f\n
@@ -2001,8 +2034,10 @@ PlaySoundA
 PlayTime
 Playback Jitter
 Playback Type: FWD\n
+Plays a vsnd file.
 Pre-Roll
 Prewview VMIX voice on the game graph, preview will be different!\n
+Prints a list of currently available stacks with their operator and field counts: snd_sos_print_operator_stacks [stack name filter]. Called from a tool stream tool it replies with them instead (stack records)
 Priority volume scalar: %f
 Proc Type
 ProcessSoundEvent: %s "base" sound event %s, has negative field offset: %d.\n
@@ -2037,7 +2072,6 @@ RESOURCE_TYPE_SOUND
 RESOURCE_TYPE_SOUNDEVENTSCRIPT
 RESOURCE_TYPE_SOUNDSTACKSCRIPT
 RESOURCE_TYPE_VDSP
-RESOURCE_TYPE_VMIX_LIST
 RMS Time MS
 ROOM Detected \n
 Random Modulation
@@ -2048,8 +2082,10 @@ Ratio
 Recognition Exception
 Recognition exception
 Recorded into %s...\n
+Reference Container
 Release Time MS
 RemoveSoundEvents: event with empty name\n
+ReportNonFiniteAudio
 Resample Deinterleaved Float
 Restarting audio device due to configuration change. Was:%s:%d, now %s:%d\n
 Restarting audio device due to errors detected: %s:%d\n
@@ -2083,6 +2119,7 @@ S_UpdateVoicesPerFrame
 S_ValidateOpVarStackCache: dropping an opvar cache built in another stack, now running %s in %s\n
 S_ValidateOpVarStackCache: soundevent (%d) cached by %s is gone, re-resolving\n
 S_ValidateOpVarStackCache: stack "%s" cached by %s is gone, re-resolving\n
+ScaleBuffer: mix gain is INF/NaN (start %f, end %f), command skipped
 Select Tone
 SendAllVoices
 SendAllVoicesWithMaxSendLevel
@@ -2117,6 +2154,7 @@ Size Min
 Size in bytes
 Size of TRASHSYNTH instance on stack: %d\n
 Size of TRASHSYNTH on stack: %d\n
+Smooth
 Something Weird ( check the BindInstanceParams implementation )
 SosBaseDataTypeDef_t: %i\n
 SosOpFieldInfo_t: %i\n
@@ -2150,11 +2188,16 @@ SoundSystem/WaveDataCacheSizeMB
 SoundSystemBeatPatternManifest
 SoundSystemDebug
 SoundSystemStartupGroupsManifest
+Soundevent %s: input_max_gain_change_per_second is INF/NaN (%f), using default
+Soundevent %s: input_pitch is INF/NaN (%f), using 1.0
+Soundevent %s: input_speaker_volumes[%d] is INF/NaN (%f) at origin (%.1f %.1f %.1f), using 0
 Soundevent param overwrites: %s:\n
+Sounds Near Camera
 SoundsystemVMixLoader
 Source
 Source2SDLDefaultDevice
 Speaker Config: %i\n
+Speaker Layout: %s (%d), the panner's; HRTF %s\n
 Spline
 Square Wave
 Stack %s: Unable to connect input to specified field: %s\n
@@ -2187,6 +2230,7 @@ Steam Audio is not enabled.
 Stop sound event: %s\n
 StopTime: %f\n
 Stopping All Sounds...\n
+Stopping mix voice: %s(%u) because it cannot continue after resource unload\n
 String Count: %i\n
 String( %s )
 Subgraphs
@@ -2208,6 +2252,7 @@ TOK_COLON
 TOPOLOGY: Stack %s has %i VSND operators\n
 TOPOLOGY: Stack %s, soundevent_start operator %s, soundevent_name field, source unresolved\n
 TUNNEL Detected \n
+Tail volume for sources in this DSP preset.
 TanFrameQuat
 Taps
 TargetCastForModify
@@ -2261,11 +2306,11 @@ Unable to connect convar input %s\n
 Unable to create audio thread.\n
 Unable to create voice for vmix "%s" check script for %s.\n
 Unable to detect Windows Audio devices\n
-Unable to find graph for vmix %s\n
 Unable to find queue event\n
 Unable to find soundevent: %s\n
 Unable to load sound system data.\nStarting verification of Steam Game Cache.\nRetry launching after completion.\n
 Unable to read resource file %s!\n
+Unable to start soundsystem.  Failed with root voice:%s\n
 Unexpected character
 Unexpected character '%c' (0x%02X)
 Unexpected node
@@ -2300,7 +2345,6 @@ Usage: snd_sos_compare_operator_stacks <stackname> <stackname>\n
 Usage: snd_sos_pause_first_soundevent <soundevent index>\n
 Usage: snd_sos_unpause_soundevent <soundevent index>\n
 Usage: snd_steamaudio_display_probes <reverb|pathing|occlusion|dimensions|materials|off> <display_radius> <optional:always|once|off>\n
-Used main graph %s on voice %s\n
 Used stack: %s\n
 VALUE BEFORE: %s\nVALUE AFTER: %s\n\n
 VData:%s
@@ -2308,7 +2352,9 @@ VDataChoice( %s )
 VDataChoice()
 VERTICAL SHAFT Detected \n
 VMIX %s switching to subgraph %s\n
+VMixCompressorType_t
 VMixStartup
+VMixUpMixRule_t
 VNOTIFY_DISABLE
 VNotify Abandoned (ActiveProtocolIsNewer)\n
 VNotify Abandoned (No ProcessUtils)\n
@@ -2331,8 +2377,9 @@ VertexPaintTintColor
 Vmix Convolution node (re)loaded IR vsnd.\n
 Vmix Convolution node has not yet loaded IR vsnd, but audio is processing; running pass thru.\n
 Voice Container Async Render Work
-Voice Containers: Attempted to set invalid param: %s in scope %s\n
 Voice Elapsed Time: %f\n
+Voice send to track %s has INF/NaN gains: soundevent %s (%s) origin (%.1f %.1f %.1f) send %f sysvol %f mastervol %f pitch %f maxchange %f, send gains [%s], operator speaker volumes [%s], previous send gains [%s], bad gains zeroed
+Voice send to track %s is INF/NaN (%f): soundevent %s (%s) origin (%.1f %.1f %.1f) sysvol %f mastervol %f roomdsp %f facingdsp %f, send dropped
 WAIT event %s | %s: elapsed time: %f, next sync time: %f, local elapsed: %f, local sync: %f, length: %f, num loops: %i\n
 WARNING CSosOperatorSystem::OverwriteOpVarsParseKV3: Stack %s Operator %s: cannot find opfield : %s\n
 WARNING: Attempting to import existing public field %s in stack %s\n
@@ -2362,7 +2409,6 @@ Warning: Soundevent %s attempted to generate a random entity position for the Wo
 Warning: Soundevent %s, failed to get mix layer %s!\n
 Warning: Steam Audio did not return dimension probe data. Add dimension probes to your current map.\n
 Warning: Unable to acquire convar value: %s\n
-Warning: Unable to set convar value: %s\n
 Warning: You need to restart the sound system or game after addressing the cause of this error. \n
 Warning: cannot sync to soundevent %s on track %s, because it has no start/end points defined\n
 Warning: sos_start_soundevent unable to read opvar %s for passing \n
@@ -2419,6 +2465,7 @@ advanced
 after_first_frame
 allocate_by_area
 allow_empty_match
+allowed
 always
 and_not
 anim_type
@@ -2516,8 +2563,6 @@ content/
 continuous
 convar
 convar_get
-convar_set
-core.default
 core.empty
 core.null
 core.voip
@@ -2538,6 +2583,7 @@ cube
 current_count
 curvature
 curve_defintion_type
+curve_field_name
 curve_type
 custom_stack
 data_type
@@ -2595,11 +2641,9 @@ exclude_group_name
 execute_once
 exit_if_blocked
 expr
-f == NON_TOOLS_MODE_BUT_STILL_IN_TOOLS_CODE || g_pApplication->IsInToolsMode()
 facing
 fade
 fade_type
-fast
 field
 field_name
 field_override
@@ -2704,6 +2748,7 @@ input_atten
 input_base_angle
 input_beat_mult
 input_block_max_events
+input_blocker_scale
 input_bpm
 input_center
 input_center_position
@@ -2845,6 +2890,7 @@ input_mixgroup
 input_mixgroups
 input_multiplier_negative
 input_multiplier_positive
+input_multiply_together
 input_name
 input_namespace
 input_near_max
@@ -2867,6 +2913,7 @@ input_operator_name
 input_opponent_value
 input_output_max
 input_output_min
+input_outside_position_weight
 input_owner_entity_index
 input_owning_graph
 input_participant_perspective
@@ -2905,6 +2952,7 @@ input_position_7
 input_position_a
 input_position_b
 input_position_index
+input_position_suffix
 input_priority
 input_query_position
 input_query_z_offset
@@ -2942,6 +2990,10 @@ input_reverb_scale
 input_revolutions
 input_rgb_color
 input_rotation_angle
+input_sa_inout_names_field
+input_sa_inout_value_opvar
+input_sa_size_names_field
+input_sa_size_value_opvar
 input_sampler
 input_scalar
 input_scale
@@ -3049,8 +3101,11 @@ input_use_entity
 input_use_namespace
 input_use_parent_seed
 input_value
+input_value_operator_name
+input_value_stack_name
 input_vec_forward
 input_vector
+input_voice
 input_voicegraph
 input_volume1
 input_volume2
@@ -3086,6 +3141,7 @@ input_weight8
 input_weight_1
 input_weight_2
 input_weight_3
+input_weight_bias_shape
 input_wraparound
 input_x
 input_y
@@ -3138,8 +3194,12 @@ lvl: %3.2f
 m_PreviewInputs
 m_PreviewTweak
 m_bIsTrackSend
+m_bIsValidForPlayback
+m_bRegisteredVMix
 m_bShouldPause
 m_controlInputs
+m_flListenerReverbFar
+m_flListenerReverbNear
 m_flMasterVolume
 m_flMaxVolumeChangePerBuffer
 m_flSeekTime
@@ -3148,15 +3208,19 @@ m_flSendFacingDSP
 m_flSendRoomDSP
 m_flSlopeIncoming
 m_flSlopeOutgoing
+m_flSourceReverbFar
+m_flSourceReverbNear
 m_flSystemVolumeFadeRate
+m_flTailVolume
 m_graphDesc
-m_graphName
 m_nChannelSelect
+m_nCompressorType
 m_nGuid
 m_nMemSize: %i -> %i\n
 m_nMixGroups
+m_nResourceName
 m_nStartSample
-m_nVoiceId
+m_nUpMixRule
 m_nameInputs
 m_pHandle
 m_pStack
@@ -3280,6 +3344,7 @@ no stack mem
 noise_type
 normalize_spread
 normalize_trig
+not allowed (speaker_config isn't headphones)
 not_equal
 null_container.vsnd
 nullfield
@@ -3310,6 +3375,9 @@ operators
 opponent
 optionallycompressedtangentframe
 opvar
+opvar_array_aggregate
+opvar_array_aggregate operator %s in %s can't find stack %s\n
+opvar_array_aggregate: no opvar %s on %s.%s\n
 opvar_get_bool
 opvar_get_bool operator %s in %s failed to get field %s\n
 opvar_get_dsp_preset
@@ -3375,6 +3443,7 @@ output_current_guid
 output_current_level_name
 output_delay
 output_dependencies
+output_differs_from_listener
 output_dimension_data_found
 output_dimensions_inout_value
 output_dimensions_insize_direction_0
@@ -3431,6 +3500,7 @@ output_goto_count
 output_guid
 output_has_envelope
 output_has_sky_exposure
+output_head_scale
 output_high
 output_hit_position
 output_host_elapsed_time
@@ -3532,6 +3602,7 @@ output_stop_elapsed_time
 output_stopped
 output_string
 output_success
+output_tail_volume
 output_team
 output_threshold_result
 output_time_to_event
@@ -3603,6 +3674,7 @@ priority_volume_scalar
 process_steamaudio_source
 processor.setnameinput
 processor.setparameter
+processorDisabled
 processors
 property_group
 property_help
@@ -3676,9 +3748,13 @@ sine
 single
 slerp
 slerp_bounce
+snd_audio_nan_paranoid_check
 snd_print_soundevent %s
+snd_sos_list_global_opvars
+snd_sos_list_stack_fields
 snd_sos_update_server_message %s
 snd_soundmixer_setmixlayer_amount %s %f\n
+snd_use_baked_occlusion_mode
 sndevt
 sndlvl_max
 sndlvl_min
@@ -3735,6 +3811,9 @@ soundmixer_set_vmix
 sounds/
 sounds/__attached_output_stream_wrapper_%d.vsnd
 sounds/common/null.vsnd
+sounds/graphs/
+sounds/graphs/__main__.vsnd
+sounds/graphs/base.vsnd
 sounds/graphs/mixgraphs.vrman
 sounds/vsndgen_TapeFx_%d.vsnd
 sounds\
@@ -3757,7 +3836,6 @@ spiral_bounce
 spiral_even
 spiral_even_bounce
 spline
-startSubvoice
 startVoice
 start_group
 start_mode
@@ -3770,7 +3848,6 @@ steamaudio_compute_reverb
 steamaudio_remap_ir
 step
 stereo
-stopSubvoice
 stopVoice
 stop_oldest
 stop_previous
@@ -3809,7 +3886,6 @@ tool
 tool_request_args
 tool_request_text
 tool_request_tool
-tools/
 total preset slots used: %d \n
 trace_to_farthest_surface
 track_01
@@ -3866,7 +3942,6 @@ vmix_preload_vsnd
 vmix_start_vmix_8track has empty vsnd string
 vmix_start_vmix_8track: Unable to create pSfx from vsnd path
 vmix_start_voice: %s invalid track name %s, using default track\n
-vmix_start_voice: %s specified invalid voicegraph %s, using %s\n
 vmix_start_vsnd: %s No available voices (%d in use), aborting starting vsnd %s\n
 vmix_voice_start
 vmix_voice_time

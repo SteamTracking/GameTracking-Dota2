@@ -322,7 +322,7 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 				"FightRecapLevel"				"1"
-				//"HasScepterUpgrade"			"1"
+				"HasScepterUpgrade"			"1"
 				"AbilitySound"					"Ability.SandKing_BurrowStrike"
 
 				// Casting
@@ -356,13 +356,34 @@
 					{
 						"value"			"1.2 1.4 1.6 1.8"
 					}
-					"burrow_speed"		"2000"
+					"burrow_speed"		
+					{
+						"value"			"2000"
+						"special_bonus_scepter"		"+1000"
+					}
+					
+					
 					"burrow_anim_time"	"0.52"
 					"AbilityCastRange"
 					{
 						"value"								"550 625 700 775"
-						"special_bonus_unique_sand_king_8"	"+200"
+						"special_bonus_scepter"		"+425"
 					}
+					"spine_radius"
+					{
+						"value"			"0"
+						"special_bonus_scepter" "=175"
+						"affected_by_aoe_increase"	"1"
+					}
+					"spine_duration"
+					{
+						"special_bonus_scepter" "=0.8"
+					}				
+					"spine_damage_pct"
+					{
+						"special_bonus_scepter" 		"75"
+					}				
+
 
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -490,7 +511,7 @@
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"2"
 				"AbilitySound"					"Ability.SandKing_Epicenter"
-				"HasScepterUpgrade"				"1"
+				//"HasScepterUpgrade"				"1"
 						       "HasShardUpgrade"               "1"
 
 
@@ -516,6 +537,7 @@
 					"AbilityCooldown"				
 					{
 						"value"		"120 110 100"
+						"special_bonus_unique_sand_king_8"		"-15"
 					}
 			
 
@@ -561,30 +583,6 @@
 					"shard_interval"				"3.0"
 					"linger_duration"		"3.0"
 
-					"scepter_explosion_radius_pct"
-					{
-						"special_bonus_scepter"		"+35"
-					}
-					"scepter_explosion_min_dist"
-					{
-						"special_bonus_scepter"		"+120"
-					}
-					"scepter_explosions_per_pulse"
-					{
-						"special_bonus_scepter"		"+3"
-					}	
-					"spine_tick_rate"
-					{
-						"special_bonus_scepter"		"=0.5"
-					}
-					"spine_damage_pct"
-					{
-						"special_bonus_scepter"		"=40"
-					}
-					"shard_explosions_per_pulse"
-					{
-						"special_bonus_scepter"		"+1"
-					}				
 				}
 			}
 
@@ -627,7 +625,7 @@
 					}
 					"inner_radius"
 					{
-						"value"			"125"
+						"value"			"120 140 160 180"
 						"affected_by_aoe_increase"	"1"
 					}
 					"inner_radius_bonus_damage_pct"				
@@ -640,7 +638,7 @@
 					}
 					"attack_damage"				
 					{
-						"value"															"50 75 100 125"
+						"value"															"50 80 110 140"
 						"special_bonus_unique_sand_king_scorpion_strike_damage"			"+125"
 					}
 					"debuff_duration"				"5"
@@ -653,6 +651,8 @@
 					{
 						"value"				"0"
 					}
+					"potency"					"60"
+
 				}
 			}
 		}

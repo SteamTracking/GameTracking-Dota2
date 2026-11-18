@@ -37,7 +37,7 @@
 		"Ability1"		"weaver_the_swarm"
 		"Ability2"		"weaver_shukuchi"
 		"Ability3"		"weaver_geminate_attack"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"weaver_time_lapse_ally"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"weaver_time_lapse"
 		"Ability7"		"weaver_threads_of_fate"
@@ -51,7 +51,7 @@
 		}
 
 		"Ability10"		"special_bonus_unique_weaver_shukuchi_movespeed"
-		"Ability11"		"special_bonus_strength_7"
+		"Ability11"		"special_bonus_unique_weaver_threads_of_fate_damage"
 		"Ability12"		"special_bonus_unique_weaver_1"
 		"Ability13"		"special_bonus_unique_weaver_4"
 		"Ability14"		"special_bonus_unique_weaver_2"
@@ -90,7 +90,7 @@
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"16"
-		"AttributeStrengthGain"		"2.0000"
+		"AttributeStrengthGain"		"2.1000"
 		"AttributeBaseAgility"		"17"
 		"AttributeAgilityGain"		"3.3"
 		"AttributeBaseIntelligence"		"20"
@@ -262,8 +262,8 @@
 						"duration"			"16"
 						"destroy_attacks"	
 						{
-							"value"			"6 7 8 9"
-							"special_bonus_unique_weaver_4"	"+2"
+							"value"			"3 4 4 5"
+							"special_bonus_unique_weaver_4"	"+1"
 						}
 						"radius"			
 						{
@@ -372,7 +372,7 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_OTHER"
 				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				"AbilityCooldown"				"9.0 7.0 5.0 3.0"
 
@@ -396,6 +396,11 @@
 						"value" "20 35 50 65"
 						"special_bonus_unique_weaver_2" "+60"
 					}
+					"bonus_potency"
+					{
+						"value"	"15"
+					}
+
 					"shard_beetle_search_range"
 					{
 						"special_bonus_shard"		"1200"
@@ -413,15 +418,17 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"		
-				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-				"AbilityCastRange"				"500"
 				"AbilitySound"					"Hero_Weaver.TimeLapse"
+				"AbilitySharedCooldown"			"weaver_time_lapse"
 
 				"FightRecapLevel"				"2"
 
 				"HasScepterUpgrade"			"1"
+
+				"AbilityDraftExtraAbilities"
+				{
+					"weaver_time_lapse_ally" "scepter"
+				}
 
 				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -435,12 +442,33 @@
 						"value"						"70 55 40"
 						"special_bonus_scepter"		"-10"
 					}
-					"targets_allies"				
-					{
-						"value"				"0"
-						"special_bonus_scepter"		"+1"
-					}
 				}
+			}
+
+			//=================================================================================================================
+			// Ability: Weaver's Time Lapse (Ally) (Scepter)
+			//=================================================================================================================
+			"weaver_time_lapse_ally"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+				"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+				"AbilityCastRange"				"500"
+				"AbilitySound"					"Hero_Weaver.TimeLapse"
+				"AbilitySharedCooldown"			"weaver_time_lapse"
+
+				"FightRecapLevel"				"2"
+
+				"MaxLevel"						"3"
+				"DependentOnAbility"			"weaver_time_lapse"
+				"IsGrantedByScepter"			"1"
+				"HasScepterUpgrade"				"1"
+
+				// AbilityCastPoint, AbilityManaCost and AbilityCooldown are read from weaver_time_lapse in code
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 			}
 
 			//=================================================================================================================
@@ -474,7 +502,7 @@
 				"AbilityValues"
 				{
 					"thread_setup_distance"							"700"
-					"thread_setup_time"								"1.5"
+					"thread_setup_time"								"1.25"
 					"established_thread_duration"					"6"
 					"established_thread_break_distance"				
 					{
@@ -482,7 +510,12 @@
 						"hero_levelup"	"10"
 					}
 
-					"damage_per_thread_hero"						"10"
+					"damage_per_thread_hero"						
+					{
+						"value"				"10"
+						"special_bonus_unique_weaver_threads_of_fate_damage"		"+5"
+					}
+					
 					"damage_per_thread_creep"						"0"
 					"death_linger_duration"							"5"
 					"slow_duration"									"0.4"

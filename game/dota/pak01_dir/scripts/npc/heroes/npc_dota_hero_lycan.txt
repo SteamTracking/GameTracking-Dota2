@@ -37,7 +37,7 @@
 		"Ability2"		"lycan_howl"
 		"Ability3"		"lycan_feral_impulse"
 		"Ability4"		"lycan_wolf_bite"
-		"Ability5"		"lycan_apex_predator"
+		"Ability5"		"lycan_pack_hunter"
 		"Ability6"		"lycan_shapeshift"
 		"Ability10"		"special_bonus_unique_lycan_howl_armor"
 		"Ability11"		"special_bonus_unique_lycan_3"
@@ -242,6 +242,8 @@
 		"precache"
 		{
 			"model"		"models/heroes/lycan/lycan_wolf.vmdl"
+			"model"		"models/heroes/lycan/summon_wolves_spirited.vmdl"
+			"particle"			"particles/items_fx/dust_of_appearance_debuff.vpcf"
 			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lycan.vpcf"
 			"particle"			"particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lycan_wolf.vpcf"
 		}
@@ -308,7 +310,7 @@
 					}
 					"wolf_damage"
 					{
-						"value"							"22 28 34 40 46 52"
+						"value"							"22 32 42 52 62 72"
 						"special_bonus_unique_lycan_3"	"+14"			
 
 						// "damage" in attribute name but it isn't really
@@ -370,7 +372,7 @@
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP_HERO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		
+
 				"MaxLevel"						"3"
 				"FightRecapLevel"				"1"
 				"IsGrantedByScepter"			"1"
@@ -380,7 +382,7 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-				// Time		
+				// Time
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"300"
 
@@ -395,12 +397,6 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"lifesteal_percent"		"40"
-					"lifesteal_range"		
-					{
-						"value"		"1200"		
-						"affected_by_aoe_increase"	"1"
-					}
 					"attack_range"		"150"
 					"AbilityCooldown"
 					{
@@ -482,6 +478,42 @@
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 				"AbilityCastGestureSlot"	"DEFAULT" 
 			}
+			
+
+			//=================================================================================================================
+			// Lycan: Pack Hunter
+			//=================================================================================================================
+			"lycan_pack_hunter"
+			{
+				// General
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"				
+				"MaxLevel"						"1"
+				"Innate"						"1"
+				"IsBreakable"					"1"
+
+				// Special
+				//-------------------------------------------------------------------------------------------------------------
+				"AbilityValues"
+				{
+					"mark_duration"				"6"
+					"bonus_damage"
+					{
+						"value"				"5"
+						"special_bonus_unique_lycan_4"	"+2"
+						"CalculateSpellDamageTooltip"	"0"						
+					}
+					"lifesteal"
+					{
+						"value"				"3"
+						"hero_levelup"		"+1"						
+						"levelup_interval"	"3"
+					}
+				}
+			}
 
 			//=====================================================================================================
 			// Lycan: Feral Impulse
@@ -493,20 +525,19 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"RestrictValuesToMaxLevel"		"1"
 				"IsBreakable"					"1"
-		
+
 				// Casting
 				"AbilityValues"
 				{
-					"bonus_damage"			
+					"bonus_damage"
 					{
 						"value"			"10 20 30 40"
-						"special_bonus_unique_lycan_4"	"+25"
 
 						// "damage" in attribute name but it's a percentage-based modifier
 						"CalculateSpellDamageTooltip"	"0"
 						"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 					}
-					"bonus_hp_regen"		
+					"bonus_hp_regen"
 					{
 						"value"			"2 4 6 8"
 					}
@@ -564,9 +595,9 @@
 						"value"						"0"
 
 					}
-					"AbilityCooldown" 
+					"AbilityCooldown"
 					{
-						"value"							"105 95 85"   //this should equal Wolf Bite's cooldown, remember to set it there as well
+						"value"							"105 95 85"
 						"special_bonus_unique_lycan_8"	"-15"
 					}
 				}
@@ -698,6 +729,7 @@
 	
 			//=================================================================================================================
 			// Lycan Innate Apex Predator
+			// No longer granted to Lycan, but kept here so old replays can still resolve the ability.
 			//=================================================================================================================
 			"lycan_apex_predator"
 			{

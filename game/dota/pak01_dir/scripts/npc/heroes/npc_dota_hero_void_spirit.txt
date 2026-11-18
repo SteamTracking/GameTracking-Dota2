@@ -106,7 +106,7 @@
 		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
 		"AttributeBaseStrength"		"22"
 		"AttributeStrengthGain"		"2.6"
-		"AttributeBaseAgility"		"21"
+		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.200000"
 		"AttributeBaseIntelligence"	"24"
 		"AttributeIntelligenceGain"	"3.1"
@@ -397,7 +397,7 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"120"
+				"AbilityManaCost"				"110"
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -522,6 +522,11 @@
 					{
 						"special_bonus_unique_void_spirit_8"	"140"
 					}
+
+					"bonus_potency"
+					{
+						"value"				"25"
+					}
 				}
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 			}
@@ -577,7 +582,7 @@
 						}
 						"base_absorb_amount"	
 						{
-							"value"			"25 50 75 100"
+							"value"			"40 60 80 100"
 							"special_bonus_unique_void_spirit_resonant_pulse_barrier"			"+20%"
 						}
 						"absorb_per_hero_hit"	
@@ -632,11 +637,12 @@
 			//=================================================================================================================
 			"void_spirit_intrinsic_edge"
 			{
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 
 				"MaxLevel"						"1"
 				"Innate"						"1"
+				"IsBreakable"					"1"
 
 				"AbilityValues"
 				{

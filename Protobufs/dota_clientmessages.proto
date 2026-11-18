@@ -136,6 +136,7 @@ enum EDotaClientMessages {
 	DOTA_CM_ChooseAghanimUpgrade = 832;
 	DOTA_CM_ChooseAbilityImbue = 833;
 	DOTA_CM_NetworkStats = 834;
+	DOTA_CM_BrewmasterAssignScepterItem = 835;
 }
 
 message CDOTAClientMsg_MapPing {
@@ -772,6 +773,11 @@ message CDOTAClientMsg_ChooseAghanimUpgrade {
 
 message CDOTAClientMsg_ChooseAbilityImbue {
 	optional int32 ability_to_imbue = 1 [default = -1, boxed_type = "AbilityID_t", synthetic_default = "-1"];
+}
+
+message CDOTAClientMsg_BrewmasterAssignScepterItem {
+	optional int32 brewling = 1;
+	optional int32 item_entindex = 2 [default = -1];
 }
 
 message CDOTAClientMsg_NetworkStats {

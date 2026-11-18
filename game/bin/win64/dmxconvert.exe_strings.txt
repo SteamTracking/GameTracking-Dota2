@@ -295,6 +295,7 @@ $prefix_element$
 64 283 0
 8-byte data pool
 <!-- DMXVersion
+<None>
 AddUndoElement '%s'\n
 Alpha Fade In Random
 Alpha Fade Out Random
@@ -386,7 +387,6 @@ CUndoManager::Undo
 CUtlBlockVector<struct UtlRBTreeNode_t<struct CDmElementSerializationDictionary::ElementInfo_t,int>,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CDmElement *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CDmElementFactoryHelper *,class CDefFastCaselessStringLess>::Insert
-CUtlLeanVectorBase<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlSymbolLarge,struct DmMemoryInfo_t,class CDefLess<class CUtlSymbolLarge>,unsigned short>::Node_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct DefaultHashFunctor<class CDmElement *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct DefaultHashFunctor<class CUtlSymbolLarge>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -666,7 +666,7 @@ Unserialize: Cannot unserialize a binary encoding (%s) from a text buffer!\n
 Unserialize: DMX file encoding %s is undefined!\n
 Unserialize: DMX header was present but contained no encoding name!\n
 Unserialize: Encoding expects DMX header but it doesn't exist!\n
-Unserialize: File format newer than executable's!\n
+Unserialize: File format newer than executable's! File: %s\n
 Unserialize: Unable to open dmxconvert temp file "%s"\n
 Unserialize: Unable to start dmxconvert process\n
 Unserialize: Unexpected encoding name '%s' reading file '%s' - expected encoding '%s'\n
@@ -694,6 +694,7 @@ World Node Files
 [%d] Pushing undo '%s'\n
 [%s] Forced dmxconvert - Finished [%s] in %0.2f secs. Please re-save or upconvert this asset!\n
 \t%8d
+\t-nop4 skips checking out files when upconverting. Required for -upconvert on platforms other than Windows\n
 \t-r argument does a recursive search if the in file specifies wildcards\n
 \t-upconvert will auto-check out the files. If -i is not specified, it will operate on all DMX files\n
 \tIf no output file is specified, dmx to dmx conversion will overwrite the input\n
@@ -727,6 +728,8 @@ auto_time
 axisSystem
 background
 backgroundMap
+bakespeculartocubemaps
+bakespeculartocubemaps_scale
 balance
 balance$0
 balance$0Indices
@@ -799,7 +802,6 @@ create from parent particles
 curve info
 curvetypes
 custom
-data
 default set
 defaultBalance
 defaultCurveType
@@ -935,6 +937,7 @@ local_point
 localaxis
 lock to bone
 lower_hemisphere_is_black
+luminaire_shape
 m_pVertexData
 maintain position along path
 makefile
@@ -976,7 +979,6 @@ nodeID
 node_dest
 node_id_List
 node_name
-nodes
 noise
 nonrecursive
 normal$0
@@ -1092,6 +1094,7 @@ shadow_secondary_color_day
 shadow_secondary_color_night
 shape
 shared
+shear
 showAmbientOcclusion
 showCameraFrustum
 showFocalPlane

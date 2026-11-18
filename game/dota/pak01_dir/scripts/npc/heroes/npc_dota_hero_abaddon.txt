@@ -51,12 +51,12 @@
 
 		"Ability10"		"special_bonus_unique_abaddon_5"
 		"Ability11"		"special_bonus_unique_abaddon_7"
-		"Ability12"		"special_bonus_unique_abaddon_borrowed_time_cd"
-		"Ability13"		"special_bonus_unique_abaddon_2"
+		"Ability12"		"special_bonus_unique_abaddon_6"
+		"Ability13"		"special_bonus_unique_abaddon_borrowed_time_cd"
 		"Ability14"		"special_bonus_unique_abaddon"
-		"Ability15"		"special_bonus_unique_abaddon_immolation"
+		"Ability15"		"special_bonus_unique_abaddon_4"
 		"Ability16"		"special_bonus_unique_abaddon_3"
-		"Ability17"		"special_bonus_unique_abaddon_4"
+		"Ability17"		"special_bonus_unique_abaddon_2"
 		"Facets"
 		{
 			"abaddon_death_dude"
@@ -253,7 +253,7 @@
 		"AbilityDefinitions"
 		{
 			//=================================================================================================================
-			// Abaddon: Death Coil (mist coil)
+			// Abaddon: Death Coil (mist coil / mist_coil)
 			//=================================================================================================================
 			"abaddon_death_coil"
 			{
@@ -267,10 +267,10 @@
 				"FightRecapLevel"				"1"
 				"AbilitySound"					"Hero_Abaddon.DeathCoil.Cast"
 
+				"HasScepterUpgrade"				"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastRange"				"625"
 				"AbilityCastPoint"				"0.25"
 		
 				// Time		
@@ -285,44 +285,54 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"self_damage"			
+					"AbilityCastRange"
 					{
-						"value"					"40"				// if changing this, change self_damage_enemy_target
-						"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
-						"CalculateSpellDamageTooltip"		"0"
+						"value"								"625"
+						"special_bonus_unique_abaddon_7"	"+125"
 					}
-					"self_damage_enemy_target"
+					"self_damage_pct"			
 					{
-						"value"										"40"
-						"DamageTypeTooltip"							"DAMAGE_TYPE_PURE"
-						"CalculateSpellDamageTooltip"				"0"
+						"value"					"40"
 					}
-					"missile_speed"			"1300"
+					"missile_speed"				"1300"
 					"damage_heal"			
 					{
 						"value"								"95 170 245 320"	
-						"special_bonus_unique_abaddon_2"	"+35"
 					}		
 			
 					"effect_radius"
 					{
-						"value"				"0"
-						"special_bonus_unique_abaddon_4"	"+350"
+						"value"						"0"
+						"special_bonus_scepter"		"+400"
 						"affected_by_aoe_increase"	"1"
 					}
-			
+
 					"perform_attack"
 					{
-						"value"										"0"
-						"special_bonus_unique_abaddon_2"			"0"
+						"value"							"0"
+						"special_bonus_scepter"			"1"
+					}
+
+					"potency"
+					{
+						"value"							"0"
+						"special_bonus_scepter"			"80"
 					}
 
 					"damage_percentage_on_perform_attack"
 					{
-						"value"										"0"
-						"special_bonus_unique_abaddon_2"			"0"
+						"value"							"0"
+						"special_bonus_scepter"			"+100"
 					}
 
+					"duration"
+					{
+						"value"		"0.7 0.8 0.9 1.0"
+					}
+					"movement_speed_pct"
+					{
+						"value"		"60"
+					}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 			}
@@ -379,14 +389,7 @@
 						"value"			"120 150 180 210"
 						"special_bonus_unique_abaddon"		"+80"				
 						"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
-					}
-					"regen"
-					{
-						"value"			"0"
-						"special_bonus_unique_abaddon_7"		"+8"
-
-					}
-			
+					}			
 					"absorb_to_damage"
 					{
 						"value"			"0"
@@ -400,6 +403,17 @@
 						"affected_by_aoe_increase"			"1"
 						"CalculateSpellDamageTooltip"		"0"
 						"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
+					}
+
+					"AbilityCharges"		
+					{
+						"value"								"0"
+						"special_bonus_unique_abaddon_2"	"+2"
+					}
+
+					"AbilityChargeRestoreTime"		
+					{
+						"value"				"12 10 8 6"
 					}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -419,16 +433,18 @@
 
 				"AbilityValues"
 				{
-					"hp_threshold_pct"		"40.0"
-					"heal_reduction_pct"	
+					"min_heal_reduction_pct"
 					{
-						"value"				"29.5"
-						"hero_levelup"		"+0.5"
+						"value"								"10.0"
+						"special_bonus_unique_abaddon_6"	"+10"
 					}
-					"duration"				"5.0"
-
-					"cooldown_reduction_creeps"		"0"
-					"cooldown_reduction_heroes"		"0"
+					"max_heal_reduction_pct"	
+					{
+						"value"								"40.0"
+						"hero_levelup"						"+1.0"
+						"special_bonus_unique_abaddon_6"	"+10"
+					}
+					"duration"								"5.0"
 				}
 			}
 
@@ -450,30 +466,27 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"slow_duration"				"2"
-					"hit_count"
-					{
-						"value"					"1"
-					}
-					"curse_duration"			"2.0"
-					"curse_slow"				
-					{
-						"value"									"10 15 20 25"
-				
-					}
+					"curse_duration"			"3.0"
+					"curse_slow"				"10 15 20 25"
 					"curse_attack_speed"		
 					{
-						"value"				"10 20 30 40"
-						"special_bonus_unique_abaddon_3" "+65"
+						"value"							"15 20 25 30"
+						"special_bonus_unique_abaddon_3" "+50"
 					}
+					"curse_self_attack_speed"
+					{
+						"value"							"22.5 30 37.5 45"
+						"special_bonus_unique_abaddon_3" "+75"
+					}
+					"curse_self_attack_speed_multiplier_tooltip_only"	"1.5"		// TOOLTIP ONLY
 				
 					"curse_dps"					
 					{
-						"value" 							"15 25 35 45"
-						"special_bonus_unique_abaddon_5"	"+30"
+						"value" 							"12 20 28 36"
+						"special_bonus_unique_abaddon_5"	"+25"
 					}
-					"tower_dps_pct"				"100"
-					"curse_interval"			"0.5"
+					"tower_dps_penalty_pct"				"100"
+					"curse_interval"					"0.5"
 				}
 			}
 
@@ -492,7 +505,6 @@
 				"FightRecapLevel"				"2"
 				"AbilitySound"					"Hero_Abaddon.BorrowedTime"
 
-				"HasScepterUpgrade"			"1"
 				"IsBreakable"					"1"
 
 				// Casting
@@ -518,12 +530,8 @@
 					"hp_threshold"							"400"
 					"duration"
 					{
-						"value"		"4.0 5.0 6.0"
-						"special_bonus_scepter"	"+3"
-					}
-					"ally_threshold_scepter"
-					{
-						"special_bonus_scepter"				"550"
+						"value"								"4.0 5.0 6.0"
+						"special_bonus_unique_abaddon_4"	"+2"
 					}
 					"immolate_damage"
 					{

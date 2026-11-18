@@ -1,3 +1,7 @@
+( m_nPickMode != OBJECT_SPACE ) && ( m_nPickMode != WORLD_AXIS )
++Output Variables
++Placement
++Size
 .?AV?$CBaseAppSystem@VISmartPropSystem@@@@
 .?AV?$CEvaluatedAttributeEnum@W4ApplyColorMode_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4PickMode_t@@@@
@@ -10,9 +14,15 @@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropGridOriginBasis_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropGridPlacementMode_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropLightingMode_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropMeshEdgeType_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropMeshFaceCrossSection_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropMeshFaceEdge_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropPathPositions_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropPlaceMeshOrientationMode_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropRadiusPlacementMode_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropScatterOnMeshCountMode_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropScatterOnMeshDistributionMode_t@@@@
+.?AV?$CEvaluatedAttributeEnum@W4SmartPropScatterOnMeshSizeMode_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4SmartPropSpace_t@@@@
 .?AV?$CEvaluatedAttributeEnum@W4TraceNoHitResult_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4ApplyColorMode_t@@@@
@@ -26,9 +36,15 @@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropGridOriginBasis_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropGridPlacementMode_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropLightingMode_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropMeshEdgeType_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropMeshFaceCrossSection_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropMeshFaceEdge_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropPathPositions_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropPlaceMeshOrientationMode_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropRadiusPlacementMode_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropScatterOnMeshCountMode_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropScatterOnMeshDistributionMode_t@@@@
+.?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropScatterOnMeshSizeMode_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4SmartPropSpace_t@@@@
 .?AV?$CEvaluatedAttributeSchemaEnum@W4TraceNoHitResult_t@@@@
 .?AV?$CKV3ResourceTypeManager@$0HEHCGBGNHDHG@@@
@@ -43,9 +59,15 @@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropGridOriginBasis_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropGridPlacementMode_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropLightingMode_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropMeshEdgeType_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropMeshFaceCrossSection_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropMeshFaceEdge_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropPathPositions_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropPlaceMeshOrientationMode_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropRadiusPlacementMode_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropScatterOnMeshCountMode_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropScatterOnMeshDistributionMode_t@@@@
+.?AV?$CSmartPropVariable_Enum@W4SmartPropScatterOnMeshSizeMode_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4SmartPropSpace_t@@@@
 .?AV?$CSmartPropVariable_Enum@W4TraceNoHitResult_t@@@@
 .?AV?$CTier0AppSystem@VISmartPropSystem@@$0A@@@
@@ -82,12 +104,18 @@
 .?AVCSmartPropAttributeLightingMode@@
 .?AVCSmartPropAttributeMaterialGroup@@
 .?AVCSmartPropAttributeMaterialName@@
+.?AVCSmartPropAttributeMeshEdgeType@@
+.?AVCSmartPropAttributeMeshFaceCrossSection@@
+.?AVCSmartPropAttributeMeshFaceEdge@@
 .?AVCSmartPropAttributeModelName@@
 .?AVCSmartPropAttributeOrientationMode@@
 .?AVCSmartPropAttributePathPositions@@
 .?AVCSmartPropAttributePickMode@@
 .?AVCSmartPropAttributeRadiusPlacementMode@@
 .?AVCSmartPropAttributeScaleMode@@
+.?AVCSmartPropAttributeScatterOnMeshCountMode@@
+.?AVCSmartPropAttributeScatterOnMeshDistributionMode@@
+.?AVCSmartPropAttributeScatterOnMeshSizeMode@@
 .?AVCSmartPropAttributeStateName@@
 .?AVCSmartPropAttributeString@@
 .?AVCSmartPropAttributeSurfaceProperty@@
@@ -113,6 +141,7 @@
 .?AVCSmartPropElement_PlaceOnPath@@
 .?AVCSmartPropElement_PropDynamic@@
 .?AVCSmartPropElement_PropPhysics@@
+.?AVCSmartPropElement_ScatterOnMesh@@
 .?AVCSmartPropElement_SmartProp@@
 .?AVCSmartPropEvaluationContext@@
 .?AVCSmartPropFilter@@
@@ -133,6 +162,7 @@
 .?AVCSmartPropOperation_CreateLocator@@
 .?AVCSmartPropOperation_CreateRotator@@
 .?AVCSmartPropOperation_CreateSizer@@
+.?AVCSmartPropOperation_DeformToMeshFace@@
 .?AVCSmartPropOperation_MaterialOverride@@
 .?AVCSmartPropOperation_MaterialTint@@
 .?AVCSmartPropOperation_RandomColorTintColor@@
@@ -165,8 +195,10 @@
 .?AVCSmartPropParameter@@
 .?AVCSmartPropSelectionCriteria@@
 .?AVCSmartPropSelectionCriteria_ChoiceWeight@@
-.?AVCSmartPropSelectionCriteria_EdgeAngleCriteria@@
 .?AVCSmartPropSelectionCriteria_EndCap@@
+.?AVCSmartPropSelectionCriteria_ExpressionCriteria@@
+.?AVCSmartPropSelectionCriteria_FaceEdgeCriteria@@
+.?AVCSmartPropSelectionCriteria_FaceOccupiedCriteria@@
 .?AVCSmartPropSelectionCriteria_IsValid@@
 .?AVCSmartPropSelectionCriteria_LinearLength@@
 .?AVCSmartPropSelectionCriteria_MaterialCriteria@@
@@ -194,12 +226,18 @@
 .?AVCSmartPropVariable_LightingMode@@
 .?AVCSmartPropVariable_Material@@
 .?AVCSmartPropVariable_MaterialGroup@@
+.?AVCSmartPropVariable_MeshEdgeType@@
+.?AVCSmartPropVariable_MeshFaceCrossSection@@
+.?AVCSmartPropVariable_MeshFaceEdge@@
 .?AVCSmartPropVariable_Model@@
 .?AVCSmartPropVariable_OrientationMode@@
 .?AVCSmartPropVariable_PathPositions@@
 .?AVCSmartPropVariable_PickMode@@
 .?AVCSmartPropVariable_RadiusPlacementMode@@
 .?AVCSmartPropVariable_ScaleMode@@
+.?AVCSmartPropVariable_ScatterOnMeshCountMode@@
+.?AVCSmartPropVariable_ScatterOnMeshDistributionMode@@
+.?AVCSmartPropVariable_ScatterOnMeshSizeMode@@
 .?AVCSmartPropVariable_String@@
 .?AVCSmartPropVariable_SurfaceProperty@@
 .?AVCSmartPropVariable_TraceNoHit@@
@@ -211,9 +249,24 @@
 .?AVIResourceTypeManager@@
 .?AVISmartProp@@
 .?AVISmartPropSystem@@
+A closed edge, preferably one that comes after an open edge. Faces without closed edges use their longest edge.
+ALONG_X
+ALONG_Y
+Adjacent Edges Only
+All edges of the face.
+Along Object Axis
+Along UV Channel 1
+Along UV Channel 2
+Along World Axis
+An open edge, preferably one that comes after a closed edge. Faces without open edges use their longest edge.
+Axis
+Axis Points Into Face
+BOTH
 Bad FLC data for resource '%s': %s\n
 Bad KV3 data for resource '%s': %s\n
+By Density
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\smartprops\_vpc_smartprops\default\win64\_msvc_\Retail\smartprops.pdb
+CLOSED
 CSmartPropAttributeAngles
 CSmartPropAttributeBool
 CSmartPropAttributeColor
@@ -222,7 +275,13 @@ CSmartPropAttributeInt
 CSmartPropAttributeLocatorName
 CSmartPropAttributeMaterialGroup
 CSmartPropAttributeMaterialName
+CSmartPropAttributeMeshEdgeType
+CSmartPropAttributeMeshFaceCrossSection
+CSmartPropAttributeMeshFaceEdge
 CSmartPropAttributeModelName
+CSmartPropAttributeScatterOnMeshCountMode
+CSmartPropAttributeScatterOnMeshDistributionMode
+CSmartPropAttributeScatterOnMeshSizeMode
 CSmartPropAttributeStateName
 CSmartPropAttributeString
 CSmartPropAttributeSurfaceProperty
@@ -230,8 +289,22 @@ CSmartPropAttributeVariableValue
 CSmartPropAttributeVector
 CSmartPropAttributeVector2D
 CSmartPropAttributeVector4D
+CSmartPropElement_ScatterOnMesh
+CSmartPropOperation_DeformToMeshFace
+CSmartPropSelectionCriteria_ExpressionCriteria
+CSmartPropSelectionCriteria_FaceEdgeCriteria
+CSmartPropSelectionCriteria_FaceOccupiedCriteria
 CSmartPropVariableComparison
 CSmartPropVariableValue
+CSmartPropVariable_MeshEdgeType
+CSmartPropVariable_MeshFaceCrossSection
+CSmartPropVariable_MeshFaceEdge
+CSmartPropVariable_ScatterOnMeshCountMode
+CSmartPropVariable_ScatterOnMeshDistributionMode
+CSmartPropVariable_ScatterOnMeshSizeMode
+CUtlBlockVector<struct CSmartPropExpressionEvaluator::VariableLayout_t,int,class CMemAllocAllocator>::GrowCount
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct CSmartPropExpressionEvaluator::VariableLayout_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct CSmartPropExpressionEvaluator::VariableLayout_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlMemoryBlockAllocator<struct CSmartPropExpressionEvaluator::VariableLayout_t,class CMemAllocAllocator>::AddPage
 Cannot parse %s: String Literals are not supported
 Cannot register constant %s more than once
 Cannot register function %s more than once
@@ -241,37 +314,139 @@ Cannot register variable %s because it is an unsupported type
 Cannot register variable %s more than once
 Cannot register variable %s: it has no components
 Cannot register variable %s: only float variables can have multiple components
+Closed Edge
+Concave
+Convex
 Couldn't load KV3 for resource: %s
+Count Edges
+Count Mode
+Coverage
+Coverage 0 to 1. At 1 it places as many points as it can fit.
+DENSITY
+Direction the reference edge should run along.
+Distribution
 EQUAL
+Edge
+Edge of each face that is the bottom edge of the elements placed on it. Local X runs along it, counter-clockwise around the face, Y points into the face and Z is the face normal. The origin is the corner of the face where the reference edge starts.
+Edge to test, relative to the reference edge which is the bottom edge.
+EdgeAngle
+EdgeOpen
+Edges on the border of the mesh, used by one face.
+Edges shared by two faces.
 Evaluated %s in %.2fms\n
 EvaluationDepth
+Evenly
+Expression to evaluate for each face, the element is only placed where the result is true.
+FIXED_SIZE
+FaceOccupied
 Failed to apply FLC data to resource '%s': %s\n
+Filter Faces by Edge
+Filter Faces by Material
+Filter Faces by Occupied
+Filter Faces by Vertex Count
+Filter by Expression
+Filter by Topology
+Fixed Size
+Fixed total count of points.
 Function "%s" takes %i parameters, but %i were given
 GREATER
 GREATER_OR_EQUAL
+Input Mesh
 InstanceCount
 InstanceIndex
 Invalid component specifier ".%s" used on variable "%s"
 Invalid property specification
 Invalid string value %s -- pick another one!\n
+Keep Cross Section
 LESS
 LESS_OR_EQUAL
+LONGEST_EDGE
+Largest angle in degrees between the face normals of an edge that is still mitered, sharper turns get a square cut. 90 = right angle corner.
+Lerp between up vector and surface normal.
 LineLength
 LinearScale
+List of fixed size classes with relative weights.
+List of size classes with set size and weight.
+Longest Edge
 MSmartPropClassVersion
 MVDataBase
+Mark Face Across Edge as Occupied
+Material the faces use.
+Max Radius
 MaxEvaluationDepth
+Maximum angle in degrees between the face and the face across the edge, [ 0, 180 ]. 90 = box edge or inside corner, 180 = flat.
+Maximum radius of a point.
+Mesh Edge Type
+Mesh Face Cross Section
+Mesh Face Edge
+Mesh Reference Edge
+Min Radius
+Minimum angle in degrees between the face and the face across the edge, [ 0, 180 ]. 90 = box edge or inside corner, 180 = flat.
+Minimum radius of a point.
+Miter Edges
+Miter Limit
+Miter Smooth Edges Only
 NOT_EQUAL
+Name of the mesh input on the Smart Prop instance in Hammer.
+Name of the mesh to use. This mesh name will show up in the property editor when selecting a placement of this smart prop in Hammer, allowing selection of a mesh object in the map to use.
 No DATA block for resource\n
+Number of edges to match.
+Number of vertices, for example 4 for quads.
+OBJECT_SPACE
+OPEN
+Occupied
+One fixed size for all points.
+Open Edge
+POISSON_DISK
 PathParameter
+PerlinNoise
+Place elements on the faces of a mesh selected by their selection criteria. Elements are placed in order and several elements can be placed on the same face. Each element tests the faces in mesh order. FaceOccupied() is 1 on faces a previous element, or this element on a face tested earlier, was placed on or marked as occupied across an edge, so an element can skip them with Filter Faces by Occupied. The origin of the element is the corner where the reference edge starts, local X runs along the reference edge, Y points into the face and Z is the face normal. UScale() and VScale() are the size of the face along X and Y. EdgeOpen( n ) and EdgeAngle( n ) describe the edges of the face, see Filter by Expression.
+Points per square foot / per 144 square units.
+Poisson Disk Distribution. Points evenly spaced with no overlaps.
 Program has invalid instruction %i
 Program uses more temp variables than are supported. Needs %i, max is %i
+RANDOM_RANGE
 RESOURCE_TYPE_SMART_PROP
+Radius Output Variable
+Radius of every point.
+Radius of points in this size class.
+Random Range
+Random Range of sizes between min and max size.
+Reference Edge
+Relative weight of this size class, higher weighted classes receive a larger share of the points.
+Remove Overlaps
+Remove overlapping points based on their point size.
+Runs Along Reference Edge
+Runs Into Face
+SHORTEST_EDGE
+SIZE_CLASSES
+Scatter Children on a Mesh.
+Scatter on Mesh
+Scatter on Mesh Count Mode
+Scatter on Mesh Distribution Mode
+Scatter on Mesh Size Mode
+ScatterOnMeshSizeClass_t
+Select faces by one of their edges, counted from the reference edge: whether the edge is open, or the angle to the face on its other side. For pieces that wrap around a corner, such as elbows, test the edge they wrap around and mark the face across it as occupied.
+Select faces by whether they are occupied, the same as FaceOccupied(). A face is occupied if a previous element, or this element on a face tested earlier, was placed on it or marked it as occupied across an edge.
+Select faces that use the given material.
+Select faces with the given number of open edges, closed edges or edges. Open edges are on the border of the mesh and used by one face, closed edges are shared by two faces.
+Select faces with the given number of vertices.
+Shortest Edge
+Size Class Output Variable
+Size Classes
+Size Mode
+Skip faces for which the expression is false. Tested after the other criteria, so UScale(), VScale(), FaceOccupied(), EdgeOpen( n ) and EdgeAngle( n ) return the values of the face being tested. n is the edge counted counter-clockwise from the reference edge: 0 = bottom, 1 = right, 2 = top, -1 = left. EdgeAngle() is the bend across the edge in degrees, 0 = flat, positive = convex, negative = concave, 0 for open edges. Variables set on this element aren't visible to the expression.
 SmartPropAttributeEditor(MaterialGroup)
 SmartPropAttributeEditor(SurfaceProperty)
 SmartPropAttributeEditor(angles)
 SmartPropAttributeEditor(bool)
 SmartPropAttributeEditor(color)
+SmartPropAttributeEditor(enum:SmartPropMeshEdgeType_t)
+SmartPropAttributeEditor(enum:SmartPropMeshFaceCrossSection_t)
+SmartPropAttributeEditor(enum:SmartPropMeshFaceEdge_t)
+SmartPropAttributeEditor(enum:SmartPropScatterOnMeshCountMode_t)
+SmartPropAttributeEditor(enum:SmartPropScatterOnMeshDistributionMode_t)
+SmartPropAttributeEditor(enum:SmartPropScatterOnMeshSizeMode_t)
 SmartPropAttributeEditor(float)
 SmartPropAttributeEditor(integer)
 SmartPropAttributeEditor(locator)
@@ -282,19 +457,70 @@ SmartPropAttributeEditor(string)
 SmartPropAttributeEditor(vector2)
 SmartPropAttributeEditor(vector3)
 SmartPropAttributeEditor(vector4)
+SmartPropMeshEdgeType_t
+SmartPropMeshFaceCrossSection_t
+SmartPropMeshFaceEdge_t
 SmartPropReferences
+SmartPropScatterOnMeshCountMode_t
+SmartPropScatterOnMeshDistributionMode_t
+SmartPropScatterOnMeshSizeMode_t
 SmartPropVariableValueEditor( comparison )
 SmartPropVariableValueEditor()
+Specifies an edge of a face relative to its reference edge.
+Specifies how point size is set.
+Specifies how the number of points are set.
+Specifies point distribution method.
+Specifies whether open edges, closed edges or both are counted.
+Specifies which edge of each face a place on mesh element uses as the bottom edge of the elements it places.
+Specifies which way a piece deformed onto a mesh face runs, so its cross-section keeps its proportions when the face tapers.
 Start Asleep
+Stretch the element onto the quad it is placed on with a lattice deformer. The box from the origin to ( UScale(), VScale() ) is mapped onto the corners of the quad, with its height along the face normal. The lattice stays on the face, other modifiers move the content inside it. Has no effect on faces that aren't quads.
+TOTAL_COUNT
+Target Edge Count
+The edge after the reference edge.
+The edge before the reference edge.
+The edge that runs most along U of the first UV channel, so local Y points towards the top of the texture. Faces with degenerate UVs use their longest edge.
+The edge that runs most along U of the second UV channel, so local Y points towards the top of the texture. The mesh only has a second UV channel if one of its materials uses it, faces without it or with degenerate UVs use their longest edge.
+The edge that runs most along the axis, in the space of the mesh. Faces perpendicular to the axis use their longest edge.
+The edge that runs most along the axis, in world space. Faces perpendicular to the axis use their longest edge.
+The edge two after the reference edge, the opposite edge on quads.
+The height of the piece is never scaled, it only follows the shape of the face.
+The longest edge of the face.
+The piece runs along the reference edge. The height at the left and right edges scales with the length of that edge, so a round pipe stays round.
+The piece runs orthogonal to the reference edge, into the face. The height at the reference edge and the opposite edge scales with the width of that edge, so a round pipe stays round.
+The reference edge.
+The shortest edge of the face.
+Total Count
+Transform: Deform to Mesh Face
+UNIFORM_RANDOM
 UScale
+Uniform Random Distribution. Can cause clumping of points on the surface.
 Unknown binary operator
 Unknown function "%s"
 Unknown unary operator
 Unknown variable "%s"
 Unsupported use of property accessor "%s.%s", property accessors can only be used variables
 Unsupported version %d for resource '%s' (Expected %d)\n
+Up Vector for placed points on the mesh.
 VScale
 Variable "%s" has %i components, a specific component must be specified, for example use: "%s.x"
+Variable name to write point radius to.
+Variable name to write size class to. Size class is an integer index into the size list.
+Vertex Count
+WORLD_AXIS
+When true, concave edges such as inside corners can match. Flat edges are both convex and concave.
+When true, convex edges such as the edges of a box can match. Flat edges are both convex and concave.
+When true, hard edges get a square cut instead of a miter.
+When true, only count edges that share a vertex with another counted edge. When false, only count edges that don't.
+When true, select faces that are occupied. When false, select faces that aren't.
+When true, select faces that don't use the material.
+When true, select faces whose edge doesn't match.
+When true, select faces whose edge is open. When false, select faces whose edge is closed and within the angle range.
+When true, the face on the other side of the edge is marked as occupied for the faces tested after it and for the following elements, so FaceOccupied() is 1 on it. For pieces that cover both faces. Add a Filter Faces by Occupied that skips occupied faces so an edge shared by two matching faces only gets one piece.
+When true, the reference edge is the edge whose direction into the face, local Y, points most along the axis, instead of the edge that runs most along it. For example an edge running along +X on a face with normal -Y points into the face along +Z.
+When true, the top of the element is cut along a miter at each closed edge, so elements on neighboring faces meet without gaps or overlaps. Requires consistent face winding.
+Which edges are counted: open, closed or both.
+Which way the piece runs, so the height at each of its ends scales with the width of the face there and a round pipe stays round when the face tapers. Off keeps a fixed height.
 deformable_attach_mode
 deformable_attach_orientation_mode
 error.vsmart
@@ -305,6 +531,35 @@ flc_file_list
 flc_lines
 m_Comparison
 m_Components
+m_OutputRadiusVariableName
+m_OutputSizeClassVariableName
+m_SizeClasses
+m_bAxisPointsIntoFace
+m_bConcave
+m_bConvex
+m_bMiterEdges
+m_bMiterEdges == false
+m_bMiterSmoothEdgesOnly
+m_bOccupied
+m_bOccupyFaceAcross
+m_bOpenEdge
+m_bOpenEdge == true
+m_bRemoveOverlaps
+m_flCoverage
+m_flMiterLimit
+m_nCountMode
+m_nCrossSection
+m_nDistributionMode
+m_nDistributionMode != POISSON_DISK
+m_nDistributionMode != UNIFORM_RANDOM
+m_nDistributionMode != UNIFORM_RANDOM || m_nCountMode != DENSITY
+m_nDistributionMode != UNIFORM_RANDOM || m_nCountMode != TOTAL_COUNT
+m_nEdgeType
+m_nSizeMode
+m_nSizeMode != FIXED_SIZE
+m_nSizeMode != RANDOM_RANGE
+m_nSizeMode != SIZE_CLASSES
+m_vReferenceAxis
 models/dev/error.vmdl
 models/error.vmdl
 resourcesystem

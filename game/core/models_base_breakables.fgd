@@ -168,6 +168,46 @@
 
 
 @ModelBreakCommand
+	locator_axis
+	{
+		transform =
+		{
+			origin_key = "anchor_position"
+			angles_key = "anchor_angles"
+		}
+	}
+	physicsjoint_conical
+	{
+		transform =
+		{
+			origin_key = "anchor_position"
+			angles_key = "anchor_angles"
+		}
+		enable_swing_limit = "enable_swing_limit"
+		swing_limit = "swing_limit"
+		enable_twist_limit = "enable_twist_limit"
+		min_twist_angle = "min_twist_angle"
+		max_twist_angle = "max_twist_angle"
+	}
+= break_create_joint_conical : "Creates a conical joint between two spawned breakpieces. The cone is centered on the anchor's Z axis."
+[
+	parent_piece(model_breakpiece)	: "Parent Piece" : ""
+	child_piece(model_breakpiece)	: "Child Piece" : ""
+	anchor_position(vector)			: "Anchor Position (relative to model)"
+	anchor_angles(angle)			: "Anchor Angles (relative to model)"
+
+	friction(float)					: "Friction" : 0
+
+	enable_swing_limit(bool)		: "Enable Swing Limit" : 0
+	swing_limit(float)				: "Swing Limit" : 0 : "Cone half-angle in degrees (0 to 85)"
+
+	enable_twist_limit(bool)		: "Enable Twist Limit" : 0
+	min_twist_angle(float)			: "Min Twist Angle" : 0
+	max_twist_angle(float)			: "Max Twist Angle" : 0
+]
+
+
+@ModelBreakCommand
 = break_create_joint_null : "Creates a null joint between two spawned breakpieces, which disables collision between them without physically constraining them."
 [
 	parent_piece(model_breakpiece)	: "Parent Piece" : ""

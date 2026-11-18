@@ -153,6 +153,7 @@
 .?AV?$_Ref_count_obj2@VCInMemoryLoadResourceHeaderPromise@@@std@@
 .?AVCAllAssetsWorkingSet@@
 .?AVCAsset@@
+.?AVCAssetContentExtensionFilter@@
 .?AVCAssetDir@@
 .?AVCAssetEditinfoFilter@@
 .?AVCAssetFileSystemChangeHandlerVisitor@?1??ProcessFileChanges@CAssetSystem@@QEAAXXZ@
@@ -175,6 +176,7 @@
 .?AVCBackgroundFileCRCThread@@
 .?AVCBitmapAsset@@
 .?AVCBitmapAssetType@@
+.?AVCBitmapAssetTypeInfo@@
 .?AVCFilterVPKFiles@@
 .?AVCGenericFilterKey_AliasGroup@@
 .?AVCGenericFilterKey_Unknown@@
@@ -185,9 +187,13 @@
 .?AVCMRUAssetsWorkingSet@@
 .?AVCMapAsset@@
 .?AVCMapAssetType@@
+.?AVCMapAssetTypeInfo@@
 .?AVCProceduralWorkingSet@@
 .?AVCResourceAsset@@
 .?AVCResourceAssetType@@
+.?AVCResourceAssetTypeInfo@@
+.?AVCSchemaRegistration_assetconfiglib@@
+.?AVCSimpleAssetTypeInfo@@
 .?AVCSimpleWorkingSet@@
 .?AVCStdAssetFileSystem@@
 .?AVCSubasset@@
@@ -196,6 +202,7 @@
 .?AVCTestAssetFileSystem@@
 .?AVCVDataAutoTagger@@
 .?AVCVMMDAssetType@@
+.?AVCVMMDAssetTypeInfo@@
 .?AVIAsset@@
 .?AVIAssetDir@@
 .?AVIAssetFileSystemInterface@@
@@ -211,7 +218,6 @@
 .?AVISubasset@@
 .?AVISubassetType@@
 .?AVIWorkingSet@@
-.?AVbad_optional_access@std@@
 .vtest_c
 .vtestdep_c
 /AssetSystemSuspendFileChanges
@@ -222,7 +228,6 @@
 ==== AssetSystemTest Complete! ====\n
 =============== content builder batch ===============\n
 ===============> %d assets recompiled\n
-=aes(partial)
 @child_asset
 @fused_asset
 @inherited_asset
@@ -305,7 +310,6 @@ At least one out-of-date dependency: test_txt.vtestcontent (file CRC changed
 At least one out-of-date dependency: test_vmat.vtest (file CRC changed
 Auto-tags MUST have an asset type restriction specified
 Automatic and user-provided tags
-Bad optional access
 Bad test root path ID '%s'
 BlockingReloadCompileReplacementBufferAndChildren
 BuildDependencyData
@@ -334,13 +338,14 @@ CAssetSystem::NotifyResourceStatusChange( %s ) - %s\n
 CAssetSystem::ProcessFileChanges unable to acquire the file change suspension cross-process mutex.
 CAssetSystem::Test_PostRecompileResourceAsset
 CAssetSystem::Test_PreRecompileResourceAsset
-CAssetSystem::UpdateAllAssetFileCRCs(), C:\buildworker\source2_dota_rel_2019_win64\build\src\assetsystem\assetsystem.cpp:4604
+CAssetSystem::UpdateAllAssetFileCRCs(), C:\buildworker\source2_dota_rel_2019_win64\build\src\assetsystem\assetsystem.cpp:4640
 CAssetSystemTest::RunTests
 CAssetSystemTestSetup::DiscardInMemoryReplacement
 CAssetSystemTestSetup::EnsureAssetIsUpToDate
 CAsyncLoadResourceHeaderPromise::GetHeader
 CAsyncLoadResourceHeaderPromise::IsHeaderValid
 CAsyncLoadResourceHeaderPromise::StartNewReadRequest
+CInMemoryFilesystem::AddTestSearchPath
 CInMemoryFilesystem::CTestFile::ReadFile
 CInMemoryFilesystem::CTestSearchPath::CreateFile
 CInMemoryFilesystem::CTestSearchPath::DirExists
@@ -419,10 +424,6 @@ Done
 Double-checked compile state: %s (%s)\n
 ERROR DependencyStack: %s\n
 ERROR recompiling: '%s'\n
-EXRReadFile() - B channel not found!\n
-EXRReadFile() - G channel not found!\n
-EXRReadFile() - R channel not found!\n
-EXRReadFile() - cannot read image data!\n
 EditInfo:Multiple
 EditInfo_AssetType:%d
 EnsureAssetIsUpToDate called on an asset '%s' with no parent to recompile!
@@ -435,6 +436,7 @@ FILESYSTEM: Copied to '%s' crc '%x'\n
 FILESYSTEM: Removed '%s'\n
 FILESYSTEM: Wrote '%s' crc '%x'\n
 Failed to find assettype %s
+Failed to parse asset key '%s' (expected member names separated by '/', with '*' for every element of an array, e.g. 'm_LevelVisuals/*/m_strModel')
 Failed to parse tag filter '%s'
 Failed to remove expected relevant file '%s' for asset '%s' (can happen due to delays in processing file changes)\n
 Failed to traverse directory and/or watch for changes: %s - See console for details about the specific problematic paths.\n
@@ -453,17 +455,20 @@ Getting CRC for %s\n
 Handling batched file changes...
 Hello World
 HiddenAssetFlag
+How much asset info change builds up before it's saved
 INCONSISTENT: Marked as child resource, but has content files.
 IgnoreCompiledState set for type (%s)
 Ignoring already-handled file change: %s\n
 Ignoring failure to traverse directory and/or watch for changes: %s\n
-Ignoring file change becuase existing asset didn't have relevant file: %s\n
+Ignoring file change because existing asset didn't have relevant file: %s\n
 Ignoring file change for file that is being written ( %s ) [retry %u]\n
 Ignoring file change for malformed path ( %s )\n
 Ignoring file change for non-asset file ( %s )\n
 Ignoring file change from unknown path ( %s )\n
 ImplicitDependencies
 ImplicitDependingOnMe
+In the tools, how long (sec) the user has to go without giving input before asset info that needs saving is saved
+In the tools, how much asset info change can build up waiting for the user to be idle before it's saved anyway
 Initial test payload: %s\n
 Invalid AdditionalInputDependencies '%s' in '%s'\n
 Invalid AdditionalRelatedFile '%s' in '%s'\n
@@ -478,7 +483,6 @@ IsHeaderValid()
 Keys encountered on assets of type: %s
 Leading-slash-relative path used
 LoadAssetTypes - Double-init of AssetSystem?
-LoadEXRImageFromMemory() failed! Error message: %s\n
 Loaded
 Loaded %d tags for %d assets in %.2fs.\n
 Loaded Resources
@@ -503,10 +507,8 @@ ORPHAN
 OldDBLoaded
 On-demand recompile of asset %s\n
 PERMANENTLY_IGNORE_RECOMPILE_REASON
-PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 Parent with missing children. (eg. '%s')
 Parented by out-of-date but not directly loaded '%s':\n -> reason: %s
-ParseEXRHeaderFromMemory() failed! Error message: %s\n
 Paths excluded from your client: %d\n
 Paths included (regardless of exclude) in your client: %d\n
 Processed %d tags in %.2fs.\n
@@ -584,11 +586,9 @@ Tools Auto-Checkout
 UNCOMPILED
 UNEXPECTED: Assetsystem doesn't know about '%s:%s' (dependency of '%s'), but the filesystem found it at '%s'.\n
 Unable to load kv3 userdata
-Unable to load psd: %s\n
 Unable to save special input dependency userdata: %s\n
 Unnamed
 Unregistered pending cache for asset: %s\n
-Unsupported PSD color mode!\n
 Unsuppressed auto-recompile
 Untagged
 Up to date
@@ -688,6 +688,7 @@ asset_diagnostic: UpdateFileInfo -> m_bMayBeStale = false\n
 asset_diagnostic: UpdateRelatedFile -> UpdateFileInfo\n
 asset_ext_versions
 asset_warnings
+assetconfiglib
 assets
 assetsThatDependOnTheTGA.Count() == 1
 assetsThatDependOnTheTGA[0] == pTestMaterial
@@ -699,6 +700,9 @@ assetsystem.dll
 assetsystem_check_compile_state could not find asset: %s\n
 assetsystem_dump_one_dir expected 1 argument: <dir>\n
 assetsystem_dump_one_dir unknown dir '%s'\n
+assetsystem_save_info_change_delta
+assetsystem_save_info_idle_seconds
+assetsystem_save_info_max_change_delta
 assettypes
 assettypes_common.txt
 assettypes_internal.txt
@@ -716,6 +720,7 @@ child_resource_name
 child_vtex_payload
 clientExclusions.cfg
 consumer
+content_extension
 content_mp3_and_game.vtest
 content_mp3_only.vtest
 content_mp3_then_wav.vtest
@@ -757,6 +762,8 @@ fused_child
 g_Cov_DetermineCompileState
 g_pAsyncFileSystem2
 g_pToolsSplashScreen->showMessage
+game:tools/images/assettypes/generic_lg.png
+game:tools/images/assettypes/generic_sm.png
 game_only.vtest
 hConsumer.GetReloadCounter() == 1
 hConsumer.GetReloadCounter() == 2
@@ -808,6 +815,7 @@ nCoverageHitPoints > 0
 nNumRecompiled == 0
 nNumRecompiled == 3
 nPathID != TSP_ID_INVALID
+nPathId >= TSP_ID_FIRST && nPathId < TSP_ID_COUNT
 nested_payload_str
 new_mat_in_leaf
 new_tga_in_base

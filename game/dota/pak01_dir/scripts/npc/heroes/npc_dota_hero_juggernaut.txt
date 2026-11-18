@@ -42,7 +42,7 @@
 		"Ability1"		"juggernaut_blade_fury"
 		"Ability2"		"juggernaut_healing_ward"
 		"Ability3"		"juggernaut_blade_dance"
-		"Ability4"		"juggernaut_swift_slash"
+		"Ability4"		"generic_hidden"
 		"Ability5"		"juggernaut_bladeform"
 		"Ability6"		"juggernaut_omni_slash"
 
@@ -59,7 +59,7 @@
 		"Ability12"		"special_bonus_unique_juggernaut_omnislash_cooldown"
 		"Ability13"		"special_bonus_unique_juggernaut_blade_fury_movespeed"
 		"Ability14"		"special_bonus_unique_juggernaut_4"
-		"Ability15"		"special_bonus_unique_juggernaut"
+		"Ability15"		"special_bonus_unique_juggernaut_blade_fury_cooldown"
 		"Ability16"		"special_bonus_unique_juggernaut_omnislash_duration"
 		"Ability17"		"special_bonus_unique_juggernaut_blade_dance_lifesteal"
 				
@@ -316,7 +316,7 @@
 				"17"		""
 				"18"		"juggernaut_omni_slash"
 				"19"		""
-				"20"		"special_bonus_unique_juggernaut"
+				"20"		"special_bonus_unique_juggernaut_blade_fury_cooldown"
 				"21"		""
 				"22"		""
 				"23"		""
@@ -395,6 +395,7 @@
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"1"
+				"HasScepterUpgrade"				"1"
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"0"
@@ -414,16 +415,11 @@
 					"blade_fury_damage"
 					{
 						"value"		"85 115 145 175"
-						"special_bonus_unique_juggernaut"	"+120"
 					}
 					"blade_fury_damage_tick"	
 					{
 						"value"					"0.2"
 						"CalculateSpellDamageTooltip"	"0"
-					}
-					"blade_fury_aspd_multiplier"
-					{
-						"value"				"0"
 					}
 					"blade_fury_radius"			
 					{
@@ -437,7 +433,7 @@
 					"AbilityCooldown"
 					{
 						"value"					"30 26 22 18"
-						//"special_bonus_unique_juggernaut_blade_fury_cooldown"		"-3"
+						"special_bonus_unique_juggernaut_blade_fury_cooldown"		"-3"
 					}
 					"bonus_movespeed"
 					{
@@ -457,13 +453,14 @@
 					{
 						"value"					"0"
 					}
-					"attack_interval"
+					"scepter_attack_damage_pct"
 					{
-						"value"				"0"
-
+						"value"					"0"
+						"special_bonus_scepter"	"+75"
+						"display_type"			"kBuffPercentage"
 					}
-			
-					"immunity_resist"		"80"	
+
+					"immunity_resist"		"80"
 	
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -552,11 +549,7 @@
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"2"
-				"AbilityDraftExtraAbilities"
-				{
-					"juggernaut_swift_slash" "scepter"
-				}
-		
+
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 
@@ -599,7 +592,7 @@
 					{
 						"value"		"0"
 					}
-					"AbilityCooldown"				
+					"AbilityCooldown"
 					{
 						"value"			"120"
 						"special_bonus_unique_juggernaut_omnislash_cooldown"			"-15"
@@ -608,7 +601,7 @@
 			}
 
 			//=================================================================================================================
-			// Omnislash: Swift Slash ( scepter ability )
+			// Omnislash: Swift Slash ( unused - was the scepter ability before Blade Fury's scepter upgrade )
 			//=================================================================================================================
 			"juggernaut_swift_slash"
 			{
@@ -623,8 +616,6 @@
 				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"MaxLevel"						"1"
 				"FightRecapLevel"				"1"
-				"IsGrantedByScepter"			"1"
-				"HasScepterUpgrade"				"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
@@ -939,6 +930,7 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"BaseClass"						"special_bonus_base"
 			}
+
 		
 
 	

@@ -22,6 +22,12 @@
 .?AV?$CBaseAppSystem@VIWorldRendererMgr@@@@
 .?AV?$CConCommandMemberAccessor@VCWorldRendererMgr@@@@
 .?AV?$CDefaultIntrospectedToKV3TypeManager@$0GEGMHCHHHG@UWorld_t@@@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?1??AssignVectorsToClusters@CKMeansClustering@@AEAAXXZ@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_bc7e@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?8??WriteToBufferBC7_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@@@YAXHHPEBD$$QEAV1?1???R<lambda_2>@?1??WriteToBufferBC6H_highest_quality_tweaked@FloatBitMap_t@@IEBA_NPEAX_K@Z@QEBA@XZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@@@YAXHHPEBD$$QEAV1?M@??WriteToBufferBC6H_ispctexcomp@FloatBitMap_t@@IEBA_NPEAX_KAEBUFloatBitmapEncodeSettings_t@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_2>@?9??WriteToBufferBC_bcn@FloatBitMap_t@@IEBA_NPEAX_KW4ImageFormat@@AEBUFloatBitmapEncodeSettings_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CTier0AppSystem@VIWorldRendererMgr@@$0A@@@
 .?AV?$CTier1AppSystem@VIWorldRendererMgr@@$0A@@@
 .?AV?$CTier2AppSystem@VIWorldRendererMgr@@$0A@@@
@@ -72,6 +78,7 @@
 <no classname>
 <no targetname>
 <non-RTTI type>
+=C33[C
 AggregateInstanceStream
 AggregateRTProxyDesc
 AggregateSceneObjectDesc
@@ -80,8 +87,10 @@ AllocateAndLoad failed for '%s' (%s)\n
 AllocateAndLoad failed for '%s'\n
 AllocateResource: Cannot find DATA block in resource %s!\n
 AllocateResource: Cannot find VXVS data in resource %s!\n
+B33 B
 Bad KV3 data for resource '%s': %s\n
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\worldrenderer\_vpc_worldrenderer\default\win64\_msvc_\Retail\worldrenderer.pdb
+C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\entity2\entitykeyvalues.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\worldrenderer\grasstilesceneobject.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\worldrenderer\worldrenderermgr.cpp
@@ -93,6 +102,7 @@ CEntityKeyValues::LoadFromKV3
 CEntityKeyValues::Unserialize: Invalid version! Expected %d, encountered %d!\n
 CGrassTileObjectDesc
 CGrassTileObjectDesc::CreateGrass(1338): 
+CKMeansClustering::AssignVectorsToClusters(), C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\kmeansclustering.cpp:159
 CSemiAutoRWLockT<class CThreadRWLock_FastRead>::LockForRead
 CStrongHandle
 CStrongHandleCopyable
@@ -107,9 +117,13 @@ CWorldRendererMgr::CreateWorld
 CWorldRendererMgr::CreateWorld_Internal( %s ):  Blocking load because marked for deletion during load\n
 CWorldRendererMgr::ServiceWorldRequests long frame: %fms\n
 Cannot allocate abstract class
-Cannot convert KV3 type '%s' (%u) to a string token
 Class does not allow allocation from its schema binding
 ClutterSceneObjectDesc
+Color Consistency Partition %d MinBright %f
+CompressBlocksBC1
+CompressBlocksBC3
+CompressBlocksBC6H
+CompressBlocksBC7
 Couldn't ReadTexturePixels when creating grass.\n
 CreateAggregateRTProxySceneObjects
 Creating %i scene objects for world node\n
@@ -117,17 +131,47 @@ Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
 Deletion List:\n
+EncodeBC6Blocks
 Failed to allocate an instance of a class of type '%s'
 Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load geometry for level %s\n
 Failed to load nested keys: %s\n
 Failed to mount world vpk file %s, file could not be found.\n
+FloatBitMap_t::ConvertGammaToLinear(515): Conversion not supported yet!\n
 FloatBitMap_t::CopyFloatBitmap: Received NULL pointer!\n
+FloatBitMap_t::InitializeDummyRow
+FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping!\n
+FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping!\n
 FloatBitMap_t::LoadFromFloatBitmap: Received improper bitmap size, skipping!\n
+FloatBitMap_t::WriteToBuffer(1207): Unsupported color format "%s", skipping!\n
+FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping!\n
+FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2323
+FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2435
+FloatBitMap_t::WriteToBufferBC_bcn(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:2264
+FloatBitMap_t::WriteToBufferBC_bcn(2135): Error! Allocated %llu bytes when %llu are required!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1265): Error! Temp texture is %d bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1350): Unsupported output color format "%s"!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1359): Error! Allocated %llu bytes when ATI's lib requires %d bytes!\n
+FloatBitMap_t::WriteToBufferDXT_atitc(1367): Error %d returned from ATI_TC_ConvertTexture()!\n
 FoliageAnimation
 GenerateGrassTexture
 GenerateGrassTexture failed for albedo!\n
 GenerateGrassTexture failed for specular!\n
+GetProfile_alpha_basic
+GetProfile_alpha_fast
+GetProfile_alpha_slow
+GetProfile_alpha_ultrafast
+GetProfile_alpha_veryfast
+GetProfile_basic
+GetProfile_bc6h_basic
+GetProfile_bc6h_fast
+GetProfile_bc6h_slow
+GetProfile_bc6h_veryfast
+GetProfile_bc6h_veryslow
+GetProfile_fast
+GetProfile_slow
+GetProfile_ultrafast
+GetProfile_veryfast
 GrassDensity.vtex
 GrassDepth.vtex
 GrassObject
@@ -141,8 +185,8 @@ GrassTileInit
 GrassTileInputLayout
 GrassTileVB
 GrassTint.vtex
+HAtFKA
 Hitbox indexing is incorrect for set %s, hitbox %s. Hitboxes will not be setup properly.\n
-IKV3TransferInterface_AllowRawStringTokenTransfer
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 Inconsistent treatment of '%s' (existing key is %s)!\n
@@ -158,12 +202,16 @@ NOT an attr
 No DATA block for resource '%s'\n
 No DATA block for resource\n
 Not safe to 'new' this class due to alignment requirements
+NumCols() <= V_ARRAYSIZE( s_DummyRow )
+Only DXT1/DXT5 online texture compression supported.\n
 OverlayProjectionDirection
 PerVertexLighting
 PivotPaint
 PooledLayout
+ProcessBC6HResults
 PropWorldOrigin
 PushCurrentSkewBrightnessValuesToSceneObject
+Quantize to %d Values
 RESOURCE_TYPE_ENTITY_LUMP
 RESOURCE_TYPE_WORLD
 RESOURCE_TYPE_WORLD_NODE
@@ -171,7 +219,6 @@ RESOURCE_TYPE_WORLD_VIS
 RTProxyGeometry
 RTProxyUniqueAlbedo
 RTProxyUniqueEmissive
-ResourceCompiler/BakedLighting/Version
 ResourceCompiler/DefaultMapBuilders/bakedlighting
 ResourceCompiler/DefaultMapBuilders/dontrequirebakedlighting
 ShapeOffset
@@ -179,6 +226,7 @@ TanFrameQuat
 Tried to load resource reference '%s' from a value without a resource reference specific type.
 Trying to find a flex controller (%s) that doesn't actually exist in the model.\n
 Unknown lightmap texture: %s\n
+Unmodified
 UnmountWorldVPK() --%s is at refcount %d\n
 Unsupported Grass File Version. Expected %d. Found %d\n
 Unsupported number of values found in grass tile. Expected %d. Found %d\n
@@ -208,6 +256,10 @@ WorldRenderer/GrassQuadSize
 an attr
 attributes
 background
+bc7e.dll
+bc7e_compress
+bc7e_init
+bc7e_init_params
 bentnormal
 blendindices
 blendweight
@@ -221,11 +273,14 @@ directional_irradiance
 directional_irradiance_sh2_b
 directional_irradiance_sh2_dc
 directional_irradiance_sh2_g
+directional_irradiance_sh2_lum
 directional_irradiance_sh2_r
 ekv_%08x
 entity_lump_spew %s %s
-fast
+g2[4] b2[4] b3[4] r0[9:0] g0[9:0] b0[9:0] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+g2[5] g3[4] g3[5] r0[6:0] b3[0] b3[1] b2[4] g0[6:0] b2[5] b3[2] g2[4] b0[6:0] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
 irradiance
+ispc_texcomp.dll
 keyValues3Data
 kv 0x%p AddRef refcount == %d\n
 lightmaps
@@ -244,6 +299,19 @@ matrix3x4_t
 medium
 optionallycompressedtangentframe
 posxyz
+precomputed_shadowmap_atlas
+r0[5:0] g3[4] b3[0] b3[1] b2[4] g0[5:0] g2[5] b2[5] b3[2] g2[4] b0[5:0] g3[5] b3[3] b3[5] b3[4] r1[5:0] g2[3:0] g1[5:0] g3[3:0] b1[5:0] b2[3:0] r2[5:0] r3[5:0]
+r0[7:0] b3[0] b2[4] g0[7:0] g2[5] g2[4] b0[7:0] g3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[5:0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] b3[1] b2[4] g0[7:0] b2[5] g2[4] b0[7:0] b3[5] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[5:0] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[7:0] g3[4] b2[4] g0[7:0] b3[2] g2[4] b0[7:0] b3[3] b3[4] r1[5:0] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[5:0] r3[5:0]
+r0[8:0] b2[4] g0[8:0] g2[4] b0[8:0] b3[4] r1[4:0] g3[4] g2[3:0] g1[4:0] b3[0] g3[3:0] b1[4:0] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10:15] g1[3:0] g0[10:15] b1[3:0] b0[10:15]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] b2[4] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[4:0] b0[10] b2[3:0] r2[3:0] b3[1] b3[2] r3[3:0] b3[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[3:0] r0[10] g3[4] g2[3:0] g1[4:0] g0[10] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[3:0] b3[0] b3[2] r3[3:0] g2[4] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[4:0] r0[10] g2[3:0] g1[3:0] g0[10] b3[0] g3[3:0] b1[3:0] b0[10] b3[1] b2[3:0] r2[4:0] b3[2] r3[4:0] b3[3]
+r0[9:0] g0[9:0] b0[9:0] r1[7:0] r0[10:11] g1[7:0] g0[10:11] b1[7:0] b0[10:11]
+r0[9:0] g0[9:0] b0[9:0] r1[8:0] r0[10] g1[8:0] g0[10] b1[8:0] b0[10]
+r0[9:0] g0[9:0] b0[9:0] r1[9:0] g1[9:0] b1[9:0]
 resourcesystem
 standard
 tangent

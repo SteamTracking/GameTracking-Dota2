@@ -69,10 +69,10 @@
 			"Ability4"	"antimage_mana_void"
 		}
 
-		"Ability10"		"special_bonus_hp_regen_3"
-		"Ability11"		"special_bonus_unique_antimage_manavoid_aoe"
+		"Ability10"		"special_bonus_unique_antimage_counterspell_reflect_duration"
+		"Ability11"		"special_bonus_unique_antimage_mana_break_damage"
 		"Ability12"		"special_bonus_unique_antimage_5"
-		"Ability13"		"special_bonus_unique_antimage_6"
+		"Ability13"		"special_bonus_unique_antimage_4"
 		"Ability14"		"special_bonus_unique_antimage_3"
 		"Ability15"		"special_bonus_unique_antimage_8"
 		"Ability16"		"special_bonus_unique_antimage"
@@ -419,6 +419,7 @@
 					"percent_damage_per_burn"		
 					{
 						"value"						"65"
+						"special_bonus_unique_antimage_mana_break_damage"	"+10"
 						"display_type"				"kDebuffPercentage"
 					}
 					"mana_per_hit"					
@@ -593,6 +594,7 @@
 					"magic_resistance"			
 					{
 						"value"								"14 21 28 35"
+						"special_bonus_unique_antimage_4"	"+10"
 						"display_type"						"kBuffPercentage"
 					}
 					"duration"					"1.3"
@@ -615,6 +617,11 @@
 					"heal_pct"
 					{
 						"value"					"0"
+					}
+					"reflected_debuff_duration_pct"
+					{
+						"value"					"0"
+						"special_bonus_unique_antimage_counterspell_reflect_duration"	"+25"
 					}
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -722,17 +729,15 @@
 					"mana_void_damage_per_mana"		
 					{
 						"value"								"1.0"
-						"special_bonus_unique_antimage_6"	"+0.2"
 					}			
 					"mana_void_ministun"			
 					{
-						"value"					"0.3"
+						"value"								"0.3"
 						"special_bonus_unique_antimage_8"	"+0.8"
 					}			
 					"mana_void_aoe_radius"			
 					{
 						"value"					"400 450 500"
-						"special_bonus_unique_antimage_manavoid_aoe"			"+200"
 						"affected_by_aoe_increase"	"1"
 					}
 					"thirst_enabled"

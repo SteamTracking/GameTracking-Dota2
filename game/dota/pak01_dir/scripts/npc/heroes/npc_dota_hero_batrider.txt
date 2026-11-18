@@ -93,7 +93,7 @@
 		"AttributeStrengthGain"		"2.9"
 		"AttributeBaseAgility"		"13"
 		"AttributeAgilityGain"		"2.0"
-		"AttributeBaseIntelligence"		"22"
+		"AttributeBaseIntelligence"		"23"
 		"AttributeIntelligenceGain"		"3.2"
 		"StatusHealthRegen"		"1.25"
 		"MovementSpeed"		"310"
@@ -157,13 +157,35 @@
 			"6"
 			{
 				"SlotIndex" "6"
-				"SlotName" "ability_effects_3"
-				"SlotText" "batrider_firefly"
+				"SlotName" "ability_effects_1"
+				"SlotText" "batrider_sticky_napalm"
 				"DisplayInLoadout" "0"
 			}
 			"7"
 			{
-				"SlotIndex"		"7"
+				"SlotIndex" "7"
+				"SlotName" "ability_effects_2"
+				"SlotText" "batrider_flamebreak"
+				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex" "8"
+				"SlotName" "ability_effects_3"
+				"SlotText" "batrider_firefly"
+				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex" "9"
+				"SlotName" "ability_effects_4"
+				"SlotText" "batrider_flaming_lasso"
+				"DisplayInLoadout" "0"
+			}
+
+			"10"
+			{
+				"SlotIndex"		"10"
 				"SlotName"		"hero_effigy"
 				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
@@ -232,7 +254,7 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"22"
+				"AbilityManaCost"				"25"
 
 				// Stats
 				//-------------------------------------------------------------------------------------------------------------
@@ -254,7 +276,7 @@
 					}
 					"AbilityCooldown"
 					{
-						"value"			"3.0"
+						"value"			"4.0"
 					}
 					"AbilityCastRange"
 					{
@@ -262,11 +284,11 @@
 					}
 					"stacks_per_cast"
 					{
-						"value"								"2"
+						"value"								"1"
 					}
 					"damage"
 					{
-						"value"								"2.5 5 7.5 10"
+						"value"								"6 12 18 24"
 						"CalculateSpellDamageTooltip"		"1"
 					}
 					"radius"
@@ -274,21 +296,21 @@
 						"value"								"375"
 						"affected_by_aoe_increase"	"1"				
 					}
-					"duration"					"6"
+					"duration"					"7"
 					"movement_speed_pct"
 					{
-						"value"								"-.75 -1.5 -2.25 -3"
-						"special_bonus_unique_batrider_7"	"-0.75"
+						"value"								"2 4 6 8"
+						"special_bonus_unique_batrider_7"	"+2"
 					}
-					"turn_rate_pct"				"-10 -30 -50 -70"
-					"max_stacks"				"20"
+					"turn_rate_pct"				"10 25 40 55"
+					"max_stacks"				"10"
 					"unlimited_stacks"
 					{
 						"value"					"0"
 						"special_bonus_shard"	"1"
 					}
-					"creep_damage_pct"			"20"
-					"application_damage"		"5 10 15 20"
+					"creep_damage_pct"			"25"
+					"application_damage"		"7 14 21 28"
 					"building_damage_pct"
 					{
 						"value"						"0"
@@ -408,7 +430,7 @@
 
 					"damage_impact"		
 					{
-						"value"			"25 50 75 100"
+						"value"			"30 60 90 120"
 						"CalculateSpellDamageTooltip" "1"
 					}
 					"damage_per_second"		
@@ -444,14 +466,14 @@
 					"napalm_stacks"
 					{
 						"value"				"0"
-						"special_bonus_unique_batrider_2"	"+4"
+						"special_bonus_unique_batrider_2"	"+3"
 					}
 					"AbilityCooldown"		
 					{
 						"value"	 "22 19 16 13"
 						"special_bonus_unique_batrider_5"	"-6"
 					}
-					"slow"	"6 12 18 24"		
+					"slow"		"6 12 18 24"		
 
 						
 				}

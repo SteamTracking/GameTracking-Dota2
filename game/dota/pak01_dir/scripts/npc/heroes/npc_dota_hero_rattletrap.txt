@@ -51,7 +51,7 @@
 			"Ability4"	"rattletrap_hookshot"
 		}
 
-		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability10"		"special_bonus_unique_clockwerk_battery_assault_duration"
 		"Ability11"		"special_bonus_unique_clockwerk_hookshot_damage"
 		"Ability12"		"special_bonus_unique_clockwerk_5"
 		"Ability13"		"special_bonus_unique_clockwerk_3"
@@ -351,11 +351,11 @@
 		
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"50"
+				"AbilityCooldown"				"45"
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"90"
+				"AbilityManaCost"				"0"
 		
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -407,7 +407,7 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"75 80 85 90"
+				"AbilityManaCost"				"70 75 80 85"
 		
 				// Damage.
 				//-------------------------------------------------------------------------------------------------------------
@@ -431,7 +431,13 @@
 						"value"		"330 330 330 330"
 						"affected_by_aoe_increase"	"1"
 					}
-					"duration"					"10.5 10.5 10.5 10.5"
+					"duration"				
+					{
+						"value"				"10.5"
+						"special_bonus_unique_clockwerk_battery_assault_duration"			"+2.5"
+					}
+					
+
 					"interval"
 					{	
 						"value"								"0.7 0.7 0.7 0.7"
@@ -706,7 +712,8 @@
 
 				"AbilityValues"
 				{
-					"damage_per_armor"			"0.25"
+					"damage_per_armor"			"0.55845"
+
 					"damage_tooltip"
 					{
 						"dynamic_value"						"true"

@@ -3,6 +3,10 @@
                 target %.1f  overrides on %d of %d verts%s\n
    %c=%d ~%d%%
    [dist: %.1f]
+  %.2f -> %.2f open  id %s  %s\n
+  %.2f open  %6d pairs  id %s  %s\n
+  %.2f open  %6d pairs  pair %s\n
+  %.2f open  pair %s\n
   FREE
   Hammer Faces:
   Hammer Physics Triangles: 
@@ -47,6 +51,7 @@
  -deformables forced
  -deformables none
  -disableLightingCalculations
+ -emaildumps_message_extra "%s"
  -emaildumps_subject_extra "%s"
  -emaildumps_to "%s"
  -entities
@@ -80,6 +85,7 @@
  -testmode -emaildumps
  -tileMeshBaseGeometry
  -vis
+ -vprofjson "%s"
  -vrad3LargeBlockSize
  -world
  Angle: 
@@ -101,6 +107,7 @@
  Search with Entity Report 
  Session Options
  TEST %d
+ The bake was cancelled.
  Tiling Mode [%s]
  [ CHECKED OUT ]
  [ NOT IN VERSION CONTROL ]
@@ -153,7 +160,6 @@ $worldspacetype
 %.2f/%.2f
 %.3f %.3f %.3f
 %.5g
-%0.2f
 %1 Issues Found:
 %1 day%2 %3h
 %1 hour%2 %3m
@@ -166,9 +172,13 @@ $worldspacetype
 %1\n\nWarning - This file is currently opened by:\n\n%2
 %4i   [%4i]:    %6i
 %d "%[^"]" %d
+%d cubemap(s) rendered Inf/NaN pixels and were not baked. They have been selected.\n\nTo capture the bad face in RenderDoc, run with -renderdoc, enter the command below in the console and bake again.\n
 %d duplicate objects
+%d dynamic objects in the probes shown.\n
 %d fgd class(es) have no c++ entity class:\n
 %d fgd input(s)/output(s) have no c++ backing:\n
+%d of the selected models are not a prop_static. The baked material override of these only shows in Hammer.\n\nBake them anyway?
+%d pairs of dynamic objects baked open together.\n
 %d trace results\n
 %d%%
 %d, %d, %d
@@ -187,16 +197,30 @@ $worldspacetype
 %i x %i
 %i: %s
 %lf %lf %lf %lf %lf %lf %lf %lf
+%s %d covers no texels, skipped.
+%s %d has UVs that span more than %.0f, the parts outside the texture are not baked.
+%s %d has overlapping UVs (%d texels), the first triangle wins.
+%s %d: %d of %d texels found no surface between %.1f and %.1f units.
+%s %d: failed to compile %s.
+%s %d: failed to write %s.
+%s %d: failed to write some of the textures.
+%s %d: parallax shows %.1f of the %.1f units of depth, the height map scale is limited to %.1f.
+%s %d: the emissive is brighter than an emissive brightness of %.0f, it is clamped.
 %s ( no Name )
+%s (%d areas)
 %s (%i)
+%s (object %d of %d)
 %s - Sample Lighting
 %s \n %s
+%s at %.1f %.1f %.1f rendered Inf/NaN pixels and was not baked. Run with -renderdoc and enter %s, then bake again to capture it.\n
 %s did not shut down correctly the last time it was used.\nMore recent autosaves exist of the files you were working on.\nWould you like to recover the last saved versions of the files that were open?\n
+%s face %d has Inf/NaN pixel at %d,%d: %.2f %.2f %.2f %.2f\n
 %s failed because there is no DEFAULT_WRITE_PATH in filesystem search paths!\n
 %s finished in %d hours %d minutes %d seconds.\n
 %s is not a IBSP file
 %s is version %i, not %i
 %s missing asset %s
+%s requires GPU ray tracing.\n\n%s
 %s%.2f
 %s%c%s%c%s%c%g%c%d
 %s%d%s
@@ -249,6 +273,7 @@ $worldspacetype
 &Enable Undo/Redo
 &Fix
 &Group copies
+&Live Files
 &Multiply...
 &New
 &Number of copies to paste: 
@@ -279,6 +304,11 @@ $worldspacetype
 &Undo
 &Undo: %s
 &Version Control
+&material_ao
+&material_ao_albedo
+&material_ao_normal
+&material_results
+&material_samples
 &triangle_irrad
 &triangle_verts
 '!self' is not allowed by default on Prefabs. If you give this Prefab a name and use 'Create Prefab Runtime Entity', you could use !self
@@ -288,6 +318,7 @@ $worldspacetype
 '%1' is not a valid variable name. %2
 '%1' is not the name of an existing variable.
 '%1' property:
+'33s?33s?33s?33s?
 'Use Local Transform' not enabled - push abandoned.
 (%0.f : %.0f)
 (%1 total flattened instances, %2 references in parent)
@@ -323,7 +354,6 @@ $worldspacetype
 (hotkey %d)
 (no block)
 (no hotkey)
-(unnamed)
 * { color : red; font: bold 18px; }
 * { color: green; }
 * { color: red; }
@@ -410,6 +440,7 @@ $worldspacetype
 .?AUCAttr_flPanSpeed@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_flRotationScale@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_flShadowFarPlane@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_flSizeCullThreshold@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_flVertexSnapRadius@?1??GetAttributeTable_Impl@GeneralOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_iBackPlane@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_iGridIntensity@?1??GetAttributeTable_Impl@View2DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -456,6 +487,9 @@ $worldspacetype
 .?AUCAttr_no_member@?7??GetAttributeTable_CMapVariableToolAttrs@CMapVariableToolAttrs@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_szResolutionGate@?1??GetAttributeTable_Impl@View3DOptionsEditableData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCGenericFilterKey@@
+.?AV<lambda_10>@?1??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_11>@?DC@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_13>@?DO@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
 .?AV<lambda_1>@?1???$AddMatrixToMatrix@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV2@@Z@
 .?AV<lambda_1>@?1???$MatrixMultiply@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBV?$CSparseMatrixBase@M@@AEBVCVariableMatrix@@PEAV3@@Z@
 .?AV<lambda_1>@?1???$MatrixMultiply@$00VCVariableMatrix@@V?$CSparseMatrixBase@M@@@MatrixMath@@YAXAEBV?$CSparseMatrixBase@M@@AEBVCVariableMatrix@@PEAV2@@Z@
@@ -629,6 +663,7 @@ $worldspacetype
 .?AV<lambda_1>@?1???$SetFunction@P8CToolThicken@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolThicken@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CToolThicken@@EAAXXZ@Z@
 .?AV<lambda_1>@?1???$SetFunction@P8CToolVertexNormalPaint@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolVertexNormalPaint@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CToolVertexNormalPaint@@EAAXXZ@Z@
 .?AV<lambda_1>@?1???$SetFunction@P8CToolWorkPlane@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolWorkPlane@@@@QEAAAEAV12@W4BindableCommandStage_t@@P8CToolWorkPlane@@EAAXXZ@Z@
+.?AV<lambda_1>@?1??AppInit@CHammerApp@@UEAA_NXZ@
 .?AV<lambda_1>@?1??ApplyScaleInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@
 .?AV<lambda_1>@?1??ApplyShiftInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@
 .?AV<lambda_1>@?1??DebugDrawFailedLights@CLightOverlapRenderable@@AEAAXPEAVCToolRenderContext@@@Z@
@@ -656,13 +691,20 @@ $worldspacetype
 .?AV<lambda_1>@?8??Render@CLightOverlapRenderable@@UEAAXPEAVCToolRenderContext@@@Z@
 .?AV<lambda_1>@?BA@??BakePreviewLighting@@YA?AW4BakedLightingResult_t@@W4BakePreviewLightingType_t@@W4BakeLightingMode_t@@PEAVCMapDoc@@PEAVCMapViewMgr@@PEAVCVersionControlHelper@@@Z@
 .?AV<lambda_1>@?HA@??PreRenderSetup@CMapView@@QEAAPEAUHSceneViewRenderTarget__@@PEAVISceneView@@0W4ImageFormat@@PEAW4RenderMultisampleType_t@@PEAPEAU3@@Z@
-.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@
+.?AV<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@1@W4EPickerColumns@1@PEBVCResourceName@@PEBVCUtlString@@4@Z@
 .?AV<lambda_1_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@
 .?AV<lambda_2>@?1??PerformIsotropicSurfaceRemeshing@@YA?AUIsotropicSurfaceRemeshingResult_t@@AEBURemeshIsland_t@?A0xe3b3acf7@@AEBUIsotropicSurfaceRemeshingParams_t@@@Z@
 .?AV<lambda_2>@?3??ConstructLayout@CQTextureReplaceWidget@@AEAAXXZ@
 .?AV<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@
 .?AV<lambda_3>@?1??ApplyScaleInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@
 .?AV<lambda_3>@?1??ApplyShiftInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@
+.?AV<lambda_3>@?BN@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_4>@?CA@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_5>@?CD@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_6>@?CG@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_7>@?CJ@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_8>@?CM@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
+.?AV<lambda_9>@?CP@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV5@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@
 .?AV?$CBaseAppSystem@VIToolSystem2@@@@
 .?AV?$CBaseConcreteToolAttr@HUGeneralOptionsEditableData_t@@@@
 .?AV?$CBaseConcreteToolAttr@HUView2DOptionsEditableData_t@@@@
@@ -859,9 +901,13 @@ $worldspacetype
 .?AV?$CContextMenuLambda@V<lambda_1>@?1??GetCustomCommands@CMoverHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
 .?AV?$CContextMenuLambda@V<lambda_1>@?4??GetCustomCommands@CRangerTrapCableHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
 .?AV?$CContextMenuLambda@V<lambda_1>@?BA@??GetCustomCommands@CCubemapHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
+.?AV?$CContextMenuLambda@V<lambda_1>@?P@??OpenReflectPie@CToolPolyFaceSelection@@QEAAX_N00PEBV?$Vec3D@M@@@Z@@@
 .?AV?$CContextMenuLambda@V<lambda_2>@?1??GetCustomCommands@CMoverHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
 .?AV?$CContextMenuLambda@V<lambda_2>@?1??GetCustomCommands@CRangerTrapCableHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
 .?AV?$CContextMenuLambda@V<lambda_2>@?BD@??GetCustomCommands@CCubemapHelper@@UEBAXPEAVCHammerEditorSession@@PEAVCMapDoc@@AEBV?$CUtlVector@PEAVCMapNode@@HV?$CUtlVectorMemory_Growable@PEAVCMapNode@@H$0A@@@@@PEAV?$CUtlVector@UToolContextMenuItem_t@@HV?$CUtlVectorMemory_Growable@UToolContextMenuItem_t@@H$0A@@@@@@Z@@@
+.?AV?$CContextMenuLambda@V<lambda_2>@?BE@??OpenReflectPie@CToolPolyFaceSelection@@QEAAX_N00PEBV?$Vec3D@M@@@Z@@@
+.?AV?$CContextMenuLambda@V<lambda_3>@?1??OpenReflectPie@CToolPolyFaceSelection@@QEAAX_N00PEBV?$Vec3D@M@@@Z@@@
+.?AV?$CContextMenuLambda@V<lambda_4>@?BJ@??OpenReflectPie@CToolPolyFaceSelection@@QEAAX_N00PEBV?$Vec3D@M@@@Z@@@
 .?AV?$CDefaultToolAttrTableForStruct@UColorOptionsEditableData_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UGeneralOptionsEditableData_t@@@@
 .?AV?$CDefaultToolAttrTableForStruct@UImportExportOptionsEditableData_t@@@@
@@ -1084,6 +1130,7 @@ $worldspacetype
 .?AV?$IToolAttr_TypedValue@W4ExportFbxUnit_t@ImportExportOptionsEditableData_t@@@@
 .?AV?$_Func_base@MAEBURemeshVertexData_t@?A0xe3b3acf7@@AEBU12@@std@@
 .?AV?$_Func_base@UUndoMergeResult_t@@AEBVKeyValues3@@@std@@
+.?AV?$_Func_base@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
 .?AV?$_Func_base@XAEAVCFaceTexture@@@std@@
 .?AV?$_Func_base@XAEBULightId_t@CComputeBakedShadowAssignment@@AEBUAABB_t@@@std@@
 .?AV?$_Func_base@XAEBULightId_t@CComputeBakedShadowAssignment@@_NH@std@@
@@ -1159,7 +1206,9 @@ $worldspacetype
 .?AV?$_Func_base@XPEAVCToolVertexNormalPaint@@@std@@
 .?AV?$_Func_base@XPEAVCToolWorkPlane@@@std@@
 .?AV?$_Func_base@XPEAVGameData@@@std@@
-.?AV?$_Func_impl_no_alloc@P6AXPEAVGameData@@@ZXPEAV1@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_11>@?DC@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_13>@?DO@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$AddMatrixToMatrix@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBVCVariableMatrix@@PEAV3@@Z@XHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$MatrixMultiply@$00VCVariableMatrix@@V1@@MatrixMath@@YAXAEBV?$CSparseMatrixBase@M@@AEBVCVariableMatrix@@PEAV4@@Z@XHH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$MatrixMultiply@$00VCVariableMatrix@@V?$CSparseMatrixBase@M@@@MatrixMath@@YAXAEBV?$CSparseMatrixBase@M@@AEBVCVariableMatrix@@PEAV3@@Z@XHH@std@@
@@ -1333,6 +1382,7 @@ $worldspacetype
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CToolThicken@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolThicken@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CToolThicken@@EAAXXZ@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CToolVertexNormalPaint@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolVertexNormalPaint@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CToolVertexNormalPaint@@EAAXXZ@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CToolWorkPlane@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCToolWorkPlane@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CToolWorkPlane@@EAAXXZ@Z@XPEAV5@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??AppInit@CHammerApp@@UEAA_NXZ@XPEAVGameData@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??ApplyScaleInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@XAEAVCFaceTexture@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??ApplyShiftInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@XAEAVCFaceTexture@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DebugDrawFailedLights@CLightOverlapRenderable@@AEAAXPEAVCToolRenderContext@@@Z@XAEBULightId_t@CComputeBakedShadowAssignment@@_NH@std@@
@@ -1360,13 +1410,20 @@ $worldspacetype
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?8??Render@CLightOverlapRenderable@@UEAAXPEAVCToolRenderContext@@@Z@XAEBULightId_t@CComputeBakedShadowAssignment@@_NH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?BA@??BakePreviewLighting@@YA?AW4BakedLightingResult_t@@W4BakePreviewLightingType_t@@W4BakeLightingMode_t@@PEAVCMapDoc@@PEAVCMapViewMgr@@PEAVCVersionControlHelper@@@Z@XAEBULightId_t@CComputeBakedShadowAssignment@@_NH@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?HA@??PreRenderSetup@CMapView@@QEAAPEAUHSceneViewRenderTarget__@@PEAVISceneView@@0W4ImageFormat@@PEAW4RenderMultisampleType_t@@PEAPEAU4@@Z@XAEBULightId_t@CComputeBakedShadowAssignment@@_NH@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@_NPEBVCResourceName@@PEBVCUtlString@@5@Z@XAEBUAssetSelectionInfo_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?P@???0CQSoundPickerDialog@@QEAA@PEAVQWidget@@W4EPickerMode@2@W4EPickerColumns@2@PEBVCResourceName@@PEBVCUtlString@@4@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??PerformIsotropicSurfaceRemeshing@@YA?AUIsotropicSurfaceRemeshingResult_t@@AEBURemeshIsland_t@?A0xe3b3acf7@@AEBUIsotropicSurfaceRemeshingParams_t@@@Z@MAEBURemeshVertexData_t@5@AEBU75@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?3??ConstructLayout@CQTextureReplaceWidget@@AEAAXXZ@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2_>@?0???0CAssetSelectionListenerHelper@@QEAA@PEAVIAssetSelectionListener@@@Z@XAEBUAssetSelectionInfo_t@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?1??ApplyScaleInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@UUndoMergeResult_t@@AEBVKeyValues3@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?1??ApplyShiftInternal@CQTextureParametersWidget@@AEAAX_N0M0@Z@UUndoMergeResult_t@@AEBVKeyValues3@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?BN@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?CA@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_5>@?CD@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_6>@?CG@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_7>@?CJ@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_8>@?CM@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_9>@?CP@??BakeMaterialDataOnNode@@YA?AW4BakedLightingResult_t@@PEAVCMapNode@@AEBUBakeMaterialDataSettings_t@@PEBDAEBVCUtlString@@3AEBUBakeProgress_t@@PEAVCVersionControlHelper@@PEAV6@PEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@@Z@V?$Vec3D@M@@AEBUBakeTexel_t@@AEBUMaterialSampleResult_t@@@std@@
 .?AV?$_Ref_count_obj2@ULightShape_t@CComputeBakedShadowAssignment@@@std@@
 .?AV?$_Ref_count_obj2@VCMesh@@@std@@
 .?AV?$_Ref_count_obj2@VCQGenericFilterDomainCompleterData@@@std@@
@@ -1386,6 +1443,7 @@ $worldspacetype
 .?AVCAxisRangeHelper@@
 .?AVCAxisRotatorHelper@@
 .?AVCAxisRotatorManipulator@@
+.?AVCBakeMaterialDataPreview@@
 .?AVCBarnLightManipulator@@
 .?AVCBaseEditorApp@@
 .?AVCBaseEditorSession@@
@@ -1684,6 +1742,7 @@ $worldspacetype
 .?AVCPathPositionHelper@@
 .?AVCPathTangentHelper@@
 .?AVCPathVehicleHelper@@
+.?AVCPathWidthHelper@@
 .?AVCPivotTranslateGizmoHelper@@
 .?AVCPointHelper@@
 .?AVCPointManipulator@@
@@ -1753,6 +1812,7 @@ $worldspacetype
 .?AVCQAutoVisGroupEditor@@
 .?AVCQAutoVisGroupTreeItem@@
 .?AVCQAutoVisGroupTreeWidget@@
+.?AVCQBakeMaterialDataDialog@@
 .?AVCQBakedLightingBuilderWidget@@
 .?AVCQBaseEditorOptionsWidget@@
 .?AVCQBaseEditorSessionCheckin@@
@@ -1884,6 +1944,7 @@ $worldspacetype
 .?AVCQModelMaterialGroupCombo@@
 .?AVCQMultiSelectWidget@@
 .?AVCQNavBuilderWidget@@
+.?AVCQNegativeMarginsWidgetItem@@
 .?AVCQNodeTypeItemModel@@
 .?AVCQNodeTypeSortFilterProxyModel@@
 .?AVCQNoisePreviewWidget@@
@@ -1971,6 +2032,7 @@ $worldspacetype
 .?AVCQToolPaintingUI_Alpha@@
 .?AVCQToolPaintingUI_Color@@
 .?AVCQToolPaintingUI_DetailDensity@@
+.?AVCQToolPaintingUI_Extension@@
 .?AVCQToolPaintingUI_Heightoffset@@
 .?AVCQToolPaintingUI_Multiblend@@
 .?AVCQToolPaintingUI_Value@@
@@ -2158,6 +2220,7 @@ $worldspacetype
 .?AVIHammerAPI@@
 .?AVIHammerClipboardData@@
 .?AVIHammerCommand@@
+.?AVIHammerExtension@@
 .?AVIHammerGizmoCommand@@
 .?AVIImportVMFListener@@
 .?AVIListener@CGenericFilterDomain@@
@@ -2166,7 +2229,6 @@ $worldspacetype
 .?AVIMapCheckProgressListener@@
 .?AVIMapDataProvider@@
 .?AVIMapDocExternalToolReference@@
-.?AVIMapDocExternalToolReferenceProvider@@
 .?AVIMapDocProgressListner@@
 .?AVIMapDocSession@@
 .?AVIMapNodeCustomCommandHandler@@
@@ -2239,7 +2301,6 @@ $worldspacetype
 .?AVStockSolid@@
 .?AVStockSphere@@
 .?AVStockSpike@@
-.P6AXPEAVGameData@@@Z
 .mp3
 .nav
 .navdbg
@@ -2273,12 +2334,14 @@ $worldspacetype
 1ActivateTypeInput()
 1AddClicked()
 1AddValueToSet(double)
+1AmbientOcclusionChanged()
 1ApplyClicked()
 1ApplyFilter()
 1BakedLightingBuilderEnabledChanged()
 1BakedLightingBuilderQualityChanged()
 1BakedLightingBuilderResolutionChanged()
 1Browse()
+1BrowseOutputFolder()
 1Build()
 1BuildWindowMenu()
 1Cancel()
@@ -2807,6 +2870,7 @@ $worldspacetype
 1ToggleSettingsPopup()
 1ToggleTargetMerge( int )
 1ToggleUseCustomGenParams( bool )
+1UVSetChanged( int )
 1UndoOrRedoByRow(int)
 1Update()
 1Update2DDrawModeMenu()
@@ -2832,6 +2896,7 @@ $worldspacetype
 1UpdatePaneTypeMenu()
 1UpdatePlayStopButton()
 1UpdatePrefabsMenu()
+1UpdatePreview()
 1UpdatePropertyEditorAndReferenceList()
 1UpdatePropertyWidgetFromSelection()
 1UpdateSkewAngle( float )
@@ -2971,6 +3036,7 @@ $worldspacetype
 2valueEdited()
 2visibilityChanged( bool )
 30.0
+333?
 3D View: %s
 3D_AllLighting
 3D_DirectLightingOnly
@@ -2991,7 +3057,6 @@ $worldspacetype
 3d Tools Visualization
 3d Wire
 8 8 8
-;33s?33s?33s?33s?
 < %i, %i > -> < %i, %i > [ %i, %i ]
 < (Before)
 <!-- dmx encoding keyvalues2_noids 4 format vtex 1 -->\n"CDmeVtex"\n{\n\t"m_inputTextureArray" "element_array"\n\t[\n
@@ -3002,7 +3067,7 @@ $worldspacetype
 <Match any value>
 <Multiple Selection>
 <Multiple selection>
-<No recent files>
+<No files>
 <TEST SET: %s>
 <UNKNOWN>
 <bind-pose>
@@ -3013,7 +3078,11 @@ $worldspacetype
 <h2><font color='yellow'>WARNING:</font></h2>You are about to compile:<pre> %s </pre>But the active map session is:<pre> %s </pre>Proceed with the compile?
 <multiple values>
 <multiple>
+<name, hammer id or *> Closes dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
+<name, hammer id or *> Opens closed and closes open dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
+<name, hammer id or *> [openness 0-1, default 1] Opens dynamic objects of the probes Toggle Probe Visualization shows. A name matches any part of it.
 <noname>
+<object name>_<id> for each object
 <unassigned>
 = (During)
 > (After)
@@ -3057,13 +3126,16 @@ $worldspacetype
 ??0QMdiSubWindow@@QEAA@PEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ??0QMouseEvent@@QEAA@W4Type@QEvent@@AEBVQPointF@@W4MouseButton@Qt@@V?$QFlags@W4MouseButton@Qt@@@@V?$QFlags@W4KeyboardModifier@Qt@@@@@Z
 ??0QOpenGLWidget@@QEAA@PEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
-??0QPainterPath@@QEAA@XZ
 ??0QPainterPathStroker@@QEAA@XZ
+??0QPersistentModelIndex@@QEAA@XZ
+??0QPointF@@QEAA@AEBVQPoint@@@Z
+??0QPointF@@QEAA@NN@Z
 ??0QProgressDialog@@QEAA@PEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ??0QRadialGradient@@QEAA@AEBVQPointF@@N@Z
 ??0QRandomGenerator@@QEAA@PEBI0@Z
 ??0QRect@@QEAA@AEBVQPoint@@0@Z
 ??0QRectF@@QEAA@AEBVQPointF@@AEBVQSizeF@@@Z
+??0QRectF@@QEAA@NNNN@Z
 ??0QRegExpValidator@@QEAA@PEAVQObject@@@Z
 ??0QRegion@@QEAA@HHHHW4RegionType@0@@Z
 ??0QRegion@@QEAA@XZ
@@ -3085,6 +3157,7 @@ $worldspacetype
 ??0QVariant@@QEAA@$$QEAV0@@Z
 ??0QVariant@@QEAA@I@Z
 ??0QVariant@@QEAA@M@Z
+??0QVector2D@@QEAA@AEBVQPointF@@@Z
 ??0QWidgetItem@@QEAA@PEAVQWidget@@@Z
 ??1QActionGroup@@UEAA@XZ
 ??1QBuffer@@UEAA@XZ
@@ -3105,6 +3178,7 @@ $worldspacetype
 ??1QMouseEvent@@UEAA@XZ
 ??1QOpenGLWidget@@UEAA@XZ
 ??1QPainterPathStroker@@QEAA@XZ
+??1QPersistentModelIndex@@QEAA@XZ
 ??1QProgressDialog@@UEAA@XZ
 ??1QRegExpValidator@@UEAA@XZ
 ??1QRubberBand@@UEAA@XZ
@@ -3120,7 +3194,10 @@ $worldspacetype
 ??4QFileInfo@@QEAAAEAV0@$$QEAV0@@Z
 ??4QFileInfo@@QEAAAEAV0@AEBV0@@Z
 ??4QFont@@QEAAAEAV0@AEBV0@@Z
+??4QPainterPath@@QEAAAEAV0@$$QEAV0@@Z
 ??4QPen@@QEAAAEAV0@$$QEAV0@@Z
+??4QPersistentModelIndex@@QEAAAEAV0@$$QEAV0@@Z
+??4QPersistentModelIndex@@QEAAAEAV0@AEBVQModelIndex@@@Z
 ??6@YA?AVQDebug@@V0@AEBVQPoint@@@Z
 ??6QDataStream@@QEAAAEAV0@_N@Z
 ??6QDebug@@QEAAAEAV0@AEBVQString@@@Z
@@ -3133,6 +3210,7 @@ $worldspacetype
 ??BQBrush@@QEBA?AVQVariant@@XZ
 ??BQCharRef@@QEBA?AVQChar@@XZ
 ??BQFont@@QEBA?AVQVariant@@XZ
+??BQPersistentModelIndex@@QEBAAEBVQModelIndex@@XZ
 ??DFbxAMatrix@fbxsdk@@QEBA?AV01@AEBV01@@Z
 ??MQDateTime@@QEBA_NAEBV0@@Z
 ??MQListWidgetItem@@UEBA_NAEBV0@@Z
@@ -3176,6 +3254,7 @@ $worldspacetype
 ?GetMaterial@FbxScene@fbxsdk@@QEAAPEAVFbxSurfaceMaterial@2@PEBD@Z
 ?GetNativeWriterFormat@FbxIOPluginRegistry@fbxsdk@@QEAAHXZ
 ?GetR@FbxAMatrix@fbxsdk@@QEBA?AVFbxVector4@2@XZ
+?GetS@FbxAMatrix@fbxsdk@@QEBA?AVFbxVector4@2@XZ
 ?GetScene@FbxObject@fbxsdk@@QEBAPEAVFbxScene@2@XZ
 ?GetWriterFormatCount@FbxIOPluginRegistry@fbxsdk@@QEBAHXZ
 ?GetWriterFormatDescription@FbxIOPluginRegistry@fbxsdk@@QEBAPEBDH@Z
@@ -3208,7 +3287,6 @@ $worldspacetype
 ?SetTranslation@FbxTexture@fbxsdk@@QEAAXNN@Z
 ?WriterIsFBX@FbxIOPluginRegistry@fbxsdk@@QEBA_NH@Z
 ?_fillRange@QRandomGenerator@@AEAAXPEAX0@Z
-?aboutToShow@QMenu@@QEAAXXZ
 ?absolutePath@QFileInfo@@QEBA?AVQString@@XZ
 ?actionTriggered@QAbstractSlider@@QEAAXH@Z
 ?activated@QComboBox@@QEAAXH@Z
@@ -3226,21 +3304,21 @@ $worldspacetype
 ?addItems@QComboBox@@QEAAXAEBVQStringList@@@Z
 ?addPermanentWidget@QStatusBar@@QEAAXPEAVQWidget@@H@Z
 ?addPolygon@QPainterPath@@QEAAXAEBVQPolygonF@@@Z
-?addRect@QPainterPath@@QEAAXAEBVQRectF@@@Z
 ?addSeparator@QToolBar@@QEAAPEAVQAction@@XZ
 ?addSpacerItem@QBoxLayout@@QEAAXPEAVQSpacerItem@@@Z
 ?addSubWindow@QMdiArea@@QEAAPEAVQMdiSubWindow@@PEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ?addTab@QTabWidget@@QEAAHPEAVQWidget@@AEBVQIcon@@AEBVQString@@@Z
 ?addText@QPainterPath@@QEAAXAEBVQPointF@@AEBVQFont@@AEBVQString@@@Z
 ?addTopLevelItem@QTreeWidget@@QEAAXPEAVQTreeWidgetItem@@@Z
+?adjustSize@QWidget@@QEAAXXZ
 ?advance@QGraphicsItem@@UEAAXH@Z
 ?alignment@QLabel@@QEBA?AV?$QFlags@W4AlignmentFlag@Qt@@@@XZ
 ?append@QByteArray@@QEAAAEAV1@AEBV1@@Z
 ?append@QByteArray@@QEAAAEAV1@PEBD@Z
 ?appendRow@QStandardItem@@QEAAXPEAV1@@Z
 ?arg@QString@@QEBA?AV1@VQChar@@H0@Z
+?argToQString@QtPrivate@@YA?AVQString@@VQStringView@@_KPEAPEBUArgBase@1@@Z
 ?at@QString@@QEBA?BVQChar@@H@Z
-?availableGeometry@QScreen@@QEBA?AVQRect@@XZ
 ?background@QPainter@@QEBAAEBVQBrush@@XZ
 ?baseName@QFileInfo@@QEBA?AVQString@@XZ
 ?begin@QString@@QEBAPEBVQChar@@XZ
@@ -3271,7 +3349,7 @@ $worldspacetype
 ?clear@QTextEdit@@QEAAXXZ
 ?clearCurrentIndex@QItemSelectionModel@@UEAAXXZ
 ?clearSelection@QGraphicsScene@@QEAAXXZ
-?click@QAbstractButton@@QEAAXXZ
+?clearSelection@QItemSelectionModel@@QEAAXXZ
 ?clickedButton@QMessageBox@@QEBAPEAVQAbstractButton@@XZ
 ?clone@QListWidgetItem@@UEBAPEAV1@XZ
 ?close@QFileDevice@@UEAAXXZ
@@ -3302,13 +3380,11 @@ $worldspacetype
 ?cornerWidget@QMenuBar@@QEBAPEAVQWidget@@W4Corner@Qt@@@Z
 ?createStroke@QPainterPathStroker@@QEBA?AVQPainterPath@@AEBV2@@Z
 ?cubicTo@QPainterPath@@QEAAXAEBVQPointF@@00@Z
-?currentChanged@QTabWidget@@QEAAXH@Z
 ?currentColumn@QTableWidget@@QEBAHXZ
+?currentIndex@QItemSelectionModel@@QEBA?AVQModelIndex@@XZ
 ?currentItem@QListWidget@@QEBAPEAVQListWidgetItem@@XZ
-?currentItem@QTreeWidget@@QEBAPEAVQTreeWidgetItem@@XZ
 ?currentRow@QTableWidget@@QEBAHXZ
 ?currentTime@QTime@@SA?AV1@XZ
-?currentWidget@QTabWidget@@QEBAPEAVQWidget@@XZ
 ?cursor@QWidget@@QEBA?AVQCursor@@XZ
 ?cursorBackward@QLineEdit@@QEAAX_NH@Z
 ?cursorForward@QLineEdit@@QEAAX_NH@Z
@@ -3316,7 +3392,9 @@ $worldspacetype
 ?cursorRect@QLineEdit@@IEBA?AVQRect@@XZ
 ?data@QListWidgetItem@@UEBA?AVQVariant@@H@Z
 ?data@QString@@QEAAPEAVQChar@@XZ
+?data@QString@@QEBAPEBVQChar@@XZ
 ?data@QStringListModel@@UEBA?AVQVariant@@AEBVQModelIndex@@H@Z
+?defaultAction@QToolButton@@QEBAPEAVQAction@@XZ
 ?devicePixelRatio@QGuiApplication@@QEBANXZ
 ?devicePixelRatio@QScreen@@QEBANXZ
 ?dir@QFileInfo@@QEBA?AVQDir@@XZ
@@ -3356,6 +3434,8 @@ $worldspacetype
 ?dropEvent@QListView@@MEAAXPEAVQDropEvent@@@Z
 ?dropIndicatorPosition@QAbstractItemView@@IEBA?AW4DropIndicatorPosition@1@XZ
 ?dropMimeData@QAbstractListModel@@UEAA_NPEBVQMimeData@@W4DropAction@Qt@@HHAEBVQModelIndex@@@Z
+?dx@QTransform@@QEBANXZ
+?dy@QTransform@@QEBANXZ
 ?edit@QAbstractItemView@@QEAAXAEBVQModelIndex@@@Z
 ?editItem@QListWidget@@QEAAXPEAVQListWidgetItem@@@Z
 ?editItem@QTreeWidget@@QEAAXPEAVQTreeWidgetItem@@H@Z
@@ -3382,13 +3462,10 @@ $worldspacetype
 ?extension@QGraphicsItem@@MEBA?AVQVariant@@AEBV2@@Z
 ?extension@QGraphicsPixmapItem@@MEBA?AVQVariant@@AEBV2@@Z
 ?extension@QGraphicsTextItem@@MEBA?AVQVariant@@AEBV2@@Z
-?fff?AVOID
-?ffffff
 ?fileName@QFileInfo@@QEBA?AVQString@@XZ
 ?filePath@QDir@@QEBA?AVQString@@AEBV2@@Z
 ?filePath@QFileInfo@@QEBA?AVQString@@XZ
 ?fill@QImage@@QEAAXAEBVQColor@@@Z
-?fillPath@QPainter@@QEAAXAEBVQPainterPath@@AEBVQBrush@@@Z
 ?fillRect@QPainter@@QEAAXAEBVQRect@@W4GlobalColor@Qt@@@Z
 ?fillRect@QPainter@@QEAAXAEBVQRectF@@AEBVQColor@@@Z
 ?fillRect@QPainter@@QEAAXAEBVQRectF@@W4GlobalColor@Qt@@@Z
@@ -3436,7 +3513,6 @@ $worldspacetype
 ?hasUrls@QMimeData@@QEBA_NXZ
 ?header@QTreeView@@QEBAPEAVQHeaderView@@XZ
 ?headerData@QAbstractItemModel@@UEBA?AVQVariant@@HW4Orientation@Qt@@H@Z
-?height@QFontMetrics@@QEBAHXZ
 ?height@QPaintDevice@@QEBAHXZ
 ?heightForWidth@QLayoutItem@@UEBAHH@Z
 ?heightForWidth@QWidgetItem@@UEBAHH@Z
@@ -3495,6 +3571,7 @@ $worldspacetype
 ?invalidate@QLayoutItem@@UEAAXXZ
 ?invalidate@QSortFilterProxyModel@@QEAAXXZ
 ?invisibleRootItem@QStandardItemModel@@QEBAPEAVQStandardItem@@XZ
+?isAbsolutePath@QDir@@SA_NAEBVQString@@@Z
 ?isAncestorOf@QWidget@@QEBA_NPEBV1@@Z
 ?isColumnHidden@QTreeView@@QEBA_NH@Z
 ?isDisabled@QTreeWidgetItem@@QEBA_NXZ
@@ -3510,6 +3587,7 @@ $worldspacetype
 ?isObscuredBy@QGraphicsTextItem@@UEBA_NPEBVQGraphicsItem@@@Z
 ?isRowSelected@QItemSelectionModel@@QEBA_NHAEBVQModelIndex@@@Z
 ?isSelected@QGraphicsItem@@QEBA_NXZ
+?isSelected@QItemSelectionModel@@QEBA_NAEBVQModelIndex@@@Z
 ?isSelected@QTableWidgetItem@@QEBA_NXZ
 ?isValid@QUrl@@QEBA_NXZ
 ?isVisible@QGraphicsItem@@QEBA_NXZ
@@ -3550,11 +3628,14 @@ $worldspacetype
 ?lineEdit@QAbstractSpinBox@@IEBAPEAVQLineEdit@@XZ
 ?lineSpacing@QFontMetrics@@QEBAHXZ
 ?load@QImage@@QEAA_NAEBVQString@@PEBD@Z
+?m11@QTransform@@QEBANXZ
 ?mapRectToParent@QGraphicsItem@@QEBA?AVQRectF@@AEBV2@@Z
 ?mapRectToScene@QGraphicsItem@@QEBA?AVQRectF@@AEBV2@@Z
 ?mapToScene@QGraphicsItem@@QEBA?AVQPointF@@AEBV2@@Z
 ?mapToScene@QGraphicsView@@QEBA?AVQPointF@@AEBVQPoint@@@Z
 ?mapToScene@QGraphicsView@@QEBA?AVQPolygonF@@AEBVQRect@@@Z
+?marginsAdded@QRect@@QEBA?AV1@AEBVQMargins@@@Z
+?marginsRemoved@QRect@@QEBA?AV1@AEBVQMargins@@@Z
 ?matches@QKeyEvent@@QEBA_NW4StandardKey@QKeySequence@@@Z
 ?maximum@QAbstractSlider@@QEBAHXZ
 ?maximumSize@QSpacerItem@@UEBA?AVQSize@@XZ
@@ -3635,6 +3716,7 @@ $worldspacetype
 ?parent@QAbstractListModel@@EEBA?AVQModelIndex@@AEBV2@@Z
 ?parent@QStandardItem@@QEBAPEAV1@XZ
 ?parentItem@QGraphicsItem@@QEBAPEAV1@XZ
+?path@QDir@@QEBA?AVQString@@XZ
 ?pointSizeF@QFont@@QEBANXZ
 ?polishEvent@QGraphicsWidget@@MEAAXXZ
 ?pos@QGraphicsItem@@QEBA?AVQPointF@@XZ
@@ -3672,11 +3754,11 @@ $worldspacetype
 ?qt_qFindChildren_helper@@YAXPEBVQObject@@AEBVQString@@AEBUQMetaObject@@PEAV?$QList@PEAX@@V?$QFlags@W4FindChildOption@Qt@@@@@Z
 ?read@QListWidgetItem@@UEAAXAEAVQDataStream@@@Z
 ?realloc@QListData@@QEAAXH@Z
-?rect@QPixmap@@QEBA?AVQRect@@XZ
 ?redirected@QOpenGLWidget@@MEBAPEAVQPaintDevice@@PEAVQPoint@@@Z
 ?registerNormalizedTypedef@QMetaType@@SAHAEBVQByteArray@@H@Z
 ?registerStreamOperators@QMetaType@@SAXPEBDP6AXAEAVQDataStream@@PEBX@ZP6AX1PEAX@Z@Z
 ?rehash@QHashData@@QEAAXH@Z
+?relativeFilePath@QDir@@QEBA?AVQString@@AEBV2@@Z
 ?releaseKeyboard@QWidget@@QEAAXXZ
 ?released@QAbstractButton@@QEAAXXZ
 ?remove@QDir@@QEAA_NAEBVQString@@@Z
@@ -3757,7 +3839,6 @@ $worldspacetype
 ?setAlignment@QLineEdit@@QEAAXV?$QFlags@W4AlignmentFlag@Qt@@@@@Z
 ?setAnimated@QMainWindow@@QEAAX_N@Z
 ?setAutoDefault@QPushButton@@QEAAX_N@Z
-?setAutoRaise@QToolButton@@QEAAX_N@Z
 ?setBackground@QTableWidgetItem@@QEAAXAEBVQBrush@@@Z
 ?setBackgroundBrush@QGraphicsView@@QEAAXAEBVQBrush@@@Z
 ?setBackgroundColor@QListWidgetItem@@UEAAXAEBVQColor@@@Z
@@ -3774,7 +3855,6 @@ $worldspacetype
 ?setCellWidget@QTableWidget@@QEAAXHHPEAVQWidget@@@Z
 ?setCheckState@QListWidgetItem@@QEAAXW4CheckState@Qt@@@Z
 ?setCheckState@QTreeWidgetItem@@QEAAXHW4CheckState@Qt@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setColor@QBrush@@QEAAXAEBVQColor@@@Z
 ?setColor@QImage@@QEAAXHI@Z
 ?setColumnHidden@QTableView@@QEAAXH_N@Z
@@ -3791,7 +3871,6 @@ $worldspacetype
 ?setDecimals@QDoubleValidator@@QEAAXH@Z
 ?setDefault@QPushButton@@QEAAX_N@Z
 ?setDefaultFont@QTextDocument@@QEAAXAEBVQFont@@@Z
-?setDevicePixelRatio@QPixmap@@QEAAXN@Z
 ?setDisabled@QAction@@QEAAX_N@Z
 ?setDockNestingEnabled@QMainWindow@@QEAAX_N@Z
 ?setDragDropMode@QAbstractItemView@@QEAAXW4DragDropMode@1@@Z
@@ -3812,6 +3891,7 @@ $worldspacetype
 ?setFilterRole@QSortFilterProxyModel@@QEAAXH@Z
 ?setFilterWildcard@QSortFilterProxyModel@@QEAAXAEBVQString@@@Z
 ?setFixedPitch@QFont@@QEAAX_N@Z
+?setFixedSize@QWidget@@QEAAXAEBVQSize@@@Z
 ?setFlag@QGraphicsItem@@QEAAXW4GraphicsItemFlag@1@_N@Z
 ?setFlags@QGraphicsItem@@QEAAXV?$QFlags@W4GraphicsItemFlag@QGraphicsItem@@@@@Z
 ?setFlags@QListWidgetItem@@QEAAXV?$QFlags@W4ItemFlag@Qt@@@@@Z
@@ -3828,7 +3908,6 @@ $worldspacetype
 ?setHeaderData@QAbstractItemModel@@UEAA_NHW4Orientation@Qt@@AEBVQVariant@@H@Z
 ?setHeaderItem@QTreeWidget@@QEAAXPEAVQTreeWidgetItem@@@Z
 ?setIcon@QStandardItem@@QEAAXAEBVQIcon@@@Z
-?setIconSize@QAbstractButton@@QEAAXAEBVQSize@@@Z
 ?setIconSize@QAbstractItemView@@QEAAXAEBVQSize@@@Z
 ?setIconText@QAction@@QEAAXAEBVQString@@@Z
 ?setIconVisibleInMenu@QAction@@QEAAX_N@Z
@@ -3910,6 +3989,7 @@ $worldspacetype
 ?setTextBackgroundColor@QTextEdit@@QEAAXAEBVQColor@@@Z
 ?setTextCursor@QTextEdit@@QEAAXAEBVQTextCursor@@@Z
 ?setTextInteractionFlags@QGraphicsTextItem@@QEAAXV?$QFlags@W4TextInteractionFlag@Qt@@@@@Z
+?setTextInteractionFlags@QMessageBox@@QEAAXV?$QFlags@W4TextInteractionFlag@Qt@@@@@Z
 ?setTickInterval@QSlider@@QEAAXH@Z
 ?setTickPosition@QSlider@@QEAAXW4TickPosition@1@@Z
 ?setTitle@QGroupBox@@QEAAXAEBVQString@@@Z
@@ -3952,6 +4032,7 @@ $worldspacetype
 ?showMaximized@QWidget@@QEAAXXZ
 ?showNormal@QWidget@@QEAAXXZ
 ?showSection@QHeaderView@@QEAAXH@Z
+?shrunkBy@QSize@@QEBA?AV1@VQMargins@@@Z
 ?sibling@QModelIndex@@QEBA?AV1@HH@Z
 ?sibling@QStringListModel@@UEBA?AVQModelIndex@@HHAEBV2@@Z
 ?simplified@QString@@QEGBA?AV1@XZ
@@ -3985,7 +4066,6 @@ $worldspacetype
 ?staticMetaObject@QTreeView@@2UQMetaObject@@B
 ?statusBar@QMainWindow@@QEBAPEAVQStatusBar@@XZ
 ?stop@QBasicTimer@@QEAAXXZ
-?strokePath@QPainter@@QEAAXAEBVQPainterPath@@AEBVQPen@@@Z
 ?suffix@QFileInfo@@QEBA?AVQString@@XZ
 ?supportedDropActions@QStringListModel@@UEBA?AV?$QFlags@W4DropAction@Qt@@@@XZ
 ?supportsExtension@QGraphicsItem@@MEBA_NW4Extension@1@@Z
@@ -4009,6 +4089,7 @@ $worldspacetype
 ?toLatin1@QString@@QEGBA?AVQByteArray@@XZ
 ?toLatin1@QString@@QEHAA?AVQByteArray@@XZ
 ?toLower@QString@@QEHAA?AV1@XZ
+?toNativeSeparators@QDir@@SA?AVQString@@AEBV2@@Z
 ?toPlainText@QGraphicsTextItem@@QEBA?AVQString@@XZ
 ?toPoint@QVariant@@QEBA?AVQPoint@@XZ
 ?toPointF@QVariant@@QEBA?AVQPointF@@XZ
@@ -4020,6 +4101,7 @@ $worldspacetype
 ?toULongLong@QVariant@@QEBA_KPEA_N@Z
 ?toggle@QAbstractButton@@QEAAXXZ
 ?toolTip@QGraphicsItem@@QEBA?AVQString@@XZ
+?topLeft@QRectF@@QEBA?AVQPointF@@XZ
 ?topLevelChanged@QDockWidget@@QEAAX_N@Z
 ?topLevelItemCount@QTreeWidget@@QEBAHXZ
 ?tr@QDialog@@SA?AVQString@@PEBD0H@Z
@@ -4027,8 +4109,10 @@ $worldspacetype
 ?transform@QGraphicsView@@QEBA?AVQTransform@@XZ
 ?transformationAnchor@QGraphicsView@@QEBA?AW4ViewportAnchor@1@XZ
 ?translate@QGraphicsView@@QEAAXNN@Z
+?translate@QPainter@@QEAAXAEBVQPoint@@@Z
 ?translate@QTransform@@QEAAAEAV1@NN@Z
 ?translated@QRectF@@QEBA?AV1@AEBVQPointF@@@Z
+?trigger@QAction@@QEAAXXZ
 ?triggered@QMenu@@QEAAXPEAVQAction@@@Z
 ?type@QGraphicsPixmapItem@@UEBAHXZ
 ?type@QGraphicsTextItem@@UEBAHXZ
@@ -4038,6 +4122,7 @@ $worldspacetype
 ?updateGeometry@QGraphicsWidget@@MEAAXXZ
 ?value@QSettings@@QEBA?AVQVariant@@AEBVQString@@AEBV2@@Z
 ?value@QSpinBox@@QEBAHXZ
+?verticalSpacing@QGridLayout@@QEBAHXZ
 ?view@QComboBox@@QEBAPEAVQAbstractItemView@@XZ
 ?viewportEvent@QGraphicsView@@MEAA_NPEAVQEvent@@@Z
 ?viewportEvent@QMdiArea@@MEAA_NPEAVQEvent@@@Z
@@ -4055,10 +4140,13 @@ $worldspacetype
 ?windowFrameSectionAt@QGraphicsWidget@@MEBA?AW4WindowFrameSection@Qt@@AEBVQPointF@@@Z
 ?worldTransform@QPainter@@QEBAAEBVQTransform@@XZ
 ?write@QListWidgetItem@@UEBAXAEAVQDataStream@@@Z
+?x@QPointF@@QEBANXZ
+?y@QPointF@@QEBANXZ
 A 0 to 1 parameter value of the path at which the camera frustum will be drawn when the camera path is selected. Adjusting this will update the time.
 A compound list that matches if any parts matches
 A compound list that requires all its parts to match
 A fatal error occurred.
+A path can't be created for the mover. %s
 A resource error occurred.
 A timeout occurred.
 ABSTRACT - CQPropertyWidget::AcceptDropMenu
@@ -4066,13 +4154,16 @@ ABSTRACT - CQPropertyWidget::AcceptDropSpecial
 ABSTRACT - CQPropertyWidget::AcceptDropSpecialMenu
 AND List
 AND: This group will only match if ALL of the parts match\n(Click to toggle to AND)
+AO Distance:
 AO Strength:
+AVOID
 AbandonAnyModalBrowse
 Abort
 AbortDrag
 AbortPinPlacement
 Aborted
 About &Qt
+Above Only
 AcceptDropMenu
 AcceptDropSpecialMenu
 Act On
@@ -4098,6 +4189,7 @@ ActiveInstanceOverlayLayer
 ActiveInstanceStencil
 Activity %s has %d sequences with a total weight of %d!\n
 Add %1 referenced maps to version control?
+Add -gpuraytracing to the command line. If that doesn't help, your GPU or graphics driver doesn't support ray tracing; try updating your graphics driver.
 Add Choice
 Add Choice Group
 Add Edge Fade to Environment Probe...
@@ -4287,6 +4379,9 @@ Alpha Value:
 Already processed master color_correction entity, ignoring additional master color_correction entity.\n
 AlternateManipulation
 Always
+Ambient Occlusion:
+AmbientOcclusion
+AmbientOcclusionChanged
 An entity using one of these classes must be present: 
 An error occurred when reading from the file.
 An error occurred when writing to the file.
@@ -4353,12 +4448,12 @@ ApplyPaste
 ApplyTool
 Applying Changes...
 Applying Fix
+Applying baked materials
 Arc Height
 Arc Width
 ArcTool
 Are you sure you want to terminate mapbuilder?
 Area:
-Arg list too long
 ArithmeticMode_t
 Aspect Ratio
 Asset
@@ -4420,13 +4515,12 @@ BackgroundColorChanged
 Backward
 Bad HammerID '%s'
 Bad Map '%s'
-Bad address
 Bad autosave dir
-Bad file descriptor
 Bad value for hAlign in AlignedPos!
 Bad value for hAlign in AttachPos!
 Bad value for vAlign in AlignedPos!
 Bad value for vAlign in AttachPos!
+Bake
 Bake All Cubemaps
 Bake All Lighting
 Bake Ambient Occlusion
@@ -4438,6 +4532,10 @@ Bake Fog Indirect Lighting
 Bake Instances
 Bake Lighting On Document
 Bake Lighting On Selection
+Bake Material Data
+Bake Material Data On Selection...
+Bake Material Data...
+Bake Material Data: %s\n
 Bake Mesh Deformers
 Bake Paths
 Bake Reverb
@@ -4453,18 +4551,25 @@ BakeCubemapsOnSelection
 BakeFogIndirect
 BakeLightingOnDocument
 BakeLightingOnSelection
+BakeMaterialData
+BakeMaterialDataOnSelection
+BakeMaterialDataWriteTexture
 BakeMeshDeformers
+BakeResourceCache at %lldk; removing dir %s\n
 BakeSelectedInstances
 BakeSelectedSmartProps
 BakeSelectedTileGrids
 BakeSelectedTileMeshes
 BakeSubdivision
 Baked Emissive
+Baked material data on %d of %d objects.%s
 BakedLightingBuilderEnabledChanged
 BakedLightingBuilderQualityChanged
 BakedLightingBuilderResolutionChanged
 Baking %i tile meshes
+Baking material data
 Baking mesh deformers requires a selecting one or more meshes with deformers applied.
+Baking preview lighting
 BasePolyForPlane: no axis found
 BasisNormal
 BasisOrigin
@@ -4479,6 +4584,7 @@ Begin loading file: %s\n
 BeginPaste
 BeginPickEdge
 BeginPinPlacement
+BeginSceneCameraChange
 BeginUpdate
 BentNormal
 Bevel
@@ -4520,7 +4626,6 @@ Blocking Load for m_WaterMaterial2
 Bloom %d
 Bodygroup Name
 Both selected edges must be open boundaries (connected to exactly 1 face).
-Boundary
 Bounding Boxes
 Box Select %d Objects
 Box disable tiles
@@ -4549,9 +4654,10 @@ BridgeTool
 Brightness/Contrast %d
 Brightness:
 Bring engine to front
-Broken pipe
 Broken: Property is linked to map variable but the property is not supposed to be linkable. Click to break link.
 Browse..
+Browse...
+BrowseOutputFolder
 Brush
 Brush Radius: %.2f
 Brush Relative:
@@ -4595,7 +4701,6 @@ BuildWatch
 Building %dh:%02dm:%02ds %s
 Building Vertex Lighting K-D Tree...
 Building physics geometry...
-Bump
 C2DCanvasBase
 C2DCanvasCamera
 C:\buildworker\source2_dota_rel_2019_win64\build\_build_\tools\hammer\_vpc_hammer\default\win64\_msvc_\Retail\hammer.pdb
@@ -4807,6 +4912,7 @@ CQAutoScrollingTextEdit
 CQAutoVisGroupDockWidget
 CQAutoVisGroupEditor
 CQAutoVisGroupTreeWidget
+CQBakeMaterialDataDialog
 CQBakedLightingBuilderWidget
 CQBaseEditorOptionsWidget
 CQBaseEditorWnd
@@ -5009,6 +5115,7 @@ CQToolPhysicsUI
 CQToolPropertyBar
 CQToolSceneSettingsPopup
 CQToolSceneWidget
+CQToolSceneWidget::RenderView
 CQToolSceneWidgetButton
 CQToolSelectionUI
 CQToolStaticOverlayUI
@@ -5134,6 +5241,7 @@ CUtlQueue<int,class CUtlLeanVector<struct CUtlQueueNode_t<int>,int,class CMemAll
 CUtlSortVector<class CDmxAttribute *,class CDmxAttributeLess,class CUtlVector<class CDmxAttribute *,int,class CUtlVectorMemory_Growable<class CDmxAttribute *,int,0> > >::Find
 CUtlSortVector<struct ChunkHashFraction_t,class CUtlSortVectorDefaultLess<struct ChunkHashFraction_t::SortKey_t>,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlVectorMemory_Growable<struct ChunkHashFraction_t,int,0> > >::FindLessOrEqual
 CUtlSortVector<struct ChunkHashFraction_t,class CUtlSortVectorDefaultLess<struct ChunkHashFraction_t::SortKey_t>,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlVectorMemory_Growable<struct ChunkHashFraction_t,int,0> > >::Insert
+CUtlVector<CUtlString>&
 CVDataLookup
 CVMFtoVMAP: Missing a required top-level key.\n
 CVMFtoVMAP: missing visgroups key\n
@@ -5148,7 +5256,6 @@ CalcValueDivided
 CalcValueMultiplied
 CalcValueSubtracted
 Call #%1
-Camera
 Camera or Workplane Modified: 
 Camera path
 Camera path <%s>
@@ -5156,6 +5263,7 @@ CameraLookAtSelection
 Can only fast-texture a single island of faces at a time.
 Can only fast-texture faces from a single mesh at a time.
 Can only make a relay for outputs from a single output on a single entity
+Can't bake lighting: this mod has no modtools to supply LightmapGameSettings\n
 Can't copy to target path with files already open
 Can't fix
 Can't load map in engine because the server is not available.
@@ -5193,6 +5301,7 @@ Cannot snap to corner: Result would invert the face(s).
 Cannot use CQToolSceneWidgetAutoUpdate outside of Toolframework2!\n
 Cap new surfaces
 Capture animgraph state and view in Animgraph Editor.
+Capture one cubemap face in RenderDoc during Bake Cubemaps: "<id> <face>"
 CaptureNextPresent
 CaptureRenderDoc
 Case sensitive
@@ -5395,6 +5504,7 @@ Compile skipped.
 Compiling %i Asset%s...
 Compiling %i Assets
 Compiling Cube Maps...
+Compiling material and textures
 Compiling model
 Complete
 Completed loading file: %s (%0.1fs)\n
@@ -5421,6 +5531,7 @@ Connect key '%s' to new variable '%s'
 ConnectEdges
 ConnectSmooth
 ConnectVertices
+ConservativeHullErosion
 Console Commands
 Constant density
 Constrain
@@ -5496,7 +5607,9 @@ Could not check out file\n%s
 Could not find any valid hotspot rectangles for the selected faces with the current hotspot settings. Falling back to mapping the whole texture.
 Could not find map vpk file. The map must be compiled to preview visibility.
 Could not read los file: '%s'\n\nNo line of sight data will be available. Build the map locally to generate an los file.
+Could not read the template material %s.
 Could not save changes
+Couldn't add edge fade to '%s', its bounds or edge fade are linked to a map variable that can't be changed\n
 Couldn't load %s key %s, will not sign %s.\n
 Count Max: %d
 Count Min: %d
@@ -5615,6 +5728,7 @@ Cu&t
 Cube Map Out-of-Date
 Cube map "%s" has out-of-date or incorrect compile settings. Fix it?
 CubeMap
+Cubemap
 Cubemap %s color space is not %s\n
 Cubemap %s is up-to-date\n
 Cubemap %s mip processor is not %s\n
@@ -5727,6 +5841,8 @@ DeleteSelectedCommands
 DeleteSelectionSet
 DeleteVisClusters
 Deleting autosave file: %s\n
+Denoising ambient occlusion
+Denoising the ambient occlusion failed, see the console for errors.\n
 Density: %.2f
 Depenency on
 Depth
@@ -5747,17 +5863,16 @@ Deterministic Charting Computations (slow)
 DialogCancelled
 Different map!
 Diffuse Only
-DiffuseColor
 Direct
 Direct +
 Direct Lighting
 Direct Offset
 DirectOnly
 DirectPlusAmbient
+DirectX 11 doesn't support ray tracing. Remove -dx11 from the command line, or replace it with -gpuraytracing.
 Direction
 Direction:
 Directory error
-Directory not empty
 Disable All
 Disable Undo/Redo
 Disable gray out of objects outside active instance
@@ -5791,6 +5906,7 @@ DissolveAgressive
 DissolveEdge
 DissolveEdges
 Distance field generation took %g seconds.
+Distance from the mesh surface where the rays start, in world units, so surfaces closer than this are skipped.\nThe viewports show it dotted.
 Distance to offset the final position along the surface normal at the point of intersection
 Distance to offset the final position back along the projection direction
 Distance to offset the trace starting location backwards along the projection direction
@@ -5836,7 +5952,6 @@ DockWidgetVisiblityChanged
 Document Checkin
 Document Status
 Does not contain
-Domain error
 Done
 Done.\n
 DoorHandleHelper
@@ -5880,6 +5995,7 @@ Drop Bridge Tool
 Drop Projection Tool
 Drop Thicken Tool
 DropTool
+Dropping i/o connection %s -> %s.%s from "%s", target entity was excluded from import\n
 Duplicate
 Duplicate Objects
 Duplicate attribute name %s encountered!\n
@@ -5892,6 +6008,7 @@ Dynamic prefab (or root map) has no VPK
 Dynamic prefab instances. %1
 E&verything
 E&xit
+EDIT_MODE
 EQUAL
 ERROR: P4CopyFile: This source 1 file is DELETED in p4! "%s"\n
 ERROR: The painting material reported multiple blend states - this is probably a shader bug.
@@ -5908,7 +6025,6 @@ Edge Length Preview
 Edge Peel
 EdgeDoubleClicked
 EdgeSingleClicked
-Edges
 Edges    
 Edit '%s' to point at this map
 Edit '%s' to use new VPulse asset
@@ -5982,6 +6098,7 @@ End T
 EndNodeNameEdit
 EndPivotManipulation
 EndReset
+EndSceneCameraChange
 EndTypeInput
 EndU
 EndUpdate
@@ -6061,6 +6178,7 @@ EventGizmoScaleChanged_t
 EventGizmoTransformSpaceChange_t
 EventGridSizeChanged_t
 EventHammerAssetSelected_t
+EventHammerExtensionButtonToggled_t
 EventHoldManipulationModeChange_t
 EventLassoSelectIntersectingChange_t
 EventLassoSelectThroughChange_t
@@ -6142,7 +6260,6 @@ EventWorkplaneLockChange_t
 Everything + Hidden
 Exact match
 Exclude Backfaces
-Exec format error
 ExecuteOperation
 Exit tile paste mode
 ExitActiveEditScope
@@ -6209,10 +6326,11 @@ Failed to CreateDirHierarchy %s\n
 Failed to build ray tracing world. See console spew.
 Failed to construct map document from provided vmf data.\n
 Failed to create map view for building ray tracing world
+Failed to create map view for building ray tracing world.
 Failed to create ray trace pipeline; skipping rendering\n
 Failed to export particle snapshot
 Failed to find resource compiler
-Failed to generate %i/%i rays for barnlight with hammerNodeId=%s!\n  Check spotlight and distance attenuation, light may be fully black.
+Failed to generate %i/%i rays for barnlight with hammerNodeId=%s!\n  Check spotlight and distance attenuation, light may be fully black.\n
 Failed to get file size to process chunk file \n
 Failed to get full path for mesh_file: "%s"\n
 Failed to load '%1':\nError while loading the file:\n%2
@@ -6248,11 +6366,9 @@ File '%1' is missing!
 File Opened by Other User
 File Opened by Other Users
 File Too Large
-File exists
 File is > 2GB and cannot be opened:\n\n%s\n\nData will be lost unless the map size can be reduced!\nTry clearing baked lighting data or removing extremely large meshes.
 File opened with errors
 File read failure
-File too large
 FileClose
 FileNew
 FileOpen
@@ -6262,9 +6378,9 @@ FileSaveAs
 Filename 
 Filename %i
 Filename '%s' is invalid to be contained in a VPK
-Filename too long
 Files to Checkin:
 Fill Hole
+Filling texture gutters
 Filter Part
 Filter by issue type
 FilterBar
@@ -6329,7 +6445,6 @@ Flip faces
 FlipEdges: %i flips! aborting\n
 FlipFaceTextureParmeters
 FlipFaceUVs
-FlipNormals
 FlipPointNormal
 FlipTextureHorizontal
 FlipTextureVertical
@@ -6350,6 +6465,7 @@ FocusOut
 Fog Flow Map
 Fog Opacity
 Fog Scattering %d
+Folder for the textures and materials, relative to the content folder of the map's addon.
 Follow Entity Hierarchy
 Follow Quads
 Force all lights on
@@ -6370,13 +6486,11 @@ FreezeNormal
 From Center
 From: %1\n
 FromNorm
-Front
 FullBright
 Full\nCompile
 Fullbright
 Fullscreen Layout
 FullscreenLayout
-Function not implemented
 GPU Lightmap Baking
 GPU Memory Usage: %s Budget: %s
 GPU Path Tracing
@@ -6404,7 +6518,7 @@ GenerateSHA256Digest
 GenerateSoundEventFromVSnd
 Generating Nav (running debug pipeline)...
 Generation Settings
-Generation complete. %d areas.
+Generation complete. %d areas. %.2fs
 Generation stats
 GenericFilterRelation_t
 Geometry Type:
@@ -6523,6 +6637,8 @@ Hammer Screen Space View %p
 Hammer Select Mode Bar
 Hammer Selection: 
 Hammer Tools Bar
+Hammer/MaterialBakeTemplate
+Hammer/MaterialBakeTemplateUV2
 Hammer/OutlinerUseFilterBar
 Hammer: Attempting incremental build.\n
 Hammer: Copying compiled map to game directory.\n
@@ -6544,6 +6660,7 @@ HammerEditorSession
 HammerEnabledOverlayLayer
 HammerEntityPicker
 HammerGlobalModeBar
+HammerHighlightObject
 HammerLODLevelChoices
 HammerLinkedPropertyValuePreview
 HammerLinkedPropertyVariableName
@@ -6655,7 +6772,6 @@ IUndoListener
 If using Uniform Offset, change which neighboring edge to base the offset on
 Ignore workplanes, preserve alignment
 Ignoring request to open file %s because the editor is currently in the process of opening another file.\n
-Illegal byte sequence
 Image dimensions must be multiple of 4!\n
 Import / Export
 Import File...
@@ -6664,11 +6780,9 @@ ImportFile
 ImportPrefab
 Importing %d bytes S1 detail foliage => CMapTerrain.\n
 Importing %s
-Improper link
 ImpulseResponse
 In Slope
 In Weight
-Inappropriate I/O control operation
 Inbound
 Include
 Include hidden objects
@@ -6695,13 +6809,13 @@ Indirect Volume Fog Texture
 IndirectOnly
 IndirectVoxelDim
 Infinite
+Inherit '%s'
 InitRandom
 InitializeFaceTextureParameters
 InitializeFromPolygonGroup
 InitializeTextureUVs
 InnerProduct
 Input Geometry
-Input/output error
 Input:
 Insert New Image Plane
 Insert image plane aborted - no file specified.
@@ -6714,7 +6828,6 @@ Integer Attribute
 Intensity:
 InteractionCreateAndLinkAsset
 Interpolated Bridge
-Interrupted function call
 Invalid File
 Invalid Material
 Invalid Material "%s"
@@ -6725,12 +6838,10 @@ Invalid Output
 Invalid Parent
 Invalid Target
 Invalid Variable Name
-Invalid argument
 Invalid bounding box
 Invalid edge fade specification: %s, expected 1 or 3 components
 Invalid material for draw %i in prop %s!\n
 Invalid preset name '%s'
-Invalid seek
 Invalid target: key "%s" is set to value "%s".
 Invert Aspect
 Invert Disabled
@@ -6739,7 +6850,6 @@ InvertDisabledTiles
 InvertSelection
 IrradVolumeInnerHull
 IrradVolumeVoxel
-Is a directory
 Is not
 IsFileInVersionControl
 IsLegacyWaterMaterial
@@ -6790,7 +6900,6 @@ LESS_OR_EQUAL
 LMouseAdd
 LMouseRemove
 LOD %i
-Lambert
 Large (96x96)
 Lasso disable tiles
 Lasso enable tiles
@@ -6848,6 +6957,7 @@ Link Parent Map
 Link transform
 List Map Objects Using Asset
 ListSelectionChanged
+Lists the dynamic objects (doors, windows) of the baked occlusion Toggle Probe Visualization shows, and how open each is.
 Load Autosave On Crash
 Load Compiled Vis Data
 Load Map In Engine
@@ -6858,6 +6968,7 @@ Load Vis Data
 Load in engine after building
 LoadCompiledMeshes
 LoadLeafs
+LoadLiveFile
 LoadMapChanged
 LoadMapInEngine
 LoadNavPolyclip
@@ -6989,8 +7100,11 @@ Matching properties
 Matching tileset
 Material Group:
 Material Mode
+Material Name:
 Material Set %i
 Material Transition
+Material sampling failed on the GPU, see the console for errors.\n
+Material to copy for each mesh or model. Its tokens get the baked texture paths and values, see bakedmaterialdata.h.
 MaterialAdjustParams Changed
 MaterialEditorPreviewRectangleHeight
 MaterialEditorPreviewRectangleWidth
@@ -7007,11 +7121,14 @@ Max Autosave Directory Size (mb)
 Max Autosave Space 2
 Max Autosaves Per File
 Max Bounce Reached
+Max Distance:
 Max Distance: 
 Max Edge Error
 Max Edge Length
 Max Sample Error
 Max Saves Per Map
+Max distance from the mesh surface to the surface the rays hit, in world units. The viewports show it\nas the mesh pushed out by this distance, orange under the mesh and blue above it.
+Max distance of the ambient occlusion rays, in world units. Surfaces further away do not occlude.
 Max: %1
 MaximizedSubframe
 Maximum distance the new positions can be from the original position
@@ -7039,6 +7156,8 @@ MergePaths
 MergeSelectedMeshes
 MergeTarget
 Merged Region Size
+Mesh %d has UVs that do not match its vertices, skipped.
+Mesh %d has no UV set %d, skipped.
 Mesh Project: Selection must contain at least one mesh or mesh component.
 Mesh Projection Tool
 Mesh at (%1,%2,%3): %4
@@ -7048,6 +7167,7 @@ Meshes To Overlays
 Meshes will NOT be enclosed if there are any non-manifold edges (RED) or overlapping triangles (PURPLE)
 Meta Tags
 Metalness:
+Min Distance:
 Min Region Size
 Min: %1
 Minimap Bounds
@@ -7078,6 +7198,9 @@ ModePinch
 ModePushPull
 ModeSelect
 ModeSmooth
+Model %d has no UV set %d, skipped.
+Model %d has no loaded model, skipped.
+Model %d has no visible triangles, skipped.
 Model File (*.vmdl)
 ModelAnimGraph2Identifier
 ModelAnimName
@@ -7158,6 +7281,7 @@ MoveUp
 Movement Speed: %0.*fx   [%s] to reset
 Movement_Active_Navlink
 Mover Preview
+Moves the active hammer session's 3D views to a raw x y z or setpos x y z;setang p y r string
 Multiple VisGroups with the same id: %i\n
 Multiple copies of '%s' do not agree on arguments! See above for lists\n
 Multiple copies of the same object at the same location.
@@ -7166,12 +7290,12 @@ Multiple matching entities (%i)
 MultiplySetBy
 Multiscattering
 Must be in object selection mode to bake lighting on selection.
+Must be in object selection mode to bake material data.
 Must have a terrain object selected.
 Must have at least on mesh selected to create a voxel volume.
 Must have exactly two islands of selected edges
 Must have one or more mesh objects selected to create a tile mesh
 Must have two edge loops selected. First loop is the path, second is the profile.
-Must run with -gpuraytracing to bake preview lighting.
 Must save map to disk before baking cubemaps.
 Must save map to disk before baking light probe volumes.
 Must save map to disk before cleaning up bake resources.
@@ -7195,6 +7319,7 @@ NAVGEN Gravity: No gravity meshes were provided.\n
 NAVGEN Gravity: Unable to find gravity mesh near %g %g %g ( will only report once for this volume ).\n
 NAVGEN: Cycle Detected with '%s'. See output for details.
 NONAV
+NONAVNONSOLID
 NOT_EQUAL
 NPCTemplate
 NPCTemplate1
@@ -7204,6 +7329,7 @@ Name Contains
 Name Selected Tiles
 Name Tiles
 Name for the relay:
+Name of the material and the textures. With more than one object, _01, _02, ... is added for each object.\nLeave it empty to name them after the object and its id.
 Name:
 Name: 
 NameChanged
@@ -7269,7 +7395,6 @@ New or Existing Variable Name:
 New params: %s\n
 New selection set
 New:
-NewCollisionPathChanged
 NewCordon
 NewFeature
 NewFilename %i
@@ -7301,15 +7426,13 @@ No VMAP!
 No VPK present for this map.
 No autosave directory found
 No changes to save
-No child processes
+No dynamic object of the probes shown matches "%s", snd_steamaudio_hammer_dynamic_objects_list lists them.\n
 No editable properties
 No entities found
 No entities found with targetname matching '%s'
 No entities were found with that targetname.
-No error
 No error occurred.
 No geometry info found for prop %s!\n
-No locks available
 No map from disk loaded in Hammer: %s\n
 No matching entities
 No mesh to generate to (in a prefab?)
@@ -7321,11 +7444,6 @@ No objects are selected.
 No objects selected to snap
 No player start.
 No reference entity is set
-No space left on device
-No such device
-No such device or address
-No such file or directory
-No such process
 No tile data available to paste, use %s to copy tiles first.
 No tile meshes are selected
 No tiling
@@ -7347,12 +7465,9 @@ None of the selected objects can be pinned to the target object. This may be bec
 NoneSelected
 Normal Offset: 
 Normal mode
-NormalMap
 NormalMode
 North
-Not a directory
 Not all of the selected meshes could be merged
-Not enough space
 Not signing; keys not set.\n
 Note: The soundevent you've selected is not in this games mod. You'll need to copy it into this mod at some point.
 Note: This is the list of currently-resident sound events, and may differ set of events available during a running game.
@@ -7418,6 +7533,7 @@ ObjectProperties
 Objects To Include
 Objs Rendered
 Objs fading
+OcclusionDistance
 Octaves:
 Offset (accumulative)
 Offset the edge a constant distance from one of the neighboring edges
@@ -7683,7 +7799,6 @@ OnStrengthValueChanged
 OnSubdivValueChanged
 OnSubdivisionExpansionToggled
 OnSwapSingleMulti
-OnTabChanged
 OnTableCellDoubleClicked
 OnTableDataChanged
 OnTableSelectionChanged
@@ -7768,9 +7883,7 @@ OpenContextMenu
 OpenMapViewPaneDockWidget
 OpenPrefabs
 OpenSSL error (%s): %s\n
-Operation not permitted
 Operations
-OptimizeCollisionChanged
 OptionallyCompressedTangentFram
 Orient to the 2D view plane direction.
 OrientPrimitivesChanged
@@ -7784,11 +7897,14 @@ Out Weight
 Outbound
 Outliner
 Output File
+Output Folder
+Output Folder:
 Output Geometry
 Output connection "%s" to the input "%s" of entity "%s" is invalid.
 Output:
 Outputs
 Overlays
+Override '%s'
 Override Parameter
 P4CopyFile
 P4CopyFile: Couldn't copy "%s" to "%s"\n
@@ -7802,8 +7918,9 @@ PARAM_MAP::CMD_MAKE_LITERAL
 PARAM_MAP::CMD_MAKE_MAPPED
 PARAM_MAP::CMD_MAKE_NO_MAPPING
 PATH_TRACE
+PICK_MULTIPLE
+PICK_SINGLE
 PREVIEW_LIGHTING
-PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 PUNCTUAL
 Paint
 Paint Blending
@@ -7846,6 +7963,9 @@ PaneContainer
 PaneDockWidgets
 PaneMode_t
 Pane_%s
+Parallax
+Parallax From Depth:
+Parallax needs UV set 1, the parallax shaders use the tangents of UV set 1.
 Param
 Param:
 ParamRoutingChoice
@@ -7864,6 +7984,7 @@ Particle Snapshot (*.vsnap)
 ParticleConfigName
 Pass FULL_PARAMETER_MAP
 Pass ONLY_OUTPUT_DATA
+Passing through i/o connection %s -> %s.%s from "%s", target is not an entity in the map\n
 Paste &Special...
 Paste Grass Parameters
 Paste Grass Params
@@ -7888,7 +8009,9 @@ PathPointManipulator
 PathTrace
 PathTraceMode
 Pause Game
+Pause animation
 PauseGame
+PauseModelAnimation
 Perf Stats
 Perforce Integration
 PerformIsotropicSurfaceRemeshing - Manifold
@@ -7897,8 +8020,6 @@ PerformSingleUndo
 PerformTangentialSmoothingStep
 Performed replace on %1 face%2 in %3 mesh%4.
 Performing post load fixup
-Permission denied
-Phong
 Physical Specular + Diffuse
 Physical Specular Only
 Physics Debug Draw
@@ -7923,6 +8044,7 @@ Pick Sound Event
 Pick VSound
 Pick Workplane From Object
 Pick Workplane From Surface
+Pick a folder inside %1.
 Pick an entity from the view.
 Pick workplane from objects and surfaces
 PickEdge
@@ -8080,6 +8202,7 @@ QLineEdit { selection-color: rgba( 0, 0, 0, 100%) }
 QLineEdit { selection-color: rgba( 255, 255, 240, 100%) }
 QListWidgetItem*
 QMdiSubWindow*
+QMenu*
 QModelIndex
 QOutlinerTreeView
 QPushButton { border:none; } QPushButton::hover { background-color:rgb(246,146,30); }
@@ -8130,15 +8253,16 @@ RandomizeConfiguration
 RandomizeSelectedTileMeshes
 Range:
 Rasterization
+Rasterizing UVs
 Raw Parameters
 Ray trace world build failed; skipping rendering\n
+Rays per texel. The rays are spread over the texel, so more rays give smoother edges, and smoother\nresults on alpha tested and translucent surfaces.
 Re-Evaluate selected
 Re-Roll Random Choices (This dynamic config only)
 Re-apply Pose
 Re-evaluate
 Re-orient camera to workplane
 Read only files
-Read-only file system
 ReadOnlyChanged
 ReadOnlyLabel()
 ReadRangerTrapVData
@@ -8149,6 +8273,8 @@ Ready
 Really remove referenced map variable?
 Reapply
 Rebake All Surface Effects From Scratch ( recommended )
+RebuildFileListMenu
+RebuildLiveFilesSubmenu
 RebuildRecentFilesSubmenu
 RebuildVersionControlSubmenu
 Recast
@@ -8164,7 +8290,6 @@ RectangleSets
 Redirect the selected outputs through a new 'logic_relay' entity
 Reducing GPU Memory Consumption
 ReevaluateConfiguration
-Reference
 Reference entity "%s" has no entities parented to it and 'Generate Nav on Reference Entity' is unchecked
 Reference entity "%s" matches %d entities; it must be unique
 Referenece To
@@ -8193,6 +8318,7 @@ ReloadKeyBindings
 ReloadLightRigDefinitions
 ReloadMapInEngine
 ReloadPrefabs
+Reloading baked materials
 Remap All\n(Slow, Heuristic)
 Remap Blend Data
 Remap By Index
@@ -8203,6 +8329,7 @@ RemapBlendData
 RemapVertexData
 Remapping vertex data: %.3f%%\n
 Remesh iteration %d: split %.3fs (-> %d verts)  collapse %.3fs (-> %d verts)  flip %.3fs  smooth %.3fs\n
+Remove -nogpuraytracing from the command line.
 Remove Bad Faces
 Remove Choice
 Remove Deformer (Ungroup)
@@ -8276,6 +8403,7 @@ RenameChoice
 RenameCurrentItem
 RenameSelectionSet
 Render All Windows
+Render Device API doesn't support ray tracing. Add -gpuraytracing to the command line.
 Render Options
 Render State
 Render Tint:
@@ -8385,20 +8513,15 @@ Resize box
 ResizeFinished
 ResizeNear
 Resized
+Resolution:
 Resolves
 Resource File
-Resource deadlock avoided
-Resource device
-Resource temporarily unavailable
-ResourceCompiler/BakedLighting/BakedShadowsGamma20
 ResourceCompiler/BakedLighting/DisableCullingForShadows
-ResourceCompiler/BakedLighting/LPVSH2
 ResourceHandle_t
 Restart particles
 RestartParticleEffects
 RestartSim
 Restrict blending to current material set
-Result too large
 Reveal in Surface Property Editor
 Reveal in VDATA Editor
 Reverse Paths
@@ -8477,6 +8600,8 @@ Sampled Direction Pdf
 Sampled Hemisphere Direction
 Sampled Light Direction
 Sampled Light Index
+Samples Per Texel:
+SamplesPerTexel
 Saturation/Vibrance %d
 Save &As...
 Save Active Prefab
@@ -8587,6 +8712,7 @@ Select loop
 Select multiple meshes to merge.
 Select nodes
 Select objects to simulate.
+Select one or more meshes or models to bake material data.
 Select set
 Select through disabled
 Select through enabled
@@ -8725,6 +8851,7 @@ Set Tiling Mode
 Set Times To Fire: %d
 Set Variable Value
 Set Visibility From Cordon Editor
+Set an output folder and a template material.
 Set bevel steps
 Set bevel width
 Set bridge steps
@@ -8841,6 +8968,7 @@ SetFireOnceFromUI
 SetFocusOnPauseProxyEnabled
 SetFogColor
 SetFogEndDistance
+SetFogMaxOpacity
 SetFogStartDistance
 SetGroup
 SetHighlightPaintable
@@ -9027,6 +9155,7 @@ Show fog entity far Z
 Show helpers
 Show hidden
 Show node ids
+Show the baked height map with parallax, so the material shows the surface under the mesh at its depth.\nUV set 1 only, and the template must use {parallax} and {height}.
 Show tools materials
 ShowContextMenu
 ShowEntityReport
@@ -9070,6 +9199,7 @@ Simulate Objects
 Simulating, press [%s] to stop.
 Simulation state saved for undo.
 Single View
+Size Cull Threshold (% of view, 0 = off)
 Skew Angle
 Skew Strength
 Skew Variance
@@ -9086,7 +9216,6 @@ Small Area on Edge Removal
 Smaller Grid
 SmallerGrid
 Smart Prop (*.vsmart)
-Smooth
 Smooth Amount: %.2f
 Smooth Camera
 Smooth Height
@@ -9195,6 +9324,7 @@ StartNewCut
 StartSendingCameraTo
 StartU
 StartV
+Starting env_gradient_fog "%s" at %s disabled, only the master fog "%s" is enabled, SetFogController inputs to it will have no effect\n
 Static Overlay Added
 Static Overlay Tool
 Static prefab VPK is older than VMAP: %1
@@ -9212,7 +9342,10 @@ Steam Audio: No data set to create pathing probe nodes!\n
 Steam Audio: No data set to create reverb probe nodes!\n
 Steam Audio: No geometry found.\n
 Steam Audio: No physics geometry to recompute inside / outside against.\n
+Steam Audio: dynamic object "%s", target "%s" matches %d entities.\n
+Steam Audio: dynamic object target %s "%s", %d triangles.\n
 Steam Audio: inside / outside was not recomputed. The probes keep their previous values.\n
+Steam Audio: no probes shown, Steam Audio > Toggle Probe Visualization loads them.\n
 Steam Audio: showing dimensions with inside / outside mode %d, %d rays, %d bounces, path length %.0f, bounce loss %.2f (was mode %d, %d rays).\n
 SteamAudioBakeData
 SteamAudioBuilderEnabledChanged
@@ -9289,6 +9422,7 @@ TargetTextChanged
 Targetname to find:
 Task
 Template
+Template Material:
 Template map files (*.vmap)
 Template%02d
 Terrain Graph
@@ -9321,6 +9455,7 @@ TextureNormal
 TexturePreivewMaterials
 TextureTranslucency
 The active material does not support vertex painting.
+The ambient occlusion distance (%.2f) must be above 0.
 The amount of time to simulate the blobs for the preview.
 The autosave directory does not exist and could not be created.\nThe autosave feature will be disabled.
 The autosave feature will be disabled
@@ -9348,10 +9483,14 @@ The file:<pre>"%1"</pre>has unsaved changes. Do you want to discard them?
 The following files need to be checked out before saving.\n\nCheck out these files?\n\n
 The keyvalue holds the name of an entity that was not found in the map. Fixing this error will clear out the keyvalue in the selected entity.
 The length of the path in game units.  This is computed automatically as the path is edited.
+The map must be saved in a content folder before baking material data.
+The material name %s must only use lowercase letters, numbers and _.
 The mesh is using a material asset that is missing or invalid. You can fix this error with the Fix button, which will assign the current material to the mesh.
+The min distance (%.2f) must be at least 0 and below the max distance (%.2f).
 The mover must be named before a path can be created.
 The node requires its parent to be a specific node type and the current parent is not of that type.
 The operation was aborted.
+The output folder %s must be a relative path inside the content folder, without "..".
 The position in the file could not be changed.
 The profile edge loop(s) must only contain open edges.
 The proxy target is an ancestor of the proxy, forming a cycle.
@@ -9366,6 +9505,8 @@ The source file of this autosave is already open. Close it first to open this fi
 The specified output connection of the entity is invalid and is not actually connecting to anything. Fixing this issue will delete the connection.
 The speed in units per second the camera will travel along the path.\nFor a constant speed path, the speed can be edited and will update Duration as appropriate.  For a non-constant speed path, it is read only and shows the speed at the current preview time.
 The temp map directory\n
+The template material %s does not use {parallax} and {height}, so it can not show parallax.
+The template material %s does not use {uv_set}, so it can only be baked into UV set 1.
 The time value at which the camera frustum will be drawn when the camera path is selected. Adjusting this will update the path parameter.
 The two sets of selected edges do not contain the same number of edges: %i != %i
 The variable '%1' has the wrong type or set of choices.
@@ -9410,7 +9551,9 @@ Three-View Primary Top
 Tie Selected Meshes to Entity
 Tie Static Objects to Entity
 Tie To Entity
+Tie To Entity Individually
 TieToEntity
+TieToEntityIndividually
 Tile Editor
 Tile Editor Mode
 Tile Properties
@@ -9426,7 +9569,6 @@ Time Between Autosaves (min)
 Time Between Saves
 Time taken: % f seconds\n
 TimerReadAutoTonemapValue
-To Entity
 To: %s\n
 ToNorm
 Toggle Cordoning
@@ -9602,9 +9744,6 @@ TonemapScaleOverrideChanged
 TonemapSettingChanged
 Tonemapping Scale
 Tonemapping_DefaultFilmicLinear
-Too many links
-Too many open files
-Too many open files in system
 Took %0.2f seconds to update references\n
 Tool Properties
 ToolAssetSpray
@@ -9675,15 +9814,20 @@ Tools_Unlit_TranslucentNOZ
 Tools_Unlit_Wireframe
 Toolscene screen space view
 Trace Against Bounding Box
+Trace Direction:
 Trace Distance:
 Trace Mode:
 Trace Offset:
 Trace against selection
 Trace against world
+Trace ambient occlusion from the surfaces the rays hit, so the surfaces around them occlude them, and give it to the material.\nThe template must use {ao}.
 TraceAndCreate
 TraceAndCreateOriented
 TraceAndLiftMaterial
+TraceDirections
 TraceRays
+Traces from the selected meshes and models along their normals and bakes the\nmaterial under them into textures in the selected UV set. The UVs must not overlap.
+Tracing material samples, batch %d of %d
 Transform %s
 Transform point
 TransformExtrude
@@ -9694,7 +9838,6 @@ Translate selection
 TranslateLasso
 TranslateMode
 Transmission Probability
-TransparentColor
 Treat as one
 Tree Type
 Triangle count of hammer geometry
@@ -9719,12 +9862,16 @@ U Repeats
 UIMatRTTexture.vtex
 URLString
 UV Peel
+UV Set 1
+UV Set 2
 UV Set:
 UV Set: All
 UV Set: UV1
 UV Set: UV2
+UV set of the meshes and models the textures are baked into. UV set 2 needs a template that uses {uv_set}.
 UVSet1FastTextureOp
 UVSet2FastTextureOp
+UVSetChanged
 Un-parent
 Unable to assign light (%s) <%i> [%s @ %.1f %.1f %.1f] a baked shadow index: has %i overlaps (%i without slots), no available shadow slots\n
 Unable to create autosave directory
@@ -9737,15 +9884,18 @@ Unable to find instance map file %s\n
 Unable to find mod searchpaths in source 1 mod gaminfo.txt!\n
 Unable to fine manifest "soundevents/soundevents_manifest.vrman" which is required, please investigate!
 Unable to load Source1 colorcorrection RAW image %s\n
-Unable to load psd: %s\n
 Unable to load source 1 mod gameinfo.txt! %s\n
 Unable to load vis data for map:\n '%s'\n\nVisibility may not have been compiled.
 Unable to open
 Unable to save %d bytes to %s\n
 Unable to write file '%s'
 Uncheck All
+Under And Above
+Under Only
+Under traces into the surface below the mesh (against its normal), above traces out of it (along its normal).\nWith both, the surface under the mesh is used, and the one above only when the mesh is inside the geometry or nothing is under it.
 Undiscoverable
 Undo History
+Undo position pushed: %s\n
 UndoOrRedoByRow
 Unexpected Glow helper type %s\n
 Unexpected box helper type %s\n
@@ -9761,7 +9911,6 @@ Unique Pane Layout
 Unique materials:
 Unknown LUMP_LEAFS version\n
 Unknown Token
-Unknown error
 Unknown image format in gameinfo.gi WorldRenderer/EnvironmentMapFormat. Defaulting to DXT5.\n
 UnlitPostPass
 Unlock camera and allow perspective to roll upside down
@@ -9777,7 +9926,6 @@ Unrecognized HammerID '%s'
 UnserializeModels Did load tint bitmap %s\n
 UnserializeModels Did load type bitmap %s\n
 Unspecified Tile Properties
-Unsupported PSD color mode!\n
 Untie From Entity
 Untie From entity
 Untie from entity
@@ -9832,6 +9980,7 @@ UpdatePaintStream
 UpdatePaneTypeMenu
 UpdatePlayStopButton
 UpdatePrefabsMenu
+UpdatePreview
 UpdateProjection
 UpdatePropertyEditorAndReferenceList
 UpdatePropertyWidgetFromSelection
@@ -9869,6 +10018,9 @@ Updating node IDs
 Updating procedural objects
 Updating raytrace environment
 Updating window size to preserve settings for maximized window:\n
+Usage: snd_steamaudio_hammer_dynamic_object_close <name, hammer id or *>\n
+Usage: snd_steamaudio_hammer_dynamic_object_open <name, hammer id or *> [openness 0-1]\n
+Usage: snd_steamaudio_hammer_dynamic_object_toggle <name, hammer id or *>\n
 Use Custom Changelist
 Use Custom Generation Params
 Use Existing
@@ -9938,7 +10090,6 @@ Vertex Paint to Default
 Vertex Painting
 Vertex Snapping
 VertexColorUVPos_t
-VertexPaintHeightBlend
 VertexPaintHeightBlend_Layer%i
 VertexPaintLayerCount
 VertexPaintUI2Layer
@@ -10020,7 +10171,6 @@ Width:
 Wireframe Decal
 Wireframe Opaque
 Wireframe Overlay
-Wireframe Reflective
 Wireframe Translucent
 WireframeEffectsBloom
 WireframeTranslucent
@@ -10061,6 +10211,7 @@ Write Custom Cubemap...
 WriteRaytracedImage
 Writing mesh file
 Writing model file
+Writing textures, %d of %d done
 Wrong map loaded
 Wrote image to %s\n
 XZP%c %d
@@ -10073,6 +10224,7 @@ YesClicked
 You have revision %2 but the head revision is %1!
 You have selected an existing entity (a '%s'.)\nWould you like to add the selected objects to the existing entity?\nIf you select 'No', a new entity will be created.
 You need to remap old vertex data onto new versions of the meshes.\nSelect a mesh instance to the left to start,\nor click a button in the top left to handle them all.
+Your GPU or graphics driver doesn't support ray tracing. Try updating your graphics driver.
 ZFar
 ZNear
 Zero-area light
@@ -10089,6 +10241,8 @@ ZoomViewOutStep
 [ TARGET MAP MISSING ]
 [%f %f %f %f] %f
 [%f %f %f %f] 0.25
+[%f %f %f 0.000000]
+[%f %f]
 [%s + %s] Drag
 [%s+%s+%s]
 [%s+%s]
@@ -10107,6 +10261,7 @@ ZoomViewOutStep
 \gameinfo.txt
 \models
 \n   Size: L: <%i, %i>   A: <%i, %i>   Scale: %0.2f\n   Geometry: %s\n   Virtual Geometry: %s\n   Available Geometry: %s\n   Orientation: %s\n
+\n%s: %s
 \nEnd build: 
 \nFailed to read %s - %s\n
 \nIf the map is built without these entities it will not function correctly in game.\nContinue with build anyway?
@@ -10146,8 +10301,10 @@ __rootJoint
 __rotLog
 __standin_dock
 _addons\
+_albedo.png
 _ambient
 _ambientHDR
+_ao.png
 _bakeresourcecache/*
 _basetintmask_
 _constant_attn
@@ -10156,21 +10313,28 @@ _default
 _detailmask_
 _diffusemask_
 _distance
+_emissive.exr
+_emissivemask.png
 _exponent
 _fifty_percent_distance
 _hardfalloff
 _hdr.vmat
 _hdrrt
 _hdrrt.vmt
+_height.png
+_hitdistance.exr
 _imported
 _infodecal
 _lightHDR
 _lightscaleHDR
 _linear_attn
+_metalness.png
 _metalnessmask_
+_normal.png
 _not_pickable
 _quadratic_attn
 _rimmask_
+_roughness.png
 _selfillummask_
 _specexp_
 _specmask_
@@ -10225,6 +10389,7 @@ area_size_y
 as broken
 asset_preview_thumbnail
 asset_preview_thumbnail_format
+associated_with_observable_output
 attribute_count
 axis_key
 axis_range
@@ -10242,7 +10407,6 @@ bEnableGL
 bEnabled
 bExpanded
 bFilterByKVExact
-bFocusEvents
 bForward
 bFromCenter
 bGroup
@@ -10286,7 +10450,6 @@ binary_v1
 binary_v2
 blob_spawn_type
 block
-block_base_nav_mesh
 blocklight
 bottomRight
 box_world_aligned
@@ -10299,6 +10462,7 @@ cable_attach_overrides
 camera_path
 camera_path_node
 can't solve quadratic for light %f %f\n
+cannot_push_player
 centered_box_world_aligned
 centerprint
 chainname
@@ -10328,6 +10492,7 @@ color_warp1_texture
 color_warp_blend_to_full
 color_warp_texture
 column
+component_inclusion_types
 cone_angle
 cone_bias
 cone_start_radius
@@ -10470,6 +10635,7 @@ farzscale
 fbmInput
 ffValueOut
 file(s) up-to-date
+fileList
 fill_depth_is_relative_to_terrain
 fill_depth_is_relative_to_terrain_key
 fill_depth_is_relative_to_top
@@ -10494,6 +10660,7 @@ flOpactity
 flOverrideSetting
 flOverrideValue
 flPressure
+flSizeCullThreshold
 flSkewAngle
 flSkewStrength
 flSkewVariance
@@ -10542,6 +10709,7 @@ func_ladder
 func_occluder
 func_respawnroomvisualizer
 func_smokevolume
+func_smokevolume %s has no brush, left without an origin\n
 func_water
 g default\n
 g_flRenderOnlyExposureBias
@@ -10731,6 +10899,8 @@ game:tools/images/hammer/painting_tool_cursor_invalid.png
 game:tools/images/hammer/painting_tool_cursor_warning.png
 game:tools/images/hammer/path_tool_icon.png
 game:tools/images/hammer/path_tool_icon_activated.png
+game:tools/images/hammer/pause_model_animation.png
+game:tools/images/hammer/pause_model_animation_disabled.png
 game:tools/images/hammer/physics_tool_icon.png
 game:tools/images/hammer/physics_tool_icon_activated.png
 game:tools/images/hammer/pickentity_tool_cursor.png
@@ -10972,8 +11142,13 @@ hSourcePlug
 hammer %llx
 hammer.dll
 hammer_asset_tag_visualizations.txt
+hammer_bakecubemaps_renderdoc_capture
+hammer_bakecubemaps_renderdoc_capture "%s %d"
 hammer_commands
 hammer_fake_io_test
+hammer_goto_setpos
+hammer_goto_setpos: could not parse '%s'\n
+hammer_goto_setpos: no active hammer session\n
 hammermesh-%s
 handle_to_door
 hardware_key
@@ -11024,6 +11199,7 @@ hero_light_scale_night
 hero_name
 herocolor
 herolightscale
+hidden/solid
 hide_fov_at
 hideifzero
 highlight_domain_values
@@ -11203,7 +11379,10 @@ mapvar
 mapvars
 master_controller
 match_all_rejected_assets
+material_ao_denoise %s %s %s %d %d
+material_sample_gpu %s %s %d %f %f %d %d %d %f
 materials/%s
+materials/baked
 materials/dev/black_simple.vmat
 materials/dev/rtx/debug_visualization.vmat
 materials/dev/rtx/pathtracer.vmat
@@ -11317,12 +11496,14 @@ nextKey
 no_collapse
 no_compression
 nodeTypeId
+node_separation
 npc_combinedropship
 numBlobsToPreview
 num_entities == MAX_MAP_ENTITIES
 numbrushes
 objects 
 objects of class 
+observable_values
 odd size for LUMP_LEAFS\n
 offset_key
 offset_normals
@@ -11361,6 +11542,7 @@ pElement
 pEntity
 pLightRigButton
 pMapNode
+pMenu
 pObject
 pOther
 pPrevious
@@ -11382,6 +11564,8 @@ path_accompany
 path_events
 path_gravity
 path_node_count
+path_npc_freeway
+path_npc_freeway at %g %g %g has nodes with different orientations, only the first node's up is used\n
 path_trace_light_flags
 path_trace_triangles_gpu %s %s %d %d %d %f %f
 path_trace_triangles_gpu_init %d
@@ -11391,6 +11575,7 @@ percent_bright_pixels
 percent_target
 physics_prop
 pick_hero
+picker_mode
 pitch (%.0f,%.0f)
 plane_indices
 plane_verts
@@ -11576,6 +11761,10 @@ sm_nMMBmode
 smoothing
 snapAngle
 snd_reverb_movable
+snd_steamaudio_hammer_dynamic_object_close
+snd_steamaudio_hammer_dynamic_object_open
+snd_steamaudio_hammer_dynamic_object_toggle
+snd_steamaudio_hammer_dynamic_objects_list
 some files couldn't be opened for move.
 somefile
 sound/
@@ -11611,6 +11800,7 @@ startposition
 startu
 startv
 staticPointManipulator
+steamaudio_dynamic_object
 steamaudio_geometry_mode
 storage
 strClassName
@@ -11808,6 +11998,7 @@ where key
 where target is 
 widgetPos
 widthKey
+width_key
 with animation event 
 with output 
 with param 
@@ -11817,6 +12008,23 @@ xy@% 4d, % 4d
 xz@% 4d, % 4d
 yaw (%.0f,%.0f)
 yz@% 4d, % 4d
+{albedo}
+{emissive_brightness}
+{emissive_color}
+{emissive_mask}
+{emissive_max}
+{emissive}
+{height}
+{hitdistance}
+{metalness}
+{normal}
+{parallax_scale}
+{parallax}
+{roughness}
+{uv_offset}
+{uv_scale}
+{uv_set}
 |-%s : < %0.1f, %0.1f, %0.1f > 
 |all_source_engine_paths|
 |gameinfo_path|.
+~~~~~~~~~~~~~~~~C:\buildworker\source2_dota_rel_2019_win64\build\src\toolrenderutils\toolstandardmodels.cpp

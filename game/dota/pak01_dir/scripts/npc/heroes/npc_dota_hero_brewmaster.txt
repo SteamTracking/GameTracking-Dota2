@@ -271,7 +271,7 @@
 					"attack_speed_slow"			"15 30 45 60"
 					"duration"					
 					{
-						"value"								"4.0 4.25 4.5 4.75"
+						"value"								"3.5 3.75 4.0 4.25"
 					}	
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -357,7 +357,7 @@
 					}
 					"total_ignite_damage"				
 					{
-						"value"			"80 160 240 320"
+						"value"			"75 150 225 300"
 						"special_bonus_unique_brewmaster_5"		"+40%"
 					}
 					"movement_slow"				"24 28 32 36"
@@ -518,7 +518,7 @@
 			//=================================================================================================================
 			"brewmaster_liquid_courage"
 			{
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 				"MaxLevel"						"1"
 				"Innate"						"1"
@@ -528,8 +528,10 @@
 
 				"AbilityValues"
 				{
-					"min_health_threshold"			"50"		// When the effect starts
-					"max_health_threshold"			"20"		// When the effect is at full power
+					"damage_threshold"				"400"
+					"trigger_duration"				"5"
+					"damage_reset_interval"			"7.0"
+					"trigger_cooldown"				"15"
 					"status_resist"			
 					{
 						"value"					"10"
@@ -537,18 +539,22 @@
 					}
 
 					"min_speed"					"10"	
-					"max_speed"					"30"
+					"max_speed"
+					{
+						"value"						"30"
+						"special_bonus_shard"		"+20"
+					}
 					"speed_toggle_time"			"1"
 
-					"drink_duration"					
+					"drink_duration"
 					{
 						"value"						"0"
 						"special_bonus_shard"		"+5"
 					}
-					"AbilityCooldown"				
+					"AbilityCooldown"
 					{
 						"value"						"0"
-						"special_bonus_shard"		"20.0"
+						"special_bonus_shard"		"15"
 					}
 					"AbilityCastPoint"				
 					{
@@ -621,14 +627,14 @@
 					"split_duration"			"0.6"
 					"tooltip_earth_brewling_hp"				
 					{
-						"value"										"1400 2300 3200 4100"	
+						"value"										"1400 2200 3000 3800"	
 						"special_bonus_unique_brewmaster"			"+600"	
 					}
 
 					"tooltip_earth_brewling_damage"				
 					{
 						"value"									"35 70 105 140"
-						"special_bonus_unique_brewmaster_2"		"+13"
+						"special_bonus_unique_brewmaster_2"		"+10"
 					}
 					"tooltip_storm_brewling_hp"				
 					{
@@ -638,7 +644,7 @@
 					"tooltip_storm_brewling_damage"				
 					{
 						"value"									"30 50 70 90"
-						"special_bonus_unique_brewmaster_2"		"+13"
+						"special_bonus_unique_brewmaster_2"		"+10"
 					}
 			
 					"tooltip_fire_brewling_hp"
@@ -648,8 +654,8 @@
 					}
 					"tooltip_fire_brewling_damage"				
 					{
-						"value"									"70 120 170 220"
-						"special_bonus_unique_brewmaster_2"		"+13"
+						"value"									"70 115 160 205"
+						"special_bonus_unique_brewmaster_2"		"+10"
 					}
 			
 					"current_hp_agi"			
@@ -670,7 +676,7 @@
 					"bonus_damage"
 					{
 						"value"									"0"
-						"special_bonus_unique_brewmaster_2"		"+13"
+						"special_bonus_unique_brewmaster_2"		"+10"
 					}
 					"primal_split_cancel"
 					{
@@ -684,24 +690,43 @@
 						"special_bonus_unique_brewmaster_primal_split_cooldown"			"-12"
 					}
 
-					"hp_per_attribute"				
-					{
-						"value"							"0"
-						"special_bonus_scepter"			"0"
-					}
-					"dmg_per_attribute"				
-					{
-						"value"							"0"
-						"special_bonus_scepter"			"0"
-					}
-					"attribute_share_pct"				
-					{
-						"value"							"0"
-						"special_bonus_scepter"			"0"
-					}
 					"give_brawler_passive"						"1"
 					"scepter_bonus_levels"				"1"		
+					"scepter_brewling_items"			"0"
 				}
+			}
+
+			//=================================================================================================================
+			// Brewmaster: Primal Split Earth Brewling
+			//=================================================================================================================
+			"brewmaster_primal_split_earth_brewling"
+			{
+				"BaseClass"						"generic_hidden"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityTextureName"			"brewmaster_earth_hurl_boulder"
+				"MaxLevel"						"0"
+			}
+
+			//=================================================================================================================
+			// Brewmaster: Primal Split Storm Brewling
+			//=================================================================================================================
+			"brewmaster_primal_split_storm_brewling"
+			{
+				"BaseClass"						"generic_hidden"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityTextureName"			"brewmaster_storm_cyclone"
+				"MaxLevel"						"0"
+			}
+
+			//=================================================================================================================
+			// Brewmaster: Primal Split Fire Brewling
+			//=================================================================================================================
+			"brewmaster_primal_split_fire_brewling"
+			{
+				"BaseClass"						"generic_hidden"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+				"AbilityTextureName"			"brewmaster_fire_permanent_immolation"
+				"MaxLevel"						"0"
 			}
 
 			//=================================================================================================================
@@ -882,7 +907,7 @@
 				{
 					"bonus_building_damage"
 					{
-						"value" "40 80 120 160"
+						"value" "30 60 90 120"
 					}
 				}
 			}
@@ -1047,7 +1072,7 @@
 				// General
 				//-------------------------------------------------------------------------------------------------------------
 				"BaseClass"						"brewmaster_void_astral_pull"
-				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -1076,8 +1101,8 @@
 				"AbilityValues"
 				{
 					"AbilityCastRange"			"150"
-					"damage"					"75 150 225"
-					"pull_distance"				"450 575 700"
+					"damage"					"50 100 150 200"
+					"pull_distance"				"400 500 600 700"
 					"pull_duration"				"0.5"
 				}
 			}

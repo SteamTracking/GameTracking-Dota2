@@ -153,12 +153,12 @@
 (CRITICAL ERROR): %s
 (ERROR): %s
 (Missing Content File)
-*** CVfx::StartupSanityCheck(7535): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
+*** CVfx::StartupSanityCheck(7556): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource!\n
 *** Error masking unused parts! Equal sign not found after token "%s"! (line %d)\n
-*** VfxPopulateSourceCache(1209): Error opening file "%s"!\n\n
-*** VfxPopulateSourceCache(1217): Error opening file "%s"!\n\n
-*** VfxReadAndPrepForCrc(1369): Source cache incomplete, file "%s" missing!\n\n
-*** VfxReadAndPrepForCrc(1381): Error masking unused parts for "%s"!\n\n
+*** VfxPopulateSourceCache(1221): Error opening file "%s"!\n\n
+*** VfxPopulateSourceCache(1229): Error opening file "%s"!\n\n
+*** VfxReadAndPrepForCrc(1381): Source cache incomplete, file "%s" missing!\n\n
+*** VfxReadAndPrepForCrc(1393): Error masking unused parts for "%s"!\n\n
 , Refs #%d / 
 - Scripted Sequence: 
 ---- Compile Output ----<font size=-1><pre>\n
@@ -4952,7 +4952,6 @@
 ??0QGraphicsScene@@QEAA@PEAVQObject@@@Z
 ??0QGraphicsView@@QEAA@PEAVQWidget@@@Z
 ??0QModelIndex@@QEAA@XZ
-??0QPainterPath@@QEAA@XZ
 ??0QPoint@@QEAA@XZ
 ??0QProgressDialog@@QEAA@AEBVQString@@0HHPEAVQWidget@@V?$QFlags@W4WindowType@Qt@@@@@Z
 ??0QRectF@@QEAA@NNNN@Z
@@ -5018,7 +5017,6 @@
 ?cubicTo@QPainterPath@@QEAAXAEBVQPointF@@00@Z
 ?data@QGraphicsItem@@QEBA?AVQVariant@@H@Z
 ?defaultTypeFor@QTimer@@CA?AW4TimerType@Qt@@H@Z
-?deleteWidget@QWidgetAction@@MEAAXPEAVQWidget@@@Z
 ?destroy@QWidget@@IEAAX_N0@Z
 ?disconnect@QObject@@QEBA_NPEBDPEBV1@0@Z
 ?doubleClickInterval@QApplication@@SAHXZ
@@ -5130,7 +5128,6 @@
 ?selectedRows@QItemSelectionModel@@QEBA?AV?$QList@VQModelIndex@@@@H@Z
 ?setBackgroundRole@QWidget@@QEAAXW4ColorRole@QPalette@@@Z
 ?setBrush@QAbstractGraphicsShapeItem@@QEAAXAEBVQBrush@@@Z
-?setCheckable@QAbstractButton@@QEAAX_N@Z
 ?setCurrentIndex@QStackedLayout@@QEAAXH@Z
 ?setData@QAbstractItemModel@@UEAA_NAEBVQModelIndex@@AEBVQVariant@@H@Z
 ?setData@QGraphicsItem@@QEAAXHAEBVQVariant@@@Z
@@ -5240,6 +5237,7 @@ Aim Matrix yaw offset %.3f is > max yaw %.3f
 Anim Clip Item
 AnimGraph Choice Node failed to pick a new choice without repeating.  Check the weights on the Choice node.\n
 AnimGraphInstance
+AnimLayer:m_bDisableSequenceFadeOut
 AnimLayer:m_flCycle
 AnimLayer:m_flWeight
 AnimLayer:m_hSequence
@@ -5425,10 +5423,10 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlString,
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlMemoryBlockAllocator<class CVfxStaticComboData,class CMemAllocAllocator>::AddPage
 CUtlSortVector<class CDmxAttribute *,class CDmxAttributeLess,class CUtlVector<class CDmxAttribute *,int,class CUtlVectorMemory_Growable<class CDmxAttribute *,int,0> > >::Find
-CVfx::CreateFromVcs(8254): Error opening file %s\n
-CVfx::CreateFromVcs(8287): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8300): VCS3 %s Load Failure: %s\n
-CVfx::CreateFromVcs(8329): VCS %s Unserialize hit EOF\n
+CVfx::CreateFromVcs(8264): Error opening file %s\n
+CVfx::CreateFromVcs(8297): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8310): VCS3 %s Load Failure: %s\n
+CVfx::CreateFromVcs(8339): VCS %s Unserialize hit EOF\n
 CVfx::ParseResourceFileHeader
 Camera clearance distance parameter is invalid!
 Camera only parameter is invalid!
@@ -5463,7 +5461,6 @@ Compiling %d of %d files %s
 Compiling resulting files...<br>\n
 Conflicts
 Connect
-Connections
 Considered Option
 Contains references to files that are renamed above.
 Contains sub files.  Click > to expand this file and process subfiles.
@@ -5519,8 +5516,6 @@ Destination is invalid (%s) - skipping
 Destination path already exists - overwriting
 Destination path already exists - skipping
 DevShader
-DiffuseColor
-Dimension
 DirBlend:m_flCycleZeroTime
 DirBlend:m_flPlaybackRate
 DirBlend:m_resetCount
@@ -5722,8 +5717,6 @@ Expression Action trying to set an invalid or missing parameter
 Expression Action trying to set parameter "%s" which is not writable by the graph
 ExternalDescSet
 FBX 
-FBXHeaderExtension
-FBXVersion
 FEATURES
 Face Down Path
 Face Look Target
@@ -5750,7 +5743,6 @@ Fallback hinge
 File Count
 File does not exist.  Filename: %s
 File is in a read-only search path! (Run with -noreadonlyassets to allow, but local readonly database will not be updated.)
-FileName
 Files
 Files:
 Final pivot orientation
@@ -5776,7 +5768,6 @@ FootLock:m_resetCount
 FootPinning:ResetCount
 Force Body Facing
 Force Facing
-Format
 Found parameter [%s] with invalid ID, generating one.
 Found tag [%s] with invalid ID, generating a new one.
 From: %s<br>&nbsp;&nbsp;To: %s<br><br>\n
@@ -5788,7 +5779,6 @@ Generate Exclude.Filelist
 Generate Filenames.  Base Name:
 Generate Movement is enabled but the Movement Velocity parameter is missing
 Generate Report
-Geometry
 GetCycle() %s %s
 GetStateWeight( %i )
 GetTimeInState() %s (%s)
@@ -6032,7 +6022,6 @@ Original Foot
 Original Joint
 Original Knee
 Original Thigh
-Original|FileName
 Output ID
 Override target content folder
 Overwrite Existing Files?
@@ -6055,6 +6044,7 @@ PC_SM_6_0_VULKAN
 PLUS %d ADDITIONAL REFERENCES
 PLUS ADDITIONAL REFERENCES NOT LISTED HERE\n
 PLUS ONE ADDITIONAL REFERENCE
+PS_CS
 PS_RENDER_STATE
 PS_RTX
 Packed data buffer overflow: %d > %d\n
@@ -6103,8 +6093,6 @@ ProgressThread
 ProgressThreadDataMutex
 ProgressThreadWndClass
 Promote to active mod (%1)
-Properties60
-Properties70
 QLineEdit { color : rgb( 0, 255, 0 ); 
 QLineEdit { color : rgb( 0, 255, 255 ); 
 QLineEdit { color : rgb( 160, 160, 160 );
@@ -6122,7 +6110,6 @@ Reference to missing animation %s
 Referenced Files in entire Depot
 References assets in the tree that aren't being deleted.
 References: %1
-RelativeFilename
 Remap Value Component
 Remap references to this asset...
 RemapAsset
@@ -6162,7 +6149,6 @@ Root to tilt bone original
 RowStateChanged
 Samples
 Samples: %i  Dimensions: %i\n
-Scene
 Script Component
 Scripts to Run
 Select For Preview of: %1
@@ -6410,7 +6396,6 @@ Weapon de-penetration delta parameter is invalid!
 Weapon de-penetration distance parameter is invalid!
 Weight List
 Weight Lists
-Weights
 While Current
 While Fully Blended
 World space tilt normal
@@ -7133,6 +7118,7 @@ m_attribIdx
 m_attributes
 m_bAllowLayerOverride
 m_bDevShader
+m_bDisableSequenceFadeOut
 m_bGlobalsBDA
 m_bHasShaderProgram
 m_bIsLayerConstant

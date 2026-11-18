@@ -17,6 +17,7 @@ enum EBaseGameEvents {
 	GE_SosStopSoundEventHash = 212;
 	GE_ClothStiffenAnimEvent = 213;
 	GE_ClothEffectAnimEvent = 214;
+	GE_MoveWorldDecalsEvent = 215;
 }
 
 message CMsgVDebugGameSessionIDEvent {
@@ -44,6 +45,12 @@ message CMsgPlaceDecalEvent {
 
 message CMsgClearWorldDecalsEvent {
 	optional uint32 flagstoclear = 1;
+}
+
+message CMsgMoveWorldDecalsEvent {
+	optional .CMsgVector mins = 1;
+	optional .CMsgVector maxs = 2;
+	optional .CMsgVector offset = 3;
 }
 
 message CMsgClearEntityDecalsEvent {

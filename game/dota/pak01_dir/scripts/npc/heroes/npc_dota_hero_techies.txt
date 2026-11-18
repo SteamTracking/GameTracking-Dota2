@@ -45,8 +45,8 @@
 		"Ability6"		"techies_land_mines"
 		"Ability7"		"techies_reactive_tazer_stop"
 		"Ability8"		"techies_focused_detonate"
-		"Ability10"		"special_bonus_magic_resistance_15"
-		"Ability11"		"special_bonus_unique_techies_3"
+		"Ability10"		"special_bonus_unique_techies_6"
+		"Ability11"		"special_bonus_mp_150"
 		"Ability12"		"special_bonus_unique_techies"
 		"Ability13"		"special_bonus_unique_techies_tazer_duration"
 		"Ability14"		"special_bonus_unique_techies_2"
@@ -341,12 +341,11 @@
 		
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCooldown"				"0"
-				"AbilityCharges"				"3"
+				"AbilityCooldown"				"0.25"
 	
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"110 140 170"
+				"AbilityManaCost"				"125 175 225"
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -370,28 +369,32 @@
 						}
 						"activation_delay"			
 						{
-							"value"		"1"
-							"special_bonus_unique_techies_4"	"-0.8"
-							"display_type"			"kDuration"
+							"value"								"1"
+							"display_type"						"kDuration"
 						}
 						"cast_range_scepter_bonus"		
 						{
 							"special_bonus_scepter"		"300"
 						}
+						"AbilityCharges"
+						{
+							"value"								"3"
+							"special_bonus_unique_techies_6"	"+1"
+						}
 						"AbilityChargeRestoreTime"
 						{
-							"value"		"15"
-							"special_bonus_unique_techies_3"	"-2"
+							"value"								"14 13 12"
 						}
 						"outer_damage"				"50"
 						"min_distance"				"150"
 						"placement_radius"			"350"
 						"mres_reduction"
 						{
-							"value"					"15 20 25"
+							"value"								"12 16 20"
 							"display_type"			"kDebuffPercentage"
 						}
 						"burn_duration"				"4"
+						"tooltip_health_pips"		"1"
 				}
 				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 			}
@@ -618,7 +621,7 @@
 						"duration"				"1.2"
 						"countdown"
 						{
-							"value"				"2"
+							"value"				"1.5"
 							"display_type"		"kDuration"
 						}
 						"radius"				
@@ -630,7 +633,6 @@
 						{
 							"value"	"95 170 245 320"
 							"special_bonus_unique_techies_2" "+160"
-
 						}
 						"slow"
 						{
@@ -647,6 +649,16 @@
 						{
 							"value"				"350"					
 							"affected_by_aoe_increase"	"1"	
+						}
+						"stun_on_explosion"
+						{
+							"value"								"0"
+							"special_bonus_unique_techies_4"	"=1"
+						}
+						"explosion_stun_duration"
+						{
+							"value"								"0"
+							"special_bonus_unique_techies_4"	"+1.5"
 						}
 						"speed"					"500.0"
 						"acceleration"			"2000"
@@ -716,7 +728,8 @@
 
 					"damage"	
 					{
-						"value"			"60 110 160 210"
+						"value"									"60 110 160 210"
+						"special_bonus_unique_techies_3"		"+75"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 					}
 				}
@@ -974,13 +987,14 @@
 				"HasShardUpgrade"				"1"
 				"AbilityCastPoint"				"1.0"
 				"TooltipSummaryProperties"		"bonus_mana_as_mana_regen;#DOTA_Tooltip_ability_techies_mutually_assured_destruction___damage"
+				"IsBreakable"					"1"
 		
 				"AbilityValues"
 				{
 
 					"bonus_mana_as_mana_regen"		
 					{
-						"value"				"0.1"
+						"value"				"0.10"
 						"hero_levelup"		"+0.01"
 						"display_type"		"kBuffPercentage"
 					}
@@ -993,7 +1007,7 @@
 					"max_mana_pct_as_damage"		
 					{
 						"value"						"30"
-						"special_bonus_shard"		"+10"
+						"special_bonus_shard"		"+15"
 						"display_type"				"kMagicalDamagePercentage"
 					}	
 					"current_mana_regen"	
@@ -1020,6 +1034,11 @@
 					{
 						"value"						"0"
 						"special_bonus_shard"		"450"
+					}
+
+					"tooltip_health_pips"
+					{
+						"special_bonus_shard"		"3"
 					}
 				}
 			}

@@ -52,9 +52,9 @@
 		"Ability11"		"special_bonus_armor_4"
 		"Ability12"		"special_bonus_unique_leshrac_6"
 		"Ability13"		"special_bonus_unique_leshrac_4"
-		"Ability14"		"special_bonus_unique_leshrac_7"
+		"Ability14"		"special_bonus_unique_leshrac_1"
 		"Ability15"		"special_bonus_unique_leshrac_3"
-		"Ability16"		"special_bonus_unique_leshrac_1"
+		"Ability16"		"special_bonus_unique_leshrac_7"
 		"Ability17"		"special_bonus_unique_leshrac_pulse_nova_lightning"
 		"Facets"
 		{
@@ -82,9 +82,10 @@
 			}
 		}
 		"ArmorPhysical"		"1"
+		"StatusHealthRegen"		"0.5"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"27"
-		"AttackDamageMax"		"31"
+		"AttackDamageMax"		"33"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"		"800"
@@ -331,7 +332,7 @@
 						"num_explosions"		
 						{
 							"value"		"40"
-						"special_bonus_unique_leshrac_1" "+20"
+						"special_bonus_unique_leshrac_1" "+10"
 						}
 			
 						"radius"			
@@ -431,8 +432,9 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE| DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 				"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-				"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+				"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				"FightRecapLevel"				"1"
 				"HasScepterUpgrade"				"1"
 				"MaxLevel"						"1"
@@ -440,7 +442,7 @@
 		
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 				"AbilityCastGestureSlot"		"DEFAULT"
 
 				// Time		
@@ -449,20 +451,20 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"75"
+				"AbilityManaCost"				"125"
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"duration"		"4"
-					"magic_amp"		"30"
-					"slow"			"40"
+					"duration"		"4.0"
 					"radius"
 					{
-						"value"		"500"
+						"value"		"550"
 						"affected_by_aoe_increase"		"1"
 					}
+
+					"self_movement_speed_bonus_pct"		"0"
 				}
 			}
 
@@ -508,7 +510,7 @@
 						}
 						"damage"
 						{
-							"value"			"80 135 180"
+							"value"			"80 130 180"
 						"special_bonus_unique_leshrac_3" "+30"
 						}
 						"damage_resistance"
@@ -550,12 +552,13 @@
 				"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				"Innate"						"1"
 				"MaxLevel"						"1"
+				"IsBreakable"					"1"
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"aoe_per_int"				"0.7"
+					"aoe_per_int"				"0.6"
 					"current_aoe_bonus"
 					{
 						"dynamic_value"			"true"

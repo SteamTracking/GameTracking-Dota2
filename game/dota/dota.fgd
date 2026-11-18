@@ -350,12 +350,12 @@ editormodel
 	ForcedSubType(choices) :"Force Spawn Type" : 0 =
 	[
 		0: "Random (Normal Gamerules)"
-		1: "Kobolds (E), Ogres (M), Centaurs (H), Drakes (A)"
-		2: "Gnolls (E), Wolves (M), Troll Warlord (H), Rock Golems (A)"
-		3: "Troll Priest (E), Mud Golems (M), Ursa (H), Lizards (A)"
-		4: "Trolls & Kobold (E), Satyrs (M), Satyrs (H), Frostbitten Golems (A)"
-		5: "Ghosts (E), Centaurs (M), Wildkin (H), Prowlers (A)"
-		6: "Harpies (E), Warpine (H)"
+		1: "Kobolds (E), Ogres (M), Centaurs (H), Rock Golems (A)"
+		2: "Trolls & Kobold (E), Wolves (M), Eimermoles (H), Ogre Seals (A)"
+		3: "Troll Priest (E), Radigulls (M), Wildkin (H), Frostbitten Golems "
+		4: "Gnolls (E), Satyrs (M), Ursa (H), Drakes (A)"
+		5: "Ghosts (E), Mud Golems (M), Satyrs (H), Prowlers (A)"
+		6: "Harpies (E), Odobenus (M), Troll Warlord (H)"
 		7: "Tadpoles (E), Froglets (M), Grown Frog (H), Ancient Frogs (A)"
 	]
 
@@ -363,23 +363,25 @@ editormodel
 
 	MinSpawnType(choices) : "Min Spawn Type" : 1 = 
 	[
-		1: "Kobolds (E), Ogres (M), Centaurs (H), Drakes (A) - (Normal Gamerules)"
-		2: "Gnolls (E), Wolves (M), Troll Warlord (H), Rock Golems (A)"
-		3: "Troll Priest (E), Mud Golems (M), Ursa (H), Lizards (A)"
-		4: "Trolls & Kobold (E), Satyrs (M), Satyrs (H), Frostbitten Golems (A)"
-		5: "Ghosts (E), Centaurs (M), Wildkin (H), Prowlers (A)"
-		6: "Harpies (E), Warpine (H)"
+		0: "Random (Normal Gamerules)"
+		1: "Kobolds (E), Ogres (M), Centaurs (H), Rock Golems (A)"
+		2: "Trolls & Kobold (E), Wolves (M), Eimermoles (H), Ogre Seals (A)"
+		3: "Troll Priest (E), Radigulls (M), Wildkin (H), Frostbitten Golems "
+		4: "Gnolls (E), Satyrs (M), Ursa (H), Drakes (A)"
+		5: "Ghosts (E), Mud Golems (M), Satyrs (H), Prowlers (A)"
+		6: "Harpies (E), Odobenus (M), Troll Warlord (H)"
 		7: "Tadpoles (E), Froglets (M), Grown Frog (H), Ancient Frogs (A)"
 	]
 	
 	MaxSpawnType(choices) : "Max Spawn Type" : 6 = 
 	[
-		1: "Kobolds (E), Ogres (M), Centaurs (H), Drakes (A)"
-		2: "Gnolls (E), Wolves (M), Troll Warlord (H), Rock Golems (A)"
-		3: "Troll Priest (E), Mud Golems (M), Ursa (H), Lizards (A)"
-		4: "Trolls & Kobold (E), Satyrs (M), Satyrs (H), Frostbitten Golems (A)"
-		5: "Ghosts (E), Centaurs (M), Wildkin (H), Prowlers (A)"
-		6: "Harpies (E), Warpine (H)"
+		0: "Random (Normal Gamerules)"
+		1: "Kobolds (E), Ogres (M), Centaurs (H), Rock Golems (A)"
+		2: "Trolls & Kobold (E), Wolves (M), Eimermoles (H), Ogre Seals (A)"
+		3: "Troll Priest (E), Radigulls (M), Wildkin (H), Frostbitten Golems "
+		4: "Gnolls (E), Satyrs (M), Ursa (H), Drakes (A)"
+		5: "Ghosts (E), Mud Golems (M), Satyrs (H), Prowlers (A)"
+		6: "Harpies (E), Odobenus (M), Troll Warlord (H)"
 		7: "Tadpoles (E), Froglets (M), Grown Frog (H), Ancient Frogs (A)"
 	]
 
@@ -491,6 +493,7 @@ editormodel
 @BaseClass = DotaPlayerStart
 [
 	Disabled( boolean ) : "Disabled" : "0" : "If disabled this entity will not be used when picking a location to spawn a player at."
+	team_slot( integer ) : "Team Slot" : 0 : "If set (1-5), heroes in this team slot always spawn here. 0 = any player."
 	input SetEnabled( void ) : "Enable this player start location, allowing it to be picked as spawn location for players."
 	input SetDisabled( void ) : "Disable this player start location, preventing it from being picked as a location where players will spawn."
 	input SetEnabledExclusively( void ) : "Enabled this player start location and disable all others."
@@ -781,6 +784,7 @@ editormodel
 @PointClass base( dota_building ) studioprop() = npc_dota_building: 
 	"Creates a simple building."
 [
+
 ]
 
 @PointClass base( dota_building) studioprop() = npc_dota_fort: 
@@ -838,7 +842,7 @@ editormodel
 [
 ]
 
-@PointClass base(prop_dynamic_base, Targetname, dota_building) studioprop() = npc_dota_unit_item_stone_of_recall:
+@PointClass base(prop_dynamic_base, Targetname, dota_building) studioprop() = npc_dota_stone_of_recall:
 	"A recall stone."
 [
 ]
@@ -946,6 +950,11 @@ editormodel
 
 @SolidClass base(Trigger) = trigger_boss_attackable : 
 	"Boss (Roshan) is attackable from here."
+[
+]
+
+@SolidClass base(Trigger) = trigger_roshan_obstruction :
+	"Cliffs around Roshan. Mars' Spear stuns enemies pushed into this volume."
 [
 ]
 
@@ -1386,7 +1395,7 @@ editormodel
 	output OnEndTouchAll(void) : "Fired when the last unit steps off the plate. A latching plate does not rise, but this still fires."
 ]
 
-@OverrideClass = prop_static
+@OverrideClass sphere(grass_exclusion_radius, 100 200 100, singleSelect) = prop_static
 [
 	grass_exclusion_radius(float) : "Grass Exclusion Radius" : 0 : "Don't grow grass within this radius."
 ]
@@ -1457,6 +1466,12 @@ editormodel
 		1: "Moderate"
 		2: "Fast"
 	]
+	PathNPCType(choices)  { write_to_path_key = "pathNodeNPCType" } : "NPC Type" : 0 :"The type of NPCs that are affected by the path." =
+	[
+		0: "Player Owned"
+		1: "Lane Creeps"
+	]
+
 ]
 
 @PathClass base(Targetname) tags( PathLogical )
@@ -1492,4 +1507,14 @@ editormodel
 	number_of_crows(integer) : "Number of Crows" : 10 : "How many crows in the murder"
 	crow_speed(float) : "Crow Speed" : 80 : "How fast are the crows"
 	crow_scale(float) : "Crow Scale" : 1 : "What should the crow model be scaled by"
+]
+
+@SolidClass base(Targetname)
+	metadata
+	{
+		auto_apply_material = "materials/tools/toolsclip.vmat"
+	}
+	= func_dota_nav_blocker :
+	"Blocks all gridnav tiles within its bounds."
+[
 ]

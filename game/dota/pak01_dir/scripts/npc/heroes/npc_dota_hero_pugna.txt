@@ -50,9 +50,9 @@
 		}
 
 		"Ability10"		"special_bonus_unique_pugna_4"
-		"Ability11"		"special_bonus_unique_pugna_6"
+		"Ability11"		"special_bonus_hp_200"
 		"Ability12"		"special_bonus_unique_pugna_decrepify_ally_movespeed"
-		"Ability13"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_unique_pugna_6"
 		"Ability14"		"special_bonus_unique_pugna_1"
 		"Ability15"		"special_bonus_unique_pugna_5"
 		"Ability16"		"special_bonus_unique_pugna_2"
@@ -84,16 +84,16 @@
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.500000"
 		"AttackAcquisitionRange"		"800"
-		"AttackRange"		"630"
+		"AttackRange"		"600"
 		"ProjectileModel"		"particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"19"
 		"AttributeStrengthGain"		"2.00000"
-		"AttributeBaseAgility"		"21"
-		"AttributeAgilityGain"		"1.300000"
-		"AttributeBaseIntelligence"		"27"
-		"AttributeIntelligenceGain"		"5.20000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.500000"
+		"AttributeBaseIntelligence"		"29"
+		"AttributeIntelligenceGain"		"4.50000"
 		"StatusManaRegen"	"0.75"
 		"MovementSpeed"		"325"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
@@ -328,7 +328,7 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"80"
+				"AbilityManaCost"				"50 60 70 80"
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -342,7 +342,7 @@
 					}
 					"bonus_spell_damage_pct"	
 					{
-						"value"		"-20 -30 -40 -50"
+						"value"		"-16 -24 -32 -40"
 						"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
 					}
 					"bonus_movement_speed"		"-45 -50 -55 -60"
@@ -379,7 +379,7 @@
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"80"		
+				"AbilityManaCost"				"75 100 125 150"		
 
 				// Special
 				//-------------------------------------------------------------------------------------------------------------
@@ -411,8 +411,8 @@
 
 					"attacks_to_destroy"
 					{
-						"value"				"4 4 4 4"
-						"special_bonus_unique_pugna_6"		"+2"
+						"value"				"3 4 5 6"
+						
 					}
 					"spell_damage_reduction"
 					{
@@ -451,23 +451,21 @@
 				"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 				"FightRecapLevel"				"1"
 				"HasShardUpgrade"			"1"
-				"HasScepterUpgrade"			"1"
 
 				// Casting
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityCastRange"				"700"
 				"AbilityCastPoint"				"0.2 0.2 0.2"
-				"AbilityChannelTime"			"10.0"
 				"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-				"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
 				// Time		
 				//-------------------------------------------------------------------------------------------------------------
+				"AbilityDuration"				"10.0"
 		
 
 				// Cost
 				//-------------------------------------------------------------------------------------------------------------
-				"AbilityManaCost"				"115 160 205"
+				"AbilityManaCost"				"100 150 200"
 		
 				// Stats
 				//-------------------------------------------------------------------------------------------------------------
@@ -477,21 +475,17 @@
 				//-------------------------------------------------------------------------------------------------------------
 				"AbilityValues"
 				{
-					"health_drain"
+					"life_drain"
 					{
 						"value"					"150 250 350"
 						"CalculateSpellDamageTooltip"	"1"
 						"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+						"special_bonus_unique_pugna_1"	"+50"
 					}
 
 					"health_drain_death_boost"
 					{
 						"value"					"0"
-					}
-
-					"ally_healing"
-					{
-						"value"					"150 250 350"
 					}
 					"health_to_mana_rate"		"0"
 					"tick_rate"					"0.25 0.25 0.25"
@@ -500,46 +494,28 @@
 					{
 						"special_bonus_shard"			"75"
 					}
-					"bonus_heal_pct"
+					"spell_amp_drain_rate"		"0"
+					"spell_amp_drain_max"		"0"
+					"spell_amp_drain_rate_ward"	"0"
+					"spell_amp_drain_duration"	"0"
+					"max_spell_amp_drain_pct"	"0"
+					"AbilityCooldown"			
 					{
-						"special_bonus_unique_pugna_1"			"+15"
-					}
-					"spell_amp_drain_rate"
-					{
-						"special_bonus_scepter"		"+8"
-					}
-					"spell_amp_drain_max"
-					{
-						"special_bonus_scepter"		"+75"
-					}
-					"spell_amp_drain_rate_ward"
-					{
-						"special_bonus_scepter"		"+4"
-					}
-					"spell_amp_drain_duration"
-					{
-						"special_bonus_scepter"		"+8"
-					}			
-					"max_spell_amp_drain_pct"
-					{
-						"special_bonus_scepter"		"+100"
-					}	
-					"AbilityCooldown"				
-					{
-						"value"						"7"
-						"special_bonus_scepter"		"-50%"
+						"value"								"7"
+						"special_bonus_unique_pugna_6"		"-3"
 					}
 				}
 			}
 
 			//=================================================================================================================
-			// Ability: Cast While Channeling
+			// Ability: Oblivion Savant
 			//=================================================================================================================
 			"pugna_oblivion_savant"
 			{
-				"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+				"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 				"Innate"				"1"
 				"MaxLevel"				"1"
+				"HasScepterUpgrade"		"1"
 
 				"AbilityValues"
 				{
@@ -547,6 +523,21 @@
 					"spell_amp_tooltip"
 					{
 						"dynamic_value"						"true"
+					}
+
+					"AbilityCharges"
+					{
+						"special_bonus_scepter"				"2"
+					}
+
+					"AbilityChargeRestoreTime"
+					{
+						"special_bonus_scepter"		"20"
+					}
+
+					"recast_min_cooldown"
+					{
+						"special_bonus_scepter"			"0.25"
 					}
 				}
 			}

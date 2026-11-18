@@ -716,6 +716,20 @@ function CHeroDemo:OnSpawnSingleCreepWaveButtonPressed( eventSourceIndex )
 end
 
 --------------------------------------------------------------------------------
+-- ButtonEvent: OnGiveMadstoneButtonPressed
+--------------------------------------------------------------------------------
+function CHeroDemo:OnGiveMadstoneButtonPressed( eventSourceIndex, data )
+	local hPlayerHero = PlayerResource:GetSelectedHeroEntity( data.PlayerID )
+	if hPlayerHero == nil then
+		return
+	end
+
+	-- Madstone bundle is cast on pickup, crediting madstone to the hero's player (hero demo has no madstone cap)
+	hPlayerHero:AddItemByName( "item_madstone_bundle" )
+	EmitGlobalSound( "UI.Button.Pressed" )
+end
+
+--------------------------------------------------------------------------------
 
 function CHeroDemo:RemoveCreeps()
 

@@ -102,6 +102,7 @@
 %-23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s\n
 %-8d
 %.14s.%03dZ
+%0.2f
 %019llu
 %02X%02X
 %02X:
@@ -138,6 +139,7 @@
 %ld bytes leaked in %d chunks\n
 %ld\n
 %lluus(%llums) to remap %i faces\n
+%llx\n
 %lu:%s:%s:%d:%s\n
 %s %2d %02d:%02d:%02d %d%s
 %s %2d %02d:%02d:%02d%.*s %d%s
@@ -171,6 +173,7 @@
 %s%c%08lx.%s%d
 %s%i
 %s%i_
+%s%s (%s)
 %s%s%s crc=0x%x metadatasz=%d
 %s%s.vmat
 %s%s\%s.%s
@@ -188,8 +191,12 @@
 %sVertices
 %s_%03d.vpk
 %s_%d_ang
+%s_%d_dont_snap_to_ground
+%s_%d_dont_snap_to_nav
 %s_%d_extent_max
 %s_%d_extent_min
+%s_%d_ground_trace_distance
+%s_%d_max_distance_from_nav
 %s_%d_only_warp_position
 %s_%d_pos
 %s_%d_radius
@@ -215,8 +222,10 @@
 (channel = 
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 (knN(kn
+(unnamed)
 * - Match Any
 +Parameters
+, %d more element(s)...
 , Type=
 , at offset %d
 , near %s
@@ -336,6 +345,10 @@
 .?AUCAttr_m_bDebugDrawValues@?1??GetAttributeTable_CMapTerrainLayerPaintable@CMapTerrainLayerPaintable@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDisableHeightDisplacement@?1??GetAttributeTable_CMapMeshBase@CMapMeshBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDisableMerging@?1??GetAttributeTable_CMapMeshBase@CMapMeshBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_bDontSnapToGround@?1??GetAttributeTable_CMapChoreoAnchorLocator@CMapChoreoAnchorLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_bDontSnapToGround@?1??GetAttributeTable_CMapChoreoAnchorLocatorData_t@CMapChoreoAnchorLocatorData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_bDontSnapToNav@?1??GetAttributeTable_CMapChoreoAnchorLocator@CMapChoreoAnchorLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_bDontSnapToNav@?1??GetAttributeTable_CMapChoreoAnchorLocatorData_t@CMapChoreoAnchorLocatorData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bDrawPoints@?1??GetAttributeTable_CMapTerrainDetail@CMapTerrainDetail@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bEditorOnly@?1??GetAttributeTable_CMapNode@CMapNode@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bEmissiveLightingEnabled@?1??GetAttributeTable_CMapMeshBase@CMapMeshBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -404,8 +417,12 @@
 .?AUCAttr_m_flFadeMinDist@?1??GetAttributeTable_CMapMeshBase@CMapMeshBase@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flFadeStartDistance@?1??GetAttributeTable_CMapSmartProp@CMapSmartProp@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flFov@?1??GetAttributeTable_CMapSavedCamera@CMapSavedCamera@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_flGroundTraceDistance@?1??GetAttributeTable_CMapChoreoAnchorLocator@CMapChoreoAnchorLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_flGroundTraceDistance@?1??GetAttributeTable_CMapChoreoAnchorLocatorData_t@CMapChoreoAnchorLocatorData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flLimitMax@?1??GetAttributeTable_CMapSmartPropLocator@CMapSmartPropLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flLimitMin@?1??GetAttributeTable_CMapSmartPropLocator@CMapSmartPropLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_flMaxDistanceFromNav@?1??GetAttributeTable_CMapChoreoAnchorLocator@CMapChoreoAnchorLocator@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_flMaxDistanceFromNav@?1??GetAttributeTable_CMapChoreoAnchorLocatorData_t@CMapChoreoAnchorLocatorData_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flMaxError@?1??GetAttributeTable_CMapDeformerPath@CMapDeformerPath@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flObjectSpacing@?1??GetAttributeTable_CMapTerrainDetail@CMapTerrainDetail@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_flOcclusionDeviation@?1??GetAttributeTable_CSteamAudioImportedProbeNode@CSteamAudioImportedProbeNode@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -624,12 +641,14 @@
 .?AV<lambda_1>@?1??CollectAreasAssociatedWithMovableMeshInternal@CNavMovableMeshCatalog@@AEAAXIPEAIPEAV?$CUtlVector@V?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@HV?$CUtlVectorMemory_Growable@V?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@H$0A@@@@@PEAV?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@@Z@
 .?AV<lambda_1>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@
 .?AV<lambda_1>@?1??Restart@CNewParticleEffect@@QEAAXXZ@
-.?AV<lambda_1>@?1??UpdateLocators@CMapPrefabVariableLocator@@SAXPEAVCMapNode@@PEBVCMapVariableSet@@PEBVCMapPrefab@@W4EMapPrefabVariableUsageType_t@@AEBV?$function@$$A6AXPEAVCMapPrefabVariableLocator@@_N@Z@std@@@Z@
 .?AV<lambda_1>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@
 .?AV<lambda_1>@?CC@??QuarterSizeAttrWithBoxFilter@CSOAContainer@@QEAAXAEBV2@HHPEAVCCallQueue@@@Z@
+.?AV<lambda_2>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@
 .?AV<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@
-.?AV<lambda_2>@?1??UpdateLocators@CMapPrefabVariableLocator@@SAXPEAVCMapNode@@PEBVCMapVariableSet@@PEBVCMapPrefab@@W4EMapPrefabVariableUsageType_t@@AEBV?$function@$$A6AXPEAVCMapPrefabVariableLocator@@_N@Z@std@@@Z@
+.?AV<lambda_2>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@
 .?AV<lambda_2>@?DE@??QuarterSizeAttrWithBoxFilter@CSOAContainer@@QEAAXAEBV2@HHPEAVCCallQueue@@@Z@
+.?AV<lambda_3>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@
+.?AV<lambda_3>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@
 .?AV?$CBaseAppSystem@VIToolSceneNodeFactory@@@@
 .?AV?$CBaseConcreteToolAttr@$$BY03W4MapTestNodeEnum_t@@VCMapTestNode@@@@
 .?AV?$CBaseConcreteToolAttr@EVCMapStaticOverlay@@@@
@@ -1890,21 +1909,23 @@
 .?AV?$IToolAttr_TypedValue@W4SteamAudioImportedProbeType_t@@@@
 .?AV?$IToolAttr_TypedValue@_K@@
 .?AV?$_Func_base@XAEAVCNavArea@@@std@@
-.?AV?$_Func_base@XPEAVCMapPrefabVariableLocator@@@std@@
-.?AV?$_Func_base@XPEAVCMapPrefabVariableLocator@@_N@std@@
+.?AV?$_Func_base@XPEAVCMapPrefabVariableLocator@@H@std@@
 .?AV?$_Func_base@XPEAVCQSessionCycleWidget@@@std@@
 .?AV?$_Func_base@_NPEBVCMapPrefabVariableLocator@@@std@@
+.?AV?$_Func_base@_NPEBVCMapPrefabVariableLocator@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CQSessionCycleWidget@@EAAXXZ$$V@CBindableCommand@?$CBindTargetDescriptor@VCQSessionCycleWidget@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CQSessionCycleWidget@@EAAXXZ@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SetFunction@P8CQSessionCycleWidget@@EAAX_N@Z_N@CBindableCommand@?$CBindTargetDescriptor@VCQSessionCycleWidget@@@@QEAAAEAV23@W4BindableCommandStage_t@@P8CQSessionCycleWidget@@EAAX_N@Z1@Z@XPEAV5@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??CollectAreasAssociatedWithMovableMeshInternal@CNavMovableMeshCatalog@@AEAAXIPEAIPEAV?$CUtlVector@V?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@HV?$CUtlVectorMemory_Growable@V?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@H$0A@@@@@PEAV?$CUtlVector@PEAVCNavArea@@HV?$CUtlVectorMemory_Growable@PEAVCNavArea@@H$0A@@@@@@Z@XAEAVCNavArea@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@XPEAVCMapPrefabVariableLocator@@_N@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@_NPEBVCMapPrefabVariableLocator@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??Restart@CNewParticleEffect@@QEAAXXZ@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??UpdateLocators@CMapPrefabVariableLocator@@SAXPEAVCMapNode@@PEBVCMapVariableSet@@PEBVCMapPrefab@@W4EMapPrefabVariableUsageType_t@@AEBV?$function@$$A6AXPEAVCMapPrefabVariableLocator@@_N@Z@std@@@Z@_NPEBV3@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@XPEAVCMapPrefabVariableLocator@@_N@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@_NPEBVCMapPrefabVariableLocator@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?CC@??QuarterSizeAttrWithBoxFilter@CSOAContainer@@QEAAXAEBV3@HHPEAVCCallQueue@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@_NPEBVCMapPrefabVariableLocator@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??UpdateLocators@CMapPrefabVariableLocator@@SAXPEAVCMapNode@@PEBVCMapVariableSet@@PEBVCMapPrefab@@W4EMapPrefabVariableUsageType_t@@AEBV?$function@$$A6AXPEAVCMapPrefabVariableLocator@@_N@Z@std@@@Z@XPEAV3@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@_NPEBVCMapPrefabVariableLocator@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?DE@??QuarterSizeAttrWithBoxFilter@CSOAContainer@@QEAAXAEBV3@HHPEAVCCallQueue@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?1??RebuildInstanceLocators@CMapPrefab@@AEAAXXZ@XPEAVCMapPrefabVariableLocator@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?1??UpdateMapVariableLocators@CMapWorld@@QEAAXXZ@XPEAVCMapPrefabVariableLocator@@H@std@@
 .?AVCAlignedBoxHelper@@
 .?AVCAnglesHelper@@
 .?AVCAnglesLocalHelper@@
@@ -1985,6 +2006,7 @@
 .?AVCExternalMapHelper@@
 .?AVCExternalMapInstance@@
 .?AVCExternalMapView@@
+.?AVCExtraVertexData@@
 .?AVCFaceSelectionData@@
 .?AVCFaceSelectionSetDataElement@@
 .?AVCFogHelper@@
@@ -2021,7 +2043,7 @@
 .?AVCKV3Transfer_EmptyResourceLoadInterface@@
 .?AVCLODHintHelper@@
 .?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?1???R<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@QEBA@XZ@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?1???R<lambda_2>@?1??SimulateParticles@CParticleMgr@@AEAAXAEAV?$CUtlVectorFixedGrowableCompat@UParticleSimListItem_t@CParticleMgr@@$0EAA@H@@@Z@QEBA@XZ@@Z@
-.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?CD@??FrameUpdate@CMapDoc@@QEAAXM_N0@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?CD@??FrameUpdate@CMapDoc@@QEAAXM_N2@Z@@Z@
+.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?CD@??FrameUpdate@CMapDoc@@QEAAXM_N0W4TransformOperationMode_t@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?CD@??FrameUpdate@CMapDoc@@QEAAXM_N2W4TransformOperationMode_t@@@Z@@Z@
 .?AVCLayer@CMapDotaTileGrid@@
 .?AVCLayerList@CMapDotaTileGrid@@
 .?AVCLeanSphereHelper@@
@@ -2100,6 +2122,7 @@
 .?AVCMapSmartPropParameter@@
 .?AVCMapSmartPropShapeMesh@@
 .?AVCMapSmartPropShapePath@@
+.?AVCMapSmartPropShapeTriangleSurface@@
 .?AVCMapSmartPropUpdateJob@@
 .?AVCMapSpawnGroup@@
 .?AVCMapStaticOverlay@@
@@ -2177,6 +2200,7 @@
 .?AVCPulseCursorBaseObservableScope@@
 .?AVCPulseExecCursor@@
 .?AVCPulseGraphLoadContext@@
+.?AVCPulseInstanceLoadAPI@@
 .?AVCPulseInstanceLoadAPI_NoOp@@
 .?AVCPulseInterfaceHelpers_Load_NoOp@@
 .?AVCQConnectHelper_QWidget@@
@@ -2293,7 +2317,6 @@
 .?AVIPulseHost_Cursor@@
 .?AVIPulseHost_Unknown@@
 .?AVIPulseHost_YieldingCursor@@
-.?AVIPulseInstanceLoadAPI@@
 .?AVIRaytraceEnvironmentOwner@@
 .?AVISceneObjectDesc@@
 .?AVISelectionSet@@
@@ -2302,6 +2325,7 @@
 .?AVISmartPropShape@@
 .?AVISmartPropShapeMesh@@
 .?AVISmartPropShapePath@@
+.?AVISmartPropShapeTriangleSurface@@
 .?AVIStreamDataBuffer@@
 .?AVIStringFGDTargetResolver@@
 .?AVITerrainDataSource@@
@@ -2594,6 +2618,7 @@
 0 to 1 value controlling how much random offset is applied to each point. A value of 0 will generate a regular grid of points.
 0 to 1 value specifying the location on the local x-axis of the deformer around which the bend will occur. A value of 0 means the bend will occur around the minimum end of the deformer, a value of 1 means the bend will occur around the maximum end of the deformer, a value of 0.5 means the bend will occur at the center of the deformer volume.
 0.0 inside
+0.0 occluded
 0123456789
 1 component
 1 edge
@@ -2601,6 +2626,7 @@
 1 object
 1 tile
 1 vertex
+1.0 clear
 1.0 outside
 1280x720
 14 (default)
@@ -2913,7 +2939,6 @@ Animgraph Model base mismatch %s, %s\n
 Any Extended Key Usage
 Any Purpose
 Any language
-Any request for a duplicate dispatch/mesh shader primitive in an outputbuffer must previously set the dispatch buffer
 ApplyDeformer
 ApplyTransform
 ApplyTransformToEdges
@@ -3067,6 +3092,7 @@ Bake Lighting As If Double-Sided
 Bake To World
 Bake lighting as if this were double-sided geometry. Useful on geometry with pre-culled backfaces whose neighbors have lighting errors caused by saw-too-many-backfaces sample invalidation.
 BakeOnlyCubemaps
+BakeResourceCache extract %s, %llx ->
 BakeSubdivisionForFaces
 BakeTransform
 BakeWholeMeshOverrideMaterial
@@ -3145,7 +3171,6 @@ BuildMapCheckForProblems
 BuildMapDialogPosX
 BuildMapDialogPosY
 BuildMapEntities
-BuildMapEnvMaps
 BuildMapGridNav
 BuildMapLOD
 BuildMapLighting
@@ -3161,7 +3186,7 @@ BuildMapWorld_2
 BuildOnlyBaseTileGometry
 BuildParticleSimList
 BuildRenderDataForPolygonGroup
-BuildRenderDataForPolygonGroup(489): 
+BuildRenderDataForPolygonGroup(588): 
 BuildSolidRenderData(520): 
 BuildSteamAudioCustomData
 BuildSteamAudioPaths
@@ -3200,11 +3225,9 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\navlib\nav_mesh.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particle_property.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\mapdoclib\mapnodefactory.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\scenesystem\sceneobject.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\check_cast.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlmap.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\vpklib\packedstore.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\texturelib\extract.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolscene\toolscene_hitboxes.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\detailprops.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tools\toolutils2\qbaseeditorwnd.cpp
@@ -3255,7 +3278,7 @@ CBasePulseGraphInstance::InitInstance_Internal( %s; %p ) %s\n
 CBasePulseGraphInstance::Shutdown( %s; %p ) %s\n
 CBasePulseGraphInstance::StartGraphReload( %p ) %s\n
 CBasePulseGraphInstance::~CBasePulseGraphInstance( %p )\n
-CBaseToolsModelInstance::CreateReversedIBs(4854): 
+CBaseToolsModelInstance::CreateReversedIBs(4965): 
 CDetailPropObjectManager::UpdateDirtyObjects()
 CDmExtraVertexData
 CDmeDrawCallSnapshot
@@ -3409,7 +3432,7 @@ CMapDeformer
 CMapDeformerLattice
 CMapDeformerPath
 CMapDeformerSimple
-CMapDoc::FrameUpdate(6759): 
+CMapDoc::FrameUpdate(6791): 
 CMapDocMaterialAdjustStruct
 CMapDocTestStruct
 CMapDotaGridnavMarkup
@@ -3479,7 +3502,6 @@ CMapWorkplaneMarker
 CMapWorldLayer
 CMaterialSampler::AllocateVertexBuffers(189): 
 CMaterialSampler::DrawMaterialSamplePoints(311): 
-CMeshPrimitiveOutputBuffer::Next
 CModelHelper::UpdateMaterialOverride
 CModelOverrideData::UpdateVertexBuffer
 CModelPreviewAttachedModel
@@ -3514,7 +3536,7 @@ CObjectSelectionSetDataElement
 CPackedStore::CPackedStore
 CPackedStore::VerifySingleChunk
 CParticleHelper::SetDefinitionByName
-CParticleMgr::SimulateParticles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp:1167
+CParticleMgr::SimulateParticles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\particleslib\particlemgr.cpp:1166
 CParticleProperty::AddControlPoint
 CParticleProperty::SetControlPoint
 CPerLayerGrassData
@@ -3588,6 +3610,9 @@ CToolRenderContext::PushTransform - busted through MAX_MATRIX_STACK_DEPTH (%d)
 CToolRenderContext::PushTransform - matrix stack underflow
 CToolSceneNode
 CToolSceneVmap
+CToolTextureCache - Failed to convert file %s\n
+CToolTextureCache - Unable to read file %s\n
+CToolTextureCache - Unrecognized image format for file %s\n
 CUtlBlockVector<class CUtlReference<class CMapNode>,int,class CMemAllocAllocator>::GrowCount
 CUtlBlockVector<struct CPolygonMeshSubdivisionRemappingData::PatchData_t,int,class CMemAllocAllocator>::GrowCount
 CUtlBlockVector<struct FileHandleTracker_t,int,class CMemAllocAllocator>::GrowCount
@@ -3614,6 +3639,7 @@ Camellia(128)
 Camellia(256)
 Camera %d
 CameraTargetDistance
+Can't change '%s': %s
 Can't find helper '%s' - fgd error?\n
 Cannot CDmAttribute::GetValueAsString(%p, %u)\n
 Cannot merge meshes with inconstent dynamic reflection maps
@@ -3696,7 +3722,6 @@ Conflicting data state flags (%s:%d)
 Conflicting subdivision info (%s:%d)
 Conflicting vertex buffer location (%s:%d)
 Consider dynamic object as static geometry
-Consider object as dynamic geometry, all other dynamic objects are otherwise ignored
 Constrain Rotation
 Constrain To Prefab
 Construct a convex hull for each connected group of faces in the mesh
@@ -3727,6 +3752,10 @@ Copy of map file %s does not have a valid world. World element handle: %i
 CopyFrom
 Cordon
 Cordon Name
+Corner Bottom Left
+Corner Bottom Right
+Corner Top Left
+Corner Top Right
 Could not add file(s): %s
 Could not check in file(s): %s
 Could not check out file(s): %s
@@ -3988,7 +4017,8 @@ Deactivate %s
 Deactivate all instances
 DebugVisGeometry
 Decipher Only
-DecompressTextureBits
+DecompressTextureBits: %u bytes of texture data, but %d mips of %dx%d %s need %u; it comes out black\n
+DecompressTextureBits: virtual texture %s; it comes out black\n
 Default (no scale)
 DefaultGrassMaterial
 DefaultGridTileSet
@@ -4002,7 +4032,6 @@ DefaultTextureScale
 Deform Children
 Deformation Axis
 Deformation Mode
-Deformer
 Deformer %i
 Deformers
 Degenerate Navigation Area at ( %0.2f, %0.2f, %0.2f )\n
@@ -4037,7 +4066,6 @@ Disable Mesh Merging
 Disable in low quality mode
 Disable updates from the specified smart prop file.
 Disallowed variable name: %s
-Displacement
 DisplacementBrushSettings
 DisplacementMappingSelectionDepthBias
 Display Base Face
@@ -4054,6 +4082,8 @@ Do not render when using the lowest quality video settings. This object is a non
 DoTransform
 DoesParentHaveMetadata
 Domain
+Don't Snap To Ground
+Don't Snap To Nav
 Dota
 Dota Sky Box
 DotaMaxTrees
@@ -4072,6 +4102,7 @@ DrawInstanceOverlay
 DrawMaterialSamplePoints: no ToolsVis mode for shader?\n
 DrawMeshEdges
 DrawSelectionOverlay
+Dynamic Objects
 E-mail Protection
 EC PARAMETERS
 EC PRIVATE KEY
@@ -4328,6 +4359,10 @@ EXPONENT
 EXPORT
 EXPORT40
 EXPORT56
+EXRReadFile() - B channel not found!\n
+EXRReadFile() - G channel not found!\n
+EXRReadFile() - R channel not found!\n
+EXRReadFile() - cannot read image data!\n
 EXTENDED_KEY_USAGE
 EXTERNAL
 Early exit
@@ -4347,7 +4382,6 @@ Editor Only
 Email address mismatch
 EmbeddedNode
 EmbeddedProperty
-Emissive
 Emissive Boost
 Emissive Lighting
 Emissive Lighting Boost
@@ -4515,6 +4549,20 @@ Failed to load sky material: %s. Are you missing source content?
 Failed to open file for edit: "%s"\n
 Failed to read
 Failed to read %d bytes\n
+Far Bottom
+Far Center
+Far Corner Bottom Left
+Far Corner Bottom Right
+Far Corner Top Left
+Far Corner Top Right
+Far Falloff
+Far Left
+Far Right
+Far Shear Bottom
+Far Shear Left
+Far Shear Right
+Far Shear Top
+Far Top
 FastAssetPicked
 FastTextureTool
 Features
@@ -4545,11 +4593,11 @@ Fog Indirect Lighting %s
 FogEnabled
 FogFlowMap.vtex
 FogOpacity.vtex
-Force Dynamic
 Force Hidden
 ForceStaticPropsForModelDrags
 ForwardSpeedMax
 Found duplicate attributes: '%s' and '%s', keeping '%s' < %s > and removing '%s' < %s >\n
+Front
 Full
 Func( %s )
 Functions not supported in this evaluator (%s)
@@ -4624,9 +4672,11 @@ GetDotaSkyMaterialHandle
 GetHashType() == ChunkHashFraction_t::EHashType::BLAKE3
 GetHashType() == ChunkHashFraction_t::EHashType::MD5
 GetMaterialGroupChoicesForModelKey
+GetProcessWindowStation
 GetQueueStatus
 GetSkyMaterialHandle
 GetSystemTime
+GetUserObjectInformationW
 GlobalMemoryStatus
 Governs the cycle order when multiple cameras share the same hotkey. Pressing the hotkey advances to the camera with the next-highest jump order.
 GradientFog
@@ -4653,6 +4703,7 @@ GridSpacing
 GridVertexLayout
 Gridhigh64
 Ground
+Ground Trace Distance
 Group (%d objects)
 Group Inputs
 Group Outputs
@@ -4902,6 +4953,7 @@ Load at runtime
 Load certs from files in a directory
 Load file into cache
 Load if nested
+LoadEXRImageFromMemory() failed! Error message: %s\n
 LoadLibraryW
 LoadNavMesh: %s\n
 LoadNavMesh: bad buffer alignment.\n
@@ -4920,6 +4972,7 @@ Locators/Workplane Markers
 Lock Evaluation
 LockWorkplane
 Locking Textures
+Log each undo position, undo and redo
 LowPrecisionUv
 LowPrecisionUv1
 MAPCLASS_ERROR
@@ -4978,6 +5031,7 @@ MaterialSampler_SamplePoints
 MaterialSampler_Vertices
 Materials Probe
 Max Cameras
+Max Distance From Nav
 Max number of Nav Areas limit reached (%i).
 Maximum Size Scale
 Maximum distance at which individual parts of the prop will be visible. If 0 the setting on individual parts of the smart prop will be used.
@@ -4997,6 +5051,7 @@ Mesh Vertices
 MeshHardEdges
 MeshSoftEdges
 Meshes Only
+MessageBoxW
 Microsoft CSP Name
 Microsoft Commercial Code Signing
 Microsoft Encrypted File System
@@ -5101,7 +5156,16 @@ NavMeshInternalEdges
 NavMeshSolid
 NavMeshWireframe
 Navmesh poly %d connected to %d with zero-width portal\n
-NearPlane
+Near Bottom
+Near Center
+Near Corner Bottom Left
+Near Corner Bottom Right
+Near Corner Top Left
+Near Corner Top Right
+Near Falloff
+Near Left
+Near Right
+Near Top
 NetApiBufferFree
 NetStatisticsGet
 Netscape
@@ -5225,7 +5289,6 @@ Object Signer
 Object Signing
 Object Signing CA
 Object Spacing
-Objects
 Occlusion Deviation
 Occlusion Path Ratio
 Occlusion Probe
@@ -5266,7 +5329,6 @@ OpenSSL X9.42 DH method
 OpenSSL default
 OpenSSL default user interface
 OpenVConsole
-OptimizeCollisionV2
 Optional label shown in the Saved Cameras panel.
 Order: 
 Orient To Surface
@@ -5281,7 +5343,7 @@ OverlaySurface
 OverlaySurfaceIndices
 OverlaySurfaceVertices
 Override: 
-Overrides how this object contributes to the Steam Audio geometry.\nDefault: Contribute based on the mesh's physics representation.\nExclude: Exclude object form Steam Audio geometry.\nForce Static: Consider dynamic object as static geometry.\nForce Dynamic: Consider object as dynamic geometry, all other dynamic objects are otherwise ignored.\n
+Overrides how this object contributes to the Steam Audio geometry.\nDefault: Contribute based on the mesh's physics representation.\nExclude: Exclude object form Steam Audio geometry.\nForce Static: Consider dynamic object as static geometry.\n
 P-192
 P-224
 P-256
@@ -5339,8 +5401,8 @@ PEM_read_bio
 PEM_read_bio_Parameters
 PEM_write
 PEM_write_bio
-PInstruction_t<43>::Run
 PInstruction_t<44>::Run
+PInstruction_t<45>::Run
 PKCS #7 SIGNED DATA
 PKCS12
 PKCS12 lib
@@ -5472,6 +5534,7 @@ PRNG not seeded
 PROCESS_PCI_VALUE
 PROXY_CERT_INFO_EXTENSION
 PROXY_POLICY
+PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 PSK-3DES-EDE-CBC-SHA
 PSK-AES128-CBC-SHA
 PSK-AES256-CBC-SHA
@@ -5493,6 +5556,7 @@ Parent '%s' needs a model instance
 Parent '%s' not found
 Parent '%s' refers an entity in %d different instances
 Parent '%s' refers an entity that is not visible
+ParseEXRHeaderFromMemory() failed! Error message: %s\n
 Parser encountered %d error(s)
 Parsing key="%s" with value="%s" on MapNode with uniqueID=%s
 Particle Snapshot Spacing
@@ -5574,7 +5638,7 @@ Probe Type
 Proc-Type: 
 Proc-Type: 4,
 Project On Backfacing
-ProjectPolygonsOntoTriangles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\meshutils\triangulatepolygon.cpp:1943
+ProjectPolygonsOntoTriangles(), C:\buildworker\source2_dota_rel_2019_win64\build\src\meshutils\triangulatepolygon.cpp:2180
 Projection Distance
 Projection Mode
 Projection Targets
@@ -6083,6 +6147,7 @@ Signature verification failed.
 Simple Deformer
 SimulateParticles
 Single Convex Hull
+SizeCullThresholdPercent
 Sizer: %s
 Sky Box
 Sky texture %s must be a 2:1 lat-long, 4:3 H-cross, 3:4 V-cross, or 1:6 V-strip format!\n
@@ -6096,6 +6161,7 @@ Skybox3dInMainView
 SkyboxSlot
 Smart Prop
 Smart Prop %s
+Smart Prop '%s' exceeds the part limit of %d. Not all parts were placed.
 Smart Prop (%s)
 Smart Prop File
 Smart Prop Locator
@@ -6167,8 +6233,6 @@ Suite B: invalid public key algorithm
 Suite B: invalid signature algorithm
 Superseded
 SupportsDisplacementMapping
-Suppressing entity [%s:%s]: %s
-Suppressing entity from the compiled map due to the above issue with key %s\n
 SyncClicked
 SyncFileToHeadRevision
 SyncToHeadRevision - SyncFile failed: %s\n
@@ -6276,6 +6340,8 @@ The kind of viewport this camera is meant for.
 The map properties of this prefab's map specify a targetname of '%s', which is a classname! Please change to avoid using a classname.
 The name of the bone used when the reference clip or exit reference clip is filled in
 The nav mesh needs a full nav_analyze\n
+The node this locator stands for no longer exists.
+The node's transform is locked, so it ignores the map variables linked to its origin and angles.
 The only detail layers this mesh belongs to
 The relative position offset of this node from the target node.
 The relative rotation offset of this node from the target node.
@@ -6288,6 +6354,14 @@ This is an S/MIME signed message%s%s
 This mesh will not belong to these detail layers
 This prefab wants procedural relay connections, but it must have a Runtime Entity to enable this feature!
 This prefab wants procedural relay connections, but it must have a targetname to enable this feature!
+This property is linked to map variable '%s' of a nested prefab, which isn't linked to a map variable of this prefab.
+This property is linked to map variable '%s', which is overridden by the prefab instance.
+This property is linked to map variable '%s', which is set by choice group '%s'.
+This property is linked to map variable '%s', which isn't a world %s.
+This property is linked to map variable '%s', which this prefab instance gets from map variable '%s'.
+This property is linked to map variable '%s', which wasn't found.
+This property isn't linked to a map variable.
+This property's new value can't be stored in map variable '%s'
 Thread32First
 Thread32Next
 Tile
@@ -6345,6 +6419,7 @@ Tool Brushes
 ToolDrag
 ToolSelect
 Tools - Hammer
+ToolsPaint
 ToolsVisSSAOPowerScale
 ToolsVisSSAORadiusScale
 Tools_ScreenSpace
@@ -6396,8 +6471,10 @@ UTF8String
 UnInvalid
 UnNegate
 UnNot
+Unable to load psd: %s\n
 Unable to save
 Undo Levels 2
+Undo position: %s\n
 Unexpected character
 Unexpected character '%c' (0x%02X)
 Unexpected node
@@ -6418,6 +6495,7 @@ Unnamed Group %i
 Unprocessed type %d\n
 Unrecognized EHashType found: %d
 Unspecified
+Unsupported PSD color mode!\n
 Unsupported attribute type found!\n
 Unsupported extension feature
 Unsupported primitive type: %d\n
@@ -6499,7 +6577,6 @@ ViewportFontSize
 Vis Cluster %i
 Vis Occluder
 VisPreview
-Visibility
 Visibility Data
 Visible Map Errors
 Visible across prefabs
@@ -6739,6 +6816,7 @@ _OPENSSL_isservice
 __dmekv3_attribute_will_be_name__
 __ground__
 __ignoreInvalidAttributes
+__tool_texture_cache/%s.vtex
 _autosave
 _baked
 _bakeresourcecache
@@ -6845,6 +6923,7 @@ alwaysRender
 always_draw_handles
 always_hit_test
 an attr
+angle or transform
 angle_key
 ansi-X9-62
 anyExtendedKeyUsage
@@ -6877,7 +6956,6 @@ asset_keys_indirect_model_gamedata_key
 asset_keys_indirect_model_gamedata_subkey
 asset_keys_indirect_vdata_gamedata_expression_context_key
 asset_keys_indirect_vdata_gamedata_fieldkey
-asset_keys_mapcompile_opaque
 asset_specific_keys_destination
 associatedDomain
 associatedName
@@ -6988,8 +7066,6 @@ bakelightdoublesided
 bakelighting
 bakeresource
 bakeskylight
-bakespeculartocubemaps
-bakespeculartocubemaps_scale
 bakespeculartocubemaps_size
 baketoworld
 bank_unique_id
@@ -7035,6 +7111,7 @@ blendweight3
 block cipher pad is wrong
 block type is not 01
 block type is not 02
+block_base_nav_mesh
 blocklos
 blocksound
 blowfish
@@ -7158,6 +7235,7 @@ cellsMaterialSet
 cellsOrientation
 cellsTileSet
 cellsVariationId
+center_line
 centered_box_oriented
 centeru
 centerv
@@ -7568,7 +7646,6 @@ disabled for fips
 disabledInLowQuality
 disablemerging
 discriminant is zero
-displacement
 displacementInput
 displayBaseFace
 displayColor
@@ -7597,6 +7674,12 @@ documentVersion
 domain
 domainComponent
 domainRelatedObject
+dontSnapToGround
+dontSnapToNav
+dont_snap_to_ground
+dont_snap_to_ground == true
+dont_snap_to_nav
+dont_snap_to_nav == true
 dota.tile_path.falloff
 dota.tile_path.layer1_opacity
 dota.tile_path.layer1_sharpness
@@ -7767,7 +7850,6 @@ email:%s
 emailAddress
 emailCA
 emailProtection
-emissive
 emissiveLightingBoost
 emissiveLightingEnabled
 emissiveLightingEnabled == false
@@ -8017,6 +8099,8 @@ grass_exclusion_radius
 gridHeight
 gridWidth
 gridnavFlags
+groundTraceDistance
+ground_trace_distance
 group2pkparameters failure
 group=
 half_extent_xy
@@ -8025,7 +8109,13 @@ hammerClipboard
 hammerMeshDataBuffer
 hammerUniqueId
 hammer_embedded_properties
+hammer_log_undo
 hammer_preview_lighting
+has a bad tile offset table ( %d tiles )
+has compressed tiles but no offsets
+has no tile layout block, it needs recompiling
+has no tiles for mip %d
+has tiles in unknown compression %d
 hasLimits
 has_static_mesh
 hash
@@ -8048,6 +8138,7 @@ hex_to_string
 hexkey
 hidden_when_readonly
 hide_interpolation_type
+hideininactiveinstance
 hitNormal
 hmac
 hmac-md5
@@ -8669,7 +8760,6 @@ lodlevel
 looks like this:\n\t\t%.*s\n
 lost_hidden_nodes
 luminaire_anisotropy
-luminaire_shape
 luminaire_size
 lumpMode
 mXRecord
@@ -8681,7 +8771,6 @@ m_ClassNames
 m_ClassVersions
 m_ControlPointPositions
 m_CurveSegmentMidpointPositions
-m_Deformers
 m_DeltaTransform
 m_DrawCalls
 m_ElementPath
@@ -8689,6 +8778,8 @@ m_ExtraStreams
 m_IR
 m_ImageFileRelativePath
 m_Keys
+m_LambdaSubscriptions
+m_LatestValue
 m_LocalToWorld
 m_LocatorConfig
 m_MaterialOverrideTables
@@ -8708,6 +8799,8 @@ m_TintTable
 m_TubeMaterial2
 m_bChildCursorsShouldInherit
 m_bCordonsVisible
+m_bDontSnapToGround
+m_bDontSnapToNav
 m_bFlipFaces
 m_bIsCordoning
 m_bLiveParameterUpdate
@@ -8722,6 +8815,8 @@ m_flDeltaValue
 m_flDimensionsInOutValue
 m_flDimensionsSizeValue
 m_flEntryDistance
+m_flGroundTraceDistance
+m_flMaxDistanceFromNav
 m_flOcclusionDeviation
 m_flOcclusionDistanceRatio
 m_flOcclusionReflectionEnergy
@@ -8735,7 +8830,7 @@ m_flPathingDistanceRatio
 m_flProbeRadius
 m_flToleranceAngleDegrees
 m_hDef
-m_horizontalRange
+m_horizontalOptimal
 m_iszNPC
 m_materialsValues
 m_nDefinitionVersion
@@ -8756,7 +8851,6 @@ m_nResourceNameIndex
 m_nSelectedProbeType
 m_nStackDepthWhenAdded
 m_nUniqueID
-m_pDuplicateDispatchPrimitives != nullptr
 m_pInstanceProceduralConnectionsClass
 m_pathingCoeffs
 m_pathingEQ
@@ -8770,7 +8864,7 @@ m_vDimensionsOutsideField
 m_vNonUniformScale
 m_vNumDivisions
 m_vecNavLinkMovementNames
-m_verticalRange
+m_verticalOptimal
 mac absent
 mac generation error
 mac setup error
@@ -8841,8 +8935,10 @@ materials/tools/tools_tileset_skybox3d.vmat
 materials/tools/tools_tileset_skybox3d_%i.vmat
 materials/tools/vertex_color_solid.vmat
 materials/trans.txt
+maxDistanceFromNav
 maxError
 maxScale
+max_distance_from_nav
 max_occlusion_distance
 maxsize=
 md bio init error
@@ -8952,11 +9048,11 @@ msgsigdigest verification failure
 msgsigdigest wrong length
 mstring not universal
 mstring wrong tag
+mtime.txt
 multipart/signed
 multiple sgc restarts
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
-nCompressedSize == nUncompressedSize
 nSRecord
 nToolId
 n\r2S
@@ -9173,7 +9269,6 @@ o2i_ECPublicKey
 oaep
 oaep decoding error
 objCA
-object
 object identifier routines
 object not ascii format
 objectConfiguration
@@ -9256,7 +9351,6 @@ otherRevInfoFormat
 othername
 othername error
 othername:<unsupported>
-out of memory
 outTangent
 outTangentType
 outer_angle
@@ -9404,6 +9498,7 @@ plugTypes
 point arithmetic failure
 point at infinity
 point is not on curve
+point or transform
 point_deformer
 point_pulse
 pointer != NULL
@@ -9421,7 +9516,6 @@ policyMappings
 policyid
 populateDefaultValues
 population
-port_name
 posable
 postOfficeBox
 postalAddress
@@ -9941,7 +10035,6 @@ shapeType != CMapChoreoLocatorShapeType_t::RADIUS
 shapetype
 shared info error
 sharedenvironment
-shear
 short header
 short line
 short read
@@ -10006,9 +10099,13 @@ smoothingAngle
 snapangle
 snapangle_key
 snapshot_mesh
+snd_opvar_set_path_helper
+snd_steamaudio_baked_occlusion_dynamic_object_delta_scale
+snd_steamaudio_baked_occlusion_dynamic_objects
 snmpv2
 socket
 solidity
+source %d, probe %d
 sourceNode
 sourceNodeId
 sourceOutput
@@ -10227,7 +10324,6 @@ targetPath
 targetPrefab
 targetReferenceID
 targetStreamIndex
-targetType != CMapChoreoLocatorType_t::TARGET_WARP && targetType != CMapChoreoLocatorType_t::TARGET_EXIT
 targetTypeFlags
 target_entry
 target_exit
@@ -10267,6 +10363,7 @@ the meth_data stack is corrupt
 there must be one signer
 thisUpdate
 thread=%lu, 
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 tile requirements
 tileConfiguration
 tileGridData
@@ -10331,6 +10428,10 @@ too many iterations
 too many temporary variables
 tools code
 tools.reference_notrace
+tools/images/hammer/barnlighthelper_aperture.png
+tools/images/hammer/barnlighthelper_falloff.png
+tools/images/hammer/barnlighthelper_manipulate.png
+tools/images/hammer/omnilighthelper_range.png
 toolscenenodes
 toolscenenodes.dll
 tpBasis
