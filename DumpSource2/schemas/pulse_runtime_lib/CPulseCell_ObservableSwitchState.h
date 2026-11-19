@@ -4,5 +4,5 @@
 class CPulseCell_ObservableSwitchState : public CPulseCell_BaseState
 {
 	// MPulseFGDSkipField
-	CPulseObservableSwitchCases m_Cases; // = { "m_CaseOutflows": [  ], "m_CaseValues": [  ], "m_DefaultCaseOutflow": { "m_SourceOutflowName": "", "m_nDestChunk": -1, "m_nInstruction": -1 } }
+	CPulseObservableSwitchCases m_Cases; // = { "m_DefaultCaseOutflow": { "m_nDestChunk": -1, "m_nInstruction": -1 } }
 };

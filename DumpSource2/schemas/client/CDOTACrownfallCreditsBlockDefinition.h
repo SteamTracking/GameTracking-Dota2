@@ -1,7 +1,7 @@
 class CDOTACrownfallCreditsBlockDefinition
 {
 	CUtlVector< CDOTACrownfallCreditsCharacterDefinition > m_vecCharacters;
-	CDOTACrownfallCreditsMapSceneDefinition m_scene; // = { "m_bScale": false, "m_bounds": { "h": -1, "w": -1, "x": 0, "y": 0 }, "m_nAnimOffsetX": 0, "m_nAnimOffsetY": 0, "m_strImage": "", "m_strImageMask": "", "m_vViewEnd": [ 0, 0 ], "m_vViewStart": [ 0, 0 ], "m_vecAnimations": [  ] }
+	CDOTACrownfallCreditsMapSceneDefinition m_scene;
 	CUtlString m_strCustomPanoramaClass;
 	int32 m_nMarginBottom; // = 10
 	int32 m_nMarginTop; // = -1

@@ -1,8 +1,8 @@
 // MVDataRoot
 class CDOTAFlappySkywrathDifficulty
 {
-	CDOTAFlappySkywrathCharacter characterPlayer; // = { "flAcceleration": 50, "flActionCooldown": 1, "flInitialSpeed": 300, "flMaxSpeed": 800 }
-	CDOTAFlappySkywrathCharacter characterOpponent; // = { "flAcceleration": 50, "flActionCooldown": 1, "flInitialSpeed": 300, "flMaxSpeed": 800 }
+	CDOTAFlappySkywrathCharacter characterPlayer;
+	CDOTAFlappySkywrathCharacter characterOpponent;
 	float32 flRaceDistance; // = 10000
 	float32 flBaseObstacleDistanceInterval; // = 1000
 	float32 flBaseObstacleGapDistance; // = 400

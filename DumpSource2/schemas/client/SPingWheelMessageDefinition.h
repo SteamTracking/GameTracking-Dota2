@@ -33,10 +33,10 @@ class SPingWheelMessageDefinition
 	float32 m_flMinimapDuration; // = 3
 	// MPropertyDescription = "Whether or not to flash the pinged unit's icon."
 	bool m_bFlashTargetIcon;
-	PingMinimapIconInfo_t m_minimapIconInfo; // = { "m_bAlignBottom": false, "m_bForceBaseIconWhite": false, "m_eDrawCondition": "k_ePingMinimapDrawCondition_Always", "m_flAnimIntroDuration": 0.3, "m_flAnimOutroDuration": 0.5, "m_flAnimStartSize": 10000, "m_flAnimThrobRate": 6, "m_flAnimThrobSize": 300, "m_flSize": 800, "m_nIconID": 0 }
+	PingMinimapIconInfo_t m_minimapIconInfo;
 	// MPropertyDescription = "Optional additional layers."
 	CUtlVector< PingMinimapIconLayerInfo_t > m_vecAdditionalMinimapLayers;
-	PingParticleInfo_t m_particleInfo; // = { "m_bShowDotaPlusBadge": false, "m_flBonusVerticalOffsetFromTargetEntity": 0, "m_flDuration": 3, "m_flRadius": 1, "m_flVerticalOffset": 240 }
+	PingParticleInfo_t m_particleInfo;
 	bool m_bRequiresDotaPlus;
 	bool m_bIsBindable; // = true
 };

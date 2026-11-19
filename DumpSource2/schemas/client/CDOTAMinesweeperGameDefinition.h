@@ -1,7 +1,7 @@
 // MVDataRoot
 class CDOTAMinesweeperGameDefinition
 {
-	CDOTAMinesweeperPlayerDefinition m_player; // = { "m_nInitialHealth": 1, "m_nInitialMana": 0 }
+	CDOTAMinesweeperPlayerDefinition m_player;
 	CUtlVector< CDOTAMinesweeperStageDefinition > m_vecStages;
 	float32 m_flTimeLimit;
 	int32 m_nIllusionManaCost;

@@ -12,7 +12,7 @@ class CDOTAOverworldPath
 	CUtlString m_strPathHiddenUntilEventAction;
 	// MPropertyDescription = ""
 	uint8 m_unCost;
-	OverworldSplineInfo_t m_splineInfo; // = { "m_flEndOffset": 0, "m_flEndTangent": 0.5, "m_flStartOffset": 0, "m_flStartTangent": 0.5 }
+	OverworldSplineInfo_t m_splineInfo;
 	// MPropertyAttributeRange = "-180 180"
 	float32 m_flCurveAngle;
 	// MPropertyDescription = ""

@@ -8,7 +8,7 @@ class CDOTACrownfallCreditsCharacterDefinition
 	CUtlString m_strLocCharacterNameAlt;
 	CUtlString m_strLocCharacterTitleAlt;
 	bool m_bFlipFacing;
-	CrownfallCreditsAABB_t m_bounds; // = { "h": -1, "w": -1, "x": 0, "y": 0 }
+	CrownfallCreditsAABB_t m_bounds;
 	CUtlString m_strLocCharacterTitleAlt2;
 	CUtlString m_strLocCharacterTitleAlt3;
 	CUtlString m_strLocCharacterTitleAlt4;

@@ -11,7 +11,7 @@ class HitReactFixedSettings_t
 	float32 m_flWhipDelay;
 	float32 m_flSpringStrength;
 	float32 m_flWhipSpringStrength;
-	float32 m_flMaxAngleRadians; // = 0
+	float32 m_flMaxAngleRadians;
 	int32 m_nHipBoneIndex;
 	float32 m_flHipBoneTranslationScale;
 	float32 m_flHipDipSpringStrength;

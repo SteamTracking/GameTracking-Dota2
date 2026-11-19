@@ -1,15 +1,15 @@
 // MPropertyFriendlyName = "Ground Root Motion Motor"
-// MDebugSnapshotDataSortPriority (UNKNOWN FOR PARSER)
+// MDebugSnapshotDataSortPriority = 50
 // MDebugSnapshotDataStartCollapsed
 // MHasKV3TransferPolymorphicClassname
 class AI_GroundRootMotionMotor_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
-	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait_set; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
-	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
-	DebugSnapshotMotorSettingsResolveTrace_t desired_stance; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
-	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait_set; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
-	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
-	DebugSnapshotMotorSettingsResolveTrace_t current_stance; // = { "applied_tick": -1, "not_applied_reason": "", "request_source": "", "requested": "", "requested_speed": -1, "result": "", "result_speed": -1, "result_speed_scale": 1, "steps": [  ] }
+	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait_set;
+	DebugSnapshotMotorSettingsResolveTrace_t desired_movement_gait;
+	DebugSnapshotMotorSettingsResolveTrace_t desired_stance;
+	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait_set;
+	DebugSnapshotMotorSettingsResolveTrace_t current_movement_gait;
+	DebugSnapshotMotorSettingsResolveTrace_t current_stance;
 	CGlobalSymbol movement_setting_id;
 	DebugSnapshotVDataRef_t current_movement_settings_vdata;
 	DebugSnapshotVDataRef_t desired_movement_settings_vdata;

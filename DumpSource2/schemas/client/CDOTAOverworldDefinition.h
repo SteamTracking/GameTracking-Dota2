@@ -72,7 +72,7 @@ class CDOTAOverworldDefinition
 	CUtlVector< CDOTAOverworldPathColorRule > m_vecPathColorRules;
 	CUtlString m_strNarrationVisualNovel;
 	CUtlOrderedMap< CUtlString, CUtlString > m_mapNarrationDialogues;
-	CDOTAOverworldTheme m_Theme; // = { "m_sButtonType": "DOTACrownfallButton", "m_sInventoryPickerLayout": "file://{resources}/layout/ui_overworld_inventory_picker.xml", "m_sTextPrefix": "Crownfall", "m_sTokenReceivedPopupLayout": "file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_tokens_received.xml", "m_sTokenTraderEncounterLayout": "file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_token_trader.xml", "m_sTokenTraderVisualNovelStyle": "", "m_sTokenType": "DOTACrownfallToken" }
+	CDOTAOverworldTheme m_Theme;
 	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes;
 	CUtlVector< CDOTAOverworldTarotCard* > m_vecTarotCards;
 	CUtlVector< CDOTAOverworldFortuneTellerReward* > m_vecFortuneTellerRewards;

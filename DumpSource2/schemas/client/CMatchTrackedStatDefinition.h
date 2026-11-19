@@ -12,5 +12,5 @@ class CMatchTrackedStatDefinition
 	TrackedStatExpressionData_t m_expressionData;
 	// MPropertyDescription = "For k_eMatchTrackedStatImpl_PlayerAggregate or k_eMatchTrackedStatImpl_TeamAggregate, what is the aggregate information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_eMatchTrackedStatImpl_PlayerAggregate && m_eStatImpl != k_eMatchTrackedStatImpl_TeamAggregate"
-	TrackedStatAggregateData_t m_aggregateData; // = { "m_eAggregate": "k_eTrackedStatAggregate_Invalid", "m_strIndividualStat": "" }
+	TrackedStatAggregateData_t m_aggregateData;
 };

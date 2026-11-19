@@ -24,7 +24,7 @@ class CSurvivorsPowerUpDefinition
 	CUtlString m_sLocHeroName;
 	CUtlVector< CSurvivorsUpgradeDefinition > m_vecMinorUpgradeChoices;
 	CUtlVector< CSurvivorsUpgradeDefinition > m_vecAuthoredUpgradeChoices;
-	CSurvivorsUpgradeDefinition m_scepterUpgradeDefinition; // = { "m_unRarity": "RARITY_INVALID", "m_vecGlobalUpgradeAttributes": [  ], "m_vecUpgradeAttributes": [  ] }
+	CSurvivorsUpgradeDefinition m_scepterUpgradeDefinition;
 	bool m_bModifierParticleUsesOverheadOffset; // = true
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_sModifierParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_sStunParticle;

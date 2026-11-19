@@ -12,5 +12,5 @@ class CTeamTrackedStatDefinition
 	TrackedStatExpressionData_t m_expressionData;
 	// MPropertyDescription = "For k_eTeamTrackedStatImpl_PlayerAggregate, what is the aggregate information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_eTeamTrackedStatImpl_PlayerAggregate"
-	TrackedStatAggregateData_t m_aggregateData; // = { "m_eAggregate": "k_eTrackedStatAggregate_Invalid", "m_strIndividualStat": "" }
+	TrackedStatAggregateData_t m_aggregateData;
 };

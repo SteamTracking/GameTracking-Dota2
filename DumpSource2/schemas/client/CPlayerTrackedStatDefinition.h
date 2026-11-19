@@ -9,7 +9,7 @@ class CPlayerTrackedStatDefinition
 	EPlayerTrackedStatImpl m_eStatImpl; // = "k_ePlayerTrackedStatImpl_Invalid"
 	// MPropertyDescription = "For k_ePlayerTrackedStatImpl_KillEater, what is the kill eater information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_ePlayerTrackedStatImpl_KillEater"
-	TrackedStatKillEaterData_t m_killEaterData; // = { "unKillEaterEvent": 4294967295 }
+	TrackedStatKillEaterData_t m_killEaterData;
 	// MPropertyDescription = "For k_ePlayerTrackedStatImpl_CombatQuery, what is the combat query information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_ePlayerTrackedStatImpl_CombatQuery"
 	TrackedStatCombatQueryData_t m_combatQueryData;

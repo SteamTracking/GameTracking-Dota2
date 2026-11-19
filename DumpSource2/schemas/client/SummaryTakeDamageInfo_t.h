@@ -1,7 +1,7 @@
 class SummaryTakeDamageInfo_t
 {
 	int32 nSummarisedCount;
-	CTakeDamageInfo info; // = { "_class": "CTakeDamageInfo", "m_DestructibleHitGroupRequests": [  ], "m_bShouldBleed": false, "m_bShouldSpark": false, "m_bitsDamageType": "", "m_bitsDotaDamageType": 0, "m_flCombatLogCreditFactor": 1, "m_flDamage": 0, "m_flOriginalDamage": 0, "m_flTotalledDamage": 0, "m_hAbility": null, "m_hAttacker": null, "m_hInflictor": null, "m_iAmmoType": "", "m_iDamageCustom": 0, "m_iHitGroupId": "HITGROUP_INVALID", "m_iRecord": 0, "m_nDamageFlags": "", "m_nDotaDamageCategory": 0, "m_vecDamageDirection": [ 0, 0, 0 ], "m_vecDamageForce": [ 0, 0, 0 ], "m_vecDamagePosition": null, "m_vecReportedPosition": null }
-	CTakeDamageResult result; // = { "m_DestructibleHitGroupRequests": [  ], "m_bSuppressFlinch": false, "m_bWasDamageSuppressed": false, "m_flDamageDealt": 0, "m_flNewDamageAccumulatorValue": 0, "m_flPreModifiedDamage": 0, "m_flTotalledDamageDealt": 0, "m_flTotalledPreModifiedDamage": 0, "m_nDamageFlags": "", "m_nHealthBefore": 0, "m_nHealthLost": 0, "m_nOverrideFlinchHitGroup": "HITGROUP_INVALID", "m_nTotalledHealthLost": 0, "m_pOriginatingInfo": { "_class": "CTakeDamageInfo", "m_DestructibleHitGroupRequests": [  ], "m_bShouldBleed": false, "m_bShouldSpark": false, "m_bitsDamageType": "", "m_bitsDotaDamageType": 0, "m_flCombatLogCreditFactor": 1, "m_flDamage": 0, "m_flOriginalDamage": 0, "m_flTotalledDamage": 0, "m_hAbility": null, "m_hAttacker": null, "m_hInflictor": null, "m_iAmmoType": "", "m_iDamageCustom": 0, "m_iHitGroupId": "HITGROUP_INVALID", "m_iRecord": 0, "m_nDamageFlags": "", "m_nDotaDamageCategory": 0, "m_vecDamageDirection": [ 0, 0, 0 ], "m_vecDamageForce": [ 0, 0, 0 ], "m_vecDamagePosition": null, "m_vecReportedPosition": null }, "m_vDamagePosition": null }
+	CTakeDamageInfo info;
+	CTakeDamageResult result;
 	CHandle< C_BaseEntity > hTarget;
 };
