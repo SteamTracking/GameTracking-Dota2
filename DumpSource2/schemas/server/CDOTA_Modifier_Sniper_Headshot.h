@@ -7,5 +7,5 @@ class CDOTA_Modifier_Sniper_Headshot : public CDOTA_Buff
 	float32 damage;
 	float32 attack_effectiveness;
 	AttackRecord_t m_iLastRolledRecord;
-	bool m_bLastRollSuccess;
+	CUtlVector< AttackRecord_t > m_vecSuccessfulRolls;
 };
