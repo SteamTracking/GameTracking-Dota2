@@ -1,5 +1,8 @@
 class CDOTA_Modifier_Morphling_Replicate_Echo_Source : public CDOTA_Buff
 {
+	CHandle< CBaseEntity > m_hPendingSnowball;
+	CHandle< CBaseEntity > m_hPendingSnowballTarget;
+	GameTime_t m_flPendingSnowballWindupEnd;
 	int32 scepter_echo_count;
 	float32 scepter_echo_cast_delay;
 	float32 scepter_echo_appear_distance;
